@@ -119,7 +119,7 @@ Quasar框架是一个 MIT 许可的开源项目。它的持续发展得益于这
 请前往 Quasar 框架的官方网站: [https://quasar.dev](https://quasar.dev)  
 （译注：当前分支是个人学习 Quasar 框架使用的，主要用于机器翻译官方的帮助文档）
 
-## 保护联系
+## 保持联系
 
 有关最新发布和公告，请关注 Twitter:[@quasarframework](https://twitter.com/quasarframework)
 
