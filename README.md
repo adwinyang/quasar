@@ -1,8 +1,8 @@
 ![Quasar Framework logo](https://cdn.quasar.dev/logo-v2/header.png)
 
-# Quasar Framework
+# Quasar 框架
 
-> Build high-performance VueJS user interfaces in record time: responsive Single Page Apps, SSR Apps, PWAs, Browser extensions, Hybrid Mobile Apps and Electron Apps. If you want, all using the same codebase!
+> 在有限的时间内创建高性能的、基于 VueJS 用户界面: 响应式单页应用程序, SSR 应用程序, PWAs, 浏览器扩展, 混合移动应用和 Electron 应用. 如果你愿意，可全部使用同一个代码库!
 
 <img src="https://img.shields.io/npm/v/quasar?label=quasar"> <img src="https://img.shields.io/npm/v/%40quasar/app?label=@quasar/app"> <img src="https://img.shields.io/npm/v/%40quasar/cli?label=@quasar/cli"> <img src="https://img.shields.io/npm/v/%40quasar/extras.svg?label=@quasar/extras"> <img src="https://img.shields.io/npm/v/%40quasar/icongenie.svg?label=@quasar/icongenie"> <img src="https://img.shields.io/npm/v/%40quasar/vite-plugin.svg?label=@quasar/vite-plugin">
 
