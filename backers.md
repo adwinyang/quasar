@@ -1,6 +1,6 @@
-Quasar Framework is an MIT licensed open source project and completely free to use. However, the amount of effort needed to maintain and develop new features for the project is not sustainable without some financial backing.
+Quasar 框架是一个 MIT 许可的开源项目，完全可以免费使用。但是如果没有一些资金支持，维护和开发该项目新功能所需的努力是不可持续的。
 
-## Platinum sponsors:
+## 白金赞助商:
 
 <table>
   <tbody>
@@ -28,9 +28,10 @@ Quasar Framework is an MIT licensed open source project and completely free to u
   </tbody>
 </table>
 
-# Backers
+# 支持者
 
 You can join them in [supporting Quasar](https://donate.quasar.dev) development! Backers in the same pledge level appear in the order of pledge date.
+你可以和他们一起[支持Quasar](https://donate.quasar.dev)发展! 相同捐赠级别的支持者按捐赠日期的顺序出现。
 
 ### $500
 
@@ -293,7 +294,7 @@ You can join them in [supporting Quasar](https://donate.quasar.dev) development!
 - Yasuhiro Kawagoe ($1)
 - Shawn Taylor ($1)
 
-### Notable one time
+### 值得注意
 
 - Bert Van den Eynde 600 EUR
 - Jurgen Hollfelder 500 EUR
