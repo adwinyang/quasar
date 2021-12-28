@@ -2,7 +2,7 @@
 
 # Quasar 框架
 
-> 在有限的时间内创建高性能的、基于 VueJS 用户界面: 响应式单页应用程序, SSR 应用程序, PWAs, 浏览器扩展, 混合移动应用和 Electron 应用. 如果你愿意，可全部使用同一个代码库!
+> 在有限的时间内创建高性能的、基于 VueJS 用户界面: 响应式单页应用程序, SSR 应用程序, PWAs, 浏览器扩展, 混合移动应用和 Electron 应用。如果你愿意，可全部使用同一个代码库！
 
 <img src="https://img.shields.io/npm/v/quasar?label=quasar"> <img src="https://img.shields.io/npm/v/%40quasar/app?label=@quasar/app"> <img src="https://img.shields.io/npm/v/%40quasar/cli?label=@quasar/cli"> <img src="https://img.shields.io/npm/v/%40quasar/extras.svg?label=@quasar/extras"> <img src="https://img.shields.io/npm/v/%40quasar/icongenie.svg?label=@quasar/icongenie"> <img src="https://img.shields.io/npm/v/%40quasar/vite-plugin.svg?label=@quasar/vite-plugin">
 
@@ -10,14 +10,14 @@
 <a href="https://forum.quasar.dev" target="_blank"><img src="https://img.shields.io/badge/community-forum-brightgreen.svg"></a>
 [![https://good-labs.github.io/greater-good-affirmation/assets/images/badge.svg](https://good-labs.github.io/greater-good-affirmation/assets/images/badge.svg)](https://good-labs.github.io/greater-good-affirmation)
 
-Please submit a PR to https://github.com/quasarframework/quasar-awesome with your website/app/Quasar tutorial/video etc. Thank you!
+请通过您的网站/应用程序/Quasar教程/视频等向 https://github.com/quasarframework/quasar-awesome 提交PR，谢谢！
 
-## Supporting Quasar
-Quasar Framework is an MIT-licensed open source project. Its ongoing development is made possible thanks to the support by these awesome [backers](https://github.com/rstoenescu/quasar-framework/blob/dev/backers.md).
+## 支持 Quasar
+Quasar框架是一个 MIT 许可的开源项目。它的持续发展得益于这些令人尊敬的[支持者](https://github.com/rstoenescu/quasar-framework/blob/dev/backers.md)的支持
 
-**Please read our manifest on [Why donations are important](https://quasar.dev/why-donate)**. If you'd like to become a donator, check out [Quasar Framework's Donator campaign](https://donate.quasar.dev).
+**请阅读我们关于 [为什么捐款很重要](https://quasar.dev/why-donate)**。如果你想成为一名捐赠者，请查看 [Quasar 框架的捐赠活动](https://donate.quasar.dev).
 
-### Proudly sponsored by:
+### 友情赞助机构:
 
 <table>
   <tbody>
@@ -114,33 +114,34 @@ Quasar Framework is an MIT-licensed open source project. Its ongoing development
   </tbody>
 </table>
 
-## Documentation
+## 帮助文档
 
-Head on to the Quasar Framework official website: [https://quasar.dev](https://quasar.dev)
+请前往 Quasar 框架的官方网站: [https://quasar.dev](https://quasar.dev)  
+（译注：当前分支是个人学习 Quasar 框架使用的，主要用于机器翻译官方的帮助文档）
 
-## Stay in Touch
+## 保护联系
 
-For latest releases and announcements, follow on Twitter: [@quasarframework](https://twitter.com/quasarframework)
+有关最新发布和公告，请关注 Twitter:[@quasarframework](https://twitter.com/quasarframework)
 
-## Chat Support
+## 聊天支持
 
-Ask questions at the official community Discord server: [https://chat.quasar.dev](https://chat.quasar.dev)
+请在官方社区 Discord 服务器上提问。[https://chat.quasar.dev](https://chat.quasar.dev)
 
-## Community Forum
+## 社区论坛
 
-Ask questions at the official community forum: [https://forum.quasar.dev](https://forum.quasar.dev)
+在官方社区论坛上提问：[https://forum.quasar.dev](https://forum.quasar.dev)
 
-## Contributing
+## 贡献
 
-Please make sure to read the [Contributing Guide](./CONTRIBUTING.md) before making a pull request. If you have a Quasar-related project/component/tool, add it with a pull request to [this curated list](https://github.com/quasarframework/quasar-awesome)!
+在提出请求之前，请务必阅读 [贡献指南](./CONTRIBUTING.md)。如果您有与 Quasar 相关的项目/组件/工具，请将其与 pull 请求一起添加到 [策划的列表](https://github.com/quasarframework/quasar-awesome)！  
 
-Thank you to all the people who already [contributed to Quasar](https://github.com/quasarframework/quasar/graphs/contributors)!
+感谢所有已经[为Quasar作出贡献]的人(https://github.com/quasarframework/quasar/graphs/contributors)!
 
-## Semver
-Quasar is following [Semantic Versioning 2.0](https://semver.org/).
+## 语义
+Quasar遵循[Semantic Versioning 2.0]（https://semver.org/）。
 
-## License
+## 许可证
 
-Copyright (c) 2015-present Razvan Stoenescu
+版权所有 (c) 2015 年至今 Razvan Stoenescu
 
-[MIT License](http://en.wikipedia.org/wiki/MIT_License)
+[MIT 证可证](http://en.wikipedia.org/wiki/MIT_License)
