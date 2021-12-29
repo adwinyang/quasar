@@ -1,71 +1,71 @@
 ---
-title: App Extension Index API
-desc: The API for the index script of a Quasar App Extension. Provides access to Quasar context, registers new CLI commands, extends Webpack config and more.
+title: 应用程序扩展 API 索引
+desc: Quasar 应用扩展 API 的索引脚本。提供访问 Quasar 上下文、注册新的CLI命令、扩展 Webpack 更多的配置。
 ---
 
-This page refers to `src/index.js` file, which is executed on `quasar dev` and `quasar build`. This is the main process where you can modify the build to suit the needs of your App Extension. For instance, registering a boot file, modifying the webpack process, registering CSS, registering a UI component, registering a Quasar CLI command, etc.
+本页引用到 `src/index.js` 文件，它使用 `quasar dev` 和 `quasar build`  执行。这是你可以修改构建以满足应用程序扩展需求的主要过程。
+例如，注册一个启动文件，修改 webpack 进程，注册 CSS，注册一个 UI 组件，注册一个 Quasar CLI 命令等。
 
-Example of basic structure of the file:
+文件的基本结构示例:
 
 ```js
 module.exports = function (api) {
-  // props & methods for "api" Object described below
+  // "api " 对象的属性和方法描述如下
 }
 ```
 
 ## api.ctx
-Same as the `ctx` from `/quasar.conf.js`. Helps you make decisions based on the context in which `quasar dev` or `quasar build` runs.
+与`/quasar.conf.js`中的`ctx`相同。帮助你根据 `quasar dev` 或 `quasar build` 的运行环境做出决定。
 
-Example: You might want to use one of the api methods if running for electron mode only.
+例如, 如果仅在 Electron 模式中运行，你可能需要使用其中的一个 api 方法。
 
 ```js
-if (api.ctx.dev === true && api.ctx.mode === 'electron') {
+if (api.ctx.dev ==true && api.ctx.mode =='electron') {
   api.beforeDev((api) => {
-    // do something when running quasar dev and
-    // with Electron mode
+    // 运行 quasar dev 和 Eelectron 模式中时做些什么...
   })
 }
 ```
 
 ## api.extId
-Contains the `ext-id` (String) of this App Extension.
+该应用扩展中（App Extension）包含的`ext-id'（String）。
 
 ## api.prompts
-Is an Object which has the answers to the prompts when this App Extension got installed. For more info on prompts, check out [Prompts API](/app-extensions/development-guide/prompts-api).
+是一个对象，该对象具有安装此应用扩展时的提示答案。 有关提示的更多信息，请查看 [Prompts API](/app-extensions/development-guide/prompts-api)。
 
 ## api.resolve
-Resolves paths within the app on which this App Extension is running. Eliminates the need to import `path` and resolve the paths yourself.
+解析运行此应用扩展所在的应用程序中的路径。无需自行导入`path`和解析路径。
 
 ```js
-// resolves to root of app
+// 解析为 app 的 root 目录 （根目录)
 api.resolve.app('src/my-file.js')
 
-// resolves to root/src of app
+// 解析为 app 的 root/src 目录
 api.resolve.src('my-file.js')
 
-// resolves to root/src-pwa of app
+// 解析为 app 的 root/src-pwa  目录
 api.resolve.pwa('some-file.js')
 
-// resolves to root/src-ssr of app
+//  解析为 app 的 root/src-ssr  目录
 api.resolve.ssr('some-file.js')
 
-// resolves to root/src-cordova of app
+// 解析为 app 的 roo/src-cordova  目录
 api.resolve.cordova('config.xml')
 
-// resolves to root/src-electron of app
+// 解析为 app 的 roo/electron 目录
 api.resolve.electron('some-file.js')
 ```
 
 ## api.appDir
-Contains the full path (String) to the root of the app on which this App Extension is running.
+运行该应用扩展的 app 根目录的完整路径（String）。
 
 ## api.compatibleWith
 
-Ensure the App Extension is compatible with a package installed in the host app through a semver condition.
+通过 semver 条件确保应用扩展(App Extension)与主机应用中安装的软件包兼容。
 
-If the semver condition is not met, then @quasar/app errors out and halts execution.
+如果不满足 semver 条件，那么 @quasar/app 就会出错并停止执行。
 
-Example of semver condition: `'1.x || >=2.5.0 || 5.0.0 - 7.2.3'`.
+semver 条件示例：`'1.x || >=2.5.0 || 5.0.0 - 7.2.3'。
 
 ```js
 /**
@@ -77,108 +77,110 @@ api.compatibleWith('@quasar/app', '1.x')
 
 ## api.hasPackage
 
-Determine if some package is installed in the host app through a semver condition.
+通过 semver 条件确定主机应用程序中是否安装了某些包。
 
-Example of semver condition: `'1.x || >=2.5.0 || 5.0.0 - 7.2.3'`.
+semver条件示例：`'1.x || >=2.5.0 || 5.0.0 - 7.2.3'。
 
 ```js
 /**
  * @param {string} packageName
  * @param {string} (optional) semverCondition
- * @return {boolean} package is installed and meets optional semver condition
+ * @return {boolean} 包已安装并满足可选的semver条件
  */
 if (api.hasPackage('vuelidate')) {
-  // hey, this app has it (any version of it)
+  // 嘿，这个应用程序有它（任意版本）。
 }
 if (api.hasPackage('quasar', '^1.0.0')) {
-  // hey, this app has v1 installed
+  // 嘿，这个应用程序已经安装了v1版本
 }
 ```
 
 ## api.hasExtension
-Check if another app extension is npm installed and Quasar CLI has invoked it.
+检查另一个应用扩展是否已安装 npm，并且 Quasar CLI 已调用它。
 
 ```js
 /**
- * Check if another app extension is installed
+ * 检查是否安装了另一个应用扩展
  *
  * @param {string} extId
- * @return {boolean} has the extension installed & invoked
+ * @return {boolean} 是否安装并调用了该扩展？
  */
 if (api.hasExtension(extId)) {
-  // hey, we have it
+  // 嘿，我们有它了
 }
 ```
 
 ## api.getPackageVersion
 
-Get the version of a host app package.
+获取主机应用程序包的版本。
 
 ```js
 /**
- * @param {string} packageName
- * @return {string|undefined} version of app's package
- */
-console.log( api.getPackageVersion(packageName) )
-// output examples:
-//   1.1.3
-//   undefined (when package not found)
+*param {string} packageName
+* @return {string|undefined}应用程序包的版本
+  */
+  console.log( api.getPackageVersion(packageName) )
+  // 输出示例。
+  // 1.1.3
+  // 未定义 (当软件包未找到时)
 ```
 
 ## api.extendQuasarConf
-Extends quasar.conf.js
+
+扩展 quasar.conf.js
 
 ```js
 /**
  * @param {function} fn
- *   (cfg: Object, ctx: Object) => undefined
+ * (cfg: Object, ctx: Object) => undefined
  */
 api.extendQuasarConf ((conf, api) => {
-  // do something with quasar.conf.js:
-  // add, change anything
+  // 对 quasar.conf.js 做一些事情：
+  // 添加、更改任何内容
 })
 ```
 
-### Registering boot and css files
+### 注册引导文件和css文件
 
 ```js
 module.exports = function (api, ctx) {
   api.extendQuasarConf((conf, api) => {
-    // make sure my-ext boot file is registered
+    // 确保我的启动文件被注册了
     conf.boot.push('~quasar-app-extension-my-ext/src/boot/my-ext-bootfile.js')
 
-    // make sure boot file transpiles
-    conf.build.transpileDependencies.push(/quasar-app-extension-my-ext[\\/]src[\\/]boot/)
-    // if boot file imports anything, make sure that
-    // the regex above matches those files too!
+    // 确保启动文件可以转存
+    conf.build.transpileDependencies.push(/quasar-app-extension-my-ext[/\/]src[/\/]boot/)
+    // 如果 boot 文件导入了任何内容，请确保
+    // 上面的正则表达式也匹配这些文件！
 
-    // make sure my-ext css goes through webpack
+    //  确保my-ext css 能通过webpack
     conf.css.push('~quasar-app-extension-my-ext/src/component/my-ext.sass')
   })
 }
 ```
 
 ::: tip
-Notice the tidle (`~`) in front of the paths. This tells Quasar CLI that the path is a dependency from node_modules instead of a relative path to App Extension index script file.
+注意路径前面的波浪号（`~`）。这告诉Quasar CLI，该路径是来自node_modules的依赖关系，而不是应用扩展(App Extension)索引脚本文件的相对路径。
 :::
 
 ## api.chainWebpack
-Chain webpack config
+
+链式 webpack 配置
 
 ```js
 /**
  * @param {function} fn
- *   (chain: ChainObject, invoke: Object {isClient, isServer}) => undefined
+ * (chain: ChainObject, invoke: Object {isClient, isServer}) => undefined
  */
 api.chainWebpack((chain, { isClient, isServer }, api) => {
-  // add/remove/change chain (Webpack chain Object)
+  // 添加/删除/更改链（Webpack链对象)
 })
 ```
 
-The configuration is a Webpack chain Object. The API for it is described on [webpack-chain](https://github.com/neutrinojs/webpack-chain) docs.
+该配置是一个 Webpack 链对象。它的API在 [webpack-chain](https://github.com/neutrinojs/webpack-chain) 文档中有描述。
 
 ## api.extendWebpack
-Extend webpack config
+扩展 webpack 配置
 
 ```js
 /**
@@ -186,12 +188,14 @@ Extend webpack config
  *   (cfg: Object, invoke: Object {isClient, isServer}) => undefined
  */
 api.extendWebpack((cfg, { isClient, isServer }, api) => {
-  // add/remove/change cfg (Webpack configuration Object)
+  // 增加/删除/变更 cfg (Webpack 配置对象)
 })
 ```
 
 ## api.chainWebpackMainElectronProcess
+
 Chain webpack config of the main electron process
+在 Electron 主进程中进行链式 webpack 配置
 
 ```js
 /**
@@ -199,12 +203,12 @@ Chain webpack config of the main electron process
  *   (chain: ChainObject) => undefined
  */
 api.chainWebpackMainElectronProcess((chain, { isClient, isServer }, api) => {
-  // add/remove/change chain (Webpack chain Object)
+  // 增加/删除/变更 cfg (Webpack 配置对象)
 })
 ```
 
 ## api.extendWebpackMainElectronProcess
-Extend webpack config Object of the main electron process
+在 Electron 主进程中进行扩展 webpack 配置
 
 ```js
 /**
@@ -212,12 +216,13 @@ Extend webpack config Object of the main electron process
  *   (cfg: Object) => undefined
  */
 api.extendWebpackMainElectronProcess((cfg, { isClient, isServer }, api) => {
-  // add/remove/change cfg (Webpack configuration Object)
+  // 增加/删除/变更 cfg (Webpack 配置对象)
 })
 ```
 
 ## api.chainWebpackPreloadElectronProcess
-Chain webpack config of the preload electron process
+
+在 Electron 预加载进程中进行链式 webpack 配置
 
 ```js
 /**
@@ -225,12 +230,13 @@ Chain webpack config of the preload electron process
  *   (chain: ChainObject) => undefined
  */
 api.chainWebpackPreloadElectronProcess((chain, { isClient, isServer }, api) => {
-  // add/remove/change chain (Webpack chain Object)
+  // 增加/删除/变更 cfg (Webpack 配置对象)
 })
 ```
 
 ## api.extendWebpackPreloadElectronProcess
-Extend webpack config Object of the preload electron process
+
+在 Electron 预加载进程中进行扩展 webpack 配置
 
 ```js
 /**
@@ -238,13 +244,13 @@ Extend webpack config Object of the preload electron process
  *   (cfg: Object) => undefined
  */
 api.extendWebpackPreloadElectronProcess((cfg, { isClient, isServer }, api) => {
-  // add/remove/change cfg (Webpack configuration Object)
+  // 增加/删除/变更 cfg (Webpack 配置对象)
 })
 ```
 
 ## api.chainWebpackWebserver
 
-Chain webpack config of SSR webserver (includes the SSR middlewares from /src-ssr/middlewares)
+SSR 服务端进行链式 Webpack 配置 (包括来自 /src-ssr/middleware 的 SRR 中间件)
 
 ```js
 /**
@@ -252,14 +258,15 @@ Chain webpack config of SSR webserver (includes the SSR middlewares from /src-ss
  *   (chain: ChainObject) => undefined
  */
 api.chainWebpackWebserver ((chain, { isClient, isServer }, api) => {
-  // add/remove/change chain (Webpack chain Object)
-  // isClient is always "false" and isServer is always "true"
+  // 增加/删除/变更 cfg (Webpack 配置对象)
+  // isClient 总是 "false", isServer 总是 "true"
 })
 ```
 
 ## api.extendWebpackWebserver
 
 Extend webpack config Object of SSR webserver (includes the SSR middlewares from /src-ssr/middlewares)
+扩展 SSR webserver的webpack配置对象(包括来自 /src-ssr/middleware 的 SRR 中间件)
 
 ```js
 /**
@@ -267,14 +274,14 @@ Extend webpack config Object of SSR webserver (includes the SSR middlewares from
  *   (cfg: Object) => undefined
  */
 api.extendWebpackWebserver((cfg, { isClient, isServer }, api) => {
-  // add/remove/change cfg (Webpack configuration Object)
-  // isClient is always "false" and isServer is always "true"
+  // 增加/删除/变更 cfg (Webpack 配置对象)
+  // isClient 总是 "false", isServer 总是 "true"
 })
 ```
 
 ## api.chainWebpackCustomSW
 
-Chain webpack config for the custom service worker when using InjectManifest (content of /src-pwa/custom-service-worker.js):
+使用 InjectManifest 时自定义 Service Worker 的链式 webpack 配置（/src-pwa/custom-service-worker.js 的内容）：
 
 ```js
 /**
@@ -282,13 +289,12 @@ Chain webpack config for the custom service worker when using InjectManifest (co
  *   (cfg: ChainObject) => undefined
  */
 api.chainWebpackCustomSW ((cfg, { isClient, isServer }, api) => {
-  // add/remove/change cfg (Webpack chain Object)
+  // 增加/删除/变更 cfg (Webpack 配置对象)
 })
 ```
 
 ## api.extendWebpackCustomSW
-
-Extend webpack config Object for the custom service worker when using InjectManifest (content of /src-pwa/custom-service-worker.js):
+使用 InjectManifest 时为自定义 service worker 扩展 webpack 配置对象（/src-pwa/custom-service-worker.js 的内容）：
 
 ```js
 /**
@@ -296,36 +302,38 @@ Extend webpack config Object for the custom service worker when using InjectMani
  *   (chain: Object) => undefined
  */
 api.extendWebpackCustomSW((chain, { isClient, isServer }, api) => {
-  // add/remove/change chain (Webpack configuration Object)
+  // 增加/删除/变更 cfg (Webpack 配置对象)
 })
 ```
 
 ## api.registerCommand
 Register a command that will become available as `quasar run <ext-id> <cmd> [args]` (or the short form: `quasar <ext-id> <cmd> [args]`).
+注册一个的命令，可以作为 `quasar run <ext-id> <cmd> [args]` 形式使用（或缩写形式：`quasar <ext-id> <cmd> [args]`）。
 
 ```js
 /**
- * @param {string} commandName
+ * @param {string} commandName (命令名称)
  * @param {function} fn
  *   ({ args: [ string, ... ], params: {object} }) => ?Promise
  */
 api.registerCommand('start', ({ args, params }) => {
-  // do something here
+  // 在这里做点什么
 
-  // this registers the "start" command
-  // and this handler is executed when running
+  // 这将注册“start”命令，并且在运行时执行此处理程序
   // $ quasar run <ext-id> start
+
 })
 ```
 
 ## api.registerDescribeApi
 Register an API file for `$ quasar describe` command.
+为 `$quasar descripe` 命令注册一个API文件。
 
 ```js
 /**
  * @param {string} name
  * @param {string} relativePath
- *   (relative path starting from the file where you have this call)
+ *   (从进行此调用的文件开始的相对路径)
  */
 api.registerDescribeApi(
   'MyComponent',
@@ -333,9 +341,9 @@ api.registerDescribeApi(
 )
 ```
 
-The above will then respond to `$ quasar describe MyComponent`.
+上述内容将响应 `$ quasar describe MyComponent`.
 
-For syntax of such a JSON file, look into `/node_modules/quasar/dist/api` (in your project folder). Be aware that your JSON must contain a `type` property ("component", "directive", "plugin"). For instance:
+关于这样的JSON文件的语法，请查看`/node_modules/quasar/dist/api`（在你的项目文件夹中）。请注意，你JSON文件必须包含一个 `type` 属性（"component", "directive", "plugin"）。例如：
 
 ```json
 {
@@ -348,11 +356,12 @@ For syntax of such a JSON file, look into `/node_modules/quasar/dist/api` (in yo
 
 ::: tip
 Always test with the `quasar describe` command to ensure you got the syntax right and there are no errors.
+始终用 `quasar describe` 命令进行测试，以确保你的语法正确，并且没有错误。
 :::
 
 ## api.getPersistentConf
 
-Get the internal persistent config of this extension. Returns empty object if it has none.
+获取该扩展的内部持久化配置。如果没有，则返回空对象。
 
 ```js
 /**
@@ -363,7 +372,7 @@ api.getPersistentConf()
 
 ## api.setPersistentConf
 
-Set the internal persistent config of this extension. If it already exists, it is overwritten.
+设置该扩展的内部持久化配置。如果它已经存在，则会被覆盖。
 
 ```js
 /**
@@ -376,7 +385,7 @@ api.setPersistentConf({
 
 ## api.mergePersistentConf
 
-Deep merge into the internal persistent config of this extension. If extension does not have any config already set, this is essentially equivalent to setting it for the first time.
+深度合并到该扩展的内部持久性配置中。如果扩展还未进行任何配置，则基本上等同于第一次设置它。
 
 ```js
 /**
@@ -389,9 +398,9 @@ api.mergePersistentConf({
 
 ## api.beforeDev
 
-Prepare external services before `$ quasar dev` command runs, like starting some backend or any other service that the app relies on.
+在`$ quasar dev`命令运行前准备好一些外部服务，如启动一些后端或应用程序依赖的任何其他服务。
 
-Can use async/await or directly return a Promise.
+可以使用 async/await 或直接返回一个Promise。
 
 ```js
 /**
@@ -399,15 +408,15 @@ Can use async/await or directly return a Promise.
  *   (api, { quasarConf }) => ?Promise
  */
 api.beforeDev((api, { quasarConf }) => {
-  // do something
+  // 在这做些什么
 })
 ```
 
 ## api.afterDev
 
-Run hook after Quasar dev server is started (`$ quasar build`). At this point, the dev server has been started and is available should you wish to do something with it.
+Quasar 开发服务器(dev server) 启动后运行的钩子（`$ quasar dev`）。在开发服务器已经启动后，如果想做点什么，则可以使用它。
 
-Can use async/await or directly return a Promise.
+可以使用 async/await 或直接返回一个Promise。
 
 ```js
 /**
@@ -415,15 +424,15 @@ Can use async/await or directly return a Promise.
  *   (api, { quasarConf }) => ?Promise
  */
 api.afterDev((api, { quasarConf }) => {
-  // do something
+  // 在这做些什么
 })
 ```
 
 ## api.beforeBuild
 
-Run hook before Quasar builds app for production (`$ quasar build`). At this point, the distributables folder hasn't been created yet.
+构建 Quasar 应用程序之前运行的钩子 (`$ quasar build`)，此时，distributables 文件夹还没有创建好。
 
-Can use async/await or directly return a Promise.
+可以使用 async/await 或直接返回一个Promise。
 
 ```js
 /**
@@ -431,15 +440,15 @@ Can use async/await or directly return a Promise.
  *   (api, { quasarConf }) => ?Promise
  */
 api.beforeBuild((api, { quasarConf }) => {
-  // do something
+  // 在这做些什么
 })
 ```
 
 ## api.afterBuild
 
-Run hook after Quasar built app for production (`$ quasar build`). At this point, the distributables folder has been created and is available should you wish to do something with it.
+构建 Quasar 应用程序之后运行的钩子 (`$ quasar build`)，此时，distributables 文件夹已创建好了，可以使用它进行某些操作。
 
-Can use async/await or directly return a Promise.
+可以使用 async/await 或直接返回一个Promise。
 
 ```js
 /**
@@ -447,25 +456,25 @@ Can use async/await or directly return a Promise.
  *   (api, { quasarConf }) => ?Promise
  */
 api.afterBuild((api, { quasarConf }) => {
-  // do something
+  // 在这做些什么
 })
 ```
 
 ## api.onPublish
 
-Run hook if publishing was requested (`$ quasar build -P`), after Quasar built app for production and the afterBuild hook (if specified) was executed.
+如果需要发布(`$ quasar build -P`)，则在构建生产使用的 Quasar 应用程序和执行 afterBuild 钩子（如果指定）之后运行的钩子。
 
-Can use async/await or directly return a Promise.
+可以使用 async/await 或直接返回一个Promise。
 
 ```js
 /**
  * @param {function} fn
  *   () => ?Promise
  * @param {object} opts
- *   * arg - argument supplied to "--publish"/"-P" parameter
- *   * distDir - folder where distributables were built
+ *   * arg - 提供给 "--publish"/"-P" 的参数
+ *   * distDir - 构建发行版的文件夹
  */
 api.onPublish((api, opts) => {
-  // do something
+  // 在这做些什么
 })
 ```

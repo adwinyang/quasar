@@ -1,4 +1,4 @@
-# Quasar Contributing Guide
+# Quasar 贡献指南
 
 Hi! I’m really excited that you are interested in contributing to Quasar. Before submitting your contribution though, please make sure to take a moment and read through the following guidelines.
 

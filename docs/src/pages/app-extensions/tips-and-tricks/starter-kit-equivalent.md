@@ -1,31 +1,32 @@
 ---
-title: Starter kit equivalent
-desc: Tips and tricks on how to use a Quasar App Extension to create the equivalent of a starter kit.
+title: 相当于入门套件
+desc：关于如何使用Quasar应用程序扩展来创建相当于入门套件的技巧和窍门。
 ---
 
-This guide is for when you want to create what essentially is a "starter kit" that adds stuff (/quasar.conf.js configuration, folders, files, CLI hooks) on top of the official starter kit. This allows you to have multiple projects sharing a common structure/logic (and only one package to manage them rather than having to change all projects individually to match your common pattern), and also allows you to share all this with the community.
+本指南适用于您想要创建本质上是 “入门工具包” 的内容，该工具包在官方入门工具包之上添加内容（/quasar.conf.js 配置、文件夹、文件、CLI 挂钩）。
+这允许您让多个项目共享一个公共结构/逻辑（并且只有一个包来管理它们，而不必单独更改所有项目以匹配您的公共模式），并且还允许您与社区分享所有这些。
 
 ::: tip
-In order for creating an App Extension project folder, please first read the [Development Guide > Introduction](/app-extensions/development-guide/introduction).
+要创建一个App Extension项目文件夹，请先阅读[开发指南>简介](/app-extensions/development-guide/introduction)。
 :::
 
 ::: tip Full Example
-To see an example of what we will build, head over to [MyStarterKit full example](https://github.com/quasarframework/app-extension-examples/tree/v2/my-starter-kit), which is a github repo with this App Extension.
+要看我们要创建的示例，请到[MyStarterKit完整示例](https://github.com/quasarframework/app-extension-examples/tree/v2/my-starter-kit)，这是该App Extension的github repo。
 :::
 
-We'll be creating an example App Extension which does the following:
+我们将创建一个应用扩展的示例，它的作用如下。
 
-* it prompts the user what features it wants this App Extension to install
-* renders (copies) files into the hosting folder, according to the answers he gave
-* it extends /quasar.conf.js
-* it extends the Webpack configuration
-* it uses an App Extension hook (onPublish)
-* it removes the added files when the App Extension gets uninstalled
-* it uses the prompts to define what the App Extension does
+* 它提示用户希望这个App Extension安装哪些功能
+* 根据他给出的答案，将文件渲染（复制）到托管文件夹中
+* 它扩展了/quasar.conf.js
+* 它扩展了Webpack的配置
+* 它使用一个应用扩展钩子（onPublish）。
+* 当应用扩展被卸载时，它将删除添加的文件
+* 它使用提示语来定义App Extension的工作内容
 
-## The structure
+## 结构
 
-For the intents of this example, we'll be creating the following folder structure:
+在这个例子中，我们将创建以下文件夹结构：
 
 ```bash
 .
@@ -33,173 +34,171 @@ For the intents of this example, we'll be creating the following folder structur
 ├── package.json
 └── src
     ├── boot
-    │   └── my-starter-kit-boot.js
+    │ └── my-starter-kit-boot.js
     ├── templates
-    │   ├── common-files
-    │   │   ├── README.md
-    │   │   └── some-folder
-    │   │       └── tasks.md
-    │   ├── serviceA
-    │   │   └── src
-    │   │       └── services
-    │   │           └── serviceA.js
-    │   └── serviceB
-    │       └── src
-    │           └── services
-    │               └── serviceB.js
+    │    ├── common-files
+    │    │      ├── README.md
+    │    │      │ └── some-folder
+    │    │             └──tasks.md
+    │    ├── serviceA
+    │    │      └── src
+    │    │           └──services
+    │    │              └── serviceA.js
+    │    └── serviceB
+    │        └── src
+    │            └── services
+    │                └── serviceB.js
     ├── index.js
     ├── install.js
     ├── prompts.js
     └── uninstall.js
 ```
 
-## The install script
+## 安装脚本
 
-The install script below is only rendering files into the hosted app. Notice the `src/templates` folder above, where we decided to keep these templates.
+下面的安装脚本只是将文件渲染到托管应用程序中。注意上面的`src/templates`文件夹，我们决定把这些模板放在那里。
 
 ```js
 // src/install.js
 
 module.exports = function (api) {
-  // (Optional!)
-  // Quasar compatibility check; you may need
-  // hard dependencies, as in a minimum version of the "quasar"
-  // package or a minimum version of "@quasar/app" CLI
+  // （可选！）。
+  // Quasar兼容性检查；你可能需要兼容性检查；你可能需要硬性依赖，如最小版本的 "quasar"
+  // 或最低版本的"@quasar/app" CLI。
   api.compatibleWith('quasar', '^2.0.0')
   api.compatibleWith('@quasar/app', '^3.0.0')
 
-  // We render some files into the hosting project
+  // 我们将一些文件渲染到托管项目中
 
   if (api.prompts.serviceA) {
     api.render('./templates/serviceA')
   }
 
   if (api.prompts.serviceB) {
-    // we supply interpolation variables
-    // to the template
+    // 我们提供插值变量到模板中
     api.render('./templates/serviceB', {
       productName: api.prompts.productName
     })
   }
 
-  // we always render the following template:
+  // 我们总是渲染以下模板。
   api.render('./templates/common-files')
 }
 ```
 
-Notice that we use the prompts to decide what to render into the hosting project. Furthermore, if the user has selected "service B", then we'll also have a "productName" that we can use when we render the service B's file.
+注意，我们使用提示来决定渲染到托管项目中的内容。此外，如果用户选择了 "服务B"，那么我们也会有一个 "productName"，我们可以在渲染服务B的文件时使用。
 
-## The index script
+## 索引脚本
 
-We do a few things in the index script, like extending /quasar.conf.js, hooking into one of the many Index API hooks (onPublish in this case), and chaining the Webpack configuration:
+我们在 index 脚本中做了几件事，比如扩展/quasar.conf.js，钩住众多Index API钩子中的一个（在本例中是onPublish），并将Webpack配置链化。
 
 ```js
 // src/index.js
 
 module.exports = function (api) {
-  // (Optional!)
-  // Quasar compatibility check; you may need
-  // hard dependencies, as in a minimum version of the "quasar"
-  // package or a minimum version of "@quasar/app" CLI
+  // （可选！）。
+  // Quasar兼容性检查；你可能需要 兼容性检查；
+  // 你可能需要硬性依赖，如最小版本的 "quasar"
+  // 或最低版本的"@quasar/app" CLI。
   api.compatibleWith('quasar', '^2.0.0')
   api.compatibleWith('@quasar/app', '^3.0.0')
 
-  // Here we extend /quasar.conf.js;
-  // (extendQuasarConf() will be defined later in this tutorial, continue reading)
+  // 这里我们扩展/quasar.conf.js。
+  // (extendQuasarConf()将在本教程后面定义，继续阅读)
   api.extendQuasarConf(extendQuasarConf)
 
-  // Here we register the onPublish hook,
-  // only if user answered that he wants the publishing service
+  // 这里我们注册了onPublish钩子。
+  // 只有当用户回答说他想使用发布服务时才会这样做
   if (api.prompts.publishService) {
-    // onPublish() will be defined later in this tutorial, continue reading
+    // onPublish()将在本教程的后面定义，请继续阅读
     api.onPublish(onPublish)
   }
 
-  // we add/change/remove something in the Webpack configuration
-  // (chainWebpack() will be defined later in this tutorial, continue reading)
+  // 我们在Webpack配置中添加/改变/删除一些东西
+  // (chainWebpack()将在本教程的后面定义，继续阅读)
   api.chainWebpack(chainWebpack)
 
-  // there's lots more hooks that you can use...
+  // 还有很多你可以使用的钩子......
 }
 ```
 
-Here's an example of `extendQuasarConf` definition:
+下面是一个`extendQuasarConf`定义的例子。
 
 ```js
 function extendQuasarConf (conf) {
   conf.extras.push('ionicons-v4')
-  conf.framework.iconSet = 'ionicons-v4'
+  conf.framework.iconSet = 'ionicons-v4'.
 
   //
-  // We register a boot file. User does not need to tamper with it,
-  // so we keep it into the App Extension code:
+  // 我们注册一个启动文件。用户不需要对其进行篡改。
+  // 所以我们把它保留在应用程序扩展代码中。
   //
 
-  // make sure my-ext boot file is registered
+  // 确保my-ext的启动文件被注册了
   conf.boot.push('~quasar-app-extension-my-starter-kit/src/boot/my-starter-kit-boot.js')
 
-  // make sure boot file get transpiled
-  conf.build.transpileDependencies.push(/quasar-app-extension-my-starter-kit[\\/]src/)
+  // 确保启动文件被转译
+  conf.build.transpileDependencies.push(/quasar-app-extension-my-starter-kit[/\/]src/)
 }
 ```
 
-The `onPublish` function:
+`onPublish`函数。
 
 ```js
 function onPublish (api, { arg, distDir }) {
-  // this hook is called when "quasar build --publish" is called
+  //当 "quasar build --publish "被调用时，这个钩子被调用。
 
-  // your publish logic here...
-  console.log('We should publish now. But maybe later? :)')
+  // 你的发布逻辑在这里...
+  console.log('We should publish now. But maybe later?:) ')
 
-  // are we trying to publish a Cordova app?
+  // 我们是要发布一个Cordova应用程序吗？
   if (api.ctx.modeName === 'cordova') {
-    // do something
+    // 做点什么
   }
 }
 ```
 
-The `chainWebpack` function:
+`chainWebpack`函数。
 
 ```js
 function chainWebpack (cfg, { isClient, isServer }, api) {
-  // cfg is a Webpack chain Object;
-  // docs on how to use it: webpack-chain docs (https://github.com/neutrinojs/webpack-chain)
+// cfg是一个Webpack链对象。
+// 关于如何使用它的文档：webpack-chain docs (https://github.com/neutrinojs/webpack-chain)
 }
 ```
 
-## The uninstall script
+## 卸载脚本
 
-When the App Extension gets uninstall, we need to do some cleanup. But beware what you delete from the app-space! Some files might still be needed. Proceed with extreme care, if you decide to have an uninstall script.
+当App Extension被卸载时，我们需要做一些清理工作。但要注意你从应用空间中删除的东西! 有些文件可能仍然需要。如果你决定有一个卸载脚本，那么要特别小心。
 
 ```js
-// we yarn added it to our App Extension,
-// so we can import the following:
+//我们把它添加到我们的应用扩展中。
+// 所以我们可以导入以下内容。
 const rimraf = require('rimraf')
 
 module.exports = function (api) {
-  // Careful when you remove folders!
-  // You don't want to delete files that are still needed by the Project,
-  // or files that are not owned by this app extension.
+  // 当你删除文件夹时要小心!
+  // 你不希望删除项目仍然需要的文件。
+  // 或者不属于这个应用扩展的文件。
 
-  // Here, we could also remove the /src/services folder altogether,
-  // but what if the user has added other files into this folder?
+  // 在这里，我们也可以完全删除/src/services文件夹。
+  // 但如果用户在这个文件夹中添加了其他文件怎么办？
 
   if (api.prompts.serviceA) {
-    // we added it on install, so we remove it
+    // 我们在安装时添加了它，所以我们删除它
     rimraf.sync(api.resolve.src('services/serviceA.js'))
   }
 
   if (api.prompts.serviceB) {
-    // we added it on install, so we remove it
-    rimraf.sync(api.resolve.src('services/serviceB.js'))
+    // 我们在安装时添加了它，所以我们删除它
+    rimraf.sync(api.resolve.src('service/serviceB.js'))
   }
 
-  // we added it on install, so we remove it
+  // 我们在安装时添加了它，所以我们删除它
   rimraf.sync(api.resolve.app('some-folder'))
-  // warning... we've added this folder, but what if the
-  // developer added more files into this folder???
+  // 警告...我们已经添加了这个文件夹，但是如果
+  // 开发者在这个文件夹中添加了更多的文件呢？
 }
 ```
 
-Notice that we are requesting `rimraf` npm package. This means that we yarn/npm added it into our App Extension project.
+注意，我们请求的是`rimraf` npm包。这意味着我们 yarn/npm 将其添加到我们的 App Extension 项目中。

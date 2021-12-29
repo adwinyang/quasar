@@ -1,137 +1,143 @@
 ---
-title: App Extension Development
-desc: How to setup your machine for a Quasar App Extension development and getting started quickly.
+title: 应用扩展开发
+desc: 如何为 Quasar 应用扩展开发(App Extension Development)设置计算机，并快速入门。
 ---
 
-This section of the docs deals with creating your own App Extensions.
+本节文档涉及如何创建自己的应用扩展。
 
-It is assumed you have already installed one of the official App Extensions. Having this experience at your disposal is going to be very valuable when you start building your own App Extensions. If you run into problems, please visit our Discord server's channel `#app-extensions`.
+假设你已经安装了一个官方的应用扩展。当您开始创建自己的应用扩展时，拥有这些经验将是非常有价值的。如果你遇到问题，请访问我们的 Discord 服务器的 `#app-extensions`。
 
-## Getting started
+## 开始
 
-An App Extension is an npm package. There are two official kits for creating App Extensions. The official `App Extension` starter kit should be used to create App Extensions that do not provide a UI, like a component or directive, unless the objective is to install a 3rd-party library into Vue. The second official kit is the `UI` kit. This has a `ui` folder for creating your component/directive, a `ui/dev` Quasar application for testing your component/directive in isolation, and an `app-extension` folder for creating the App Extension that will be used for injecting your component/directive via the Quasar CLI into a Quasar app. The UI kit can also be used such that your component/directive can also be used with the Quasar Vite plugin or Vue CLI or UMD.
+一个**应用扩展**是一个 npm 包。有两个用于创建**应用扩展**的官方工具包。官方的 "应用扩展" 入门工具包应用于创建不带 UI 的应用扩展，如组件或指令，
+除非目的是将第三方库安装到Vue中。第二个官方工具包是 "UI" 工具包。它有一个用于创建组件/指令的`ui`文件夹，一个 `ui/dev` Quasar应用程序
+用于单独测试你的组件/指令，还有一个`app-extension`文件夹用于创建应用程序扩展，通过 Quasar CLI 将你的组件/指令注入到Quasar应用程序。
+UI工具包也可使你自定义的组件/指令 与 Quasar Vite 插件或 Vue CLI 或 UMD 一起使用。
 
 ```bash
 $ quasar create my-ext --kit app-extension
-# or
+# 或
 $ quasar create my-ui --kit ui
 ```
 
-It will prompt you about your specific needs. Do you need an install script, an uninstall script, will you be prompting the user with some questions? Pick only what you will be using. You can manually add these later if you decide otherwise.
+它会提示您具体的需求。您是否需要安装脚本、卸载脚本，您是否会向用户提示一些问题？只选择您将要使用的内容。如果您另有决定，可以在以后手动添加这些。
 
-For the sake of this documentation page, let's assume we answered with `my-ext` to the App Extension `ext-id` question (regarding the prompts above). Remember that the folder name for the App Extension source folder can be different from the actual `ext-id`. At the end, we will publish our new npm package (`quasar-app-extension-my-ext`).
+在本文档页面中，让我们假设我们用`my-ext` 来回答应用扩展`ext-id`的问题（关于上述内容）。请记住，应用扩展源文件夹的文件夹名称可以与实际的`ext-id`不同。
+最后，我们将发布我们的新 npm 包（`quasar-app-extension-my-ext`）。
 
-Based on your response, Quasar CLI will create a folder for your App Extension’s source code that will have the following structure:
+根据你的回答，Quasar CLI 将为你的应用扩展的源代码创建一个文件夹，其结构如下。
 
 ```bash
 # app-extension kit
 .
 ├── package.json
 └── src
-    ├── index.js      # Described in Index API
-    ├── install.js    # Described in Install API
-    ├── prompts.js    # Described in Prompts API
-    └── uninstall.js  # Described in Uninstall API
+    ├── index.js # 在Index API中描述的。
+    ├── install.js # 在 Install API 中描述。
+    ├── prompts.js # 在 Prompts API 中描述的。
+    └── uninstall.js # 在 Uninstall API 中描述的。
 
 # ui kit
 .
-├── app-extension
-│   ├── package.json
-│   └── src
-│       ├── index.js           # Described in Index API
-│       ├── install.js         # Described in Install API
-│       ├── prompts.js         # Described in Prompts API
-│       └── uninstall.js       # Described in Uninstall API
+├────app-extension
+│ └── package.json
+│ └── src
+│ ├── index.js # 在 Index API 中描述的
+│ ├── install.js # 在Install API中描述。
+│ ├── prompts.js # 在 Prompts API 中描述的内容
+│ └── uninstall.js # 在 Uninstall API 中描述的。
 └── ui
     ├── package.json
-    ├── build                  # build scripts
-    ├── dev                    # Quasar app for testing component/directive
+    ├── build # 构建脚本
+    ├── dev # 用于测试组件/指令的 Quasar 应用程序
     └── src
-        ├── components         # (optional) Folder for your component(s)
-        │   ├── Component.js   # (optional) Code for your component(s)
-        │   └── Component.sass # (optional) Sass for your component(s)
-        ├── directives         # (optional) Folder for your directive(s)
-        │   ├── Directive.js   # (optional) Code for your directive(s)
-        │   └── Directive.sass # (optional) Sass for your directive(s)
-        ├── mixins             # (optional) Where to put your mixin sources
-        ├── index.js           # Exports and Vue injection
-        └── index.sass         # Sass imports
+        ├── components # (可选)，用于存放你的组件的文件夹
+        │ ├──Component.js # (可选) 组件的代码
+        │ └──Component.sass # (可选) 用于组件的 Sass 代码
+        ├── directives # (可选) directive的文件夹
+        │ └── Directive.js # (可选) Directive的代码
+        │ └── Directive.sass # (可选) 用于指令的 Sass 代码
+        └── mixins # (optional) 放置 mixin 源的地方
+        └── index.js # 輸出與 Vue 注入
+        └── index.sass # Sass导入
 ```
 
-Except for `src/index.js` (from the `app-extension` kit) or `app-extension/src/index.js` (from the `ui` kit) , all the other files are optional. You can manually add or remove them at any point in time.
+除了`src/index.js`（来自`app-extension`工具包）或`app-extension/src/index.js`（来自`ui`工具包），其他文件都是可选的。你可以在任何时候手动添加或删除它们。
 
-When using the `UI` kit, you will have two npm packages; one for the App Extension and one for the UI module. For testing with the `dev` app, from the `ui` folder type `yarn dev`. Create pages in the `dev` folder for testing and they will automatically be injected into the test app. Also, check out the `scripts` section in the `package.json` to see what you have available. When you `yarn build`, a `dist` folder will be created and populated with various types of packages (common, esm, and umd).
+当使用`UI`工具包时，你将有两个npm包；一个用于App Extension，一个用于UI模块。对于使用`dev`应用程序的测试，从`ui`文件夹中输入`yarn dev`。
+在`dev`文件夹中创建用于测试的页面，它们将自动被注入到测试应用程序中。另外，查看`package.json`中的`scripts`部分，看看你有什么可用的东西。
+当你执行`yarn build`命令时，将创建一个`dist`文件夹并创建各种类型的包（common, esm, and umd）。
 
-## App Extension Scripts description
 
-| Name               | Description                                               |
+## 应用扩展脚本描述
+
+| 名称 | 描述 |
 | ------------------ | --------------------------------------------------------- |
-| `src/prompts.js`   | Handles the prompts when installing the App Extension     |
-| `src/install.js`   | Extends the installation procedure of the App Extension   |
-| `src/index.js`     | Is executed on `quasar dev` and `quasar build`            |
-| `src/uninstall.js` | Extends the uninstallation procedure of the App Extension |
+| `src/prompts.js` | 处理安装应用扩展时的提示信息 |
+| `src/install.js` | 扩展应用扩展的安装程序。|
+| `src/index.js` | 在`quasar dev`和`quasar build`中执行。|
+| `src/uninstall.js` | 扩展应用的卸载程序。 |
 
-## Handling package dependencies
+## 处理软件包的依赖性
 
-If your App Extension has its own dependencies over some packages in order for it to be able to run (except for packages supplied by Quasar CLI, like "quasar", "@quasar/extras", "@quasar/app" -- you should use "api.compatibleWith()" for those in your /install.js and /index.js scripts -- check [Install API](/app-extensions/development-guide/install-api) and [Index API](/app-extensions/development-guide/index-api)), then yarn/npm installing them into your App Extension folder will supply them into the hosting app.
+如果你的应用扩展需要依赖某些软件包才能运行（Quasar CLI 提供的软件包除外，如 "quasar"、"@quasar/extras"、"@quasar/app" -- 你应该在/install.js和/index.js中调用 "api.compatibleWith()" -- 检查[Install API](/app-extensions/development-guide/install-api)和[Index API](/app-extensions/development-guide/index-api))，然后使用 yarn/npm 将它们安装到你的App Extension文件夹中，并提拱给托管应用程序。
 
-Example: You are creating a UI component that depends on "my-table" npm package (name is bogus, just for making a point here), then you should yarn/npm install "my-table" in your App Extension folder.
+例如: 你正在创建一个依赖 "my-table" npm包的UI组件（假设的名字，仅作为示例），那么你应该把 "my-table" 安装到你的App Extension文件夹中。
 
-::: warning
-Never yarn/npm install packages that are supplied by the Quasar CLI, because App Extensions should not be so intrusive and force the user to use a certain Quasar version. Instead, make use of "api.compatibleWith()" for those, which is equivalent to softly saying "Sorry, you need to install this version of Quasar if you want to take advantage of my App Extension".
+:: 警告
+千万不要用 yarn/npm 安装由Quasar CLI提供的软件包，因为App Extensions不应该如此具有侵入性，强迫用户使用某个Quasar版本。相反，对这些包要使用 "api.compatibleWith()"，这相当于轻声说 "对不起，如果你想利用我的应用扩展，你需要安装这个版本的Quasar"。
 :::
 
-## Manually testing
+## 手动测试
 
-We need to create a Quasar project folder to be able to test it while we develop the extension:
+我们需要创建一个Quasar项目文件夹，以便在开发应用扩展时能够对其进行测试。
 
 ```bash
 $ quasar create test-app
 ```
 
-### Install and prompts scripts
+### 安装和提示脚本
 
 ::: tip
-Learn more about what you can do with the [Prompts API](/app-extensions/development-guide/prompts-api) and the [Install API](/app-extensions/development-guide/install-api).
+了解更多关于[Prompts API](/app-extensions/development-guide/prompts-api)和[Install API](/app-extensions/development-guide/install-api)可以做什么。
 :::
 
-Inside the testing Quasar project folder, we manually add our App Extension. Notice that we are not specifying the npm package name (it's not published yet!) but a path to our App Extension folder where we develop it, since we want to test unpublished work:
+在测试Quasar项目文件夹内，我们手动添加我们的App Extension。注意，我们没有指定npm包的名称（它还没有发布！），而是指定了我们开发的App Extension文件夹的路径，因为我们想测试未发布的工作。
 
 ```bash
 $ yarn add --dev file://path/to/our/app/ext/root
-# or
+# 或者
 $ yarn add --dev link://path/to/our/app/ext/root
 ```
 
-You will need to figure out which command works best for your environment.
+你需要弄清楚哪条命令最适合你的环境。
 
 ::: warning
-There have been many reports of problems linking via `file:` and `link:`. This is outside of Quasar's reach, but is likely to do with your development environment, aka your mileage with Windows will vary.
+有许多关于通过`file:`和`link:`链接的问题报告。这不在Quasar的范围之内，但可能与你的开发环境有关，也就是你在Windows下的里程会有所不同。
 :::
 
-We then invoke it. The invoking procedure assumes that the App Extension's package is already yarn/npm installed (which we did earlier) and skips that step:
+然后我们调用它。调用过程假定App Extension的软件包已经安装了yarn/npm（我们之前已经安装了），因此跳过了这一步。
 
 ```bash
-# we said our <ext-id> will be "my-ext", so:
+# 我们的 <ext-id>将是 "my-ext"，所以:
 $ quasar ext invoke my-ext
 ```
 
-This will trigger the installation of our new App Extension. You need to redo these two steps each time you make changes and you want to test them.
+这将安装我们应用扩展的安装。每次做了改动并想测试它们时，都需要重做以上两个步骤。
 
-Additionally, if you would like to have HMR (hot module reload) capabilities in your test app while developing your App Extension, then your `quasar.conf.js > devServer > watchFiles` would look like this:
+此外，如果你想在开发应用扩展时，在你的测试应用程序中拥有HMR（热模块重载）功能，那么你的`quasar.conf.js > devServer > watchFiles`将看起来像这样：
 
 ```js
 // quasar.conf.js
 devServer: {
-  // be sure to change <myextid> below to
-  // your App Extension name:
+  // 请务必将下面的<myextid>改为你的应用程序扩展名。
   watchFiles: [
     '/node_modules/quasar-app-extension-<myextid>/*'
   ]
 }
 ```
 
-And you might want to to extend the Webpack config. Assuming you are using the [`chainWebpack`](/quasar-cli/handling-webpack#usage-with-quasar-conf-js) method, your `quasar.conf.js > build > chainWebpack` should look like this:
+而你可能想扩展Webpack的配置。假设你使用的是[`chainWebpack`](/quasar-cli/handling-webpack#usage-with-quasar-conf-js)方法，你的`quasar.conf.js > build > chainWebpack`应该是这样的：
 
 ```js
 chainWebpack (chain) {
@@ -143,79 +149,81 @@ chainWebpack (chain) {
 },
 ```
 
-### Uninstall script
+### 卸载脚本
 
 ::: tip
-Learn more about what you can do with the [Uninstall API](/app-extensions/development-guide/uninstall-api).
+了解更多关于[Uninstall API](/app-extensions/development-guide/uninstall-api)可以做什么。
 :::
 
-Assuming you've installed your App Extension following the section above, we can now test the uninstall script (if you have any):
+假设你已经按照上面的部分安装了你的App Extension，我们现在可以测试卸载脚本（如果你有的话）。
 
 ```bash
 $ quasar ext uninvoke my-ext
 ```
 
-The command above similarly does not modify or remove the npm package from package.json and node_modules. It simply calls the uninstall script and removes it from the registered/installed App Extensions list in your testing Quasar app project folder. Your end-user will however call `$ quasar ext remove my-ext` to uninstall it, which also uninstalls the npm package.
+上述命令同样没有修改或删除 package.json 和 node_modules 中的 npm 包。它只是调用卸载脚本，将其从测试Quasar应用项目文件夹的注册/安装的应用扩展列表中删除。然而，你的最终用户将调用`$ quasar ext remove my-ext`来卸载它，这也会卸载 npm 包。
 
-You need to redo these install steps and issue the uninvoke command each time you make changes to the uninstall script and you want to test them.
+你需要重做这些安装步骤，并在每次你对卸载脚本进行修改并想测试时发出 uninvoke 命令。
 
-### Index script
+### 索引脚本
 
-In the sections above we described how to test the prompts, install and uninstall scripts. Now it's time for the index script, which is the heart of your App Extension.
+在上面的章节中，我们描述了如何测试提示、安装和卸载脚本。现在是索引脚本的时间了，它是你的应用扩展的核心。
 
-This is where you can tamper with all `quasar.config.js` options, extend the Webpack configuration, register Quasar CLI commands, start up external services required for developing your app and many more.
+在这里你可以篡改所有的`quasar.config.js`选项，扩展Webpack配置，注册Quasar CLI命令，启动开发应用程序所需的外部服务等等。
 
-As a result, the index script is run each time `$ quasar dev` and `$ quasar build` are executed.
+因此，每次执行`$ quasar dev`和`$ quasar build`时，都会运行索引脚本。
 
-In order to test the index script, you can repeat the uninstall and install procedures described above each time you change something in the App Extension script code. But it becomes very tedious. If you are developing on a Unix OS (MacOS, Linux), you can take advantage of the `yarn link` command which creates a [symbolic link](https://en.wikipedia.org/wiki/Symbolic_link) from the Quasar testing app's node_modules folder to the folder of your extension:
+为了测试索引脚本，你可以在每次改变App Extension脚本代码中的某些内容时，重复上述的卸载和安装程序。但这变得非常乏味。如果你在Unix操作系统(MacOS, Linux)上开发，你可以利用`yarn link`命令，从Quasar测试应用的node_modules文件夹创建一个[符号链接](https://en.wikipedia.org/wiki/Symbolic_link)到你的扩展文件夹中。
 
 ```bash
 $ cd /path/to/app/extension/folder
 
-# we register the extension through yarn
+# 我们通过yarn注册这个扩展
 $ yarn link
 
 $ cd /path/to/quasar/testing/app/folder
 
-$ yarn link quasar-app-extension-<ext-id>
-# in our demo case, it's this:
+$ yarn link quasar-app-extension-<ext-id
+# 在我们的演示案例中，它是这样的。
 # $ yarn link quasar-app-extension-my-ext
 ```
 
-Remember that if you need to `yarn/npm install` any dependencies into **your** App Extension, then you must also uninstall your App Extension and re-install it in your test app:
+记住，如果你需要`yarn/npm安装`任何依赖项到**你的**应用扩展中，那么你也必须卸载你的应用扩展并在你的测试应用中重新安装。
 
 ```bash
 $ cd /path/to/app/extension/folder
 
-# run yarn/npm command (install/uninstall, etc)
+# 运行yarn/npm命令（安装/卸载，等等）
 
-# then
+# 然后
 
 $ cd /path/to/quasar/testing/app/folder
 
-# Uninstall the app ext
+# 卸载应用程序ext
 $ quasar ext uninvoke my-ext
 
-# Re-install the app ext
+# 重新安装应用程序 ext
 $ quasar ext invoke my-ext
 ```
 
-You really only need to `quasar ext invoke my-ext` (install) the App Extension to re-install it. The above information is for completeness.
+你实际上只需要`quasar ext invoke my-ext`（安装）应用扩展就可以重新安装它。上面的信息是为了完整起见。
 
 ::: warning
-There have been many reports of problems with `yarn link` on Windows. This is outside of Quasar's reach, but is likely to do with your development environment, aka your mileage with Windows will vary.
+有很多关于Windows上`yarn link`的问题报告。这不在Quasar的范围之内，但很可能与你的开发环境有关，也就是你在Windows上的里程数会有所不同。
 :::
 
 ::: tip
-Learn more about what you can do with the [Index API](/app-extensions/development-guide/index-api).
+了解更多关于你能用[索引API]（/app-extensions/development-guide/index-api）做什么。
 :::
 
-## Publishing
+## 发布
 
-When you finalized your App Extension and you're ready to deploy it, all you need to do is to publish it to the npm repository.
+当你完成了你的App Extension并准备部署它时，你需要做的就是把它发布到npm仓库。
 
-Inside of your App Extension folder, run [yarn publish](https://yarnpkg.com/lang/en/docs/cli/publish/) or [npm publish](https://docs.npmjs.com/cli/publish). Both do the same thing.
+在你的App Extension文件夹中，运行[yarn publish](https://yarnpkg.com/lang/en/docs/cli/publish/)或[npm publish](https://docs.npmjs.com/cli/publish)。两者都做同样的事情。
 
 ::: warning
-It's important to remember to NOT strip out the `quasar-app-extension-` prefix from the `name` property of your extension's `package.json`, otherwise Quasar CLI will not recognize it.
+一定要记住不要把`quasar-app-extension-`前缀从扩展的`package.json`的`name`属性中剥离出来，否则 Quasar CLI 将无法识别它。
 :::
+
+

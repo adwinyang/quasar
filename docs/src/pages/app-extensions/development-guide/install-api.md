@@ -1,58 +1,58 @@
 ---
-title: App Extension Install API
-desc: The API for the install script of a Quasar App Extension. Initializes the app space by rendering or changing files and more.
+title: 应用扩展(App Extension)安装 API
+desc: Quasar 应用扩展脚本 API。通过渲染或更改文件等来初始化应用程序空间。
 ---
 
-This page refers to `src/install.js` file which is executed on the installation of the App Extension only. Not all App Extensions will need an install -- this is an optional step.
+此页面引用安装应用扩展时执行的 `src/install.js` 文件。并非所有应用扩展都需要安装 —— 这是一个可选步骤。
 
-Example of basic structure of the file:
+文件的基本结构示例：
+
 
 ```js
-module.exports = function (api) {
-  // props and methods for "api" Object
-  // are described below
+module.exports = function(api) {
+  // “api” 对象的属性和方法，描述如下
 }
 ```
 
 ## api.extId
-Contains the `ext-id` (String) of this App Extension.
+该应用扩展中（App Extension）包含的`ext-id'（String）。
 
 ## api.prompts
-Is an Object which has the answers to the prompts when this App Extension gets installed. For more info on prompts, check out [Prompts API](/app-extensions/development-guide/prompts-api).
+是一个对象，该对象具有安装此应用扩展时的提示答案。有关提示的更多信息，请查看 [Prompts API](/app-extensions/development-guide/prompts-api)。
 
 ## api.resolve
-Resolves paths within the app on which this App Extension is running. Eliminates the need to import `path` and resolve the paths yourself.
+解析运行此应用扩展所在的应用程序中的路径。无需自行导入`path`和解析路径。
 
 ```js
-// resolves to root of app
+// 解析为 app 的 root 目录 （根目录)
 api.resolve.app('src/my-file.js')
 
-// resolves to root/src of app
+// 解析为 app 的 root/src 目录
 api.resolve.src('my-file.js')
 
-// resolves to root/src-pwa of app
+// 解析为 app 的 root/src-pwa  目录
 api.resolve.pwa('some-file.js')
 
-// resolves to root/src-ssr of app
+//  解析为 app 的 root/src-ssr  目录
 api.resolve.ssr('some-file.js')
 
-// resolves to root/src-cordova of app
+// 解析为 app 的 roo/src-cordova  目录
 api.resolve.cordova('config.xml')
 
-// resolves to root/src-electron of app
+// 解析为 app 的 roo/electron 目录
 api.resolve.electron('some-file.js')
 ```
 
 ## api.appDir
-Contains the full path (String) to the root of the app on which this App Extension is running.
+运行该应用扩展的 app 根目录的完整路径（String）。
 
 ## api.compatibleWith
 
-Ensure the App Extension is compatible with a package installed in the host app through a semver condition.
+通过 semver 条件确保应用扩展(App Extension)与主机应用中安装的软件包兼容。
 
-If the semver condition is not met, then @quasar/app errors out and halts execution.
+如果不满足 semver 条件，那么 @quasar/app 就会出错并停止执行。
 
-Example of semver condition: `'1.x || >=2.5.0 || 5.0.0 - 7.2.3'`.
+semver 条件示例：`'1.x || >=2.5.0 || 5.0.0 - 7.2.3'。
 
 ```js
 /**
@@ -64,60 +64,61 @@ api.compatibleWith('@quasar/app', '1.x')
 
 ## api.hasPackage
 
-Determine if some package is installed in the host app through a semver condition.
+通过 semver 条件确定主机应用程序中是否安装了某些包。
 
-Example of semver condition: `'1.x || >=2.5.0 || 5.0.0 - 7.2.3'`.
+semver条件示例：`'1.x || >=2.5.0 || 5.0.0 - 7.2.3'。
 
 ```js
 /**
  * @param {string} packageName
  * @param {string} (optional) semverCondition
- * @return {boolean} package is installed and meets optional semver condition
+ * @return {boolean} 包已安装并满足可选的semver条件
  */
 if (api.hasPackage('vuelidate')) {
-  // hey, this app has it (any version of it)
+  // 嘿，这个应用程序有它（任意版本）。
 }
 if (api.hasPackage('quasar', '^1.0.0')) {
-  // hey, this app has v1 installed
+  // 嘿，这个应用程序已经安装了v1版本
 }
 ```
 
 ## api.hasExtension
-Check if another app extension is npm installed and Quasar CLI has invoked it.
+检查另一个应用扩展是否已安装npm，并且Quasar CLI已调用它。
 
 ```js
 /**
- * Check if another app extension is installed
+ * 检查是否安装了另一个应用扩展
  *
  * @param {string} extId
- * @return {boolean} has the extension installed & invoked
+ * @return {boolean} 是否安装并调用了该扩展？
  */
 if (api.hasExtension(extId)) {
-  // hey, we have it
+  // 嘿，我们有它了
 }
-```
+````
 
 ## api.getPackageVersion
 
-Get the version of a host app package.
+获取主机应用程序包的版本。
 
 ```js
 /**
- * @param {string} packageName
- * @return {string|undefined} version of app's package
- */
-console.log( api.getPackageVersion(packageName) )
-// output examples:
-//   1.1.3
-//   undefined (when package not found)
+*param {string} packageName
+* @return {string|undefined}应用程序包的版本
+  */
+  console.log( api.getPackageVersion(packageName) )
+  // 输出示例。
+  // 1.1.3
+  // 未定义 (当软件包未找到时)
 ```
+`
 
 ## api.extendPackageJson
-Helper method to extend package.json with new props. If specifying existing props, **it will override** them.
+使用新属性(props) 扩展 package.json 的辅助方法。如果指定现有属性，**它将覆盖**它们。
 
 ```js
 /**
- * @param {object|string} extPkg - Object to extend with or relative path to a JSON file
+ * @param {object|string} extPkg - 要扩展的对象或 JSON 文件的相对路径
  */
 api.extendPackageJson({
   scripts: {
@@ -126,15 +127,15 @@ api.extendPackageJson({
 })
 ```
 
-The above example adds an npm script to the app's package.json, so you can then execute `yarn electron` (or the equivalent `npm run electron`).
+上面的例子在应用程序的 package.json 中添加了一个 npm 脚本，这样你就可以执行 `yarn electron`（或等效的 `npm run electron`）。
 
 ## api.extendJsonFile
-Extend a JSON file with new props (deep merge). If specifying existing props, it will override them.
+使用新属性扩展 JSON 文件（深度合并）。如果指定现有属性，它将覆盖它们。
 
 ```js
 /**
- * @param {string} file (relative path to app root folder)
- * @param {object} newData (Object to merge in)
+ * @param {string} 文件（应用根文件夹的相对路径）
+ * @param {object} newData（要合并的对象）
  */
 api.extendJsonFile('src/some.json', {
   newProp: 'some-value'
@@ -142,94 +143,91 @@ api.extendJsonFile('src/some.json', {
 ```
 
 ## api.render
-Renders (copies) a folder from your App Extension templates (any folder you specify) into root of the app. Maintains the same folder structure that the template folder has.
+将应用扩展模板中的文件夹（您指定的任何文件夹）渲染（复制）到应用的根目录中。保持与模板文件夹相同的文件夹结构。
 
-If some of the files already exist in the app then it will ask the user if they should be overwritten or not.
+如果应用程序中已经存在某些文件，那么它会询问用户是否应该覆盖它们。
 
-Needs a relative path to the folder of the file calling render().
+需要调用 render() 的文件所在文件夹的相对路径。
 
 ```js
 /**
- * Render a folder from extension templates into devland
- * Needs a path (to a folder) relative to the path of the file where render() is called
+ * 将一个文件夹从扩展模板渲染到 devland
+ * 需要一个相对于调用 render() 的文件路径的路径（到文件夹）
  *
- * @param {string} templatePath (relative path to folder to render in app)
- * @param {object} scope (optional; rendering scope variables)
+ * @param {string} templatePath（要在应用程序中渲染的文件夹的相对路径）
+ * @param {object} 范围（可选；渲染范围变量）
  */
 api.render('./path/to/a/template/folder')
 ```
 
-### Filename edge cases
-If you want to render a template file that either begins with a dot (i.e. .env) you will have to follow a specific naming convention, since dotfiles are ignored when publishing your plugin to npm:
+### 文件名边缘情况
+如果要渲染以点开头的模板文件（即 .env），则必须遵循特定的命名约定，因为在将插件发布到 npm 时会忽略点文件：
 
 ```bash
-# templates containing dotfiles must use an
-# underscore instead of the dot in their names:
+# 包含点文件的模板必须使用
+# 下划线而不是名称中的点：
 
-some-folder/_env
+some-floder/_env
 
-# When calling api.render('./some-folder'), this will be
-# rendered in the project folder as:
+# 当调用 api.render('./some-folder') 时，将在项目文件夹中呈现为：
 
 /.env
 ```
 
-If you want to render a file whose name actually begins with an underscore, then the filename must begin with `__` (two underscore characters instead of only one):
+如果要渲染名称实际上以下划线开头的文件，那么文件名必须以`__`开头（两个下划线字符而不是一个）：
 
 ```bash
-some-folder/__my.css
+same-floder/__my.css
 
-# When calling api.render('./template'), this will be
-# rendered in the project folder as:
+# 当调用 api.render('./template') 时， 将在项目文件夹中呈现为：
 
 /_my.css
 ```
 
-### Using scope
-You can also inject some decision-making code into the files to be rendered by interpolating with [lodash.template](https://www.npmjs.com/package/lodash.template) syntax.
+### 使用范围
+您还可以通过使用 [lodash.template](https://www.npmjs.com/package/lodash.template) 语法插入一些决策代码到要渲染的文件中。
 
-Example:
+例子：
 
 ```js
 // src/install.js
-// (my-folder is located in same folder as
-// the file in which following call takes place)
+//（my-floder 位于与以下调用文件相同的文件夹中）
 api.render('./my-folder', {
   prompts: api.prompts
 })
 ```
 
-Let's imagine we use a [Prompts API](/app-extensions/development-guide/prompts-api) file too. It asks the user if he/she wants "Feature X" and stores the answer in a variable called "featureX".
+假设我们也使用 [Prompts API](/app-extensions/development-guide/prompts-api) 文件。它询问用户是否需要“Feature X”并将答案存储在名为“featureX”的变量中。
 
-We can take some decisions on what the files that we render look like, during rendering them. This removes the need of creating two folders and deciding which to render, based on some decision.
+在渲染过程中，我们可以对渲染的文件外观做出一些变更。这样就不需要创建两个文件夹，并根据某些决策来决定渲染哪个文件。
 
 ```js
 // src/my-folder/some-file.js
 
 <% if (prompts.featureX) { %>
-const message = 'This is content when "Feature X" exists'
+const message = '这是 “Feature X” 存在时的内容'
 <% } else { %>
-const message = 'This is content when we don\'t have "Feature X"'
-<% } %>
+const message = '这是我们没有 “Feautre X” 时的内容'
+<%} %>
 ```
 
-Possibilities are limited only by your imagination.
+可能性仅受您的想象力的限制。
 
 ## api.renderFile
 
-Similar with api.render() with the difference that this method renders a single file.
+与 api.render() 类似，不同之处在于此方法渲染单个文件。
 
 ```js
 /**
- * Render a file from extension template into devland
- * Needs a path (to a file) relative to the path of the file where renderFile() is called
+ * 将一个文件从扩展模板渲染成 devland
+ * 需要一个相对于调用 renderFile() 的文件路径的路径（指向一个文件）
  *
- * @param {string} relativeSourcePath (file path relative to the folder from which the install script is called)
- * @param {string} relativeTargetPath (file path relative to the root of the app -- including filename!)
- * @param {object} scope (optional; rendering scope variables)
+ * @param {string} relativeSourcePath（相对于调用安装脚本的文件夹的文件路径）
+ * @param {string} relativeTargetPath（相对于应用根目录的文件路径 —— 包括文件名！）
+ * @param {object} 范围（可选；渲染范围变量）
  */
 api.renderFile('./path/to/a/template/filename', 'path/relative/to/app/root/filename', {
-  prompts: api.prompts
+  prompts：api.prompts
 })
 
 api.renderFile('./my-file.json', 'src/my-file.json')
@@ -237,7 +235,7 @@ api.renderFile('./my-file.json', 'src/my-file.json')
 
 ## api.getPersistentConf
 
-Get the internal persistent config of this extension. Returns empty object if it has none.
+获取此扩展的内部持久化配置。如果没有，则返回空对象。
 
 ```js
 /**
@@ -248,7 +246,7 @@ api.getPersistentConf()
 
 ## api.setPersistentConf
 
-Set the internal persistent config of this extension. If it already exists, it is overwritten.
+设置此扩展的内部持久化配置。如果它已经存在，则会被覆盖。
 
 ```js
 /**
@@ -261,7 +259,7 @@ api.setPersistentConf({
 
 ## api.mergePersistentConf
 
-Deep merge into the internal persistent config of this extension. If extension does not have any config already set, this is essentially equivalent to setting it for the first time.
+深入合并到此扩展的内部持久化配置中。如果扩展还没未进行任何配置，则相当于第一次设置它。
 
 ```js
 /**
@@ -273,11 +271,11 @@ api.mergePersistentConf({
 ```
 
 ## api.onExitLog
-Adds a message to be printed after App CLI finishes up installing the App Extension and is about to exit. Can be called multiple times to register multiple exit logs.
+添加一条消息，在 App CLI 完成安装应用扩展并将退出后打印。可以多次调用以注册多个退出日志。
 
 ```js
 /**
  * @param {string} msg
  */
-api.onExitLog('Thanks for installing my awesome extension')
+api.onExitLog('感谢安装我 awesome 扩展')
 ```

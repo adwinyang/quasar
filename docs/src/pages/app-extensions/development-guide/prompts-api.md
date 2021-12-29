@@ -1,40 +1,39 @@
 ---
-title: App Extension Prompts API
-desc: Syntax of the questions that the user is going to be asked in order to configure the Quasar App Extension.
+title: 应用程序扩展提示 API
+desc: 为配置Quasar应用程序扩展而向用户提出的问题的语法。
 ---
 
-This page refers to `src/prompts.js` file which handles the prompts when installing the App Extension. Not all App Extensions will need prompts -- this is an optional step.
+本页指的是`src/prompts.js`文件，该文件在安装App Extension时处理提示问题。并非所有的应用扩展都需要提示--这是一个可选的步骤。
 
-The user's answers are stored into `/quasar.extensions.json` (root of project folder), which should not be tampered with unless you really know what you are doing.
+用户的答案被保存在`/quasar.extensions.json`（项目文件夹的根目录），除非你真的知道你在做什么，否则不应该被篡改。
 
-Example of basic structure of the file:
+文件的基本结构示例:
 
 ```js
 module.exports = function () {
   return [
-    // questions
+    //问题
   ]
 }
 ```
 
-You will have access to `api.prompts` (which holds your App Extension's answers) in [Install](/app-extensions/development-guide/install-api), [Index](/app-extensions/development-guide/index-api) and [Uninstall](/app-extensions/development-guide/uninstall-api).
+你可以在[Install](/app-extensions/development-guide/install-api)、[Index](/app-extensions/development-guide/index-api)和[Uninstall](/app-extensions/development-guide/uninstall-api)中访问`api.prompts`（它保存你的App Extension的答案）。
 
-Let's now focus on the structure of the returned Array which defines the questions. The sections below offer examples for the most used types of questions.
+现在让我们关注定义问题的返回数组的结构。以下各节提供了最常用问题类型的示例。
 
 ::: warning
-The following is not an exhaustive list of possible types of questions and by no means it describes the full API available. Check out [Inquirer.js](https://github.com/SBoudrias/Inquirer.js#readme) for that (which is used by Quasar CLI under the hood).
+以下并不是一个可能的问题类型的详尽列表，也绝不是描述了全部可用的API。请查看[Inquirer.js](https://github.com/SBoudrias/Inquirer.js#readme)，以了解这方面的情况（Quasar CLI在后台使用）。
 :::
 
-## String
+## 字符串
 ```js
 {
-  // "description" will be the variable
-  // storing the answer
+  // "description" 是一个变更，用于保存答案
   name: 'description'
   type: 'input',
-  required: false, // optional
-  message: 'Project description',
-  default: 'A Quasar Framework app', // optional
+    required: false, // 可选
+    message: 'Project description',
+default: 'A Quasar Framework app', // 可选
 }
 ```
 
@@ -42,50 +41,48 @@ The following is not an exhaustive list of possible types of questions and by no
 {
   name: 'source_build',
   type: 'input',
-  required: true, // optional
+  required: true, // 可选
   message:
-    'If you want a separate file to be the source image during production, please specify it here: ',
+    '如果你想在生产过程中用一个单独的文件作为源图像，请在这里指定它：',
   validate: (input) => {
-    // ...do something ...
+    // ...做一些事情 ...
   },
-  default: (answers) => {
+  default: (answer) => {
     return answers.source_dev || defaultImg
   }
 }
 ```
 
-## Confirm
+## 确认
 ```js
 {
-  // "featureX" will be the variable
-  // storing the answer
+  // "featureX "将是一个变量, 用于保存答案
   name: 'featureX',
   type: 'confirm',
-  message: 'Use Feature X?',
-  default: true // optional
+  message: '使用 feature X,
+  default: true // 可选
 }
 ```
 
-## List of choices
+## 列表中的选择
 ```js
 {
-  // "iconSet" will be the variable
-  // storing the answer
+  // "iconSet "将是一个变量, 用来保存答案
   name: 'iconSet',
   type: 'list',
-  message: 'Choose Icon Set',
+  message: '选择图标集',
   choices: [
     {
-      name: 'Material Icons (recommended)',
-      value: 'material-icons', // value of the answer variable
-      short: 'Material Icons' // Short name displayed after user picks this
+      name: 'Material Icons（推荐）',
+      value: 'material-icons', //答案变量的值
+      short: 'Material Icons' // 用户选择后显示的短名称
     },
     {
       name: 'Fontawesome v5',
-      value: 'fontawesome-v5', // value of the answer variable
-      short: 'Fontawesome v5' // Short name displayed after user picks this
+      value: 'fontawesome-v5', //答案变量的值
+      short: 'Fontawesome v5' // 用户选择这个后显示的短名称
     }
-    // ... all other choices
+    // ...所有其他选择
   ]
 }
 ```

@@ -1,107 +1,106 @@
 ---
-title: App Extension Uninstall API
-desc: The API for the uninstall script of a Quasar App Extension.
+title: 应用扩展卸载API
+desc: Quasar 应用扩展的卸载脚本API。
 ---
 
-This page refers to `src/uninstall.js` file which is executed when the App Extension is uninstalled. Not all App Extensions will need an uninstall -- this is an optional step.
+本页面引用到`src/uninstall.js`文件，它在应用扩展卸载时被执行。不是所有的应用扩展都需要卸载 --- 这是一个可选的步骤。
 
-Example of basic structure of the file:
+该文件的基本结构示例。
 
 ```js
 module.exports = function (api) {
-  // props and methods for "api" Object
-  // are described below
+  // "api "对象的属性和方法, 描述如下
 }
 ```
 
 ## api.extId
-Contains the `ext-id` (String) of this App Extension.
+包含这个应用扩展的`ext-id'（String）。
 
 ## api.prompts
-Is an Object which has the answers to the prompts when this App Extension gets installed. For more info on prompts, check out [Prompts API](/app-extensions/development-guide/prompts-api).
+是一个对象，该对象具有安装此应用扩展时的提示答案。关于提示的更多信息，请查看[Prompts API](/app-extensions/development-guide/prompts-api)。
 
 ## api.resolve
-Resolves paths within the app on which this App Extension is running. Eliminates the need to import `path` and resolve the paths yourself.
+解析运行此应用扩展所在的应用程序中的路径。无需自行导入`path`和解析路径。
 
-```js
-// resolves to root of app
+``` js
+// 解析为 app 的 root 目录 （根目录)
 api.resolve.app('src/my-file.js')
 
-// resolves to root/src of app
+// 解析为 app 的 root/src 目录
 api.resolve.src('my-file.js')
 
-// resolves to root/src-pwa of app
+// 解析为 app 的 root/src-pwa  目录
 api.resolve.pwa('some-file.js')
 
-// resolves to root/src-ssr of app
+//  解析为 app 的 root/src-ssr  目录
 api.resolve.ssr('some-file.js')
 
-// resolves to root/src-cordova of app
+// 解析为 app 的 roo/src-cordova  目录
 api.resolve.cordova('config.xml')
 
-// resolves to root/src-electron of app
+// 解析为 app 的 roo/electron 目录
 api.resolve.electron('some-file.js')
 ```
 
 ## api.appDir
-Contains the full path (String) to the root of the app on which this App Extension is running.
+运行该应用扩展的 app 根目录的完整路径（String）。。
 
 ## api.hasPackage
 
-Determine if some package is installed in the host app through a semver condition.
+通过 semver 条件确定主机应用程序中是否安装了某些包。
 
-Example of semver condition: `'1.x || >=2.5.0 || 5.0.0 - 7.2.3'`.
+semver条件示例：`'1.x || >=2.5.0 || 5.0.0 - 7.2.3'。
 
 ```js
 /**
  * @param {string} packageName
  * @param {string} (optional) semverCondition
- * @return {boolean} package is installed and meets optional semver condition
+ * @return {boolean} 包已安装并满足可选的semver条件
  */
 if (api.hasPackage('vuelidate')) {
-  // hey, this app has it (any version of it)
+  // 嘿，这个应用程序有它（任意版本）。
 }
 if (api.hasPackage('quasar', '^1.0.0')) {
-  // hey, this app has v1 installed
+  // 嘿，这个应用程序已经安装了v1版本
 }
 ```
 
 ## api.hasExtension
-Check if another app extension is installed.
+检查是否安装了另一个应用扩展。
 
 ```js
 /**
- * Check if another app extension is installed
+ * 检查是否安装了另一个应用程序的扩展
  *
  * @param {string} extId
- * @return {boolean} has the extension installed.
+ * @return {boolean} 是否安装了该扩展。
  */
 if (api.hasExtension(extId)) {
-  // hey, we have it
+  // 嘿，我们有它了
 }
 ```
 
 ## api.getPackageVersion
 
-Get the version of a host app package.
+获取主机应用程序包的版本。
 
 ```js
 /**
- * @param {string} packageName
- * @return {string|undefined} version of app's package
- */
-console.log( api.getPackageVersion(packageName) )
-// output examples:
-//   1.1.3
-//   undefined (when package not found)
+*param {string} packageName
+* @return {string|undefined} 应用程序包的版本
+  */
+  console.log( api.getPackageVersion(packageName) )
+  // 输出示例。
+  // 1.1.3
+  // 未定义 (当软件包未找到时)
 ```
 
 ## api.removePath
-Removes a file or folder from the app project folder (which the App Extension has installed and is no longer needed).
+从App项目文件夹中删除一个文件或文件夹（App Extension已经安装，不再需要）。
 
-Be mindful about it and do not delete the files that would break developer's app.
+要注意这一点，不要删除那些会破坏开发者的应用程序的文件。
 
-The path to file or folder needs to be relative to project's root folder.
+文件或文件夹的路径需要是相对于项目根文件夹的。
 
 ```js
 /**
@@ -110,25 +109,25 @@ The path to file or folder needs to be relative to project's root folder.
 api.removePath('my-folder')
 ```
 
-The above example deletes "my-folder" from the root of the app.
+上面的例子从应用程序的根目录删除了 "my-folder"。
 
 ## api.getPersistentConf
 
-Get the internal persistent config of this extension. Returns empty object if it has none.
+获取该扩展的内部持久化配置。如果没有，则返回空对象。
 
 ```js
 /**
- * @return {object} cfg
- */
-api.getPersistentConf()
+* @return {object} cfg
+  */
+  api.getPersistentConf()
 ```
 
 ## api.onExitLog
-Adds a message to be printed after App CLI finishes up uninstalling the App Extension and is about to exit. Can be called multiple times to register multiple exit logs.
+添加一条信息，在App CLI完成卸载App Extension并即将退出时打印。可以多次调用以注册多个退出日志。
 
 ```js
 /**
  * @param {string} msg
  */
-api.onExitLog('Thanks for having used my extension')
+api.onExitLog('感谢使用我的扩展程序')
 ```

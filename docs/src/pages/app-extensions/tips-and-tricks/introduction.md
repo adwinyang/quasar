@@ -1,8 +1,11 @@
 ---
-title: App Extension tips & tricks introduction
-desc: Introduction to the list of Quasar App Extension tips & tricks documentation.
+title: 应用程序扩展的技巧和窍门介绍
+desc: Quasar 应用扩展技巧和窍门文档列表的介绍
 ---
 
-These documentation pages will help you with information or formulae on how to do some of the things with a Quasar App Extension. Make sure you also study the introduction and the APIs of App Extension pages first.
+这些文档页面将帮助您了解有关如何使用 Quasar 应用扩展(App Extension) 执行某些操作的信息或公式。
+确保您还首先学习了应用扩展页面的介绍和API。
 
-Enjoy!
+> 译注：`Quasar App Extension`，翻译为**应用扩展**或者**应用程序扩展**, 为简单起见，后述统一翻译成**应用扩展**
+
+祝您愉快!
