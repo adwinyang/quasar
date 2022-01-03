@@ -1,6 +1,6 @@
 ---
 title: Flex Grid Playground
-desc: Interactively play with Quasar Flex Grid
+desc: 互动地玩转 Quasar Flex 网格
 related:
   - /layout/grid/introduction-to-flexbox
   - /layout/grid/row
@@ -10,10 +10,10 @@ components:
   - layout/grid/FlexPlaygroundDemo
 ---
 
-To help you understand the Flexbox better, we have written an interactive playground for you. Create your grid and then copy the values to your projects.
+为了帮助您更好地了解 Flexbox，我们为您编写了一个互动的游乐场。 创建你的网格，然后将值复制到项目。
 
 ::: tip
-The active child will have a blue index. Being active relates to the **Child Classes** and **Child Styles** listed below the results.
+活跃子项将有一个蓝色索引。 处于活动状态和结果与下面列出的**子类**和**子样式**相关。
 :::
 
 <flex-playground-demo class="q-mt-md" />

@@ -1,6 +1,6 @@
 ---
-title: Grid Gutter
-desc: How to use the Quasar grid for gutter spaces.
+title: 网格间隔(Gutter)
+desc: 如何使用 Quasar 网格进行空间隔离。
 related:
   - /layout/grid/introduction-to-flexbox
   - /layout/grid/row
@@ -8,28 +8,28 @@ related:
   - /layout/grid/flex-playground
 ---
 
-In the hope that you've previously read the [Introduction to Flexbox](/layout/grid/introduction-to-flexbox) theory, let's get deeper into Gutters.
+希望您之前读过[FlexBox简介](/layout/grid/introduction-to-flexbox)理论，让我们深入了解Gutter。
 
-Gutter Quasar CSS classes offer an easy way to space out elements (especially in a [Grid Row](/layout/grid/row)) one from each other at equal distance.
+Gutter Quasar CSS 类提供了一种简单的方法来将元素(特别是在[Grid Row](/layout/grid/row)中)以相等的距离彼此隔开。
 
-## Types
-There are two main types of gutters depending on your use-case: `q-gutter-{size}` and `q-col-gutter-{size}`. The first is to be used when the elements that you want to distance one from each other don't use `col-*` or `offset-*` classes that specify a width, and the latter is to be used when they do have `col-*` or `offset-*` classes specifying a width.
+## 类型
+根据您的用例，有两种主要类型的Gutter：`q-gutter-{size}`和`q-col-gutter-{size}`。第一种方法是在要彼此隔开的元素不使用指定宽度的`col-*`或`offset-*`类时使用，第二种方法是在元素具有指定宽度的`col-*`或`offset-*`类时使用。
 
 ::: tip
-Suffixes (`-none`, `-xs`, `-sm`, `-md`, `-lg`, `-xl`) do not refer to device screen size, but to the size of gutter between elements.
+后缀（`-none`、`-xs`、`-sm`、`-md`、`-lg`、`-xl`）不是指设备屏幕大小，而是指元素之间的间距大小。
 :::
 
-## Classes "q-gutter-{size}"
+## 类“q-gutter- {size}”
 
 ::: warning
-The `q-gutter-*` classes apply a **negative top and left margins** to the parent and a **positive top and left margins** to the children. Take this into account when working with the other [Spacing classes](/style/spacing) so as to not to break the gutter's css.
+`q-gutter-*`类将**负的顶部和左侧边距**应用于父级，将**正的顶部和左侧边距**应用于子级。在使用其他[Spacing classes](/style/spacing) 时要考虑到这一点，以免破坏 Gutter 的css。
 :::
 
-These classes are to be used when the direct children don't have `col-*` or `offset-*` classes specifying a width.
+当直接子级没有指定宽度的`col-*`或`offset-*`类时，将使用这些类。
 
 <doc-example title="Sizes for q-gutter" file="grid/GutterSize" />
 
-There's also the `q-gutter-none` class (equivalent to: no gutter applied) which wasn't included in the example above.
+还有上面的例子中没有包含的 `q-gutter-none` 类（相当于：没有应用 gutter）。
 
 <doc-example title="Horizontal only q-gutter" file="grid/GutterHorizontal" />
 
@@ -37,13 +37,13 @@ There's also the `q-gutter-none` class (equivalent to: no gutter applied) which 
 
 <doc-example title="Mixed horizontal and vertical q-gutter" file="grid/GutterMixed" />
 
-## Classes "q-col-gutter-{size}"
+## 类 “q-col-gutter-{size}”
 
 ::: warning
-The `q-col-gutter-*` classes apply a **negative top and left margins** to the parent and a **positive top and left paddings** to the children. Take this into account when working with the other [Spacing classes](/style/spacing) so as to not to break the gutter's css.
+`q-col-gutter-*`类将**负的顶部和左侧边距**应用于父级，将**正的顶部和左侧填充**应用于子级。在使用其他[Spacing classes](/style/Spacing) 时要考虑到这一点，以免破坏 Gutter 的 css。
 :::
 
-These classes are to be used when the direct children have `col-*` or `offset-*` classes that specify a width.
+当直接子级没有指定宽度的`col-*`或`offset-*`类时，将使用这些类
 
 <doc-example title="Sizes for q-col-gutter" file="grid/ColGutterSize" />
 
@@ -53,35 +53,36 @@ These classes are to be used when the direct children have `col-*` or `offset-*`
 
 <doc-example title="Mixed horizontal and vertical q-col-gutter" file="grid/ColGutterMixed" />
 
-## Pros, cons and how to workaround problems - "q-gutter-{size}" vs. "q-col-gutter-{size}"
+## 优点、缺点和解决问题的方法 - “q-ground-{size}” 与 “q-col-ground-{size}”
 
-Both set of classes have pros and cons.
+两组类各有利弊。
 
 ::: warning
-Because both `q-gutter-*` and `q-col-gutter-*` classes apply a **negative top and left margins** to the parent you should not apply styling targeting background, margin or border related properties on the parent.
+因为`q-ground-*`和`q-col-ground-*`类都将**负的顶部和左侧边距**应用于父级，所以不应在父级上应用针对背景、边距或与边框相关的属性的样式。
 
-Instead you need to wrap them in a container, apply the styling on the container, and add `overflow-auto` or `row` class **on the container**
+相反，您需要将它们包装在容器中，在容器上应用样式，并**在容器**上添加`overflow-auto`或`row`类
 :::
 
 <doc-example title="Parent styling" file="grid/ParentStyling" />
 
 ::: tip
-The `q-gutter-*` classes **do not change** the internal dimensions of the children, so you can use `background` or `border` directly on children.
+`q-gutter-*` 类**不改变**子元素的内部尺寸，因此您可以直接在子元素上使用 `background` 或 `border`。
 :::
 
 ::: warning
-The `q-gutter-*` classes **do change** the external dimensions of the children, so you cannot use `col-*` or `offset-*` classes specifying a width on children anymore.
+`q-gutter-*` 类**会改变**子元素的外部尺寸，因此您不能再使用 `col-*` 或 `offset-*` 类来指定子元素的宽度。
 :::
 
 <doc-example title="Children size compare" file="grid/ChildrenSizeCompare" />
 
 ::: warning
-Because `q-col-gutter-*` classes apply a **negative top and left padding** to the children you should not apply styling targeting background, padding or border related properties on the children. Instead you need to put the styled element inside the child and apply the styling on that element.
+因为`q-col-gutter-*`类对子项应用**负的顶部和左侧填充**，所以不应该对子项应用针对背景、填充或边框相关属性的样式。相反，您需要将样式化的元素放在子元素中，并在该元素上应用样式。
 :::
 
-<doc-example title="Children styling" file="grid/ChildrenStyling" />
+<doc-example title="Children size compare" file="grid/ChildrenSizeCompare" />
 
 ## Flex Grid Playground
-To see the Flex in action, you can use the Flex Playground to interactively learn more.
+要查看 Flex 的运行情况，您可以使用 Flex Playground 以交互方式了解更多信息。
 
 <q-btn push color="brand-primary" icon-right="launch" label="Flex Playground" to="/layout/grid/flex-playground" />
+

@@ -1,6 +1,6 @@
 ---
-title: Flexbox Patterns
-desc: Common recipes for working with flexbox CSS is and how it can be used in a Quasar App.
+title: Flexbox 模式
+desc: 使用 Flexbox CSS 的常见方法, 以及如何在 Quasar App 中使用它。
 related:
   - /layout/grid/introduction-to-flexbox
   - /layout/grid/row
@@ -9,10 +9,10 @@ related:
   - /layout/grid/flex-playground
 ---
 
-Here are some common patterns for using [Flexbox](https://css-tricks.com/snippets/css/a-guide-to-flexbox/). Some more info can be found at [Tobias Ahlin Blog](https://tobiasahlin.com/blog/).
+以下是使用[Flexbox](https://css-tricks.com/snippets/css/a-guide-to-flexbox/)的一些常见模式。 有些信息可以在[Tobias Ahlin 的博客](https://tobiasahlin.com/blog/)中找到。
 
-## Flex row / column break
-You can define a CSS class that would force the element it is applied on to create a row / column break in a flex layout.
+## Flex行/列中断
+您可以定义一个CSS类，该类将强制应用它的元素在 flex 布局中创建行/列分隔符
 
 ```sass
 .flex-break
@@ -24,10 +24,10 @@ You can define a CSS class that would force the element it is applied on to crea
   .flex-break
     width: 0 !important
 ```
-Take care not to use `no-wrap` when defining the flex container, and insert a `div` with class `flex-break` where you need.
+在定义Flex容器时，请注意不要使用`no-warp`，并在您需要的地方插入一个类为 `flex-break` 的 `div`
 
 ::: tip
-You can use `q-py-##` on row breaking elements or `q-px-##` on column breaking elements to increase the space.
+可以在行分隔元素上使用`q-py-###`或在列分隔元素上使用`q-px-###`来增加空间。
 :::
 
 ```html
@@ -46,19 +46,19 @@ You can use `q-py-##` on row breaking elements or `q-px-##` on column breaking e
 <doc-example title="Row break" file="grid/BreakRow" />
 
 ::: warning
-When using `column` type flex you must define a height for the container. The height must be large enough to hold the longest column.
+使用`column`类型 Flex 时，必须为容器定义高度。高度必须足够大，以容纳最长的一列。
 :::
 
 <doc-example title="Column break" file="grid/BreakColumn" />
 
-## Masonry-like layout
-When using a `column` type flex with multiple columns the visual order of the elements will be in vertical columns. Sometimes you want the order to follow the rows in the layout, and in order to achieve this you can use a combination or custom order CSS styles and column break elements.
+## 砌体式布局
+当将 `column` 类型的 flex 与多列一起使用时，元素的视觉顺序将是垂直列。有时，您希望顺序跟随布局中的行，为了实现这一点，您可以使用组合或自定义顺序CSS样式和分栏元素。
 
 ::: warning
-You must know how many columns you want use for the layout. Also for best visual aspect the elements in the layout should be close in height one to the others.
+您必须知道您想要用于布局的列数。 另外，对于最佳视觉方面，布局中的元素应靠近其他元素。
 :::
 
-The general CSS formula for `$x` number of columns is:
+`$x`列数的一般CSS公式是：
 
 ```scss
 $x: 3;
@@ -74,7 +74,7 @@ $x: 3;
 }
 ```
 
-Example, supossing you want a 4 column layout:
+示例，延长您想要4列布局：
 
 ```sass
 .item:nth-child(4n+1)
@@ -87,13 +87,13 @@ Example, supossing you want a 4 column layout:
   order: 4
 ```
 
-For the HTML there are some requirements that should be followed:
-- the flex column container must have a height defined
-- the column breaking elements must be placed at the start
-- the column breaking elements must be as many as the columns
-- the first column breaking element must be hidden (class `hidden` or style `display: none`)
+对于HTML，有一些要求应遵循：
+- Flex列容器必须定义高度
+- 分栏元素必须放在开头
+- 分栏元素必须与列数一样多
+- 必须隐藏第一列分栏元素(类`hidden`或样式`display: none`)
 
-Example, supossing you want a 4 column layout:
+例如，假设你想要一个 4 列的布局：
 
 ```html
 <div class="column">
@@ -111,8 +111,8 @@ Example, supossing you want a 4 column layout:
 
 <doc-example title="Masonry" file="grid/Masonry" />
 
-## Masonry with pseudo selectors to break rows / columns
-When it's not easy or not possible to insert the elements for row / column break and you need 2 or 3 rows / column you can use pseudo selectors.
+## 使用伪选择器打断行/列的砌体
+当不容易或不可能插入行/列分隔符元素，并且需要2或3行/列时，您可以使用伪（pseudo)选择器。
 
 ```sass
 .container-class
