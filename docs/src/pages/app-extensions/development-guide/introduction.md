@@ -22,8 +22,8 @@ $ quasar create my-ui --kit ui
 
 它会提示您具体的需求。您是否需要安装脚本、卸载脚本，您是否会向用户提示一些问题？只选择您将要使用的内容。如果您另有决定，可以在以后手动添加这些。
 
-在本文档页面中，让我们假设我们用`my-ext` 来回答应用扩展`ext-id`的问题（关于上述内容）。请记住，应用扩展源文件夹的文件夹名称可以与实际的`ext-id`不同。
-最后，我们将发布我们的新 npm 包（`quasar-app-extension-my-ext`）。
+在本文档页面中，让我们假设我们用`my-ext` 来回答应用扩展`ext-id`的问题(关于上述内容)。请记住，应用扩展源文件夹的文件夹名称可以与实际的`ext-id`不同。
+最后，我们将发布我们的新 npm 包(`quasar-app-extension-my-ext`)。
 
 根据你的回答，Quasar CLI 将为你的应用扩展的源代码创建一个文件夹，其结构如下。
 
@@ -62,11 +62,11 @@ $ quasar create my-ui --kit ui
         └── index.sass # Sass导入
 ```
 
-除了`src/index.js`（来自`app-extension`工具包）或`app-extension/src/index.js`（来自`ui`工具包），其他文件都是可选的。你可以在任何时候手动添加或删除它们。
+除了`src/index.js`(来自`app-extension`工具包)或`app-extension/src/index.js`(来自`ui`工具包)，其他文件都是可选的。你可以在任何时候手动添加或删除它们。
 
 当使用`UI`工具包时，你将有两个npm包；一个用于App Extension，一个用于UI模块。对于使用`dev`应用程序的测试，从`ui`文件夹中输入`yarn dev`。
 在`dev`文件夹中创建用于测试的页面，它们将自动被注入到测试应用程序中。另外，查看`package.json`中的`scripts`部分，看看你有什么可用的东西。
-当你执行`yarn build`命令时，将创建一个`dist`文件夹并创建各种类型的包（common, esm, and umd）。
+当你执行`yarn build`命令时，将创建一个`dist`文件夹并创建各种类型的包(common, esm, and umd)。
 
 
 ## 应用扩展脚本描述
@@ -80,9 +80,9 @@ $ quasar create my-ui --kit ui
 
 ## 处理软件包的依赖性
 
-如果你的应用扩展需要依赖某些软件包才能运行（Quasar CLI 提供的软件包除外，如 "quasar"、"@quasar/extras"、"@quasar/app" -- 你应该在/install.js和/index.js中调用 "api.compatibleWith()" -- 检查[Install API](/app-extensions/development-guide/install-api)和[Index API](/app-extensions/development-guide/index-api))，然后使用 yarn/npm 将它们安装到你的App Extension文件夹中，并提拱给托管应用程序。
+如果你的应用扩展需要依赖某些软件包才能运行(Quasar CLI 提供的软件包除外，如 "quasar"、"@quasar/extras"、"@quasar/app" -- 你应该在/install.js和/index.js中调用 "api.compatibleWith()" -- 检查[Install API](/app-extensions/development-guide/install-api)和[Index API](/app-extensions/development-guide/index-api))，然后使用 yarn/npm 将它们安装到你的App Extension文件夹中，并提拱给托管应用程序。
 
-例如: 你正在创建一个依赖 "my-table" npm包的UI组件（假设的名字，仅作为示例），那么你应该把 "my-table" 安装到你的App Extension文件夹中。
+例如: 你正在创建一个依赖 "my-table" npm包的UI组件(假设的名字，仅作为示例)，那么你应该把 "my-table" 安装到你的App Extension文件夹中。
 
 :: 警告
 千万不要用 yarn/npm 安装由Quasar CLI提供的软件包，因为App Extensions不应该如此具有侵入性，强迫用户使用某个Quasar版本。相反，对这些包要使用 "api.compatibleWith()"，这相当于轻声说 "对不起，如果你想利用我的应用扩展，你需要安装这个版本的Quasar"。
@@ -102,7 +102,7 @@ $ quasar create test-app
 了解更多关于[Prompts API](/app-extensions/development-guide/prompts-api)和[Install API](/app-extensions/development-guide/install-api)可以做什么。
 :::
 
-在测试Quasar项目文件夹内，我们手动添加我们的App Extension。注意，我们没有指定npm包的名称（它还没有发布！），而是指定了我们开发的App Extension文件夹的路径，因为我们想测试未发布的工作。
+在测试Quasar项目文件夹内，我们手动添加我们的App Extension。注意，我们没有指定npm包的名称(它还没有发布！)，而是指定了我们开发的App Extension文件夹的路径，因为我们想测试未发布的工作。
 
 ```bash
 $ yarn add --dev file://path/to/our/app/ext/root
@@ -116,7 +116,7 @@ $ yarn add --dev link://path/to/our/app/ext/root
 有许多关于通过`file:`和`link:`链接的问题报告。这不在Quasar的范围之内，但可能与你的开发环境有关，也就是你在Windows下的里程会有所不同。
 :::
 
-然后我们调用它。调用过程假定App Extension的软件包已经安装了yarn/npm（我们之前已经安装了），因此跳过了这一步。
+然后我们调用它。调用过程假定App Extension的软件包已经安装了yarn/npm(我们之前已经安装了)，因此跳过了这一步。
 
 ```bash
 # 我们的 <ext-id>将是 "my-ext"，所以:
@@ -125,7 +125,7 @@ $ quasar ext invoke my-ext
 
 这将安装我们应用扩展的安装。每次做了改动并想测试它们时，都需要重做以上两个步骤。
 
-此外，如果你想在开发应用扩展时，在你的测试应用程序中拥有HMR（热模块重载）功能，那么你的`quasar.conf.js > devServer > watchFiles`将看起来像这样：
+此外，如果你想在开发应用扩展时，在你的测试应用程序中拥有HMR(热模块重载)功能，那么你的`quasar.conf.js > devServer > watchFiles`将看起来像这样：
 
 ```js
 // quasar.conf.js
@@ -155,7 +155,7 @@ chainWebpack (chain) {
 了解更多关于[Uninstall API](/app-extensions/development-guide/uninstall-api)可以做什么。
 :::
 
-假设你已经按照上面的部分安装了你的App Extension，我们现在可以测试卸载脚本（如果你有的话）。
+假设你已经按照上面的部分安装了你的App Extension，我们现在可以测试卸载脚本(如果你有的话)。
 
 ```bash
 $ quasar ext uninvoke my-ext
@@ -193,7 +193,7 @@ $ yarn link quasar-app-extension-<ext-id
 ```bash
 $ cd /path/to/app/extension/folder
 
-# 运行yarn/npm命令（安装/卸载，等等）
+# 运行yarn/npm命令(安装/卸载，等等)
 
 # 然后
 
@@ -206,14 +206,14 @@ $ quasar ext uninvoke my-ext
 $ quasar ext invoke my-ext
 ```
 
-你实际上只需要`quasar ext invoke my-ext`（安装）应用扩展就可以重新安装它。上面的信息是为了完整起见。
+你实际上只需要`quasar ext invoke my-ext`(安装)应用扩展就可以重新安装它。上面的信息是为了完整起见。
 
 ::: warning
 有很多关于Windows上`yarn link`的问题报告。这不在Quasar的范围之内，但很可能与你的开发环境有关，也就是你在Windows上的里程数会有所不同。
 :::
 
 ::: tip
-了解更多关于你能用[索引API]（/app-extensions/development-guide/index-api）做什么。
+了解更多关于你能用[索引API](/app-extensions/development-guide/index-api)做什么。
 :::
 
 ## 发布

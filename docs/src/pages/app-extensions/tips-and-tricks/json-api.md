@@ -88,9 +88,9 @@ null
 | 描述  | 描述所描述项目的字符串 |
 | 必须  | [true,false] |
 | 值   | 一个受限值的数组。例如：`[0, 0.5, 1.0, 1.5, 2.0]` |
-| 定义  | 描述一个对象的定义。这是一个基本符合基础对象的对象。它可以包含 `"type"`, `"desc"`, `"required"`, `"examples"`, `"values"` and `"definition"`（递归)|
-| 参数  | 通常用于描述一个函数的参数。这需要一个或多个参数作为一个对象的关键，这个对象基本符合基础对象的要求。它可以包含`"type"、`"desc"、`"required"、`"examples"、`"values"和`"definition"（递归） |
-| 返回值 | 返回值（对于方法或函数）|
+| 定义  | 描述一个对象的定义。这是一个基本符合基础对象的对象。它可以包含 `"type"`, `"desc"`, `"required"`, `"examples"`, `"values"` and `"definition"`(递归)|
+| 参数  | 通常用于描述一个函数的参数。这需要一个或多个参数作为一个对象的关键，这个对象基本符合基础对象的要求。它可以包含`"type"、`"desc"、`"required"、`"examples"、`"values"和`"definition"(递归) |
+| 返回值 | 返回值(对于方法或函数)|
 | 类别  | 用于分组 |
 
 所有的项目都是可选的，但至少你应该提供一个描述。
@@ -101,7 +101,7 @@ null
   "props": {
     "value": {
       "type": "Boolean",
-      "desc": "组件的模型，定义它是否向用户显示或隐藏；要么使用这个属性（与'input'事件的监听器一起），要么使用v-model指令"。
+      "desc": "组件的模型，定义它是否向用户显示或隐藏；要么使用这个属性(与'input'事件的监听器一起)，要么使用v-model指令"。
       "default": true。
       "examples": [
         "v-model=\"footerState\""
@@ -115,22 +115,22 @@ null
       "definition": {
         "days": {
           "type": "Array",
-          "desc": "全日名称（DDDD）的列表，从星期日开始"。
+          "desc": "全日名称(DDDD)的列表，从星期日开始"。
           "examples": ["['Duminica', 'Luni', 'Marti', '...']" ]
         },
         "dayShort": {
           "type": "Array",
-          "desc": "短日名称（DDD）的列表，从星期日开始"。
+          "desc": "短日名称(DDD)的列表，从星期日开始"。
           "examples": ["['Dum', 'Lun', 'Mar', '...']" ]
         },
         "months": {
           "type": "Array",
-          "desc": "完整的月份名称（MMMM）列表，从一月开始"。
+          "desc": "完整的月份名称(MMMM)列表，从一月开始"。
           "examples": [ "['Ianuarie', 'Februarie', 'Martie', '...']" ]
         },
         "monthShort": {
           "type": "Array",
-          "desc": "简短的月份名称（MMM）列表，从一月开始"。
+          "desc": "简短的月份名称(MMM)列表，从一月开始"。
           "examples": [ "['Ian', 'Feb', 'Mar', '...']" ]
         }
       },
@@ -164,7 +164,7 @@ null
     },
     "events": {
       "type": [ "Array", "Function" ],
-      "desc": "在日历上突出显示的事件列表；如果使用一个函数，它接收的日期为一个字符串，并且必须返回一个布尔值（匹配或不匹配）"。
+      "desc": "在日历上突出显示的事件列表；如果使用一个函数，它接收的日期为一个字符串，并且必须返回一个布尔值(匹配或不匹配)"。
       "examples": [
         ":events=\"['2018/11/05', '2018/11/06', '2018/11/09', '2018/11/23']\"",
         ":events=\"date => date[9] % 3 === 0\""
@@ -196,7 +196,7 @@ null
         },
         "reason": {
           "type": "String",
-          "desc": "用户交互的原因（被选中的内容）"。
+          "desc": "用户交互的原因(被选中的内容)"。
           "value": ["年", "月", "日", "今天", "地区", "mask" ]
         },
         "details": {
@@ -230,7 +230,7 @@ null
     },
 
     "avatar": {
-      "desc": "用于显示头像的槽（建议：QIcon, QAvatar）"
+      "desc": "用于显示头像的槽(建议：QIcon, QAvatar)"
     },
 
     "selected-item": {
@@ -247,7 +247,7 @@ null
         },
         "selected": {
           "type": "Boolean",
-          "desc": "总是 True -- 作为 Prop 传递给 QItem（当使用 QItem 时）"
+          "desc": "总是 True -- 作为 Prop 传递给 QItem(当使用 QItem 时)"
         },
         "removeAtIndex": {
           "type": "Function",
@@ -303,7 +303,7 @@ null
       },
       "return"。{
         "type": "Promise<boolean>"。
-        "desc": "承诺总是被履行，并收到结果（true -> 验证是成功的，false -> 检测到无效的模型）"。
+        "desc": "承诺总是被履行，并收到结果(true -> 验证是成功的，false -> 检测到无效的模型)"。
         "examples": [
           "validate().then( outcome => { ... })"
         ]

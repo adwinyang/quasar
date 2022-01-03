@@ -27,7 +27,7 @@ desc: 关于如何使用 Quasar App Extension 来配置主机应用程序使用 
 ```js
 //文件。/index.js
 module.exports = function (api) {
-  // （可选！）。
+  // (可选！)。
   // Quasar兼容性检查；你可能需要
   // 硬性依赖，如最小版本的 "quasar"
   // 或最低版本的"@quasar/app" CLI。

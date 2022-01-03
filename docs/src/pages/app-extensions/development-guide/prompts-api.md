@@ -5,7 +5,7 @@ desc: 为配置Quasar应用程序扩展而向用户提出的问题的语法。
 
 本页指的是`src/prompts.js`文件，该文件在安装App Extension时处理提示问题。并非所有的应用扩展都需要提示--这是一个可选的步骤。
 
-用户的答案被保存在`/quasar.extensions.json`（项目文件夹的根目录），除非你真的知道你在做什么，否则不应该被篡改。
+用户的答案被保存在`/quasar.extensions.json`(项目文件夹的根目录)，除非你真的知道你在做什么，否则不应该被篡改。
 
 文件的基本结构示例:
 
@@ -17,12 +17,12 @@ module.exports = function () {
 }
 ```
 
-你可以在[Install](/app-extensions/development-guide/install-api)、[Index](/app-extensions/development-guide/index-api)和[Uninstall](/app-extensions/development-guide/uninstall-api)中访问`api.prompts`（它保存你的App Extension的答案）。
+你可以在[Install](/app-extensions/development-guide/install-api)、[Index](/app-extensions/development-guide/index-api)和[Uninstall](/app-extensions/development-guide/uninstall-api)中访问`api.prompts`(它保存你的App Extension的答案)。
 
 现在让我们关注定义问题的返回数组的结构。以下各节提供了最常用问题类型的示例。
 
 ::: warning
-以下并不是一个可能的问题类型的详尽列表，也绝不是描述了全部可用的API。请查看[Inquirer.js](https://github.com/SBoudrias/Inquirer.js#readme)，以了解这方面的情况（Quasar CLI在后台使用）。
+以下并不是一个可能的问题类型的详尽列表，也绝不是描述了全部可用的API。请查看[Inquirer.js](https://github.com/SBoudrias/Inquirer.js#readme)，以了解这方面的情况(Quasar CLI在后台使用)。
 :::
 
 ## 字符串
@@ -73,7 +73,7 @@ default: 'A Quasar Framework app', // 可选
   message: '选择图标集',
   choices: [
     {
-      name: 'Material Icons（推荐）',
+      name: 'Material Icons(推荐)',
       value: 'material-icons', //答案变量的值
       short: 'Material Icons' // 用户选择后显示的短名称
     },

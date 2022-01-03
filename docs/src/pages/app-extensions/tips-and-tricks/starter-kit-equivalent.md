@@ -1,10 +1,10 @@
 ---
 title: 相当于入门套件
-desc：关于如何使用Quasar应用程序扩展来创建相当于入门套件的技巧和窍门。
+desc: 关于如何使用Quasar应用程序扩展来创建相当于入门套件的技巧和窍门。
 ---
 
-本指南适用于您想要创建本质上是 “入门工具包” 的内容，该工具包在官方入门工具包之上添加内容（/quasar.conf.js 配置、文件夹、文件、CLI 挂钩）。
-这允许您让多个项目共享一个公共结构/逻辑（并且只有一个包来管理它们，而不必单独更改所有项目以匹配您的公共模式），并且还允许您与社区分享所有这些。
+本指南适用于您想要创建本质上是 “入门工具包” 的内容，该工具包在官方入门工具包之上添加内容(/quasar.conf.js 配置、文件夹、文件、CLI 挂钩)。
+这允许您让多个项目共享一个公共结构/逻辑(并且只有一个包来管理它们，而不必单独更改所有项目以匹配您的公共模式)，并且还允许您与社区分享所有这些。
 
 ::: tip
 要创建一个App Extension项目文件夹，请先阅读[开发指南>简介](/app-extensions/development-guide/introduction)。
@@ -17,10 +17,10 @@ desc：关于如何使用Quasar应用程序扩展来创建相当于入门套件�
 我们将创建一个应用扩展的示例，它的作用如下。
 
 * 它提示用户希望这个App Extension安装哪些功能
-* 根据他给出的答案，将文件渲染（复制）到托管文件夹中
+* 根据他给出的答案，将文件渲染(复制)到托管文件夹中
 * 它扩展了/quasar.conf.js
 * 它扩展了Webpack的配置
-* 它使用一个应用扩展钩子（onPublish）。
+* 它使用一个应用扩展钩子(onPublish)。
 * 当应用扩展被卸载时，它将删除添加的文件
 * 它使用提示语来定义App Extension的工作内容
 
@@ -62,7 +62,7 @@ desc：关于如何使用Quasar应用程序扩展来创建相当于入门套件�
 // src/install.js
 
 module.exports = function (api) {
-  // （可选！）。
+  // (可选！)。
   // Quasar兼容性检查；你可能需要兼容性检查；你可能需要硬性依赖，如最小版本的 "quasar"
   // 或最低版本的"@quasar/app" CLI。
   api.compatibleWith('quasar', '^2.0.0')
@@ -90,13 +90,13 @@ module.exports = function (api) {
 
 ## 索引脚本
 
-我们在 index 脚本中做了几件事，比如扩展/quasar.conf.js，钩住众多Index API钩子中的一个（在本例中是onPublish），并将Webpack配置链化。
+我们在 index 脚本中做了几件事，比如扩展/quasar.conf.js，钩住众多Index API钩子中的一个(在本例中是onPublish)，并将Webpack配置链化。
 
 ```js
 // src/index.js
 
 module.exports = function (api) {
-  // （可选！）。
+  // (可选！)。
   // Quasar兼容性检查；你可能需要 兼容性检查；
   // 你可能需要硬性依赖，如最小版本的 "quasar"
   // 或最低版本的"@quasar/app" CLI。

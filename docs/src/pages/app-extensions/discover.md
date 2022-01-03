@@ -1,13 +1,13 @@
 ---
 title: 发现应用扩展
-desc：查找官方和社区 Quasar应用程序扩展。
+desc: 查找官方和社区 Quasar 应用程序扩展。
 ---
 
 <q-btn push class="q-py-xs" no-caps color="brand-primary" ic-right="search" label="Look up extensions" href="https://www.npmjs.com/search?q=quasar-app-extension" target="_blank" rel="noopener" />
 
 ## 社区应用扩展
 
-审查提交的[社区应用扩展](https://github.com/quasarframework/quasar-awesome/blob/master/README.md#community-app-extensions)。
+审查提交  的[社区应用扩展](https://github.com/quasarframework/quasar-awesome/blob/master/README.md#community-app-extensions)。
 
 > 也请不要忘记提交你自己的! 了解什么是Quasar [App Extensions](/app-extensions/introduction)以及如何[创建一个](/app-extensions/development-guide/introduction)。
 
@@ -45,4 +45,4 @@ desc：查找官方和社区 Quasar应用程序扩展。
 | [@quasar/qplaceholder](https://github.com/quasarframework/app-extension-qplaceholder) | 在你的数据到达之前显示一个占位符。|
 | [@quasar/qiconpicker](https://github.com/quasarframework/quasar-ui-qiconpicker) | 为您的Quasar应用程序提供图标选择器。  |
 | [@quasar/qribbon](https://github.com/quasarframework/app-extension-qribbon) | Quasar应用程序的QRibbon UI组件。   |
-| [@quasar/qzoom](https://github.com/quasarframework/app-extension-qzoom) | 缩放任何内容（图片、视频、文本、组件...）  |
+| [@quasar/qzoom](https://github.com/quasarframework/app-extension-qzoom) | 缩放任何内容(图片、视频、文本、组件...)  |

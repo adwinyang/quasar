@@ -26,14 +26,14 @@ desc: 关于如何向 Quasar应用扩展的主机应用提供 Vue 指令的技�
     └── index.js # 在 Index API 中描述的内容
 ```
 
-现在，你需要处理注册你的Vue指令。你可以通过`/index.js`文件（在[Index API](/app-extensions/development-guide/index-api)中描述）来完成，这个文件是在你设置新 App Extension 时创建的。
+现在，你需要处理注册你的Vue指令。你可以通过`/index.js`文件(在[Index API](/app-extensions/development-guide/index-api)中描述)来完成，这个文件是在你设置新 App Extension 时创建的。
 
 让我们分解一下：
 
 ```js
 //文件。/index.js
 module.exports = function (api) {
-  // （可选！）。
+  // (可选！)。
   // Quasar兼容性检查；你可能需要
   // 硬性依赖，如最小版本的 "quasar"
   // 或最低版本的"@quasar/app" CLI。
@@ -42,15 +42,15 @@ module.exports = function (api) {
 
   // 这里我们扩展了 /quasar.conf.js，所以我们可以添加
   // 一个引导文件，它注册了我们新的Vue指令。
-  // "extendConf "将被定义在下面（继续阅读教程）
+  // "extendConf "将被定义在下面(继续阅读教程)
   api.extendQuasarConf(extendConf)
 }
 ```
 
-第一组是做与Quasar的兼容性检查（可选，但推建）。如果你的组件使用的Quasar功能是在某个版本之后才有的，你可以确保安装的Quasar版本是正确的。
+第一组是做与Quasar的兼容性检查(可选，但推建)。如果你的组件使用的Quasar功能是在某个版本之后才有的，你可以确保安装的Quasar版本是正确的。
 
 ::: tip
-你不仅可以做`api.compatibleWith()`来检查Quasar软件包，还可以检查任何其他可用的软件包（你没有通过你的App Extension自己提供）。请阅读App Extension Development Guide > Introduction页面中的[Handling package-dependencies](/app-extensions/development-guide/introduction#handling-package-dependencies)部分以了解更多信息。
+你不仅可以做`api.compatibleWith()`来检查Quasar软件包，还可以检查任何其他可用的软件包(你没有通过你的App Extension自己提供)。请阅读App Extension Development Guide > Introduction页面中的[Handling package-dependencies](/app-extensions/development-guide/introduction#handling-package-dependencies)部分以了解更多信息。
 :::
 
 第二组告诉Quasar在 `extendQuasarConf` CLI生命周期钩子被调用时调用我们的自定义函数。它看起来会像这样。

@@ -14,7 +14,7 @@ module.exports = function (api) {
 ```
 
 ## api.extId
-包含这个应用扩展的`ext-id'（String）。
+包含这个应用扩展的`ext-id'(String)。
 
 ## api.prompts
 是一个对象，该对象具有安装此应用扩展时的提示答案。关于提示的更多信息，请查看[Prompts API](/app-extensions/development-guide/prompts-api)。
@@ -23,7 +23,7 @@ module.exports = function (api) {
 解析运行此应用扩展所在的应用程序中的路径。无需自行导入`path`和解析路径。
 
 ``` js
-// 解析为 app 的 root 目录 （根目录)
+// 解析为 app 的 root 目录 (根目录)
 api.resolve.app('src/my-file.js')
 
 // 解析为 app 的 root/src 目录
@@ -43,7 +43,7 @@ api.resolve.electron('some-file.js')
 ```
 
 ## api.appDir
-运行该应用扩展的 app 根目录的完整路径（String）。。
+运行该应用扩展的 app 根目录的完整路径(String)。。
 
 ## api.hasPackage
 
@@ -58,7 +58,7 @@ semver条件示例：`'1.x || >=2.5.0 || 5.0.0 - 7.2.3'。
  * @return {boolean} 包已安装并满足可选的semver条件
  */
 if (api.hasPackage('vuelidate')) {
-  // 嘿，这个应用程序有它（任意版本）。
+  // 嘿，这个应用程序有它(任意版本)。
 }
 if (api.hasPackage('quasar', '^1.0.0')) {
   // 嘿，这个应用程序已经安装了v1版本
@@ -96,7 +96,7 @@ if (api.hasExtension(extId)) {
 ```
 
 ## api.removePath
-从App项目文件夹中删除一个文件或文件夹（App Extension已经安装，不再需要）。
+从App项目文件夹中删除一个文件或文件夹(App Extension已经安装，不再需要)。
 
 要注意这一点，不要删除那些会破坏开发者的应用程序的文件。
 

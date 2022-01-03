@@ -15,7 +15,7 @@ module.exports = function(api) {
 ```
 
 ## api.extId
-该应用扩展中（App Extension）包含的`ext-id'（String）。
+该应用扩展中(App Extension)包含的`ext-id'(String)。
 
 ## api.prompts
 是一个对象，该对象具有安装此应用扩展时的提示答案。有关提示的更多信息，请查看 [Prompts API](/app-extensions/development-guide/prompts-api)。
@@ -24,7 +24,7 @@ module.exports = function(api) {
 解析运行此应用扩展所在的应用程序中的路径。无需自行导入`path`和解析路径。
 
 ```js
-// 解析为 app 的 root 目录 （根目录)
+// 解析为 app 的 root 目录 (根目录)
 api.resolve.app('src/my-file.js')
 
 // 解析为 app 的 root/src 目录
@@ -44,7 +44,7 @@ api.resolve.electron('some-file.js')
 ```
 
 ## api.appDir
-运行该应用扩展的 app 根目录的完整路径（String）。
+运行该应用扩展的 app 根目录的完整路径(String)。
 
 ## api.compatibleWith
 
@@ -75,7 +75,7 @@ semver条件示例：`'1.x || >=2.5.0 || 5.0.0 - 7.2.3'。
  * @return {boolean} 包已安装并满足可选的semver条件
  */
 if (api.hasPackage('vuelidate')) {
-  // 嘿，这个应用程序有它（任意版本）。
+  // 嘿，这个应用程序有它(任意版本)。
 }
 if (api.hasPackage('quasar', '^1.0.0')) {
   // 嘿，这个应用程序已经安装了v1版本
@@ -127,15 +127,15 @@ api.extendPackageJson({
 })
 ```
 
-上面的例子在应用程序的 package.json 中添加了一个 npm 脚本，这样你就可以执行 `yarn electron`（或等效的 `npm run electron`）。
+上面的例子在应用程序的 package.json 中添加了一个 npm 脚本，这样你就可以执行 `yarn electron`(或等效的 `npm run electron`)。
 
 ## api.extendJsonFile
-使用新属性扩展 JSON 文件（深度合并）。如果指定现有属性，它将覆盖它们。
+使用新属性扩展 JSON 文件(深度合并)。如果指定现有属性，它将覆盖它们。
 
 ```js
 /**
- * @param {string} 文件（应用根文件夹的相对路径）
- * @param {object} newData（要合并的对象）
+ * @param {string} 文件(应用根文件夹的相对路径)
+ * @param {object} newData(要合并的对象)
  */
 api.extendJsonFile('src/some.json', {
   newProp: 'some-value'
@@ -143,7 +143,7 @@ api.extendJsonFile('src/some.json', {
 ```
 
 ## api.render
-将应用扩展模板中的文件夹（您指定的任何文件夹）渲染（复制）到应用的根目录中。保持与模板文件夹相同的文件夹结构。
+将应用扩展模板中的文件夹(您指定的任何文件夹)渲染(复制)到应用的根目录中。保持与模板文件夹相同的文件夹结构。
 
 如果应用程序中已经存在某些文件，那么它会询问用户是否应该覆盖它们。
 
@@ -152,16 +152,16 @@ api.extendJsonFile('src/some.json', {
 ```js
 /**
  * 将一个文件夹从扩展模板渲染到 devland
- * 需要一个相对于调用 render() 的文件路径的路径（到文件夹）
+ * 需要一个相对于调用 render() 的文件路径的路径(到文件夹)
  *
- * @param {string} templatePath（要在应用程序中渲染的文件夹的相对路径）
- * @param {object} 范围（可选；渲染范围变量）
+ * @param {string} templatePath(要在应用程序中渲染的文件夹的相对路径)
+ * @param {object} 范围(可选；渲染范围变量)
  */
 api.render('./path/to/a/template/folder')
 ```
 
 ### 文件名边缘情况
-如果要渲染以点开头的模板文件（即 .env），则必须遵循特定的命名约定，因为在将插件发布到 npm 时会忽略点文件：
+如果要渲染以点开头的模板文件(即 .env)，则必须遵循特定的命名约定，因为在将插件发布到 npm 时会忽略点文件：
 
 ```bash
 # 包含点文件的模板必须使用
@@ -174,7 +174,7 @@ some-floder/_env
 /.env
 ```
 
-如果要渲染名称实际上以下划线开头的文件，那么文件名必须以`__`开头（两个下划线字符而不是一个）：
+如果要渲染名称实际上以下划线开头的文件，那么文件名必须以`__`开头(两个下划线字符而不是一个)：
 
 ```bash
 same-floder/__my.css
@@ -191,7 +191,7 @@ same-floder/__my.css
 
 ```js
 // src/install.js
-//（my-floder 位于与以下调用文件相同的文件夹中）
+//(my-floder 位于与以下调用文件相同的文件夹中)
 api.render('./my-folder', {
   prompts: api.prompts
 })
@@ -220,11 +220,11 @@ const message = '这是我们没有 “Feautre X” 时的内容'
 ```js
 /**
  * 将一个文件从扩展模板渲染成 devland
- * 需要一个相对于调用 renderFile() 的文件路径的路径（指向一个文件）
+ * 需要一个相对于调用 renderFile() 的文件路径的路径(指向一个文件)
  *
- * @param {string} relativeSourcePath（相对于调用安装脚本的文件夹的文件路径）
- * @param {string} relativeTargetPath（相对于应用根目录的文件路径 —— 包括文件名！）
- * @param {object} 范围（可选；渲染范围变量）
+ * @param {string} relativeSourcePath(相对于调用安装脚本的文件夹的文件路径)
+ * @param {string} relativeTargetPath(相对于应用根目录的文件路径 —— 包括文件名！)
+ * @param {object} 范围(可选；渲染范围变量)
  */
 api.renderFile('./path/to/a/template/filename', 'path/relative/to/app/root/filename', {
   prompts：api.prompts

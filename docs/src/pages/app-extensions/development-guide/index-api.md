@@ -28,7 +28,7 @@ if (api.ctx.dev ==true && api.ctx.mode =='electron') {
 ```
 
 ## api.extId
-该应用扩展中（App Extension）包含的`ext-id'（String）。
+该应用扩展中(App Extension)包含的`ext-id'(String)。
 
 ## api.prompts
 是一个对象，该对象具有安装此应用扩展时的提示答案。 有关提示的更多信息，请查看 [Prompts API](/app-extensions/development-guide/prompts-api)。
@@ -37,7 +37,7 @@ if (api.ctx.dev ==true && api.ctx.mode =='electron') {
 解析运行此应用扩展所在的应用程序中的路径。无需自行导入`path`和解析路径。
 
 ```js
-// 解析为 app 的 root 目录 （根目录)
+// 解析为 app 的 root 目录 (根目录)
 api.resolve.app('src/my-file.js')
 
 // 解析为 app 的 root/src 目录
@@ -57,7 +57,7 @@ api.resolve.electron('some-file.js')
 ```
 
 ## api.appDir
-运行该应用扩展的 app 根目录的完整路径（String）。
+运行该应用扩展的 app 根目录的完整路径(String)。
 
 ## api.compatibleWith
 
@@ -88,7 +88,7 @@ semver条件示例：`'1.x || >=2.5.0 || 5.0.0 - 7.2.3'。
  * @return {boolean} 包已安装并满足可选的semver条件
  */
 if (api.hasPackage('vuelidate')) {
-  // 嘿，这个应用程序有它（任意版本）。
+  // 嘿，这个应用程序有它(任意版本)。
 }
 if (api.hasPackage('quasar', '^1.0.0')) {
   // 嘿，这个应用程序已经安装了v1版本
@@ -160,7 +160,7 @@ module.exports = function (api, ctx) {
 ```
 
 ::: tip
-注意路径前面的波浪号（`~`）。这告诉Quasar CLI，该路径是来自node_modules的依赖关系，而不是应用扩展(App Extension)索引脚本文件的相对路径。
+注意路径前面的波浪号(`~`)。这告诉Quasar CLI，该路径是来自node_modules的依赖关系，而不是应用扩展(App Extension)索引脚本文件的相对路径。
 :::
 
 ## api.chainWebpack
@@ -173,7 +173,7 @@ module.exports = function (api, ctx) {
  * (chain: ChainObject, invoke: Object {isClient, isServer}) => undefined
  */
 api.chainWebpack((chain, { isClient, isServer }, api) => {
-  // 添加/删除/更改链（Webpack链对象)
+  // 添加/删除/更改链(Webpack链对象)
 })
 ```
 
@@ -281,7 +281,7 @@ api.extendWebpackWebserver((cfg, { isClient, isServer }, api) => {
 
 ## api.chainWebpackCustomSW
 
-使用 InjectManifest 时自定义 Service Worker 的链式 webpack 配置（/src-pwa/custom-service-worker.js 的内容）：
+使用 InjectManifest 时自定义 Service Worker 的链式 webpack 配置(/src-pwa/custom-service-worker.js 的内容)：
 
 ```js
 /**
@@ -294,7 +294,7 @@ api.chainWebpackCustomSW ((cfg, { isClient, isServer }, api) => {
 ```
 
 ## api.extendWebpackCustomSW
-使用 InjectManifest 时为自定义 service worker 扩展 webpack 配置对象（/src-pwa/custom-service-worker.js 的内容）：
+使用 InjectManifest 时为自定义 service worker 扩展 webpack 配置对象(/src-pwa/custom-service-worker.js 的内容)：
 
 ```js
 /**
@@ -308,7 +308,7 @@ api.extendWebpackCustomSW((chain, { isClient, isServer }, api) => {
 
 ## api.registerCommand
 Register a command that will become available as `quasar run <ext-id> <cmd> [args]` (or the short form: `quasar <ext-id> <cmd> [args]`).
-注册一个的命令，可以作为 `quasar run <ext-id> <cmd> [args]` 形式使用（或缩写形式：`quasar <ext-id> <cmd> [args]`）。
+注册一个的命令，可以作为 `quasar run <ext-id> <cmd> [args]` 形式使用(或缩写形式：`quasar <ext-id> <cmd> [args]`)。
 
 ```js
 /**
@@ -343,7 +343,7 @@ api.registerDescribeApi(
 
 上述内容将响应 `$ quasar describe MyComponent`.
 
-关于这样的JSON文件的语法，请查看`/node_modules/quasar/dist/api`（在你的项目文件夹中）。请注意，你JSON文件必须包含一个 `type` 属性（"component", "directive", "plugin"）。例如：
+关于这样的JSON文件的语法，请查看`/node_modules/quasar/dist/api`(在你的项目文件夹中)。请注意，你JSON文件必须包含一个 `type` 属性("component", "directive", "plugin")。例如：
 
 ```json
 {
@@ -414,7 +414,7 @@ api.beforeDev((api, { quasarConf }) => {
 
 ## api.afterDev
 
-Quasar 开发服务器(dev server) 启动后运行的钩子（`$ quasar dev`）。在开发服务器已经启动后，如果想做点什么，则可以使用它。
+Quasar 开发服务器(dev server) 启动后运行的钩子(`$ quasar dev`)。在开发服务器已经启动后，如果想做点什么，则可以使用它。
 
 可以使用 async/await 或直接返回一个Promise。
 
@@ -462,7 +462,7 @@ api.afterBuild((api, { quasarConf }) => {
 
 ## api.onPublish
 
-如果需要发布(`$ quasar build -P`)，则在构建生产使用的 Quasar 应用程序和执行 afterBuild 钩子（如果指定）之后运行的钩子。
+如果需要发布(`$ quasar build -P`)，则在构建生产使用的 Quasar 应用程序和执行 afterBuild 钩子(如果指定)之后运行的钩子。
 
 可以使用 async/await 或直接返回一个Promise。
 
