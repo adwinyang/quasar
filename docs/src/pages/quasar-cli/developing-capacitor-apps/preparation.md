@@ -1,23 +1,23 @@
 ---
-title: Preparation for Capacitor App
-desc: What you need to do before developing a Quasar hybrid mobile app with Capacitor.
+title: 电容器应用的准备
+desc: 在使用Capacitor开发Quasar混合移动应用程序之前，你需要做什么？
 ---
 
-Before we dive in to the actual development, we need to do some preparation work.
+在我们深入到实际的开发中去之前，我们需要做一些准备工作。
 
-## 1. Installation
+## 1. 安装
 
-### Android setup
+### Android设置
 
-* You will need to install Android Studio and the Android platform SDK on your machine. You can [download the Android Studio here](https://developer.android.com/studio/index.html) and follow these [installation steps](https://developer.android.com/studio/install.html) afterwards.
+*你将需要在你的机器上安装Android Studio和Android平台的SDK。你可以[在这里下载Android Studio](https://developer.android.com/studio/index.html)，之后按照这些[安装步骤](https://developer.android.com/studio/install.html)进行。
 
-* Make sure that after you install the Android SDK you then accept its licenses. Open the terminal and go to the folder where the SDK was installed, in tools/bin and call `sdkmanager --licenses`.
+*确保在你安装了Android SDK之后，你再接受其许可证。打开终端，进入安装SDK的文件夹，在tools/bin中，调用`sdkmanager --licenses`。
 
 ::: warning
-The environmental variable `ANDROID_HOME` has been deprecated and replaced with `ANDROID_SDK_ROOT`. Depending on your version of Android Studio you may need one or the other. It doesn't hurt to have both set.
+环境变量`ANDROID_HOME`已被废弃，取而代之的是`ANDROID_SDK_ROOT`。根据你的Android Studio的版本，你可能需要一个或另一个。两者都设置也无妨。
 :::
 
-* Add Android installation to your path:
+* 在你的路径中添加Android安装。
 
 #### Unix (macOS, linux)
 
@@ -27,7 +27,7 @@ export ANDROID_SDK_ROOT="$HOME/Android/Sdk"
 PATH=$PATH:$ANDROID_SDK_ROOT/tools; PATH=$PATH:$ANDROID_SDK_ROOT/platform-tools
 ```
 
-> Please note that sometimes the `/Android/Sdk` folder is added inside `/Library/` inside your user folder. Check your user folder and if the `/Android/` folder is only inside `/Library/` do: `export ANDROID_SDK_ROOT="$HOME/Library/Android/Sdk"` or `export ANDROID_HOME="$HOME/Library/Android/Sdk"` instead.
+> 请注意，有时`/Android/Sdk`文件夹会被添加到你的用户文件夹内的`/Library/`中。检查你的用户文件夹，如果`/Android/`文件夹只在`/Library/`内，请执行：`export ANDROID_SDK_ROOT="$HOME/Library/Android/Sdk"`或`export ANDROID_HOME="$HOME/Library/Android/Sdk"`代替。
 
 #### Windows
 
@@ -37,44 +37,44 @@ setx ANDROID_SDK_ROOT "%USERPROFILE%\AppData\Local\Android\Sdk"
 setx path "%path%;%ANDROID_SDK_ROOT%\tools;%ANDROID_SDK_ROOT%\platform-tools"
 ```
 
-- Start Android studio (check the executable in the folder that you installed it in). Next step is to install the individual SDKs:
+- 启动Android studio(在你安装它的文件夹中检查可执行文件)。下一步是安装各个SDK。
 
-- Open the "Configure" menu at the bottom of the window:
+- 打开窗口底部的 "配置 "菜单。
 
-  ![SDK manager](https://cdn.quasar.dev/img/Android-Studio-SDK-Menu.png 'SDK manager')
+![SDK管理器](https://cdn.quasar.dev/img/Android-Studio-SDK-Menu.png 'SDK管理器')
 
-- Select the desired SDKs and click on "Apply" to install the SDKs.
+- 选择所需的SDK并点击 "应用 "来安装SDK。
 
-  ![SDK selection](https://cdn.quasar.dev/img/Android-Studio-SDK-selection.png 'SDK selection')
+![SDK选择](https://cdn.quasar.dev/img/Android-Studio-SDK-selection.png 'SDK选择')
 
-### iOS setup
+### iOS设置
 
-You will need a macOS with [Xcode](https://developer.apple.com/xcode/) installed. After you've installed it, open Xcode in order to get the license prompt. Accept the license, then you can close it.
+你将需要一个安装有[Xcode](https://developer.apple.com/xcode/)的macOS。在你安装完之后，打开Xcode以获得许可提示。接受许可，然后你可以关闭它。
 
-## 2. Add Capacitor Quasar Mode
+## 2. 添加电容Quasar 模式
 
-In order to develop/build a Mobile app, we need to add the Capacitor mode to our Quasar project. This will use the Capacitor CLI to generate a Capacitor project in `/src-capacitor` folder.
+为了开发/构建一个移动应用程序，我们需要在我们的Quasar项目中添加Capacitor模式。这将使用Capacitor CLI在`/src-capacitor`文件夹中生成一个Capacitor项目。
 
 ```bash
 $ quasar mode add capacitor
 ```
 
-## 3. Start Developing
+## 3. 开始开发
 
-To start a dev server with HMR, run the command below:
+要用HMR启动一个开发服务器，运行下面的命令。
 
 ```bash
 $ quasar dev -m capacitor -T [android|ios]
 ```
 
-Once the dev server is ready, your IDE will open (Android Studio or Xcode) and from there you can manually select the emulator (or multiple ones simultaneously!) and install the dev app on it/them. You can also run the dev app on a connected mobile/tablet device.
+一旦开发服务器准备就绪，你的IDE将打开(Android Studio或Xcode)，从那里你可以手动选择模拟器(或同时选择多个！)并在它/他们身上安装开发应用程序。你也可以在连接的移动/平板电脑设备上运行开发应用程序。
 
 ::: warning
-In Android Studio, you will be greeted with a message recommending to upgrade the Gradle version. **DO NOT UPGRADE GRADLE** as it will break the Capacitor project. Same goes for any other requested upgrades.
+在Android Studio中，你会看到一条信息，建议升级Gradle版本。**不要升级Gradle**，因为这将破坏Capacitor项目。任何其他要求的升级也是如此。
 
-<img src="https://cdn.quasar.dev/img/gradle-upgrade-notice.png" alt="Gradle upgrade" class="q-my-md fit rounded-borders" style="max-width: 350px">
+<img src="https://cdn.quasar.dev/img/gradle-upgrade-notice.png" alt="Gradle升级" class="q-my-md fit rounded-borders" style="max-width: 350px">。
 
-If you encounter any IDE errors then click on File > Invalidate caches and restart.
+如果你遇到任何IDE错误，那么请点击文件>无效缓存并重新启动。
 
 <img src="https://cdn.quasar.dev/img/gradle-invalidate-cache.png" alt="Gradle upgrade" class="q-mt-md fit rounded-borders" style="max-width: 350px">
 

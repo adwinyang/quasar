@@ -1,16 +1,16 @@
 ---
-title: Platform Detection
-desc: How to detect the platform under which a Quasar app is running.
+title: 平台检测
+desc: 如何检测Quasar应用程序的运行平台。
 ---
 
-Helpers are built into Quasar to detect the Platform (and its capabilities) within the context of which the code is running.
+帮助程序内置于 Quasar 中，用于检测代码运行环境中的平台(及其能力)。
 
 ::: tip
-Based on your needs, you might also want to check the [Style & Identity &gt; Visibility](/style/visibility) page to see how you can achieve the same effect using CSS alone. This latter method will render your DOM elements or components regardless of platform though, so choose wisely on how you want to handle the performance of your app.
+根据你的需要，你可能还想看看[Style & Identity &gt; Visibility](/style/visibility)页面，看看你如何单独使用CSS达到同样的效果。虽然后一种方法会渲染你的DOM元素或组件，而不考虑平台，所以在你想如何处理你的应用程序的性能上要明智地选择。
 :::
 
-## Usage
-Usage inside a Vue component JS:
+## 用法
+在Vue组件的JS中使用。
 
 ```js
 import { useQuasar } from 'quasar'
@@ -22,19 +22,19 @@ setup () {
 }
 ```
 
-Usage inside a Vue component template:
+在Vue组件模板内使用。
 
 ```js
 $q.platform.is.cordova
 ```
 
-You must import it when you use it outside of a Vue component :
+当你在Vue组件外使用它时，你必须导入它:
 
 ```js
 import { Platform } from 'quasar'
 ```
 
-`Platform.is` by itself returns an object containing details about the current platform. For example when running Chrome on a MacOS desktop machine, `Platform.is` would return something similar to:
+`Platform.is`本身会返回一个包含当前平台详细信息的对象。例如，当在MacOS台式机上运行Chrome时，`Platform.is`会返回类似的内容:
 
 ```js
 {
@@ -49,7 +49,7 @@ import { Platform } from 'quasar'
 }
 ```
 
-Now, let's say we want to render different components or DOM elements, based on the platform that the code is running under. We want to show something on desktop and something else on mobile. We would proceed like this:
+现在，假设我们想根据代码运行的平台来呈现不同的组件或DOM元素。我们想在桌面上显示一些东西，而在手机上显示另一些东西。我们将这样做:
 
 ```html
 <div v-if="$q.platform.is.desktop">
@@ -65,65 +65,65 @@ Now, let's say we want to render different components or DOM elements, based on 
 </div>
 ```
 
-<doc-example title="Your device" file="Platform/Basic" />
+<doc-example title="你的设备" file="Platform/Basic" />
 
-## Properties
+## 属性
 
-The following properties are available to the Platform object. It's not an exhaustive list though. See the API section below for more details.
+以下是Platform对象可用的属性。但这并不是一个详尽的列表。请看下面的API部分以了解更多细节：
 
-| Property               | Type    | Meaning                                                  |
-| ---                    | ---     | ---                                                      |
-| `Platform.is.mobile`     | Boolean | Is the code running on a mobile device?                |
-| `Platform.is.cordova`    | Boolean | Is the code running within Cordova?                    |
-| `Platform.is.capacitor`  | Boolean | Is the code running with Capacitor? |
-| `Platform.is.electron`   | Boolean | Is the code running within Electron?                   |
-| `Platform.is.desktop`    | Boolean | Is the code running on a desktop browser?              |
-| `Platform.is.bex`        | Boolean | Is the code running in a browser extension? |
-| `Platform.is.android`    | Boolean | Is the app running on an Android device?               |
-| `Platform.is.blackberry` | Boolean | Is the app running on a Blackberry device? |
-| `Platform.is.cros`       | Boolean | Is the app running on device with the Chrome OS operating system? |
-| `Platform.is.ios`        | Boolean | Is the app running on an iOS device? |
-| `Platform.is.ipad`       | Boolean | Is the app running on an iPad? |
-| `Platform.is.iphone`     | Boolean | Is the app running on an iPhone? |
-| `Platform.is.ipod`       | Boolean | Is the app running on an iPod? |
-| `Platform.is.kindle`     | Boolean | Is the app running on a Kindle device? |
-| `Platform.is.linux`      | Boolean | Is the code running on a device with the Linux operating system? |
-| `Platform.is.mac`        | Boolean | Is the code running on a device with the MacOS operating system? |
-| `Platform.is.win`        | Boolean | Is the code running on a device with the Windows operating system? |
-| `Platform.is.winphone`   | Boolean | Is the code running on a Windows Phone device? |
-| `Platform.is.playbook`   | Boolean | Is the code running on a Blackberry Playbook device? |
-| `Platform.is.silk`       | Boolean | Is the code running the Kindle Silk browser? |
-| `Platform.is.chrome`     | Boolean | Is the code running inside the Google Chrome browser? |
-| `Platform.is.opera`      | Boolean | Is the code running inside the Opera browser? |
-| `Platform.is.safari`     | Boolean | Is the code running inside the Apple Safari browser? |
-| `Platform.is.edge`       | Boolean | Is the code running inside the Microsoft Edge browser? |
-| `Platform.is.ie`         | Boolean | Is the code running inside the Microsoft Internet Explorer browser? |
-| `Platform.has.touch`     | Boolean | Is the code running on a touch capable screen?         |
-| `Platform.within.iframe` | Boolean | Is the app running within an IFRAME?                   |
+| 属性 | 类型 | 含义 |
+| --- | --- | --- |
+| `Platform.is.mobile` | Boolean | 代码是否在移动设备上运行？               |
+| `Platform.is.cordova` | Boolean | 代码是否在Cordova内运行？                   |
+| `Platform.is.capacitor` | Boolean | 代码是在Capacitor中运行吗？|
+| `Platform.is.electron` | Boolean | 代码是否在Electron内运行？                  |
+| `Platform.is.desktop` | Boolean | 代码是否在桌面浏览器上运行？             |
+| `Platform.is.bex` | Boolean | 代码是在浏览器扩展中运行吗？|
+| `Platform.is.android` | Boolean | 应用程序是否在Android设备上运行？              |
+| `Platform.is.blackberry` | Boolean | 该应用程序是否在黑莓设备上运行？|
+| `Platform.is.cros` | Boolean | 该应用程序是否在使用Chrome OS操作系统的设备上运行？|
+| `Platform.is.ios` | Boolean | 该应用程序是否在iOS设备上运行？|
+| `Platform.is.ipad` | Boolean | 该应用程序是否在iPad上运行？|
+| `Platform.is.iphone` | Boolean | 该应用程序是否在iPhone上运行？|
+| `Platform.is.ipod` | Boolean | 该应用程序是否在iPod上运行？|
+| `Platform.is.kindle` | Boolean | 该应用程序是否在Kindle设备上运行？|
+| `Platform.is.linux` | Boolean | 该代码是否运行在Linux操作系统的设备上？|
+| `Platform.is.mac` | Boolean | 代码是否在使用MacOS操作系统的设备上运行？|
+| `Platform.is.win` | Boolean | 代码是否在使用Windows操作系统的设备上运行？|
+| `Platform.is.winphone` | Boolean | 代码是否在Windows Phone设备上运行？|
+| `Platform.is.playbook` | Boolean | 代码是否在黑莓Playbook设备上运行？|
+| `Platform.is.silk` | Boolean | 代码是否运行于Kindle Silk浏览器？|
+| `Platform.is.chrome` | Boolean | 代码是否在Google Chrome浏览器中运行？|
+| `Platform.is.Opera` | Boolean | 代码是否在Opera浏览器中运行？|
+| `Platform.is.safari` | Boolean | 代码是否在Apple Safari浏览器中运行？|
+| `Platform.is.edge` | Boolean | 代码是否在Microsoft Edge浏览器中运行？|
+| `Platform.is.ie` | Boolean | 代码是否在微软的Internet Explorer浏览器中运行？|
+| `Platform.has.touch` | Boolean | 代码是否在有触摸功能的屏幕上运行？        |
+| `Platform.within.iframe` | Boolean | 应用程序是否在IFRAME中运行？                  |
 
 ::: tip
-Running on mobile means you can have this code running on a mobile device (phone or tablet) but with a browser, not within a Cordova wrapper.
+在移动端运行意味着你可以让这段代码在移动设备(手机或平板电脑)上运行，但要用浏览器，而不是在Cordova包装器内。
 :::
 
-## Note about SSR
-When building for SSR, use only the `$q.platform` form. If you need to use the `import { Platform } from 'quasar'` (when on server-side), then you'll need to do it like this:
+## SSR 注意事项
+构建SSR时，只使用`$q.platform`形式。如果你需要使用`import { Platform } from 'quasar'`(在服务器端时)，那么你就需要这样做：
 
 ```js
 import { Platform } from 'quasar'
 
-// you need access to `ssrContext`
+// 你需要访问`ssrContext`。
 function (ssrContext) {
   const platform = process.env.SERVER
     ? Platform.parseSSR(ssrContext)
     : Platform // otherwise we're on client
 
-  // platform is equivalent to the global import as in non-SSR builds
+  // 平台等同于非SSR构建中的全局导入
 }
 ```
 
-The `ssrContext` is available in [boot files](/quasar-cli/boot-files). And also in the [preFetch](/quasar-cli/prefetch-feature) feature, where it is supplied as a parameter.
+`ssrContext`在[boot files](/quasar-cli/boot-files)中可用。还有在[preFetch](/quasar-cli/prefetch-feature)功能中，它被作为一个参数提供。
 
-The reason for all this is that in a client-only app, every user will be using a fresh instance of the app in their browser. For server-side rendering we want the same: each request should have a fresh, isolated app instance so that there is no cross-request state pollution. So Platform needs to be bound to each request separately.
+这一切的原因是，在一个纯客户端的应用程序中，每个用户将在他们的浏览器中使用一个新的应用程序实例。对于服务器端的渲染，我们也希望如此：每个请求都应该有一个新鲜的、孤立的应用程序实例，这样就不会有跨请求的状态污染。所以平台需要分别与每个请求绑定。
 
 ## API
 <doc-api file="Platform" />

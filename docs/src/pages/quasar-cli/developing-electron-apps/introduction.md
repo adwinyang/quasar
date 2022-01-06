@@ -1,16 +1,16 @@
 ---
-title: What is Electron
-desc: Introduction about the technology behind Quasar desktop apps.
+title: 什么是电子
+desc: 关于Quasar桌面应用程序背后的技术介绍。
 ---
-[Electron](https://electronjs.org/) (formerly known as Atom Shell) is an open-source framework created by Cheng Zhao, and now developed by GitHub. **It allows for the development of desktop GUI applications** using front and back end components originally developed for web applications: Node.js runtime for the backend and Chromium for the frontend. Electron is the main GUI framework behind several notable open-source projects including GitHub's Atom and Microsoft's Visual Studio Code source code editors, the Tidal music streaming service desktop application and the Light Table IDE, in addition to the freeware desktop client for the Discord chat service.
+[Electron](https://electronjs.org/)(原名Atom Shell)是一个开源框架，由Cheng Zhao创建，现在由GitHub开发。**它允许使用最初为网络应用开发的前端和后端组件开发桌面GUI应用**。后台使用Node.js运行时间，前端使用Chromium。Electron是几个著名的开源项目背后的主要GUI框架，包括GitHub的Atom和微软的Visual Studio Code源代码编辑器、Tidal音乐流媒体服务桌面应用程序和Light Table IDE，此外还有Discord聊天服务的免费桌面客户端。
 
-Each Electron app has two threads: one is the main thread (dealing with the App window and bootup), and one is the renderer thread (which is basically your UI web code). There is also a preload script to bridge the two "worlds".
+每个Electron应用程序都有两个线程：一个是主线程(处理应用程序窗口和启动)，一个是渲染器线程(基本上是你的UI网页代码)。还有一个预加载脚本来连接这两个 "世界"。
 
-## Renderer Thread
-Electron uses Chromium for displaying web pages in a separate process called the render process. This thread deals with your UI code in `/src` folder. You won't be able to use the Node.js power here, but the preload script will allow you to bridge the UI with Node.js.
+## 渲染器线程
+Electron使用Chromium在一个单独的进程中显示网页，称为渲染进程。这个线程处理你在`/src`文件夹中的UI代码。你将无法在这里使用Node.js的力量，但预加载脚本将允许你将UI与Node.js连接起来。
 
-## Main Thread
-In Electron, the process that runs package.json’s main script is called the main process. This is the script that runs in the main process and can display a GUI by initializing the renderer thread. This thread deals with your code in `/src-electron/electron-main.js` folder.
+## 主线程
+在Electron中，运行package.json主脚本的进程被称为主进程。这是在主进程中运行的脚本，可以通过初始化渲染器线程来显示GUI。这个线程处理你在`/src-electron/electron-main.js`文件夹中的代码。
 
-## Preload Script
-The [preload script](/quasar-cli/developing-electron-apps/electron-preload-script) (`/src-electron/electron-preload.[js|ts]`) is a way for you to inject Node.js stuff into the renderer thread by using a bridge between it and the UI. You can expose APIs that you can then call from your UI.
+## 预加载脚本
+预加载脚本](/quasar-cli/developing-electron-apps/electron-preload-script) (`/src-electron/electron-preload.[js|ts]`)是一种方式，让你通过在渲染器线程和用户界面之间使用一座桥梁，将Node.js的东西注入到渲染器线程。你可以公开API，然后从你的用户界面中调用。

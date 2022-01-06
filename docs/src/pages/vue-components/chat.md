@@ -1,53 +1,53 @@
 ---
-title: Chat Message
-desc: The QChatMessage Vue component displays a chat entry containing one or more user messages.
+title: 聊天信息
+desc: QChatMessage Vue组件显示一个包含一个或多个用户信息的聊天条目。
 keys: QChatMessage
 ---
 
-Quasar supplies a chat component called QChatMessage which is really a chat entry that renders the data given by the props.
+QChatMessage Vue组件显示一个包含一个或多个用户信息的聊天条目。
 
 ::: tip
-To mix messages with avatar and without avatar in the same thread, use a placeholder avatar image.
+要在同一个主题中混合有头像和无头像的信息，请使用一个占位头像。
 :::
 
 ## QChatMessage API
 
 <doc-api file="QChatMessage" />
 
-## Usage
+## 使用方法
 
-### The basics
+### 基本知识
 
 ::: tip
-Using the property `sent` is intended for the sender of the chat message. The other side is for received messages.
+使用属性`sent`是为聊天信息的发送者准备的。另一边是针对收到的消息。
 :::
 
-<doc-example title="Basic" file="QChatMessage/Basic" />
+<doc-example title="基本" file="QChatMessage/Basic" />
 
-<doc-example title="Name" file="QChatMessage/Name" />
+<doc-example title="名称" file="QChatMessage/Name" />
 
-<doc-example title="Avatar" file="QChatMessage/Avatar" />
+<doc-example title="头像" file="QChatMessage/Avatar" />
 
-<doc-example title="Stamp" file="QChatMessage/Stamp" />
+<doc-example title="印章" file="QChatMessage/Stamp" />
 
-<doc-example title="Label" file="QChatMessage/Label" />
+<doc-example title="标签" file="QChatMessage/Label" />
 
-### Customization
+### 自定义
 
-<doc-example title="Text and background color" file="QChatMessage/Color" />
+<doc-example title="文本和背景颜色" file="QChatMessage/Color" /> ###自定义
 
-<doc-example title="Size" file="QChatMessage/Size" />
+<doc-example title="大小" file="QChatMessage/Size" /> ### 槽 位
 
-### Slots
+### 槽位
 
-<doc-example title="Default slot" file="QChatMessage/SlotDefault" />
+<doc-example title="默认插槽" file="QChatMessage/SlotDefault" /> ###插槽
 
-<doc-example title="Avatar/Stamp/Name slots" file="QChatMessage/SlotAvatarStampName" />
+<doc-example title="头像/图章/名字插槽" file="QChatMessage/SlotAvatarStampName" /> ###消毒处理
 
-### Sanitization
+### 消毒处理
 
 ::: warning
-Always sanitize values if you do not trust the origin (if the value comes from user input).
+如果你不相信源头(如果值来自于用户输入)，总是对值进行消毒。
 :::
 
-<doc-example title="Sanitized content" file="QChatMessage/Sanitize" />
+<doc-example title="消毒的内容" file="QChatMessage/Sanitize" />

@@ -1,10 +1,10 @@
 ---
-title: Breadcrumbs
-desc: The QBreadcrumbs Vue component is a navigational aid for your UI. It allows users to keep track of their location within programs, documents, or websites.
+title: 面包屑
+desc: QBreadcrumbs Vue组件是你的用户界面的一个导航辅助工具。它允许用户跟踪他们在程序、文件或网站中的位置。
 keys: QBreadcrumbs,QBreadcrumbsEl
 ---
 
-The QBreadcrumbs component is used as a navigational aid in UI. It allows users to keep track of their location within programs, documents, or websites. Most common use is it's in a [QToolbar](/vue-components/toolbar), but it's not limited to it.
+QBreadcrumbs组件在用户界面中被用作一种导航辅助工具。它允许用户在程序、文档或网站中跟踪他们的位置。最常见的用途是它在[QToolbar](/vue-components/toolbar)中，但并不限于此。
 
 
 ## QBreadcrumbs API
@@ -15,17 +15,17 @@ The QBreadcrumbs component is used as a navigational aid in UI. It allows users 
 
 <doc-api file="QBreadcrumbsEl" />
 
-## Usage
-<doc-example title="Basic" file="QBreadcrumbs/Basic" />
+## 使用方法
+<doc-example title="基本" file="QBreadcrumbs/Basic" /> ##使用方法
 
-<doc-example title="In a QToolbar" file="QBreadcrumbs/Toolbar" />
+<doc-example title="在QToolbar中" file="QBreadcrumbs/Toolbar" />
 
-<doc-example title="Custom separators" file="QBreadcrumbs/Separator" />
+<doc-example title="自定义分离器" file="QBreadcrumbs/Separator" />
 
-The example below won't work with UMD version (so in Codepen/jsFiddle too) because it depends on Vue Router.
+下面的示例不会在UMD版本中工作(所以在Codepen/jsFiddle中也是)，因为它依赖于Vue Router。
 
-<doc-example title="Router links" file="QBreadcrumbs/RouterLinks" />
+<doc-example title="路由器链接" file="QBreadcrumbs/RouterLinks" />
 
-<doc-example title="Gutters" file="QBreadcrumbs/Gutters" />
+<doc-example title="沟渠" file="QBreadcrumbs/Gutters" />
 
-<doc-example title="Align" file="QBreadcrumbs/Align" />
+<doc-example title="对齐" file="QBreadcrumbs/Align" />

@@ -1,30 +1,30 @@
 ---
-title: Morph Directive
-desc: Vue directive that morphs between DOM elements or even between the two states of the same DOM element.
+title: 形态指令
+desc: Vue指令可以在DOM元素之间甚至同一DOM元素的两种状态之间进行变形。
 keys: morph
 related:
   - /quasar-utils/morph-utils
 ---
 
-"Morph" is a Quasar directive that provides the ability to morph DOM elements between two states.
+"Morph "是一个Quasar指令，它提供了在两种状态下对DOM元素进行变形的能力。
 
-Under the hood, it uses the Quasar [Morph function util](/quasar-utils/morph-utils).
+在引擎盖下，它使用Quasar [Morph function util](/quasar-utils/morph-utils)。
 
 ## Morph API
 
 <doc-api file="Morph" />
 
-## Usage
+## 使用方法
 
-Reading the [Morph function util](/quasar-utils/morph-utils) first will be best in your understanding of how this directive works.
+首先阅读[Morph function util](/quasar-utils/morph-utils)会对你理解这个指令的工作方式有很大帮助。
 
-This directive morphs one element in a group into another. The morphing is activated by changing the value (model) of the directive to match the name of the morphing element.
+这条指令将一个组中的一个元素变形为另一个。通过改变指令的值(模型)以匹配变形元素的名称，可以激活变形。
 
 ::: warning
-* The "name" and "group" (as directive arg or through the value of the directive) are mandatory.
-* If the value of the directive is in Object form, then "model" is also mandatory.
+* "name "和 "group"(作为指令参数或通过指令的值)是必须的。
+* 如果指令的值是Object形式的，那么 "model "也是必须的。
 :::
 
-<doc-example title="Morph between multiple elements in a group" file="Morph/BasicGroup" />
+<doc-example title="在一个组中的多个元素之间变形" file="Morph/BasicGroup" />
 
-<doc-example title="Morph a button into a card" file="Morph/Card" />
+<doc-example title="将一个按钮变形为一个卡片" file="Morph/Card" />

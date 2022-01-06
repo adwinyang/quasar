@@ -1,229 +1,224 @@
 ---
-title: Icon Genie CLI Command List
-desc: Command list for Icon Genie CLI.
+title: Icon Genie CLI 命令列表
+desc: Icon Genie CLI 的命令列表。
 ---
 
-Familiarize yourself with the list of available Icon Genie CLI commands inside a Quasar project folder:
+熟悉 Quasar 项目文件夹中可用的 Icon Genie CLI 命令列表：
 
 ```bash
 $ icongenie
 
-  Example usage
+  使用示例
     $ icongenie <command> <options>
 
-  Help for a command
+  命令帮助
     $ icongenie <command> --help
     $ icongenie <command> -h
 
-  Options
-    --version, -v Print Quasar Icon Genie CLI version
+  选项
+    --version, -v 打印 Quasar Icon Genie CLI 版本
 
-  Commands
-    generate, g   Generate App icons & splash screens
-    verify, v     Verify your Quasar app's icons &
-                    splash screens
-    profile, p    Create Icon Genie profile files
-    help, h       Display this message
+  命令
+    generate, g   产成 App 图标 & 启动屏图像
+    verify, v     验证 Quasar app 图标 & 启动屏图像
+    profile, p    创建 Icon Genie 配置文件
+    help, h       显示帮助
 ```
 
-See help for any command:
+获取任一命令的帮助：
 
 ```bash
 $ icongenie [command_name] --help
 ```
 
-## Generate
+## 生成
 
-The `generate` command is used for generating app icons and splash screens. It's at the heart of Icon Genie as it does the heavy lifting.
+`generate` 命令用于生成 App 图标和启动屏幕图像。 它是在 Icon Genie 的核心，因为它负责繁重的工作。
 
-Take a look below at usage and some examples. The most important parameter to note is `--icon` (or `-i`), which takes a transparent PNG as input for your app's icons and splash screens. Minimum size of the PNG is 64x64px, but it is highly recommended to go above 1024x1024px.
+请看下面的用法和一些示例。 最重要的参数是` --icon`(或`-i`)，它将透明的png作为 App图标和启动屏幕图像的输入。 PNG 的最小尺寸为 64 x 64px，但强烈建议超过 1024 x 1024px 。
 
-For splash screens, you may want to combine it with the `--background` (or `-b`) if you want your icon to be placed on top of a background.
+对于启动屏幕图像，如果您希望将图标放在背景之上，则可能需要将其与`--background`(或`-b`)结合使用。
 
-You may also want to use the `--profile` (or `-p`) parameter, which can run one or more Icon Genie [profile files](/icongenie/profile-files).
+您可能还想使用`--profile`(或`-p`)参数，该参数可以运行一个或多个 Icon Genie [配置文件文件](/icongenie/profile-files)。
 
 ```bash
 $ icongenie generate -h
 
-  Description
-    Generate App icons & splash screens
+  描述
+    生成 App 图标和启动屏幕图像
 
-  Usage
+  用法
     $ icongenie generate [options]
 
-    # generate icons for all installed Quasar modes
+    # 为所有已安装的 Quasar 模式生成图标
     $ icongenie generate -i /path/to/icon.png
     $ icongenie g -i /path/to/icon.png
 
-    # generate for (as example) PWA mode only
+    # 仅为(例如)PWA 模式生成
     $ icongenie generate -m pwa --icon /path/to/icon.png
 
-    # generate for (as example) Cordova & Capacitor mode only
+    # 仅为(例如)Cordova & Capacitor 模式生成
     $ icongenie g -m cordova,capacitor -i
          /path/to/icon.png -b /path/to/background.png
 
-    # generate by using a profile file
+    # 使用配置文件生成
     $ icongenie generate -p ./icongenie-profile.json
 
-    # generate by using batch of profile files
+    # 使用批量配置文件生成
     $ icongenie generate -p ./folder-containing-profile-files
 
-  Options
-    --icon, -i            Required;
-                          Path to source file for icon; must be:
-                            - a .png file
-                            - min resolution: 64x64 px (the higher the better!!)
-                            - with transparency
-                          Best results are with a square image (height = width)
-                          Image will be trimmed automatically
-                            (also see "skip-trim" and "padding" param)
-                          Path can be absolute, or relative to the root of the
-                            Quasar project folder
-                          Recommended min size: 1024x1024 px
+  选择
+    --icon, -i            必须;
+                          图标的源文件路径；必须是图标的源文件路径；必须是:
+                            - 一个 .png 文件
+                            - 最小分辨率: 64 x 64 px (越高越好!!)
+                            - 透明的
+                          最佳效果是使用方形图像(高度=宽度)
+                          图像将自动修剪
+                            (另请参考 "skip-trim" 和 "padding" 参数)
+                          路径可以是绝对路径, 可以是相对于 Quasar 项目的
+                            根目录路径
+                          推荐最小尺寸: 1024x1024 px
 
-    --background, -b      Path to optional background source file (for splash screens);
-                          must be:
-                            - a .png file
-                            - min resolution: 128x128 px (the higher the better!!)
-                            - transparency is optional (but recommended if you
-                              combine with the splashscreen-color param)
-                          Path can be absolute, or relative to the root of the
-                            Quasar project folder
-                          Recommended min size: 1024x1024 px
+    --background, -b      可选背景源文件的路径(用于启动画面);
+                          必需是:
+                            - 一个 .png 文件
+                            - 最小分辨率:  128x128 px (越高越好!!)
+                            - 透明度是可选的(但如果你将其与 splashscreen-color
+                              参数结合使用，则推荐使用透明度)
+                          路径可以是绝对路径, 可以是相对于 Quasar 项目的
+                            根目录路径
+                          推荐最小尺寸: 1024x1024 px
 
-    --mode, -m            For which Quasar mode(s) to generate the assets;
-                          Default: all
+    --mode, -m            为哪种  Quasar 模式生成资产(assets);
+                          默认: all
                             [all|spa|pwa|ssr|bex|cordova|capacitor|electron]
-                          Multiple can be specified, separated by ",":
+                          可以指定多个，以“，”分隔:
                             spa,cordova
 
-    --filter, -f          Filter the available generators; when used, it can
-                          generate only one type of asset instead of all
+    --filter, -f          筛选可用的生成器； 当使用时，它可以
+                          只生成一种类型的资产(asset)而不是所有
                             [png|ico|icns|splashscreen|svg]
 
-    --quality             Quality of the files [1 - 12] (default: 5)
-                            - higher quality --> bigger filesize & slower to create
-                            - lower quality  --> smaller filesize & faster to create
+    --quality             文件质量 [1 - 12] (默认: 5)
+                            - 高质量 --> 文件越大，创建速度越慢
+                            - 低质量  --> 文件越小，创建速度越快
 
-    --skip-trim           Do not trim the icon source file
+    --skip-trim           不要修剪图标源文件
 
-    --padding             Apply fixed padding to the icon after trimming it;
-                          Syntax: <horiz: number>,<vert: number>
-                          Default: 0,0
-                          Example: "--padding 10,5" means apply 10px padding to top
-                            10px to bottom, 5px to left side and 5px to rightside
+    --padding            在修剪后对图标应用固定的填充;
+                          语法: <horiz: number>,<vert: number>
+                          默认: 0,0
+                          示例: "--padding 10,5" 表示将填充顶部 10px, 底部 10px，左侧 5px，右侧 5px
 
-    --theme-color         Theme color to use for all generators requiring a color;
-                          It gets overridden if any generator color is also specified;
-                          The color must be in hex format (NOT hexa) without the leading
-                          '#' character. Transparency not allowed.
-                          Examples: 1976D2, eee
+    --theme-color         主题颜色，用于所有需要颜色的生成器；
+                          如果还指定了任何生成器颜色，它将被覆盖;
+                          颜色必须为十六进制格式(非十六进制)，且不带前导字符
+                          '#' 。 不允许有透明度.
+                          示例: 1976D2, eee
 
-    --svg-color           Color to use for the generated monochrome svgs
-                          Default (if no theme-color is specified): 1976D2
-                          The color must be in hex format (NOT hexa) without the leading
-                          '#' character. Transparency not allowed.
-                          Examples: 1976D2, eee
+    --svg-color           生成的单色svgs要使用到的颜色；
+                          默认 (如果没有指定 theme-color 参数): 1976D2
+                          颜色必须为十六进制格式(非十六进制)，且不带前导字符
+                          '#' 。 不允许有透明度.
+                          示例: 1976D2, eee
 
-    --png-color           Background color to use for the png generator, when
-                          "background: true" in the asset definition (like for
-                          the cordova/capacitor iOS icons);
-                          Default (if no theme-color is specified): fff
-                          The color must be in hex format (NOT hexa) without the leading
-                          '#' character. Transparency not allowed.
-                          Examples: 1976D2, eee
+    --png-color           png生成器的背景颜色，当资产(asset)中定义为
+                          "background: true" (类似 cordova/capacitor iOS 图标);
+                          默认 (如果没有指定 theme-color 参数): fff
+                          颜色必须为十六进制格式(非十六进制)，且不带前导字符
+                          '#' 。 不允许有透明度.
+                          示例: 1976D2, eee
 
-    --splashscreen-color  Background color to use for the splashscreen generator;
-                          Default (if no theme-color is specified): fff
-                          The color must be in hex format (NOT hexa) without the leading
-                          '#' character. Transparency not allowed.
-                          Examples: 1976D2, eee
+    --splashscreen-color  用于生成启动屏幕图像的背景颜色，
+                          默认 (如果没有指定 theme-color 参数): fff
+                          颜色必须为十六进制格式(非十六进制)，且不带前导字符
+                          '#' 。 不允许有透明度.
+                          示例: 1976D2, eee
 
-    --splashscreen-icon-ratio  Ratio of icon size in respect to the width or height
-                               (whichever is smaller) of the resulting splashscreen;
-                               Represents percentages; Valid values: 0 - 100
-                               If 0 then it doesn't add the icon of top of background
-                               Default: 40
+    --splashscreen-icon-ratio  图标大小与生成的启动屏幕图像的宽度或高度(以较小者为准)的比率；
+                               表示百分比; 有效值: 0 - 100
+                               如果是0，则不添加背景顶部的图标
+                               默认: 40
 
-    --profile, -p         Use JSON profile file(s):
-                            - path to folder (absolute or relative to current folder)
-                              that contains JSON profile files (icongenie-*.json)
-                            - path to a single *.json profile file (absolute or relative
-                              to current folder)
-                          Structure of a JSON profile file:
+    --profile, -p         使用JSON格式的配置文件:
+                            - 文件夹路径(绝对或相对于当前文件夹)
+                              包含 JSON 配置文件 (icongenie-*.json)
+                            - 单个 *.json 配置文件的路径(绝对或相对于当前文件夹)
+                         一个 JSON 配置文件结构如:
                             {
                               "params": {
-                                "include": [ ... ], /* optional */
+                                "include": [ ... ], /* 可选 */
                                 ...
                               },
-                              "assets": [ /* list of custom assets */ ]
+                              "assets": [ /* 自定义的静态资原(assets)列表 */ ]
                             }
 
-    --help, -h            Displays this message
+    --help, -h           显示帮助
 ```
 
-## Verify
+## 验证
 
-The `verify` command confirms that you have all required app icons and splash screens in the right place and that each file has the correct resolution in pixels.
+`verify`命令确认您已在正确的位置中拥有所有必需的应用图标和启动屏幕图像，并且每个文件都有正确的像素分辨率。
 
 ```bash
 $ icongenie -h
 
-  Description
-    Verifies your Quasar App's icons and splash screens
-    for all installed modes.
+  描述
+    验证 Quasar App 图标和启动屏幕图像
+    适用于所有安装模式。
 
   Usage
     $ icongenie verify [options]
 
-    # verify all Quasar modes
+    # 验证所有 Quasar 模式
     $ icongenie verify
 
-    # verify specific mode
+    # 验证指定的模式
     $ icongenie verify -m spa
 
-    # verify with specific filter
+    # 指定一个过滤器来验证
     $ icongenie verify -f ico
 
-    # verify by using a profile file
+    # 指定一个配置文件来验证
     $ icongenie verify -p ./icongenie-profile.json
 
-    # verify by using batch of profile files
+    # 指定批量的配置文件来验证
     $ icongenie verify -p ./folder-containing-profile-files
 
-  Options
-    --mode, -m      For which Quasar mode(s) to verify the assets;
-                    Default: all
+  选项
+    --mode, -m      为哪种 Quasar 模式验证资产(assets);
+                    默认: all
                       [all|spa|pwa|ssr|bex|cordova|capacitor|electron]
-                    Multiple can be specified, separated by ",":
+                    可以指定多个，以“，”分隔:
                       spa,cordova,capacitor
 
-    --filter, -f    Filter the available generators; when used, it verifies
-                    only one type of asset instead of all
+    --filter, -f    筛选可用的生成器； 当使用时，它可以
+                    只验证一种类型的资产(asset)而不是所有
                       [png|ico|icns|splashscreen|svg]
 
-    --profile       Use JSON profile file(s) to extract the asset list to verify:
-                      - path to folder (absolute or relative to current folder)
-                        that contains JSON profile files (icongenie-*.json)
-                      - path to a single *.json profile file (absolute or relative
-                        to current folder)
-                    Structure of a JSON profile file:
-                      {
-                        "params": {
-                          "include": [ ... ], /* optional */
-                          ...
-                        },
-                        "assets": [ /* list of custom assets */ ]
-                      }
 
-    --help, -h      Displays this message
+    --profile       使用 JSON 配置文件来提取资产(asset)清单来进行验证：
+                      - 文件夹路径(绝对或相对于当前文件夹)
+                         包含 JSON 配置文件 (icongenie-*.json)
+                      - 单个 *.json 配置文件的路径(绝对或相对于当前文件夹)
+                    一个 JSON 配置文件结构如:
+                       {
+                            "params": {
+                            "include": [ ... ], /* 可选 */
+                                ...
+                            },
+                            "assets": [ /* 自定义的静态资原(assets)列表 */ ]
+                       }
+
+    --help, -h      显示帮助
 ```
 
-## Profile
+## 配置
 
-Icon Genie also supports profile files. These files are in JSON format and tell Icon Genie which images to generate and how to generate them. The `profile` command is a helper to scaffold these profiles. They are very useful for automation, if needed.
+Icon Genie 还支持配置文件。 这些文件以JSON格式为单位，并告诉Icon Genie哪些图像生成和如何生成它们。 `profile`命令是一个帮助工具，用于构建这些配置文件。如果需要，它们对自动化非常有用。
 
-The generic form of a JSON profile file is:
+JSON 配置文件文件的通用形式为：
 
 ```json
 {
@@ -232,108 +227,107 @@ The generic form of a JSON profile file is:
 }
 ```
 
-You can also generate multiple profile files (with different params/settings). For more information please head on to the [Profile files](/icongenie/profile-files) page.
+您还可以生成多个配置文件(具有不同的 params/settings)。 有关更多信息，请返回[配置文件文件](/icongenie/profile-files)页面。
 
 ```bash
 $ icongenie profile -h
 
-  Description
+  描述
     Helper command to easily bootstrap Icon Genie profile files.
 
-  Usage
+  用未能
     $ icongenie profile -o <filename> [options]
 
-    # supplying params list
+    # 提供参数列表
     $ icongenie profile -o <filename> --include pwa,spa --quality 7
 
-    # supplying assets based on Icon Genie's internal list
+    # 根据 Icon Genie 的内部名单提供资产
     $ icongenie profile -o <filename> --assets spa,bex
 
-  Options
-    --output, -o          Name of the new Icon Genie profile file
+  选项
+    --output, -o          新的 Icon Genie 配置文件名
 
-    --assets, -a          Prefill the assets Array with Icon Genie's
-                          internal list, based on the modes that you indicate;
+    --assets, -a          使用 Icon Genie's 预填充资产数组内部列表，基于您指定的模式;
                             [all|spa|pwa|ssr|bex|cordova|capacitor|electron]
-                          Multiple can be specified, separated by ",":
+                          可以指定多个，以“,”分隔:
                             spa,cordova
 
-    --icon, -i            Path to source file for icons; must be:
-                            - a .png file
-                            - min resolution: 64x64 px (the higher the better!!)
-                            - with transparency
-                          Best results are with a square image (height = width)
-                          Image will be trimmed automatically
-                            (also see "skip-trim" and "padding" param)
-                          Path can be absolute, or relative to the root of the
-                            Quasar project folder
-                          Recommended min size: 1024x1024 px
+    --icon, -i            图标源文件的路径；必须是:
+                            - 一个 .png 文件
+                            - 最小分辨率: 64x64 px (越高越好!!)
+                            - 透明的
+                          最佳效果是使用方形图像(高度=宽度)
+                          图像将自动修剪
+                            (请参考 "skip-trim" 和 "padding" 参数)
+                          路径可以是绝对的，也可以是相对于 Quasar 项目根路径
+                          推荐最小尺寸: 1024x1024 px
 
-    --background, -b      Path to optional background source file (for splash screens);
-                          must be:
-                            - a .png file
-                            - min resolution: 128x128 px (the higher the better!!)
-                            - transparency is optional (but recommended if you
-                              combine with the splashscreen-color param)
-                          Path can be absolute, or relative to the root of the
-                            Quasar project folder
-                          Recommended min size: 1024x1024 px
+    --background, -b      可选背景源文件的路径(用于启动屏幕图像);
+                          必须是:
+                            - 一个 .png 文件
+                            - 最小分辨率: 128x128 px (越高越好!!)
+                            - 透明度是可选的 (但是如果与 splashscreen-color 参数结合使用，则推荐使用透明度)
+                          路径可以是绝对的，也可以是相对于 Quasar 项目根路径
+                          推荐最小尺寸: 1024x1024 px
 
-    --include             Prefill the params.include property;
+    --include             预填充 params.include 属性;
                             [all|spa|pwa|ssr|bex|cordova|capacitor|electron]
-                          Multiple can be specified, separated by ",":
+                          可以指定多个，以“,”分隔::
                             spa,cordova
 
-    --filter, -f          Prefill the params.filter property;
+    --filter, -f          预填充 params.filter 属性;
                             [png|ico|icns|splashscreen|svg]
 
-    --quality             Prefill in the params.quality property;
-                          Quality of the files [1 - 12] (default: 5)
-                            - higher quality --> bigger filesize & slower to create
-                            - lower quality  --> smaller filesize & faster to create
+    --quality             预填充 params.quality 属性;
+                          文件质量 [1 - 12] (默认: 5)
+                            - 高质量 --> 文件大，创建慢
+                            - 低质量  --> 文件小，创建快
 
-    --skip-trim           Do not trim the icon source file
+    --skip-trim           不裁剪图标源文件
 
-    --padding             Apply fixed padding to the icon after trimming it;
-                          Syntax: <horiz: number>,<vert: number>
-                          Default: 0,0
-                          Example: "--padding 10,5" means apply 10px padding to top
-                            10px to bottom, 5px to left side and 5px to rightside
+    --padding             在修剪后对图标应用固定的填充;
+                          语法: <horiz: number>,<vert: number>
+                          默认: 0,0
+                          示例: "--padding 10,5" 表示将填充顶部 10px, 底部 10px，左侧 5px，右侧 5px
 
-    --theme-color         Prefill the params.themeColor property;
-                          Theme color to use for all generators requiring a color;
-                          It gets overridden if any generator color is also specified;
-                          The color must be in hex format (NOT hexa) without the leading
-                          '#' character. Transparency not allowed.
-                          Examples: 1976D2, eee
+    --theme-color         预填充 params.themeColor 属性;
+                          用于所有需要颜色的生成器的主题颜色;
+                          如果还指定了任何生成器颜色，它将被覆盖;
+                          颜色必须为十六进制格式(非十六进制)，且不带前导字符
+                          '#' 。 不允许有透明度.
+                          示例: 1976D2, eee
+    --svg-color           生成的单色svgs要使用到的颜色；
+                          默认 (如果没有指定 theme-color 参数): 1976D2
+                          颜色必须为十六进制格式(非十六进制)，且不带前导字符
+                          '#' 。 不允许有透明度.
+                          示例: 1976D2, eee
 
-    --svg-color           Prefill the params.svgColor property;
-                          Color to use for the generated monochrome svgs
-                          Default (if no theme-color is specified): 1976D2
-                          The color must be in hex format (NOT hexa) without the leading
-                          '#' character. Transparency not allowed.
-                          Examples: 1976D2, eee
+    --svg-color           预填充 params.svgColor 属性;
+                          生成的单色svgs要使用到的颜色；
+                          默认 (如果没有指定 theme-color 参数): 1976D2
+                          颜色必须为十六进制格式(非十六进制)，且不带前导字符
+                          '#' 。 不允许有透明度.
+                          示例: 1976D2, eee
 
-    --png-color           Prefill the params.pngColor property;
-                          Background color to use for the png generator, when
-                          "background: true" in the asset definition (like for
-                          the Cordova/Capacitor iOS icons);
-                          Default (if no theme-color is specified): fff
-                          The color must be in hex format (NOT hexa) without the leading
-                          '#' character. Transparency not allowed.
-                          Examples: 1976D2, eee
+    --png-color           预填充 params.pngColor property;
+                          png生成器的背景颜色，当资产(asset)中定义为
+                          "background: true" (类似 cordova/capacitor iOS 图标);
+                          默认 (如果没有指定 theme-color 参数): fff
+                          颜色必须为十六进制格式(非十六进制)，且不带前导字符
+                          '#' 。 不允许有透明度.
+                          示例: 1976D2, eee
 
-    --splashscreen-color  Prefill the params.splashscreenColor property;
-                          Background color to use for the splashscreen generator;
-                          Default (if no theme-color is specified): fff
-                          The color must be in hex format (NOT hexa) without the leading
-                          '#' character. Transparency not allowed.
-                          Examples: 1976D2, eee
 
-    --splashscreen-icon-ratio  Prefill the params.splashscreenIconRatio property;
-                               Ratio of icon size in respect to the width or height
-                               (whichever is smaller) of the resulting splashscreen;
-                               Represents percentages; Valid values: 0 - 100
-                               If 0 then it doesn't add the icon of top of background
-                               Default: 40
+    --splashscreen-color  预填充 params.splashscreenColor 属性;
+                          用于生成启动屏幕图像的背景颜色，
+                          默认 (如果没有指定 theme-color 参数): fff
+                          颜色必须为十六进制格式(非十六进制)，且不带前导字符
+                          '#' 。 不允许有透明度.
+                          示例: 1976D2, eee
+
+    --splashscreen-icon-ratio  预填充 params.splashscreenIconRatio 属性;
+                               图标大小与生成的启动屏幕图像的宽度或高度(以较小者为准)的比率；
+                               表示百分比; 有效值: 0 - 100
+                               如果是0，则不添加背景顶部的图标
+                               默认: 40
 ```

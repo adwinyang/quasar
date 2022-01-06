@@ -112,7 +112,7 @@ $x: 3;
 <doc-example title="Masonry" file="grid/Masonry" />
 
 ## 使用伪选择器打断行/列的砌体
-当不容易或不可能插入行/列分隔符元素，并且需要2或3行/列时，您可以使用伪（pseudo)选择器。
+当不容易或不可能插入行/列分隔符元素，并且需要2或3行/列时，您可以使用伪(pseudo)选择器。
 
 ```sass
 .container-class

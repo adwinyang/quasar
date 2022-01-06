@@ -1,13 +1,13 @@
 ---
-title: QSpace
-desc: The QSpace Vue component fills all the available space inside of a flexbox DOM element.
+title: 秦皇岛空间
+desc: QSpace Vue组件填补了flexbox DOM元素内的所有可用空间。
 keys: QSpace
 ---
-The purpose of QSpace (has no props) is to simply fill all available space inside of a flexbox DOM element.
+QSpace(没有属性)的目的是简单地填充flexbox DOM元素内部的所有可用空间。
 
-As a sidenote, all Quasar components use flexbox. So what this means, for example (there are numerous examples, just mentioning one), is that you can use QSpace in a QToolbar.
+顺便说一句，所有的Quasar组件都使用flexbox。因此，这意味着，例如(有许多示例，只是提到一个)，你可以在一个QToolbar中使用QSpace。
 
-## Usage
-These are only two examples so you can get a glimpse on how to use it.
+## 用法
+这只是两个示例，所以你可以了解一下如何使用它。
 
-<doc-example title="Basic" file="QSpace/Basic" />
+<doc-example title="基本" file="QSpace/Basic" />

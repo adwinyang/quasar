@@ -1,28 +1,28 @@
 ---
-title: Writing Universal Code
-desc: Guide on how to write code for a Quasar server-side rendered app.
+title: 编写通用代码
+desc: 关于如何为Quasar服务器端渲染应用程序编写代码的指南。
 ---
 
-Writing `universal` code (also called `isomorphic`) means writing code that runs on both the server and the client. Due to use-case and platform API differences, the behavior of our code will not be exactly the same when running in different environments. Here we will go over the key things you need to be aware of.
+编写 "通用 "代码(也称为 "同构")意味着编写在服务器和客户端都能运行的代码。由于使用情况和平台API的不同，我们的代码在不同环境下运行时的行为不会完全相同。这里我们将介绍一下你需要注意的关键事项。
 
-![Quasar SSR Build System](https://cdn.quasar.dev/img/ssr-build.png "Quasar SSR Build System")
+! [Quasar SSR Build System](https://cdn.quasar.dev/img/ssr-build.png "Quasar SSR Build System")
 
-## Data Reactivity on the Server
-In a client-only app, every user will be using a fresh instance of the app in their browser. For server-side rendering we want the same: each request should have a fresh, isolated app instance so that there is no cross-request state pollution.
+## 服务器上的数据反应性
+在一个纯客户端的应用中，每个用户都会在他们的浏览器中使用一个新的应用实例。对于服务器端的渲染，我们也希望如此：每个请求都应该有一个新鲜的、孤立的应用程序实例，这样就不会有跨请求的状态污染。
 
-Because the actual rendering process needs to be deterministic, we will also be "pre-fetching" data on the server - this means our application state will be already resolved when we start rendering. This means data reactivity is unnecessary on the server, so it is disabled by default. Disabling data reactivity also avoids the performance cost of converting data into reactive objects.
+因为实际的渲染过程需要确定性，我们也将在服务器上 "预取 "数据--这意味着当我们开始渲染时，我们的应用状态已经被解决。这意味着数据反应性在服务器上是不必要的，所以它在默认情况下是禁用的。禁用数据反应性也避免了将数据转换为反应性对象的性能成本。
 
-## Component Lifecycle Hooks
-Since there are no dynamic updates, of all the Vue lifecycle hooks, only `beforeCreate` and `created` will be called during SSR. This means any code inside other lifecycle hooks such as `beforeMount` or `mounted` will only be executed on the client.
+## 组件生命周期钩子
+由于没有动态更新，在所有的Vue生命周期钩子中，只有`beforeCreate`和`created`会在SSR期间被调用。这意味着其他生命周期钩子里面的任何代码，如`beforeMount`或`mounted`将只在客户端执行。
 
-Another thing to note is that you should avoid code that produces global side effects in `beforeCreate` and `created`, for example setting up timers with `setInterval`. In client-side only code we may setup a timer and then tear it down in `beforeUnmount` or `destroyed`. However, because the destroy hooks will not be called during SSR, the timers will stay around forever. To avoid this, move your side-effect code into `beforeMount` or `mounted` instead.
+另外需要注意的是，你应该避免在`beforeCreate`和`created`中产生全局副作用的代码，例如用`setInterval`设置计时器。在只有客户端的代码中，我们可以设置一个定时器，然后在`beforeUnmount`或`destroyed`中拆掉它。然而，由于销毁钩子不会在SSR期间被调用，定时器将永远留在身边。为了避免这种情况，把你的副作用代码移到`beforeMount`或`mounted`中去。
 
-## Avoid Stateful Singletons
-When writing client-only code, we are used to the fact that our code will be evaluated in a fresh context every time. However, a Node.js server is a long-running process. When our code is required into the process, it will be evaluated once and then it stays in memory. This means if you create a singleton object, it will be shared between every incoming request.
+## 避免有状态的单例
+在编写纯客户端代码时，我们已经习惯了每次都在一个新的上下文中评估我们的代码。然而，Node.js服务器是一个长期运行的进程。当我们的代码被要求进入进程时，它将被评估一次，然后它将留在内存中。这意味着如果你创建了一个单例对象，它将在每个传入的请求中被共享。
 
-So, Quasar CLI creates a new root Vue instance with a new Router and Vuex Store instances for each request. This is similar to how each user will be using a fresh instance of the app in their own browser. If we would have used a shared instance across multiple requests, it will easily lead to cross-request state pollution.
+因此，Quasar CLI为每个请求创建一个新的根Vue实例，并有一个新的Router和Vuex Store实例。这类似于每个用户将在自己的浏览器中使用一个新的应用实例。如果我们在多个请求中使用一个共享实例，将很容易导致跨请求的状态污染。
 
-Instead of directly creating a Router and Vuex Store instances, you'll be exposing a factory function that can be repeatedly executed to create fresh app instances for each request:
+与其直接创建Router和Vuex Store实例，你将暴露一个工厂函数，可以重复执行，为每个请求创建新鲜的应用程序实例。
 
 ```js
 // src/router/index.js
@@ -40,7 +40,7 @@ export default function (/* { ssrContext } */) {
 }
 ```
 
-If you're using [Vuex modules](https://vuex.vuejs.org/guide/modules.html) don't forget to export the state as a function otherwise a singleton will be created:
+如果你使用[Vuex modules](https://vuex.vuejs.org/guide/modules.html)，别忘了将状态导出为一个函数，否则将创建一个单例。
 ```js
 // src/store/myModule/state.js
 export default () => ({
@@ -49,17 +49,17 @@ export default () => ({
 
 ```
 
-## Access to Platform-Specific APIs
-Universal code cannot assume access to platform-specific APIs, so if your code directly uses browser-only globals like `window` or `document`, they will throw errors when executed in Node.js, and vice-versa.
+## 访问特定平台的API
+通用代码不能假定对特定平台API的访问，所以如果你的代码直接使用浏览器专用的globals，如`window`或`document`，它们在Node.js中执行时将会出现错误，反之亦然。
 
-For tasks shared between server and client but use different platform APIs, it's recommended to wrap the platform-specific implementations inside a universal API, or use libraries that do this for you. For example, [Axios](https://github.com/axios/axios) is an HTTP client that exposes the same API for both server and client.
+对于在服务器和客户端之间共享但使用不同平台API的任务，建议将特定平台的实现封装在一个通用API中，或者使用为你做这件事的库。例如，[Axios](https://github.com/axios/axios)是一个HTTP客户端，为服务器和客户端暴露了相同的API。
 
-For browser-only APIs, the common approach is to lazily access them inside client-only lifecycle hooks.
+对于仅适用于浏览器的API，常见的方法是在仅适用于客户端的生命周期钩子中懒散地访问它们。
 
-## Boot Files
-Note that if a 3rd party library is not written with universal usage in mind, it could be tricky to integrate it into a server-rendered app. You *might* be able to get it working by mocking some of the globals, but it would be hacky and may interfere with the environment detection code of other libraries.
+## 启动文件
+请注意，如果第三方库的编写没有考虑到通用性，那么将其集成到服务器渲染的应用中可能会很麻烦。你可能*能够通过模拟一些球状物来让它工作，但这是很困难的，而且可能会干扰到其他库的环境检测代码。
 
-When you add a 3rd party library to your project (through a [Boot File](/quasar-cli/boot-files)), take into consideration whether it can run on server and on client. If it needs to run only on server or only on client, then specify this in quasar.conf.js:
+当你把第三方库添加到你的项目中时(通过[Boot File](/quasar-cli/boot-files))，要考虑到它是否可以在服务器和客户端上运行。如果它需要只在服务器上运行或只在客户端运行，那么请在quasar.conf.js中指定。
 
 ```js
 // quasar.conf.js
@@ -73,11 +73,11 @@ return {
 }
 ```
 
-## Data Pre-Fetching and State
-During SSR, we are essentially rendering a "snapshot" of our app, so if the app relies on some asynchronous data, this data need to be pre-fetched and resolved before we start the rendering process.
+## 数据预取和状态
+在SSR过程中，我们基本上是在渲染我们的应用程序的 "快照"，所以如果应用程序依赖于一些异步数据，这些数据需要在我们开始渲染过程之前被预取和解决。
 
-The Quasar CLI [PreFetch Feature](/quasar-cli/prefetch-feature) has been created to solve this problem. Take a few moments to read about it.
+Quasar CLI [PreFetch Feature](/quasar-cli/prefetch-feature)就是为了解决这个问题。花点时间来阅读一下。
 
 <q-separator class="q-mt-xl" />
 
-> Parts of this page are taken from the official [Vue.js SSR guide](https://ssr.vuejs.org/guide/universal.html#data-reactivity-on-the-server).
+> 本页部分内容摘自官方[Vue.js SSR指南](https://ssr.vuejs.org/guide/universal.html#data-reactivity-on-the-server)。

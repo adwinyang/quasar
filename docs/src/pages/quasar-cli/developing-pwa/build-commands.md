@@ -1,10 +1,10 @@
 ---
-title: PWA Build Commands
-desc: The Quasar CLI list of commands when developing or building a Progressive Web App.
+title: PWA构建命令
+desc: 在开发或构建渐进式Web App时，Quasar CLI的命令列表。
 ---
-[Quasar CLI](/start/quasar-cli) makes it incredibly simple to develop or build the final distributables from your source code.
+[Quasar CLI](/start/quasar-cli)使得从你的源代码中开发或构建最终的可分发文件变得异常简单。
 
-## Developing
+## 开发
 
 ```bash
 $ quasar dev -m pwa
@@ -14,14 +14,14 @@ $ quasar dev --mode pwa
 ```
 
 ::: warning
-Do not miss the [HMR for PWA](/quasar-cli/developing-pwa/hmr-for-dev) (Hot Module Reload) page.
+不要错过[HMR for PWA](/quasar-cli/developing-pwa/hmr-for-dev) (Hot Module Reload)页面。
 :::
 
 ::: danger
-Do not run [Lighthouse](https://developers.google.com/web/tools/lighthouse/) on your development build because at this stage the code is intentionally not optimized and contains embedded source maps (among many other things).
+不要在你的开发构建中运行[Lighthouse](https://developers.google.com/web/tools/lighthouse/)，因为在这个阶段，代码故意没有被优化，并且包含嵌入式源码图(以及许多其他东西)。
 :::
 
-## Building for Production
+## 为生产而建
 
 ```bash
 $ quasar build -m pwa
@@ -30,7 +30,7 @@ $ quasar build -m pwa
 $ quasar build --mode pwa
 ```
 
-If you want a production build with debugging enabled:
+如果你想要一个启用了调试功能的生产构建。
 
 ```bash
 $ quasar build -m pwa -d

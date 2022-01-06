@@ -1,36 +1,36 @@
 ---
-title: App Visibility
-desc: A Quasar plugin that wraps the Page Visibility API, letting you know when your app is visible or in focus.
+title: 应用程序的可见性
+desc: 一个Quasar插件，包装了页面可见性API，让你知道你的应用程序何时可见或处于焦点。
 keys: AppVisibility
 ---
-Quasar makes use of the Web [Page Visibility API](https://developer.mozilla.org/en-US/docs/Web/API/Page_Visibility_API) which lets you know when a website/app is visible or in focus.
+Quasar使用网络[页面可见性API](https://developer.mozilla.org/en-US/docs/Web/API/Page_Visibility_API)，它可以让你知道一个网站/应用程序何时可见或处于焦点。
 
 ## AppVisibility API
 
 <doc-api file="AppVisibility" />
 
-## Installation
+## 安装
 
-<doc-installation plugins="AppVisibility" scrollable />
+<doc-installation plugins="AppVisibility" scrollable /> ## Installation
 
-## Usage
+## 使用方法
 
 ```js
-// outside of a Vue file
+// 在Vue文件之外
 import { AppVisibility } from 'quasar'
 AppVisibility.appVisible // Boolean
 
-// inside of a Vue file
+// 在一个Vue文件中
 import { useQuasar } from 'quasar'
 setup () {
   const $q = useQuasar()
-  // now use $q.appVisible (Boolean)
+  // 现在使用$q.appVisible(布尔值)。
 }
 ```
 
 <doc-example title="AppVisibility" file="AppVisibility/Basic" />
 
-## Watching for status change
+## 观察状态变化
 
 ```vue
 <template>...</template>

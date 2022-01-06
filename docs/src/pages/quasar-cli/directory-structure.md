@@ -1,14 +1,14 @@
 ---
-title: Directory Structure
-desc: The structure of a Quasar app with explanations for each folder and file.
+title: 目录结构
+desc: Quasar应用程序的结构与每个文件夹和文件的解释。
 ---
-This is the structure of a project with all modes installed. There's no reason to be intimidated though!
+这是一个安装了所有模式的项目的结构。不过，我们没有理由被吓倒!
 
 ::: tip
-If you are a beginner, all you'll need to care about is `/quasar.conf.js` (Quasar App Config file), `/src/router`, `/src/layouts`, `/src/pages` and optionally `/src/assets`.
+如果你是一个初学者，你需要关心的是`/quasar.conf.js`(Quasar应用程序配置文件)，`/src/router`，`/src/layouts`，`/src/pages`和可选`/src/assets`。
 :::
 
-``` bash
+```bash
 .
 ├── public/                  # pure static assets (directly copied)
 ├── src/

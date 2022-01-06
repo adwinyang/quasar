@@ -1,6 +1,6 @@
 ---
-title: Dark Plugin
-desc: A Quasar plugin to toggle or configure the Dark Mode state of your app.
+title: 黑暗插件
+desc: 一个Quasar插件，用于切换或配置你的应用程序的黑暗模式状态。
 keys: Dark
 related:
   - /style/dark-mode
@@ -8,44 +8,44 @@ related:
 ---
 
 ::: tip
-For a better understanding of this Quasar plugin, please head to the Style & Identity [Dark Mode](/style/dark-mode) page.
+为了更好地了解这个Quasar插件，请前往风格和身份[黑暗模式](/style/dark-mode)页面。
 :::
 
 ## Dark API
 
 <doc-api file="Dark" />
 
-## Installation
-This plugin is automatically installed. No need to do anything but directly use it.
+## 安装
+这个插件是自动安装的。不需要做任何事情，直接使用它。
 
-## Usage
+## 使用方法
 
 ::: warning
-Do not manually assign a value to `isActive` or `mode` from below. Instead, use the `set(val)` method.
+不要从下面手动给`isActive`或`mode`赋值。相反，使用`set(val)`方法。
 :::
 
-### Inside of a Vue file
+### 在一个Vue文件中
 
 ```js
 import { useQuasar } from 'quasar'
 setup () {
   const $q = useQuasar()
 
-  // get status
+  // 获取状态
   console.log($q.dark.isActive) // true, false
 
-  // get configured status
+  // 获取配置的状态
   console.log($q.dark.mode) // "auto", true, false
 
-  // set status
+  // 设置状态
   $q.dark.set(true) // or false or "auto"
 
-  // toggle
+  // 拨动
   $q.dark.toggle()
 }
 ```
 
-On a **SSR build**, you may want to set this from your `/src/App.vue`:
+在**SSR构建中，你可能想从你的`/src/App.vue`中设置这个。
 
 ```js
 import { useQuasar } from 'quasar'
@@ -54,36 +54,36 @@ export default {
   setup () {
     const $q = useQuasar()
 
-    // calling here; equivalent to when component is created
+    // 在此调用；相当于组件创建时
     $q.dark.set(true)
   }
 }
 ```
 
-### Outside of a Vue file
+### 在Vue文件之外
 
 ```js
-// Warning! This method will not
-// work on SSR builds.
+// 警告! 这种方法不会
+// 在SSR构建上的工作。
 
 import { Dark } from 'quasar'
 
-// get status
+// 获取状态
 console.log(Dark.isActive)
 
-// get configured status
+// 获取配置的状态
 console.log(Dark.mode) // "auto", true, false
 
-// set status
+// 设置状态
 Dark.set(true) // or false or "auto"
 
-// toggle
+// 拨动
 Dark.toggle()
 ```
 
-### Through quasar.conf.js
+### 通过quasar.conf.js
 
-You can also use `/quasar.conf.js` to set the Dark mode status:
+你也可以使用`/quasar.conf.js`来设置黑暗模式的状态。
 
 ```js
 framework: {
@@ -93,14 +93,14 @@ framework: {
 }
 ```
 
-## Note about SSR
+## 关于SSR的说明
 
-When on a SSR build:
+当在SSR构建时。
 
-* `import { Dark } from 'quasar'` method of using Dark mode will not error out but it will not work (won't do anything). But you can use the other two ways (see previous section). We recommend through quasar.conf.js.
-* It's preferred to avoid setting Dark mode to 'auto' for SSR builds. It's because the client dark mode preference cannot be inferred, so SSR will always render in light mode then when the client takes over, it will switch to Dark (if it will be the case). As a result, a quick flicker of the screen will occur.
+* `import { Dark } from 'quasar'`使用Dark模式的方法不会出错，但它不会工作(不会做任何事情)。但是你可以使用其他两种方法(见上一节)。我们通过quasar.conf.js推荐。
+* 对于SSR构建，最好避免将黑暗模式设置为 "自动"。这是因为不能推断出客户端的黑暗模式偏好，所以SSR将始终以光明模式渲染，然后当客户端接管时，它将切换到黑暗模式(如果它将是这种情况)。因此，屏幕会发生快速闪烁。
 
-## Watching for status change
+## 观察状态变化
 
 ```vue
 <template>...</template>

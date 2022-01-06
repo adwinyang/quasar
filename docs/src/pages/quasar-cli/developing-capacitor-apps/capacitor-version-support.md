@@ -1,32 +1,32 @@
 ---
-title: Capacitor versions
-desc: Supported Capacitor versions in Quasar. How to upgrade to a newer Capacitor version.
+title: 电容器版本
+desc: Quasar中支持的电容器版本。如何升级到较新的电容器版本。
 ---
 
-The officially supported versions of Capacitor are v1, v2 and v3.
+官方支持的Capacitor版本是v1、v2和v3。
 
 ## Upgrading Capacitor
 
-If you previously used a lower version of Capacitor and you want to upgrade to a newer version, then:
+如果你以前使用的是较低版本的Capacitor，而你想升级到较新的版本，那么。
 
-1. Delete the /src-capacitor/ios and /src-capacitor/android folders, but make sure that you are aware of any changes that you made in those folders as you will have to redo them after step 4.
-2. Change /src-capacitor/package.json to reflect the correct versions of Capacitor dependencies (you can read them in the next appropriate section related to your desired Capacitor version).
-3. Delete yarn.lock/package-lock.json then run `yarn`/`npm install` in /src-capacitor.
-4. At this point, you will have Capacitor installed. Now you can run `quasar dev -m capacitor -T [ios|android]` or `quasar build -m capacitor -T [ios|android]` and it will add the upgraded iOS/Android platform that corresponds to your Capacitor version.
+1. 删除/src-capacitor/ios和/src-capacitor/android文件夹，但要确保你知道你在这些文件夹中做的任何修改，因为在第4步之后你必须重做。
+2. 2.修改/src-capacitor/package.json，以反映正确的Capacitor依赖版本(你可以在下一个与你所需的Capacitor版本相关的适当部分阅读它们)。
+3. 删除yarn.lock/package-lock.json，然后在/src-capacitor中运行`yarn`/`npm install`。
+4. 4. 在这一点上，你将安装好Capacitor。现在你可以运行`quasar dev -m capacitor -T [ios|android]`或者`quasar build -m capacitor -T [ios|android]`，它将添加升级的iOS/Android平台，与你的Capacitor版本相对应。
 
-It would also be wise to check the changelog of Capacitor itself to see what breaking changes it has.
+检查一下Capacitor本身的更新日志，看看它有哪些突破性的变化，也是明智之举。
 
 ## Capacitor v3
 
 ::: tip
-You will need `quasar` v2.0.0-beta.8+ and `@quasar/app` v3.0.0-beta.8+.
+你需要`quasar` v2.0.0-beta.8+和`@quasar/app` v3.0.0-beta.8+。
 :::
 
 ::: warning Known issue
-HTTPS devserver (through quasar.conf.js > devServer > https: true) is not **yet** supported. If you are using Capacitor plugins that depend on it, it's better to stay with Capacitor v2 for the moment.
+HTTPS devserver(通过 quasar.conf.js > devServer > https: true)目前还不***支持。如果你正在使用依赖它的Capacitor插件，最好暂时保持使用Capacitor v2。
 :::
 
-Assuming that you've installed Capacitor mode already, this is how your dependencies in /src-capacitor/package.json should look like:
+假设你已经安装了Capacitor模式，你在/src-capacitor/package.json中的依赖项应该是这样的。
 
 ```
 dependencies: {
@@ -37,11 +37,11 @@ dependencies: {
 }
 ```
 
-The `@capacitor/app` and `@capacitor/splash-screen` are optional, but it helps Quasar with some UI functionality if they are installed.
+`@capacitor/app`和`@capacitor/splash-screen`是可选的，但如果安装了它们，可以帮助Quasar实现一些UI功能。
 
 ## Capacitor v2
 
-Assuming that you've installed Capacitor mode already, this is how your dependencies in /src-capacitor/package.json should look like:
+假设你已经安装了Capacitor模式，你在/src-capacitor/package.json中的依赖项应该是这样的。
 
 ```
 dependencies: {
@@ -52,7 +52,7 @@ dependencies: {
 
 ## Capacitor v1
 
-Assuming that you've installed Capacitor mode already, this is how your dependencies in /src-capacitor/package.json should look like:
+假设你已经安装了Capacitor模式，你在/src-capacitor/package.json中的依赖项应该是这样的。
 
 ```
 dependencies: {

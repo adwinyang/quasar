@@ -1,6 +1,6 @@
 ---
-title: Expansion Item
-desc: The QExpansionItem Vue component allows visibility toggling like an accordion.
+title: 扩展项目
+desc: QExpansionItem Vue组件允许像手风琴一样进行可见性切换。
 keys: QExpansionItem
 related:
   - /vue-components/list-and-list-items
@@ -8,50 +8,50 @@ related:
   - /vue-components/slide-transition
 ---
 
-The QExpansionItem component allows the hiding of content that is not immediately relevant to the user. Think of them as accordion elements that expand when clicked on. It's also known as a collapsible.
+QExpansionItem组件允许隐藏那些与用户没有直接关系的内容。可以把它们想象成手风琴元素，在点击时展开。它也被称为可折叠的。
 
-They are basically [QItem](/vue-components/list-and-list-items) components wrapped with additional functionality. So they can be included in QLists and inherit QItem component properties.
+它们基本上是[QItem](/vue-components/list-and-list-items)组件，用额外的功能进行包装。所以它们可以被包含在QLists中，并继承QItem组件的属性。
 
 ## QExpansionItem API
 
 <doc-api file="QExpansionItem" />
 
-## Usage
+## 使用方法
 
-### Basic
+### 基本
 
-<doc-example title="Basic" file="QExpansionItem/Basic" />
+<doc-example title="基本" file="QExpansionItem/Basic" /> ## 使用方法 ## 基本
 
-### Controlling expansion state
+### 控制扩展状态
 
-<doc-example title="Controlling expansion state" file="QExpansionItem/ControlExpansionState" />
+<doc-example title="控制扩展状态" file="QExpansionItem/ControlExpansionState" /> ### 控制扩展状态
 
-### Style
+### 风格
 
-<doc-example title="Dense" file="QExpansionItem/Dense" />
+<doc-example title="密集" file="QExpansionItem/Dense" /> ###风格
 
-<doc-example title="On a dark background" file="QExpansionItem/Dark" dark />
+<doc-example title="在深色背景上" file="QExpansionItem/Dark" dark />
 
-### Options
+### 选项
 
-<doc-example title="Switch toggle side" file="QExpansionItem/SwitchToggleSide" />
+<doc-example title="切换切换面" file="QExpansionItem/SwitchToggleSide" /> ###选项
 
-<doc-example title="Header slot" file="QExpansionItem/HeaderSlot" />
+<doc-example title="头槽" file="QExpansionItem/HeaderSlot" /> ###选项
 
-<doc-example title="Handling events" file="QExpansionItem/HandlingEvents" />
+<doc-example title="处理事件" file="QExpansionItem/HandlingEvents" />
 
-When dealing with inset levels, a general rule of thumb is that `header-inset-level` adds left padding to header while it doesn't do anything with the content, while `content-inset-level` adds left padding to the content.
+在处理嵌套级别时，一般的经验法则是，`header-inset-level`为标题添加左填充，而对内容不做任何处理，而`content-inset-level`为内容添加左填充。
 
-<doc-example title="Playing with inset levels" file="QExpansionItem/InsetLevels" />
+<doc-example title="玩转嵌入级别" file="QExpansionItem/InsetLevels" />
 
-### Behavior
+### 行为
 
 ::: tip
-The behavior below of toggling by expand icon only is especially useful when having a route attached to the header of QExpansionItem. This way by clicking header it will activate the route and by clicking the expand icon it will, well, expand the content. You can't have both actions attached to the whole header, obviously.
+当QExpansionItem的标题上附加了一个路由时，下面这种只通过展开图标进行切换的行为就特别有用。这样一来，点击页眉就能激活路由，点击展开图标就能展开内容。显然，你不能把这两个动作都附加到整个标题上。
 :::
 
-<doc-example title="Toggle by expand icon only" file="QExpansionItem/IconToggle" />
+<doc-example title="仅通过扩展图标进行切换" file="QExpansionItem/IconToggle" />
 
-<doc-example title="Accordion mode" file="QExpansionItem/Accordion" />
+<doc-example title="Accordion模式" file="QExpansionItem/Accordion" />
 
-<doc-example title="Popup mode" file="QExpansionItem/Popup" />
+<doc-example title="弹出模式" file="QExpansionItem/Popup" />

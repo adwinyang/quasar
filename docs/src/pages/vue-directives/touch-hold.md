@@ -1,46 +1,46 @@
 ---
-title: Touch Hold Directive
-desc: Vue directive which triggers an event when the user touches and holds on a component or element for a specified amount of time.
+title: 触摸保持指令
+desc: Vue指令，当用户触摸并保持在一个组件或元素上一定时间时，会触发一个事件。
 keys: touch-hold
 related:
   - /vue-directives/touch-pan
   - /vue-directives/touch-swipe
 ---
-Quasar offers full-featured Vue directives that can totally replace libraries like Hammerjs: `v-touch-pan`, `v-touch-swipe`, `v-touch-hold` and even `v-touch-repeat`.
+Quasar提供了全功能的Vue指令，可以完全取代Hammerjs等库：`v-touch-pan`, `v-touch-swipe`, `v-touch-hold`甚至`v-touch-repeat`。
 
-> **These directives also work with mouse events, not only touch events**, so you are able to build cool functionality for your App on desktops too.
+> **这些指令也适用于鼠标事件，而不仅仅是触摸事件**，所以你也能够在桌面上为你的应用程序建立很酷的功能。
 
-We will be describing `v-touch-hold` directive on the lines below.
+我们将在下面几行中描述`v-touch-hold`指令。
 
 ## TouchHold API
 
 <doc-api file="TouchHold" />
 
-## Usage
+## 使用方法
 
-<doc-example title="Basic" file="TouchHold/Basic" />
+<doc-example title="基本" file="TouchHold/Basic" /> ##使用方法
 
-The default wait time is 600ms, but you can change it:
+默认的等待时间是600ms，但你可以改变它。
 
-<doc-example title="Custom wait time" file="TouchHold/CustomTimer" />
+<doc-example title="自定义等待时间" file="TouchHold/CustomTimer" /> ##使用方法
 
 ::: tip
-TouchHold also has a default sensitivity of 5px for touch events and 7px for mouse events, which means that it allows a slight movement of the finger or mouse without aborting, improving the user experience.
+TouchHold对触摸事件的默认灵敏度为5px，对鼠标事件的默认灵敏度为7px，这意味着它允许手指或鼠标的轻微移动而不中止，改善了用户体验。
 :::
 
-However, you can change this sensitivity too (notice the directive argument below - `600:12:15` - 600ms wait time, 12px sensitivity for touch events, 15px sensitivity for mouse events):
+然而，你也可以改变这个灵敏度(注意下面的指令参数--`600:12:15`--600ms的等待时间，对触摸事件的12px灵敏度，对鼠标事件的15px灵敏度)。
 
-<doc-example title="Custom sensitivity" file="TouchHold/CustomSensitivity" />
+<doc-example title="自定义灵敏度" file="TouchHold/CustomSensitivity" />
 
-### Handling Mouse Events
-When you want to also handle mouse events too, use the `mouse` modifier:
+### 处理鼠标事件
+当你也想处理鼠标事件时，使用`mouse`修改器。
 
 ```html
 <div v-touch-hold.mouse="userHasHold">...</div>
 ```
 
-### Inhibiting TouchHold
-When you want to inhibit TouchHold, you can do so by stopping propagation of the `touchstart`/`mousedown` events from the inner content:
+### 抑制TouchHold
+当你想抑制TouchHold时，你可以通过停止传播内部内容的`touchstart`/`mousedown`事件来实现。
 
 ```html
 <div v-touch-hold.mouse="userHasHold">
@@ -56,7 +56,7 @@ When you want to inhibit TouchHold, you can do so by stopping propagation of the
 </div>
 ```
 
-However, if you are using `capture` or `mouseCapture` modifiers then events will first reach the TouchHold directive then the inner content, so TouchHold will still trigger.
+### 抑制TouchHold
 
-## Note on HMR
-Due to performance reasons, not all of the modifiers are reactive. Some require a window/page/component refresh to get updated. Please check the API card for the modifiers which are not marked as reactive.
+当你想抑制TouchHold时，你可以通过停止传播内部内容的`touchstart`/`mousedown`事件来实现。
+

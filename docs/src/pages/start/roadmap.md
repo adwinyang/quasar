@@ -1,20 +1,20 @@
 ---
-title: Quasar Roadmap
-desc: What's next for Quasar Framework.
+title: Quasar 路线图
+desc: Quasar框架的下一步是什么。
 ---
 
-Where will Quasar be in one year, five years or ten years? It's up to you, the developers using Quasar.
+Quasar在一年后、五年后或十年后会是什么样子？这取决于你们，使用Quasar的开发者。
 
-You, the community, are Quasar. We listen to your opinions and your needs. Which is why we encourage you to directly contact us on [Discord](https://chat.quasar.dev) or submit [Feature Requests](https://github.com/quasarframework/quasar/issues/new/choose). We carefully ponder on all the ideas and we decide along with the community what are the next steps to be taken.
+你们，这个社区，就是Quasar。我们倾听您的意见和需求。这就是为什么我们鼓励你在[Discord](https://chat.quasar.dev)上直接联系我们，或者提交[功能请求](https://github.com/quasarframework/quasar/issues/new/choose)。我们会仔细考虑所有的想法，并与社区一起决定下一步要采取的措施。
 
-<q-btn push class="q-my-sm q-py-sm" no-caps color="brand-primary" icon-right="launch" label="https://roadmap.quasar.dev" href="https://roadmap.quasar.dev" target="_blank" rel="noopener" />
+<q-btn push class="q-my-sm q-py-sm" no-caps color="brand-primary" ic-right=" launch" label="https://roadmap.quasar.dev" href="https://roadmap.quasar.dev" target="_blank" rel="noopener" />
 
-### Important!
+### 重要的是!
 
-If you want to speed up the development of Quasar please consider donating to the project. With proper funding, it allows more of the team to work on the project in a much more dedicated manner.
+如果你想加快Quasar的发展，请考虑为该项目捐款。有了适当的资金，就可以让更多的团队以更专注的方式从事这个项目。
 
-[Donations - https://donate.quasar.dev](https://donate.quasar.dev)
+[捐款 - https://donate.quasar.dev](https://donate.quasar.dev)
 
-If you're in a company and using Quasar for commercial projects, explain to your management the importance of monthly donations (eg. $200+) for open source projects: you're the one using it every day and this makes you the best suited person to convince them. Be creative! :)
+如果你在一家公司，并将Quasar用于商业项目，请向你的管理层解释每月捐款(例如200美元以上)对开源项目的重要性：你是每天都在使用它的人，这使你成为最适合说服他们的人。要有创意! :)
 
-Quasar is saving your company tens of thousands of development hours (quite literally), which in turn is a pretty high money savings. Consider giving back a part of those savings to refuel the project itself ;)
+Quasar为你的公司节省了数以万计的开发时间(实际上是)，这反过来也是一种相当高的资金节省。考虑将这些节省下来的部分资金回馈给项目本身；)

@@ -1,18 +1,18 @@
 ---
-title: useDialogPluginComponent composable
-desc: What is Quasar's useDialogPluginComponent() composable and how you can use it
+title: useDialogPluginComponent可组成的
+desc: Quasar的useDialogPluginComponent()的可组合性是什么，以及你如何使用它
 keys: useDialogPluginComponent
 related:
   - /quasar-plugins/dialog
 ---
 
 ::: tip
-The useDialogPluginComponent composable is part of [Quasar Dialog Plugin](/quasar-plugins/dialog#invoking-custom-component) (Invoking custom component). If you haven't digged into it by now, please have a first read there.
+useDialogPluginComponent是[Quasar Dialog Plugin](/quasar-plugins/dialog#invoking-custom-component)(调用自定义组件)的一部分。如果你现在还没有深入研究，请先阅读一下那里。
 :::
 
-This composable is to be used on the custom components which a Dialog plugin is invoked with. It will bootstrap all the necessary communication of the component with the plugin.
+这个可组合的组件将被用于调用Dialog插件的自定义组件上。它将引导组件与插件之间的所有必要通信。
 
-## Syntax
+## 语法
 
 ```js
 import { useDialogPluginComponent } from 'quasar'
@@ -20,12 +20,12 @@ import { useDialogPluginComponent } from 'quasar'
 setup () {
   const { dialogRef, onDialogHide, onDialogOK, onDialogCancel } = useDialogPluginComponent()
 
-  // dialogRef      - Vue ref to be applied to QDialog
-  // onDialogHide   - Function to be used as handler for @hide on QDialog
-  // onDialogOK     - Function to call to settle dialog with "ok" outcome
-  //                    example: onDialogOK() - no payload
-  //                    example: onDialogOK({ /*.../* }) - with payload
-  // onDialogCancel - Function to call to settle dialog with "cancel" outcome
+  // dialogRef - 应用于QDialog的Vue ref值
+  // onDialogHide - 用于处理QDialog上的@hide的函数。
+  // onDialogOK - 调用函数，以解决对话框的 "OK "结果。
+  //                    示例：onDialogOK() - 没有有效载荷
+  //                    例如：onDialogOK({ /*.../* })--带有效载荷
+  // onDialogCancel - 用 "取消 "的结果来结算对话框的函数。
 
   return {
     dialogRef,
@@ -34,7 +34,7 @@ setup () {
 }
 ```
 
-## Full example
+## 完整的示例
 
 ```html
 <template>
@@ -60,43 +60,43 @@ import { useDialogPluginComponent } from 'quasar'
 
 export default {
   props: {
-    // ...your custom props
+    // ...你的定制属性
   },
 
   emits: [
-    // REQUIRED; need to specify some events that your
-    // component will emit through useDialogPluginComponent()
+    // 必须的；需要指定一些事件，你的
+    // 组件将通过useDialogPluginComponent()发出。
     ...useDialogPluginComponent.emits
   ],
 
   setup () {
-    // REQUIRED; must be called inside of setup()
+    // 必需的；必须在setup()中调用。
     const { dialogRef, onDialogHide, onDialogOK, onDialogCancel } = useDialogPluginComponent()
-    // dialogRef      - Vue ref to be applied to QDialog
-    // onDialogHide   - Function to be used as handler for @hide on QDialog
-    // onDialogOK     - Function to call to settle dialog with "ok" outcome
-    //                    example: onDialogOK() - no payload
-    //                    example: onDialogOK({ /*.../* }) - with payload
-    // onDialogCancel - Function to call to settle dialog with "cancel" outcome
+    // dialogRef - 应用于QDialog的Vue ref值
+    // onDialogHide - 用于处理QDialog上的@hide的函数。
+    // onDialogOK - 调用函数，以解决对话框的 "OK "结果。
+    //                    示例：onDialogOK() - 没有有效载荷
+    //                    例如：onDialogOK({ /*.../* })--带有效载荷
+    // onDialogCancel - 用 "取消 "的结果来结算对话框的函数。
 
     return {
-      // This is REQUIRED;
-      // Need to inject these (from useDialogPluginComponent() call)
-      // into the vue scope for the vue html template
+      // 这是必须的。
+      // 需要注入这些(从useDialogPluginComponent()调用)。
+      // 进入vue范围，用于vue html模板
       dialogRef,
       onDialogHide,
 
-      // other methods that we used in our vue html template;
-      // these are part of our example (so not required)
+      // 我们在vue html模板中使用的其他方法。
+      // 这些是我们示例的一部分(所以不是必须的)。
       onOKClick () {
-        // on OK, it is REQUIRED to
-        // call onDialogOK (with optional payload)
+        // 在确定的情况下，它必须是
+        // 调用onDialogOK(带可选的有效载荷)。
         onDialogOK()
-        // or with payload: onDialogOK({ ... })
-        // ...and it will also hide the dialog automatically
+        // 或带有有效载荷：onDialogOK({ ... })
+        // ...它也会自动隐藏该对话框
       },
 
-      // we can passthrough onDialogCancel directly
+      // 我们可以直接通过onDialogCancel。
       onCancelClick: onDialogCancel
     }
   }

@@ -1,23 +1,23 @@
 ---
-title: What is a Browser Extension
-desc: Introduction on what a Browser Extension (BEX) is.
+title: 什么是浏览器扩展
+desc: 关于什么是浏览器扩展(BEX)的介绍。
 ---
 
-A Browser Extension (BEX) is an application that runs in the browsers context and is used to customize the web browser in some way.
+浏览器扩展(BEX)是一种在浏览器环境下运行的应用程序，用于以某种方式定制网络浏览器。
 
-They are built on web technologies such as HTML, JavaScript, and CSS and will aim to fulfill a single purpose. A single BEX
-can be built in any way the user deems fit but must contribute towards fulfilling that single purpose.
+它们建立在HTML、JavaScript和CSS等网络技术之上，旨在实现一个单一目的。一个单一的BEX
+可以以用户认为合适的任何方式构建，但必须有助于实现该单一目的。
 
-Here a few things a BEX can do:
+下面是一个BEX可以做的几件事。
 
-* Override page content
-* Add to (or alter) the browser's interface
-* Intercept page requests
-* Be a full featured app that runs in the browser.
-* Interact with and alter the development tools of the browser.
+* 覆盖页面内容
+* 增加(或改变)浏览器的界面
+* 拦截页面请求
+* 成为一个在浏览器中运行的全功能的应用程序。
+* 与浏览器的开发工具进行交互和改变。
 
-We've all used Browser Extensions in some capacity. Quasar BEX allows you to do anything a browser extension allows but with the simplicity Quasar offers in all other modes.
+我们都曾以某种方式使用过浏览器扩展。Quasar BEX允许你做任何浏览器扩展所允许的事情，但Quasar在所有其他模式下提供的简单性。
 
-### Supported Browsers
+### 支持的浏览器
 
-Whilst BEX mode has been tested and developed on Firefox and Chrome, all Chromium based browsers should be supported. Where Chrome is mentioned in the documentation, you can safely assume this will apply to the various Chromium browsers as well. If in doubt, refer to the specific browser documentation for clarification.
+虽然BEX模式已经在Firefox和Chrome上进行了测试和开发，但所有基于Chromium的浏览器都应该被支持。在文档中提到Chrome的地方，你可以放心地认为这也适用于各种Chromium浏览器。如果有疑问，请参考具体的浏览器文档以了解情况。

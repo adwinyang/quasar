@@ -1,23 +1,23 @@
 ---
-title: No SSR
-desc: The QNoSsr Vue component makes it easy to differentiate content between server-side and client-side.
+title: 无SSR
+desc: QNoSsr Vue组件使得区分服务器端和客户端的内容变得容易。
 keys: QNoSsr
 related:
   - /quasar-cli/developing-ssr/introduction
 ---
-The QNoSsr component makes sense only if you are creating a SSR website/app.
+QNoSsr组件只有在你创建一个SSR网站/应用程序时才有意义。
 
-It avoids rendering its content on the server and leaves that for client only. Useful when you got code that is not isomorphic and can only run on the client side, in a browser.
+它避免了在服务器上渲染其内容，而只留给了客户端。当你得到的代码不是同构的，只能在浏览器中的客户端运行时，它很有用。
 
-Alternatively, you can also use it to render content only on server-side and it automatically removes it if it ends up running on a client browser.
+另外，你也可以用它来只在服务器端渲染内容，如果它最终在客户端浏览器上运行，它会自动将其删除。
 
 ## QNoSsr API
 
 <doc-api file="QNoSsr" />
 
-## Usage
+## 使用方法
 
-### Basic
+### 基本
 
 ```html
 <q-no-ssr>
@@ -25,7 +25,7 @@ Alternatively, you can also use it to render content only on server-side and it 
 </q-no-ssr>
 ```
 
-### Multiple client nodes
+### 多个客户节点
 
 ```html
 <q-no-ssr>
@@ -34,7 +34,7 @@ Alternatively, you can also use it to render content only on server-side and it 
 </q-no-ssr>
 ```
 
-### Multiple client nodes with tag prop
+### 多个客户节点的标签属性
 
 ```html
 <q-no-ssr tag="blockquote">
@@ -43,7 +43,7 @@ Alternatively, you can also use it to render content only on server-side and it 
 </q-no-ssr>
 ```
 
-### Placeholder property
+### 占位符属性
 
 ```html
 <q-no-ssr placeholder="Rendered on server">
@@ -51,7 +51,7 @@ Alternatively, you can also use it to render content only on server-side and it 
 </q-no-ssr>
 ```
 
-### Placeholder slot
+### 占位槽
 
 ```html
 <q-no-ssr>
@@ -62,7 +62,7 @@ Alternatively, you can also use it to render content only on server-side and it 
 </q-no-ssr>
 ```
 
-### Multiple content in placeholder slot
+### 占位符插槽中的多个内容
 
 ```html
 <q-no-ssr>
@@ -74,7 +74,7 @@ Alternatively, you can also use it to render content only on server-side and it 
 </q-no-ssr>
 ```
 
-### Only placeholder slot
+### 只有占位符插槽
 
 ```html
 <q-no-ssr>

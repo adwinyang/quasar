@@ -1,21 +1,21 @@
 ---
 title: Quasar Playground
-desc: Play with Quasar on a jsFiddle, Codepen or Codesandbox templates.
+desc: 在jsFiddle、Codepen或Codesandbox模板上玩Quasar。
 ---
 
-You can fork and use these links for reporting issues on GitHub too. These links (obviously) use the Quasar UMD version.
+你也可以在GitHub上分叉并使用这些链接来报告问题。这些链接(显然)使用Quasar UMD版本。
 
-| Supplier | URL |
+| 供应商 | URL |
 | --- | --- |
 | jsFiddle | [https://jsfiddle.quasar.dev](https://jsfiddle.quasar.dev) |
 | Codepen | [https://codepen.quasar.dev](https://codepen.quasar.dev) |
 
-Make sure to read [about it](/start/umd) before diving in. When you use jsFiddle/Codepen you can skip the Installation section.
+在深入研究之前，请务必阅读[关于它](/start/umd)。当你使用jsFiddle/Codepen时，你可以跳过安装部分。
 
-#### Codesandbox Template
+#### Codesandbox模板
 
-For more intricate Quasar code examples, like when using boot files, Vuex, etc, fork our Codesandbox:
+对于更复杂的Quasar代码示例，比如使用引导文件、Vuex等时，可以叉开我们的Codesandbox。
 
-| Supplier | URL |
-| --- | --- |
+| 供应商 | URL |
 | Codesandbox | [https://codesandbox.quasar.dev](https://codesandbox.quasar.dev) |
+

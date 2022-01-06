@@ -1,28 +1,28 @@
 ---
-title: Avatar
-desc: The QAvatar Vue component creates an element that can embed a letter, an icon or an image within its shape.
+title: 阿凡达
+desc: QAvatar Vue组件创建了一个元素，可以在其形状中嵌入一个字母、一个图标或一个图像。
 keys: QAvatar
 ---
-The QAvatar component creates a scalable, color-able element that can have text, icon or image within its shape. By default it is circular, but it can also be square or have a border-radius applied to give rounded corners to the square shape.
+QAvatar组件创建了一个可扩展的、可着色的元素，在其形状中可以有文本、图标或图像。默认情况下，它是圆形的，但它也可以是方形的，或者应用一个边框半径，使方形的边角变圆。
 
-It is often used with other components in their slots.
+它经常与其他组件的插槽一起使用。
 
 ## QAvatar API
 
 <doc-api file="QAvatar" />
 
-## Usage
+## 使用方法
 
 ::: tip
-The `size` property will determine the height and the width of the Avatar. The `font-size` property will set the size of the font used within the Avatar, which will have an effect on the size of letters and icons.
+`size`属性将决定阿凡达的高度和宽度。字体大小 "属性将设置阿凡达内使用的字体大小，这将对字母和图标的大小产生影响。
 :::
 
-<doc-example title="Basic" file="QAvatar/Basic" />
+<doc-example title="基本" file="QAvatar/Basic" />
 
-<doc-example title="Standard sizes" file="QAvatar/StandardSizes" />
+<doc-example title="标准尺寸" file="QAvatar/StandardSizes" />
 
-<doc-example title="Square" file="QAvatar/Square" />
+<doc-example title="方形" file="QAvatar/Square" />
 
-<doc-example title="Rounded" file="QAvatar/Rounded" />
+<doc-example title="圆形" file="QAvatar/Rounded" />
 
-<doc-example title="With other components" file="QAvatar/Integrated" />
+<doc-example title="与其他组件 "file="QAvatar/Integrated" />

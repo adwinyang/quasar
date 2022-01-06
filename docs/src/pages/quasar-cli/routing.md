@@ -1,20 +1,20 @@
 ---
-title: App Routing
-desc: How to use the Vue Router in a Quasar app.
+title: 应用程序路由
+desc: 如何在Quasar应用程序中使用Vue Router。
 ---
 
-You'll notice that your Quasar project contains a `/src/router` folder. This holds the routing configuration of your website/app:
+你会注意到，你的Quasar项目包含一个`/src/router`文件夹。这里面有你的网站/应用程序的路由配置。
 
-* "/src/router/index.js" holds the Vue Router initialization code
-* "/src/router/routes.js" holds the routes of your website/app
+* "/src/router/index.js" 保存Vue Router的初始化代码
+* "/src/router/routes.js "存放你的网站/应用程序的路由。
 
 ::: warning
-Quasar documentation assumes you are already familiar with [Vue Router](https://github.com/vuejs/vue-router-next). Below it's described only the basics of how to make use of it in a Quasar CLI project. For the full list of its features please visit the [Vue Router documentation](https://next.router.vuejs.org/).
+Quasar文档假定你已经熟悉了[Vue Router](https://github.com/vuejs/vue-router-next)。下面我们只描述了如何在Quasar CLI项目中使用它的基本情况。对于其功能的完整列表，请访问[Vue Router 文档](https://next.router.vuejs.org/)。
 :::
 
-The `/src/router/routes.js` needs to import your website/app's Pages and Layouts. Read more on [Routing with Layouts and Pages](/layout/routing-with-layouts-and-pages) documentation page.
+`/src/router/routes.js`需要导入你的网站/应用程序的页面和布局。阅读更多关于[Routing with Layouts and Pages](/layout/routing-with-layouts-and-pages)文档页面。
 
-When using Vuex the store is not directly importable from other scripts, but it is passed to the exported function of `/src/router/index.js`, so it can be accessed from there. For example you can use the `Router.beforeEach` method to check authentication in the router:
+当使用Vuex时，商店不能直接从其他脚本中导入，但它被传递到`/src/router/index.js`的导出函数中，因此可以从那里访问它。例如，你可以使用`Router.beforeEach`方法来检查路由器中的认证。
 
 ```js
 export default function ({ store /*, ssrContext */ }) {
@@ -31,5 +31,5 @@ export default function ({ store /*, ssrContext */ }) {
 ```
 
 ::: tip
-If you are developing a SSR app, then you can check out the [ssrContext](/quasar-cli/developing-ssr/ssr-context) Object that gets supplied server-side.
+如果你正在开发一个SSR应用程序，那么你可以看看[ssrContext](/quasar-cli/developing-ssr/ssr-context)对象，它被提供到服务器端。
 :::

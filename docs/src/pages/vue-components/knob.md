@@ -1,49 +1,49 @@
 ---
-title: Knob
-desc: The QKnob Vue component is used to take a number input through mouse or touch panning.
+title: 钮扣
+desc: QKnob Vue组件用于通过鼠标或触摸平移来获取数字输入。
 keys: QKnob
 related:
   - /vue-components/circular-progress
 ---
 
-The QKnob component is used to take a number input from the user through mouse/touch panning. It is based on [QCircularProgress](/vue-components/circular-progress) and inherits all its properties and behavior.
+QKnob组件用于通过鼠标/触摸平移从用户那里获取数字输入。它基于[QCircularProgress](/vue-components/circular-progress)并继承了它的所有属性和行为。
 
 ## QKnob API
 
 <doc-api file="QKnob" />
 
-## Usage
+## 使用方法
 
-By default, QKnob inherits current text color (as arc progress color and inner label color) and current font size (as component size). For customization, you can use the size and color related props.
+默认情况下，QKnob继承了当前文本颜色(作为圆弧进度颜色和内部标签颜色)和当前字体大小(作为组件大小)。对于自定义，你可以使用尺寸和颜色相关的属性。
 
-### Basic
+### 基本
 
-<doc-example title="Basic" file="QKnob/Basic" />
+<doc-example title="基本" file="QKnob/Basic" />
 
-### Show value
+### 显示值
 
-In the example below, `show-value` property also enables the default slot, so you can fill it with custom content, like even a QAvatar or a QTooltip. The `font-size` prop refers to the inner label font size.
+在下面的示例中，`显示值`属性也启用了默认槽，所以你可以用自定义的内容填充它，甚至像QAvatar或QTooltip。`字体大小`属性指的是内部标签的字体大小。
 
-<doc-example title="Show value" file="QKnob/ShowValue" />
+<doc-example title="显示值" file="QKnob/ShowValue" />
 
-### Min and max
+### 最小和最大
 
-<doc-example title="Custom min/max" file="QKnob/MinMax" />
+<doc-example title="自定义最小/最大" file="QKnob/MinMax" /> ### 最小和最大
 
-### Custom step
+### 自定义步骤
 
-<doc-example title="Custom step" file="QKnob/Step" />
+<doc-example title="自定义步长" file="QKnob/Step" /> ### 自定义步骤
 
-### Offset angle
+### 偏移角度
 
-<doc-example title="Offset angle" file="QKnob/Angle" />
+<doc-example title="偏移角度" file="QKnob/Angle" /> ### 偏移角度
 
-### Disable and readonly
+### 禁用和只读
 
-<doc-example title="Disable and readonly" file="QKnob/DisableReadonly" />
+<doc-example title="禁用和只读" file="QKnob/DisableReadonly" /> ### 禁用和只读
 
-### Native form submit
+### 本地表单提交
 
-When dealing with a native form which has an `action` and a `method` (eg. when using Quasar with ASP.NET controllers), you need to specify the `name` property on QKnob, otherwise formData will not contain it (if it should):
+当处理一个有 "action "和 "method "的本地表单时(例如，当使用Quasar和ASP.NET控制器时)，你需要在QKnob上指定 "name "属性，否则formData将不包含它(如果它应该包含)。
 
-<doc-example title="Native form" file="QKnob/NativeForm" />
+<doc-example title="本地表单" file="QKnob/NativeForm" />

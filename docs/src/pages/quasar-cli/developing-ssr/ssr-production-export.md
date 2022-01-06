@@ -1,82 +1,82 @@
 ---
-title: SSR Production Export
-desc: Configuring the Quasar SSR webserver for different platforms, including a serverless architecture.
+title: SSR生产出口
+desc: 为不同平台配置Quasar SSR网络服务器，包括无服务器架构。
 ---
 
 ::: danger
-* You will need to be running on "@quasar/app" v3.2+ to be able to use this feature.
-* This file is used ONLY for your production build and NOT while developing.
+* 你需要运行在"@quasar/app" v3.2以上才能使用这个功能。
+* 这个文件只用于你的生产构建，而不是在开发时使用。
 :::
 
-Notice that your generated `/src-ssr` contains a file named `production-export.js`. This file defines how your SSR webserver is served. You can start listening to a port or provide a handler for your serverless infrastructure to use. It's up to you.
+注意你生成的`/src-ssr`包含一个名为`production-export.js`的文件。这个文件定义了如何为你的SSR webserver提供服务。你可以开始监听一个端口，或者为你的无服务器基础设施提供一个处理程序来使用。这由你决定。
 
-> Whatever this function returns (if anything) will be exported from your built `dist/ssr/index.js`.
+> 无论这个函数返回什么(如果有的话)，都将从你建立的`dist/ssr/index.js`中导出。
 
-## Anatomy
+## 剖析
 
-The `/src-ssr/production-export.[js|ts]` file is a simple JavaScript file which boots up your SSR webserver and defines what your webserver exports (if exporting anything).
+`/src-ssr/production-export.[js|ts]`文件是一个简单的JavaScript文件，用于启动SSR webserver并定义webserver的输出内容(如果有输出的话)。
 
-``` js
-// import something here (serverless packages?)
+```js
+// 在这里导入一些东西(无服务器包？)
 
 export default ({
   app, port, isReady, ssrHandler,
   resolve, publicPath, folders, render, serve
 }) => {
-  // something to do with the server "app"
-  // return whatever you want your webserver to export (handler for serverless function?)
+  // 与服务器 "应用程序 "有关的东西
+  // 返回你希望你的网络服务器输出的任何东西(无服务器功能的处理程序？)
 }
 ```
 
 ::: tip
-Remember that whatever this function returns (if anything) will be exported from your built `dist/ssr/index.js`.
+记住，无论这个函数返回什么(如果有的话)，都将从你建立的`dist/ssr/index.js`中导出。
 :::
 
-You can wrap the returned function with `ssrProductionExport` helper to get a better IDE autocomplete experience (Quasar v2.3.1+ required):
+你可以用`ssrProductionExport`帮助器包装返回的函数，以获得更好的IDE自动完成体验(需要Quasar v2.3.1+)。
 
-``` js
+```js
 import { ssrProductionExport } from 'quasar/wrappers'
 
 export default ssrProductionExport(({
   app, port, isReady, ssrHandler,
   resolve, publicPath, folders, render, serve
 }) => {
-  // something to do with the server "app"
-  // return whatever you want your webserver to export (handler for serverless?)
+  // 与服务器 "应用程序 "有关的东西
+  // 返回你想让你的webserver输出的任何东西(无服务器的处理程序？)
 })
 ```
 
-## Parameters
+## 参数
 
-We are referring here to the Object received as parameter by the default exported function of the production-export file.
+我们在这里指的是生产-输出文件的默认输出函数所接收的作为参数的对象。
 
-``` js
+```js
 export default ({
   app, port, isReady, ssrHandler,
   resolve, publicPath, folders, render, serve
 }) => {
 ```
 
-Detailing the Object:
+详述对象。
 
-``` js
+```js
 {
   app,     // Expressjs app instance
 
   port,    // process.env.PORT or quasar.conf > ssr > prodPort
 
   isReady, // Function to call returning a Promise
-           // when app is ready to serve clients
+           // 当应用程序准备好为客户服务时
 
   ssrHandler, // Prebuilt app handler if your serverless service
-              // doesn't require a specific way to provide it.
-              // Form: ssrHandler (req, res, next)
-              // Tip: it uses isReady() under the hood already
+              // 并不要求以特定的方式来提供它。
+              // 表格：ssrHandler (req, res, next)
+              // 提示：它在引擎盖下已经使用了isReady()。
 
-  // all of the following are the same as
-  // for the SSR middlewares (check its docs page);
-  // normally you don't need these here
-  // (use a real SSR middleware instead)
+  // 下列各项都是
+  // 为SSR中间件(查看其文档页面)。
+  // 通常情况下，你在这里不需要这些
+  // (使用真正的SSR中间件代替)
   resolve: {
     urlPath(path)
     root(arg1, arg2),
@@ -95,9 +95,9 @@ Detailing the Object:
 }
 ```
 
-## Default content
+## 默认内容
 
-The following is the default content of `/src-ssr/production-export.js` when you add SSR support in a Quasar CLI project:
+以下是在Quasar CLI项目中添加SSR支持时`/src-ssr/production-export.js`的默认内容。
 
 ```js
 import { ssrProductionExport } from 'quasar/wrappers'
@@ -111,66 +111,66 @@ export default ssrProductionExport(({ app, port, isReady }) => {
 })
 ```
 
-## Usage
+## 用法
 
 ::: warning
-* If you import anything from node_modules, then make sure that the package is specified in package.json > "dependencies" and NOT in "devDependencies".
-* This is usually not the place to add middlewares (but you can do it). Add middlewares by using the [SSR Middlewares](/quasar-cli/developing-ssr/ssr-middleware) instead. You can configure SSR Middlewares to run only for dev or only for production too.
+* 如果你从node_modules中导入任何东西，那么请确保该软件包在package.json > "dependencies "中指定，而不是在 "devDependencies "中。
+* 这里通常不是添加中间件的地方(但你可以这样做)。通过使用[SSR Middlewares](/quasar-cli/developing-ssr/ssr-middleware)来添加中间件。你也可以将SSR中间件配置为只为开发或只为生产运行。
 :::
 
-### Listen on a port
+### 在一个端口上收听
 
-This is the default option that you get when adding SSR support in a Quasar CLI project. It starts listening on the configured port (process.env.PORT or quasar.conf > ssr > prodPort).
+这是你在Quasar CLI项目中添加SSR支持时得到的默认选项。它开始监听配置的端口(process.env.PORT或quasar.conf > ssr > prodPort)。
 
-``` js
+```js
 // src-ssr/production-export.[js|ts]
 
 import { ssrProductionExport } from 'quasar/wrappers'
 
 export default ssrProductionExport(({ app, port, isReady }) => {
-  // we wait for app to be ready (including running all SSR middlewares)
+  // 我们等待应用程序准备就绪(包括运行所有SSR中间件)。
   return isReady().then(() => {
-    // then we start listening on a port
+    // 然后我们开始在一个端口上监听
     app.listen(port, () => {
-      // we're ready to serve clients
+      // 我们已准备好为客户服务
       console.log('Server listening at port ' + port)
     })
   })
 })
 ```
 
-### Serverless
+### 无服务器
 
-If you have a serverless infrastructure, then you generally need to export a handler instead of starting to listen to a port.
+如果你有一个无服务器的基础设施，那么你一般需要导出一个处理程序，而不是开始监听一个端口。
 
-Say that your serverless service requires you to:
+比方说，你的无服务器服务需要你。
 
-``` js
+```js
 module.exports.handler = __your_handler__
 ```
 
-Then what you'd need to do is:
+那么你需要做的是。
 
-``` js
+```js
 // src-ssr/production-export.[js|ts]
 
 import { ssrProductionExport } from 'quasar/wrappers'
 
 export default ssrProductionExport(({ ssrHandler }) => {
-  // "ssrHandler" is a prebuilt handler which already
-  // waits for all the middlewares to run before serving clients
+  // "ssrHandler "是一个预先构建的处理程序，它已经
+  // 在为客户提供服务之前，等待所有中间程序的运行。
 
-  // whatever you return here is equivalent to module.exports.<key> = <value>
+  // 无论你在这里返回什么，都等同于module.exports.<key> = <value>。
   return { handler: ssrHandler }
 })
 ```
 
-Please note that the provided `ssrHandler` is a Function of form: `(req, res, next) => void`.
-Should you require to export a handler of form `(event, context, callback) => void` then you will most likely want to use the `serverless-http` package (see below).
+请注意，提供的`ssrHandler'是一个形式的函数。`(req, res, next) => void`。
+如果你需要输出一个"(event, context, callback) => void "形式的处理程序，那么你很可能需要使用 "serverless-http "包(见下文)。
 
-#### Example: serverless-http
+#### 示例：serverless-http
 
-``` js
+```js
 // src-ssr/production-export.[js|ts]
 
 import serverless from 'serverless-http'
@@ -181,9 +181,9 @@ export default ssrProductionExport(({ ssrHandler }) => {
 })
 ```
 
-#### Example: Firebase function
+#### 示例。Firebase函数
 
-``` js
+```js
 // src-ssr/production-export.[js|ts]
 
 import * as functions from 'firebase-functions'

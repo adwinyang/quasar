@@ -1,31 +1,31 @@
 ---
-title: Color Palette
-desc: How to use and customize the Quasar Color Palette.
+title: 色调
+desc: 如何使用和定制Quasar调色板。
 components:
   - color-palette/BrandColors
   - color-palette/ColorList
 related:
   - quasar-utils/color-utils
 ---
-Quasar Framework offers a wide selection of colors out of the box. You can use them both as Sass/SCSS variables in your CSS code or directly as CSS classes in your HTML templates.
+Quasar框架开箱即提供了大量的颜色选择。你可以在你的CSS代码中作为Sass/SCSS变量使用它们，也可以在你的HTML模板中直接作为CSS类使用。
 
-## Brand Colors
-Most of the colors that Quasar Components use are strongly linked with these three colors that you can change. Choosing these colors is the first step one should take when differentiating the design of an App. You'll notice immediately upon changing their default values that Quasar Components follow these colors as a guideline.
+## 品牌颜色
+Quasar组件使用的大多数颜色都与这三种颜色密切相关，你可以改变它们。选择这些颜色是区分应用程序设计时应该采取的第一步。在改变它们的默认值后，你会立即注意到Quasar组件遵循这些颜色作为指导原则。
 
 <brand-colors />
 
 ::: tip TIPS
-Also check [Theme Builder](/style/theme-builder) for a tool on customizing the brand colors of your website/app.
+还可以查看[Theme Builder](/style/theme-builder)，了解关于定制网站/应用程序的品牌颜色的工具。
 :::
 
-## Color List
+## 颜色列表
 
-Here's the list of colors provided out of the box. Within your app's `*.vue` files you can use them as CSS classes (in HTML templates) or as [Sass/SCSS variables](/style/sass-scss-variables) in `<style lang="...">` tags.
+这里是开箱即用的颜色列表。在你的应用程序的`*.vue`文件中，你可以将它们作为CSS类(在HTML模板中)或作为[Sass/SCSS变量](/style/sass-scss-variables)在`<style lang="...">`标签中使用。
 
 <color-list />
 
-## Using as CSS Classes
-Use `text-` or `bg-` prefixes as class names to change the color of text or the color of the background.
+## 作为CSS类使用
+使用`text-`或`bg-`前缀作为类名来改变文本的颜色或背景的颜色。
 
 ```html
 <!-- changing text color -->
@@ -35,9 +35,9 @@ Use `text-` or `bg-` prefixes as class names to change the color of text or the 
 <p class="bg-positive">...</p>
 ```
 
-## Using Sass/SCSS Variables
+## 使用Sass/SCSS变量
 
-In your app's `*.vue` files you can use the colors as `$primary`, `$red-1`, and so on.
+在你的应用程序的`*.vue`文件中，你可以使用颜色作为`$primary`，`$red-1`，等等。
 
 ```html
 <!-- Notice lang="sass" -->
@@ -58,8 +58,8 @@ div {
 </style>
 ```
 
-## Adding Your Own Colors
-If you want to use your own colors for your components (let's say we are adding a color named "brand") all you need to do is add the following CSS into your app:
+## 添加你自己的颜色
+如果你想为你的组件使用你自己的颜色(比方说，我们要添加一种名为 "品牌 "的颜色)，你所需要做的就是在你的应用程序中添加以下CSS。
 
 ```css
 .text-brand {
@@ -70,38 +70,38 @@ If you want to use your own colors for your components (let's say we are adding 
 }
 ```
 
-Now we can use this color for Quasar components:
+现在我们可以将这种颜色用于Quasar 组件。
 ```html
 <q-btn color="brand" ... />
 ```
 
-You can access a custom color value (hex string) in JS context with the [getPaletteColor](/quasar-utils/color-utils#helper-getpalettecolor) util.
+你可以通过[getPaletteColor](/quasar-utils/color-utils#helper-getpalettecolor)工具在JS上下文中访问自定义颜色值(十六进制字符串)。
 
-## Dynamic Change of Brand Colors (Dynamic Theme Colors)
+## 品牌颜色的动态变化(动态主题颜色)
 
-### How it works
+### 它是如何工作的
 
-You can dynamically customize the brand colors during run-time: `primary`, `secondary`, `accent`, `dark`, `positive`, `negative`, `info`, `warning`. That means you can have one build of your application with a default color theme but show it with a runtime selected one.
+你可以在运行时动态地定制品牌颜色："主要"、"次要"、"中心"、"黑暗"、"正面"、"负面"、"信息"、"警告"。这意味着你可以用一个默认的颜色主题来构建你的应用程序，但用运行时选择的颜色主题来显示它。
 
-The main color configuration is done using CSS custom properties, stored on the root element (`:root`). Each property has a name of `--q-${name}` (example: `--q-primary`, `--q-secondary`) and should have a valid CSS color as value.
+主要的颜色配置是通过CSS自定义属性完成的，存储在根元素(`:root`)上。每个属性都有一个`--q-${name}`的名字(例如：`--q-primary`, `--q-secondary`)，并且应该有一个有效的CSS颜色作为值。
 
-The CSS Custom properties use the same inheritance rules as normal CSS, so you can only redefine your desired colors and the rest will be inherited from the parent elements.
+CSS自定义属性使用与普通CSS相同的继承规则，所以你只能重新定义你想要的颜色，其余的将从父元素中继承下来。
 
-The recommended workflow is to set your customized color properties on the `html` (`document.documentElement`) or `body` (`document.body`) elements. This will allow you to revert to the default color by just deleting your custom one.
+推荐的工作流程是在`html`(`document.documentElement`)或`body`(`document.body`)元素上设置你的自定义颜色属性。这将允许你通过删除你的自定义颜色而恢复到默认颜色。
 
-More info on CSS custom properties (variables) on [MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/Using_CSS_variables).
+更多关于CSS自定义属性(变量)的信息，请访问[MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/Using_CSS_variables)。
 
 ### Util: setCssVar
 
-Quasar offers a helper function for setting Quasar CSS variables that can be used for the brand colors too: `setCssVar(colorName, colorValue[, element])`
+Quasar提供了一个用于设置Quasar CSS变量的辅助函数，也可用于品牌颜色：`setCssVar(colorName, colorValue[, element])`。
 
-| Parameter | Type | Required | Description |
-| --- | --- | --- | --- |
-| `colorName` | String | *Yes* | One of `primary`, `secondary`, `accent`, `dark`, `positive`, `negative`, `info`, `warning` |
-| `colorValue` | String | *Yes* | Valid CSS color value |
-| `element` | Element | - | (Default: `document.body`) Element where the custom property will be set. |
+| 参数 | 类型 | 要求 | 描述 |
+| `colorName` | String | *Yes* | `primary`, `secondary`, `accent`, `dark`, `positive`, `negative`, `info`, `warning`之一
+| `colorValue` | String | *Yes* | 有效的CSS颜色值 |
+| `element` | 元素 | - | (默认: `document.body`) 将设置自定义属性的元素。|
+使用帮助器设置品牌颜色的示例。
 
-Example of setting brand colors using the helper:
+
 
 ```js
 import { setCssVar } from 'quasar'
@@ -111,23 +111,23 @@ setCssVar('primary', '#33F')
 setCssVar('primary', '#F33', document.getElementById('rebranded-section-id'))
 ```
 
-Example of setting brand colors using the helper:
+使用帮助器设置品牌颜色的示例。
 
 ```js
-// equivalent of setCssVar('primary') in raw Javascript:
+// 相当于原始Javascript中的setCssVar('primary')。
 document.body.style.setProperty('--q-primary', '#0273d4')
 ```
 
 ### Util: getCssVar
 
-Quasar offers a helper function for getting the value of Quasar CSS variables that can be used for brand colors too: `getCssVar(colorName[, element])`
+Quasar提供了一个获取Quasar CSS变量值的辅助函数，它也可以用于品牌颜色：`getCssVar(colorName[, element])`。
 
-| Parameter | Type | Required | Description |
-| --- | --- | --- | --- |
-| `colorName` | String | *Yes* | One of `primary`, `secondary`, `accent`, `dark`, `positive`, `negative`, `info`, `warning` |
-| `element` | Element | - | (Default: `document.body`) Element where the custom property will be read. |
+| 参数 | 类型 | 要求 | 描述 |
+| `colorName` | String | *Yes* | `primary`, `secondary`, `accent`, `dark`, `positive`, `negative`, `info`, `warning`之一
+| `element` | Element | - | (默认: `document.body`) 读取自定义属性的元素。|
+使用帮助器获取品牌颜色的示例。
 
-Example of getting brand colors using the helper:
+
 
 ```js
 import { getCssVar } from 'quasar'
@@ -136,17 +136,17 @@ getCssVar('primary') // '#33F'
 getCssVar('primary', document.getElementById('rebranded-section-id'))
 ```
 
-What this helper does is wrap the raw Javascript `getPropertyValue()` and it's available for convenience. Here is an example of equivalent vanilla Javascript:
+这个助手所做的是包装原始的Javascript `getPropertyValue()`，它的作用是方便使用。下面是一个等价的vanilla Javascript的示例。
 
 ```js
-// equivalent of getCssVar('primary') in raw Javascript:
+// 相当于原始Javascript中的getCssVar('primary')。
 getComputedStyle(document.documentElement)
   .getPropertyValue('--q-primary') // #0273d4
 ```
 
-### More color utils
+### 更多的颜色实用程序
 
-Besides the utils above, we also have a dedicated section in docs for handling colors that you might be interested in: [Color utils](/quasar-utils/color-utils).
+除了上面的实用程序，我们在文档中还有一个专门的章节用于处理颜色，你可能会感兴趣。[颜色工具](/quasar-utils/color-utils)。
 
 ```js
 import { colors, setCssVar } from 'quasar'
@@ -158,9 +158,9 @@ setCssVar('primary', newPrimaryColor)
 setCssVar('primary-darkened', lighten(newPrimaryColor, -10))
 ```
 
-## Setting Up Defaults
+## 设置默认值
 
-This is how you can set up some brand colors without tampering with the Sass variables:
+这就是你如何在不篡改Sass变量的情况下设置一些品牌颜色。
 
 ```js
 // Quasar CLI - quasar.conf.js
@@ -176,11 +176,11 @@ return {
 }
 ```
 
-Or with a [boot file](/quasar-cli/boot-files):
+或者用[引导文件](/quasar-cli/boot-files)。
 
 ```js
-// For Quasar CLI
-// Do NOT run this boot file for SSR mode
+// 对于Quasar CLI
+// 不要在SSR模式下运行这个引导文件
 
 import { setCssVar } from 'quasar'
 
@@ -189,10 +189,10 @@ export default () => {
 }
 ```
 
-If you are using the Quasar UMD version or the Quasar Vite plugin or Vue CLI:
+如果您使用的是Quasar UMD版本或Quasar Vite插件或Vue CLI。
 
 ```js
-// UMD or Quasar Vite plugin or Vue CLI
+// UMD或Quasar Vite插件或Vue CLI
 app.use(Quasar, {
   brand: {
     primary: '#ff0000',

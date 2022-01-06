@@ -1,15 +1,15 @@
 ---
-title: Timeline
-desc: The QTimeline Vue component displays a list of events in chronological order. It is typically a graphic design showing a long bar labelled with dates alongside itself and usually events.
+title: 时间轴
+desc: QTimeline Vue组件按时间顺序显示事件的列表。它通常是一个图形设计，显示一个标有日期的长条，旁边是自己和通常的事件。
 keys: QTimeline,QTimelineEntry
 ---
-The QTimeline component displays a list of events in chronological order. It is typically a graphic design showing a long bar labelled with dates alongside itself and usually events. Timelines can use any time scale, depending on the subject and data.
+QTimeline组件按时间顺序显示事件的列表。它通常是一个图形设计，显示一个标有日期的长条，旁边是自己和通常的事件。时间线可以使用任何时间尺度，这取决于主题和数据。
 
-QTimeline has 3 layouts:
+QTimeline有3种布局。
 
-* `dense` (default) is showing headings, titles, subtitles and content on the **timeline-specified side** of the time line (default on right)
-* `comfortable` is showing headings, titles and content on the **timeline-specified side** of the time line (default on right) and the subtitles on the other side
-* `loose` is showing headings on center, titles and content on the **entry-specified side** of the time line (default on right) and the subtitles on the other side
+* `密集'(默认)是在时间线的**时间指定的一侧显示标题、题目、字幕和内容(默认在右边)。
+* 舒适的 "是在时间线的**时间线指定的一侧(默认在右侧)显示标题、题目和内容，而在另一侧显示字幕。
+* `宽松的`在时间线的**入口指定的一侧显示标题和内容(默认在右侧)，另一侧显示字幕。
 
 ## QTimeline API
 <doc-api file="QTimeline" />
@@ -17,40 +17,40 @@ QTimeline has 3 layouts:
 ## QTimelineEntry API
 <doc-api file="QTimelineEntry" />
 
-## Usage
+## 使用方法
 
-### Basic
+### 基本
 
-<doc-example title="Basic" file="QTimeline/Basic" scrollable />
+<doc-example title="基本" file="QTimeline/Basic" rollable />
 
-### Using props only
+### 只使用属性
 
-Below is the same example, but using QTimelineEntry properties only instead of the default slot:
+下面是同样的示例，但只使用QTimelineEntry属性而不是默认的槽。
 
-<doc-example title="Props only" file="QTimeline/PropsOnly" scrollable />
+<doc-example title="只使用属性" file="QTimeline/PropsOnly" scrollable />
 
-### Using slots only
+### 只使用槽
 
-Below is again the same example, but using only QTimelineEntry slots:
+下面又是同一个示例，但只使用QTimelineEntry槽。
 
-<doc-example title="Slots only" file="QTimeline/SlotsOnly" scrollable />
+<doc-example title="只使用槽" file="QTimeline/SlotsOnly" scrollable />
 
-### On dark background
+### 在深色背景上
 
-<doc-example title="On a dark background" file="QTimeline/Dark" dark scrollable />
+<doc-example title="在黑暗的背景上" file="QTimeline/Dark" dark scrollable />
 
-### Layouts and side selection
+### 布局和侧面选择
 
 ::: warning
-QTimelineEntry only takes into account its `side` prop if QTimeline has the `loose` layout.
+如果QTimeline有 "宽松 "的布局，QTimelineEntry只考虑其 "side "属性。
 :::
 
-<doc-example title="Layouts and side selection" file="QTimeline/Layouts" scrollable />
+<doc-example title="布局和侧面选择" file="QTimeline/Layouts" scrollable />
 
-### Responsive
+### 响应式
 
 ::: tip
-The examples below uses `$q.screen` to detect changes in window size to see all 3 layouts in action.
+下面的示例使用`$q.screen`来检测窗口大小的变化，可以看到所有3种布局的运行情况。
 :::
 
-<doc-example title="Responsive layout" file="QTimeline/Responsive" scrollable />
+<doc-example title="响应式布局" file="QTimeline/Responsive" scrollable />

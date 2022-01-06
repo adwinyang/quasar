@@ -1,87 +1,87 @@
 ---
-title: QImg
-desc: The QImg Vue component makes working with responsive images easy and also adds a nice loading effect to them along with many other features like custom aspect ratio and captions.
+title: 启明星辰
+desc: QImg Vue组件使响应式图片的工作变得简单，还为它们添加了一个漂亮的加载效果，以及许多其他功能，如自定义长宽比和标题。
 keys: QImg
 related:
   - /vue-components/spinners
   - /options/transitions
 ---
-The QImg component makes working with images (any picture format) easy and also adds a nice loading effect to it along with many other features (example: the ability to set an aspect ratio).
+QImg组件使处理图片(任何图片格式)变得简单，并且还为它增加了一个漂亮的加载效果以及许多其他功能(例如：能够设置长宽比)。
 
 ## QImg API
 
 <doc-api file="QImg" />
 
-## Usage
+## 使用方法
 
-### Basic
+### 基本
 
-<doc-example title="Basic" file="QImg/Basic" />
+<doc-example title="基本" file="QImg/Basic" />
 
-### Aspect ratio
+### 纵横比
 
-<doc-example title="Custom aspect ratio" file="QImg/Ratio" />
+<doc-example title="自定义长宽比" file="QImg/Ratio" /> ### 长宽比
 
-### Captions
+### 标题
 
-<doc-example title="Captions" file="QImg/Caption" />
+<doc-example title="标题" file="QImg/Caption" /> ### 标题
 
-### Image style
+### 图像样式
 
-In the example below, we add a blur and sepia effect. Furthermore, we make use of the `rounded-borders` CSS helper class.
+在下面的示例中，我们添加了模糊和棕褐色的效果。此外，我们还使用了 "圆形边框 "的CSS辅助类。
 
-<doc-example title="Custom image style" file="QImg/CustomImageStyle" />
+<doc-example title="自定义图像样式" file="QImg/CustomImageStyle" />
 
-### Fit mode
+### 适合模式
 
-There are multiple ways in which the image can be displayed through the `fit` property: 'cover', 'fill' (default), 'contain', 'none', 'scale-down'. It is basically the same thing as the CSS prop called [object-fit](https://developer.mozilla.org/en-US/docs/Web/CSS/object-fit).
+有多种方式可以通过`fit`属性来显示图像：'覆盖'、'填充'(默认)、'包含'、'无'、'缩小'。它基本上与CSS属性中的[object-fit](https://developer.mozilla.org/en-US/docs/Web/CSS/object-fit)相同。
 
-Some modes lead to empty space (horizontally or vertically) besides the image.
+有些模式会导致图像之外的空隙(水平或垂直)。
 
-You can also configure the position through `position` property, which is equivalent to the CSS [object-position](https://developer.mozilla.org/en-US/docs/Web/CSS/object-position) one. Its default value is "50% 50%".
+你也可以通过 "position "属性来配置位置，它相当于CSS中的[object-position](https://developer.mozilla.org/en-US/docs/Web/CSS/object-position)属性。它的默认值是 "50% 50%"。
 
-<doc-example title="Fit modes" file="QImg/FitModes" />
+<doc-example title="适合模式" file="QImg/FitModes" />
 
-### Loading states
+### 加载状态
 
-<doc-example title="Loading state" file="QImg/LoadingState" />
+<doc-example title="加载状态" file="QImg/LoadingState" /> ###加载状态
 
-When you have big-sized images, you can use a placeholder image (recommended to be specified in base64 encoding) like in the example below. The placeholder will be displayed until the target image gets loaded. We're toggling the QImg tag so you can see the placeholder image in action.
+当你有大尺寸的图片时，你可以使用一个占位符图片(建议用base64编码指定)，就像下面的示例。该占位符将被显示，直到目标图像被加载。我们正在切换QImg标签，这样你就可以看到占位符图像的作用。
 
-<doc-example title="Placeholder source" file="QImg/PlaceholderSrc" />
+<doc-example title="占位符来源" file="QImg/PlaceholderSrc" />
 
-<doc-example title="Error state" file="QImg/ErrorState" />
+<doc-example title="错误状态" file="QImg/ErrorState" />
 
-### Responsive
-
-::: warning
-To grasp the `sizes` and `srcset` properties, please read about native support on [responsive images](https://developer.mozilla.org/en-US/docs/Learn/HTML/Multimedia_and_embedding/Responsive_images#Why_responsive_images) because **QImg relies on that entirely**.
-:::
-
-<doc-example title="Responsive" file="QImg/Responsive" />
-
-::: tip
-For `sizes` property, please read about Resolution Switching: [Different Sizes](https://developer.mozilla.org/en-US/docs/Learn/HTML/Multimedia_and_embedding/Responsive_images#Resolution_switching_Different_sizes).
-:::
-
-::: tip
-For `srcset` property, please read about Resolution Switching: [Same size, different resolutions](https://developer.mozilla.org/en-US/docs/Learn/HTML/Multimedia_and_embedding/Responsive_images#Resolution_switching_Same_size_different_resolutions).
-:::
-
-### Render on demand
-
-For browsers that natively support the [loading="lazy" DOM attribute](https://caniuse.com/loading-lazy-attr) you can take advantage of it. Quasar will use it and tell the browser to request the image and render it only if the image is currently being displayed on screen (or when it is scrolled into the screen).
-
-One alternative is to use the [QIntersection](/vue-components/intersection) component as a wrapper or [Intersection](/vue-directives/intersection) directive.
-
-<doc-example title="Native lazy loading" file="QImg/LoadingLazy" />
-
-### No native context menu
-
-In the example below we disable the native context menu on the images.
+### 响应式
 
 ::: warning
-When you are using this option always take care to have the content of the `default` or `error` slots wrapped in a `div` element, or add a `all-pointer-events` class on the element.
+要掌握`sizes`和`srcset`属性，请阅读关于[响应式图像](https://developer.mozilla.org/en-US/docs/Learn/HTML/Multimedia_and_embedding/Responsive_images#Why_responsive_images)的本地支持，因为**QImg完全依赖于此。
 :::
 
-<doc-example title="Native context menu" file="QImg/ContextMenu" />
+<doc-example title="响应式" file="QImg/Responsive" />
+
+::: tip
+关于 "尺寸 "属性，请阅读关于分辨率切换：[不同尺寸](https://developer.mozilla.org/en-US/docs/Learn/HTML/Multimedia_and_embedding/Responsive_images#Resolution_switching_Different_sizes)。
+:::
+
+::: tip
+关于 "srcset "属性，请阅读 "分辨率切换：[相同尺寸，不同分辨率]"(https://developer.mozilla.org/en-US/docs/Learn/HTML/Multimedia_and_embedding/Responsive_images#Resolution_switching_Same_size_different_resolutions)。
+:::
+
+### 按需渲染
+
+对于原生支持[loading="lazy" DOM属性](https://caniuse.com/loading-lazy-attr)的浏览器，你可以利用它的优势。Quasar将使用它，并告诉浏览器请求图片，只有当图片当前在屏幕上显示时(或当它被滚动到屏幕上时)，才会渲染它。
+
+一种替代方法是使用[QIntersection](/vue-components/intersection)组件作为封装器或[Intersection](/vue-directives/intersection)指令。
+
+<doc-example title="本地懒加载" file="QImg/LoadingLazy" />
+
+### 没有本地上下文菜单
+
+在下面的示例中，我们禁用了图像上的本地上下文菜单。
+
+::: warning
+当你使用这个选项时，一定要注意将`default'或`error'槽的内容包裹在`div'元素中，或者在元素上添加`all-pointer-events'类。
+:::
+
+<doc-example title="本地上下文菜单" file="QImg/ContextMenu" />

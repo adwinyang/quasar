@@ -1,52 +1,52 @@
 ---
-title: Touch Repeat Directive
-desc: Vue directive which triggers an event at specified intervals of time while the user touches and holds on a component or element.
+title: 触摸重复指令
+desc: Vue指令，当用户触摸并按住一个组件或元素时，在指定的时间间隔内触发一个事件。
 keys: touch-repeat
 ---
-Quasar offers full-featured Vue directives that can totally replace libraries like Hammerjs: `v-touch-pan`, `v-touch-swipe`, `v-touch-hold` and `v-touch-repeat`.
+Quasar提供了全功能的Vue指令，可以完全取代Hammerjs等库：`v-touch-pan`, `v-touch-swipe`, `v-touch-hold` 和 `v-touch-repeat`。
 
-> **These directives also work with mouse events, not only touch events**, so you are able to build cool functionality for your App on desktops too.
+> **这些指令也适用于鼠标事件，而不仅仅是触摸事件**，所以你也能够在桌面上为你的应用程序建立很酷的功能。
 
-We will be describing `v-touch-repeat` on the lines below.
+我们将在下面的行中描述`v-touch-repeat`。
 
 ## TouchRepeat API
 
 <doc-api file="TouchRepeat" />
 
-## Usage
-Click and hold with your mouse on the area below to see it in action.
-Notice that on touch capable devices the scrolling is not blocked.
+## 使用方法
+用你的鼠标在下面的区域点击并按住，看看它的操作情况。
+注意，在具有触摸功能的设备上，滚动不会被阻止。
 
-> The default repeat pattern is 0:600:300 (ms).
+> 默认的重复模式是0:600:300(ms)。
 
-<doc-example title="Basic" file="TouchRepeat/Basic" />
+<doc-example title="基本" file="TouchRepeat/Basic" />
 
-Below is an example configured to also react to `SPACE`, `ENTER` and `h` keys (**focus on it first**), with 0:300:200 (ms) repeat pattern. Hit & hold keys, or click/tap and hold.
+下面是一个示例，配置成也对`SPACE`、`ENTER`和`h`键做出反应(**先关注它**)，重复模式为0:300:200(ms)。点击并按住按键，或点击/轻拍并按住。
 
-<doc-example title="Custom keys" file="TouchRepeat/Keys" />
+<doc-example title="自定义按键" file="TouchRepeat/Keys" />
 
-Below is an example of applying TouchRepeat to QBtn. Notice how we play with the directive arguments in order to make the blue buttons increment slower than the red ones.
+下面是一个将TouchRepeat应用于QBtn的示例。注意我们是如何玩弄指令参数的，以便使蓝色按钮的增量比红色按钮的增量慢。
 
-<doc-example title="Applied to QBtn" file="TouchRepeat/Buttons" />
+<doc-example title="应用于QBtn" file="TouchRepeat/Buttons" />
 
-### Handling Mouse Events
-When you want to handle mouse events too, use the `mouse` modifier:
+### 处理鼠标事件
+当你也想处理鼠标事件时，使用`mouse`修改器。
 
 ```html
 <div v-touch-repeat.mouse="myHandler">...</div>
 ```
 
-### Handling Key Events
-When you want to handle key events too, use [keycodes](https://keycode.info/) as modifiers:
+### 处理按键事件
+当你也想处理按键事件时，使用[keycodes](https://keycode.info/)作为修饰语。
 
 ```html
 <div v-touch-repeat.65.70="myHandler">...</div>
 ```
 
-There are some special modifiers that you do not require to write the equivalent keycode: `space`, `tab`, `enter`.
+有一些特殊的修饰语，你不需要写出相应的键码。`空格`, `tab`, `enter`.
 
-### Inhibiting TouchRepeat
-When you want to inhibit TouchRepeat, you can do so by stopping propagation of the `touchstart`/`mousedown`/`keydown` events from the inner content:
+### 抑制TouchRepeat
+当你想抑制TouchRepeat时，你可以通过停止传播内部内容的`touchstart`/`mousedown`/`keydown`事件来实现。
 
 ```html
 <div v-touch-repeat.mouse.enter="userHasHold">
@@ -62,7 +62,7 @@ When you want to inhibit TouchRepeat, you can do so by stopping propagation of t
 </div>
 ```
 
-However, if you are using `capture`, `mouseCapture` or `keyCapture` modifiers then events will first reach the TouchRepeat directive then the inner content, so TouchRepeat will still trigger.
+然而，如果你使用`capture`，`mouseCapture`或`keyCapture`修改器，那么事件将首先到达TouchRepeat指令，然后是内部内容，所以TouchRepeat仍然会被触发。
 
-## Note on HMR
-Due to performance reasons, not all of the modifiers are reactive. Some require a window/page/component refresh to get updated. Please check the API card for the modifiers which are not marked as reactive.
+## 关于HMR的说明
+由于性能原因，不是所有的修改器都是反应式的。有些需要窗口/页面/组件的刷新来获得更新。请查看API卡，看看那些没有被标记为反应式的修改器。

@@ -1,44 +1,44 @@
 ---
-title: Bar
-desc: The QBar Vue component is used to create the top bar on different platforms.
+title: 吧台
+desc: QBar Vue组件被用来在不同的平台上创建顶栏。
 keys: QBar
 related:
   - /quasar-cli/developing-electron-apps/frameless-electron-window
 ---
 
-The QBar is a small component for creating the top bar on different types of mobile or desktop websites/apps. For instance, in desktop apps QBar will have things like the close, minimize or maximize buttons and other menu controls for your application.
+QBar是一个小型组件，用于在不同类型的移动或桌面网站/应用程序上创建顶栏。例如，在桌面应用程序中，QBar会有诸如关闭、最小化或最大化按钮以及其他应用程序的菜单控件。
 
-QBar is especially useful for frame-less Electron apps where you integrate it in the QHeader.
+QBar对于无框架的Electron应用程序特别有用，你可以把它集成到QHeader中。
 
 ## QBar API
 
 <doc-api file="QBar" />
 
-## Usage
+## 使用方法
 
 ::: tip
-For responsiveness, use [Visibility](/style/visibility#Window-Width-Related) Quasar CSS Classes. For finer tuning you can go write your own CSS media breakpoints or even go with [QResizeObserver](/vue-components/resize-observer).
+对于响应性，使用[Visibility](/style/visibility#Window-Width-Related) Quasar CSS Classes。对于更精细的调整，你可以去写你自己的CSS媒体断点，甚至可以使用[QResizeObserver](/vue-components/resize-observer)。
 :::
 
-### Styling
+### 风格设计
 
-<doc-example title="MacOS style" file="QBar/MacOS" no-edit />
+<doc-example title="MacOS风格" file="QBar/MacOS" no-edit />
 
-<doc-example title="Windows style" file="QBar/Windows" />
+<doc-example title="Windows风格" file="QBar/Windows" />
 
-<doc-example title="iOS style" file="QBar/iOS" no-edit />
+<doc-example title="iOS风格" file="QBar/iOS" no-edit />
 
-<doc-example title="Android style" file="QBar/Android" />
+<doc-example title="安卓风格" file="QBar/Android" />
 
-### With other components
+### 与其他组件
 
-<doc-example title="QMenu" file="QBar/Menu" />
+<doc-example title="QMenu" file="QBar/Menu" /> ###与其他组件的关系
 
-<doc-example title="QDialog" file="QBar/Dialog" />
+<doc-example title="QDialog" file="QBar/Dialog" /> ###与其他组件的关系
 
-<doc-example title="QHeader with QToolbar" file="QBar/Header" />
+<doc-example title="带有QToolbar的QHeader" file="QBar/Header" />
 
-### Frameless Electron Window
-QBar component can come in really handy when developing Electron apps, especially if you choose to use a frameless window.
+### 无框电子窗
+在开发Electron应用程序时，QBar组件可以派上用场，特别是当你选择使用无框架的窗口时。
 
-Read more on [Frameless Electron Window](/quasar-cli/developing-electron-apps/frameless-electron-window) page.
+阅读更多关于[无框电子窗](/quasar-cli/developing-electron-apps/frameless-electron-window)页面。

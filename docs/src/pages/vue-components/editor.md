@@ -1,30 +1,30 @@
 ---
-title: Editor (WYSIWYG)
-desc: The QEditor Vue component is a WYSIWYG editor that enables writing and pasting HTML.
+title: 编辑器(所见即所得)
+desc: QEditor Vue组件是一个所见即所得的编辑器，可以编写和粘贴HTML。
 keys: QEditor
 ---
 
-The QEditor component is a WYSIWYG (“what you see is what you get”) editor component that enables the user to write and even paste HTML. It uses the so-called Design Mode and the cross-browser `contentEditable` interface. Here are some go-to reference pages from the MDN webdocs with more detailed information about the underlying technology:
+QEditor组件是一个WYSIWYG("所见即所得")编辑器组件，使用户可以编写甚至粘贴HTML。它使用所谓的设计模式和跨浏览器的`内容可编辑'接口。这里有一些来自MDN webdocs的可供参考的页面，其中有关于底层技术的更详细的信息。
 
-- [Making content editable](https://developer.mozilla.org/en-US/docs/Web/Guide/HTML/Editable_content)
-- [Design Mode](https://developer.mozilla.org/en-US/docs/Web/API/Document/designMode)
-- [execCommand() reference](https://developer.mozilla.org/en-US/docs/Web/API/document/execCommand)
+- [使内容可编辑](https://developer.mozilla.org/en-US/docs/Web/Guide/HTML/Editable_content)
+- [设计模式](https://developer.mozilla.org/en-US/docs/Web/API/Document/designMode)
+- [execCommand()参考](https://developer.mozilla.org/en-US/docs/Web/API/document/execCommand)
 - [contentEditable spec](https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/contenteditable)
 
 ## QEditor API
 
 <doc-api file="QEditor" />
 
-## Examples
-<doc-example title="Default editor" file="QEditor/Basic" />
+## 示例
+<doc-example title="默认编辑器" file="QEditor/Basic" />
 
 ::: warning
-In this first example, there are two cards below the editor. The first shows the unparsed html using the double-moustache, whereas the second shows the rendered version using `v-html="editor"`. Using v-html this way renders your users vulnerable to Cross Site Scripting attacks. If the content is user generated, be sure to sanitize it either on render or server side (or both).
+在这第一个示例中，编辑器下面有两个卡片。第一张显示的是使用双胡子的未解析的html，而第二张显示的是使用`v-html="editor"`的已渲染版本。这样使用v-html会使你的用户容易受到跨站脚本攻击。如果内容是用户生成的，请确保在渲染或服务器端(或两者)对其进行消毒。
 :::
 
-By default, QEditor offers most if not all the commands you’d need in a WYSIWYG editor: bold, italic, strike, underline, unordered (list), ordered (list), subscript, superscript, link, fullscreen, quote, left (align), center (align), right (align), justify (align), print, outdent, indent, removeFormat, hr, undo, redo, h1 to h6, p (paragraph), code (code paragraph), size-1 to size-7.
+在默认情况下，QEditor提供了大部分(如果不是全部)你在所见即所得编辑器中需要的命令。粗体、斜体、删除、下划线、无序(列表)、有序(列表)、下标、上标、链接、全屏、引用、向左(对齐)、居中(对齐)、向右(对齐)、对齐(对齐)、打印、缩进、删除格式、hr、撤销、重做、h1到h6、p(段落)、code(代码段落)、size-1到size-7。
 
-Each of these commands is pre-configured with icons and their own internationalized tooltips. However, if you want to override some of their settings you can do so with the help of definitions Object property.
+这些命令中的每一个都预先配置了图标和它们自己的国际化工具提示。然而，如果你想覆盖它们的一些设置，你可以在定义对象属性的帮助下这样做。
 
 ```html
 :definitions="{
@@ -32,21 +32,21 @@ Each of these commands is pre-configured with icons and their own internationali
 }"
 ```
 
-<doc-example title="Redefine bold command" file="QEditor/NewBold" />
+<doc-example title="重新定义加粗命令" file="QEditor/NewBold" />
 
-The following is an example that adds custom definitions. In such cases, make sure you don’t overlap the default commands:
+下面是一个增加自定义定义的示例。在这种情况下，请确保你不与默认的命令相重叠。
 
-<doc-example title="Add new commands" file="QEditor/NewCommands" />
+<doc-example title="添加新命令" file="QEditor/NewCommands" />
 
-<doc-example title="Kitchen sink" file="QEditor/KitchenSink" />
+<doc-example title="厨房水槽" file="QEditor/KitchenSink" />
 
-<doc-example title="Custom style" file="QEditor/Custom" />
+<doc-example title="自定义样式" file="QEditor/Custom" />
 
-<doc-example title="Using toolbar slots" file="QEditor/ToolbarSlot" />
+<doc-example title="使用工具条插槽" file="QEditor/ToolbarSlot" />
 
-## Dropdowns
+## 下拉菜单
 
-### Types of dropdowns
+### 下拉框的类型
 
 ```html
 <q-editor
@@ -84,12 +84,12 @@ The following is an example that adds custom definitions. In such cases, make su
   ]"
 />
 ```
-### Dropdowns with exclusive options
-User can pick only one option from each dropdown.
+### 有专属选项的下拉菜单
+用户只能从每个下拉菜单中选择一个选项。
 
-* First has icon and label changing based on current selection
-* Second has fixed label but dynamic icon
-* Third has fixed icon but dynamic label
+* 第一个下拉菜单的图标和标签根据当前的选择而改变。
+* 第二个有固定的标签，但有动态图标
+* 第三项有固定的图标，但有动态标签
 
 ```html
 <q-editor
@@ -121,10 +121,10 @@ User can pick only one option from each dropdown.
 />
 ```
 
-## Caveats
+## 注意事项
 
-### Autocorrect & spellcheck
-There may be occasions where you want to turn off the integrated autocorrect, autocomplete, autocapitalization and spelling correction "features" that many modern browsers offer. To do this, simply wrap the `<q-editor>` component in a `<form>` element, like this:
+### 自动更正和拼写检查
+在某些情况下，你可能想关闭许多现代浏览器提供的综合自动更正、自动完成、自动大写和拼写校正 "功能"。要做到这一点，只需将`<q-editor>`组件包裹在`<form>`元素中，像这样。
 
 ```html
 <form
@@ -137,8 +137,8 @@ There may be occasions where you want to turn off the integrated autocorrect, au
 </form>
 ```
 
-### Images
-Pasting from the buffer and drag & dropping images into the editor is unfortunately different across browsers - and also highly dependent upon how the image got into the buffer in the first place. In fact, up until very recently, you could even resize images within the ContentEditable when using Firefox. If you want to allow image pasting / dropping, we highly recommend writing your own methods.
+### 图片
+不幸的是，在不同的浏览器中，从缓冲区中粘贴和将图片拖放到编辑器中的做法是不同的--而且还高度依赖于图片首先是如何进入缓冲区的。事实上，直到最近，在使用Firefox时，你甚至可以在ContentEditable中调整图片的大小。如果你想允许图片的粘贴/下拉，我们强烈建议你编写自己的方法。
 
 ```html
 <q-editor
@@ -148,13 +148,13 @@ Pasting from the buffer and drag & dropping images into the editor is unfortunat
  />
 ```
 
-### Plaintext pasting
-If the paste event content type is text and depending on the source of text, there may already be a great deal of markup that the contentEditable automatically parses. If you want to paste only "clean, markup-free" text, then you can use the approach in this example (which also turns off spelling correction as mentioned above):
+### 纯文本粘贴
+如果粘贴事件的内容类型是文本，根据文本的来源，可能已经有大量的标记，contentEditable会自动解析。如果你想只粘贴 "干净的、无标记的 "文本，那么你可以使用这个示例中的方法(它也关闭了上面提到的拼写校正)。
 
-<doc-example title="Paste Event Override" file="QEditor/Pasting" />
+<doc-example title="粘贴事件重写" file="QEditor/Pasting" />
 
-### Printing
-If you don't set a font (or the user doesn't choose one), the print dialogue will default to the system font, which can vary depending on browser and underlying operating system. Make sure to take this into consideration.
+### 打印
+如果你没有设置字体(或者用户没有选择字体)，打印对话框将默认为系统字体，这可能会因浏览器和底层操作系统而不同。请务必考虑到这一点。
 
-### Internationalization
-The tooltips content of QEditor are translated by the [Quasar Language Pack](/options/quasar-language-packs), so merely changing the language will also change the interface. If your desired language pack is missing - or you find an error, please consider providing the update as PR.
+### 国际化
+QEditor的工具提示内容是由[Quasar Language Pack](/options/quasar-language-packs)翻译的，所以仅仅改变语言也会改变界面。如果你想要的语言包丢失了--或者你发现了一个错误，请考虑以PR的形式提供更新。

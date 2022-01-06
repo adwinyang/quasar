@@ -1,18 +1,18 @@
 ---
-title: DOM Hooks
-desc: How to communicate to the underlying web page using dom hooks in Quasar Browser Extension mode.
+title: DOM 钩子
+desc: 如何在Quasar浏览器扩展模式下使用dom钩子与底层网页通信。
 ---
 
-`src-bex/js/dom-hooks.js` is a javascript file that is injected into the underlying web page automatically by Quasar but as with all the other hook files has access to the bridge via:
+`src-bex/js/dom-hooks.js`是一个javascript文件，它被Quasar自动注入到底层网页中，但与所有其他钩子文件一样，可以通过访问桥接。
 
 ```js
 export default function attachDomHooks (bridge) {
 }
 ```
 
-If you ever find yourself needing to inject a JS file into your underlying web page, you can use dom hooks instead as it means you can maintain that chain of communication in the BEX.
+如果你发现自己需要将一个JS文件注入到你的底层网页中，你可以使用dom钩子来代替，因为这意味着你可以在BEX中保持这种通信链。
 
-For example, lets say you wanted to write a BEX that detects whether or not a Quasar app is running on a page, the only way to do this is by running some javascript in the context of the web page.
+例如，假设你想写一个BEX来检测一个Quasar应用程序是否在页面上运行，唯一的方法就是在网页的上下文中运行一些javascript。
 
 ```js
 // detect-quasar.js:
@@ -81,4 +81,4 @@ export default function attachDomHooks (bridge) {
 }
 ```
 
-The bridge above will notify all listeners in the BEX that Quasar has been found and along with that send the instance information.
+上面的桥接器将通知BEX中的所有监听器，Quasar已经被找到，并同时发送实例信息。

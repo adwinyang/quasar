@@ -1,13 +1,13 @@
 ---
-title: Meet the Team
-desc: The list of people behind Quasar Framework.
+title: 认识我们的团队
+desc: Quasar框架背后的人员名单。
 keys: Team
 components:
   - meet-the-team/TeamListing
 ---
 
-Hailing from all around the planet, the Quasar Team is not only international but full of people with a vast range of fields of expertise. From real rocket engineers to Fortune 500 developers, the unifying factor among us is our dedication to quality and the love for our community of contributors and developers.
+Quasar团队来自地球的各个角落，他们不仅是国际性的，而且是拥有广泛的专业领域的人。从真正的火箭工程师到财富500强的开发者，我们之间的统一因素是对质量的奉献以及对我们社区贡献者和开发者的热爱。
 
-With hundreds of contributors to Quasar, **the list of people you can meet below is by no means exhaustive**. Just remember to thank everyone using Quasar and supporting us, because together we all help you push your products light-years ahead of your competition. A great way to do that is to [donate](https://donate.quasar.dev).
+Quasar有数以百计的贡献者，**下面你可以见到的人的名单绝不是详尽的**。请记住，感谢每一位使用Quasar并支持我们的人，因为我们一起帮助你把你的产品推到竞争对手的前面。一个很好的方法是[捐赠](https://donate.quasar.dev)。
 
 <team-listing class="q-mt-xl" />

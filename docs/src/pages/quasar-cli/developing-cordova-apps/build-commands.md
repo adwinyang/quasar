@@ -1,16 +1,16 @@
 ---
-title: Mobile App Build Commands
-desc: The Quasar CLI list of commands when developing or building a hybrid mobile app with Cordova.
+title: 移动应用程序构建命令
+desc: 在用Cordova开发或构建混合移动应用时，Quasar CLI的命令列表。
 ---
-[Quasar CLI](/quasar-cli/installation) makes it incredibly simple to develop or build the final distributables from your source code.
+[Quasar CLI](/quasar-cli/installation)使得从你的源代码中开发或构建最终的可分发程序变得异常简单。
 
-Before we dive in, make sure you got the Cordova CLI installed.
+在我们深入研究之前，请确保你已经安装了Cordova CLI。
 
 ```bash
 $ npm install -g cordova
 ```
 
-## Developing
+## 发展中
 ```bash
 $ quasar dev -m [ios|android]
 
@@ -32,38 +32,38 @@ $ quasar dev -m ios -- some params --and options --here
 $ quasar dev -m ios '--' some params --and options --here
 ```
 
-However, if you wish to open the IDE (Android Studio / Xcode) and from there to manually select the emulator (or multiple ones simultaneously!) to run the dev app on it/them (or to run the dev app on a real mobile/tablet device):
+然而，如果你希望打开IDE(Android Studio / Xcode)，并从那里手动选择模拟器(或同时选择多个模拟器！)，在它/他们身上运行开发应用(或在真正的移动/平板设备上运行开发应用)。
 
 ```bash
 $ quasar dev -m [ios|android] --ide
 ```
 
 ::: warning
-In Android Studio, you will be greeted with a message recommending to upgrade the Gradle version. **DO NOT UPGRADE GRADLE** as it will break the Cordova project. Same goes for any other requested upgrades.
+在Android Studio中，你会看到一条信息，建议升级Gradle版本。**不要升级Gradle**，因为这将破坏Cordova项目。任何其他要求的升级也是如此。
 
-<img src="https://cdn.quasar.dev/img/gradle-upgrade-notice.png" alt="Gradle upgrade" class="q-my-md fit rounded-borders" style="max-width: 350px">
+<img src="https://cdn.quasar.dev/img/gradle-upgrade-notice.png" alt="Gradle升级" class="q-my-md fit rounded-borders" style="max-width: 350px">。
 
-If you encounter any IDE errors then click on File > Invalidate caches and restart.
+如果你遇到任何IDE错误，那么请点击文件>无效缓存并重新启动。
 
 <img src="https://cdn.quasar.dev/img/gradle-invalidate-cache.png" alt="Gradle upgrade" class="q-mt-md fit rounded-borders" style="max-width: 350px">
 
 :::
 
-In order for you to be able to develop on a device emulator or directly on a phone (with Hot Module Reload included), Quasar CLI follows these steps:
-1. Detects your machine's external IP address. If there are multiple such IPs detected, then it asks you to choose one. If you'll be using a mobile phone to develop then choose the IP address of your machine that's pingable from the phone/tablet.
-2. It starts up a development server on your machine.
-3. It temporarily changes the `<content/>` tag in `/src-cordova/config.xml` to point to the IP previously detected. This allows the app to connect to the development server.
-3. It defers to Cordova CLI to build a native app with the temporarily changed config.xml.
-4. Cordova CLI checks if a mobile phone / tablet is connected to your development machine. If it is, it installs the development app on it. If none is found, then it boots up an emulator and runs the development app.
-5. Finally, it reverts the temporary changes made to `/src-cordova/config.xml`.
+为了使你能够在设备模拟器上或直接在手机上开发(包括热模块重装)，Quasar CLI遵循以下步骤。
+1. 检测你的机器的外部IP地址。如果检测到有多个这样的IP，那么它会要求你选择一个。如果你将使用手机进行开发，那么选择你的机器的IP地址，该地址可以从手机/平板电脑上ping到。
+2. 它在你的机器上启动了一个开发服务器。
+3. 它暂时改变`/src-cordova/config.xml`中的`<内容/>`标签，指向之前检测到的IP。这允许应用程序连接到开发服务器。
+3. 3.它推迟到Cordova CLI，用临时改变的config.xml建立一个本地应用程序。
+4. 4.Cordova CLI检查是否有手机/平板电脑连接到你的开发机器。如果有，它就在上面安装开发应用程序。如果没有，它就启动一个模拟器并运行开发应用程序。
+5. 最后，它恢复对`/src-cordova/config.xml`的临时修改。
 
 ::: danger
-If developing on a mobile phone/tablet, it is very important that the external IP address of your build machine is accessible from the phone/tablet, otherwise you'll get a development app with white screen only. Also check your machine's firewall to allow connections to the development chosen port.
+如果在手机/平板电脑上开发，非常重要的一点是，你的构建机器的外部IP地址可以从手机/平板电脑上访问，否则你会得到一个只有白屏的开发应用。还要检查你的机器的防火墙是否允许连接到开发选择的端口。
 :::
 
-### Enabling iOS modern build
+### 启用iOS现代构建
 
-By default, Xcode modern build for iOS is disabled due to Cordova issues. However, if you know what you are doing and you want to enable it, do so from `/quasar.conf.js`:
+默认情况下，由于Cordova问题，iOS的Xcode现代构建被禁用。然而，如果你知道你在做什么，并且你想启用它，可以从`/quasar.conf.js`中这样做。
 
 ```js
 cordova: {
@@ -71,9 +71,9 @@ cordova: {
 }
 ```
 
-The above applies also if you want to specify the build type in your "build.json".
+如果你想在 "build.json "中指定构建类型，上述内容也适用。
 
-## Building for Production
+## 为生产而构建
 ```bash
 $ quasar build -m [android|ios]
 
@@ -91,34 +91,34 @@ $ quasar build -m [ios|android] --skip-pkg
 $ quasar build -m ios -- some params --and options --here
 ```
 
-* These commands parse and build your `/src` folder then overwrite `/src-cordova/www` then defer to Cordova CLI to trigger the actual native app creation.
+* 这些命令解析并建立你的`/src`文件夹，然后覆盖`/src-cordova/www`，然后交由Cordova CLI来触发实际的本地应用创建。
 
-* Built packages will be located in `/dist/cordova` unless configured otherwise.
+* 除非另有配置，否则构建的软件包将位于`/dist/cordova`中。
 
-* If you wish to skip the Cordova CLI packaging step and only fill `/src-cordova/www` folder:
+* 如果你希望跳过Cordova CLI打包步骤，只填充`/src-cordova/www`文件夹。
 
 ```bash
 $ quasar build -m [ios|android] --skip-pkg
 ```
 
-* Should you wish to manually build the final assets using the IDE (Android Studio / Xcode) instead of doing a terminal build, then:
+* 如果你希望使用IDE(Android Studio / Xcode)手动构建最终资产，而不是做终端构建，那么。
 
 ```bash
 $ quasar build -m [ios|android] --ide
 ```
 
 ::: warning
-In Android Studio, you will be greeted with a message recommending to upgrade the Gradle version. **DO NOT UPGRADE GRADLE** as it will break the Cordova project. Same goes for any other requested upgrades.
+在Android Studio中，你会看到一条信息，建议升级Gradle版本。**不要升级Gradle**，因为这将破坏Cordova项目。任何其他要求的升级也是如此。
 
-<img src="https://cdn.quasar.dev/img/gradle-upgrade-notice.png" alt="Gradle upgrade" class="q-my-md fit rounded-borders" style="max-width: 350px">
+<img src="https://cdn.quasar.dev/img/gradle-upgrade-notice.png" alt="Gradle升级" class="q-my-md fit rounded-borders" style="max-width: 350px">。
 
-If you encounter any IDE errors then click on File > Invalidate caches and restart.
+如果你遇到任何IDE错误，那么请点击文件>无效缓存并重新启动。
 
 <img src="https://cdn.quasar.dev/img/gradle-invalidate-cache.png" alt="Gradle upgrade" class="q-mt-md fit rounded-borders" style="max-width: 350px">
 
 :::
 
-If you want a production build with debugging enabled for the UI code:
+如果你想在生产构建中启用UI代码的调试功能。
 
 ```bash
 $ quasar build -m [ios|android] -d

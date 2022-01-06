@@ -1,9 +1,9 @@
 ---
-title: What is Cordova
-desc: Introduction on one of the technologies behind Quasar hybrid mobile apps.
+title: 什么是科多瓦
+desc: 介绍Quasar混合移动应用程序背后的一项技术。
 ---
-Apache Cordova is a mobile application development framework originally created by Nitobi. Adobe Systems purchased Nitobi in 2011, rebranded it as PhoneGap, and later released an open source version of the software called Apache Cordova.
+Apache Cordova是一个移动应用开发框架，最初由Nitobi创建。Adobe Systems在2011年收购了Nitobi，将其重新命名为PhoneGap，后来又发布了该软件的开源版本，称为Apache Cordova。
 
-[Apache Cordova](https://cordova.apache.org/) enables software programmers to build applications for mobile devices using CSS3, HTML5, and JavaScript instead of relying on platform-specific APIs like those in Android, iOS, or Windows Phone. It enables wrapping up of CSS, HTML, and JavaScript code depending upon the platform of the device. It extends the features of HTML and JavaScript to work with the device. The resulting applications are hybrid, meaning that they are neither truly native mobile application (because all layout rendering is done via Web views instead of the platform's native UI framework) nor purely Web-based (because they are not just Web apps, but are packaged as apps for distribution and have access to native device APIs).
+[Apache Cordova](https://cordova.apache.org/)使软件程序员能够使用CSS3、HTML5和JavaScript为移动设备构建应用程序，而不是依赖像Android、iOS或Windows Phone中的特定平台API。它可以根据设备的平台来包装CSS、HTML和JavaScript代码。它扩展了HTML和JavaScript的功能，以便与设备一起工作。由此产生的应用程序是混合型的，这意味着它们既不是真正的本地移动应用程序(因为所有的布局渲染都是通过Web视图而不是平台的本地UI框架完成的)，也不是纯粹的基于Web的(因为它们不仅仅是Web应用程序，而是被打包成应用程序进行发布，并且可以访问本地设备API)。
 
-You can hook into the native device APIs by using [Cordova Plugins](/quasar-cli/developing-cordova-apps/cordova-plugins).
+你可以通过使用[Cordova Plugins](/quasar-cli/developing-cordova-apps/cordova-plugins)来钩住本地设备API。

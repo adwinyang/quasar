@@ -1,38 +1,38 @@
 ---
-title: Capacitor APIs
-desc: How to use the Capacitor plugins in a Quasar app.
+title: 电容器API
+desc: 如何在Quasar应用程序中使用电容插件。
 ---
-You can hook into the native device APIs by using [Capacitor APIs](https://capacitor.ionicframework.com/docs/apis).
+你可以通过使用[Capacitor APIs](https://capacitor.ionicframework.com/docs/apis)来钩住本地设备的API。
 
 ## Capacitor APIs
-A few examples of such APIs:
+这类API的几个示例。
 
-* Background Task
-* Camera
-* Console
-* Device
-* Filesystem
-* Geolocation
-* Motion
-* Network
-* Push Notifications
-* Share
-* Splash Screen
-* Status Bar
+* 背景任务
+* 相机
+* 控制台
+* 设备
+* 文件系统
+* 地理定位
+*运动
+* 网络
+* 推送通知
+* 分享
+* 闪光屏
+* 状态栏
 
-## Using a Capacitor API
-Let's learn by taking some examples, assuming you've added Capacitor mode to your Quasar project already.
+## 使用电容器API
+假设你已经在你的Quasar项目中加入了Capacitor模式，让我们通过一些示例来学习。
 
-### Example: Geolocation
-First step is to read the documentation of the Capacitor API that we want to use. We look at Capacitor's [Geolocation API](https://capacitor.ionicframework.com/docs/apis/geolocation).
+### 示例。地理定位
+第一步是阅读我们想要使用的Capacitor API的文档。我们看一下Capacitor的[Geolocation API](https://capacitor.ionicframework.com/docs/apis/geolocation)。
 
-Now let's put this plugin to some good use. In one of your Quasar project's pages/layouts/components Vue file, we write:
+现在让我们把这个插件好好利用一下。在你的Quasar项目的一个页面/布局/组件Vue文件中，我们写道。
 
 ```html
-// some Vue file
-// remember this is simply an example;
-// only look at how we use the API described in the plugin's page;
-// the rest of things here are of no importance
+// 一些Vue文件
+// 请记住，这只是一个示例。
+// 只看我们如何使用该插件页面中描述的API。
+// 其余的事情在这里并不重要
 
 <template>
   <div>
@@ -60,7 +60,7 @@ export default {
     onMounted(() => {
       getCurrentPosition()
 
-      // we start listening
+      // 我们开始倾听
       geoId = Geolocation.watchPosition({}, (newPosition, err) => {
         console.log('New GPS position')
         position.value = newPosition
@@ -68,7 +68,7 @@ export default {
     })
 
     onBeforeUnmount(() => {
-      // we do cleanup
+      // 我们做清理工作
       Geolocation.clearWatch(geoId)
     })
 
@@ -80,16 +80,16 @@ export default {
 </script>
 ```
 
-### Example: Camera
-First step is to read the documentation of the Capacitor API that we want to use. We look at Capacitor's [Camera API](https://capacitor.ionicframework.com/docs/apis/camera).
+### 示例。相机
+第一步是阅读我们要使用的Capacitor API的文档。我们看一下Capacitor的[Camera API](https://capacitor.ionicframework.com/docs/apis/camera)。
 
-Now let's put this API to some good use. In one of your Quasar project's pages/layouts/components Vue file, we write:
+现在让我们把这个API好好利用一下。在你的Quasar项目的一个页面/布局/组件Vue文件中，我们写道。
 
 ```html
-// some Vue file
-// remember this is simply an example;
-// only look at how we use the API described in the plugin's page;
-// the rest of things here are of no importance
+// 一些Vue文件
+// 请记住，这只是一个示例。
+// 只看我们如何使用该插件页面中描述的API。
+// 其余的事情在这里并不重要
 
 <template>
   <div>
@@ -114,10 +114,10 @@ export default {
         resultType: CameraResultType.Uri
       })
 
-      // The result will vary on the value of the resultType option.
-      // CameraResultType.Uri - Get the result from image.webPath
-      // CameraResultType.Base64 - Get the result from image.base64String
-      // CameraResultType.DataUrl - Get the result from image.dataUrl
+      // 其结果将根据resultType选项的值而变化。
+      // CameraResultType.Uri - 从image.webPath获取结果。
+      // CameraResultType.Base64 - 从图像.base64String获取结果。
+      // CameraResultType.DataUrl - 从image.dataUrl获取结果。
       imageSrc.value = image.webPath
     }
 
@@ -130,13 +130,13 @@ export default {
 </script>
 ```
 
-Some Capacitor plugins, such as Camera, have a web-based UI available when not running natively but in a standard web browser. To enable these controls, add @ionic/pwa-elements to your project:
+一些Capacitor插件，如Camera，有一个基于网络的用户界面，当不是原生运行而是在一个标准的网络浏览器中运行时，可以使用。要启用这些控件，请在你的项目中加入@ionic/pwa-elements。
 
 ```bash
 $ npm install @ionic/pwa-elements
 ```
 
-Then create a boot file to initialize them, for example `src/boot/capacitor.js`:
+然后创建一个启动文件来初始化它们，例如`src/boot/capacitor.js`。
 
 ```js
 import { defineCustomElements } from '@ionic/pwa-elements/loader'
@@ -146,25 +146,25 @@ export default () => {
 }
 ```
 
-Don't forget to call the boot script in `quasar.conf.js`
+不要忘记在`quasar.conf.js`中调用启动脚本。
 
 ```js
 boot: ['capacitor']
 ```
 
-Now you are able to use the Camera API not just in native Android or iOS, but also in web based projects like a SPA or PWA.
+现在，你不仅可以在原生的Android或iOS中使用相机API，还可以在基于Web的项目中使用，如SPA或PWA。
 
 
-### Example: Device
-First step is to read the documentation of the Capacitor API that we want to use. Look at the Capacitor's [Device API](https://capacitor.ionicframework.com/docs/apis/device).
+### 示例。设备
+第一步是阅读我们要使用的Capacitor API的文档。看一下Capacitor的[设备API](https://capacitor.ionicframework.com/docs/apis/device)。
 
-Now let's put this API to some good use. In one of your Quasar project's pages/layouts/components Vue file, we write:
+现在让我们把这个API好好利用一下。在你的Quasar项目的一个页面/布局/组件Vue文件中，我们写道。
 
 ```html
-// some Vue file
-// remember this is simply an example;
-// only look at how we use the API described in the plugin's page;
-// the rest of things here are of no importance
+// 一些Vue文件
+// 请记住，这只是一个示例。
+// 只看我们如何使用该插件页面中描述的API。
+// 其余的事情在这里并不重要
 
 <template>
   <div>

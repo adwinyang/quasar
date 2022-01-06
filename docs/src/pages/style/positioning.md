@@ -1,47 +1,47 @@
 ---
-title: CSS Positioning Classes
-desc: The list of CSS classes supplied by Quasar to simplify the positioning of a DOM element.
+title: CSS定位类
+desc: 由Quasar提供的CSS类的列表，以简化DOM元素的定位。
 related:
   - /style/typography
   - /style/visibility
   - /style/spacing
 ---
-There are CSS classes supplied by Quasar to help you position a DOM element easily:
+Quasar提供了一些CSS类来帮助你轻松定位DOM元素。
 
-| Class Name | Description |
+| 类的名称 | 说明 |
 | --- | --- |
-| `fullscreen` | Fix position covering all window real-estate |
-| `fixed` | Set `position` to `fixed` without specifying `top`, `left`, `right` or `bottom` properties |
-| `fixed-center` | Set position to `fixed` but in the middle of window. |
-| `absolute` | Set `position` to `absolute` without specifying `top`, `left`, `right` or `bottom` properties |
-| `absolute-center` | Set position to `absolute` but in the middle of the container (container needs relative position). |
-| `fixed-top`, `absolute-top` | Fixed or absolute position to top of screen |
-| `fixed-right`, `absolute-right` | Fixed or absolute position to the right edge of screen |
-| `fixed-bottom`, `absolute-bottom` | Fixed or absolute position to bottom of screen |
-| `fixed-left`, `absolute-left` | Fixed or absolute position to the left edge of screen |
-| `fixed-top-left`, `absolute-top-left` | Fixed or absolute position to top left of screen |
-| `fixed-top-right`, `absolute-top-right` | Fixed or absolute position to top right of screen |
-| `fixed-bottom-left`, `absolute-bottom-left` | Fixed or absolute position to bottom left of screen |
-| `fixed-bottom-right`, `absolute-bottom-right` | Fixed or absolute position to bottom right of screen |
-| `fixed-full`, `absolute-full` | Fixed or absolute position to all screen edges |
-| `relative-position` | Set position to `relative` |
+| `fullscreen` | 固定位置，覆盖所有的窗口空间。
+| `fixed` | 将`位置'设置为`固定'，而不需要指定`top'、`left'、`right'或`bottom'属性。
+| `fixed-center` | 设置位置为`fixed`，但在窗口的中间。|
+| `absolute` | 将位置设置为`absolute`，而不指定`top`、`left`、`right`或`bottom`属性。
+| `absolute-center` | 设置位置为`absolute`，但在容器的中间(容器需要相对位置)。|
+| `fixed-top`, `absolute-top` | 固定或绝对位置到屏幕的顶部 |
+| `fixed-right`, `absolute-right` | 固定或绝对位置到屏幕的右边缘。
+| "固定-底部", "绝对-底部" | 屏幕底部的固定或绝对位置。
+| `fixed-left`, `absolute-left` | 固定或绝对位置到屏幕的左边缘。
+| `fixed-top-left`, `absolute-top-left` | 屏幕左上角的固定或绝对位置。
+| `fixed-top-right`, `absolute-top-right` | 固定或绝对地位于屏幕的右上方
+| 固定的或绝对的屏幕左下角位置 | 固定的或绝对的屏幕左下角位置
+| `固定-下-右`, `绝对-下-右` | 屏幕右下角的固定或绝对位置
+| `fixed-full`, `absolute-full` | 固定或绝对位置到所有屏幕边缘
+| `relative-position` | 设置位置为`relative`。
 
-## Alignment
-| Class Name | Description |
+## 对齐
+| 类别名称 | 说明 |
 | --- | --- |
-| `float-left` | Float to the left |
-| `float-right` | Float to the right |
-| `on-left` | Sets a small margin to the right; commonly used for icon elements with other siblings |
-| `on-right` | Sets a small margin to the left; commonly used for icon elements with other siblings |
+| `float-left` | 向左浮动 |
+| `float-right` | 向右浮动
+| `on-left` | 设置一个向右的小边距；通常用于有其他同级别的图标元素。
+| `on-right` | 设置左边的小边距；常用于有其他兄弟姐妹的图标元素。
 
 ::: tip
-Instead of using `float-left` or `float-right` we recommend that you read on the Quasar Grid System.
+我们建议你阅读Quasar网格系统，而不是使用`float-left`或`float-right`。
 :::
 
-Vertical alignment:
+垂直排列。
 
-| Class Name | Description |
+| 类别名称 | 说明 |
 | --- | --- |
-| `vertical-top` | Set CSS vertical alignment to `top` |
-| `vertical-middle` | Set CSS vertical alignment to `middle` |
-| `vertical-bottom` | Set CSS vertical alignment to `bottom` |
+| `vertical-top` | 设置CSS垂直对齐为`top`。
+| `vertical-middle` | 将CSS垂直对齐设置为`middle'。
+| `vertical-bottom` | 设置CSS垂直对齐为`bottom`。

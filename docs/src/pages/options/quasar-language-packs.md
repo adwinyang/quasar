@@ -1,32 +1,32 @@
 ---
-title: Quasar Language Packs
-desc: How to configure the Quasar language packs in a Quasar app.
+title: Quasar 语言包
+desc: 如何在Quasar应用程序中配置Quasar语言包。
 related:
   - /options/rtl-support
   - /options/app-internationalization
 ---
-A Quasar Language Pack refers to the internationalization of Quasar's own components, some of which have labels.
+Quasar语言包指的是Quasar自身组件的国际化，其中一些组件有标签。
 
 ::: warning
-It should be noted that what is described below is the internationalization of Quasar components only. If you need to internationalize your own components, read [App Internationalization](/options/app-internationalization) documentation page.
+需要注意的是，下面所描述的只是Quasar组件的国际化。如果你需要对自己的组件进行国际化，请阅读[App Internationalization](/options/app-internationalization)文档页。
 :::
 
-As mentioned above, some Quasar components have their own labels. When it comes to internationalization, one option is to configure labels through the label properties on each instance of Quasar components (like QTable). This is how you can customize the text to match the selected language. This however, takes time and adds unnecessary complexity to your website/app. **Instead**, you can use the Quasar Language Packs which have a number of standard label definitions translated for you, like "Cancel", "Clear", "Select", "Update", etc. No need to translate these again! And it comes out of the box.
+如上所述，一些Quasar组件有自己的标签。当涉及到国际化时，一种选择是通过Quasar组件(如QTable)的每个实例的标签属性来配置标签。这样你就可以自定义文本以匹配所选语言。然而，这需要时间并给你的网站/应用程序增加不必要的复杂性。**相反，你可以使用Quasar语言包，它为你翻译了许多标准标签定义，如 "取消"、"清除"、"选择"、"更新 "等。不需要再翻译这些内容了! 而且它是开箱即用的。
 
 ::: tip
-For a complete list of available Quasar Languages, check [Quasar Languages on GitHub](https://github.com/quasarframework/quasar/tree/dev/ui/lang).
-<br><br>**If your desired language is not on that list**, then feel free to submit a PR to add it. It takes from 5 to 10 minutes at most. We kindly welcome any language!
+关于可用的Quasar语言的完整列表，请查看[GitHub上的Quasar语言](https://github.com/quasarframework/quasar/tree/dev/ui/lang) 。
+<br><br>**如果您想要的语言不在该列表中**，请随时提交 PR 以添加它。最多需要 5 到 10 分钟。我们欢迎任何语言！
 :::
 
-## Configuring the default Language Pack
+## 配置默认的语言包
 
-Unless configured otherwise (see below), Quasar uses the `en-US` Language Pack by default.
+除非另有配置(见下文)，Quasar 默认使用 "en-US "语言包。
 
-### Hardcoded
-If the default Quasar Language Pack is not dynamically determined (does not depend on cookies for example), then you can:
+### 硬编码
+如果默认的Quasar语言包不是动态确定的(例如不依赖于cookies)，那么你可以：
 
 #### Quasar CLI
-Edit `/quasar.conf.js`:
+编辑`/quasar.conf.js`：
 
 ```js
 framework: {
@@ -34,8 +34,8 @@ framework: {
 }
 ```
 
-#### Quasar Vite Plugin
-Edit your `main.js`:
+#### Quasar Vite 插件
+编辑你的`main.js`:
 
 ```js
 // ...
@@ -44,13 +44,13 @@ import { Quasar } from 'quasar'
 import langDe from 'quasar/lang/de'
 // ...
 app.use(Quasar, {
-  // ...,
+  // ... ,
   lang: langDe
 })
 ```
 
-#### Vue CLI
-Edit your `main.js`:
+#### CLI视图
+编辑你的`main.js`：
 
 ```js
 // ...
@@ -59,13 +59,13 @@ import { Quasar } from 'quasar'
 import langDe from 'quasar/lang/de'
 // ...
 app.use(Quasar, {
-  // ...,
+  // ... ,
   lang: langDe
 })
 ```
 
 #### Quasar UMD
-Include the language pack JS tag for your Quasar version and also tell Quasar to use it. Example:
+包括你的Quasar版本的语言包JS标签，同时告诉Quasar使用它。例如：
 
 ```html
 <!-- include this after Quasar JS tag -->
@@ -75,10 +75,10 @@ Include the language pack JS tag for your Quasar version and also tell Quasar to
 </script>
 ```
 
-Check what tags you need to include in your HTML files on [UMD / Standalone](/start/umd) page.
+在[UMD / Standalone](/start/umd)页面上查看你的HTML文件中需要包含哪些标签。
 
-### Dynamical (non-SSR)
-Quasar CLI: If your desired Quasar Language Pack must be dynamically selected (example: depends on a cookie), then you need to create a boot file: `$ quasar new boot quasar-lang-pack [--format ts]`. This will create `/src/boot/quasar-lang-pack.js` file. Edit it to:
+### 动态(非SSR)
+Quasar CLI: 如果您所需要的Quasar语言包必须是动态选择的(例如：取决于cookie)，那么您需要创建一个启动文件。`$ quasar new boot quasar-lang-pack [-format ts]`。这将创建`/src/boot/quasar-lang-pack.js`文件。把它编辑成：
 
 ```js
 import { Quasar } from 'quasar'
@@ -96,13 +96,13 @@ export default async () => {
       })
   }
   catch (err) {
-    // Requested Quasar Language Pack does not exist,
-    // let's not break the app, so catching error
+    // 要求的Quasar语言包不存在。
+    // 让我们不要破坏应用程序，所以捕捉错误
   }
 }
 ```
 
-Then register this boot file into `/quasar.conf.js`:
+然后将这个启动文件注册到`/quasar.conf.js`中：
 
 ```js
 boot: [
@@ -110,17 +110,17 @@ boot: [
 ]
 ```
 
-::: warning Always constrain a dynamic import
-Notice the use of the [Webpack magic comment](https://webpack.js.org/api/module-methods/#magic-comments) - `webpackInclude`. Otherwise all the available language packs will be bundled, resulting in an increase in the compilation time and the bundle size. See [Caveat for dynamic imports](https://quasar.dev/quasar-cli/lazy-loading#Caveat-for-dynamic-imports)
+::: warning 始终限制动态导入
+注意使用[Webpack 魔术注释](https://webpack.js.org/api/module-methods/#magic-comments) - `webpackInclude`。否则，将捆绑所有可用的语言包，导致编译时间和包的大小增加。参见[动态导入的注意事项](https://quasar.dev/quasar-cli/lazy-loading#Caveat-for-dynamic-imports)
 :::
 
-### Dynamical (SSR)
-When dealing with SSR, we can't use singleton objects because that would pollute sessions. As a result, as opposed to the dynamical example above (read it first!), you must also specify the `ssrContext` from your boot file:
+### 动态的(SSR)
+在处理SSR时，我们不能使用单例对象，因为那会污染会话。因此，相对于上面的动态示例(先读一下！)，你还必须从你的启动文件中指定`ssrContext`。
 
 ```js
 import { Quasar } from 'quasar'
 
-// ! NOTICE ssrContext param:
+// ! 注意 ssrContext 参数。
 export default async ({ ssrContext }) => {
   const langIso = 'de' // ... some logic to determine it (use Cookies Plugin?)
 
@@ -130,19 +130,19 @@ export default async ({ ssrContext }) => {
       'quasar/lang/' + langIso
       )
       .then(lang => {
-        // ! NOTICE ssrContext param:
+        // ! 注意 ssrContext 参数。
         Quasar.lang.set(lang.default, ssrContext)
       })
   }
   catch (err) {
-    // Requested Quasar Language Pack does not exist,
-    // let's not break the app, so catching error
+    // 要求的Quasar语言包不存在。
+    // 让我们不要破坏应用程序，所以捕捉错误
   }
 }
 ```
 
-## Change Quasar Language Pack at Runtime
-Example with a QSelect to dynamically change the Quasar components language:
+## 在运行时改变Quasar语言包
+使用 QSelect 动态改变 Quasar 组件语言的示例：
 
 ```html
 <template>
@@ -178,7 +178,7 @@ export default {
     const lang = ref($q.lang.isoName)
 
     watch(lang, val => {
-      // dynamic import, so loading on demand only
+      // 动态导入，所以只按需加载
       import(
         /* webpackInclude: /(de|en-US)\.js$/ */
         'quasar/lang/' + val
@@ -196,25 +196,25 @@ export default {
 </script>
 ```
 
-## Using Quasar Language Pack in App Space
-Although the Quasar Language Packs **are designed only for Quasar components internal usage**, you can still use their labels for your own website/app components too.
+## 在应用程序空间中使用Quasar语言包
+尽管Quasar语言包**只为Quasar组件的内部使用而设计**，但你仍然可以将其标签用于你自己的网站/应用程序组件。
 
 ```html
 "Close" label in current Quasar Language Pack is:
 {{ $q.lang.label.close }}
 ```
 
-Check a Quasar Language Pack on [GitHub](https://github.com/quasarframework/quasar/tree/dev/ui/lang) to see the structure of `$q.lang`.
+查看[GitHub](https://github.com/quasarframework/quasar/tree/dev/ui/lang) 上的Quasar语言包，可以看到`$q.lang`的结构。
 
-## Detecting Locale
-There's also a method to determine user locale which is supplied by Quasar out of the box:
+## 检测地区设置
+Quasar还提供了一种方法来确定用户的地域性，这种方法是开箱即用的。
 
 ```js
-// outside of a Vue file
+// 在Vue文件之外
 import { Quasar } from 'quasar'
 Quasar.lang.getLocale() // returns a string
 
-// inside of a Vue file
+// 在一个Vue文件中
 import { useQuasar } from 'quasar'
 
 setup () {

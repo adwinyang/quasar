@@ -1,24 +1,24 @@
 ---
-title: Banner
-desc: The QBanner Vue component displays a prominent message and related optional actions.
+title: 旗帜
+desc: QBanner Vue组件显示一个突出的信息和相关的可选动作。
 keys: QBanner
 ---
-The QBanner component creates a banner element to display a prominent message and related optional actions.
+QBanner组件创建了一个横幅元素来显示一个突出的信息和相关的可选动作。
 
-According to the Material Design spec, the banner should be "displayed at the top of the screen, below a top app bar" - but of course you can put one anywhere that makes sense, even in a QDialog.
+根据Material Design的规范，横幅应该 "显示在屏幕的顶部，在顶部应用栏的下面"--当然，你可以把横幅放在任何有意义的地方，甚至在QDialog中。
 
 ## QBanner API
 
 <doc-api file="QBanner" />
 
-## Usage
+## 使用方法
 
-<doc-example title="Basic" file="QBanner/Basic" />
+<doc-example title="基本" file="QBanner/Basic" /> ## 使用方法
 
-<doc-example title="Rounded border" file="QBanner/Rounded" />
+<doc-example title="圆形边界" file="QBanner/Rounded" /> ## 使用方法
 
-<doc-example title="With an image" file="QBanner/Image" />
+<doc-example title="有图像的" file="QBanner/Image" />
 
-<doc-example title="Inline actions" file="QBanner/Inline" />
+<doc-example title="内联动作" file="QBanner/Inline" />
 
-<doc-example title="Dense" file="QBanner/Dense" />
+<doc-example title="密集型" file="QBanner/Dense" />

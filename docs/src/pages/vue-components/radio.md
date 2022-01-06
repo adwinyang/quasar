@@ -1,6 +1,6 @@
 ---
-title: Radio
-desc: The QRadio Vue component is a basic element for user input. It can be used to supply a way for the user to pick an option from multiple choices.
+title: 电台
+desc: QRadio Vue组件是一个用户输入的基本元素。它可以用来为用户提供一种方式，让他们从多个选择中挑选一个选项。
 keys: QRadio
 related:
   - /vue-components/option-group
@@ -9,52 +9,52 @@ related:
   - /vue-components/toggle
 ---
 
-The QRadio component is another basic element for user input. You can use this to supply a way for the user to pick an option from multiple choices.
+QRadio组件是另一个用于用户输入的基本元素。你可以用它来为用户提供一种方法，让他们从多个选择中挑选一个选项。
 
 ::: tip
-Please also refer to the [QOptionGroup](/vue-components/option-group) on other possibilities for creating groups of Radios.
+也请参考[QOptionGroup](/vue-components/option-group)关于创建Radios组的其他可能性。
 :::
 
 ## QRadio API
 
 <doc-api file="QRadio" />
 
-## Usage
+## 用法
 
-### Standard
+### 标准
 
-<doc-example title="Standard" file="QRadio/Standard" />
+<doc-example title="标准" file="QLadio/Standard" />
 
-### Dense
+### 密集型
 
-<doc-example title="Dense" file="QRadio/Dense" />
+<doc-example title="密集" file="QRadio/Dense" /> ###密集型
 
-### Coloring
+### 着色
 
-In the second row in the example below, the property `keep-color` is being used to retain the passed in color when the radio button is not in a toggled state.
+在下面示例的第二行中，属性`keep-color`被用来在单选按钮不处于切换状态时保留传入的颜色。
 
-<doc-example title="Coloring" file="QRadio/Coloring" />
+<doc-example title="着色" file="QLadio/Coloring" />
 
-### Dark and disable
+### 深色和禁用
 
-<doc-example title="On a dark background" file="QRadio/OnDarkBackground" dark />
+<doc-example title="在黑暗背景下" file="QRadio/OnDarkBackground" dark />
 
-<doc-example title="Disable" file="QRadio/Disable" />
+<doc-example title="禁用" file="QRadio/Disable" /> ### 左侧的标签
 
-### Label on left-side
+### 左侧的标签
 
-<doc-example title="Label on left side" file="QRadio/LabelPosition" />
+<doc-example title="标签在左侧" file="QRadio/LabelPosition" /> ### 标签在左侧
 
-### Sizes
+### 尺寸
 
-Apart from the standard sizes below, you can define your own through the `size` property (last one is a custom size).
+除了下面的标准尺寸外，你可以通过`size'属性定义你自己的尺寸(最后一个是自定义尺寸)。
 
-<doc-example title="Standard sizes" file="QRadio/StandardSizes" />
+<doc-example title="标准尺寸" file="QLadio/StandardSizes" />
 
-### With QOptionGroup
+### 使用QOptionGroup
 
 ::: tip
-You can also use [QOptionGroup](/vue-components/option-group), which simplifies the usage when you have groups of radios, like in example below.
+你也可以使用[QOptionGroup](/vue-components/option-group)，当你有一组收音机时，它可以简化使用，比如下面的示例。
 :::
 
 <doc-example title="Usage with QOptionGroup" file="QRadio/OptionGroup" />

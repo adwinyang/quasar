@@ -1,6 +1,6 @@
 ---
-title: Checkbox
-desc: The QCheckbox Vue component is a checkbox with features like coloring, ripple and indeterminate state.
+title: 复选框
+desc: QCheckbox Vue组件是一个具有着色、波纹和不确定状态等功能的检查框。
 keys: QCheckbox
 related:
   - /vue-components/toggle
@@ -9,10 +9,10 @@ related:
   - /vue-components/button-toggle
 ---
 
-The QCheckbox component is another basic element for user input. You can use this to supply a way for the user to toggle an option.
+QCheckbox组件是另一个用于用户输入的基本元素。你可以用它来为用户提供一种切换选项的方法。
 
 ::: tip
-Please also refer to the [QOptionGroup](/vue-components/option-group) on other possibilities for creating groups of Checkboxes.
+关于创建复选框组的其他可能性，也请参考[QOptionGroup](/vue-components/option-group) 。
 :::
 
 
@@ -20,63 +20,63 @@ Please also refer to the [QOptionGroup](/vue-components/option-group) on other p
 
 <doc-api file="QCheckbox" />
 
-## Usage
+## 使用方法
 
-### Standard
+### 标准
 
-<doc-example title="Standard" file="QCheckbox/Standard" />
+<doc-example title="标准" file="QCheckbox/Standard" />
 
-### Label
+### 标签
 
-<doc-example title="Label" file="QCheckbox/Label" />
+<doc-example title="标签" file="QCheckbox/Label" /> ### 标签
 
-### Coloring
+### 着色
 
-In the second row in the example below, the property `keep-color` is being used to retain the passed in color when the checkbox is not in a toggled state.
+在下面示例的第二行中，属性`keep-color`被用来在复选框不处于切换状态时保留传入的颜色。
 
-<doc-example title="Coloring" file="QCheckbox/Coloring" />
+<doc-example title="着色" file="QCheckbox/Coloring" />
 
-### Dense and dark
+### 密集和黑暗
 
-<doc-example title="Dense" file="QCheckbox/Dense" />
+<doc-example title="密集" file="QCheckbox/Dense" /> ###密集和黑暗
 
-<doc-example title="On a dark background" file="QCheckbox/OnDarkBackground" dark />
+<doc-example title="深色背景下" file="QCheckbox/OnDarkBackground" dark />
 
-### Sizes
+### 尺寸
 
-Apart from the standard sizes below, you can define your own through the `size` property (last one is a custom size).
+除了下面的标准尺寸外，你可以通过`size`属性定义你自己的尺寸(最后一个是自定义尺寸)。
 
-<doc-example title="Standard sizes" file="QCheckbox/StandardSizes" />
+<doc-example title="标准尺寸" file="QCheckbox/StandardSizes" />
 
-### Indeterminate state
+### 不确定的状态
 
-In the example below, as soon as you click on the first checkbox it starts toggling between true/false. The second checkbox, on the other hand toggles between the three states (indeterminate/true/false) with help from `toggle-indeterminate`. You can optionally set the property `indeterminate-value`, otherwise the indeterminate value will be considered `null`.
+在下面的示例中，一旦你点击了第一个复选框，它就开始在真/假之间切换。另一方面，第二个复选框在 "toggle-indeterminate "的帮助下在三种状态(不定/真/假)之间切换。你可以选择设置属性`indeterminat-value`，否则，不确定的值将被视为`null`。
 
-<doc-example title="Indeterminate state" file="QCheckbox/IndeterminateState" />
+<doc-example title="不确定的状态" file="QCheckbox/IndeterminateState" />
 
-### Toggle order
+### 切换顺序
 
-By default, QCheckbox follows this chain when toggling: indeterminate -> checked -> unchecked. However, you can change this behavior through the `toggle-order` prop. This property determines the order of the states and can be `tf` (default) or `ft` (`t` stands for state of true/checked while `f` for state of false/unchecked).
+默认情况下，QCheckbox在切换时遵循这个链条：不确定->选中->未选中。然而，你可以通过`toggle-order`属性改变这一行为。这个属性决定了状态的顺序，可以是`tf`(默认)或`ft`(`t`代表true/checked状态，`f`代表false/unchecked状态)。
 
-Toggling order is:
+切换的顺序是。
 
-* if `toggle-indeterminate` is true, then: indet -> first state -> second state -> indet (and repeat)
-* otherwise (no toggle-indeterminate): indet -> first state -> second state -> first state -> second state -> ...
+* 如果`toggle-indetinate`为真，那么：indet -> 第一个状态 -> 第二个状态 -> indet (并重复)
+* 否则(没有切换不定)：indet -> 第一状态 -> 第二状态 -> 第一状态 -> 第二状态 -> ...
 
-<doc-example title="Toggle order" file="QCheckbox/ToggleOrder" />
+<doc-example title="切换顺序" file="QCheckbox/ToggleOrder" />
 
-### Array model
+### 阵列模型
 
-<doc-example title="Array as model" file="QCheckbox/ArrayAsModel" />
+<doc-example title="数组作为模型" file="QCheckbox/ArrayAsModel" /> ###自定义模型值
 
-### Custom model values
+### 自定义模型值
 
-<doc-example title="Custom model values" file="QCheckbox/CustomModel" />
+<doc-example title="自定义模型值" file="QCheckbox/CustomModel" /> ###自定义模型值
 
-### With QOptionGroup
+### 使用QOptionGroup
 
 ::: tip
-You can also use [QOptionGroup](/vue-components/option-group), which simplifies the usage when you have groups of checkboxes, like in example below.
+你也可以使用[QOptionGroup](/vue-components/option-group)，当你有一组复选框时，它可以简化使用，就像下面的示例。
 :::
 
 <doc-example title="Usage with QOptionGroup" file="QCheckbox/OptionGroup" />

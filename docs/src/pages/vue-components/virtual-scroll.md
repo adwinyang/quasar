@@ -1,111 +1,111 @@
 ---
-title: Virtual Scroll
-desc: The QVirtualScroll component renders a big list of items as the user scrolls in the container, keeping DOM tree clean and eating the lowest amount of memory possible.
+title: 虚拟卷轴
+desc: 当用户在容器中滚动时，QVirtualScroll组件会渲染一个大的项目列表，保持DOM树的清洁，并尽可能地占用最少的内存量。
 keys: QVirtualScroll
 related:
   - /vue-components/select
   - /vue-components/infinite-scroll
 ---
 
-The QVirtualScroll component allows you to display only a part of a long list of items and update the visible items as the user scrolls in the container. This has several advantages: only visible items are rendered, so the smallest number of nodes are in the DOM tree at any given point in time and the memory consumption is kept at its lowest.
+QVirtualScroll组件允许你只显示一长串项目的一部分，并在用户在容器中滚动时更新可见项目。这有几个好处：只有可见的项目被渲染，所以在任何给定的时间点，DOM树中的节点数量最少，内存使用也保持在最低水平。
 
-There are currently two types of QVirtualScroll: "list" (using QItems) and "table" (using a tabular style to display rows of data).
+目前有两种类型的QVirtualScroll。"列表"(使用QItems)和 "表格"(使用表格风格来显示数据行)。
 
 ## QVirtualScroll API
 
 <doc-api file="QVirtualScroll" />
 
-## Usage
+## 使用方法
 
 ::: tip
-* (Composition API) To get the best performance while using large lists, do not wrap the array that you are passing in the `items` prop with ref()/computed()/reactive()/etc. This allows Vue to skip making the list "responsive" to changes.
-* (Options API) To get the best performance while using large lists, freeze the array that you are passing in the `items` prop using `Object.freeze(items)`. This allows Vue to skip making the list "responsive" to changes.
-* The number of items that will be rendered will be calculated based on the `virtual-scroll-item-size` prop and the size of the scrollable area, but you can fit it to your needs using the `virtual-scroll-slice-size` prop.
-* Use the `virtual-scroll-item-size` to specify the size of elements (pixels of height, or width if horizontal). After an element is rendered on screen its size is updated automatically, but if you specify an element size close to the real size you'll get a better initial indication of the scroll position. Regardless if you will be using this property or not, QVirtualScroll will still work, but without it you may experience the scrollbar not following the mouse grab position while continuously scrolling (on desktop) or the actual scroll of the container getting slightly off by one or two elements when on mobile and continuously scrolling.
+* (Composition API) 为了在使用大型列表时获得最佳性能，不要用ref()/computed()/reactive()/etc.包裹你在`items`属性中传递的数组。这允许Vue跳过使列表对变化做出 "响应"。
+* (Options API) 为了在使用大型列表时获得最佳性能，可以使用`Object.freeze(items)`来冻结你在`items`属性中传递的数组。这允许Vue跳过使列表对变化做出 "响应"。
+* 将被渲染的项目数量将根据`virtual-scroll-item-size`属性和可滚动区域的大小来计算，但你可以使用`virtual-scroll-slice-size`属性来适应你的需求。
+* 使用`virtual-scroll-item-size`来指定元素的大小(高度的像素，如果是水平的，则是宽度)。当一个元素在屏幕上被渲染后，它的尺寸会自动更新，但如果你指定一个接近真实尺寸的元素尺寸，你会得到一个更好的滚动位置的初始指示。不管你是否会使用这个属性，QVirtualScroll仍然可以工作，但如果没有它，你可能会遇到连续滚动时滚动条不跟随鼠标抓取位置的情况(在桌面上)，或者在移动端连续滚动时，容器的实际滚动会稍微偏离一到两个元素。
 :::
 
 ::: warning
-There is a maximum height of the scrolling container, imposed by each browser. In IE11 this is around 1,000,000px, while in the rest of the browsers it's much more, but still limited.
+每个浏览器都有一个滚动容器的最大高度。在IE11中，这个高度大约是100万像素，而在其他浏览器中，这个高度要大得多，但仍然有限。
 :::
 
-Scroll the examples below to see QVirtualScroll in action.
+滚动下面的示例来看看QVirtualScroll的操作。
 
-### Basic
+### 基本
 
-<doc-example title="Basic" file="QVirtualScroll/Basic" />
+<doc-example title="基本" file="QVirtualScroll/Basic" />
 
-### Horizontal
+### 横向
 
-<doc-example title="Horizontal" file="QVirtualScroll/BasicHorizontal" />
+<doc-example title="水平" file="QVirtualScroll/BasicHorizontal" /> ## 不同的模板。
 
-### Different templates
+### 不同的模板
 
-<doc-example title="Different templates for items" file="QVirtualScroll/VariousContent" />
+<doc-example title="项目的不同模板" file="QVirtualScroll/VariousContent" /> ### 不同的模板
 
-<doc-example title="Different templates for horizontal items" file="QVirtualScroll/VariousContentHorizontal" />
+<doc-example title="水平项目的不同模板" file="QVirtualScroll/VariousContentHorizontal" /> ##不同的模板
 
-### Table type
+### 表格类型
 
-Notice the `type="table"` property.
+注意`type="table"`属性。
 
-<doc-example title="Basic table" file="QVirtualScroll/TableBasic" />
+<doc-example title="基本表格" file="QVirtualScroll/TableBasic" />
 
 
-With header that scrolls along with content (doesn't stay in place).
+带有随内容一起滚动的标题(不停留在原地)。
 
-<doc-example title="Table with scrolling header/footer" file="QVirtualScroll/TableBasicHeader" />
+<doc-example title="带有滚动页眉/页脚的表格" file="QVirtualScroll/TableBasicHeader" />
 
-Notice (in the example below) the CSS required to make the table header and footer "sticky". Also note the additional scoped slots which define the header and footer content.
+注意(在下面的示例中)使表头和表脚 "粘 "起来所需的CSS。还要注意定义页眉和页脚内容的附加范围槽。
 
-<doc-example title="Sticky headers table" file="QVirtualScroll/TableSticky" />
+<doc-example title="粘性表头" file="QVirtualScroll/TableSticky" />
 
-A more involved example below, playing with sticky headers and footers.
+下面是一个更复杂的示例，玩的是粘性页眉和页脚。
 
-<doc-example title="Playing with sticky headers" file="QVirtualScroll/TableSticky2" />
+<doc-example title="使用粘性标题" file="QVirtualScroll/TableSticky2" />
 
-### Scroll target
+### 滚动目标
 
-If you need to specify the scroll target (because the auto detected one is not the desired one) pass a CSS selector (as string) or the DOM element to the `scroll-target` prop.
+如果你需要指定滚动目标(因为自动检测的目标不是你想要的)，请将一个CSS选择器(作为字符串)或DOM元素传递给`scroll-target`属性。
 
-If you need to use the virtual list with the whole page as the scrolling element then please set  `scroll-target="body"`.
+如果你需要使用整个页面的虚拟列表作为滚动元素，请设置`scroll-target="body"`。
 
 ::: warning
-* If you pass a custom scroll target container with `scroll-target` prop you must make sure that the element exists and that it can be overflowed (it must have a maximum height and an overflow that allows scrolling).
-* If the scroll target container cannot be overflowed you'll get the whole list rendered.
+* 如果你用`scroll-target`属性传递一个自定义的滚动目标容器，你必须确保该元素的存在，并且它可以被溢出(它必须有一个最大高度和一个允许滚动的溢出)。
+* 如果滚动目标容器不能被溢出，你会得到整个列表的渲染。
 :::
 
 ::: danger
-If you want to use a Vue reference for `scroll-target`, please take care to set it after mounting the component, like in the example below.
+如果你想为`scroll-target'使用Vue引用，请注意在安装组件后设置它，就像下面的示例。
 :::
 
-<doc-example title="Custom scroll target by id" file="QVirtualScroll/ScrollTargetId" />
+<doc-example title="按id自定义滚动目标" file="QVirtualScroll/ScrollTargetId" />
 
-<doc-example title="Custom scroll target by ref" file="QVirtualScroll/ScrollTargetRef" />
+<doc-example title="通过ref自定义滚动目标" file="QVirtualScroll/ScrollTargetRef" />
 
-<doc-example title="Using QScrollArea" file="QVirtualScroll/ScrollArea" />
+<doc-example title="使用QScrollArea" file="QVirtualScroll/ScrollArea" />
 
-### Scroll to position
+### 滚动到位置
 
-<doc-example title="Scroll to position" file="QVirtualScroll/ScrollTo" />
+<doc-example title="滚动到位置" file="QVirtualScroll/ScrollTo" /> ###滚动到位置？
 
-### Sync and async
+### 同步和异步
 
-You can also generate the items to be displayed on the list by using the `items-fn` prop.
+你也可以通过使用`items-fn`属性来生成要在列表上显示的项目。
 
 ::: warning
-Make sure to use a synchronous function that returns the list of items to be displayed.
+请确保使用一个同步函数来返回要显示的项目列表。
 :::
 
-If you need async data use a component that retrieves and renders the data.
+如果你需要异步数据，请使用一个能检索和渲染数据的组件。
 
-<doc-example title="Generate items on the fly" file="QVirtualScroll/GenerateItems" />
+<doc-example title="实时生成项目" file="QVirtualScroll/GenerateItems" />
 
-### Utility classes
+### 实用类
 
-There are two CSS classes that you can use (should you need to) to control VirtualScroll size calculation:
-* Use `q-virtual-scroll--with-prev` class on an element rendered by the VirtualScroll to indicate the element should be grouped with the previous one (main use case is for multiple table rows generated from the same row of data).
-* Use `q-virtual-scroll--skip` class on an element rendered by the VirtualScroll to indicate the element size should be ignored in size calculations.
+有两个CSS类，你可以使用(如果你需要的话)来控制VirtualScroll的大小计算。
+* 在VirtualScroll渲染的元素上使用`q-virtual-scroll--with-prev`类，表示该元素应与前一个元素分组(主要用例是由同一行数据生成的多个表格行)。
+* 在VirtualScroll渲染的元素上使用`q-virtual-scroll--skip`类，以表示在计算大小时应忽略该元素的大小。
 
-<doc-example title="Virtual scroll with multiple rows for a data row" file="QTable/VirtscrollMultipleRows" />
+<doc-example title="一个数据行有多行的虚拟卷轴" file="QTable/VirtscrollMultipleRows" />
 
-<doc-example title="Virtual scroll with expansion model" file="QTable/VirtscrollExpandedRow" />
+<doc-example title="带有扩展模型的虚拟卷轴" file="QTable/VirtscrollExpandedRow" />

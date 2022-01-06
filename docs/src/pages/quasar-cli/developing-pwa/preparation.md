@@ -1,27 +1,27 @@
 ---
-title: Preparation for PWA
-desc: How to add PWA mode with Quasar CLI.
+title: 为PWA做准备
+desc: 如何用Quasar CLI添加PWA模式。
 related:
   - /quasar-cli/quasar-conf-js
 ---
 
-We'll be using Quasar CLI to develop and build a PWA. The difference between building a SPA, Mobile App, Electron App, PWA or SSR is simply determined by the "mode" parameter in "quasar dev" and "quasar build" commands.
+我们将使用Quasar CLI来开发和构建一个PWA。构建SPA、Mobile App、Electron App、PWA或SSR之间的区别只是由 "quasar dev "和 "quasar build "命令中的 "mode "参数决定。
 
-In order to build a PWA, we first need to add the PWA mode to our Quasar project:
+为了建立一个PWA，我们首先需要在我们的Quasar项目中添加PWA模式。
 
 ```bash
 $ quasar mode add pwa
 ```
 
-If you want to jump right in and start developing, you can skip the "quasar mode" command and issue:
+如果你想直接进入并开始开发，你可以跳过 "Quasar 模式 "命令并发出。
 
 ```bash
 $ quasar dev -m pwa
 ```
 
-This will add PWA mode automatically, if it is missing.
+这将自动添加PWA模式，如果它是缺失的。
 
-A new folder will appear in your project folder (which is explained in detail on the [Configuring PWA](/quasar-cli/developing-pwa/configuring-pwa) page):
+一个新的文件夹将出现在你的项目文件夹中(这在[配置PWA](/quasar-cli/developing-pwa/configuring-pwa)页面有详细解释)。
 
 ```bash
 .
@@ -31,7 +31,7 @@ A new folder will appear in your project folder (which is explained in detail on
                                     #               (InjectManifest mode ONLY)
 ```
 
-Both files are going to be detailed in the next pages, but the high overview is:
+这两个文件将在接下来的页面中详细介绍，但高度概括的是。
 
-* The `register-service-worker.[js|ts]` file is part of the UI code and communicates with the service worker.
-* When using InjectManifest, you can write your own custom service worker (`custom-service-worker.[js|ts]`).
+* `register-service-worker.[js|ts]`文件是UI代码的一部分，与服务工作者进行通信。
+* 当使用InjectManifest时，你可以编写你自己的自定义服务工作者(`custom-service-worker. [js|ts]`)。

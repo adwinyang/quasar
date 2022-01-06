@@ -1,6 +1,6 @@
 ---
-title: Typography
-desc: The typography of a Quasar app and its helper CSS classes.
+title: 排版学
+desc: Quasar应用程序的排版和其辅助CSS类。
 components:
   - typography/TypographyHeadings
   - typography/TypographyWeights
@@ -9,48 +9,48 @@ related:
   - /style/positioning
   - /style/spacing
 ---
-We'll handle the typography supplied by Quasar in the sections below.
+我们将在下面的章节中处理Quasar提供的排版。
 
-## Headings
+## 标题
 <typography-headings />
 
-## Font Weights
+## 字体权重
 <typography-weights />
 
-## CSS Helper Classes
-| Class Name | Description |
+## CSS帮助类
+| 类名 | 说明 |
 | --- | --- |
-| `text-right` | Align text to the right |
-| `text-left` | Align text to the left |
-| `text-center` | Align text to the center |
-| `text-justify` | Text will be justified |
-| `text-bold` | Text will be in bold |
-| `text-italic` | Text will be in italic |
-| `text-no-wrap` | Non wrappable text (applies `white-space: nowrap`) |
-| `text-strike` | Applies `text-decoration: line-through` |
-| `text-uppercase` | Transform text to uppercase |
-| `text-lowercase` | Transform text to lowercase |
-| `text-capitalize` | Capitalize first letter of the text |
+| `text-right` | 将文本向右对齐 |
+| `text-left` | 将文本向左对齐
+| `text-center` | 将文本居中对齐 | `text-justify` | 将文本居中对齐
+| `text-justify` | 文本将被调整为正方形 |
+| `text-bold` | 文本将以粗体形式出现
+| `text-italic` | 文本将是斜体的
+| `text-no-wrap` | 不可包裹的文本(应用`white-space: nowrap`) |
+| `text-strike` |应用`text-decoration: line-through` |
+| `text-uppercase` | 将文本转换为大写字母 |
+| `text-lowercase` | 将文本转化为小写字母
+| `text-capitalize` | 将文本的第一个字母大写。
 
-## Default Font
-The default webfont embedded is [Roboto](https://fonts.google.com/specimen/Roboto). **But it is not required**. You can use whatever font(s) you like.
+## 默认字体
+嵌入的默认网络字体是[Roboto](https://fonts.google.com/specimen/Roboto)。**但这不是必须的**。你可以使用你喜欢的任何字体。
 
-Roboto comes with 5 different font weights you can use: 100, 300, 400, 500, 700.
+Roboto有5种不同的字体重量，你可以使用。100, 300, 400, 500, 700.
 
-This is where Roboto font comes embedded by default, if you are looking to remove it:
+这是Roboto字体默认嵌入的地方，如果你想删除它。
 
 ```js
-// file: /quasar.conf.js
+// 文件：/quasar.conf.js
 extras: [
   'roboto-font'
 ]
 ```
 
-## Add custom fonts
-It is also possible to include other fonts to use them in the app. The following is one way to do it:
+## 添加自定义字体
+也可以包括其他字体，在应用程序中使用它们。以下是一种方法。
 
-1. Copy your new webfont `[customfont].woff` (or whatever extension it has; recommended is `woff` for compatibility across all browsers) in a directory of your choice, for example: `./src/css/fonts/[customfont.woff]`
-2. Declare your font in `./src/css/app.{css|sass|scss|styl}` (or in any place you see fit, but correctly update the relative path to the webfont file):
+1. 将你的新网络字体`[customfont].woff`(或它的任何扩展名；推荐使用`woff`以兼容所有浏览器)复制到你选择的目录，例如：`./src/css/fonts/[customfont.woff]`。
+2. 在`./src/css/app.{css|sass|scss|styl}`中声明你的字体(或在任何你认为合适的地方，但要正确更新网络字体文件的相对路径)。
 
 ```css
 @font-face {
@@ -58,10 +58,10 @@ It is also possible to include other fonts to use them in the app. The following
   src: url(./fonts/customfont.woff);
 }
 
-// declare a class which applies it
+// 声明一个应用它的类
 .my-font {
   font-family: 'customfont';
 }
 ```
 
-3. Then use that class where you need it.
+3. 然后在你需要的地方使用该类。

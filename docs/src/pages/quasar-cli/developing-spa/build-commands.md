@@ -1,20 +1,20 @@
 ---
-title: SPA Build Commands
-desc: The Quasar CLI list of commands when developing or building a single page application.
+title: SPA构建命令
+desc: 在开发或构建单页应用程序时，Quasar CLI的命令列表。
 ---
-[Quasar CLI](/start/quasar-cli) makes it incredibly simple to develop or build the final distributables from your source code.
+[Quasar CLI](/start/quasar-cli)使得从你的源代码中开发或构建最终的可分发文件变得异常简单。
 
-Developing:
+开发。
 ```bash
 $ quasar dev
 ```
 
-Building for Production:
+为生产而建造。
 ```bash
 $ quasar build
 ```
 
-If you want a production build with debugging enabled:
+如果你想要一个启用了调试功能的生产构建。
 
 ```bash
 $ quasar build -d

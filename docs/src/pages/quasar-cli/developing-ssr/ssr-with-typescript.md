@@ -1,11 +1,11 @@
 ---
-title: SSR with Typescript
-desc: How to use Typescript with SSR in Quasar
+title: 带类型的SSR
+desc: 如何在Quasar中使用带有SSR的类型脚本
 ---
 
-In order to support SSR with Typescript, you will need to:
+为了用Typescript支持SSR，你需要：1:
 
-1. Edit quasar.conf.js > supportTS. Set it to `true` or use the Object form.
-2. Rename all your files in /src-ssr from `.js` to `.ts` and make the necessary TS code changes.
+1. 编辑quasar.conf.js > supportTS。将其设置为`true`或使用Object形式。
+2. 2. 将你在/src-ssr中的所有文件从`.js`重命名为`.ts`，并进行必要的TS代码修改。
 
-More info: [Supporting TS](/quasar-cli/supporting-ts)
+更多信息。[支持TS](/quasar-cli/supporting-ts)

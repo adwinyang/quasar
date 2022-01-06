@@ -1,6 +1,6 @@
 ---
-title: Spinners
-desc: The QSpinner and its derived Vue components are used to show the user a timely process is currently taking place. It gives the user the feeling the system is continuing to work for longer term activities.
+title: 纺纱机
+desc: QSpinner及其衍生的Vue组件被用来向用户展示当前正在进行的一个及时的进程。它让用户感觉到系统正在继续为长期活动工作。
 keys: QSpinner,QSpinnerAudio,QSpinnerBall,QSpinnerBars,QSpinnerBox,QSpinnerClock,QSpinnerComment,QSpinnerCube,QSpinnerDots,QSpinnerFacebook,QSpinnerGears,QSpinnerGrid,QSpinnerHearts,QSpinnerHourglass,QSpinnerInfinity,QSpinnerIos,QSpinnerOrbit,QSpinnerOval,QSpinnerPie,QSpinnerPuff,QSpinnerRadio,QSpinnerRings,QSpinnerTail
 related:
   - /vue-components/linear-progress
@@ -11,32 +11,32 @@ related:
   - /quasar-plugins/loading-bar
 ---
 
-A Spinner is used to show the user a timely process is currently taking place. It is an important UX feature, which gives the user the feeling the system is continuing to work for longer term activities, like grabbing data from the server or some heavy calculations.
+旋转器是用来向用户显示当前正在进行的及时进程。这是一个重要的用户体验功能，它让用户感觉到系统正在继续工作，以进行长期的活动，如从服务器上抓取数据或一些繁重的计算。
 
 ## QSpinner API
 
 <doc-api file="QSpinner" />
 
-## Other Spinners API
+## 其他Spinner API
 
 ::: tip
-The API below applies to all spinners, except for QSpinner. Making an example with QSpinnerCube.
+下面的API适用于所有的旋转器，除了QSpinner。用QSpinnerCube制作一个示例。
 :::
 
 <doc-api file="QSpinnerCube" />
 
-## Usage
+## 使用方法
 
 <doc-example title="QSpinner" file="QSpinner/Default" />
 
-In the example below, hover over the spinners to see their names.
+在下面的示例中，将鼠标悬停在旋转器上可以看到它们的名字。
 
-<doc-example title="Other spinners" file="QSpinner/Others" />
+<doc-example title="其他旋转器" file="QSpinner/Others" />
 
-<doc-example title="Coloring" file="QSpinner/Color" />
+<doc-example title="着色" file="QSpinner/Color" />
 
-Please note that by default, QSpinner and all other spinners inherit the font-size of the parent and applies it as its size.
+请注意，在默认情况下，QSpinner和所有其他的旋转器都会继承父类的字体大小，并将其作为自己的大小来应用。
 
-<doc-example title="Size" file="QSpinner/Size" />
+<doc-example title="尺寸" file="QSpinner/Size" />
 
-<doc-example title="Standard sizes" file="QSpinner/StandardSizes" />
+<doc-example title="标准尺寸" file="QSpinner/StandardSizes" />

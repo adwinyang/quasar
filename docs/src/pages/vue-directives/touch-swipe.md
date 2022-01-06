@@ -1,43 +1,43 @@
 ---
-title: Touch Swipe Directive
-desc: Vue directive which triggers an event when the user swipes with the finger or mouse on a component or element.
+title: 触摸刷卡指令
+desc: Vue指令，当用户用手指或鼠标在一个组件或元素上滑动时，会触发一个事件。
 keys: touch-swipe
 related:
   - /vue-directives/touch-pan
   - /vue-directives/touch-hold
 ---
-Quasar offers full-featured Vue directives that can totally replace libraries like Hammerjs: `v-touch-pan`, `v-touch-swipe`, `v-touch-hold` and even `v-touch-repeat`.
+Quasar提供了全功能的Vue指令，可以完全取代Hammerjs等库：`v-touch-pan`, `v-touch-swipe`, `v-touch-hold`甚至`v-touch-repeat`。
 
-> **These directives also work with mouse events, not only touch events**, so you are able to build cool functionality for your App on desktops too.
+> **这些指令也适用于鼠标事件，而不仅仅是触摸事件**，所以你也能够在桌面上为你的应用程序建立很酷的功能。
 
-We will be describing `v-touch-swipe` on the lines below.
+我们将在下面的行中描述`v-touch-swipe`。
 
 ## TouchSwipe API
 
 <doc-api file="TouchSwipe" />
 
-## Usage
-Swipe with your mouse on the area below to see it in action. If using a mouse, you need to do it quick.
+## 使用方法
+用你的鼠标在下面的区域刷一下，看看它的作用。如果使用鼠标，你需要快速完成。
 
 ::: tip
-If your content also has images, you might want to add `draggable="false"` to them, otherwise the native browser behavior might interfere in a negative way.
+如果你的内容也有图片，你可能想给它们添加`draggable="false"`，否则本地浏览器的行为可能会产生负面的干扰。
 :::
 
-<doc-example title="All directions" file="TouchSwipe/Basic" />
+<doc-example title="所有方向" file="TouchSwipe/Basic" />
 
-<doc-example title="One direction only" file="TouchSwipe/Right" />
+<doc-example title="只有一个方向" file="TouchSwipe/Right" />
 
-<doc-example title="Several directions" file="TouchSwipe/UpOrLeft" />
+<doc-example title="多个方向" file="TouchSwipe/UpOrLeft" />
 
-### Handling Mouse Events
-When you want to handle mouse events too, use the `mouse` modifier:
+### 处理鼠标事件
+当你也想处理鼠标事件时，使用`mouse`修改器。
 
 ```html
 <div v-touch-swipe.mouse="userHasSwiped">...</div>
 ```
 
-### Inhibiting TouchSwipe
-When you want to inhibit TouchSwipe, you can do so by stopping propagation of the `touchstart`/`mousedown` events from the inner content:
+### 抑制TouchSwipe
+当你想抑制TouchSwipe时，你可以通过停止传播内部内容的`touchstart`/`mousedown`事件来实现。
 
 ```html
 <div v-touch-swipe.mouse="userSwiped">
@@ -53,7 +53,7 @@ When you want to inhibit TouchSwipe, you can do so by stopping propagation of th
 </div>
 ```
 
-However, if you are using `capture` or `mouseCapture` modifiers then events will first reach the TouchHold directive then the inner content, so TouchSwipe will still trigger.
+然而，如果你使用`capture`或`mouseCapture`修改器，那么事件将首先到达TouchHold指令，然后是内部内容，所以TouchSwipe仍然会触发。
 
-## Note on HMR
-Due to performance reasons, not all of the modifiers are reactive. Some require a window/page/component refresh to get updated. Please check the API card for the modifiers which are not marked as reactive.
+## 关于HMR的说明
+由于性能原因，不是所有的修改器都是反应式的。有些需要窗口/页面/组件的刷新来获得更新。请查看API卡，看看那些没有被标记为反应式的修改器。

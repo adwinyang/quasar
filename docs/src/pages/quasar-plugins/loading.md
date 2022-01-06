@@ -1,6 +1,6 @@
 ---
-title: Loading Plugin
-desc: A Quasar plugin which can display a loading state for your app through an overlay with a spinner and a message.
+title: 加载插件
+desc: 一个Quasar插件，可以通过一个带有旋转器和信息的覆盖物来显示你的应用程序的加载状态。
 keys: Loading
 related:
   - /vue-components/linear-progress
@@ -11,20 +11,20 @@ related:
   - /quasar-plugins/loading-bar
   - /vue-components/ajax-bar
 ---
-Loading is a feature that you can use to display an overlay with a spinner on top of your App's content to inform the user that a background operation is taking place. No need to add complex logic within your Pages for global background operations.
+加载是一个功能，你可以用来在你的应用程序的内容上面显示一个带有旋转器的覆盖物，以通知用户正在进行一个后台操作。不需要在你的页面中为全局背景操作添加复杂的逻辑。
 
-## Loading API
+## 加载API
 
 <doc-api file="Loading" />
 
-## Installation
+## 安装
 
-<doc-installation plugins="Loading" config="loading" />
+<doc-installation plugins="Loading" config="Loading" />
 
-## Usage
-Loading uses a delay (500ms) to display itself so that quick operations won't make the screen flicker. This happens by showing and then quickly hiding the progress spinner without the user having a chance to see what happens. The delay before showing it eliminates confusion.
+## 用法
+Loading使用一个延迟(500ms)来显示自己，这样快速的操作就不会使屏幕闪烁。这是通过显示然后迅速隐藏进度旋钮来实现的，用户没有机会看到发生了什么。显示之前的延迟消除了混乱。
 
-Inside a Vue component:
+在一个Vue组件内。
 
 ```js
 import { useQuasar } from 'quasar'
@@ -40,40 +40,40 @@ setup () {
 }
 ```
 
-Outside of a Vue component:
+在Vue组件的外面。
 
 ```js
 import {
   Loading,
 
-  // optional!, for example below
-  // with custom spinner
+  // 可选！，例如以下
+  // 带有定制的旋转器
   QSpinnerGears
 } from 'quasar'
 
-// default options
+// 默认选项
 Loading.show()
 
-// fully customizable
+// 完全可定制的
 Loading.show({
   spinner: QSpinnerGears,
-  // other props
+  // 其他属性
 })
 
 Loading.hide()
 ```
 
-<doc-example title="Default options" file="Loading/Default" />
+<doc-example title="默认选项" file="Loading/Default" />
 
-<doc-example title="With message" file="Loading/WithMessage" />
+<doc-example title="有消息" file="Loading/WithMessage" />
 
-<doc-example title="With customized box" file="Loading/WithBox" />
+<doc-example title="使用自定义的盒子" file="Loading/WithBox" />
 
-<doc-example title="With unsafe message, but sanitized" file="Loading/WithMessageSanitized" />
+<doc-example title="有不安全的信息，但经过消毒处理" file="Loading/WithMessageSanitized" />
 
-<doc-example title="Customized" file="Loading/Customized" />
+<doc-example title="定制的" file="Loading/Customized" />
 
-<doc-example title="Show and Change" file="Loading/ShowAndChange" />
+<doc-example title="显示和更改" file="Loading/ShowAndChange" />
 
-### Setting Up Defaults
-Should you wish to set up some defaults, rather than specifying them each time, you can do so by using quasar.conf.js > framework > config > loading: {...} or by calling `Loading.setDefaults({...})` or `$q.loading.setDefaults({...})`.
+### 设置默认值
+如果你想设置一些默认值，而不是每次都指定它们，你可以通过使用quasar.conf.js > framework > config > loading来实现。{...}或通过调用`Loading.setDefaults({...})`或`$q.loading.setDefaults({...})`。

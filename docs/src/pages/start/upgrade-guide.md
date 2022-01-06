@@ -1,32 +1,34 @@
 ---
-title: Upgrade Guide
-desc: How to upgrade Quasar from older versions to the latest one.
+title: 升级指南
+desc: 如何将Quasar从旧版本升级到最新版本。
 components:
   - upgrade-guide/UpgradeVideoLink
 ---
 
 ::: danger Quasar UI v2
-* In order to support Node 13+ (and for many other benefits) we have **upgraded Webpack from v4 to v5**. You may need to upgrade your installed webpack plugins accordingly.
-* There is no IE11 support because Vue 3 does NOT (and will not) support it either.
-* There may be some App Extensions that are not yet ported to Vue 3 and Quasar v2.
+*为了支持Node 13+(以及许多其他好处)，我们已经**将Webpack从v4升级到v5**。你可能需要相应地升级你安装的webpack插件。
+* 没有对IE11的支持，因为Vue 3也不(也不会)支持它。
+* 可能有一些应用扩展尚未移植到Vue 3和Quasar v2。
 :::
 
 ::: tip Composition and Options API
-You will notice that all of our documentation examples are using Vue 3's Composition API. This does NOT mean that you can't use the legacy Options API. On the contrary, maintaining Options API will actually help you on your upgrade path and make it a lot easier for you. After upgrading is done we do recommend switching to the Composition API, but by no means you are required to do so.
+你会注意到，我们所有的文档实例都是使用Vue 3的Composition API。这并不意味着你不能使用传统的Options API。恰恰相反，维护Options API实际上会在你的升级道路上帮助你，让你更轻松。在升级完成后，我们确实建议切换到Composition API，但绝不是要求你这样做。
 :::
 
-### Video guide <q-badge align="top" color="brand-primary" label="New" />
+### 视频指南
 
-Clicking on the poster below will open a Youtube playlist on the process of upgrading your Quasar CLI project from Quasar v1 to Quasar v2. It may get out of sync as we progress with Quasar v2, but it may help you get started.
+<q-badge align="top" color="brand-primary" label="New" />
+
+点击下面的海报将打开一个Youtube播放列表，介绍将Quasar CLI项目从Quasar v1升级到Quasar v2的过程。 随着Quasar v2的进展，它可能会变得不同步，但它可能有助于你开始。
 
 <upgrade-video-link />
 
-## Older v2 to latest v2
+## 旧的v2到最新的v2
 
-### With UMD
-Simply replace the version string in all the CSS and JS tags that refer to Quasar to the newer version.
+### 使用UMD
+只需将所有引用Quasar的CSS和JS标签中的版本字符串替换为较新的版本。
 
-### With Quasar CLI
+### 使用Quasar CLI
 
 ```bash
 # run these commands inside
@@ -40,175 +42,175 @@ $ quasar upgrade --install
 ```
 
 ::: warning Note for code editor terminals
-If you're using a code editor terminal instead of an external one and you run `quasar upgrade` and get the error *Command not found* or *@quasar/cli* version appears to be *undefined*, you will need to go to the settings of your code editor terminal and untick the option (or its equivalent) *Add 'node_modules/.bin' from the project root to %PATH%*, then restart your code editor.
+如果你使用的是代码编辑器终端，而不是外部终端，并且你运行`quasar upgrade'并得到错误 *Command not found* 或 *@quasar/cli* 版本似乎是 *undefined*，你将需要进入你的代码编辑器终端的设置，取消勾选选项(或其等价物) *Add 'node_modules/.bin' from the project root to %PATH%*，然后重新启动你的代码编辑器。
 :::
 
-### With Quasar Vite plugin
+### 使用Quasar Vite插件
 
 ```bash
 $ yarn upgrade quasar
 ```
 
-Optionally, you may also want to make sure that you have the latest `@quasar/vite-plugin` package.
+另外，你可能还想确保你有最新的`@quasar/vit-plugin`包。
 
-It's highly recommended to keep `@quasar/extras` package up to date too:
+强烈建议你也保持`@quasar/extras`软件包的更新。
 
 ```bash
 # optional, but recommended
 $ yarn add @quasar/extras@latest
 ```
 
-### With Vue CLI
+### 使用Vue CLI
 
 ```bash
 $ yarn upgrade quasar
 ```
 
-Optionally, you may also want to make sure that you have the latest `vue-cli-plugin-quasar` package.
+另外，你可能还想确保你有最新的`vue-cli-plugin-quasar`包。
 
-It's highly recommended to keep `@quasar/extras` package up to date too:
+强烈建议你把`@quasar/extras`包也保持在最新状态。
 
 ```bash
 # optional, but recommended
 $ yarn add @quasar/extras@latest
 ```
 
-## Migrate to v2 from v1
+## 从v1迁移到v2
 
-**This guide refers to Quasar CLI & UMD projects**, but information from here can be used for Vue CLI too. For developers already using Vue CLI on your projects you can check out how to install the [vue-cli-plugin-quasar](/start/vue-cli-plugin) package that works with Quasar v2. You will also need to make a few changes to your main.js (and also upgrade your Vue CLI project to support Vue 3) too (best way currently is to generate a new Vue CLI project for Vue 3 and then following the [install steps](/start/vue-cli-plugin#add-vue-cli-quasar-plugin) for the vue-cli-plugin-quasar and check out the changes incurred to that /src folder, then apply the same principle to your current Vue CLI project).
+**本指南指的是Quasar CLI和UMD项目**，但这里的信息也可以用于Vue CLI。对于已经在项目中使用Vue CLI的开发者，你可以查看如何安装[vue-cli-plugin-quasar](/start/vue-cli-plugin)包，它可以与Quasar v2一起使用。 你还需要对你的main.js做一些修改。 js(同时升级你的Vue CLI项目以支持Vue 3)(目前最好的方法是为Vue 3生成一个新的Vue CLI项目，然后按照vue-cli-plugin的[安装步骤](/start/vue-cli-plugin#add-vue-cli-quasar-plugin)进行安装，检查该/src文件夹发生的变化，然后对你目前的Vue CLI项目应用同样的原则)。
 
-### Intro
+### 介绍
 
-We've put in a lot of work, so the transition from Quasar v1 to v2 is as painless as possible. Don't be afraid by the length of this page, as it doesn't reflect the effort that you need to put into upgrading your app to Quasar v2 (we just tried to make it as complete as possible). The API of Quasar components, directives and plugins has minor changes, but we kept the breaking changes to a bare minimum. We've also added some new cool features to some components.
+我们做了大量的工作，所以从Quasar v1到v2的过渡是尽可能的无痛。不要因为这个页面的长度而感到害怕，因为它并没有反映出你需要为升级你的应用程序到Quasar v2所付出的努力(我们只是试图让它尽可能的完整)。Quasar组件、指令和插件的API有细微的变化，但我们把破坏性的变化控制在最低限度。我们还为一些组件添加了一些新的很酷的功能。
 
-Quasar UI v2 is based on Vue 3, as opposed to the previous version which was based on Vue 2. This means that your app code (Vue components, directives, etc) should be Vue 3 compliant too, not just the Quasar UI source-code. If you are using additional libraries in your app, please make sure that you are using their Vue 3 versions.
+Quasar UI v2是基于Vue 3的，而之前的版本是基于Vue 2的。这意味着你的应用程序代码(Vue组件、指令等)也应该符合Vue 3，而不仅仅是Quasar UI的源代码。如果你在你的应用程序中使用其他库，请确保你使用的是Vue 3版本。
 
-Quasar UI v2 is not just a port to Vue 3 and Composition API. __There are lots of significant performance enhancements in Quasar's algorithms too!__ You'll love it!
+Quasar UI v2不仅仅是对Vue 3和Composition API的移植。__在Quasar的算法中也有很多显著的性能提升！__你会喜欢它的
 
 ::: warning IMPORTANT!
-* No IE11 support - Vue 3 does not support IE11 either. If IE11 support is mandatory for your project(s), then continue using Quasar UI v1.
-* In order to support Node 13+ (and for many other benefits) we have **upgraded Webpack from v4 to v5**. You may need to upgrade your webpack plugins accordingly.
-* Quasar Stylus variables are no longer available (only Sass/SCSS). This does NOT mean that you can't use Stylus anymore though.
-* Not all of our official App Extensions are yet compatible with Quasar UI v2. We are working towards releasing new compatible versions for them.
-* Node v10 reached its End Of Life and so support for it has been dropped. Be sure to update Node (to at least v12.22.1) and npm/yarn on your system accordingly to the new constraits, which include fixes for latest know security issues. This Node version also include native ESM module support, which will help us futher modernize Quasar codebase under the hood during Quasar v2 lifecycle without breaking changes.
+* 不支持IE11 - Vue 3也不支持IE11。如果您的项目必须支持IE11，那么请继续使用Quasar UI v1。
+* 为了支持Node 13+(以及其他许多好处)，我们已经**将Webpack从v4升级到v5**。你可能需要相应地升级你的webpack插件。
+* Quasar Stylus变量不再可用(只有Sass/SCSS)。但这并不意味着你不能再使用Stylus。
+* 并非所有的官方应用扩展都与Quasar UI v2兼容，我们正在努力为它们发布新的兼容版本。
+* Node v10已经达到了它的生命末期，所以对它的支持已经被放弃。请务必更新Node(至少更新到v12.22.1)和npm/yarn，以适应新的版本，其中包括对最新安全问题的修复。这个Node版本还包括对ESM模块的支持，这将有助于我们在Quasar v2的生命周期内进一步实现Quasar代码库的现代化，而不会出现破坏性的变化。
 :::
 
-Before you start with this journey of upgrading your project from v1 to v2, you should know a few additional things:
-1) Read the documentation before asking questions on Discord server or forums.
-2) Prepare a CodePen so staff can help you, if you think you've found an issue.
-3) Dig into the [Quasar source code](https://github.com/quasarframework/quasar/tree/dev) (it'll help you understand the framework as well as teach you best practices for programming with Vue).
-4) Don't use framework components as mixins unless absolutely necessary (wrap them if you need to).
-5) Don't target inner component stuff with CSS selectors unless absolutely necessary.
-6) We recommend `yarn` whenever possible because of its speed and efficient use. However, when using globals, we still recommend using `npm`, especially if you use `nvm` (Node Version Manager).
-7) Use `git` for repository management and make regular commits, it is like taking notes on the process and lets you revert to a previous state in case you get stuck.
-8) Use Quasar boot files for any pre-mounting app routines.
-9) Finally, become a [backer/sponsor](https://donate.quasar.dev) and get access to the special Discord support chat room for priority support. This also helps the project survive.
+在你开始这个将你的项目从v1升级到v2的旅程之前，你应该知道一些额外的事情。
+1) 在 Discord 服务器或论坛上提问之前，先阅读文档。
+2) 准备好CodePen，如果你认为你发现了一个问题，工作人员可以帮助你。
+3) 深入研究[Quasar源代码](https://github.com/quasarframework/quasar/tree/dev)(它将帮助你理解框架，并教你使用Vue编程的最佳实践)。
+4) 除非有必要，否则不要使用框架组件作为混杂物(如果需要的话，请将它们封装起来)。
+5)除非绝对必要，不要用CSS选择器来定位内部组件的东西。
+6) 我们尽可能地推荐`yarn`，因为它的速度和使用效率。然而，当使用globals时，我们仍然建议使用`npm`，特别是当你使用`nvm`(Node版本管理器)时。
+7) 使用`git`进行版本库管理，并定期提交，这就像在过程中做笔记一样，让你在遇到困难时恢复到以前的状态。
+8) 使用Quasar启动文件，用于任何预挂载的应用程序例程。
+9) 最后，成为[支持者/赞助者](https://donate.quasar.dev)，可以进入特殊的Discord支持聊天室，获得优先支持。这也有助于项目的生存。
 
-If you get stuck, check out the forums or visit our Discord server for help which comes not just from staff, but from the community as well.
+如果你被卡住了，请查看论坛或访问我们的Discord服务器，以获得帮助，这不仅来自工作人员，也来自社区。
 
 ::: warning Info
-It should be noted that we have tried our hardest to make sure everything in the Upgrade documentation is correct. However, because this has been a manual process, there are likely errors. If you find any, don't be afraid to make a PR and propose a change to make corrections.
+应该指出的是，我们已经尽最大努力确保升级文件中的所有内容都是正确的。然而，由于这是一个手工过程，很可能存在错误。如果你发现了任何错误，不要害怕做一个PR，并提出修改意见来进行纠正。
 :::
 
 
 
-### Initial Steps
+### 初始步骤
 
-There are two paths you can follow. They are described below. Choose the path that fits your needs best. We do, however, recommend the first option.
+你有两条路可以走。它们描述如下。选择最适合你需要的途径。然而，我们推荐第一个选项。
 
-#### Option 1: Convert a project
+#### 选项1：转换一个项目
 
 ::: danger Important!
-This guide assumes that you are currently using a `@quasar/app` v2 project.
+本指南假设你目前正在使用`@quasar/app` v2项目。
 :::
 
-Before starting, it is highly suggested to make a copy of your current working project or create a new branch with git.
+在开始之前，强烈建议复制你当前的工作项目或用git创建一个新的分支。
 
-1) **Stylus related**: Are you using Stylus and Quasar Stylus variables? Then before anything, convert all those files to Sass/SCSS (including src/css/app.styl -> src/css/app.sass or app.scss). If you still want to use Stylus in your project (without Quasar Stylus variables), then you'll also need to install the stylus related packages (which are no longer supplied by "@quasar/app" out of the box):
-  ```bash
-  # only if you still want to use Stylus (but without Quasar Stylus variables)
-  $ yarn add --dev stylus stylus-loader
-  ```
-2) **Upgrade** Node to at least v12.22.1, npm to at least v6.14.12 and yarn to at least v1.17.3.
-  ```bash
-  # if you are already using a lts/erbium version (eg. 12.14.0), take note of its version, it should be listed at "lts/erbium" row
-  $ nvm list
+1) **与Stylus有关的**。你在使用Stylus和Quasar Stylus的变量吗？那么在做任何事情之前，请将所有这些文件转换为Sass/SCSS(包括 src/css/app.styl -> src/css/app.sass 或 app.scss)。如果你仍然想在你的项目中使用Stylus(没有Quasar Stylus变量)，那么你还需要安装Stylus相关的软件包(这些软件包不再由"@quasar/app "开箱提供)。
+```bash
+# 只有当你仍然想使用Stylus时(但没有Quasar Stylus变量)
+$ yarn add --dev stylus stylus-loader
+```
+2) **升级** Node至少到12.22.1版本，npm至少到6.14.12版本，yarn至少到1.17.3版本。
+```bash
+# 如果你已经在使用lts/erbium版本(例如12.14.0)，请注意它的版本，它应该被列在 "lts/erbium "行中
+$ nvm list
 
-  # if you're using `nvm` helper on Linux (https://github.com/nvm-sh/nvm)
-  $ nvm install 12.22.1 && nvm alias default lts/erbium && nvm use default
-  # if you're using `nvm` helper on Windows (https://github.com/coreybutler/nvm-windows)
-  $ nvm install 12.22.1 && nvm use 12.22.1
+# 如果你在Linux上使用`nvm`帮助器(https://github.com/nvm-sh/nvm)
+$ nvm install 12.22.1 && nvm alias default lts/erbium && nvm use default
+# 如果你在Windows上使用`nvm`帮助器(https://github.com/coreybutler/nvm-windows)
+$ nvm install 12.22.1 && nvm use 12.22.1
 
-  # uninstall previous "lts/erbium" version, we suppose 12.14.0 was already installed in our case
-  nvm uninstall 12.14.0
-  ```
-3) **Remove** folders `.quasar`, `node_modules` and `package-lock.json` or `yarn.lock` file. This generally isn't needed, but in some cases it will avoid trouble with yarn/npm upgrading the packages for the purpose of this guide.
-4) **Install**: `@quasar/app` v3 and `quasar` v2 packages:
-  ```bash
-  $ yarn add --dev @quasar/app@3
-  $ yarn add quasar@2
-  ```
-5) **Remove** `.quasar` and `node_modules` folders, and `package-lock.json`/`yarn.lock` file, then run `npm install`/`yarn install` to regenerate the lock file. This forces the upgrade of the whole dependency graph (deep dependencies included) and avoids troubles with mismatching packages, especially webpack 5 related ones.
-6) If you are using ESLint, then edit `/.eslintrc.js`:
-  ```js
-  // old way
-  parserOptions: {
-    parser: 'babel-eslint'
-  },
-  extends: [
-    'plugin:vue/essential' // or equivalent
-  ]
+# 卸载以前的 "lts/erbium "版本，我们假设在我们的示例中已经安装了 12.14.0
+nvm卸载12.14.0
+```
+3) **删除**文件夹`.quasar`、`node_modules`和`package-lock.json`或`yarn.lock`文件。这通常是不需要的，但在某些情况下，为了本指南的目的，它将避免yarn/npm升级软件包的麻烦。
+4) **安装**。`@quasar/app` v3和`quasar` v2软件包。
+```bash
+$ yarn add --dev @quasar/app@3
+$ yarn add quasar@2
+```
+5) **删除** `.quasar`和`node_modules`文件夹，以及`package-lock.json`/`yarn.lock`文件，然后运行`npm install`/`yarn install`来重新生成锁文件。这将强制升级整个依赖关系图(包括深度依赖)，并避免不匹配的软件包的麻烦，特别是webpack 5相关的软件包。
+6) 如果你正在使用ESLint，那么编辑`/.eslintrc.js`。
+```js
+// 老方法
+parserOptions: {
+parser: 'babel-eslint
+},
+extends: [
+'plugin:vue/essential' // 或等同于
+]
 
-  // NEW way
-  parserOptions: {
-    parser: '@babel/eslint-parser'
-  },
-  extends: [
-    'plugin:vue/vue3-essential' // or equivalent
-  ]
-  ```
+// 新方式
+parserOptions: {
+parser: '@babel/eslint-parser'.
+},
+延伸。[
+'plugin:vue/vue3-essential' // 或等同于
+]
+```
 
-  Also upgrade ESLint deps. Example:
+同时升级ESLint deps。例如：
 
-  ```js
-  "@babel/eslint-parser": "^7.0.0", // replaces babel-eslint !
-  "eslint": "^7.14.0",
-  "eslint-config-standard": "^16.0.2",
-  "eslint-plugin-import": "^2.19.1",
-  "eslint-plugin-node": "^11.0.0",
-  "eslint-plugin-promise": "^5.1.0",
-  "eslint-plugin-quasar": "^1.0.0",
-  "eslint-plugin-vue": "^7.0.0",
-  "eslint-webpack-plugin": "^2.4.0"
-  ```
-7) If you are using Vuex, you will need to manually install it:
-  ```bash
-  $ yarn add vuex@4
-  # or
-  $ npm install vuex@4
-  ```
+```js
+"@babel/eslint-parser": "^7.0.0", // 取代babel-eslint !
+"eslint": "^7.14.0",
+"eslint-config-standard": "^16.0.2",
+"eslint-plugin-import": "^2.19.1",
+"eslint-plugin-node": "^11.0.0",
+"eslint-plugin-promise": "^5.1.0",
+"eslint-plugin-quasar": "^1.0.0",
+"eslint-plugin-vue": "^7.0.0",
+"eslint-webpack-plugin": "^2.4.0"
+```
+7) 如果你使用Vuex，你将需要手动安装它。
+```bash
+$ yarn add vuex@4
+# 或者
+$ npm install vuex@4
+```
 
-8) Edit quasar.conf.js > framework > lang. It will be explained in the "Quasar language packs" section on this page.
-  ```js
-  // old way
-  framework: {
-    lang: 'en-us'
-  }
+8) 编辑quasar.conf.js > framework > lang。它将在本页面的 "Quasar语言包 "部分进行解释。
+```js
+// 老方法
+framework: {
+lang: 'en-us
+}
 
-  // NEW way
-  framework: {
-    lang: 'en-US'
-  }
-  ```
-9) Check all your manually installed webpack plugins to be compatible with Webpack 5 (the vast majority should already be compatible). Also update quasar.conf.js > [devServer config](/quasar-cli/quasar-conf-js#property-devserver) to match [webpack-dev-server v4](https://github.com/webpack/webpack-dev-server).
-10) Follow the rest of the guide. You'll need to adapt to the breaking changes of the new versions of Vue 3, Vue Router 4, Vuex 4, Vue-i18n 9 and any other vue plugin that you are using.
-11) Upgrade your other project dependencies (especially ESLint related ones).
+// 新方法
+framework: {
+lang: 'en-US
+}
+```
+9) 检查你所有手动安装的webpack插件是否与Webpack 5兼容(绝大部分应该已经兼容)。同时更新quasar.conf.js > [devServer config](/quasar-cli/quasar-conf-js#property-devserver)以匹配[webpack-dev-server v4](https://github.com/webpack/webpack-dev-server)。
+10) 按照指南的其余部分进行。你需要适应新版本的Vue 3、Vue Router 4、Vuex 4、Vue-i18n 9和你正在使用的任何其他vue插件的突破性变化。
+11) 升级你的其他项目依赖(特别是ESLint相关的)。
 
-#### Option 2: Create a project
+#### 选项2：创建一个项目
 
-Second option is to create a fresh project and port to it bit by bit. We see this option as a worst case scenario (where you encounter problems with Vue 3 and Vue Router v4 rather than with Quasar itself) and we only mention it for the completeness of this guide.
+第二个选项是创建一个新的项目，然后一点一点地移植到它。我们认为这个方案是最坏的情况(你遇到的是Vue 3和Vue Router v4的问题，而不是Quasar本身的问题)，我们只是为了本指南的完整性而提到它。
 
-You can generate a new Quasar v2 project as shown below and then you can port your app to it.
+你可以生成一个新的Quasar v2项目，如下图所示，然后你就可以把你的应用程序移植到它上面。
 
 ```bash
 # Quasar UI v2 project
@@ -217,12 +219,12 @@ $ quasar create <folder_name>
 
 ### Webpack v5
 
-In order to support Node 13+ (and for many other benefits) we have **upgraded Webpack from v4 to v5**. You may need to upgrade your webpack plugins accordingly.
+为了支持Node 13+(以及其他许多好处)，我们已经将Webpack从v4升级到v5**。你可能需要相应地升级你的Webpack插件。
 
 #### Nodejs polyfills
-Webpack v5 removed the Nodejs polyfills for the web client builds. If you are using packages for the web client that rely on Nodejs API (they shouldn't!), you will get errors saying that some packages are missing. Examples: `Buffer`, `crypto`, `os`, `path`.
+Webpack v5删除了用于网络客户端构建的Nodejs polyfills。如果你在网络客户端使用依赖Nodejs API的包(它们不应该这样做！)，你会得到一些包丢失的错误提示。例如：缓冲区"、"加密"、"os"、"路径"。
 
-These need to be addressed by the package owners. But if you don't want to wait and just want to run your app/website (with a bit of risk), then you can manually install [node-polyfill-webpack-plugin](https://www.npmjs.com/package/node-polyfill-webpack-plugin) (`yarn add --dev node-polyfill-webpack-plugin`) then reference it in quasar.conf.js > build > chainWebpack. Example:
+这些需要由包的所有者来解决。但是如果你不想等待，只想运行你的应用程序/网站(有一点风险)，那么你可以手动安装[node-polyfill-webpack-plugin](https://www.npmjs.com/package/node-polyfill-webpack-plugin)(`yarn add --dev node-polyfill-webpack-plugin`)，然后在quasar.conf.js > build > chainWebpack中引用它。例如：
 
 ```
 // quasar.conf.js
@@ -235,29 +237,29 @@ build: {
 ```
 
 #### Webpack devserver
-As part of the upgrade to Webpack 5, Quasar CLI now supplies [webpack-dev-server v4](https://github.com/webpack/webpack-dev-server) and [webpack-dev-middleware v4](https://github.com/webpack/webpack-dev-middleware) which come with their own breaking changes. This influences quasar.conf.js > devServer options. Below are some of the most used props:
+作为升级到Webpack 5的一部分，Quasar CLI现在提供了[webpack-dev-server v4](https://github.com/webpack/webpack-dev-server)和[webpack-dev-middleware v4](https://github.com/webpack/webpack-dev-middleware)，它们都带有各自的突破性变化。这影响了quasar.conf.js > devServer选项。下面是一些最常用的prop。
 
-| Prop name | Type | Description |
-| --- | --- | --- |
-| devMiddleware | Object | Configuration supplied to webpack-dev-middleware v4 |
-| https | Boolean/Object | Same as before with webpack 4 |
-| onBeforeSetupMiddleware | Function | Replaces "before" |
-| onAfterSetupMiddleware | Function | Replaces "after" |
-| proxy | Object/Array | Same as before with webpack 4 |
+|属性名称 | 类型 | 描述 |
+| devMiddleware | Object | 提供给webpack-dev-middleware v4的配置
+| https | 布尔/对象 | 与之前的webpack 4相同。
+| onBeforeSetupMiddleware | 函数 | 取代 "before" |
+| onAfterSetupMiddleware | 函数 | 取代 "之后" |
+| 代理 | 对象/数组 | 与之前的webpack 4相同 |
+
 
 ::: tip
-If you've tampered with quasar.conf.js > [devServer](/quasar-cli/quasar-conf-js#property-devserver) then you might be interested in a list of all the breaking changes proposed by webpack-dev-server v4: [release notes](https://github.com/webpack/webpack-dev-server/blob/master/migration-v4.md). Check if any apply to you.
+如果你篡改了quasar.conf.js > [devServer](/quasar-cli/quasar-conf-js#property-devserver)，那么你可能会对webpack-dev-server v4提出的所有突破性变化清单感兴趣：[发布说明](https://github.com/webpack/webpack-dev-server/blob/master/migration-v4.md)。检查是否有适用于你的。
 :::
 
 #### webpack-chain
 
 ::: warning
-At the moment of writing these lines, [webpack-chain](https://github.com/neutrinojs/webpack-chain) has not been updated to fully support Webpack 5. This has impact over all quasar.conf.js > chainWebpack{...} methods. While these methods will still work, the newer parts of the configuration introduced in Webpack 5 are not (yet) available. For those parts, the `extendWebpack*` methods should be used, until webpack-chain is fully Webpack 5 compatible.
+在写这几行字的时候，[webpack-chain](https://github.com/neutrinojs/webpack-chain)还没有被更新为完全支持Webpack 5。这对所有 quasar.conf.js > chainWebpack{...} 方法都有影响。虽然这些方法仍然可以使用，但Webpack 5中引入的较新的配置部分(目前)还不能使用。对于这些部分，应该使用`extendWebpack*`方法，直到webpack-chain完全兼容Webpack 5。
 :::
 
 ### App.vue
 
-You'll need to edit src/App.vue and remove the wrapper `<div id="q-app">`. You don't (and should NOT) need it anymore.
+你需要编辑src/App.vue并删除包装器`<div id="q-app">`。你不再需要(也不应该)它了。
 
 ```html
 <!-- old way -->
@@ -276,28 +278,28 @@ You'll need to edit src/App.vue and remove the wrapper `<div id="q-app">`. You d
 ### Vue 3
 
 ::: tip
-For Quasar CLI projects, you don't need to manually install/upgrade the `vue` package as "@quasar/app" v3 is already supplying the correct version of Vue for you.
+对于Quasar CLI项目，你不需要手动安装/升级`vue`包，因为"@quasar/app" v3已经为你提供了正确版本的Vue。
 :::
 
-Since you will also switch to [Vue 3](https://v3.vuejs.org), it's best that you also take a look at its [migration guide](https://v3.vuejs.org/guide/migration/introduction.html) **after**  finishing reading this migration guide.
+由于你也将切换到[Vue 3](https://v3.vuejs.org)，你最好在读完本迁移指南后**看看其[迁移指南](https://v3.vuejs.org/guide/migration/introduction.html)。
 
-If you're using .vue files, you'll most likely have a fairly easy transition because 1) vue-loader (supplied by `@quasar/app`) is the one parsing the [SFC syntax](https://v3.vuejs.org/guide/single-file-component.html) and instructing Vue 3 on what to do and 2) you can still use the Options API (although we recommend that you convert to the newer and better [Composition API](https://v3.vuejs.org/guide/composition-api-introduction.html)).
+如果你使用.vue文件，你很可能会有一个相当容易的过渡，因为1)vue-loader(由`@quasar/app`提供)是解析[SFC语法](https://v3.vuejs.org/guide/single-file-component.html)和指示Vue 3做什么的人，2)你仍然可以使用选项式 API(尽管我们建议你转换到更新更好的[合成API](https://v3.vuejs.org/guide/composition-api-introduction.html))。
 
-We suggest that you first convert your project to Quasar v2 while maintaining Options API (because your components are already in Options API form and you probably want to ensure everything is working first). After this transition, you can convert all your Vue components to Composition API, but in no way is this a requirement.
+我们建议你首先将你的项目转换到Quasar v2，同时保留Options API(因为你的组件已经是Options API的形式，你可能想先确保一切正常)。在这个过渡期之后，你可以将你所有的Vue组件转换为Composition API，但这绝不是一个要求。
 
-Along with Vue3, there is a new major version of [Vue Router v4](https://next.router.vuejs.org), which has its own [breaking changes](https://next.router.vuejs.org/guide/migration/) you should be aware of. There's also the new [Vuex v4](https://vuex.vuejs.org/) too.
+伴随着Vue3，有一个新的主要版本[Vue Router v4](https://next.router.vuejs.org)，它有自己的[breakening changes](https://next.router.vuejs.org/guide/migration/)，你应该注意到。还有新的[Vuex v4](https://vuex.vuejs.org/)也是如此。
 
-#### Vue 3 breaking changes examples
+#### Vue 3中断变化的示例
 
-One of the most important breaking changes when dealing with Vue 3 is how v-model works. It is now an alias to the `model-value` + `@update:model-value` combo, instead of `value` + `@input`. This has impact on all Quasar components using v-model. If you're writing your components in .vue files, then you don't need to worry about it as vue-loader correctly translates it for you.
+在处理Vue 3时，最重要的突破性变化之一是v-model的工作方式。它现在是`model-value`+`@update:model-value`组合的别名，而不是`value`+`@input`。这对所有使用v-model的Quasar组件都有影响。如果你在.vue文件中编写你的组件，那么你不需要担心这个问题，因为vue-loader会正确地为你翻译它。
 
-Also, if you emit custom events from your Vue components, you will need to explicitly specify them like below:
+此外，如果你从你的Vue组件中发出自定义事件，你将需要明确地指定它们，如下所示。
 
 ```html
 <script>
-// your Vue component;
-// let's assume that we emit 'ok' and 'myEvent' events
-// from this component
+// 你的Vue组件。
+// 让我们假设我们发出了'ok'和'myEvent'事件
+// 从这个组件
 
 export default {
   // ...
@@ -308,18 +310,18 @@ export default {
 ```
 
 ### Vue.js Devtools
-If you'd like to use the Vue.js Devtools with Vue 3, you'll need to replace your current browser extension with the [v6 one](https://chrome.google.com/webstore/detail/vuejs-devtools/ljjemllljcmogpfapbkkighbhhppjdbg).
+如果你想在Vue 3中使用Vue.js Devtools，你需要用[v6的](https://chrome.google.com/webstore/detail/vuejs-devtools/ljjemllljcmogpfapbkkighbhhppjdbg)来替换你当前的浏览器扩展。
 
 ### Vue Router v4
 
 ::: tip
-For Quasar CLI projects, you don't need to manually install/upgrade the `vue-router` package as "@quasar/app" v3 is already supplying the correct version of Vue Router for you.
+对于Quasar CLI项目，你不需要手动安装/升级`vue-router`包，因为"@quasar/app" v3已经为你提供了正确版本的Vue Router。
 :::
 
-This is a Vue 3 ecosystem upstream breaking change. Update src/router files to match Vue Router v4's API. Vue Router v4 comes with its own [breaking changes](https://next.router.vuejs.org/guide/migration/index.html). Especially note below how we are dealing with the 404 error.
+这是一个Vue 3生态系统上游的突破性变化。更新 src/router 文件以匹配 Vue Router v4 的 API。Vue Router v4有它自己的[breakening changes](https://next.router.vuejs.org/guide/migration/index.html)。特别注意下面我们是如何处理404错误的。
 
 ```js
-// default src/router/index.js content:
+// 默认 src/router/index.js 内容。
 
 import { createRouter, createMemoryHistory, createWebHistory, createWebHashHistory } from 'vue-router'
 import routes from './routes'
@@ -333,7 +335,7 @@ export default function (/* { store, ssrContext } */) {
     scrollBehavior: () => ({ left: 0, top: 0 }),
     routes,
 
-    // Leave this as is and make changes in quasar.conf.js instead!
+    // 保持原样，在quasar.conf.js中进行修改。
     // quasar.conf.js -> build -> vueRouterMode
     // quasar.conf.js -> build -> publicPath
     history: createHistory(process.env.MODE === 'ssr' ? void 0 : process.env.VUE_ROUTER_BASE)
@@ -344,7 +346,7 @@ export default function (/* { store, ssrContext } */) {
 ```
 
 ```js
-// default src/router/routes.js content:
+// 默认的src/router/routes.js内容。
 const routes = [
   {
     path: '/',
@@ -354,8 +356,8 @@ const routes = [
     ]
   },
 
-  // Always leave this as last one,
-  // but you can also remove it
+  // 始终将此作为最后一项。
+  // 但你也可以删除它
   {
     path: '/:catchAll(.*)*',
     component: () => import('pages/Error404.vue')
@@ -365,11 +367,11 @@ const routes = [
 export default routes
 ```
 
-If you use TypeScript, you must replace the `RouteConfig` interface occurrences with `RouteRecordRaw`.
+如果你使用TypeScript，你必须用`RouteRecordRaw`替换`RouteConfig`接口的出现。
 
 ### Vuex v4
 
-First step that you need to take is that you need to manually install Vuex into your app.
+你需要做的第一步是，你需要手动安装Vuex到你的应用程序。
 
 ```bash
 $ yarn add vuex@4
@@ -377,21 +379,21 @@ $ yarn add vuex@4
 $ npm install vuex@4
 ```
 
-This is a Vue 3 ecosystem upstream breaking change. You'll need to update src/store files to match Vuex v4's API. Notice the "createStore" import from vuex and its usage in an example below. For informative purposes: [Vuex migration to 4.0 from 3.x](https://next.vuex.vuejs.org/guide/migrating-to-4-0-from-3-x.html)
+这是一个Vue 3生态系统上游的突破性变化。你需要更新src/store文件以匹配Vuex v4的API。注意从vuex导入的 "createStore "以及它在下面示例中的用法。以供参考。[Vuex从3.x迁移到4.0](https://next.vuex.vuejs.org/guide/migrating-to-4-0-from-3-x.html)
 
 ```js
-// default src/store/index.js content:
+// 默认 src/store/index.js 内容。
 import { createStore } from 'vuex'
-// import example from './module-example'
+// 从'./module-example'导入example
 
 export default function (/* { ssrContext } */) {
   const Store = createStore({
     modules: {
-      // example
+      // 示例
     },
 
-    // enable strict mode (adds overhead!)
-    // for dev mode and --debug builds only
+    // 启用严格模式(增加开销！)。
+    // 仅适用于开发模式和-调试构建
     strict: process.env.DEBUGGING
   })
 
@@ -401,32 +403,32 @@ export default function (/* { ssrContext } */) {
 
 ### Vue-i18n v9
 
-This is a Vue 3 ecosystem upstream breaking change. Update src/boot/i18n.js file to match Vue-i18n v9's API. Vue-i18n comes with its own [breaking changes](https://vue-i18n-next.intlify.dev/guide/migration/breaking.html).
+这是一个Vue 3生态系统的上游突破性变化。更新 src/boot/i18n.js 文件以匹配 Vue-i18n v9 的 API。Vue-i18n有自己的[breakening changes](https://vue-i18n-next.intlify.dev/guide/migration/breaking.html)。
 
-Since this package isn't provided by `@quasar/app`, you must update the dependency in your project via `yarn add vue-i18n@next`
+由于这个包不是由`@quasar/app`提供的，你必须通过`yarn add vue-i18n@next`更新你项目中的依赖关系。
 
 ```js
-// default src/boot/i18n.js content:
+// 默认 src/boot/i18n.js 内容。
 
 import { createI18n } from 'vue-i18n'
 import messages from 'src/i18n'
-// You'll need to create the src/i18n/index.js/.ts file too
+// 你也需要创建 src/i18n/index.js/.ts 文件
 
 export default ({ app }) => {
-  // Create I18n instance
+  // 创建I18n实例
   const i18n = createI18n({
     locale: 'en-US',
     messages
   })
 
-  // Tell app to use the I18n instance
+  // 告诉应用程序使用I18n实例
   app.use(i18n)
 }
 ```
 
-If you use TypeScript, remove the existing augmentation of 'vue/types/vue' as it has been integrated into the upstream package.
-If you use TypeScript and ESLint, due to an [upstream types generation problem](https://github.com/intlify/vue-i18n-next/issues/324), `useI18n` composable will generate a "@typescript-eslint/unbound-method" linting warning when used to destructure `t`, `te` and similar methods.
-Until the problem is solved upstream, we recommended to create your own `useI18n` helper into the boot file
+如果你使用TypeScript，移除现有的'vue/types/vue'的增强功能，因为它已经被整合到上游包中。
+如果你使用TypeScript和ESLint，由于一个[上游类型生成问题](https://github.com/intlify/vue-i18n-next/issues/324)，`useI18n`组合式在用于解构`t'、`te'和类似方法时，会产生一个"@typescript-eslint/unbound-method "的linting警告。
+在上游解决这个问题之前，我们建议在启动文件中创建你自己的`useI18n'帮助器
 
 ```js
 export function useI18n() {
@@ -447,111 +449,111 @@ export function useI18n() {
 
 ### @vue/composition-api
 
-If you've been using Composition API package for Vue 2, you'll need to change all imports to point towards the Vue package.
+如果你一直在使用Vue 2的Composition API包，你需要改变所有的导入，使之指向Vue包。
 
-  ```js
-  // OLD, @vue/composition-api way
-  import { ref } from '@vue/composition-api'
+```js
+// OLD, @vue/composition-api way
+import { ref } from '@vue/composition-api'.
 
-  // New Vue 3 way
-  import { ref } from 'vue'
-  ```
+// 新的Vue 3方式
+从'vue'导入{ ref }。
+```
 
-If you were using the deprecated `context.root` object, you must refactor your code to avoid using it, as it's not available anymore.
+如果你使用的是被废弃的`context.root`对象，你必须重构你的代码以避免使用它，因为它已经不可用了。
 
-Delete `src/boot/composition-api` boot file and the corresponding entry from `quasar.conf.js`. Then uninstall the `@vue/composition-api` package:
+删除`src/boot/composition-api`引导文件和`quasar.conf.js`的相应条目。然后卸载`@vue/composition-api`包。
 
 ```bash
 $ yarn remove @vue/composition-api
 ```
 
-If you use TypeScript, prepare to reload VSCode many times, as all upgrades will cause typings cache problems.
+如果你使用TypeScript，请准备多次重新加载VSCode，因为所有的升级都会导致typings缓存问题。
 
-### Quasar components
+### Quasar组件
 
-#### Vue 3 and v-model
+#### Vue 3和v-model
 
-The `v-model` is now an alias to the `model-value` + `@update:model-value` combo, instead of `value` + `@input`. This has impact on all Quasar components using v-model. If you're writing your components in .vue files then you don't need to worry about it as vue-loader correctly translates it for you.
+`v-model`现在是`model-value`+`@update:model-value`组合的别名，而不是`value`+`@input`。这对所有使用v-model的Quasar组件都有影响。如果你用.vue文件编写你的组件，那么你不需要担心这个问题，因为vue-loader会正确的为你翻译它。
 
-Suggestion: you may want to do a search and replace for `:value` and `@input`. Please be careful on replacing the `:value` as some components (QLinearProgress, QCircularProgress) are not tied to v-model and still use `value` as a property.
+建议：你可能想对`:value`和`@input`进行搜索和替换。请小心替换`:value`，因为有些组件(QLinearProgress, QCircularProgress)不与v-model绑定，仍然使用`value`作为属性。
 
-#### Vue 3 and scoped slots
+#### Vue 3和范围内的槽
 
-All slots are now acting in the same manner as the scoped slots in Vue 2. If you're using Options API, then you can do a search and replace for `this.$scopedSlots` (and replace it with `this.$slots`).
+所有的槽现在都以与Vue 2中的范围槽相同的方式行事。如果你使用Options API，那么你可以对`this.$scopedSlots`进行搜索和替换(用`this.$slots`替换)。
 
 #### QDrawer/QDialog/QMenu/QTooltip
 
-Use "class" and "style" attributes instead of "content-class" / "content-style" props for the above mentioned Quasar components.
+对上述Quasar组件使用 "class "和 "style "属性，而不是 "content-class" / "content-style "属性。
 
 #### QBtn/QItem/QBreadcrumbs/QRouteTab
 
-New props: href, target.
+新增属性：href、target。
 
-For QBtn, it is no longer necessary to specify `type="a"` when using `href` prop.
+对于QBtn，在使用`href`属性时不再需要指定`type="a"`。
 
-The `href` prop is especially useful for UMD if you don't also inject Vue Router.
+如果你不同时注入Vue Router，`href`属性对UMD特别有用。
 
 #### QBtn/QRouteTab
 
-If you were using the `to` prop and delaying navigation in your `@click` handler:
+如果你在使用`to`属性并在你的`@click`处理程序中延迟导航。
 
 ```
-// OLD way
+// 老方法
 function onClick (e, go) {
   e.navigate = false // <<<--- this changed
-  // ...maybe later call go()?
+  // ...也许以后会调用go()？
 }
 
-// NEW way
+// 新方法
 function onClick (e, go) {
   e.preventDefault() // <<<--- this changed
-  // ...maybe later call go()?
+  // ...也许以后会调用go()？
 }
 ```
 
 #### QBreadcrumbsEl
 
-Removed "append" prop because Vue Router v4 [has also dropped it](https://next.router.vuejs.org/guide/migration/index.html#removal-of-append-prop-in-router-link).
-Added "tag" and "ripple" properties.
+删除了 "append "属性，因为Vue Router v4 [也放弃了它](https://next.router.vuejs.org/guide/migration/index.html#removal-of-append-prop-in-router-link)。
+添加了 "tag "和 "ripple "属性。
 
 #### QCarousel
 
-Added "transition-duration" prop.
+增加了 "过渡-时间 "属性。
 
 #### QColor
 
-Added "no-header-tabs" prop.
+增加了 "no-header-tabs "属性。
 
 #### QChatMessage
 
-Now by default, the "label", "name", "text" and "stamp" are protected from XSS attacks. This means that all of the `*-sanitize` props have been dropped, as this behavior has now become the standard in Quasar. Should you wish to display HTML as content for these props, you now need to explicitly specify them through new Boolean props (`*-html`).
+现在默认情况下，"label"、"name"、"text "和 "stamp "都受到保护，不会受到XSS攻击。这意味着所有的 "*-sanitize "属性都被放弃，因为这种行为现在已经成为Quasar的标准。如果你想为这些属性显示HTML内容，你现在需要通过新的布尔属性(`*-html`)明确指定它们。
 
-| Removed Boolean prop | New opposite equivalent Boolean prop |
-| --- | --- |
+| 移除的布尔型属性 | 新的相反的布尔型属性 |
 | label-sanitize | label-html |
-| name-sanitize | name-html |
-| text-sanitize | text-html |
-| stamp-sanitize | stamp-html |
-
+| 名称-消音 | 名称-html |
+| 文本-消音 | 文本-html |
+| 戳记-消音 | 戳记-html |
 #### QDate
 
-When `@update:model-value` event (equivalent of the old `@input`) is triggered, the contents of the first parameter no longer contain the (deprecated) `changed` prop.
+当`@update:model-value`事件(相当于以前的`@input`)被触发时，第一个参数的内容不再包含(废弃的)`changed`属性。
 
 ### QDialog
 
-Added "no-shake", "transition-duration".
-Use "class" and "style" attributes instead of "content-class" / "content-style" props.
+增加了 "no-shake", "transition-duration".
 
+使用 "class "和 "style "属性而不是 "content-class"/"content-style "属性。
 #### QExpansionItem
 
-Removed the "append" property because Vue Router v4 [has also dropped it](https://next.router.vuejs.org/guide/migration/index.html#removal-of-append-prop-in-router-link).
+删除了 "append "属性，因为Vue Router v4 [也放弃了它](https://next.router.vuejs.org/guide/migration/index.html#removal-of-append-prop-in-router-link)。
 
-#### (New) Connecting to QForm
+#### (新)连接到QForm
 
-Should you wish to create your own Vue components that need to connect to a parent QForm (for validation purposes), we've made it easier for you:
+如果你想创建自己的Vue组件，需要连接到父级QForm(用于验证目的)，我们已经为你提供了方便。
+
+
 
 ```js
-// Composition API variant
+// 组合式 API 变体
 
 import { useFormChild } from 'quasar'
 
@@ -559,14 +561,14 @@ useFormChild ({
   validate,     // Function returning a Boolean (or a Promise resolving to a Boolean)
   resetValidation, // Optional function which resets validation
   requiresQForm // Boolean -> if "true" and your component
-                //   is not wrapped by QForm it then displays
-                //   an error message
+                //   没有被QForm包起来，它就会显示
+                //   一个错误信息
 })
 
-// some component
+// 某些组件
 export default {
   setup () {
-    // required! should return a Boolean
+    // 要求！应该返回一个布尔值
     function validate () {
       console.log('called my-comp.validate()')
       return true
@@ -582,22 +584,22 @@ export default {
 ```
 
 ```js
-// Options API variant
+// 选项式 API 变体
 
 import { QFormChildMixin } from 'quasar'
 
-// some component
+// 某些组件
 export default {
   mixins: [ QFormChildMixin ],
 
   methods: {
-    // required! should return a Boolean
+    // 要求！应该返回一个布尔值
     validate () {
       console.log('called my-comp.validate()')
       return true
     },
 
-    // optional
+    // 可选
     resetValidation () {
       // ...
     }
@@ -607,23 +609,23 @@ export default {
 }
 ```
 
-### QInnerLoading
+...
 
-Added "label", "label-class" and "label-style" props.
 
-#### QImg
 
-This component has been redesigned from the ground up. It now makes use of a more modern API. The immediate effects are that it uses less RAM memory and runtime is much faster.
 
-Added properties: "loading", "crossorigin", "fit", "no-spinner", "no-native-menu", "no-transition".
-Removed properties: "transition", "basic" (now equivalent to "no-spinner" + "no-transition")
-Changed property "no-default-spinner" to "no-spinner".
 
-For the detailed changes, please view the API Card on [QImg](/vue-components/img#qimg-api) page.
 
-#### QPopupEdit
 
-Some performance improvements have been made on this component and as a result you will need to now use the default slot.
+
+
+
+
+
+
+
+
+
 
 ```html
 <!-- old way -->
@@ -643,7 +645,7 @@ Some performance improvements have been made on this component and as a result y
 </q-popup-edit>
 ```
 
-The NEW way is below. Notice `v-slot="scope"` is applied directly on `<q-popup-edit>` and using `scope.value` instead of `myModel` for the inner `<q-input>` component:
+下面是新的方法。注意`v-slot="scope"`是直接应用在`<q-popup-edit>`上，并且使用`scope.value`而不是`myModel`作为内部`<q-input>`组件。
 
 ```html
 <q-popup-edit
@@ -664,11 +666,11 @@ The NEW way is below. Notice `v-slot="scope"` is applied directly on `<q-popup-e
 </q-popup-edit>
 ```
 
-For more detailed information on the usage, please read [QPopupEdit](/vue-components/popup-edit)'s page.
+关于更详细的用法，请阅读 [QPopupEdit](/vue-components/popup-edit) 的页面。
 
 #### QLayout
 
-The `@scroll` event parameter now has a slightly different content:
+`@scroll`事件参数现在的内容略有不同。
 
 ```js
 {
@@ -682,27 +684,27 @@ The `@scroll` event parameter now has a slightly different content:
 
 #### QOptionGroup
 
-Added "label" and "label-N" slots.
+增加了 "标签 "和 "标签-N "槽。
 
 #### QRouteTab
 
-Added "ripple" property.
+增加了 "ripple "属性。
 
 #### QScrollArea
 
-QScrollArea has been redesigned so that it now supports both vertical and horizontal scrolling simultaneously.
+QScrollArea已被重新设计，现在它同时支持垂直和水平滚动。
 
-* Added props: "vertical-bar-style" and "horizontal-bar-style" (that come on top of "bar-style" which is applied to both vertical and horizontal scrolling bars)
-* Added props: "vertical-thumb-style" and "horizontal-thumb-style" (that come on top of "thumb-style" which is applied to both vertical and horizontal scrolling bar thumbs)
-* Removed prop: "horizontal" (now obsolete as QScrollArea support both vertical and horizontal scrolling simultaneously)
-* The "getScrollPosition" method now returns an Object of the form `{ top, left }` (example: `{ top: 5, left: 0 }`)
-* The "setScrollPosition" and "setScrollPercentage" methods now require a new first param (named "axis" with values either "horizontal" or "vertical"): (axis, offset[, duration])
+* 增加了属性："垂直-条形风格 "和 "水平-条形风格"(在 "条形风格 "之上，它同时适用于垂直和水平滚动条)。
+* 增加了属性："vertical-thumb-style "和 "horizontal-thumb-style"(位于 "thumb-style "的顶部，适用于垂直和水平滚动条的拇指)。
+* 删除了属性。"horizontal"(现在已经过时了，因为QScrollArea同时支持垂直和水平滚动)。
+* "getScrollPosition "方法现在返回一个形式为`{ top, left }`的对象(例如：`{ top: 5, left: 0 }`)。
+* "setScrollPosition "和 "setScrollPercentage "方法现在需要一个新的第一个参数(名为 "axis"，其值为 "水平 "或 "垂直")。(axis, offset[, duration])
 
 #### QScrollObserver
 
-Replaced property "horizontal" with "axis" (String: "vertical", "horizontal", "both"; default value: "vertical").
+用 "轴 "替换了属性 "水平"(字符串："垂直"、"水平"、"两者"；默认值："垂直")。
 
-The `@scroll` event parameter now has a slightly different content:
+`@scroll`事件参数现在的内容略有不同。
 
 ```js
 {
@@ -722,31 +724,31 @@ The `@scroll` event parameter now has a slightly different content:
 
 #### QSelect
 
-* The "itemEvents" prop has been dropped from the "option" slot. That information is now contained within the "itemProps". This change is a logical result Vue 3's flattening of the rendering function's second parameter ("on", "props" etc. merged together into a single Object).
-* New method: "blur()"
+* "itemEvents "属性已从 "option "槽中删除。该信息现在被包含在 "itemProps "中。这一变化是Vue 3对渲染函数的第二个参数进行扁平化的逻辑结果("on"、"props "等合并为一个对象)。
+* 新的方法。"blur()"
 
 ### QSlider/QRange
 
-New props: track-size, thumb-size, marker-labels, marker-labels-class, switch-label-side, switch-marker-labels-side, inner-min, inner-max,
-thumb-color, track-color, track-img, inner-track-color, inner-track-img, selection-color, selection-img.
+新属性: track-size, thumb-size, marker-labels, marker-labels-class, switch-label-side, switch-marker-labels-side, inner-min, inner-max,
+thumb-color, track-color, track-img, inner-track-color, inner-track-img, selection-color, selection-img。
 
-New props specific to QRange: left-thumb-color, right-thumb-color
+新增QRange专用属性：左拇指颜色、右拇指颜色
 
-New slots: marker-label, marker-label-group
+新的槽：标记-标签，标记-标签-组
 
 #### QTable
 
-Renamed the "data" property to "rows" (to solve TS conflict issue with "data" incorrectly inferred as the "data()" method of a Vue component).
+将 "data "属性重命名为 "rows"(以解决 "data "被错误地推断为Vue组件的 "data() "方法的TS冲突问题)。
 
-New prop: "column-sort-order". New "columns" definition prop ("sortOrder") and now "style" and "classes" can be Functions too.
+新的属性。"column-sort-order"。新的 "列 "定义属性("sortOrder")，现在 "样式 "和 "类 "也可以是功能。
 
-Due to the new v-model feature of Vue 3, which replaces the ".sync" modifier, `:pagination.sync="..."` now need to be used as `v-model:pagination="..."`
+由于Vue 3的新v-model特性，它取代了".sync "修饰符，`:pagination.sync="..."`现在需要使用`v-model:pagination="..."`。
 
 #### QTable/QTree
 
-Due to the new v-model feature of Vue 3, which replaces the ".sync" modifier, the following properties need to be used differently:
+由于Vue 3的新v-model功能取代了".sync "修改器，以下属性需要以不同方式使用。
 
-| Old way | New way |
+| 旧方式 | 新方式 |
 | --- | --- |
 | pagination.sync="varName" | v-model:pagination="varName" |
 | selected.sync="varName" | v-model:selected="varName" |
@@ -754,141 +756,141 @@ Due to the new v-model feature of Vue 3, which replaces the ".sync" modifier, th
 
 #### QTabs
 
-Added "active-class" prop.
+增加了 "active-class "属性。
 
 #### QTooltip/QMenu/QDialog/QStepper/QTabPanels
 
-Added "transition-duration" property.
+增加了 "过渡-时间 "属性。
 
 #### QSkeleton
 
-Added "animation-speed" prop.
+增加了 "动画速度 "属性。
 
 #### QUploader
 
-The QUploaderBase component has been removed in favor of the [createUploaderComponent](/vue-components/uploader#supporting-other-services) util.
+QUploaderBase组件已被删除，转而使用[createUploaderComponent](/vue-components/uploader#supporting-other-services)工具。
 
-### Quasar directives
+### Quasar指令
 
-The only breaking change in this section is that **we've removed the GoBack directive**. Use the router reference instead to push/replace/go(-1).
+本节唯一的突破性变化是，**我们删除了GoBack指令**。使用路由器的引用来代替推/换/去(-1)。
 
 ```js
-// Composition API variant
+// 组合式 API 变体
 import { useRouter } from 'vue-router'
 
 setup () {
   const $router = useRouter()
 
-  // go back by one record, the same as $router.back()
+  // 返回一条记录，与$router.back()相同。
   $router.go(-1)
 }
 ```
 
 ```js
-// Options API variant inside your component
+// 你的组件内的选项式 API 变体
 this.$router.go(-1)
 }
 ```
 
-### Quasar plugins
+### Quasar插件
 
-#### AppFullscreen plugin
+#### AppFullscreen插件
 
-The request() method now accepts another node while in fullscreen already.
+request()方法现在可以在全屏状态下接受另一个节点了。
 
-#### Loading plugin
+#### 加载插件
 
-* Added "boxClass" property
-* By default, the message is protected from XSS attacks. Should you wish to display HTML content with the "message" prop, you should also specify "html: true". This behavior is completely opposite to that of Quasar v1, where you had the prop "sanitize" (not available anymore; enabled now by default) to NOT display HTML.
+* 增加了 "boxClass "属性
+* 默认情况下，信息是受保护的，不会受到XSS攻击。如果你想用 "消息 "属性显示HTML内容，你还应该指定 "html: true"。这种行为与Quasar v1完全相反，在Quasar v1中，你可以使用 "sanitize "属性(现在不可用了；现在默认启用)来不显示HTML。
 
-#### Dialog plugin
-A few things changed:
+#### Dialog插件
+有几处变化。
 
-1. If you are using the Dialog plugin with a custom component, then you must now supply the component properties under "componentProps":
-
-  ```js
-  // OLD, DEPRECATED v1 way
-  const dialog = this.$q.dialog({ // or Dialog.create({...})
-    component: MyVueComponent,
-    someProp: someValue,
-    // ...
-  })
-
-  // New v2 way (Composition API)
-  import { useQuasar } from 'quasar'
-
-  setup () {
-    const $q = useQuasar()
-    // ...
-    const dialog = $q.dialog({ // or Dialog.create({...})
-      component: MyVueComponent,
-      componentProps: {
-        someProp: someValue,
-        // ...
-      }
-    })
-  }
-
-  // New v2 way (Options API)
-  const dialog = this.$q.dialog({ // or Dialog.create({...})
-    component: MyVueComponent,
-    componentProps: {
-      someProp: someValue,
-      // ...
-    }
-  })
-  ```
-2. The `parent` and `root` props have been removed. Due to the Vue 3 architecture, we can no longer use a "parent" component for the provide/inject functionality. But you'll still be able to use Vue Router/Vuex/etc. inside of your custom component.
-3. If invoking the Dialog plugin with a custom component then you need to add `emits: [ 'ok', 'cancel' ]` to your component as Vue 3 now requires an explicit list of events that the component might emit. You can also transform the component to Composition API. For detailed information please see [Invoking custom component](/quasar-plugins/dialog#invoking-custom-component).
-  ```js
-  // the invoked component code
-  export default {
-    // ...
-    emits: [ 'ok', 'cancel' ],
-    // ...
-  }
-  ```
-
-#### Meta plugin
+1. 如果你使用带有自定义组件的Dialog插件，那么你现在必须在 "componentProps "下提供组件属性。
 
 ```js
-// v1 way (OLD, DEPRECATED)
-// some .vue file
+// 旧的、废弃的v1方式
+const dialog = this.$q.dialog({ // or Dialog.create({...})
+组件。MyVueComponent,
+someProp: someValue,
+// ...
+})
+
+// 新的v2方式(合成API)
+从'quasar'导入{ useQuasar }。
+
+设置() {
+const $q = useQuasar()
+// ...
+const dialog = $q.dialog({ // or Dialog.create({...})
+组件。MyVueComponent,
+componentProps: {
+someProp: someValue,
+// ...
+}
+})
+}
+
+// 新的v2方式(选项式 API)
+const dialog = this.$q.dialog({ // or Dialog.create({...})
+组件。MyVueComponent,
+componentProps: {
+someProp: someValue,
+// ...
+}
+})
+```
+2. `parent`和`root`属性已被删除。由于Vue 3的架构，我们不能再使用 "父 "组件来提供/注入功能。但你仍然能够在你的自定义组件中使用Vue Router/Vuex/等。
+3. 3.如果用自定义组件调用Dialog插件，你需要添加`emits: ['ok', 'cancel']`到你的组件中，因为Vue 3现在需要一个组件可能发出的事件的明确列表。你也可以将该组件转换为Composition API。详细情况请见[调用自定义组件](/quasar-plugins/dialog#invoking-custom-component)。
+```js
+//被调用组件的代码
+出口默认 {
+// ...
+emits: ['ok', 'cancel'],
+// ...
+}
+```
+
+#### Meta插件
+
+```js
+// v1方式(旧的，已废除)。
+// 一些.vue文件
 export default {
   meta: {
-    // ...definition
+    // ...定义
   }
 }
 ```
 
-The new way (Composition API or Options API):
+新的方式(组成API或选项式 API)。
 
 ```js
-// Composition API variant
-// for some .vue file
+// 组合式 API 变体
+// 为一些.vue文件
 import { useMeta } from 'quasar'
 
 export default {
   setup () {
-    // Needs to be called directly under the setup() method!
+    // 需要在setup()方法下直接调用!
     useMeta({
-      // ...definition
+      // ...定义
     })
   }
 }
 ```
 
 ```js
-// Options API variant
-// for some .vue file
+// 选项式 API 变体
+// 为一些.vue文件
 import { createMetaMixin } from 'quasar'
 
 export default {
   mixins: [
     createMetaMixin({ /* ...definition */})
-    // OR dynamic:
+    // 或动态。
     createMetaMixin(function () {
-      // "this" here refers to the vue component
+      // 这里的 "this "指的是vue组件。
       return {
         /* ...definition... */
       }
@@ -897,146 +899,146 @@ export default {
 }
 ```
 
-For detailed information please see [Meta Plugin](/quasar-plugins/meta#usage).
+详细信息请见[Meta Plugin](/quasar-plugins/meta#usage)。
 
 ### Quasar utils
 
 #### date utils
-The object literal property names provided for methods "addToDate" and "subtractFromDate" have been normalized: [#7414](https://github.com/quasarframework/quasar/issues/7414).
+为 "addToDate "和 "subtractFromDate "方法提供的对象字面属性名称已被规范化。[#7414](https://github.com/quasarframework/quasar/issues/7414)。
 
-| Old | New | Changed? |
-| --- | --- | --- |
-| year | years | **Yes** |
-| month | months | **Yes** |
-| days | days | - |
-| hours | hours | - |
-| minutes | minutes | - |
-| seconds | seconds | - |
-| milliseconds | milliseconds | - |
+| 旧的 | 新的 | 改变了？|
+|年 |年 | **是** |
+|月 |月 | **是** |
+| 天数 | 天数 | - |
+| 小时 | 小时 | - |
+| 分钟 | 分钟 | - |
+| 秒 | 秒 | - |
+| 毫秒 | 毫秒 | - |
+#### exportFile利用
 
-#### exportFile util
-
-The exportFile() util (forces browser to download a file with your specified content) is enhanced with new features: you can specify bom (byte order mark) and/or a text encoding. [More info](/quasar-utils/other-utils#export-file).
+exportFile()工具(强制浏览器下载一个有你指定内容的文件)有了新的功能：你可以指定bom(字节顺序标记)和/或文本编码。[更多信息](/quasar-utils/other-utils#export-file)。
 
 #### scroll utils
 
-| Old method name | NEW method name |
-| --- | --- |
+| 旧方法名称 | 新方法名称 |
+
 | getScrollPosition | getVerticalScrollPosition |
 | animScrollTo | animVerticalScrollTo |
-| setScrollPosition | setVerticalScrollPosition |
-
+|设置滚动位置 |设置垂直滚动位置 |
 #### color utils
+从颜色实用程序中删除了 "getBrand "和 "setBrand"。它们被 "getCssVar "和 "setCssVar "取代。
 
-Removed "getBrand" and "setBrand" from color utils. They are replaced by "getCssVar" and "setCssVar":
+
+
+
 
 ```js
-// OLD, DEPRECATED v1 way:
+// 旧的、被废弃的V1方式。
 import { colors } from 'quasar'
 
 const { getBrand, setBrand } = colors
 const primaryColor = getBrand('primary')
 setBrand('primary', '#f3c')
 
-// NEW v2 way:
+// 新V2方式。
 import { getCssVar, setCssVar } from 'quasar'
 
 const primaryColor = getCssVar('primary')
 setCssVar('primary', '#f3c')
 ```
 
-### Quasar language packs
-We have changed the language pack filenames to reflect the standard naming used by browsers. This will allow you to use `$q.lang.getLocale()` when you want to dynamically import the Quasar language pack file.
+### Quasar语言包
+我们改变了语言包的文件名以反映浏览器使用的标准命名。这将允许你在想动态导入Quasar语言包文件时使用`$q.lang.getLocale()`。
 
-Full list of changes:
-| Old name | New name |
+完整的变化列表。
+| 旧名称 | 新名称 |
 | --- | --- |
 | en-us | en-US |
 | en-gb | en-GB |
-| az-latn | az-Latn |
-| fa-ir | fa-IR |
-| ko-kr | ko-KR |
-| kur-CKB | kur-CKB |
-| nb-no | nb-NO |
-| pt-br | pt-BR |
-| zh-hans | zh-CN |
+| 湛江|湛江|湛江|湛江|湛江|湛江|湛江|湛江|湛江|湛江|湛江|湛江
+| 辽宁省
+| 辽宁沈阳 | 辽宁沈阳
+| 辽宁沈阳|辽宁沈阳|辽宁沈阳|辽宁沈阳|辽宁沈阳|辽宁沈阳|辽宁沈阳|辽宁沈阳|辽宁沈阳
+| 辽宁沈阳 - 辽宁省沈阳市 - 辽宁省沈阳市
+| 辽宁沈阳 | 辽宁沈阳 | 辽宁沈阳
+| 辽宁沈阳 | 辽宁沈阳
 | zh-hant | zh-TW |
 
-If you have configured a default Quasar language pack in your quasar.conf.js, then you need to edit it:
+如果你在quasar.conf.js中配置了一个默认的Quasar语言包，那么你需要编辑它。
 
 ```js
-// old way
+// 故道
 framework: {
   lang: 'en-us'
 }
 
-// NEW way
+// 新方法
 framework: {
   lang: 'en-US'
 }
 ```
 
-You'll also need to edit all your dynamic imports from `quasar/lang/` to match the new syntax.
+你还需要编辑所有来自`quasar/lang/`的动态导入，以匹配新的语法。
 
 ### Quasar CSS
 
-The color CSS variable names (all the brand related ones) have changed:
+颜色的CSS变量名称(所有与品牌有关的)已经改变。
 
 ```
-// old
+// 老
 --q-color-primary, --q-color-secondary, ...
 
-// new
+// 新
 --q-primary, --q-secondary, ...
 ```
 
 ### Quasar UMD
-* Due to the new Vue 3 architecture, the code for bootstrapping the app has changed and you will need to adapt [accordingly](/start/umd).
-* There have been changes to the naming scheme of script and css tags to include the type of distubution. For example, the minified resources filenames now end in `.prod.js`/`.prod.css`. This was done to match Vue 3's own file naming scheme.
+* 由于新的Vue 3架构，启动应用程序的代码发生了变化，你需要[相应]调整(/start/umd)。
+* 脚本和css标签的命名方案发生了变化，包括发行的类型。例如，最小化的资源文件名现在以`.prod.js`/`.prod.css`结束。这样做是为了配合Vue 3自己的文件命名方案。
 
 ::: tip
-For an in-depth look at the necessary UMD scripts and tags, please use our [generator tool](/start/umd#installation).
+要深入了解必要的UMD脚本和标签，请使用我们的[生成器工具](/start/umd#installation)。
 :::
 
 ### Quasar App CLI
 
-This section refers to "@quasar/app" v3 package which supports Vue 3 and Quasar UI v2.
+本节提及"@quasar/app" v3软件包，它支持Vue 3和Quasar UI v2。
 
-* Dropped support for `src/css/quasar.variables.styl`. Also, if you still want to use Stylus as preprocessor (but without the Quasar Stylus variables) then you need to manually yarn/npm install `stylus` and `stylus-loader` as dev dependencies into your project ("@quasar/app" does not supply them anymore).
-* New quasar.conf.js > build > vueLoaderOptions prop
-* Remove quasar.conf.js > framework > importStrategy. Auto import works so great that is now used by default and as the only option.
-* The url-loader configuration has been enhanced so it now also supports "ico" files out of the box
-* If you have been using quasar.conf.js > build > rtl in the form of an Object, then you must match [these options](https://github.com/elchininet/postcss-rtlcss) now, since we've switched from the unmaintained postcss-rtl to postcss-rtlcss package.
+* 放弃了对`src/css/quasar.variables.styl`的支持。此外，如果你仍然想使用Stylus作为预处理器(但没有Quasar Stylus变量)，那么你需要手动yarn/npm安装`stylus`和`stylus-loader`作为dev依赖到你的项目("@quasar/app "不再提供它们)。
+* 新增 quasar.conf.js > build > vueLoaderOptions prop.
+* 删除quasar.conf.js > framework > importStrategy。自动导入的效果非常好，现在被默认使用，并且是唯一的选择。
+* url-loader的配置得到了增强，现在它也支持 "ico "文件了。
+* 如果你一直使用quasar.conf.js > build > rtl的形式，那么你现在必须匹配[这些选项](https://github.com/elchininet/postcss-rtlcss)，因为我们已经从未维护的postcss-rtl切换到postcss-rtlcss包。
 
-If you have boot files, where you access and change the `$q` Object through `Vue.prototype.$q`, then you need to adapt this:
+如果你有引导文件，你通过`Vue.prototype.$q`访问和改变`$q`对象，那么你需要适应这个。
 
 ```js
-// old way in boot file
+// 启动文件中的老方法
 Vue.prototype.$q.iconSet.chip.remove = 'fas fa-times-circle'
 
-// NEW way
+// 新方法
 export default ({ app }) => {
   app.config.globalProperties.$q.iconSet.chip.remove = 'fas fa-times-circle'
 }
 ```
 
-Nothing changed in regards to how App Extensions work. Please note that not all of our App Extensions are yet compatible with Quasar UI v2. We are working towards releasing new compatible versions of them.
+关于应用程序扩展的工作方式没有任何改变。请注意，并不是所有的应用扩展都与Quasar UI v2兼容，我们正在努力发布新的兼容版本。
 
 #### TypeScript
 
-Update `src/shims-vue.d.ts` to match [Vue3 version](https://github.com/quasarframework/quasar-starter-kit/blob/b206de59d87b8adcc25a8f7863cfe705bf6b3741/template/src/shims-vue.d.ts).
+更新`src/shims-vue.d.ts`以匹配[Vue3版本](https://github.com/quasarframework/quasar-starter-kit/blob/b206de59d87b8adcc25a8f7863cfe705bf6b3741/template/src/shims-vue.d.ts)。
 
-Create a `src/quasar.d.ts` file and copy into it the content from [here](https://github.com/quasarframework/quasar-starter-kit/blob/b206de59d87b8adcc25a8f7863cfe705bf6b3741/template/src/quasar.d.ts).
+创建一个`src/quasar.d.ts`文件，将[这里]的内容复制到其中(https://github.com/quasarframework/quasar-starter-kit/blob/b206de59d87b8adcc25a8f7863cfe705bf6b3741/template/src/quasar.d.ts)。
 
-If you use ESLint, update the property into `quasar.conf.js`:
+如果你使用ESLint，更新属性到`quasar.conf.js`。
 
 ```js
-// old way
+// 故道
 supportTS: {
   tsCheckerConfig: { eslint: true },
 },
 
-// new way
+// 新方法
 supportTS: {
   tsCheckerConfig: {
     eslint: {
@@ -1047,17 +1049,17 @@ supportTS: {
 },
 ```
 
-This is due to upstream breaking changes of `fork-ts-checker-webpack-plugin`.
+这是由于上游对`fork-ts-checker-webpack-plugin`的破坏性修改。
 
-### Quasar App CLI Electron mode
+### Quasar App CLI Electron模式
 
 ::: warning
-If you have a project using the Quasar Electron mode, then it's essential to read its own [Electron mode upgrade guide](/quasar-cli/developing-electron-apps/electron-upgrade-guide#Upgrading-from-Quasar-v1).
+如果你有一个使用Quasar电子模式的项目，那么阅读它自己的[电子模式升级指南](/quasar-cli/developing-electron-apps/electron-upgrade-guide#Upgrading-from-Quasar-v1)是很有必要的。
 :::
 
-Out of the box [support for TS](/quasar-cli/developing-electron-apps/electron-with-typescript) now available.
+开箱即用的[对TS的支持](/quasar-cli/developing-electron-apps/electron-with-typescript)现在可用。
 
-You can also enable ESLint for the main thread and the preload script now:
+你现在也可以为主线程和预加载脚本启用ESLint。
 
 ```js
 electron: {
@@ -1073,15 +1075,15 @@ electron: {
 }
 ```
 
-### Quasar App CLI PWA mode
+### Quasar App CLI PWA模式
 
-If you are using Workbox in InjectManifest mode, then it's useful to know that the `/src-pwa/custom-service-worker.[js|ts]` is now being compiled too. This means that in your code you can now import with relative path too.
+如果你在InjectManifest模式下使用Workbox，那么知道`/src-pwa/custom-service-worker.[js|ts]`现在也被编译了是很有用的。这意味着，在你的代码中，你现在也可以用相对路径导入。
 
-Due to the upgrade to Webpack 5, you will need to also upgrade `workbox-webpack-plugin` to v6+.
+由于升级到Webpack 5，你还需要将`workbox-webpack-plugin`升级到v6+。
 
-You can now enable ESLint for the custom service worker too. And it [supports TS](/quasar-cli/developing-pwa/pwa-with-typescript) out of the box (in which case, rename the extension to `.ts`).
+你现在也可以为自定义服务工作者启用ESLint。而且它[支持TS](/quasar-cli/developing-pwa/pwa-with-typescript)开箱即用(在这种情况下，将扩展名改为`.ts`)。
 
-Enabling ESLint for the custom service worker is done by editing quasar.conf.js:
+通过编辑quasar.conf.js，可以为自定义服务工作者启用ESLint。
 
 ```js
 pwa: {
@@ -1092,14 +1094,14 @@ pwa: {
 }
 ```
 
-### Quasar App CLI SSR mode
+### Quasar App CLI SSR模式
 
-If you have a project using the Quasar SSR mode, then it's essential to read its own [SSR mode upgrade guide](/quasar-cli/developing-ssr/ssr-upgrade-guide).
+如果你有一个使用Quasar SSR模式的项目，那么阅读它自己的[SSR模式升级指南](/quasar-cli/developing-ssr/ssr-upgrade-guide)是必不可少的。
 
-Out of the box [support for TS](/quasar-cli/developing-ssr/ssr-with-typescript) now available.
+开箱即用的[对TS的支持](/quasar-cli/developing-ssr/ssr-with-typescript)现在可用。
 
 ### Quasar Extras
-Nothing changed. You can use it as for Quasar UI v1.
+没有变化。你可以像Quasar UI v1那样使用它。
 
 ### Quasar Icon Genie
-Nothing changed. You can use it the same way as for "@quasar/app" v1 or v2 projects.
+没有任何变化。你可以像"@quasar/app "v1或v2项目一样使用它。

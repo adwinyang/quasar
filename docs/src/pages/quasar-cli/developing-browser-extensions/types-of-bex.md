@@ -1,20 +1,20 @@
 ---
-title: Types of BEX
-desc: How to configure each type of Browser Extensions in Quasar.
+title: BEX的类型
+desc: 如何在Quasar中配置每种类型的浏览器扩展。
 ---
 
-As already discussed, Quasar can handle the various places where a browser extension can live, namely New Tab, Web Page, Dev Tools Options or Popup. You don't need a separate Quasar App for each of these. You can do some handy work with the router.
+如前所述，Quasar可以处理浏览器扩展的各种位置，即新标签、网页、开发工具选项或弹出窗口。你不需要为每个地方单独安装Quasar应用程序。你可以用路由器做一些方便的工作。
 
-## New Tab
+## 新标签
 
-This is the default way in which a BEX will run. It is accessed by clicking on the BEX icon in your browser. The Quasar App will run in that new (blank) tab.
+这是一个BEX运行的默认方式。你可以通过点击浏览器中的BEX图标进入。Quasar应用程序将在这个新的(空白)标签中运行。
 
-## Dev Tools, Options and Popup
+## 开发工具、选项和弹出窗口
 
-These all follow the same pattern, set up a route and configure the `manifest.json` file to look at that route when it's trying to show either one of the types. For instance:
+这些都遵循相同的模式，设置一个路由并配置`manifest.json`文件，当它试图显示其中一个类型时，就会查看该路由。比如说。
 
 ```js
-// routes.js:
+// routes.js。
 
 const routes = [
   { path: '/options', component: () => import('pages/OptionsPage.vue') },
@@ -23,7 +23,7 @@ const routes = [
 ]
 ```
 
-You could configure your `manifest.json` file with the following so the options page is loaded from that route:
+你可以用以下方式配置你的`manifest.json`文件，这样选项页面就会从该路由加载。
 
 ```json
 {
@@ -39,19 +39,19 @@ You could configure your `manifest.json` file with the following so the options 
 }
 ```
 
-## Web Page
+## 网页
 
-This is where the real power comes in. With a little ingenuity we can inject our Quasar application into a web page and use it as an overlay making it seem like our Quasar App is part of the page experience.
+这就是真正的力量所在。通过一点小技巧，我们可以将Quasar应用程序注入到网页中，并将其作为一个覆盖层，使其看起来像我们的Quasar应用程序是网页体验的一部分。
 
-Here's a brief rundown of how you could achieve this:
+下面是一个关于如何实现这一目标的简要介绍：
 
-* `src-bex/js/content-hooks.js`
+* `src-bex/js/content-hooks.js`。
 
-The idea here is to create an IFrame and add our Quasar app into it, then inject that into the page.
+这里的想法是创建一个IFrame并将我们的Quasar应用添加到其中，然后将其注入到页面中。
 
-Given our Quasar App might need to take the full height of the window (and thus stop any interaction with the underlying page) we have an event to handle setting the height of the IFrame. By default the IFrame height is just high enough to allow for the Quasar toolbar to show (and in turn allowing interaction with the rest of the page).
+鉴于我们的Quasar应用程序可能需要占用窗口的全部高度(从而停止与底层页面的任何交互)，我们有一个事件来处理设置IFrame的高度。默认情况下，IFrame的高度刚好可以让Quasar工具条显示出来(反过来也允许与页面的其他部分互动)。
 
-We can call this event from our Quasar App any time we know we're opening the drawer and thus changing the height of the IFrame to allow the whole draw to be visible.
+我们可以在任何时候从我们的Quasar应用程序中调用这个事件，我们知道我们正在打开抽屉，从而改变IFrame的高度，使整个绘图可见。
 
 ```js
 const
@@ -59,7 +59,7 @@ const
   defaultFrameHeight = '62px'
 
 /**
- * Set the height of our iFrame housing our BEX
+ * 设置包含BEX的iFrame的高度
  * @param height
  */
 const setIFrameHeight = height => {
@@ -67,20 +67,20 @@ const setIFrameHeight = height => {
 }
 
 /**
- * Reset the iFrame to its default height e.g The height of the top bar.
+ * 将iFrame重置为其默认高度，例如顶栏的高度。
  */
 const resetIFrameHeight = () => {
   setIFrameHeight(defaultFrameHeight)
 }
 
 /**
- * Content hooks which listen for messages from the BEX in the iFrame
+ * 在iFrame中侦听来自BEX的消息的内容挂钩
  * @param bridge
  */
 export default function attachContentHooks (bridge) {
   /**
-   * When the drawer is toggled set the iFrame height to take the whole page.
-   * Reset when the drawer is closed.
+   * 切换抽屉时，设置iFrame高度以占据整个页面。
+   * 抽屉关闭时复位。
    */
   bridge.on('wb.drawer.toggle', event => {
     const payload = event.data
@@ -94,14 +94,14 @@ export default function attachContentHooks (bridge) {
 }
 
 /**
- * The code below will get everything going. Initialize the iFrame with defaults and add it to the page.
+ * 下面的代码将使一切正常运行。使用默认值初始化iFrame并将其添加到页面中。
  * @type {string}
  */
 iFrame.id = 'bex-app-iframe'
 iFrame.width = '100%'
 resetIFrameHeight()
 
-// Assign some styling so it looks seamless
+// 指定一些造型，使其看起来天衣无缝
 Object.assign(iFrame.style, {
   position: 'fixed',
   top: '0',
@@ -114,15 +114,15 @@ Object.assign(iFrame.style, {
 })
 
 ;(function () {
-  // When the page loads, insert our browser extension app.
+  // 当页面加载时，插入我们的浏览器扩展应用。
   iFrame.src = chrome.runtime.getURL(`www/index.html`)
   document.body.prepend(iFrame)
 })()
 ```
 
-* `src-bex/css/content-css.css`
+* `src-bex/css/content-css.css`。
 
-Add a margin to the top of our document so our Quasar toolbar doesn't overlap the actual page content.
+在我们的文档顶部添加一个空白，这样我们的Quasar工具条就不会与实际的页面内容重叠了。
 
 ```css
 .target-some-header-class {
@@ -130,10 +130,10 @@ Add a margin to the top of our document so our Quasar toolbar doesn't overlap th
 }
 ```
 
-* `Quasar App`
+* `Quasar应用程序`
 
-Then in our Quasar app (/src), we have a function that toggles the drawer and sends an event to the content script telling it to
-resize the IFrame thus allowing our whole app to be visible:
+然后在我们的Quasar应用程序(/src)中，我们有一个函数来切换抽屉，并向内容脚本发送一个事件，告诉它
+调整IFrame的大小，从而使我们的整个应用程序可见。
 
 ```html
 <q-drawer :model-value="drawerIsOpen" @update:model-value="drawerToggled">
@@ -155,7 +155,7 @@ setup () {
         open: drawerIsOpen.value // So it knows to make it bigger / smaller
       })
       .then(r => {
-        // Only set this once the promise has resolved so we can see the entire slide animation.
+        // 只有在承诺解决后才设置这个，这样我们才能看到整个幻灯片动画。
         drawerIsOpen.value = !drawerIsOpen.value
       })
   }
@@ -164,5 +164,5 @@ setup () {
 }
 ```
 
-Now you have a Quasar App running in a web page. You can now trigger other events from the Quasar App that the content
-script can listen to and interact with the underlying page.
+现在你有一个在网页中运行的Quasar应用程序。你现在可以从Quasar应用中触发其他事件，而内容
+脚本可以监听并与底层页面互动。

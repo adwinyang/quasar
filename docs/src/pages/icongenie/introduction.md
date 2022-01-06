@@ -1,22 +1,22 @@
 ---
-title: Icon Genie CLI
-desc: A Quasar tool for generating all your app's icons and splash screens in 100+ formats.
+title: Icon Genie CLI.
+desc: Quasar 工具，用于生成 100 多种格式的应用程序图标和启动画面。
 ---
 
-You love the default Quasar logo, probably as much as the team does, but you just spent what feels like a lifetime making your own pixel-perfect representation of the soul of your application and now you want to replace that logo with your own!
+你喜欢默认的 Quasar Logo，可能与团队一样多，但是你只是花了一生，就像一生都是让自己的像素完美的表达式的应用程序，现在你想用自己的方式替换那个徽标！
 
-There are many different situations where your icon might be seen: in the browser tab, on the desktop, on the home screen of a mobile phone and even in an app store. Then there are splash screens to create in all the various device sizes and orientations.
+您的图标可能会看到许多不同的情况：在浏览器选项卡中，在桌面上，在移动电话的主屏幕上，甚至在App Store中。然后有溅屏可以在所有各种设备大小和方向中创建。
 
-This means you need your logo in about 100+ different sizes with representative names, arcane formats, placed in the correct folders and probably some proper `<xml>` declarations for Cordova too. Even if you know exactly what you're doing, this is a tedious and error-prone task. To make your life easy and care-free, we've built the Icon Genie CLI tool to make this exhausting process **dead simple**.
+这意味着您需要在大约100多个不同大小的徽标中使用大约100个不同的大小，arthane格式，放置在正确的文件夹中，可能也适用于Cordova的正确`<xml>`声明。即使你确切地知道你在做什么，这是一个乏味和错误的任务。为了让您的生活轻松无保险，我们建立了Icon Genie CLI工具，使这种疲惫的过程**死亡简单**。
 
 <img src="https://cdn.quasar.dev/img/iconfactory.png" style="float:right;max-width:15%;min-width:240px;padding-top:40px" />
 
-## How it helps you
+## 它如何帮助你
 
 ::: tip
-We highly recommend using the Icon Genie CLI **for your Quasar CLI-generated projects** because it consumes a source icon and automatically clones, scales, minifies and places the icons and splash screens in the appropriate directories for you. When needed, it also tells you what tags you'll need to add to your /src/index.template.html file.
+我们强烈建议使用 Icon Genie CLI **为您的Quasar CLI生成的项目**，因为它会使用源图标并自动克隆，缩放，缩小，并将图标和启动屏幕图像放在适当的目录中。 在需要时，它还告诉您您需要添加到/src/index.template.html文件中的标记。
 :::
 
-## Requirements
+## 要求
 
-This tool was built by the Quasar Team especially **with the Quasar CLI project structure in mind**. If you build your project folder with another CLI, you should explore Icon Genie [profile files](/icongenie/profile-files).
+这个工具由Quasar团队尤其是**与标准的CLI项目结构在于**。 如果将项目文件夹与另一个CLI构建，则应浏览Icon Genie [配置文件文件](/icongenie/profile-files)。

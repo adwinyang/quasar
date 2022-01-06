@@ -1,26 +1,26 @@
 ---
-title: Formatter Utils
-desc: A set of Quasar methods for formatting values. Capitalizing, padding, normalizing and more.
+title: 格式化工具
+desc: 一组用于格式化数值的Quasar方法。大写、填充、正常化等等。
 keys: capitalize,humanStorageSize,between,normalizeToInterval,pad
 ---
 
-### Helping Tree-Shake
-You will notice all examples import `format` Object from Quasar. However, if you need only one formatter method from it, then you can use ES6 destructuring to help Tree Shaking embed only that method and not all of `format`.
+### 帮助树状抖动
+你会注意到所有的示例都从Quasar导入了`format`对象。然而，如果你只需要其中的一个格式化方法，那么你可以使用ES6结构化来帮助Tree Shaking只嵌入该方法而不是所有的`format`。
 
-Example:
+示例。
 ```js
-// we import all of `format`
+// 我们导入所有的 "format"。
 import { format } from 'quasar'
-// destructuring to keep only what is needed
+// 解构，只保留需要的东西
 const { capitalize, humanStorageSize } = format
 
 console.log( capitalize('some text') )
-// Some text
+// 一些文本
 console.log( humanStorageSize(13087) )
 // 12.8kB
 ```
 
-You can also import all formatters and use whatever you need like this (but note that your bundle will probably contain unused methods too):
+你也可以导入所有的格式化器，像这样使用你需要的任何东西(但注意你的捆绑包也可能包含未使用的方法)。
 ```js
 import { format } from 'quasar'
 
@@ -29,19 +29,19 @@ console.log( format.humanStorageSize(13087) )
 ```
 
 ::: tip
-For usage with the UMD build see [here](/start/umd#quasar-global-object).
+关于UMD构建的用法，见[here](/start/umd#quasar-global-object)。
 :::
 
-## Capitalize
+## 大写
 ```js
 import { format } from 'quasar'
 const { capitalize } = format
 
 console.log( capitalize('some text') )
-// Some text
+// 一些文本
 ```
 
-## Format to Human Readable Size
+## 格式化为人类可读的大小
 ```js
 import { format } from 'quasar'
 const { humanStorageSize } = format
@@ -50,7 +50,7 @@ console.log( humanStorageSize(13087) )
 // 12.8kB
 ```
 
-## Normalize Number to Interval
+## 将数字归一到区间
 
 ```js
 import { format } from 'quasar'
@@ -79,8 +79,8 @@ import { format } from 'quasar'
 const { pad } = format
 
 // (String) pad(String toPad, Number length, String paddingCharacter)
-// length is default 2
-// paddingCharacter is default '0'
+// 长度默认为2
+// paddingCharacter是默认的'0'。
 console.log( pad('2', 4) )
 // '0002'
 ```

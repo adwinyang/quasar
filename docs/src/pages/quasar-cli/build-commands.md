@@ -1,17 +1,17 @@
 ---
-title: Build Commands
-desc: Quasar CLI list of commands for developing and building a Quasar app.
+title: 构建命令
+desc: Quasar CLI用于开发和构建Quasar应用程序的命令列表。
 ---
-We will be covering Development and Production build commands.
+我们将涵盖开发和生产构建命令。
 
 ::: tip
-Full list of Quasar CLI commands: [Commands List](/quasar-cli/commands-list).
+Quasar CLI命令的完整列表。[Commands List](/quasar-cli/commands-list)。
 :::
 
-### Development
-Starts a Node.js local development server.
+### 开发
+启动一个Node.js本地开发服务器。
 
-``` bash
+```bash
 # run development server (with default theme)
 $ quasar dev
 
@@ -41,10 +41,10 @@ $ quasar dev -m ios '--' some params --and options --here
 $ quasar dev -m electron '--' --no-sandbox --disable-setuid-sandbox
 ```
 
-### Production
-Build assets for production.
+### 生产
+为生产建立资产。
 
-``` bash
+```bash
 # build for production
 $ quasar build
 

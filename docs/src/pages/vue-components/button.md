@@ -1,108 +1,108 @@
 ---
-title: Button
-desc: The QBtn Vue component is a button with features like shaping, loading state, ripple and more.
+title: 钮扣
+desc: QBtn Vue组件是一个具有塑形、加载状态、波纹等功能的按钮。
 keys: QBtn
 related:
   - /vue-components/button-group
   - /vue-components/button-dropdown
   - /vue-components/button-toggle
 ---
-Quasar has a component called QBtn which is a button with a few extra useful features. For instance, it comes in two shapes: rectangle (default) and round. It also has the material ripple effect baked in (which can be disabled).
+Quasar有一个叫QBtn的组件，它是一个具有一些额外有用功能的按钮。例如，它有两种形状：矩形(默认)和圆形。它还具有材料波纹效果(可以禁用)。
 
-The button component also comes with a spinner or loading effect. You would use this for times when app execution may cause a delay and you want to give the user some feedback about that delay. When used, the button will display a spinning animation as soon as the user clicks the button.
+该按钮组件还带有一个旋转器或加载效果。当应用程序的执行可能导致延迟，而你想给用户一些关于延迟的反馈时，你会使用这个效果。当使用时，一旦用户点击按钮，该按钮就会显示一个旋转的动画。
 
-When not disabled or spinning, QBtn emits a `@click` event, as soon as it is clicked or tapped.
+当没有禁用或旋转时，QBtn会发出一个`@click`事件，只要它被点击或轻击。
 
 ## QBtn API
 
 <doc-api file="QBtn" />
 
-## Usage
+## 使用方法
 
-### Standard
+### 标准
 
-<doc-example title="Standard buttons" file="QBtn/Standard" />
+<doc-example title="标准按钮" file="QBtn/Standard" />
 
-### Custom colors
+### 自定义颜色
 
-<doc-example title="Custom colors" file="QBtn/CustomColor" />
+<doc-example title="自定义颜色" file="QBtn/CustomColor" /> ###自定义颜色
 
-### With icon
+### 带图标
 
-<doc-example title="With icon" file="QBtn/WithIcons" />
+<doc-example title="带图标" file="QBtn/WithIcons" /> ###带图标
 
-### Round
+### 圆形
 
-<doc-example title="Round buttons" file="QBtn/Round" />
+<doc-example title="圆形按钮" file="QBtn/Round" /> ###自定义内容
 
-### Custom content
+### 自定义内容
 
-<doc-example title="Custom content" file="QBtn/CustomContent" />
+<doc-example title="自定义内容" file="QBtn/CustomContent" /> ###自定义内容
 
-<doc-example title="Truncate label" file="QBtn/TruncateLabel" />
+<doc-example title="截断标签" file="QBtn/TruncateLabel" /> ###自定义内容
 
-### Design
+### 设计
 
-<doc-example title="Button design" file="QBtn/ButtonDesign" />
+<doc-example title="按钮设计" file="QBtn/ButtonDesign" /> ###设计
 
-### Alignment
+### 排列方式
 
-<doc-example title="Button alignment" file="QBtn/ButtonAlignment" />
+<doc-example title="按钮对齐 "file="QBtn/ButtonAlignment" /> ### 尺寸
 
-### Size
+### 尺寸
 
-<doc-example title="Button size" file="QBtn/ButtonSize" />
+<doc-example title="按钮尺寸" file="QBtn/ButtonSize" /> ### 尺寸
 
-### Padding
+### 填充
 
-The default padding is "xs md". However, you can use `padding` prop to customize it:
+默认的padding是 "xs md"。但是，你可以使用`padding`属性来定制它。
 
-<doc-example title="Button padding" file="QBtn/ButtonPadding" />
+<doc-example title="按钮填充" file="QBtn/ButtonPadding" />
 
-### Progress related
+### 与进度有关
 
-Some button actions involve contacting a server, so an asynchronous response. It’s best that you inform the user about a background process taking place until the asynchronous response is ready. QBtn offers this possibility through the `loading` prop. This property will display a QSpinner (by default) instead of the icon and/or label of the button. Custom loading content can also be used (not only text or spinners).
+一些按钮动作涉及到联系服务器，所以是异步响应。你最好通知用户一个后台进程的发生，直到异步响应准备好。QBtn通过`loading`属性提供了这种可能性。这个属性将显示一个QSpinner(默认)，而不是按钮的图标和/或标签。也可以使用自定义的加载内容(不仅仅是文本或旋转器)。
 
-<doc-example title="Indeterminate progress" file="QBtn/IndeterminateProgress" />
+<doc-example title="不确定的进度" file="QBtn/IndeterminateProgress" />
 
-Should you wish, you can also display a deterministic progress within the button by using the additional `percentage` property along with what you’ve already learned about buttons with progress:
+如果你愿意，你也可以通过使用额外的`百分比`属性，以及你已经学到的关于带进度的按钮的知识，在按钮中显示一个确定的进度。
 
-<doc-example title="Deterministic progress" file="QBtn/DeterministicProgress" />
+<doc-example title="确定的进度" file="QBtn/DeterministicProgress" />
 
-### Custom ripple
+### 自定义波纹
 
-<doc-example title="Custom ripple" file="QBtn/CustomRipple" />
+<doc-example title="自定义波纹" file="QBtn/CustomRipple" /> ###自定义波纹
 
-### Handling navigation <q-badge align="top" color="brand-primary" label="updated for v2.4+" />
+### 处理导航 <q-badge align="top" color="brand-primary" label="uped for v2.4+" />
 
 ::: warning UMD usage
-* If you will be using `to` & `replace` props, make sure that you also inject Vue Router in your project. Otherwise use the alternative `href` prop.
-* Due to the above, some of the QBtn below won't work in Codepen/jsFiddle too.
+* 如果你将使用`to`和`replace`属性，请确保你在项目中也注入Vue Router。否则就使用替代的`href`属性。
+* 由于上述原因，下面的一些QBtn在Codepen/jsFiddle中也无法工作。
 :::
 
 ::: tip
-Prefer the Vue Router props over `href` when you can, because with `href` you will trigger a window navigation instead of an in-page Vue Router navigation.
+如果可以的话，最好使用Vue Router属性而不是`href`，因为使用`href`你会触发一个窗口导航而不是页面内的Vue Router导航。
 :::
 
-<doc-example title="Links" file="QBtn/Links" no-edit />
+<doc-example title="链接" file="QBtn/Links" no-edit />
 
-For more convoluted use-cases, you can also directly use the native Vue `<router-link>` component to wrap a QBtn. This also gives the opportunity to control the state according to app's current route:
+对于更复杂的用例，你也可以直接使用本地Vue的`<router-link>`组件来包装一个QBtn。这也提供了根据应用程序的当前路线来控制状态的机会。
 
-<doc-example title="Scoped slot of RouterLink" file="QBtn/RouterLinkExample" no-edit />
+<doc-example title="RouterLink的范围槽" file="QBtn/RouterLinkExample" no-edit />
 
-### Other options
+### 其他选项
 
-<doc-example title="Other options" file="QBtn/OtherOptions" />
+<doc-example title="其他选项" file="QBtn/OtherOptions" /> ### 其他选项
 
-### Disable
+### 禁用
 
-<doc-example title="Disable" file="QBtn/Disabled" />
+<doc-example title="禁用" file="QBtn/Disabled" /> ###禁用
 
-### Controlling the button for form submission
-When you have a button to submit a form's input to the server, like a "Save" button, more often than not you will also want to give the user the ability to submit the form with a press of the ENTER key. If you would also like to give the user feedback of the saving process being in progress, and to prevent the user repeatedly pressing the button, you would need the button to show a loading spinner and be disabled from click events. QBtn allows this behavior if configured so.
+### 控制表单提交的按钮
+当你有一个向服务器提交表单输入的按钮时，比如 "保存 "按钮，很多时候你也想让用户按一下ENTER键就能提交表单。如果你还想给用户反馈正在进行的保存过程，并防止用户重复按下按钮，你需要让按钮显示一个加载旋钮，并从点击事件中禁用。QBtn允许这种行为，如果这样配置的话。
 
 ::: warning
-When placing a QBtn with type "submit" in one of the "before", "after", "prepend", or "append" slots of a QField, QInput or QSelect, you should also add a `@click` listener on the QBtn in question. This listener should call the method that submits your form. All "click" events in such slots are not propagated to their parent elements.
+当把类型为 "submit "的QBtn放在QField、QInput或QSelect的 "before"、"after"、"prepend "或 "append "槽中时，你还应该在相关的QBtn上添加一个`@click`监听器。这个监听器应该调用提交表单的方法。所有在这些槽中的 "点击 "事件都不会传播到它们的父元素。
 :::
 
-<doc-example title="Form Submission" file="QBtn/FormSubmission" />
+<doc-example title="表单提交" file="QBtn/FormSubmission" />

@@ -1,16 +1,16 @@
 ---
-title: Card
-desc: The QCard Vue component is a great way to display important pieces of grouped content. It assists the viewer by containing and organizing information, while also setting up predictable expectations.
+title: 卡片
+desc: QCard Vue组件是显示重要的分组内容的一个好方法。它通过包含和组织信息来协助浏览者，同时也设置了可预测的预期。
 keys: QCard
 related:
   - /vue-components/separator
 ---
 
-The QCard component is a great way to display important pieces of grouped content. This pattern is quickly emerging as a core design pattern for Apps, website previews and email content. It assists the viewer by containing and organizing information, while also setting up predictable expectations.
+QCard组件是显示重要的分组内容的一个好方法。这种模式正在迅速崛起，成为应用程序、网站预览和电子邮件内容的核心设计模式。它通过包含和组织信息来帮助浏览者，同时也设置了可预测的预期。
 
-With so much content to display at once, and often so little screen real-estate, Cards have fast become the design pattern of choice for many companies, including the likes of Google and Twitter.
+由于有这么多的内容需要同时显示，而屏幕上的空间往往又非常小，卡片已经迅速成为许多公司的首选设计模式，包括像谷歌和Twitter。
 
-The QCard component is intentionally lightweight and essentially a containing element that is capable of "hosting" any other component that is appropriate.
+QCard组件是有意轻量级的，本质上是一个包含元素，能够 "承载 "任何其他合适的组件。
 
 ## QCard API
 <doc-api file="QCard" />
@@ -19,12 +19,12 @@ The QCard component is intentionally lightweight and essentially a containing el
 <doc-api file="QCardSection" />
 
 ## QCardActions API
-<doc-api file="QCardActions" />
+<doc-api file="QCardActions" /> ## QCardActions API
 
-## Usage
+## 使用方法
 
 ::: tip
-You can play with the typography within your cards to create beautiful cards.
+你可以在你的卡片内玩弄排版，创造美丽的卡片。
 :::
 
 ### Basic
@@ -57,12 +57,12 @@ It's recommended that you use QImg component instead of native `<img>` when deal
 ### Various content
 <doc-example title="Various content" file="QCard/VariousContent" />
 
-<doc-example title="Table" file="QCard/Table" />
+<doc-example title="表格" file="QCard/Table" /> ###各种内容
 
-<doc-example title="Tabs" file="QCard/Tabs" />
+<doc-example title="标签" file="QCard/Tabs" />
 
-### Expandable
+### 可扩展
 
-On the example below, click on the round button on the bottom right to see the expansion in action.
+在下面的示例中，点击右下角的圆形按钮可以看到扩展的动作。
 
-<doc-example title="Expandable" file="QCard/Expandable" />
+<doc-example title="可扩展" file="QCard/Expandable" /> ###可扩展

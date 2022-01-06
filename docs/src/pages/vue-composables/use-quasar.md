@@ -1,14 +1,14 @@
 ---
-title: useQuasar composable
-desc: What is useQuasar() composable and how you can use it
+title: 使用Quasar的可组合性
+desc: 什么是useQuasar()的可组合性以及如何使用它
 keys: useQuasar
 related:
   - /options/the-q-object
 ---
 
-The useQuasar composable is used in order to get access to the [$q Object](/options/the-q-object).
+为了获得对[$q对象](/options/the-q-object)的访问，可以使用useQuasar组合。
 
-## Syntax
+## 语法
 
 ```js
 import { useQuasar } from 'quasar'
@@ -18,7 +18,7 @@ setup () {
 }
 ```
 
-## Example
+## ###实例
 
 ```html
 <template>
@@ -38,10 +38,10 @@ export default {
 
     console.log($q.platform.is.ios)
 
-    // showing an example on a method, but
-    // can be any part of Vue script
+    // 显示一个方法的示例，但
+    // 可以是Vue脚本的任何部分
     function show () {
-      // prints out Quasar version
+      // 打印出Quasar的版本
       console.log($q.version)
     }
 

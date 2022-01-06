@@ -1,12 +1,12 @@
 ---
-title: Upgrade guide on Electron
-desc: Upgrading instructions when dealing with Electron in Quasar.
+title: 关于Electron的升级指南
+desc: 在Quasar中处理Electron时的升级说明。
 ---
 
-## Upgrading Electron
-When you add the Electron mode in a Quasar project for the first time you will get the latest version of the Electron package. At some point in time, you will want to upgrade the Electron version.
+## 升级Electron
+当你第一次在Quasar项目中加入Electron模式时，你会得到最新版本的Electron软件包。在某个时间点上，你会想要升级Electron的版本。
 
-Before upgrading Electron, please consult its release notes. Are there breaking changes?
+在升级Electron之前，请参考它的发行说明。是否有突破性的变化？
 
 ```bash
 # from the root of your Quasar project
@@ -14,18 +14,18 @@ $ yarn upgrade electron@latest
 # or: npm install electron@latest
 ```
 
-## Upgrading from Quasar v1
-The Electron mode for Quasar v2 is an almost complete overhaul of the previous version, significantly improving the developer experience. Some of the changes here are required in order to ensure compatibility with the latest developments in the Electron world (so bulletproofing for upcoming upstream changes).
+## 从Quasar v1升级
+Quasar v2的Electron模式几乎完全颠覆了之前的版本，大大改善了开发者的体验。为了确保与Electron领域的最新发展相兼容，这里的一些变化是必须的(所以要为即将到来的上游变化做防弹处理)。
 
-### High overview of the improvements
+### 改进的高度概述
 
-* **Out of the box support for Typescript**. Just rename electron-main.js and electron-preload.js to electron-main.ts and electron-preload.ts.
-* Support for Electron 11 and preparing out of the box support for upcoming changes in Electron 12+ (without you needing to change anything in the future). One of changes are that we'll be using `contextIsolation` instead of the deprecated `Node Integration`.
-* The preload script no longer has the old limitations. You can import other js files with a relative path because the script is now bundled and passed through Babel (so you can use the `import X from Y` syntax too). You can also enable linting for it.
-* You can enable linting for the main thread and the preload script too.
-* We've removed the default electron-main.dev.js support as it seems that it's not needed anymore. However, you can add it back by creating it and referencing it from electron-main (it's no longer detected by Quasar CLI automatically -- because we don't need to; more on this later).
+**开箱即用的对Typescript的支持**。只需将electron-main.js和electron-preload.js重命名为electron-main.ts和electron-preload.ts。
+* 支持Electron 11，并为即将到来的Electron 12+的变化准备开箱即用的支持(未来你不需要改变任何东西)。其中一个变化是我们将使用 "contextIsolation "而不是被废弃的 "Node Integration"。
+* 预加载脚本不再有旧的限制。你可以用相对路径导入其他js文件，因为该脚本现在被捆绑并通过Babel传递(所以你也可以使用`import X from Y`语法)。你也可以为它启用提示功能。
+* 你也可以为主线程和预加载脚本启用提示功能。
+* 我们删除了默认的electron-main.dev.js支持，因为它似乎不再需要了。然而，你可以通过创建它并从electron-main中引用它来把它添加回来(Quasar CLI不再自动检测它--因为我们不需要；稍后会有更多的内容)。
 
-### The /src-electron folder
+### /src-electron文件夹
 
 ```bash
 # old structure
@@ -51,13 +51,13 @@ The Electron mode for Quasar v2 is an almost complete overhaul of the previous v
     └── electron-main.js      # (or .ts) Main thread code
 ```
 
-Notice that there's no `electron-main.dev.js` file anymore (not needed anymore) and that the `electron-preload/main.js` files need to be moved directly under `/src-electron`.
+注意，现在已经没有`electron-main.dev.js`文件了(不需要了)，`electron-preload/main.js`文件需要直接移到`/src-electron`下。
 
-### The electron-main.js file
-In order for us to be forward compatible with future versions of Electron, you'll need to do some small (but important!) changes:
+### 电子-main.js文件
+为了使我们能够向前兼容未来版本的Electron，你需要做一些小的(但很重要！)改动。
 
 ```js
-// OLD way
+// 老方法
 mainWindow = new BrowserWindow({
   // ...
   webPreferences: {
@@ -67,29 +67,29 @@ mainWindow = new BrowserWindow({
   }
 })
 
-// NEW way
+// 新方法
 mainWindow = new BrowserWindow({
   // ...
   webPreferences: {
-    // we enable contextIsolation (Electron 12+ has it enabled by default anyway)
+    // 我们启用contextIsolation(反正Electron 12+已经默认启用了它)。
     contextIsolation: true,
-    // we use a new way to reference the preload script
-    // (it's going to be needed, so add it and create the file if it's not there already)
+    // 我们使用一种新的方式来引用预加载脚本
+    // (它将被需要，所以添加它并创建文件，如果它不在那里的话)
     preload: path.resolve(__dirname, process.env.QUASAR_ELECTRON_PRELOAD)
   }
 })
 ```
 
-### The electron-preload.js file
-You will need this file if you don't have it already. So create it if it's missing. Without it you won't be able to use the power of Node.js in your renderer thread.
+### electron-preload.js文件
+如果你还没有这个文件，你将需要它。如果没有的话，请创建它。没有它，你将无法在你的渲染器线程中使用Node.js的力量。
 
-More info: [preload script](/quasar-cli/developing-electron-apps/electron-preload-script).
+更多信息。[预加载脚本](/quasar-cli/developing-electron-apps/electron-preload-script)。
 
 ::: danger
-You will need to transfer all the Node.js stuff away from your renderer thread (the UI code from /src) and into the preload script. Provide the same functionality through the `contextBridge` as seen below.
+你需要将所有Node.js的东西从你的渲染器线程(来自/src的UI代码)转移到预加载脚本。通过`contextBridge`提供同样的功能，如下图所示。
 :::
 
-This is the default content of `electron-preload.js`:
+这是`electron-preload.js`的默认内容。
 
 ```js
 /**
@@ -111,68 +111,68 @@ This is the default content of `electron-preload.js`:
  */
 ```
 
-### Quasar.conf changes
+### Quasar.conf更改
 
 ```js
-// OLD way
+// 老方法
 electron: {
-  // it's gone now (upcoming upstream breaking change)
-  // replaced by a change in electron-main.js documented earlier
+  // 现在没有了(即将到来的上游突破性变化)。
+  // 被前面记载的electron-main.js中的一个变化所取代
   nodeIntegration: true, // remove me!
 
-  // renamed to chainWebpackMain
+  // 改名为 chainWebpackMain
   chainWebpack (chain) { /* ... */ },
 
-  // renamed to extendWebpackMain
+  // 改名为 extendWebpackMain
   extendWebpack (cfg) { /* ... */ }
 }
 
-// NEW way
+// 新方法
 electron: {
-  // was renamed from chainWebpack()
+  // 已从 chainWebpack() 改名为
   chainWebpackMain (chain) {
-    // example for its content (adds linting)
+    // 其内容的示例(增加了提示性的)。
     chain.plugin('eslint-webpack-plugin')
       .use(ESLintPlugin, [{ extensions: ['js'] }])
   },
 
-  // was renamed from extendWebpack()
+  // 已从 extendWebpack() 改名为
   extendWebpackMain (cfg) { /* ... */ },
 
-  // New!
+  // 新的!
   chainWebpackPreload (chain) {
-    // example (adds linting)
+    // 示例(增加了林特化)
     chain.plugin('eslint-webpack-plugin')
       .use(ESLintPlugin, [{ extensions: ['js'] }])
   }
 
-  // New!
+  // 新的!
   extendWebpackPreload (cfg) { /* ... */ }
 }
 ```
 
-### Renderer thread (/src)
-The [$q object](/options/the-q-object) no longer contains the `electron` property. You will need to use the [preload script](/quasar-cli/developing-electron-apps/electron-preload-script) to access it and provide it to the renderer thread.
+### 渲染器线程(/src)
+[$q对象](/options/the-q-object)不再包含`electron`属性。你将需要使用[preload script](/quasar-cli/developing-electron-apps/electron-preload-script)来访问它，并将其提供给渲染器线程。
 
-Furthermore, the [openURL](/quasar-utils/other-utils#open-external-url) util can no longer tap into Electron to open a new window. You will need to provide your own util from the preload script.
+此外，[openURL](/quasar-utils/other-utils#open-external-url)工具不能再接入Electron来打开一个新窗口。你将需要从预加载脚本中提供你自己的util。
 
 ::: danger
-You will need to transfer all the Node.js stuff away from your renderer thread (the UI code from /src) and into the preload script. Provide the same functionality through the `contextBridge` as seen in the preload script section above.
+你需要将所有Node.js的东西从你的渲染器线程(来自/src的UI代码)转移到预加载脚本中。通过 "contextBridge "提供相同的功能，如上面预加载脚本部分所见。
 :::
 
-### Browser Devtools
-You may also want the following code in your electron-main.js to auto-open devtools while on dev mode (or prod with debugging enabled) and to disable devtools on production builds (without debugging enabled):
+### 浏览器 Devtools
+你可能还需要在你的electron-main.js中加入以下代码，以便在开发模式(或启用调试功能的prod)下自动打开devtools，并在生产构建(未启用调试功能)时禁用devtools。
 
 ```js
 function createWindow () {
   mainWindow = new BrowserWindow({ /* ... */ })
 
   if (process.env.DEBUGGING) {
-    // if on DEV or Production with debug enabled
+    // 如果在DEV或Production上，并启用了调试功能
     mainWindow.webContents.openDevTools()
   }
   else {
-    // we're on production; no access to devtools pls
+    // 我们在生产中，无法访问devtools。
     mainWindow.webContents.on('devtools-opened', () => {
       mainWindow.webContents.closeDevTools()
     })

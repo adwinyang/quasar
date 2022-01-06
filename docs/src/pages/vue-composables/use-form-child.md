@@ -1,25 +1,25 @@
 ---
-title: useFormChild composable
-desc: What is Quasar's useFormChild() composable and how you can use it
+title: useFormChild可组成
+desc: 什么是Quasar的useFormChild()可组合性，以及如何使用它
 keys: useFormChild
 related:
   - /vue-components/form
 ---
 
-This composable refers to [QForm](/vue-components/form) wrapping your own custom component which you want to communicate with.
+这个可组合指的是[QForm](/vue-components/form)包装你自己的自定义组件，你想与之沟通。
 
-## Syntax
+## 语法
 
 ```js
 import { useFormChild } from 'quasar'
 
 setup () {
-  // function validate () { ... }
-  // function resetValidation () { ... }
+  // 函数validate() { ... }
+  // 函数resetValidation() { ... }
 
   useFormChild({
     validate, // Function; Can be async;
-              // Should return a Boolean (or a Promise resolving to a Boolean)
+              // 应该返回一个布尔值(或一个解析为布尔值的承诺)。
     resetValidation,    // Optional function which resets validation
     requiresQForm: true // should it error out if no parent QForm is found?
   })

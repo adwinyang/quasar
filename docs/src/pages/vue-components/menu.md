@@ -1,6 +1,6 @@
 ---
 title: QMenu
-desc: The QMenu Vue component is a convenient way to show menus.
+desc: QMenu Vue组件是一种显示菜单的便捷方式。
 keys: QMenu
 related:
   - /vue-directives/close-popup
@@ -10,70 +10,70 @@ components:
   - menu/MenuPositioning
 ---
 
-The QMenu component is a convenient way to show menus. Goes very well with [QList](/vue-components/list-and-list-items) as dropdown content, but it's by no means limited to it.
+QMenu组件是一种显示菜单的便捷方式。与[QList](/vue-components/list-and-list-items)作为下拉内容搭配得非常好，但它绝不仅限于此。
 
 ## QMenu API
 
 <doc-api file="QMenu" />
 
-## Usage
+## 使用方法
 
-The idea with QMenu is to place it inside your DOM element / component that you want to be the trigger as direct child. Don’t worry about QMenu content inheriting CSS from the container as the QMenu will be injected as a direct child of `<body>` through a Quasar Portal.
+QMenu的想法是将它放在你的DOM元素/组件内，你希望它作为直接的子元素被触发。不要担心QMenu的内容会继承容器中的CSS，因为QMenu会通过Quasar Portal作为`<body>`的直接子节点被注入。
 
 ::: tip
-Don't forget to use the directive `v-close-popup` in your clickable menu items if you want the menu to close automatically.
-Alternatively, you can use the QMenu's property `auto-close` or handle closing the menu yourself through its v-model.
+如果你想让菜单自动关闭，别忘了在你的可点击菜单项中使用指令`v-close-popup`。
+另外，你可以使用QMenu的属性`auto-close`或者通过它的v-model自己处理关闭菜单。
 :::
 
-### Basic
+### 基本
 
-<doc-example title="Basic" file="QMenu/Basic" />
+<doc-example title="基本" file="QMenu/Basic" />
 
-<doc-example title="Idea for content" file="QMenu/VariousContent" />
+<doc-example title="内容的想法" file="QMenu/VariousContent" />
 
-<doc-example title="Toggle through v-model" file="QMenu/VModel" />
+<doc-example title="通过v-model进行切换" file="QMenu/VModel" />
 
-### Submenus
+### 子菜单
 
-<doc-example title="Menus in menus" file="QMenu/MenuInMenu" />
+<doc-example title="菜单中的菜单" file="QMenu/MenuInMenu" /> ###子菜单
 
-### Sizing and styling
+### 尺寸和样式
 
-<doc-example title="Sizing" file="QMenu/Sizing" />
+<doc-example title="尺寸" file="QMenu/Sizing" /> ### 尺寸和样式
 
-<doc-example title="Style" file="QMenu/Style" />
+<doc-example title="风格" file="QMenu/Style" />
 
-### Context menu
+### 上下文菜单
 
-You can also set QMenu to act as a context menu. On desktop, you need to right click the parent target to trigger it, and on mobile a long tap will do the job.
+你也可以将QMenu设置为上下文菜单。在桌面上，你需要右击父目标来触发它，而在移动设备上，长时间的点击就可以完成这个工作。
 
-<doc-example title="Context Menu" file="QMenu/ContextMenu" />
+<doc-example title="上下文菜单" file="QMenu/ContextMenu" />
 
-### Persistent
+### 持久性
 
-If you want the QMenu to not close if app route changes or if hitting ESCAPE key or if clicking/tapping outside of the menu, then use `persistent` prop:
+如果你想让QMenu在应用程序路线改变或按下ESCAPE键或点击/敲击菜单外的地方时不关闭，那么使用`persistent`属性。
 
-<doc-example title="Persistent" file="QMenu/Persistent" />
+<doc-example title="持久性" file="QMenu/Persistent" />
 
-### Transitions
+### 转场
 
-In the example below there's a few transitions showcased. For a full list of transitions available, go to [Transitions](/options/transitions).
+在下面的示例中，我们展示了一些转场。关于可用的过渡的完整列表，请访问[过渡](/options/transitions)。
 
-<doc-example title="Transition examples" file="QMenu/Transitions" />
+<doc-example title="转换实例" file="QMenu/Transitions" />
 
-### Reusable
+### 可重复使用
 
-The example below shows how to create a re-usable menu that can be shared with different targets.
+下面的示例显示了如何创建一个可重复使用的菜单，可以与不同的目标共享。
 
-<doc-example title="Using target" file="QMenu/Target" />
+<doc-example title="使用目标" file="QMenu/Target" />
 
-### Positioning
+### 定位
 
-<doc-example title="Position examples" file="QMenu/Positions" />
+<doc-example title="定位示例" file="QMenu/Positions" /> ###定位。
 
-The position of QMenu can be customized. It keeps account of the `anchor` and `self` optional props.
-The final position of QMenu popup is calculated so that it will be displayed on the available screen real estate, switching to the right-side and/or top-side when necessary.
+QMenu的位置可以被定制。它考虑到了 "anchor "和 "self "这两个可选属性。
+QMenu弹出窗口的最终位置会被计算出来，使其显示在可用的屏幕空间内，必要时切换到右侧和/或顶部。
 
-For horizontal positioning you can use `start` and `end` when you want to automatically take into account if on RTL or non-RTL. `start` and `end` mean "left" for non-RTL and "right" for RTL.
+对于水平定位，你可以使用`start`和`end`，当你想自动考虑RTL或非RTL时。`start`和`end`意味着非RTL的 "左 "和RTL的 "右"。
 
 <menu-positioning />

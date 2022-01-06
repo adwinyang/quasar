@@ -1,158 +1,158 @@
 ---
-title: Boot files
-desc: Managing your startup code in a Quasar app.
+title: 启动文件
+desc: 在Quasar应用程序中管理你的启动代码。
 related:
   - /quasar-cli/quasar-conf-js
 ---
 
-A common use case for Quasar applications is to **run code before the root Vue app instance is instantiated**, like injecting and initializing your own dependencies (examples: Vue components, libraries...) or simply configuring some startup code of your app.
+Quasar 应用程序的一个常见用例是**在实例化根Vue应用程序实例之前运行代码**，例如注入和初始化您自己的依赖项(示例：Vue组件、库…)或者简单地配置一些应用程序的启动代码。
 
-Since you won't be having access to any `/main.js` file (so that Quasar CLI can seamlessly initialize and build same codebase for SPA/PWA/SSR/Cordova/Electron) Quasar provides an elegant solution to that problem by allowing users to define so-called boot files.
+由于你无法访问任何`/main.js`文件(以便Quasar CLI可以无缝地初始化和构建SPA/PWA/SSR/Cordova/Electron的相同代码库)，Quasar通过允许用户定义所谓的启动文件为这个问题提供了一个优雅的解决方案。
 
-In earlier Quasar versions, to run code before the root Vue instance was instantiated, you could alter the `/src/main.js` file and add any code you needed to execute.
+在早期的Quasar版本中，为了在根Vue实例实例化之前运行代码，你可以改变`/src/main.js`文件并添加任何你需要执行的代码。
 
-There is a major problem with this approach: with a growing project, your `main.js` file was very likely to get cluttered and challenging to maintain, which breaks with Quasar's concept of encouraging developers to write maintainable and elegant cross-platform applications.
+这种方法有一个很大的问题：随着项目的发展，你的`main.js`文件很可能变得杂乱无章，维护起来也很困难，这就违背了Quasar鼓励开发者编写可维护的、优雅的跨平台应用程序的理念。
 
-With boot files, it is possible to split each of your dependencies into self-contained, easy to maintain files. It is also trivial to disable any of the boot files or even contextually determine which of the boot files get into the build through `quasar.conf.js` configuration.
+有了启动文件，就可以将你的每个依赖关系分割成独立的、易于维护的文件。通过`quasar.conf.js`的配置，禁用任何一个引导文件，甚至在上下文中决定哪些引导文件可以进入构建，也是非常简单的。
 
-## Anatomy of a boot file
+## 启动文件的剖析
 
-A boot file is a simple JavaScript file which can optionally export a function. Quasar will then call the exported function when it boots the application and additionally pass **an object** with the following properties to the function:
+启动文件是一个简单的JavaScript文件，可以选择导出一个函数。Quasar在启动应用程序时将调用导出的函数，并向该函数传递带有以下属性的***对象。
 
 | Prop name | Description |
-| --- | --- |
-| `app` | Vue app instance |
-| `router` | Instance of Vue Router from 'src/router/index.js' |
-| `store` | Instance of the app Vuex Store - **store only will be passed if your project uses Vuex (you have src/store)** |
-| `ssrContext` | Available only on server-side, if building for SSR. [More info](/quasar-cli/developing-ssr/ssr-context) |
-| `urlPath` | The pathname (path + search) part of the URL. It also contains the hash on client-side. |
-| `publicPath` | The configured public path. |
-| `redirect` | Function to call to redirect to another URL. Accepts String (full URL) or a Vue Router location String or Object. |
+| `app` | Vue应用实例 |
+| `router` | 来自'src/router/index.js'的Vue Router实例。
+| `store` | 应用程序Vuex商店的实例 - **store只有在你的项目使用Vuex时才会被传递(你有src/store)**。
+| `ssrContext` | 仅在服务器端可用，如果为SSR构建。[更多信息](/quasar-cli/developing-ssr/ssr-context) | `urlPath` !
+| `urlPath` | URL的路径名(路径+搜索)部分。它在客户端也包含哈希值。|
+| `publicPath` | 配置的公共路径。|
+| `redirect` | 调用函数来重定向到另一个URL。接受字符串(完整的URL)或Vue Router位置字符串或对象。|
+
 
 ```js
 export default ({ app, router, store }) => {
-  // something to do
+  // 有事可做
 }
 ```
 
-Boot files can also be async:
+启动文件也可以是异步的。
 
 ```js
 export default async ({ app, router, store }) => {
-  // something to do
+  // 有事可做
   await something()
 }
 ```
 
-You can wrap the returned function with `boot` helper to get a better IDE autocomplete experience (through Typescript):
+你可以用`boot`帮助器来包装返回的函数，以获得更好的IDE自动完成体验(通过Typescript)。
 
 ```js
 import { boot } from 'quasar/wrappers'
 
 export default boot(async ({ app, router, store }) => {
-  // something to do
+  // 有事可做
   await something()
 })
 ```
 
-Notice we are using the [ES6 destructuring assignment](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment). Only assign what you actually need/use.
+注意我们使用的是[ES6结构化赋值](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment)。只赋值你实际需要/使用的东西。
 
-You may ask yourself why we need to export a function. This is actually optional, but before you decide to remove the default export, you need to understand when you need it:
+你可能会问自己为什么我们需要导出一个函数。这实际上是可选的，但在你决定删除默认导出之前，你需要了解你什么时候需要它。
 
 ```js
-// Outside of default export:
-//  - Code here gets executed immediately,
-//  - Good place for import statements,
-//  - No access to router, Vuex store, ...
+// 在默认出口之外。
+//  - 这里的代码会被立即执行。
+//  - 进口声明的好地方。
+//  - 无法访问路由器、Vuex商店，...
 
 export default async ({ app, router, store }) => {
-  // Code here has access to the Object param above, connecting
-  // with other parts of your app;
+  // 这里的代码可以访问上面的Object param，连接到
+  // 与你的应用程序的其他部分。
 
-  // Code here can be async (use async/await or directly return a Promise);
+  // 这里的代码可以是异步的(使用async/await或者直接返回一个Promise)。
 
-  // Code here gets executed by Quasar CLI at the correct time in app's lifecycle:
-  //  - we have a Router instantiated,
-  //  - we have the optional Vuex store instantiated,
-  //  - we have the root app's component ["app" prop in Object param] Object with
-  //      which Quasar will instantiate the Vue app
-  //      ("new Vue(app)" -- do NOT call this by yourself),
+  // 这里的代码会在应用程序生命周期中的正确时间由Quasar CLI执行。
+  //  - 我们有一个实例化的Router。
+  //  - 我们已经将可选的Vuex存储实例化了。
+  //  - 我们有根应用程序的组件[Object param中的 "app "prop]Object与
+  //      Quasar将对Vue应用程序进行实例化。
+  //      ("new Vue(app)" -- 不要自己调用这个)。
   //  - ...
 }
 ```
 
-## When to use boot files
+## 何时使用引导文件
 ::: warning
-Please make sure you understand what problem boot files solve and when it is appropriate to use them, to avoid applying them in cases where they are not needed.
+请确保你了解启动文件解决了什么问题，什么时候使用它们是合适的，以避免在不需要它们的情况下应用它们。
 :::
 
-Boot files fulfill one special purpose: they run code **before** the App's Vue root component is instantiated while giving you access to certain variables, which is required if you need to initialize a library, interfere with Vue Router, inject Vue prototype or inject the root instance of the Vue app.
+启动文件满足了一个特殊的目的：它们在App的Vue根组件实例化之前**运行代码，同时允许你访问某些变量，如果你需要初始化一个库、干扰Vue Router、注入Vue原型或注入Vue应用的根实例，就需要这样做。
 
-### Examples of appropriate usage of boot files
+### 适当使用引导文件的示例
 
-* Your Vue plugin has installation instructions, like needing to call `app.use()` on it.
-* Your Vue plugin requires instantiation of data that is added to the root instance - An example would be [vue-i18n](https://github.com/kazupon/vue-i18n/).
-* You want to add a global mixin using `app.mixin()`.
-* You want to add something to the Vue app globalProperties for convenient access - An example would be to conveniently use `this.$axios` (for Options API) inside your Vue files instead of importing Axios in each such file.
-* You want to interfere with the router - An example would be to use `router.beforeEach` for authentication
-* You want to interfere with the Vuex store instance - An example would be to use `vuex-router-sync` package
-* Configure aspects of libraries - An example would be to create an instance of Axios with a base URL; you can then inject it into Vue prototype and/or export it (so you can import the instance from anywhere else in your app)
+* 你的Vue插件有安装说明，比如需要对其调用`app.use()`。
+* 你的Vue插件需要对添加到根实例的数据进行实例化 - 一个示例是[vue-i18n](https://github.com/kazupon/vue-i18n/)。
+* 你想用`app.mixin()`添加一个全局混合器。
+* 你想在Vue应用的globalProperties中添加一些东西以方便访问 - 一个示例是在你的Vue文件中方便地使用`this.$axios`(用于选项式 API)，而不是在每个文件中导入Axios。
+* 你想干扰路由器 - 一个示例是使用`router.beforeEach`进行验证。
+* 你想干扰Vuex存储实例 - 一个示例是使用`vuex-router-sync`包
+* 配置库的各个方面 - 一个示例是用一个基本的URL创建Axios的实例；然后你可以把它注入Vue原型和/或导出它(所以你可以从你的应用程序的任何其他地方导入该实例)
 
-### Example of unneeded usage of boot files
-* For plain JavaScript libraries like Lodash, which don't need any initialization prior to their usage. Lodash, for example, might make sense to use as a boot file only if you want to inject Vue prototype with it, like being able to use `this.$_` inside your Vue files.
+### 不需要使用引导文件的示例
+*对于像Lodash这样的普通JavaScript库，在使用前不需要任何初始化。例如，Lodash，只有当你想用它来注入Vue原型时，作为一个引导文件使用才有意义，比如可以在你的Vue文件中使用`this.$_`。
 
-## Usage of boot files
-The first step is always to generate a new boot file using Quasar CLI:
+## 启动文件的用法
+第一步是使用Quasar CLI生成一个新的启动文件。
 
 ```bash
 $ quasar new boot <name> [--format ts]
 ```
 
-Where `<name>` should be exchanged by a suitable name for your boot file.
+其中`<name>`应该用一个合适的名字来代替你的引导文件。
 
-This command creates a new file: `/src/boot/<name>.js` with the following content:
+这个命令创建了一个新的文件。`/src/boot/<name>.js`，内容如下。
 
 ```js
-// import something here
+// 在此输入一些东西
 
-// "async" is optional!
-// remove it if you don't need it
+// "async "是可选的!
+// 不需要的时候就去掉它
 export default async ({ /* app, router, store */ }) => {
-  // something to do
+  // 有事可做
 }
 ```
 
-You can also return a Promise:
+你也可以返回一个Promise。
 
 ```js
-// import something here
+// 在此输入一些东西
 
 export default ({ /* app, router, store */ }) => {
   return new Promise((resolve, reject) => {
-    // do something
+    // 做点什么
   })
 }
 ```
 
 ::: tip
-The default export can be left out of the boot file if you don't need it. These are the cases where you don't need to access the "app", "router", "store" and so on.
+如果你不需要的话，默认导出可以不在启动文件中出现。这些是你不需要访问 "应用程序"、"路由器"、"商店 "等的情况。
 :::
 
-You can now add content to that file depending on the intended use of your boot file.
+现在你可以根据你的引导文件的预期用途在该文件中添加内容。
 
-> Do not forget that your default export needs to be a function.
-> However, you can have as many named exports as you want, should the boot file expose something for later usage. In this case, you can import any of these named exports anywhere in your app.
+> 不要忘记你的默认导出需要是一个函数。
+> 然而，你可以有任意多的命名导出，如果引导文件为以后的使用暴露了一些东西。在这种情况下，你可以在你的应用程序中的任何地方导入任何这些命名的导出。
 
-The last step is to tell Quasar to use your new boot file. For this to happen you need to add the file in `/quasar.conf.js`
+最后一步是告诉Quasar使用你的新引导文件。要做到这一点，你需要在`/quasar.conf.js`中添加这个文件
 
 ```js
 boot: [
-  // references /src/boot/<name>.js
+  // 参考 /src/boot/<name>.js
   '<name>'
 ]
 ```
 
-When building a SSR app, you may want some boot files to run only on the server or only on the client, in which case you can do so like below:
+当建立一个SSR应用程序时，你可能希望一些启动文件只在服务器上或只在客户端运行，在这种情况下，你可以像下面这样做。
 
 ```js
 boot: [
@@ -167,16 +167,16 @@ boot: [
 ]
 ```
 
-In case you want to specify boot files from node_modules, you can do so by prepending the path with `~` (tilde) character:
+如果你想从node_modules中指定启动文件，你可以通过在路径前加上`~`(tilde)字符来实现。
 
 ```js
 boot: [
-  // boot file from an npm package
+  // 从一个npm包中启动文件
   '~my-npm-package/some/file'
 ]
 ```
 
-If you want a boot file to be injected into your app only for a specific build type:
+如果你想让一个引导文件只为特定的构建类型注入到你的应用程序中。
 
 ```js
 boot: [
@@ -184,10 +184,10 @@ boot: [
 ]
 ```
 
-### Redirecting to another page
+### 重定向到另一个页面
 
 ::: warning
-Please be mindful when redirecting as you might configure the app to go into an infinite redirect loop.
+在重定向时请注意，因为你可能会配置应用程序进入无限重定向循环。
 :::
 
 ```js
@@ -202,14 +202,14 @@ export default ({ urlPath, redirect }) => {
 }
 ```
 
-The `redirect()` method accepts a String (full URL) or a Vue Router location String or Object. On SSR it can receive a second parameter which should be a Number for any of the HTTP STATUS codes that redirect the browser (3xx ones).
+`redirect()`方法接受一个字符串(完整的URL)或一个Vue Router的位置字符串或对象。在SSR上，它可以接受第二个参数，它应该是一个数字，用于重定向浏览器的任何HTTP STATUS代码(3xx代码)。
 
 ```js
-// Examples for redirect() with a Vue Router location:
+// 带有Vue Router位置的redirect()的示例。
 redirect('/1') // Vue Router location as String
 redirect({ path: '/1' }) // Vue Router location as Object
 
-// Example for redirect() with a URL:
+// 用一个URL重定向()的示例。
 redirect('https://quasar.dev')
 ```
 
@@ -246,7 +246,7 @@ redirect('/#/one') // WRONG!
 ```
 :::
 
-As it was mentioned in the previous sections, the default export of a boot file can return a Promise. If this Promise gets rejected with an Object that contains a "url" property, then Quasar CLI will redirect the user to that URL:
+正如在前面的章节中提到的，默认的引导文件的输出可以返回一个Promise。如果这个Promise被一个包含 "url "属性的对象拒绝，那么Quasar CLI将把用户重定向到那个URL。
 
 ```js
 export default ({ urlPath }) => {
@@ -254,8 +254,8 @@ export default ({ urlPath }) => {
     // ...
     const isAuthorized = // ...
     if (!isAuthorized && !urlPath.startsWith('/login')) {
-      // the "url" param here is of the same type
-      // as for "redirect" above
+      // 这里的 "url "参数是同一类型的
+      // 至于上面的 "重定向 "问题
       reject({ url: '/login' })
       return
     }
@@ -264,7 +264,7 @@ export default ({ urlPath }) => {
 }
 ```
 
-Or a simpler equivalent:
+或一个更简单的等价物。
 
 ```js
 export default () => {
@@ -277,23 +277,23 @@ export default () => {
 }
 ```
 
-### Quasar App Flow
-In order to better understand how a boot file works and what it does, you need to understand how your website/app boots:
+### Quasar应用程序流程
+为了更好地理解启动文件的工作原理和作用，你需要了解你的网站/应用程序是如何启动的。
 
-1. Quasar is initialized (components, directives, plugins, Quasar i18n, Quasar icon sets)
-2. Quasar Extras get imported (Roboto font -- if used, icons, animations, ...)
-3. Quasar CSS & your app's global CSS are imported
-4. App.vue is loaded (not yet being used)
-5. Store is imported (if using Vuex Store in src/store)
-6. Router is imported (in src/router)
-7. Boot files are imported
-8. Router default export function executed
-9. Boot files get their default export function executed
-10. (if on Electron mode) Electron is imported and injected into Vue prototype
-11. (if on Cordova mode) Listening for "deviceready" event and only then continuing with following steps
-12. Instantiating Vue with root component and attaching to DOM
+1. Quasar被初始化(组件、指令、插件、Quasar i18n、Quasar图标集)
+2. 2.Quasar额外功能被导入(Roboto字体--如果使用的话，图标，动画，...)。
+3. Quasar CSS和你的应用程序的全局CSS被导入。
+4. App.vue被加载(尚未使用)。
+5. 商店被导入(如果在 src/store 中使用 Vuex 商店)。
+6. 路由器已被导入(在 src/router 中)。
+7. 导入启动文件
+8. 路由器默认导出功能被执行
+9. 引导文件得到其默认导出功能的执行
+10. (如果在Electron模式下)Electron被导入并注入到Vue原型中。
+11. (如果在Cordova模式下)监听 "deviceready "事件，然后才继续以下步骤
+12. 用根组件实例化Vue，并将其附加到DOM上
 
-## Examples of boot files
+## 启动文件的示例
 
 ### Axios
 
@@ -304,15 +304,15 @@ import axios from 'axios'
 const api = axios.create({ baseURL: 'https://api.example.com' })
 
 export default boot(({ app }) => {
-  // for use inside Vue files (Options API) through this.$axios and this.$api
+  // 通过this.$axios和this.$api在Vue文件中使用(选项式 API)。
 
   app.config.globalProperties.$axios = axios
-  // ^ ^ ^ this will allow you to use this.$axios (for Vue Options API form)
-  //       so you won't necessarily have to import axios in each vue file
+  // ^ ^ 这将允许你使用this.$axios(用于Vue Options API形式)。
+  //       所以你不一定要在每个vue文件中导入axios。
 
   app.config.globalProperties.$api = api
-  // ^ ^ ^ this will allow you to use this.$api (for Vue Options API form)
-  //       so you can easily perform requests against your app's API
+  // ^ ^ 这将允许你使用this.$api(用于Vue选项式 API形式)。
+  //       所以你可以轻松地对你的应用程序的API执行请求
 })
 
 export { axios, api }
@@ -325,66 +325,66 @@ import { createI18n } from 'vue-i18n'
 import messages from 'src/i18n'
 
 export default ({ app }) => {
-  // Create I18n instance
+  // 创建I18n实例
   const i18n = createI18n({
     locale: 'en-US',
     messages
   })
 
-  // Tell app to use the I18n instance
+  // 告诉应用程序使用I18n实例
   app.use(i18n)
 }
 ```
 
-### Router authentication
-Some boot files might need to interfere with Vue Router configuration:
+### 路由器认证
+一些启动文件可能需要干扰Vue Router的配置。
 
 ```js
 export default boot(({ router, store }) => {
   router.beforeEach((to, from, next) => {
-    // Now you need to add your authentication logic here, like calling an API endpoint
+    // 现在你需要在这里添加你的认证逻辑，比如调用一个API端点
   })
 })
 ```
 
-## Accessing data from boot files
-Sometimes you want to access data that you configure in your boot file in files where you don't have access to the root Vue instance.
+## 从引导文件中访问数据
+有时你想在你不能访问根Vue实例的文件中访问你在引导文件中配置的数据。
 
-Fortunately, because boot files are just normal JavaScript files you can add as many named exports to your boot file as you want.
+幸运的是，因为引导文件只是普通的JavaScript文件，你可以在你的引导文件中添加任意多的命名导出。
 
-Let's take the example of Axios. Sometimes you want to access your Axios instance inside your JavaScript files, but you cannot access the root Vue instance. To solve this you can export the Axios instance in your boot file and import it elsewhere.
+让我们以Axios为例。有时你想在你的JavaScript文件中访问你的Axios实例，但你不能访问根Vue实例。为了解决这个问题，你可以在你的启动文件中导出Axios实例，并将其导入其他地方。
 
-Consider the following boot file for axios:
+考虑下面这个axios的引导文件。
 
 ```js
-// axios boot file (src/boot/axios.js)
+// axios启动文件(src/boot/axios.js)。
 
 import axios from 'axios'
 
-// We create our own axios instance and set a custom base URL.
-// Note that if we wouldn't set any config here we do not need
-// a named export, as we could just `import axios from 'axios'`
+// 我们创建自己的axios实例并设置一个自定义的基本URL。
+// 注意，如果我们不在这里设置任何配置，我们就不需要
+// 一个命名的导出，因为我们可以直接 "从'axios'导入axios"。
 const api = axios.create({
   baseURL: 'https://api.example.com'
 })
 
-// for use inside Vue files through this.$axios and this.$api
-// (only in Vue Options API form)
+// 通过this.$axios和this.$api在Vue文件中使用。
+// (仅在Vue Options API形式下)
 export default ({ app }) => {
   app.config.globalProperties.$axios = axios
   app.config.globalProperties.$api = api
 }
 
-// Here we define a named export
-// that we can later use inside .js files:
+// 在这里，我们定义了一个命名的出口
+// 我们以后可以在.js文件中使用。
 export { axios, api }
 ```
 
-In any JavaScript file, you'll be able to import the axios instance like this.
+在任何JavaScript文件中，你都能像这样导入axios实例。
 
 ```js
-// we import one of the named exports from src/boot/axios.js
+// 我们从src/boot/axios.js中导入其中一个命名的导出项
 import { api } from 'boot/axios'
 ```
 
-Further reading on syntax: [ES6 import](https://developer.mozilla.org/en-US/docs/web/javascript/reference/statements/import), [ES6 export](https://developer.mozilla.org/en-US/docs/web/javascript/reference/statements/export).
+关于语法的进一步阅读。[ES6 import](https://developer.mozilla.org/en-US/docs/web/javascript/reference/statements/import), [ES6 export](https://developer.mozilla.org/en-US/docs/web/javascript/reference/statements/export).

@@ -26,7 +26,7 @@ desc: 关于如何使用Quasar应用程序扩展来创建相当于入门套件�
 
 ## 结构
 
-在这个例子中，我们将创建以下文件夹结构：
+在这个示例中，我们将创建以下文件夹结构：
 
 ```bash
 .
@@ -122,7 +122,7 @@ module.exports = function (api) {
 }
 ```
 
-下面是一个`extendQuasarConf`定义的例子。
+下面是一个`extendQuasarConf`定义的示例。
 
 ```js
 function extendQuasarConf (conf) {

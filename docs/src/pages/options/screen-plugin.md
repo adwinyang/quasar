@@ -1,14 +1,14 @@
 ---
-title: Screen Plugin
-desc: Quasar plugin that helps in writing a dynamic and responsive UI through Javascript code.
+title: 屏幕插件
+desc: Quasar插件，有助于通过Javascript代码编写动态和响应式UI。
 ---
-The Quasar Screen plugin allows you to have a dynamic and responsive UI when dealing with your Javascript code. When possible, it is recommended to use the [responsive CSS classes](/style/visibility#window-width-related) instead, for performance reasons.
+Quasar Screen插件允许你在处理Javascript代码时拥有一个动态的、响应式的用户界面。在可能的情况下，出于性能的考虑，建议使用[响应式CSS类](/style/visibility#window-width-related)代替。
 
-## Installation
-You don't need to do anything. The Screen plugin gets installed automatically.
+## 安装
+你不需要做任何事情。屏幕插件会自动安装。
 
-## Usage
-Notice `$q.screen` below. This is just a simple usage example.
+## 使用方法
+注意下面的`$q.screen`。这只是一个简单的使用示例。
 
 ```html
 <q-list :dense="$q.screen.lt.md">
@@ -23,7 +23,7 @@ Notice `$q.screen` below. This is just a simple usage example.
 ```
 
 ```js
-// script part of a Vue component
+// Vue组件的脚本部分
 import { useQuasar } from 'quasar'
 import { computed } from 'vue'
 
@@ -41,19 +41,19 @@ export default {
 }
 ```
 
-We can also use the Screen plugin outside of a Vue component:
+我们也可以在Vue组件之外使用Screen插件。
 
 ```js
 import { Screen } from 'quasar'
 
 // Screen.gt.md
 // Screen.md
-// Screen.name ('xs', 'sm', ...)
+// 屏幕.名称('xs', 'sm', ...)。
 ```
 
-## Body classes
+## 身体类
 
-**If you enable it (see how to do it after the examples below)**, you can also style your content based on a particular set of CSS classes applied to document.body: `screen--xs`, `screen--sm`, ..., `screen-xl`.
+**如果你启用它(见下面示例后的操作方法)**，你还可以根据应用于document.body的一组特定的CSS类来设计你的内容：`screen-xs`, `screen-sm`, ..., `screen-xl`。
 
 ```css
 body.screen--xs {
@@ -69,7 +69,7 @@ body.screen--sm {
 }
 ```
 
-Or a sexy variant in Sass:
+或者在Sass中的一个性感的变体。
 
 ```sass
 .my-div
@@ -79,12 +79,12 @@ Or a sexy variant in Sass:
     color: #fff
 ```
 
-### How to enable body classes
+### 如何启用主体类
 
-In order to enable the behavior above, edit your /quasar.conf.js file like below. Please note that this will increase a bit the time for First Meaningful Paint.
+为了启用上述行为，请像下面这样编辑你的/quasar.conf.js文件。请注意，这将使 "第一次有意义的绘画 "的时间稍有增加。
 
 ```js
-// file: /quasar.conf.js
+// 文件：/quasar.conf.js
 
 framework: {
   config: {
@@ -95,18 +95,18 @@ framework: {
 }
 ```
 
-## Configuration
-There are a few methods that can be used to tweak how Screen plugin works:
+## 配置
+有几种方法可以用来调整屏幕插件的工作方式。
 
-| Method | Description | Example |
+| 方法 | 描述 | 示例 |
 | --- | --- | --- |
-| setSizes(Object) | Change window breakpoints; does NOT also changes CSS breakpoints. | setSizes({ lg: 1024, xl: 2000 }) |
-| setDebounce(Number) | Change the default 100ms debounce to some other value. | setDebounce(500) // 500ms |
+| setSizes(Object) | 改变窗口断点；不改变CSS断点。| setSizes({ lg: 1024, xl: 2000 }) |
+| setDebounce(Number) | 将默认的100ms去重改为其他值。| setDebounce(500) // 500ms |
 
-Examples:
+示例：
 
 ```js
-// inside a Vue component:
+// 在一个Vue组件内：
 import { useQuasar } from 'quasar'
 
 setup () {
@@ -115,7 +115,7 @@ setup () {
   $q.screen.setSizes({ sm: 300, md: 500, lg: 1000, xl: 2000 })
 }
 
-// outside of a Vue component:
+// 在Vue组件之外：
 import { Screen } from 'quasar'
 Screen.setSizes({ sm: 300, md: 500, lg: 1000, xl: 2000 })
 ```

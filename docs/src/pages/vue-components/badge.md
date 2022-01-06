@@ -1,26 +1,26 @@
 ---
-title: Badge
-desc: The QBadge Vue component allows you to display information like contextual data that needs to stand out and get noticed.
+title: 徽章
+desc: QBadge Vue组件允许你显示需要突出和引起注意的上下文数据等信息。
 keys: QBadge
 ---
-The QBadge component allows you to create a small badge for adding information like contextual data that needs to stand out and get noticed. It is also often useful in combination with other elements like a user avatar to show a number of new messages.
+QBadge组件允许你创建一个小徽章，用于添加需要突出和引起注意的上下文数据等信息。它也经常与其他元素结合使用，如用户头像，以显示一些新信息。
 
 ## QBadge API
 
 <doc-api file="QBadge" />
 
-## Usage
+## 使用方法
 
-<doc-example title="Basic" file="QBadge/Basic" />
+<doc-example title="基本" file="QBadge/Basic" /> ##使用方法
 
-<doc-example title="Aligned" file="QBadge/Align" />
+<doc-example title="对齐" file="QBadge/Align" /> ## 使用方法
 
-<doc-example title="Floating" file="QBadge/Floating" />
+<doc-example title="浮动" file="QBadge/Floating" />
 
-<doc-example title="Transparent" file="QBadge/Transparent" />
+<doc-example title="透明" file="QBadge/Transparent" />
 
-<doc-example title="Outline design" file="QBadge/Outline" />
+<doc-example title="概要设计" file="QBadge/Outline" />
 
-<doc-example title="Rounded" file="QBadge/Rounded" />
+<doc-example title="圆形设计" file="QBadge/Rounded" />
 
-<doc-example title="Indicators" file="QBadge/Indicators" />
+<doc-example title="指标" file="QBadge/Indicators" />

@@ -1,60 +1,60 @@
 ---
-title: Intersection
-desc: The QIntersection vue component, a wrapper over Quasar's Intersection directive.
+title: 交叉点
+desc: QIntersection vue组件，是Quasar的Intersection指令的封装器。
 keys: QIntersection
 related:
   - /vue-directives/intersection
   - /options/transitions
 ---
 
-The QIntersection component is essentially a wrapper over the [Intersection directive](/vue-directives/intersection) with the added benefit that it handles the state by itself (does not require you to add it and handle it manually) and can optionally have a show/hide transition as well.
+QIntersection组件本质上是对[Intersection指令](/vue-directives/intersection)的封装，其额外的好处是它可以自己处理状态(不需要你手动添加和处理)，也可以选择有一个显示/隐藏过渡。
 
-The main benefit of using QIntersection is, however, that the DOM tree is freed up of hidden nodes thus using the minimum possible RAM memory and making the page feel very snappy. As well, you can specify the `tag` property for the wrapper element to match your own needs, thus eliminating yet another DOM node.
+然而，使用QIntersection的主要好处是，DOM树中的隐藏节点被释放出来，从而尽可能地使用最小的RAM内存，使页面感觉非常敏捷。此外，你可以为包装元素指定`tag`属性，以满足你自己的需要，从而消除了另一个DOM节点。
 
-Under the hood, it uses the [Intersection Observer API](https://developer.mozilla.org/en-US/docs/Web/API/Intersection_Observer_API).
+在引擎盖下，它使用[Intersection Observer API](https://developer.mozilla.org/en-US/docs/Web/API/Intersection_Observer_API)。
 
 ::: warning
-Not all browsers support the Intersection Observer API. Most [modern browsers](https://caniuse.com/#search=intersection) do, but other browsers do not. If you need to support older browsers, you can install and import (into a boot file) the official W3C [polyfill](https://github.com/w3c/IntersectionObserver).
+并非所有的浏览器都支持交叉观察者API。大多数[现代浏览器](https://caniuse.com/#search=intersection)支持，但其他浏览器不支持。如果你需要支持旧的浏览器，你可以安装并导入(到一个引导文件中)官方的W3C [polyfill](https://github.com/w3c/IntersectionObserver)。
 :::
 
 ## QIntersection API
 
 <doc-api file="QIntersection" />
 
-## Usage
+## 使用方法
 
 ::: warning
-In most cases, it is required that you apply CSS to the QIntersection element so that it acts as a necessary filler when the inner content is not rendered. This will allow for a smooth scrolling experience, because otherwise the scroll will jump erratically.
+在大多数情况下，需要对QIntersection元素应用CSS，以便在内部内容没有呈现时，它可以作为一个必要的填充物。这将使滚动体验更加顺畅，因为否则的话，滚动就会无规律地跳动。
 
-An example of such needed CSS would be, for example, a fixed height or at least a min-height (and possibly even a fixed width, as in the examples below, where multiple QIntersections can be displayed on same row).
+这种所需的CSS的一个示例是，例如，一个固定的高度或至少一个最小高度(甚至可能是一个固定的宽度，如下面的示例，在同一行中可以显示多个QIntersection)。
 :::
 
 ::: danger
-If using the `transition` prop, it is required that the content be wrapped in one and only one element.
+如果使用 "transition "属性，要求内容被包裹在一个且只有一个元素中。
 :::
 
 ::: tip
-There are edge cases where the default viewport won't work. For instance, when your code is hosted in an iframe (like Codepen). This is where you need to use the `root` property. It allows you to define an alternative to the viewport as your root (through its DOM element). It is important to keep in mind that root needs to be an ancestor of the observed element.
+在一些边缘情况下，默认的视口是不起作用的。例如，当你的代码被托管在一个iframe中(如Codepen)。这时你需要使用`root`属性。它允许你定义一个替代视口的根(通过其DOM元素)。重要的是要记住，root需要是观察元素的祖先。
 :::
 
-### Basic
+### 基本
 
-<doc-example title="Basic" file="QIntersection/Basic" scrollable no-edit />
+<doc-example title="基本" file="QIntersection/Basic" rollable no-edit />
 
-### With transition
+### 有过渡的
 
-In the example below we used a Quasar transition. For a full list, please head to [Transitions](/options/transitions) page.
+在下面的示例中，我们使用了一个Quasar过渡。有关完整的列表，请前往[过渡](/options/transitions)页面。
 
-<doc-example title="With transition" file="QIntersection/Transition" scrollable no-edit />
+<doc-example title="有过渡" file="QIntersection/Transition" scrollable no-edit />
 
-<doc-example title="A list with transition" file="QIntersection/List" scrollable no-edit />
+<doc-example title="带过渡的列表" file="QIntersection/List" 可滚动，无编辑 />
 
-### Only once
+### 只触发一次
 
-Triggering only once means, however, that you lose the benefit of freeing up the DOM tree. The content will remain in DOM regardless of visibility.
+然而，只触发一次意味着你失去了释放DOM树的好处。无论可见性如何，内容都将保留在DOM中。
 
-<doc-example title="Triggering only once" file="QIntersection/Once" scrollable no-edit />
+<doc-example title="只触发一次" file="QIntersection/Once" scrollable no-edit />
 
-The example below uses the `root` property and therefore can be seen in a Codepen (which hosts in an iframe).
+下面的示例使用了`root'属性，因此可以在Codepen中看到(它托管在一个iframe中)。
 
-<doc-example title="Root viewport" file="QIntersection/Root" scrollable />
+<doc-example title="根视口" file="QIntersection/Root" scrollable />

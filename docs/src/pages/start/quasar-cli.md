@@ -1,41 +1,41 @@
 ---
 title: Quasar CLI
-desc: How to use the Quasar CLI, the premium developer experience for free.
+desc: 如何使用Quasar CLI，免费的高级开发者体验。
 ---
 
-Quasar CLI is the pride of Quasar Framework. You can seamlessly build:
+Quasar CLI是Quasar框架的骄傲。你可以无缝地构建。
 
-* a SPA (Single Page Application/Website),
-* a SSR (Server-side Rendered App/Website),
-* a PWA (Progressive Web App),
-* a BEX (Browser Extensions),
-* a Mobile App (through Cordova),
-* an Electron App
+* 一个SPA(单页应用程序/网站)。
+* SSR(服务器端渲染的应用程序/网站)。
+* PWA(渐进式网络应用程序)。
+* BEX(浏览器扩展)。
+* 一个移动应用程序(通过Cordova)。
+* 一个Electron App
 
-...within the same project folder, ensuring you are **following the best Quasar practices while everything will simply work out of the box**.
+...在同一个项目文件夹中，确保你**遵循最好的Quasar实践，同时所有的东西都能开箱即用**。
 
-<q-btn push no-caps color="brand-primary" icon-right="launch" label="Install Quasar CLI" to="/quasar-cli/installation" class="q-mt-md" />
+<q-btn push no-caps color="brand-primary" ic-right=" launch" label="Install Quasar CLI" to="/quasar-cli/installation" class="q-mt-md" />
 
-## What's Included
+## 包括哪些内容
 
-While developing with Dev Server (`$ quasar dev`):
+在使用开发服务器(`$ quasar dev`)进行开发时。
 
-* Babel, so you can write ES6 code
-* Webpack + vue-loader for Vue SFC (single file components)
-* State preserving hot-reload
-* State preserving compilation error overlay
-* Lint-on-save with ESLint
-* Source maps
-* Develop right on a device emulator (or a real phone connected to your machine) if you target a Mobile App
-* Develop right on an Electron window with Developer Tools included if you target an Electron App
-* ...many more
+* Babel，因此你可以编写ES6代码
+* Webpack + vue-loader用于Vue SFC(单文件组件)。
+* 保存状态的热重载
+* 保留状态的编译错误覆盖
+* 带有ESLint的Lint-on-save
+* 源地图
+* 如果你的目标是移动应用程序，可以在设备模拟器(或连接到你的机器上的真实手机)上直接开发。
+* 如果你的目标是一个Electron应用程序，可以在一个带有开发工具的Electron窗口上直接开发。
+* ...更多
 
-Developing for production (`$ quasar build`):
+为生产开发(`$ quasar build`)。
 
-* Javascript minified with [UglifyJS](https://github.com/mishoo/UglifyJS2)
-* HTML minified with [html-minifier](https://github.com/kangax/html-minifier)
-* CSS across all components extracted (and auto-prefixed) into a single file and minified with [cssnano](https://github.com/ben-eb/cssnano)
-* All static assets are compiled with version hashes for efficient long-term caching, and a production index.html is auto-generated with proper URLs to these generated assets.
-* ...many more
+* 用[UglifyJS](https://github.com/mishoo/UglifyJS2)对Javascript进行最小化。
+* 用[html-minifier](https://github.com/kangax/html-minifier)对HTML进行压缩
+* 所有组件的CSS都被提取(并自动添加前缀)到一个文件中，并用[cssnano](https://github.com/ben-eb/cssnano)进行粉碎。
+* 所有的静态资产都是用版本哈希值编译的，以便进行有效的长期缓存，并且自动生成index.html，并为这些生成的资产提供适当的URL。
+* ...更多
 
-Take note of the `/quasar.conf.js` file in the root of your project folder. This file helps you quickly configure the way your website/App works. We'll go over it in the [Configuration](/quasar-cli/quasar-conf-js) section.
+请注意你的项目文件夹根部的`/quasar.conf.js`文件。这个文件帮助你快速配置你的网站/应用程序的工作方式。我们将在[配置](/quasar-cli/quasar-conf-js)部分对其进行介绍。

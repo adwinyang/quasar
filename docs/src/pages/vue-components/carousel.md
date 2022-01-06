@@ -1,10 +1,10 @@
 ---
-title: Carousel
-desc: The QCarousel Vue component allows you to display a series of slides, useful for wizards or an image gallery.
+title: 旋转木马
+desc: QCarousel Vue组件允许你显示一系列的幻灯片，对向导或图片库很有用。
 keys: QCarousel
 ---
 
-The QCarousel component allows you to display more information with less real estate, using slides. Useful for creating Wizards or an image gallery too.
+QCarousel组件允许你用更少的空间显示更多的信息，使用幻灯片。对于创建向导或图片库也很有用。
 
 ## QCarousel API
 
@@ -16,96 +16,96 @@ The QCarousel component allows you to display more information with less real es
 
 ## QCarouselSlide API
 
-<doc-api file="QCarouselSlide" />
+<doc-api file="QCarouselSlide" /> ## QCarouselSlide API
 
-## Usage
+## 使用方法
 
 ::: tip
-If the QCarouselSlide content also has images and you want to use swipe actions to navigate, you might want to add `draggable="false"` to them, otherwise the native browser behavior might interfere in a negative way.
+如果QCarouselSlide的内容也有图片，并且你想使用滑动动作来导航，你可能想给它们添加`draggable="false"`，否则本地浏览器的行为可能会以负面的方式进行干扰。
 :::
 
 ::: danger Keep Alive
-* Please take notice of the Boolean `keep-alive` prop for QCarousel, if you need this behavior. Do NOT use Vue's native `<keep-alive>` component over QCarouselSlide.
-* Should you need the `keep-alive-include` or `keep-alive-exclude` props then the QCarouselSlide `name`s must be valid Vue component names (no spaces allowed, don't start with a number etc).
+* 如果你需要这种行为，请注意QCarousel的布尔值`keep-alive`属性。不要在QCarouselSlide上使用Vue的本地`<keep-alive>`组件。
+* 如果你需要`keep-alive-include`或`keep-alive-exclude`属性，那么QCarouselSlide的`name`s必须是有效的Vue组件名称(不允许有空格，不要以数字开头等等)。
 :::
 
-### Basic
+###基本
 
-Below is an almost stripped down basic Carousel (it is just animated and only has custom transitions specified) with no navigation embedded. For this reason, we are controlling the current slide through the model.
+下面是一个几乎精简的基本旋转木马(它只是动画，只指定了自定义过渡)，没有嵌入导航。出于这个原因，我们通过模型来控制当前的滑动。
 
-<doc-example title="Basic" file="QCarousel/Basic" />
+<doc-example title="基本" file="QCarousel/Basic" />
 
-### Transitions
+### 转场
 
-In the example below:
+在下面的示例中。
 
-* There are just a few transitions demoed. For a complete list of transitions, head to the [Transitions](/options/transitions) page.
-* You can also swipe with your finger (or swiping with the mouse -- clicking and quickly dragging to left/right then releasing).
+* 这里只是演示了几个过渡。对于完整的转换列表，请前往[Transitions](/options/transitions)页面。
+* 你也可以用手指轻扫(或用鼠标轻扫--点击并快速向左/右拖动，然后松开)。
 
-<doc-example title="Transitions, bottom navigation, arrows and auto padding" file="QCarousel/Transitions" />
+<doc-example title="过渡、底部导航、箭头和自动填充" file="QCarousel/Transitions" />
 
-### Vertical
+### 垂直方向
 
-<doc-example title="Vertical mode" file="QCarousel/Vertical" />
+<doc-example title="垂直模式" file="QCarousel/Vertical" /> ### 垂直模式
 
-### Control type
+### 控制类型
 
-The notion of "control" here refers to the arrows and navigation buttons. Since they are buttons, you can also pick their type to better match your design. You also benefit from the `control-color` and `control-text-color` props.
+这里的 "控制 "的概念是指箭头和导航按钮。由于它们是按钮，你也可以选择它们的类型以更好地配合你的设计。你还可以从`control-color`和`control-text-color`属性中受益。
 
-<doc-example title="Control Type" file="QCarousel/ControlType" />
+<doc-example title="控制类型" file="QCarousel/ControlType" />
 
-### Navigation position
+### 导航位置
 
-<doc-example title="Navigation position" file="QCarousel/NavigationPosition" />
+<doc-example title="导航位置" file="QCarousel/NavigationPosition" /> ### 导航位置
 
-### Custom navigation
+### 自定义导航
 
-For a full list of properties of the `navigation-icon` slot, please consult the API card.
+关于 "导航图标 "槽的全部属性列表，请查阅API卡。
 
-<doc-example title="Custom navigation" file="QCarousel/CustomNavigation" />
+<doc-example title="自定义导航" file="QCarousel/CustomNavigation" />
 
-### Auto padding
+### 自动填充
 
-Below is an example with which you can play with different QCarousel settings so you can see the padding (or lack of) in action:
+下面是一个示例，你可以用不同的QCarousel设置来玩，这样你就可以看到填充(或不填充)的作用。
 
-<doc-example title="Padding" file="QCarousel/AutoPadding" />
+<doc-example title="填充" file="QCarousel/AutoPadding" />
 
-### Media content
+### 媒体内容
 
-<doc-example title="Image slides" file="QCarousel/ImageSlides" />
+<doc-example title="图像幻灯片" file="QCarousel/ImageSlides" /> ###媒体内容。
 
-<doc-example title="Multi-image slides" file="QCarousel/MultiImageSlides" />
+<doc-example title="多图像幻灯片" file="QCarousel/MultiImageSlides" /> ###媒体内容
 
-<doc-example title="Captions" file="QCarousel/Captions" />
+<doc-example title="标题" file="QCarousel/Captions" />
 
-<doc-example title="Video slides" file="QCarousel/VideoSlides" />
+<doc-example title="视频幻灯片" file="QCarousel/VideoSlides" />
 
-In the example below there are thumbnails being generated automatically. Thumbnails only applies to image slides.
+在下面的示例中，有缩略图被自动生成。缩略图只适用于图像幻灯片。
 
-<doc-example title="Thumbnails" file="QCarousel/Thumbnails" />
+<doc-example title="缩略图" file="QCarousel/Thumbnails" />
 
 ::: tip
-Don't use the property `navigation` along with `thumbnails` as the first supercedes the latter so the thumbnails will not be displayed.
+不要在使用属性`navigation`的同时使用`thumbnails`，因为前者优先于后者，所以缩略图不会被显示。
 :::
 
-### Infinite and autoplay
+### 无限和自动播放
 
-You can pause autoplay when the pointer is over the carousel or over a region of interest.
+你可以在指针位于旋转木马上方或感兴趣的区域上方时暂停自动播放。
 
-<doc-example title="Autoplay" file="QCarousel/InfiniteAutoplay" />
+<doc-example title="自动播放" file="QCarousel/InfiniteAutoplay" />
 
-### Controls
+### 控制
 
-<doc-example title="Controls" file="QCarousel/Controls" />
+<doc-example title="控件" file="QCarousel/Controls" /> ###控件
 
-### With QScrollArea
+### 使用QScrollArea
 
-Please note how [QScrollArea](/vue-components/scroll-area) is used in the two examples below. Also note the `q-carousel--padding` CSS helper class in the second example.
+请注意[QScrollArea](/vue-components/scroll-area)是如何在下面的两个示例中使用。还请注意第二个示例中的`q-carousel--padding`CSS辅助类。
 
-<doc-example title="With QScrollArea and padding" file="QCarousel/WithScrollareaPadding" />
+<doc-example title="使用QScrollArea和padding" file="QCarousel/WithScrollareaPadding" />
 
-<doc-example title="With QScrollArea on whole slide" file="QCarousel/WithScrollareaFull" />
+<doc-example title="在整个幻灯片上使用QScrollArea" file="QCarousel/WithScrollareaFull" />
 
-### Fullscreen
+### 全屏
 
-<doc-example title="Fullscreen" file="QCarousel/Fullscreen" />
+<doc-example title="全屏" file="QCarousel/Fullscreen" /> ###全屏。

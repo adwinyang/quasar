@@ -1,12 +1,12 @@
 ---
-title: Ajax Requests
-desc: Using Axios for fetching data in a Quasar app.
+title: 阿贾克斯请求
+desc: 在Quasar应用中使用Axios来获取数据。
 ---
 
-> We recommend selecting Axios during project initialization.
+> 我们建议在项目初始化时选择Axios。
 
-If you haven't selected Axios during the project initialization then you should create a new boot file `axios.js` that looks like this:
-(Here you can also specify additional settings for your axios instance)
+如果你在项目初始化时没有选择Axios，那么你应该创建一个新的启动文件`axios.js`，看起来像这样。
+(这里你也可以为你的axios实例指定额外的设置)
 
 ```js
 // src/boot/axios.js
@@ -17,27 +17,27 @@ import axios from 'axios'
 const api = axios.create({ baseURL: 'https://api.example.com' })
 
 export default boot(({ app }) => {
-  // for use inside Vue files (Options API) through this.$axios and this.$api
+  // 通过this.$axios和this.$api在Vue文件中使用(选项式 API)。
 
   app.config.globalProperties.$axios = axios
-  // ^ ^ ^ this will allow you to use this.$axios (for Vue Options API form)
-  //       so you won't necessarily have to import axios in each vue file
+  // ^ ^ 这将允许你使用this.$axios(用于Vue Options API形式)。
+  //       所以你不一定要在每个vue文件中导入axios。
 
   app.config.globalProperties.$api = api
-  // ^ ^ ^ this will allow you to use this.$api (for Vue Options API form)
-  //       so you can easily perform requests against your app's API
+  // ^ ^ 这将允许你使用this.$api(用于Vue选项式 API形式)。
+  //       所以你可以轻松地对你的应用程序的API执行请求
 })
 
 export { axios, api }
 ```
 
-Also make sure to yarn/npm install the `axios` package.
+还要确保yarn/npm安装`axios`包。
 
 ::: tip
-Be sure to check out [Prefetch Feature](/quasar-cli/prefetch-feature) if you are using Quasar CLI.
+如果你使用Quasar CLI，请务必查看[预取功能](/quasar-cli/prefetch-feature)。
 :::
 
-Usage in your single file components methods will be like below. Notice that in the next example we're using the Quasar's [Notify plugin](/quasar-plugins/notify) (through `$q = useQuasar()` and `$q.notify`) which you'll need to install (follow the link earlier).
+在你的单一文件组件方法中的用法将像下面一样。注意，在下一个示例中，我们使用Quasar的[Notify插件](/quasar-plugins/notify)(通过`$q = useQuasar()`和`$q.notify`)，你需要安装它(按照前面的链接)。
 
 ```js
 import { api } from 'boot/axios'
@@ -66,7 +66,7 @@ setup () {
 }
 ```
 
-Usage in Vuex Actions for globally adding headers to axios (such as during authentication):
+在Vuex Actions中使用，用于向axios全局添加头信息(如在认证期间)。
 
 ```js
 import { api } from 'boot/axios'
@@ -80,4 +80,4 @@ export function register ({ commit }, form) {
 }
 ```
 
-Also look at [Axios docs](https://github.com/axios/axios) for more information.
+也可以看看[Axios docs](https://github.com/axios/axios)，了解更多信息。

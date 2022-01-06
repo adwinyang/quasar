@@ -1,29 +1,29 @@
 ---
-title: Commit Conventions
-desc: Quasar commit conventions
+title: 提交约定
+desc: Quasar提交约定
 ---
 
-## Goals
-- Allow ignoring commits by git bisect (not important commits like formatting)
-- Provide better information when browsing the history
+## 目标
+ - 允许通过Git Botect忽略inuctits(不是格式化的重要提交)
+ - 浏览历史时提供更好的信息
 
 ::: warning
-This rule applies to ALL [Quasar repositories](https://github.com/quasarframework).
+此规则适用于所有[Quasar存储库](https://github.com/quasarframework)。
 :::
 
-Well-cared log is a beautiful and useful thing. `git blame`, `revert`, `rebase`, `log`, `shortlog` and other subcommands come to life. Reviewing others’ commits and pull requests becomes something worth doing, and suddenly can be done independently. Understanding why something happened months or years ago becomes not only possible but efficient.
+被关心的日志是一个美丽而有用的东西。 `git责备责备，`恢复`，`rebase`，`log`，`shortlog`和其他子命令。 审查他人的提交和拉拔请求变得值得做，突然可以独立完成。 了解为什么几个月或几年前的事情不仅可能而且有效。
 
-## The Rules of a Great Git Commit Message
+## 推荐的 git 消息提交规则
 
-1. Separate subject from body with a blank line
-2. Limit the subject line to 70 characters
-3. Capitalize the subject line
-4. Do not end the subject line with a period
-5. Use the imperative mood in the subject line
-6. Wrap the body at 80 characters
-7. Use the body to explain what and why vs. how
+1. 用空白线分隔主体
+2. 将主题行限制为70个字符
+3. 利用主题行
+4. 不要以句号结束主题行
+5. 在主题行中使用祈使语气
+6. 正文每80个字符进行换行
+7. 使用主体解释是什么、为什么、如何做
 
-## Format of a Commit Message
+## 提交消息的格式
 
 ```
 type(<scope>): <Subject> #<github-ref-id>
@@ -33,7 +33,7 @@ type(<scope>): <Subject> #<github-ref-id>
 <footer>
 ```
 
-### Example of a Commit Message
+### 提交消息的示例
 
 ```
 fix(ui): Ensure Range headers adhere more closely to RFC 2616 #2310
@@ -47,44 +47,44 @@ To migrate your project, change all the commands,
 where you use --port-runner to --runner-port.
 ```
 
-## Message Subject (First Line)
+## 消息主题(第一行)
 
-The first line cannot be longer than 70 characters, the second line is always blank. The type and scope should always be lowercase as shown below.
+第一行不能超过70个字符，第二行始终为空。类型和范围应始终为小写，如下所示。
 
-**Allowed `<type>` values:**
+**允许`<type>`值：**
 
-- **feat** - new feature for the user, not a new feature for build script
-- **fix** - bug fix for the user, not a fix to a build script
-- **docs** - documentation only changes
-- **style** - changes that do not affect the meaning of the code (white-space, formatting, missing semi-colons, etc)
-- **refactor** - refactoring production code, a code change that neither fixes a bug nor adds a feature
-- **chore** - other changes that don't modify src or test files; no production code change
-- **perf** - change that improves performance
-- **revert** - reverts a previous commit
-- **test** - adding missing tests, refactoring tests; no production code change
-- **build** - changes that affect the build system or external dependencies (example scopes: gulp, npm)
-- **ci** - changes to our Continuous Integrations configuration files and scripts (example scopes: Travis, Circle CI)
+ -  **feat**  - 用户的新功能，而不是构建脚本的新功能
+ -  **fix**  - 针对用户的bug修复，而不是针对构建脚本的修复
+ -  **docs**  - 仅更改文档
+ -  **style**  - 不影响代码含义的更改(空白，格式化，缺少半冒号等)
+ -  **refactor**  - 重构生产代码，代码更改既不修复错误也不是添加一个功能
+ -  **chore**  - 不修改src或测试文件的其他更改；无生产代码更改
+ -  **perf**  - 改善性能的修改
+ -  **revert**  - 恢复以前的提交
+ -  **test**  - 添加缺失的测试，重构测试;无生产代码更改
+ -  **build**  - 影响构建系统或外部依赖项的更改(示例范围：GULP，NPM)
+ -  **ci**  - 更改我们的持续积分配置文件和脚本(示例范围：Travis，Circle CI)
 
-**Example `<scope>` values:**
+**示例`<scope>`值：**
 
-- ui, cli, api, touchswipe, qtime, etc.
+ -  UI，CLI，API，TouchSwipe，QTime等。
 
 ::: tip
-The `<scope>` can contain more values separated by comma. Example: `fix(ui,cli): Cordova mode added`.
+`<scope>`可以包含由逗号分隔的更多值。 示例：`FIX(UI，CLI)：添加了 Cordova 模式。
 
-The `<scope>` can be empty (e.g. if the change is a global), in which case the parentheses are omitted.
+`<scope>`可以是空的(例如，如果更改是全局)，在这种情况下省略括号。
 :::
 
-## Message Body
+## 邮件正文
 
-- uses the imperative, present tense: “change” not “changed” nor “changes”
-- includes motivation for the change and contrasts with previous behavior
+- 使用命令，目前时态：“更改”而不是“更改”也不“更改”
+- 包括改变和对比的动机与以前的行为
 
-## Message Footer
+## 消息解注
 
-### Breaking Changes
+### 破坏性变化
 
-All breaking changes have to be mentioned as a breaking change block in the footer, which should start with the word BREAKING CHANGE: with a space or two newlines. The rest of the commit message is then the description of the change, justification and migration notes.
+所有的破坏性修改都必须在页脚以破坏性修改块的形式提及，它应该以BREAKING CHANGE: 字样开始，并加上空格或两个换行。提交信息的其余部分是对修改的描述、理由和迁移说明。
 
 ```
 BREAKING CHANGE: isolate scope bindings definition has changed and
@@ -108,17 +108,17 @@ BREAKING CHANGE: isolate scope bindings definition has changed and
       myAttr: '@',
       myBind: '@',
       myExpression: '&',
-      // myEval - usually not useful, but in cases where the expression is assignable, you can use '='
+      // Myeval  - 通常没有有用，但在表达式的情况下，您可以使用'='
       myAccessor: '=' // in directive's template change myAccessor() to myAccessor
     }
 ```
 
-### Referencing Issues
+### 参考问题
 
-Closed issues should be listed on a separate line in the footer prefixed with "Closes" keyword like this:
+已关闭的问题应列在页脚上的单独一行上，以“closees”关键字开头，如下所示：
 
 `Closes #234`
 
-or in the case of multiple issues:
+或者存在多个问题的情况下：
 
-`Closes #123, #245, #992`
+`Closes #123，#245，#992`

@@ -1,18 +1,18 @@
 ---
-title: Global node generation
-desc: Some Quasar components and plugins to show floating elements will create global nodes appending them to the body.
+title: 全局节点生成
+desc: 一些用于显示浮动元素的 Quasar 组件和插件将创建将它们附加到主体的全局节点。
 ---
-You can define custom className for this global node elements.
+你可以为这个全局节点元素定义自定义 className。
 
-## Installation
-You don't need to do anything.
+## 安装
+你不需要做任何事情。
 
-## Configuration
+## 配置
 
-In order to define custom class for global nodes, edit your /quasar.conf.js file like below.
+为了给全局节点定义自定义类，请编辑你的 /quasar.conf.js 文件，如下所示。
 
 ```js
-// file: /quasar.conf.js
+// 文件：/quasar.conf.js
 
 framework: {
   config: {

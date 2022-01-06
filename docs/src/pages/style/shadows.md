@@ -1,32 +1,32 @@
 ---
-title: CSS Shadows (Elevation)
-desc: The list of CSS classes supplied by Quasar for defining elevation on DOM elements.
+title: CSS阴影(海拔)
+desc: Quasar提供的CSS类的列表，用于定义DOM元素上的标高。
 ---
-Simple yet effective way to add shadows to create a depth/elevation effect.
-The shadows are in accordance to Material Design specifications (24 levels of depth).
+简单而有效的方法来添加阴影，以创造深度/高度效果。
+阴影符合Material Design规范(24级深度)。
 
-## Usage
+## 用法
 
-| CSS Class Name | Description |
+| CSS类名称 | 说明 |
+| `no-shadow` | 删除任何阴影 |
+| `inset-shadow` | 在顶部设置一个嵌套阴影
+| `inset-shadow-down` | 在底部设置一个嵌入的阴影
+| `阴影-1` | 设置深度为1
+| `阴影-2` | 设置深度为2
+| `shadow-N` | 其中`N`是1到24的整数。|
+| `shadow-transition` | 在阴影上应用默认的CSS过渡效果。
+<doc-example title="标准阴影" file="shadows/Standard" scrollable />
+
+上面的阴影指向了元素的底部。如果你想让它们指向元素的顶部，请在数字前加上`向上'。
+
+| CSS类名称 | 说明 |
+
 | --- | --- |
-| `no-shadow` | Remove any shadow |
-| `inset-shadow` | Set an inset shadow on top |
-| `inset-shadow-down` | Set an inset shadow on bottom |
-| `shadow-1` | Set a depth of 1 |
-| `shadow-2` | Set a depth of 2 |
-| `shadow-N` | Where `N` is an integer from 1 to 24. |
-| `shadow-transition` | Apply the default CSS transition effect on the shadow |
+| `shadow-up-1` | 设置深度为1
+| `shadow-up-2` | 设置深度为2
+| `shadow-up-N` | 其中`N`是1到24的整数。|
+<doc-example title="阴影朝上" file="shadows/PointingUp" scrollable />
 
-<doc-example title="Standard shadows" file="shadows/Standard" scrollable />
+<doc-example title="嵌入式阴影" file="shadows/Inset" />
 
-The shadows above point towards the bottom of the element. If you want them to point towards the top of the element, add `up` before the number:
 
-| CSS Class Name | Description |
-| --- | --- |
-| `shadow-up-1` | Set a depth of 1 |
-| `shadow-up-2` | Set a depth of 2 |
-| `shadow-up-N` | Where `N` is an integer from 1 to 24. |
-
-<doc-example title="Shadows pointing up" file="shadows/PointingUp" scrollable />
-
-<doc-example title="Inset shadow" file="shadows/Inset" />

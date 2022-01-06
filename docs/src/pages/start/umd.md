@@ -1,39 +1,39 @@
 ---
-title: Quasar UMD - CDN install
-desc: How to use the Unified Module Definition form of Quasar.
+title: Quasar UMD - CDN安装
+desc: 如何使用Quasar的统一模块定义形式。
 components:
   - umd/UmdTags
 ---
 
-If you want to embed Quasar into your existing website project, integrating it in a progressive manner, then go for the UMD/Standalone (Unified Module Definition) version.
+如果你想把Quasar嵌入到你现有的网站项目中，以渐进的方式整合它，那么请选择UMD/Standalone(统一模块定义)版本。
 
-## Installation
-UMD is all about adding Quasar style and javascript tags. Please select what you will be using and check out the output below it.
+## 安装
+UMD是关于添加Quasar风格和javascript标签。请选择你要使用的内容，并查看它下面的输出。
 
 <umd-tags />
 
 ::: warning
-* Please notice the `<!DOCTYPE html>` at the beginning of the document. Do not forget to add it, or else some browsers (notably Safari) will use some compatibility mode that breaks flex.
-* If you are using an RTL Quasar language pack (eg. Hebrew) then toggle the "RTL CSS support" above too!
-* Do NOT use self-closing tags, like `<q-icon ... />`. Instead, go with `<q-icon ...></q-icon>`.
+* 请注意文件开头的`<！DOCTYPE html>`。不要忘记添加它，否则一些浏览器(特别是Safari)会使用一些破坏灵活性的兼容模式。
+* 如果你使用的是RTL Quasar语言包(例如希伯来语)，那么也要切换上面的 "RTL CSS支持"!
+* 不要使用自我封闭的标签，如`<q-icon ... />`. 相反，要使用`<q-icon ...></q-icon>`。
 :::
 
 ::: tip
-All components, directives and Quasar plugins are ready to be used out of the box. There is no need for additional code to install them. Just make sure that you will NOT be using self-closing tags.
+所有组件、指令和Quasar插件都可以开箱即用。不需要额外的代码来安装它们。只要确保你不会使用自闭标签。
 :::
 
 ## JsFiddle / Codepen
-You can fork and use these links for reporting issues on GitHub too:
+你也可以在GitHub上分叉并使用这些链接来报告问题。
 
 | Supplier | URL |
 | --- | --- |
 | jsFiddle | [https://jsfiddle.quasar.dev](https://jsfiddle.quasar.dev) |
 | Codepen | [https://codepen.quasar.dev](https://codepen.quasar.dev) |
 
-These links (obviously) use the Quasar UMD version.
+这些链接(显然)使用的是Quasar UMD版本。
 
-## Quasar Global Object
-When you embed Quasar UMD into a webpage you'll get a `Quasar` global Object injected:
+## Quasar全局对象
+当你把Quasar UMD嵌入到一个网页中时，你会得到一个`Quasar`全局对象的注入。
 
 ```js
 Quasar = {
@@ -44,14 +44,14 @@ Quasar = {
   ...plugins, // Quasar plugins
   ...utils, // Quasar utils
 
-  // if you want to change current icon set or Quasar Language pack
-  // (must include CDN links so they are available first!)
+  // 如果你想改变当前的图标集或Quasar语言包
+  // (必须包括CDN链接，以便它们首先可用！)
   lang,
   iconSet
 }
 ```
 
-Some usage examples:
+一些使用实例。
 
 ```js
 Quasar.QBtn
@@ -60,35 +60,35 @@ Quasar.debounce(fn, 200)
 Quasar.Notify.create('Hi and welcome!')
 ```
 
-## Quasar Config Object
-There are some configuration options for Quasar & Quasar plugins:
+## Quasar 配置对象
+有一些Quasar & Quasar插件的配置选项。
 
 ```js
 app.use(Quasar, {
   config: {
     brand: {
       primary: '#e46262',
-      // ... or all other brand colors
+      // ...或所有其他品牌的颜色
     },
     notify: {...}, // default set of options for Notify Quasar plugin
     loading: {...}, // default set of options for Loading Quasar plugin
     loadingBar: { ... }, // settings for LoadingBar Quasar plugin
-    // ..and many more
+    // ...还有更多
   }
 })
 ```
 
-## Usage
-So, after you figured out the CDN links that you need to embed into your webpages, now it's time to use Quasar.
+## 用法
+所以，在你想出需要嵌入到你的网页中的CDN链接后，现在是使用Quasar的时候了。
 
 ::: tip
-You'll notice that all the Quasar Components, Quasar Directives and Quasar Plugins have an installation section at the top of their pages.
+你会注意到，所有的Quasar组件、Quasar指令和Quasar插件在其页面的顶部都有一个安装部分。
 :::
 
-By using the UMD version, you'll have all of the components, directives and Quasar plugins already installed for you. You just need to start using them.
+通过使用UMD版本，你将有所有的组件、指令和Quasar插件已经为你安装。你只需要开始使用它们。
 
-**Do not use self-closing tags with the UMD version:**
-You will notice that you won't be able to use the self-closing tag form of any of the components. You must close all components tags.
+**在UMD版本中不要使用自闭标签：**。
+你会注意到，你将不能使用任何组件的自我关闭标签形式。你必须关闭所有组件的标签。
 
 ```html
 <!-- Incorrect usage: In docs, but for Quasar CLI usage -->
@@ -99,53 +99,53 @@ You will notice that you won't be able to use the self-closing tag form of any o
 <q-btn label="My Button"></q-btn>
 ```
 
-### Quasar Components
-An example. No need to install any component in UMD version.
+### Quasar 组件
+一个示例。在UMD版本中不需要安装任何组件。
 
 ```html
 <q-btn label="My Button"></q-btn>
 ```
 
-### Quasar Directives
-An example. No need to install any directives in UMD version.
+### Quasar指令
+一个示例。在UMD版本中不需要安装任何指令。
 
 ```html
 <div v-ripple>...</div>
 ```
 
 ### Quasar Plugins
-An example. No need to install any plugins in UMD version.
+一个示例。在UMD版本中不需要安装任何插件。
 
 ```js
 Quasar.BottomSheet.create({...})
 ```
 
 ### Quasar Utils
-An example.
+一个示例。
 
 ```js
 Quasar.openURL('https://quasar.dev')
 ```
 
-### Changing Quasar Icon Set
-Assuming you have already included the CDN link to your favorite Quasar Icon Set (unless you're using Material Icons which is used by default), you can then tell Quasar to use it:
+### 改变Quasar图标集
+假设你已经包含了你最喜欢的Quasar图标集的CDN链接(除非你使用的是默认使用的Material Icons)，那么你就可以告诉Quasar使用它。
 
 ```js
 Quasar.iconSet.set(Quasar.iconSet.fontawesomeV5)
 ```
 
-The list of available [Quasar Icon Sets](/options/quasar-icon-sets) can be found on [GitHub](https://github.com/quasarframework/quasar/tree/dev/ui/icon-set).
+可用的[Quasar图标集](/options/quasar-icon-sets)列表可以在[GitHub](https://github.com/quasarframework/quasar/tree/dev/ui/icon-set)上找到。
 
-### Changing Quasar Language Pack
-Assuming you have already included the CDN link to your desired Quasar I18n Language (unless you want "en-US" language pack which is used by default), you can then tell Quasar to use it:
+### 改变Quasar语言包
+假设您已经包含了您想要的Quasar I18n语言的CDN链接(除非您想要默认使用的 "en-US "语言包)，您可以告诉Quasar使用它。
 
 ```js
-// example setting German language,
-// using ISO 2 letter code:
+// 示例设置德语。
+// 使用ISO 2字母代码。
 Quasar.lang.set(Quasar.lang.de)
 
-// example setting Portuguese (Brazil) language:
+// 示例设置葡萄牙语(巴西)语言。
 Quasar.lang.set(Quasar.lang.ptBR)
 ```
 
-The list of available languages can be found on [GitHub](https://github.com/quasarframework/quasar/tree/dev/ui/lang). **If your desired language pack is not available yet, you can help by providing a PR.** We welcome any languages!
+可用的语言列表可以在[GitHub](https://github.com/quasarframework/quasar/tree/dev/ui/lang)上找到。**如果你想要的语言包还没有，你可以通过提供一个PR来帮助我们。**我们欢迎任何语言!

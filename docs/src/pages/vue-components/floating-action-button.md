@@ -1,15 +1,15 @@
 ---
-title: Floating Action Button
-desc: How to use the QFab component. Floating Action Buttons for your Quasar app.
+title: 浮动的行动按钮
+desc: 如何使用QFab组件。为你的Quasar应用程序提供浮动的动作按钮。
 keys: QFab
 related:
   - /layout/layout
   - /layout/page
 ---
 
-A Floating Action Button (FAB) represents the primary action in a Page. But, it's not limited to only a single action. It can contain any number of sub-actions too. And more importantly, it can also be used inline in your Pages or Layouts.
+浮动动作按钮(FAB)代表了一个页面中的主要动作。但是，它并不局限于一个单一的动作。它也可以包含任何数量的子行动。更重要的是，它也可以在你的页面或布局中在线使用。
 
-Note that you don’t need a QLayout to use FABs.
+注意，你不需要一个QLayout来使用FABs。
 
 ## QFab API
 
@@ -17,72 +17,72 @@ Note that you don’t need a QLayout to use FABs.
 
 ## QFabAction API
 
-<doc-api file="QFabAction" />
+<doc-api file="QFabAction" /> ## QFabAction API
 
-## Usage
-There are two types of FABs: expandable (has sub-actions) and non-expandable.
+## 使用方法
+有两种类型的FABs：可扩展(有子行动)和不可扩展。
 
 ::: tip
-For an exhausting list of options, please read the API cards (at the top of this page).
+关于详尽的选项清单，请阅读API卡(在本页面顶部)。
 :::
 
-### Non-Expandable
-If you want a non-expandable FAB, all you need is a round button – wrapped in QPageSticky if used on a QLayout.
+### 不可扩展
+如果你想要一个不可展开的FAB，你只需要一个圆形的按钮--如果在QLayout上使用，则用QPageSticky包装。
 
-<doc-example title="Non expandable" file="QFab/NonExpandable" />
+<doc-example title="不可扩展" file="QFab/NonExpandable" />
 
-### Expandable
+### 可扩展
 
-<doc-example title="Expandable" file="QFab/Expandable" />
+<doc-example title="可扩展" file="QFab/Expandable" /> ###可扩展。
 
-### Internal labels
+### 内部标签
 
-<doc-example title="Internal label" file="QFab/InternalLabel" />
+<doc-example title="内部标签" file="QFab/InternalLabel" /> ###内部标签
 
-<doc-example title="Toggling internal label" file="QFab/InternalLabelToggling" />
+<doc-example title="切换内部标签" file="QFab/InternalLabelToggling" /> ###内部标签
 
-When the labels are internal and your QFab opens up vertically (up or down) then you also have the ability to choose how to vertically align the sub-actions:
+当标签是内部的，并且你的QFab是垂直打开的(向上或向下)，那么你也可以选择如何垂直对齐子操作。
 
-<doc-example title="Vertical actions alignment" file="QFab/VerticalActionsAlignment" />
+<doc-example title="垂直动作对齐" file="QFab/VerticalActionsAlignment" />
 
-### External labels
+### 外部标签
 
-By default, when the label is external on the main QFab (not the sub-actions), it gets shown only when QFab is opened. However, you can override that by setting a Boolean value for `hide-label` prop.
+默认情况下，当标签在主QFab(而不是子操作)上是外部的，它只在QFab被打开时显示。但是，你可以通过为`hide-label`属性设置一个布尔值来覆盖这一点。
 
-<doc-example title="External label" file="QFab/ExternalLabel" />
+<doc-example title="外部标签" file="QFab/ExternalLabel" />
 
-<doc-example title="Custom styled external label" file="QFab/ExternalLabelStyled" />
+<doc-example title="自定义风格的外部标签" file="QFab/ExternalLabelStyled" />
 
-<doc-example title="Toggling external label" file="QFab/ExternalLabelToggling" />
+<doc-example title="切换外部标签" file="QFab/ExternalLabelToggling" />
 
-### Hide icons
+### 隐藏图标
 
-If we hide the icon (through specific prop), we should at least use an internal label:
+如果我们隐藏图标(通过特定的属性)，我们至少应该使用一个内部标签。
 
-<doc-example title="Hide icon" file="QFab/HideIcon" />
+<doc-example title="隐藏图标" file="QFab/HideIcon" />
 
-### Padding
+### 填充
 
-The default padding for QFab is "md" and for QFabAction is "sm". However, you can use `padding` prop to customize it (accepts CSS units too):
+QFab的默认padding是 "md"，QFabAction的padding是 "sm"。然而，你可以使用`padding`属性来定制它(也接受CSS单位)。
 
-<doc-example title="Playing with padding" file="QFab/Padding" />
+<doc-example title="使用padding" file="QFab/Padding" />
 
-### Square style
+### 方形样式
 
-<doc-example title="Square style" file="QFab/SquareStyle" />
+<doc-example title="方形样式" file="QFab/SquareStyle" /> ###方形样式
 
-### Slots <q-badge align="top" color="brand-primary" label="v2.4+" />
+### 槽 <q-badge align="top" color="brand-primary" label="v2.4+" />
 
-Notice the slots for QFab and the slots for QFabAction below:
+注意下面QFab的插槽和QFabAction的插槽。
 
-<doc-example title="Slots: icon, active-icon and label" file="QFab/FabSlots" />
+<doc-example title="插槽：图标、活动图标和标签" file="QFab/FabSlots" />
 
-### With QPageSticky
+### 使用QPageSticky
 
-<doc-example title="With QPageSticky" file="QFab/PageSticky" />
+<doc-example title="使用QPageSticky" file="QFab/PageSticky" /> ### 使用QPageSticky
 
-### Draggable
+### 可拖动的
 
-Below is a nice example of using [TouchPan](/vue-directives/touch-pan) for making the QFab draggable across the screen.
+下面是一个使用[TouchPan](/vue-directives/touch-pan)使QFab在屏幕上可拖动的好示例。
 
 <doc-example title="Draggable" file="QFab/Draggable" />

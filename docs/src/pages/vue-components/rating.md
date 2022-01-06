@@ -1,65 +1,65 @@
 ---
-title: Rating
-desc: The QRating Vue component allows the user to rate items. It's usually known as 'star rating'.
+title: 评价
+desc: QRating Vue组件允许用户对物品进行评级。它通常被称为 "星级评定"。
 keys: QRating
 ---
 
-Quasar Rating is a Component which allows users to rate items, usually known as “Star Rating”.
+Quasar Rating是一个允许用户对物品进行评级的组件，通常被称为 "Star Rating"。
 
 ## QRating API
 
 <doc-api file="QRating" />
 
-## Usage
+## 使用方法
 
-### Basic
+### 基本
 
-<doc-example title="Basic" file="QRating/Basic" />
+<doc-example title="基本" file="QRating/Basic" />
 
-<doc-example title="Custom number of choices" file="QRating/Max" />
+<doc-example title="自定义选择数" file="QRating/Max" /> ## 使用方法
 
-### Icons
+### 图标
 
-<doc-example title="Image icons" file="QRating/Images" />
+<doc-example title="图像图标" file="QRating/Images" /> ###图标
 
-In the example below, when using the `icon-selected` prop, notice we can still use `icon` as well. The latter becomes the icon(s) when they are not selected.
+在下面的示例中，当使用`icon-selected`属性时，注意我们仍然可以使用`icon`。当它们没有被选中时，后者会成为图标。
 
-<doc-example title="Different icon when selected" file="QRating/SelectedIcon" />
+<doc-example title="选定时的不同图标" file="QRating/SelectedIcon" />
 
-<doc-example title="Different icon for each rating" file="QRating/ArrayIcon" />
+<doc-example title="每个评分的不同图标" file="QRating/ArrayIcon" />
 
-### Colors
+### 颜色
 
-When using the `color-selected` prop, notice we can still use `color` as well. The latter becomes the color(s) of the icons when they are not selected.
+当使用`color-selected`属性时，注意我们仍然可以使用`color`。后者成为图标未被选中时的颜色。
 
-<doc-example title="Different color for each rating" file="QRating/Colors" />
+<doc-example title="每个评级的不同颜色" file="QRating/Colors" />
 
-### Floating number
+### 浮动数
 
-<doc-example title="Different icon and color when half selected" file="QRating/HalfSelected" />
+<doc-example title="半选时不同的图标和颜色" file="QRating/HalfSelected" /> ###浮动数字
 
-### No dimming
+### 没有调光
 
-<doc-example title="No dimming" file="QRating/NoDimming" />
+<doc-example title="无调光" file="QRating/NoDimming" /> ###无调光
 
-### Tooltips
+### 工具提示
 
-Notice how we can add tooltips to each icon in the example below.
+注意我们如何在下面的示例中为每个图标添加工具提示。
 
-<doc-example title="With QTooltip" file="QRating/SlotTip" />
+<doc-example title="使用QTooltip" file="QRating/SlotTip" />
 
-### Sizes
+### 尺寸
 
-Apart from the standard sizes below, you can define your own through the `size` property.
+除了下面的标准尺寸外，你可以通过`size`属性定义你自己的尺寸。
 
-<doc-example title="Standard sizes" file="QRating/StandardSizes" />
+<doc-example title="标准尺寸" file="QRating/StandardSizes" />
 
-### Readonly and disable
+### 只读和禁用
 
-<doc-example title="Readonly and disable" file="QRating/ReadonlyDisable" />
+<doc-example title="只读和禁用" file="QRating/ReadonlyDisable" /> ### 只读和禁用
 
-### Native form submit
+### 本地表单提交
 
-When dealing with a native form which has an `action` and a `method` (eg. when using Quasar with ASP.NET controllers), you need to specify the `name` property on QRating, otherwise formData will not contain it (if it should):
+当处理一个有`action`和`method`的本地表单时(例如，当使用Quasar和ASP.NET控制器时)，你需要在QRating上指定`name`属性，否则formData将不包含它(如果应该包含)。
 
-<doc-example title="Native form" file="QRating/NativeForm" />
+<doc-example title="本地表单" file="QRating/NativeForm" />

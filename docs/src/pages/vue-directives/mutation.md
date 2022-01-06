@@ -1,37 +1,37 @@
 ---
-title: Mutation Directive
-desc: Vue directive that uses Mutation Observer API to watch for changes being made to the DOM tree.
+title: 突变指令
+desc: Vue指令，使用Mutation Observer API来观察DOM树的变化。
 keys: mutation
 ---
 
-"Mutation" is a Quasar directive that provides the ability to watch for changes being made to the DOM tree and call a method when these are triggered.
+"Mutation "是一个Quasar指令，它提供了观察DOM树变化的能力，并在这些变化被触发时调用一个方法。
 
-Under the hood, it uses the [Mutation Observer API](https://developer.mozilla.org/en-US/docs/Web/API/MutationObserver).
+在引擎盖下，它使用[Mutation Observer API](https://developer.mozilla.org/en-US/docs/Web/API/MutationObserver)。
 
-## Mutation API
+## 突变API
 
 <doc-api file="Mutation" />
 
-## Usage
+## 使用方法
 
-Reading the [Mutation Observer API](https://developer.mozilla.org/en-US/docs/Web/API/MutationObserver) first will be best in your understanding of how this directive works.
+首先阅读[Mutation Observer API](https://developer.mozilla.org/en-US/docs/Web/API/MutationObserver)将对你理解这个指令的工作方式有很大帮助。
 
-The handler Function takes one parameter, which is an Array of [MutationRecord](https://developer.mozilla.org/en-US/docs/Web/API/MutationRecord).
+处理函数需要一个参数，它是一个[MutationRecord](https://developer.mozilla.org/en-US/docs/Web/API/MutationRecord)的数组。
 
-### Catch everything
+### 抓住一切
 
-By not specifying any modifiers (except for "once"), the Mutation directive will enable all of them.
+通过不指定任何修改器(除了 "一次")，突变指令将启用所有的修改器。
 
-<doc-example title="Catch everything" file="Mutation/CatchAll" />
+<doc-example title="捕捉一切" file="Mutation/CatchAll" />
 
-### Drag and drop example
+### 拖放示例
 
-The example below will only work for desktops because of the Drag and drop browser API support. Drag the colored squares to the other location to see the Mutation Observers results.
+由于拖放浏览器API的支持，下面的示例只对台式机有效。将彩色方块拖到其他位置，以查看突变观测器的结果。
 
-<doc-example title="Drag and Drop (desktop only)" file="Mutation/DragDrop" />
+<doc-example title="拖放(仅限桌面)" file="Mutation/DragDrop" />
 
-### Undo-redo example
+### 撤销-重做示例
 
-One use-case for the Mutation Observer is implementing an Undo/Redo stack in your application. You can observe additions and removals of data, depending on your filtering requirements. You can capture the mutations in a stack and use the stack to implement an undo. Any mutation data during an undo, can go into a redo stack. Don't forget to clear the redo stack when normalized data is being put into the undo stack.
+突变观测器的一个用例是在你的应用程序中实现一个撤消/重做堆栈。你可以根据你的过滤要求，观察数据的添加和删除。你可以在栈中捕获突变，并使用栈来实现撤销。撤销过程中的任何突变数据，都可以进入重做栈。当规范化的数据被放入撤销堆栈时，不要忘记清除重做堆栈。
 
-<doc-example title="Undo/Redo" file="Mutation/UndoRedo" />
+<doc-example title="撤销/重做" file="Mutation/UndoRedo" />

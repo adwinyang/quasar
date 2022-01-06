@@ -1,48 +1,48 @@
 ---
-title: Pagination
-desc: The QPagination Vue component allows you to easily display a pagination control on a page.
+title: 分页
+desc: QPagination Vue组件允许你轻松地在页面上显示一个分页控件。
 keys: QPagination
 ---
-The QPagination component is available for whenever a pagination system is required. It offers the user a simple UI for moving between items or pages.
+QPagination组件可用于任何需要分页系统的地方。它为用户提供了一个在项目或页面之间移动的简单用户界面。
 
-There are two modes in which QPagination operates: with buttons only or with an inputbox. The latter allows the user to go to a specific page by clicking/tapping on the inputbox, typing the page number then hitting Enter key. If the new page number is within valid limits, the model will be changed accordingly.
+QPagination有两种操作模式：只使用按钮或使用输入框。后者允许用户通过点击/敲击输入框，输入页码，然后按回车键，转到一个特定的页面。如果新的页码在有效范围内，模型将被相应改变。
 
 ## QPagination API
 
 <doc-api file="QPagination" />
 
-## Usage
+## 使用方法
 
-### Standard
+### 标准
 
-<doc-example title="Standard" file="QPagination/Standard" />
+<doc-example title="标准" file="QPagination/Standard" />
 
-### Custom icons
+### 自定义图标
 
-<doc-example title="With icon replacement" file="QPagination/Icons" />
+<doc-example title="用图标替换" file="QPagination/Icons" /> ###自定义图标
 
-### With input
+### 带输入
 
-<doc-example title="With input" file="QPagination/Input" />
+<doc-example title="有输入" file="QPagination/Input" /> ### 有输入
 
-<doc-example title="With input color" file="QPagination/InputColor" />
+<doc-example title="带输入颜色" file="QPagination/InputColor" /> ###带输入颜色
 
-### Max pages shown
+### 显示的最大页面
 
-<doc-example title="Maximum pages shown" file="QPagination/MaxPages" />
+<doc-example title="显示的最大页数" file="QPagination/MaxPages" /> ### 最大显示页数
 
-<doc-example title="Removing ellipses" file="QPagination/Ellipses" />
+<doc-example title="移除省略号" file="QPagination/Ellipses" /> ### 处理边界问题。
 
-### Handling boundary
+### 处理边界
 
-<doc-example title="With boundary numbers" file="QPagination/BoundaryNumbers" />
+<doc-example title="使用边界数字" file="QPagination/BoundaryNumbers" /> ###处理边界
 
-<doc-example title="With boundary links" file="QPagination/BoundaryLinks" />
+<doc-example title="有边界链接" file="QPagination/BoundaryLinks" /> ###处理边界
 
-<doc-example title="With direction links" file="QPagination/DirectionLinks" />
+<doc-example title="带方向链接" file="QPagination/DirectionLinks" />
 
-### Styles
+### 样式
 
-The following are a few examples, but not an exhaustive list:
+下面是一些示例，但不是一个详尽的清单。
 
-<doc-example title="Styles" file="QPagination/Styles" />
+<doc-example title="样式" file="QPagination/Styles" />#### 样式的示例。

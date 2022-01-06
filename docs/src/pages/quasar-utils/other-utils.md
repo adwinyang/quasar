@@ -1,21 +1,21 @@
 ---
-title: Other Utils
-desc: A set of miscellaneous Quasar methods for debouncing or throttling functions, deep copying objects, cross-platform URL opening or handling DOM events.
+title: 其他用途
+desc: 一组杂七杂八的Quasar方法，用于调试或节流功能、深度复制对象、跨平台URL打开或处理DOM事件。
 keys: openURL,copyToClipboard,exportFile,debounce,frameDebounce,throttle,extend,uid,event
 ---
 
 ::: tip
-For usage with the UMD build see [here](/start/umd#quasar-global-object).
+关于UMD构建的用法，见[here](/start/umd#quasar-global-object)。
 :::
 
-## Open External URL
+## 打开外部URL
 
 ```js
 import { openURL } from 'quasar'
 
 openURL('http://...')
 
-// full syntax:
+// 完整的语法。
 openURL(
   String url,
   Function rejectFn, // optional; gets called if window cannot be opened
@@ -23,56 +23,56 @@ openURL(
 )
 ```
 
-It will take care of the quirks involved when running under Cordova, Electron or on a browser, including notifying the user he/she has to acknowledge opening popups.
+它将处理在Cordova、Electron或浏览器上运行时涉及的古怪问题，包括通知用户他/她必须确认打开弹出窗口。
 
-When wrapping with Cordova (or Capacitor), it's best (but not "a must do") if [InAppBrowser](https://cordova.apache.org/docs/en/latest/reference/cordova-plugin-inappbrowser/) Cordova plugin is also installed, so that openURL can hook into that.
+当用Cordova(或Capacitor)包装时，最好(但不是 "必须做")是[InAppBrowser](https://cordova.apache.org/docs/en/latest/reference/cordova-plugin-inappbrowser/) Cordova插件也被安装，这样openURL就可以钩住它。
 
-If running on iOS and [cordova-plugin-safariviewcontroller](https://github.com/EddyVerbruggen/cordova-plugin-safariviewcontroller) is installed, then openURL will first try to hook into it.
+如果在iOS上运行，并且安装了[cordova-plugin-safariviewcontroller](https://github.com/EddyVerbruggen/cordova-plugin-safariviewcontroller)，那么openURL将首先尝试挂接到它。
 
-The optional `windowFeatures` parameter should be an Object with keys from [window.open() windowFeatures](https://developer.mozilla.org/en-US/docs/Web/API/Window/open) and Boolean values (as described in the example below). Please note that these features will not be taken into account when openURL does not defers to using `window.open()`.
+可选的`windowFeatures`参数应该是一个对象，其键值来自[window.open() windowFeatures](https://developer.mozilla.org/en-US/docs/Web/API/Window/open)和布尔值(如下面的示例所述)。请注意，当openURL没有默认使用`window.open()`时，这些特征将不会被考虑。
 
 ```js
-// example of openURL() with windowFeatures:
+// openURL()与windowFeatures的示例。
 
 openURL(
   'http://...',
   null, // in this example we don't care about the rejectFn()
 
-  // this is the windowFeatures Object param:
+  // 这是windowFeatures对象的参数。
   {
     noopener: true, // this is set by default for security purposes
-                    // but it can be disabled if specified with a Boolean false value
+                    // 但如果用一个布尔假值来指定，它可以被禁用。
     menubar: true,
     toolbar: true,
     noreferrer: true,
-    // .....any other window features
+    // .....any 其他窗口功能
   }
 )
 ```
 
 ::: tip
-If you want to open the telephone dialer in a Cordova app, don't use `openURL()`. Instead you should directly use `<a href="tel:123456789">` tags or `<QBtn href="tel:123456789">`
+如果你想在Cordova应用程序中打开电话拨号器，不要使用`openURL()`。相反，你应该直接使用`<a href="tel:123456789">`标签或`<QBtn href="tel:123456789">`。
 :::
 
-## Copy to Clipboard
+## 复制到剪贴板
 
-The following is a helper to copy some text to Clipboard. The method returns a Promise.
+下面是一个将一些文本复制到剪贴板的辅助工具。该方法返回一个Promise。
 
 ```js
 import { copyToClipboard } from 'quasar'
 
 copyToClipboard('some text')
   .then(() => {
-    // success!
+    // 成功!
   })
   .catch(() => {
-    // fail
+    // 不合格
   })
 ```
 
-## Export file
+## 导出文件
 
-The following is a helper to trigger the browser to start downloading a file with the specified content.
+下面是一个帮助程序，用于触发浏览器开始下载一个具有指定内容的文件。
 
 ```js
 /**
@@ -86,25 +86,25 @@ The following is a helper to trigger the browser to start downloading a file wit
  */
 ```
 
-The `opts` parameter is optional and can be a String (mimeType) or an Object with the following form:
+参数`opts`是可选的，可以是一个字符串(mimeType)或一个对象，其形式如下。
 
- * **mimeType** (optional)
+**mimeType** (可选)
 
-   Examples: 'application/octect-stream' (default), 'text/plain', 'application/json', 'text/plain;charset=UTF-8', 'video/mp4', 'image/png', 'application/pdf'
-   [https://developer.mozilla.org/en-US/docs/Web/HTTP/Basics_of_HTTP/MIME_types](https://developer.mozilla.org/en-US/docs/Web/HTTP/Basics_of_HTTP/MIME_types)
+示例。'application/octect-stream'(默认)，'text/plain'，'application/json'，'text/plain;charset=UTF-8'，'video/mp4'，'image/png'，'application/pdf'
+[https://developer.mozilla.org/en-US/docs/Web/HTTP/Basics_of_HTTP/MIME_types](https://developer.mozilla.org/en-US/docs/Web/HTTP/Basics_of_HTTP/MIME_types)
 
- * **byteOrderMark** (optional)
+**byteOrderMark** (可选)
 
-   (BOM) Example: '\uFEFF'
-   [https://en.wikipedia.org/wiki/Byte_order_mark](https://en.wikipedia.org/wiki/Byte_order_mark)
+(BOM) 例如：'\uFEFF'
+[https://en.wikipedia.org/wiki/Byte_order_mark](https://en.wikipedia.org/wiki/Byte_order_mark)
 
- * **encoding** (optional)
+**encoding** (可选)
 
-   Performs a TextEncoder.encode() over the rawData;
-   Example: 'windows-1252' (ANSI, a subset of ISO-8859-1)
-   [https://developer.mozilla.org/en-US/docs/Web/API/TextEncoder](https://developer.mozilla.org/en-US/docs/Web/API/TextEncoder)
+在rawData上执行TextEncoder.encode()。
+例如：'windows-1252' (ANSI，ISO-8859-1的一个子集)
+[https://developer.mozilla.org/en-US/docs/Web/API/TextEncoder](https://developer.mozilla.org/en-US/docs/Web/API/TextEncoder)
 
-Examples:
+示例。
 
 ```js
 import { exportFile } from 'quasar'
@@ -112,10 +112,10 @@ import { exportFile } from 'quasar'
 const status = exportFile('important.txt', 'some content')
 
 if (status === true) {
-  // browser allowed it
+  // 浏览器允许它
 }
 else {
-  // browser denied it
+  // 浏览器拒绝了它
   console.log('Error: ' + status)
 }
 ```
@@ -129,31 +129,31 @@ const status = exportFile('file.csv', 'éà; ça; 12\nà@€; çï; 13', {
 })
 
 if (status === true) {
-  // browser allowed it
+  // 浏览器允许它
 }
 else {
-  // browser denied it
+  // 浏览器拒绝了它
   console.error('Error: ' + status)
 }
 ```
 
-## Debounce Function
-If your App uses JavaScript to accomplish taxing tasks, a debounce function is essential to ensuring a given task doesn't fire so often that it bricks browser performance. Debouncing a function limits the rate at which the function can fire.
+## 退避功能
+如果你的应用程序使用JavaScript来完成繁重的任务，那么debounce函数对于确保一个特定的任务不至于频繁启动而影响浏览器的性能是至关重要的。放弃一个函数限制了该函数的启动速度。
 
-Debouncing enforces that a function not be called again until a certain amount of time has passed without it being called. As in "execute this function only if 100 milliseconds have passed without it being called."
+退避函数要求在一定时间内没有被调用之前，不能再次调用某个函数。就像 "只有在100毫秒没有被调用的情况下才执行这个函数"。
 
-A quick example: you have a resize listener on the window which does some element dimension calculations and (possibly) repositions a few elements. That isn't a heavy task in itself but being repeatedly fired after numerous resizes will really slow your App down. So why not limit the rate at which the function can fire?
+一个简单的示例：你在窗口上有一个调整大小的监听器，它做一些元素的尺寸计算，并(可能)调整一些元素的位置。这本身并不是一个繁重的任务，但在多次调整大小后被反复触发，会使你的应用程序变得非常慢。那么，为什么不限制这个函数的启动速度呢？
 
 ```js
-// Returns a function, that, as long as it continues to be invoked, will not
-// be triggered. The function will be called after it stops being called for
-// N milliseconds. If `immediate` is passed, trigger the function on the
-// leading edge, instead of the trailing.
+// 返回一个函数，只要它继续被调用，就不会
+// 被触发。该函数将在它停止被调用后为
+// N毫秒。如果 "immediate "被传入，则在以下情况下触发该函数
+// 前缘，而不是后缘。
 import { debounce } from 'quasar'
 
 (Debounced Function) debounce(Function fn, Number milliseconds_to_wait, Boolean immediate)
 
-// Example:
+// 示例。
 window.addEventListener(
   'resize',
   debounce(function() {
@@ -162,7 +162,7 @@ window.addEventListener(
 )
 ```
 
-Or calling as a method in a .vue file:
+或者在.vue文件中作为一个方法调用。
 
 ```js
 methods: {
@@ -175,17 +175,17 @@ created () {
 ```
 
 ::: warning
-Debouncing your functions using a method declaration like `myMethod: debounce(function () { // Code }, 500)` will mean that the debounced method will be shared between *all* rendered instances of this component, so debouncing is also shared. Moreover, `this.myMethod.cancel()` won't work, because Vue wraps each method with another function to ensure proper `this` binding. This should be avoided by following the code snippet above.
+使用`myMethod: debounce(function () { // Code }, 500)`这样的方法声明来调试你的函数，将意味着被调试的方法将在这个组件的*所有*渲染实例之间共享，所以调试也是共享的。此外，`this.myMethod.cancel()`不会起作用，因为Vue用另一个函数包装每个方法，以确保正确的`this`绑定。按照上面的代码片断，应该可以避免这种情况。
 :::
 
-There's also a `frameDebounce` available which delays calling your function until next browser frame is scheduled to run (read about `requestAnimationFrame`).
+还有一个`frameDebounce`可用，它可以推迟调用你的函数，直到下一个浏览器帧被安排运行(阅读`requestAnimationFrame`)。
 
 ```js
 import { frameDebounce } from 'quasar'
 
 (Debounced Function) frameDebounce(Function fn)
 
-// Example:
+// 示例。
 window.addEventListener(
   'resize',
   frameDebounce(function() {
@@ -194,15 +194,15 @@ window.addEventListener(
 )
 ```
 
-## Throttle Function
-Throttling enforces a maximum number of times a function can be called over time. As in "execute this function at most once every X milliseconds."
+## 节流功能
+节流执行了一个函数在一段时间内可以被调用的最大次数。如 "每隔X毫秒最多执行一次此函数"。
 
 ```js
 import { throttle } from 'quasar'
 
 (Throttled Function) throttle(Function fn, Number limit_in_milliseconds)
 
-// Example:
+// 示例。
 window.addEventListener(
   'resize',
   throttle(function() {
@@ -211,7 +211,7 @@ window.addEventListener(
 )
 ```
 
-Or calling as a method in a .vue file:
+或者在.vue文件中作为一个方法调用。
 
 ```js
 methods: {
@@ -224,11 +224,11 @@ created () {
 ```
 
 ::: warning
-Throttling your functions using a method declaration like `myMethod: throttle(function () { // Code }, 500)` will mean that the throttled method will be shared between *all* rendered instances of this component, so throttling is also shared. This should be avoided by following the code snippet above.
+使用`myMethod: throttle(function () { // Code }, 500)`这样的方法声明来节制你的函数，将意味着被节制的方法将在这个组件的*所有*渲染实例之间共享，所以节制也是共享的。这应该通过遵循上面的代码片断来避免。
 :::
 
-## (Deep) Copy Objects
-A basic respawn of `jQuery.extend()`. Takes same parameters:
+## (深度)复制对象
+`jQuery.extend()'的一个基本重生。采取相同的参数。
 
 ```js
 import { extend } from 'quasar'
@@ -236,49 +236,49 @@ import { extend } from 'quasar'
 let newObject = extend([Boolean deepCopy], targetObj, obj, ...)
 ```
 
-Watch out for methods within objects.
+注意对象内的方法。
 
-## Generate UID
-Generate unique identifiers:
+## 生成UID
+生成唯一的标识符。
 
 ```js
 import { uid } from 'quasar'
 
 let uid = uid()
-// Example: 501e7ae1-7e6f-b923-3e84-4e946bff31a8
+// 例如：501e7ae1-7e6f-b923-3e84-4e946bff31a8
 ```
 
-## Handling event on a DOM event handler
-It's cross-browser.
+## 在DOM事件处理程序上处理事件
+它是跨浏览器的。
 
 ```js
 import { event } from 'quasar'
 
 node.addEventListener('click', evt => {
-  // left clicked?
+  // 左键点击？
   (Boolean) event.leftClick(evt)
 
-  // middle clicked?
+  // 中间点击了？
   (Boolean) event.middleClick(evt)
 
-  // right clicked?
+  // 右键点击？
   (Boolean) event.rightClick(evt)
 
-  // key in number format
+  // 数字格式的键
   (Number) event.getEventKey(evt)
 
-  // Mouse wheel distance (in pixels)
+  // 鼠标滚轮距离(单位：像素)
   (Object {x, y}) event.getMouseWheelDistance(evt)
 
-  // position on viewport
-  // works both for mouse and touch events!
+  // 在视口上的位置
+  // 对鼠标和触摸事件都有效!
   (Object {top, left}) event.position(evt)
 
-  // get target DOM Element on which mouse or touch
-  // event has fired upon
+  // 获取鼠标或触摸的目标DOM元素
+  // 事件已在
   (DOM Element) event.targetElement(evt)
 
-  // call stopPropagation and preventDefault
+  // 调用stopPropagation和preventDefault
   event.stopAndPrevent(evt)
 })
 ```

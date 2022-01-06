@@ -1,94 +1,94 @@
 ---
-title: Configuring Electron
-desc: How to manage your Electron apps with Quasar CLI.
+title: 配置电子
+desc: 如何用Quasar CLI管理你的Electron应用程序。
 related:
   - /quasar-cli/quasar-conf-js
 ---
-We'll be using Quasar CLI to develop and build an Electron App. The difference between building a SPA, PWA, Mobile App or an Electron App is simply determined by the "mode" parameter in "quasar dev" and "quasar build" commands.
+我们将使用Quasar CLI来开发和构建一个Electron App。构建SPA、PWA、移动应用或Electron应用之间的区别只是由 "quasar dev "和 "quasar build "命令中的 "mode "参数决定。
 
-But first, let's learn how we can configure the Electron build.
+但首先，让我们学习一下如何配置Electron构建。
 
 ## Quasar.conf.js
-You may notice that `/quasar.conf.js` contains a property called `electron`.
+你可能会注意到，`/quasar.conf.js`包含一个名为`电子'的属性。
 
 ```js
-// should you wish to change default files
-// (notice no extension, so it resolves to both .js and .ts)
+// 如果你想改变默认文件
+// (注意到没有扩展名，所以它可以解析为.js和.ts)
 sourceFiles: {
   electronMain: 'src-electron/electron-main',
   electronPreload: 'src-electron/electron-preload'
 },
 
-// electron configuration
+// 电子配置
 electron: {
   bundler: 'packager', // or 'builder'
 
-  // electron-packager options
+  // 电子包装器选项
   // https://electron.github.io/electron-packager/master/
   packager: {
     //...
   },
 
-  // electron-builder options
+  // 电子构建器选项
   // https://www.electron.build/configuration/configuration
   builder: {
     //...
   },
 
-  // Specify additional parameters when yarn/npm installing
-  // the UnPackaged folder, right before bundling with either
-  // electron packager or electron builder;
-  // Example: [ '--ignore-optional', '--some-other-param' ]
+  // 在yarn/npm安装时指定额外参数
+  // 捆绑前，在未打包的文件夹中，与以下任何一种文件捆绑在一起
+  // 电子包装师或电子建造师。
+  // 示例。['--ignore-optional', '--some-other-param' ]
   unPackagedInstallParams: [],
 
-  // optional; add/remove/change properties
-  // of production generated package.json
+  // 可选；添加/删除/更改属性
+  // 生产中生成的软件包.json的
   extendPackageJson (pkg) {
-    // directly change props of pkg;
-    // no need to return anything
+    // 直接改变属性的包。
+    // 不需要归还任何东西
   },
 
-  // optional; webpack config Object for
-  // the Main Process ONLY (/src-electron/main-process/electron-main.js)
+  // 可选的；webpack的配置对象
+  // 只有主进程(/src-electron/main-process/electron-main.js)。
   extendWebpackMain (cfg) {
-    // directly change props of cfg;
-    // no need to return anything
+    // 直接改变cfg的props。
+    // 不需要归还任何东西
   },
 
-  // optional; EQUIVALENT to extendWebpackMain() but uses webpack-chain;
-  // for the Main Process ONLY (/src-electron/main-process/electron-main.js)
+  // optional; 等同于extendWebpackMain()，但使用webpack-chain。
+  // 仅用于主进程(/src-electron/main-process/electron-main.js)。
   chainWebpackMain (chain) {
-    // chain is a webpack-chain instance
-    // of the Webpack configuration
+    // 链是一个webpack-chain实例
+    // 的Webpack配置
 
-    // example:
+    // 示例。
     // chain.plugin('eslint-webpack-plugin')
-    //   .use(ESLintPlugin, [{ extensions: [ 'js' ] }])
+    //   .use(ESLintPlugin, [{ extensions: [ 'js' ] }] )
   },
 
-  // optional; webpack config Object for
-  // the Preload Process ONLY (/src-electron/main-process/electron-preload.js)
+  // 可选的；webpack的配置对象
+  // 只有预加载过程(/src-electron/main-process/electron-preload.js)。
   extendWebpackPreload (cfg) {
-    // directly change props of cfg;
-    // no need to return anything
+    // 直接改变cfg的props。
+    // 不需要归还任何东西
   },
 
-  // optional; EQUIVALENT to extendWebpackPreload() but uses webpack-chain;
-  // for the Preload Process ONLY (/src-electron/main-process/electron-preload.js)
+  // optional; 等同于extendWebpackPreload()，但使用webpack-chain。
+  // 仅用于预加载过程(/src-electron/main-process/electron-preload.js)。
   chainWebpackPreload (chain) {
-    // chain is a webpack-chain instance
-    // of the Webpack configuration
+    // 链是一个webpack-chain实例
+    // 的Webpack配置
 
-    // example:
+    // 示例。
     // chain.plugin('eslint-webpack-plugin')
-    //   .use(ESLintPlugin, [{ extensions: [ 'js' ] }])
+    //   .use(ESLintPlugin, [{ extensions: [ 'js' ] }] )
   }
 }
 ```
 
-The "packager" prop refers to [electron-packager options](https://github.com/electron-userland/electron-packager/blob/master/docs/api.md#options). The `dir` and `out` properties are overwritten by Quasar CLI to ensure the best results.
+"packager "属性指的是[electron-packager options](https://github.com/electron-userland/electron-packager/blob/master/docs/api.md#options)。`dir`和`out`属性会被Quasar CLI覆盖以确保最佳效果。
 
-The "builder" prop refers to [electron-builder options](https://www.electron.build/configuration/configuration).
+builder "属性指的是[electron-builder options](https://www.electron.build/configuration/configuration)。
 
-## Packager vs. Builder
-You have to choose to use either packager or builder. They are both excellent open-source projects, however they serve slightly different needs. With packager you will be able to build unsigned projects for all major platforms from one machine (with restrictions). Although this is great, if you just want something quick and dirty, there is more platform granularity (and general polish) in builder. Cross-compiling your binaries from one computer doesn't really work with builder (or we haven't found the recipe yet...)
+## 打包者与构建者
+你必须选择使用打包器或构建器。它们都是优秀的开源项目，但是它们的需求略有不同。使用packager，你将能够从一台机器上为所有主要的平台构建未签署的项目(有限制)。虽然这很好，但如果你只是想做一些快速和肮脏的事情，在构建器中有更多的平台粒度(和一般抛光)。在一台电脑上交叉编译你的二进制文件，在builder中并不奏效(或者我们还没有找到配方......)。

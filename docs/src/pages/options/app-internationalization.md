@@ -1,54 +1,54 @@
 ---
-title: App Internationalization (i18n)
-desc: How to use vue-i18n in a Quasar app.
+title: 应用程序国际化(i18n)
+desc: 如何在Quasar应用程序中使用 vue-i18n。
 related:
   - /options/rtl-support
   - /options/quasar-language-packs
 ---
 
-Internationalization is a design process that ensures a product (a website or application) can be adapted to various languages and regions without requiring engineering changes to the source code. Think of internationalization as readiness for localization.
+国际化是一个设计过程，它确保产品(网站或应用程序)可以适应不同的语言和地区，而无需对源代码进行工程更改。将国际化视为本地化的准备。
 
 ::: tip
-The recommended package for handling website/app is [vue-i18n](https://github.com/intlify/vue-i18n-next). This package should be added through a [Boot File](/quasar-cli/boot-files). On the Boot File documentation page you can see a specific example for plugging in vue-i18n.
+处理网站/应用程序的推荐包是 [vue-i18n](https://github.com/intlify/vue-i18n-next) 。这个软件包应该通过[Boot File](/quasar-cli/boot-files)添加。在Boot File文档页面，你可以看到一个插入 vue-i18n 的具体示例。
 :::
 
 ::: warning
-Quasar documentation assumes you are already familiar with [vue-i18n](https://github.com/intlify/vue-i18n-next). Below it's described only the basics of how to make use of it in a Quasar CLI project. For the full list of its features please visit the [Vue I18n documentation](https://vue-i18n.intlify.dev).
+Quasar文档假定你已经熟悉了[vue-i18n](https://github.com/intlify/vue-i18n-next) 。下面我们只描述了如何在Quasar CLI项目中使用它的基本情况。对于其功能的完整列表，请访问 [Vue I18n documentation](https://vue-i18n.intlify.dev) 。
 :::
 
-## Setup manually
+## 手动设置
 
-If you missed enabling i18n during `quasar create` wizard, here is how you can set it up manually.
+如果你在 `quasar create` 向导中错过了启用 i18n，以下介绍如何手动设置。
 
-1. Install the `vue-i18n` dependency into your app.
+1. 在你的应用程序中安装 `vue-i18n` 依赖项。
 
 ```bash
 $ yarn add vue-i18n@next
-// or:
+// 或:
 $ npm install vue-i18n@next
 ```
 
-2. Create a file `src/boot/i18n.js` with following content:
+2. 创建一个`src/boot/i18n.js`文件，内容如下:
 
 ```js
 import { createI18n } from 'vue-i18n'
 import messages from 'src/i18n'
 
 export default ({ app }) => {
-  // Create I18n instance
+  // 创建 i18n 实例
   const i18n = createI18n({
     locale: 'en-US',
     messages
   })
 
-  // Tell app to use the I18n instance
+  // 告诉应用程序使用I18n实例
   app.use(i18n)
 }
 ```
 
-3. Create a folder (/src/i18n/) in your app which will hold the definitions for each language that you'll support. Example: [src/i18n](https://github.com/quasarframework/quasar-starter-kit/tree/master/template/src/i18n). Notice the "import messages from 'src/i18n'" from step 2. This is step where you write the content that gets imported.
+3. 在你的应用程序中创建一个文件夹(/src/i18n/)，该文件夹将存放你将支持的每种语言的定义。例如：[src/i18n](https://github.com/quasarframework/quasar-starter-kit/tree/master/template/src/i18n) 。注意第2步中的 "从'src/i18n'导入消息"。这一步是你编写被导入内容的地方。
 
-4. Now reference this file in `quasar.config.js` in the `boot` section:
+4. 现在在`quasar.config.js`中的`boot`部分引用这个文件。
 
 ```js
 // quasar.conf.js
@@ -62,21 +62,21 @@ return {
 }
 ```
 
-Now you are ready to use it in your pages.
+现在你已经准备好在你的页面中使用它了。
 
-## Setting up Translation Blocks in your SFCs
+## 在你的SFC中设置翻译块
 
-If we want to add support to the `<i18n>` tag inside a SFC (single file component) in a Quasar CLI project then we need to modify the existing configuration.
+如果我们想在Quasar CLI项目中的SFC(单一文件组件)内添加对`<i18n>`标签的支持，那么我们需要修改现有的配置。
 
-We first install the `@intlify/vue-i18n-loader` package:
+我们首先安装`@intlify/vue-i18n-loader`包。
 
-``` bash
+```bash
 $ yarn add --dev @intlify/vue-i18n-loader
 # or
 $ npm i --save-dev @intlify/vue-i18n-loader
 ```
 
-We then edit `quasar.conf.js` at the root of our project. We have to include the following:
+然后我们在项目的根部编辑`quasar.conf.js`。我们必须包括以下内容。
 
 ```js
 // quasar.conf.js
@@ -103,11 +103,11 @@ build: {
 }
 ```
 
-## How to use
+## 如何使用
 
-There are 3 main cases:
+有3种主要情况:
 
-```html
+``` html
 <template>
   <q-page>
     <q-btn :label="$t('mykey2')">
@@ -127,16 +127,16 @@ export default {
 </script>
 ```
 
-1. `mykey1` in HTML body
-2. `mykey2` in attribute
-3. `mykey3` programmatically
+1. `mykey1`在HTML正文中
+2. `mykey2`在属性中
+3. `mykey3`程序化
 
-## Add new language
+## 添加新的语言
 
-Let's say you want to add new German language.
+假设你想添加新的德语。
 
-1. Create the new file `src/i18n/de/index.js` and copy there the content of the file `src/i18n/en-US/index.js` then make changes to the language strings.
-2. Now change `src/i18n/index.js` and add the new `de` language there.
+1. 创建新文件`src/i18n/de/index.js`并将文件`src/i18n/en-US/index.js`的内容复制到那里，然后对语言字符串进行修改。
+2. 现在改变`src/i18n/index.js`并在那里添加新的`de`语言。
 
 ```js
 import enUS from './en-US'
@@ -148,7 +148,7 @@ export default {
 }
 ```
 
-## Create language switcher
+## 创建语言切换器
 
 ```html
 <!-- some .vue file -->
@@ -189,31 +189,31 @@ export default {
 </script>
 ```
 
-## UPPERCASE
-Many languages, such as Greek, German and Dutch have non-intuitive rules for uppercase display, and there is an edge case that you should be aware of:
+## 大写字母
+许多语言，如希腊语、德语和荷兰语对大写字母的显示有非直观的规则，有一种边缘情况你应该注意。
 
-QBtn component will use the CSS `text-transform: uppercase` rule to automatically turn its label into all-caps. According to the [MDN webdocs](https://developer.mozilla.org/en-US/docs/Web/CSS/text-transform), "The language is defined by the lang HTML attribute or the xml:lang XML attribute." Unfortunately, this has spotty implementation across browsers, and the 2017 ISO standard for the uppercase German eszett `ß` has not really entered the canon. At the moment you have two options:
+QBtn组件会使用CSS的`text-transform: uppercase`规则来自动将其标签变成大写字母。根据[MDN webdocs](https://developer.mozilla.org/en-US/docs/Web/CSS/text-transform) ，"语言是由lang HTML属性或xml:lang XML属性定义的。" 不幸的是，这在各浏览器中的实施情况不尽相同，2017年ISO标准中的大写德语eszett `ß`还没有真正进入正典。目前，你有两个选择：
 
-1. use the prop `no-caps` in your label and write the string as it should appear
-2. use the prop `no-caps` in your label and rewrite the string with [toLocaleUpperCase](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/toLocaleUpperCase) by using the locale as detected by `$q.lang.getLocale()`
+1.在你的标签中使用 `no-caps` 这个属性，并按照字符串的样子来写。
+2. 在你的标签中使用 `no-caps` 属性，并使用 `$q.lang.getLocale()` 检测到的语言环境，用[toLocaleUpperCase](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/toLocaleUpperCase) 重写该字符串。
 
-## Detecting Locale
-There's also a method to determine user locale which is supplied by Quasar out of the box:
+## 检测语言环境
+还有一种确定用户地域的开箱即用的方法，由Quasar提供：
 
 ```js
-// outside of a Vue file
+// 在Vue文件之外
 import { Quasar } from 'quasar'
 Quasar.lang.getLocale() // returns a string
 
-// inside of a Vue file
+// 在一个Vue文件中
 import { useQuasar } from 'quasar'
 
 setup () {
   const $q = useQuasar()
-  $q.lang.getLocale() // returns a string
+  $q.lang.getLocale() // 返回一个字符串
 }
 ```
 
 ::: warning
-If you use Quasar's set method (`$q.lang.set()`), this will not be reflected by Quasar's getLocale above. The reason for this is that `getLocale()` will always return the *users* locale (based on browser settings). The `set()` method refers to Quasars internal locale setting which is used to determine which language file to use. If you would like to see which language has been set using `set()` you can use `$q.lang.isoName`.
+如果你使用Quasar的设置方法(`$q.lang.set()`)，这将不会反映在上面的 Quasar 的 getLocale 中。原因是`getLocale()`将总是返回*用户*的语言环境设置(基于浏览器的设置)。`set()`方法是指Quasars内部的设置，用来决定使用哪种语言文件。如果你想看看`set()`设置的语言环境，可以使用`$q.lang.isoName`。
 :::

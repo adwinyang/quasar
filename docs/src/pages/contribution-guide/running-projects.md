@@ -1,30 +1,30 @@
 ---
-title: Active Project, Goals and Maintainers
-desc: Quasar's active projects, goals and maintainers.
+title: 积极的项目，目标和维护者
+desc: Quasar的积极项目，目标和维护者。
 ---
 
-## List of Projects with Active Maintainer
+## 有活跃维护者的项目列表
 
-| Project | Responsibility | Maintainer | Repo, Links |
+| 项目 | 责任  | 维护者 | repo，链接 |
 | --- | --- | --- | --- |
-| Core UI, CLI, IconGenie | Ultimate responsibility of the Quasar, Quasar Core | Razvan | [Main repo](https://github.com/quasarframework/quasar) |
-| Media | Quasar is well known in JavaScript / Vue.js / backend / mobile and desktop dev community | Scott | [Facebook](https://www.facebook.com/QuasarFramework), [Medium](https://medium.com/quasar-framework), [Twitter](https://twitter.com/quasarframework) |
-| BEX | Browser Extension CLI mode | Allan | [#76](https://github.com/quasarframework/quasar/issues/76)|
-| UI App Ext | Create and maintain UI extensions | Jeff | |
-| Firebase | Knowledge base articles - [dev.to/quasar](https://dev.to/quasar) : "To the Stars with Quasar & Firebase" | Adam |
-| Quasar ESLint plugin | Plugin for ESLint with Quasar upgrade support warnings  | Jeff | [repo](https://github.com/quasarframework/eslint-plugin-quasar)|
-| Typescript support | Full Typescript support for Quasar | Paolo, Kerry | [repo](https://github.com/quasarframework/app-extension-typescript) |
-| Quasar Testing AE | Maintenance and enhancements | Paolo | [repo](https://github.com/quasarframework/quasar-testing) |
+| 核心 UI，CLI，ICONGENIE | Quasar 的最终责任，Quasar 核心 | Razvan | [主仓库](https://github.com/quasarframework/quasar) |
+| 媒体 | Quasar 在 JavaScript / Vue.js / backend / 移动和桌面开发社区中广为人知 | [Facebook](https://www.facebook.com/quasarframework), [Medium](https://medium.com/quasar-framework),  [Twitter](https：//twitter.com/quasarframework) |
+| Bex | 浏览器扩展CLI模式 | Allan | [#76](https://github.com/quasarframework/quasar/issues/76) |
+| UI App Ext | 创建和维护UI扩展  | Jeff | |
+| Firebase | 知识库文章 -  [dev.to/quasar](https://dev.to/quasar)：“与Quasar和Firebase一起走向星空” | Adam |
+| Quasar eslint 插件 | eslint的插件与Quasar升级支持警告 | Jeff | [repo](https://github.com/quasarframework/eslint-plugin-quasar) |
+| TypeScript 支持 | Quasar 完整的 TypeScript 支持 | Paolo，Kerry | [repo](https://github.com/quasarframework/app-extension-typescript) |
+| Quasar 测试 AE | 维护和增强 | Paolo | [repo](https://github.com/quasarframework/quasar-testing) |
 
-## List of Projects Where New Maintainer is Needed
-These projects are an inevitable part of the Quasar framework, but to keep on our promise "to raise the bar for web development as a whole" we are looking for an active maintainer.
+## 需要新维护者的项目列表
+这些项目是Quasar框架的不可避免的一部分，但要继续我们的承诺，“我们正在寻找一个活跃的维护者，以”提高Web发展的栏“。
 
-If you are interested, read [The Role of the Project Maintainer](/contribution-guide/project-maintainer) and let Razvan know via [Discord chat](https://chat.quasar.dev/).
+如果您感兴趣，请阅读[项目维护者的角色](/contribution-guide/project-maintainer)，并通过[Discord chat](https://chat.quasar.dev/) 告诉 razvan 。
 
-We can promise you that your Javascript and Vue.js skills will reach the stars!
+我们可以向您保证，您的 Javascript 和 Vue.js 技能将达到顶峰！
 
-| Project | Required Skills | Links |
+| 项目 | 所需技能 | 链接 |
 | --- | --- | --- | --- |
-| Cordova mode | Apache Cordova | [repo](https://github.com/quasarframework/quasar/tree/dev/app) |
-| Capacitor mode | Capacitor | [repo](https://github.com/quasarframework/quasar/tree/dev/app) |
-| Electron mode | Maintenance and enhancements | [repo](https://github.com/quasarframework/quasar/tree/dev/app) |
+| Cordova模式 | Apache Cordova | [repo](https://github.com/quasarframework/quasar/tree/dev/app) |
+| Capacitor 模式 | Capacitor | [repo](https://github.com/quasarframework/quasar/tree/dev/app) |
+| Electron 模式 | 维护和增强 | [repo](https://github.com/quasarframework/quasar/tree/dev/app) |

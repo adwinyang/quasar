@@ -1,297 +1,298 @@
 ---
-title: Contribution Guide
-desc: How to contribute to Quasar Framework.
+title: 贡献指南
+desc: 如何为 Quasar 框架做出贡献。
 ---
 
-This guide covers ways in which you can become a part of the ongoing development of Quasar.
+本指南涵盖了您可以成为 Quasar 持续发展的一部分的方式。
 
-But, before we begin, a first important note. Everyone interacting in Quasar is expected to follow the [Quasar code of conduct](https://github.com/quasarframework/quasar/blob/dev/.github/CODE_OF_CONDUCT.md).
+但是，在我们开始之前，首先要注意的是。每个在 Quasar 上互动的人都要遵守[Quasar行为准则](https://github.com/quasarframework/quasar/blob/dev/.github/CODE_OF_CONDUCT.md)。
 
-Now that we've got that covered, let's go!
+现在我们已经解决了这个问题，让我们开始吧！
 
-After reading this guide, you will know:
+阅读本指南后，您会了解：
 
-* How to use GitHub to report issues.
-* How to clone master and run the test suite.
-* How to help resolve existing issues.
-* How to contribute to the Quasar documentation.
-* How to create a Quasar App Extension.
-* How to contribute to the Quasar code.
+* 如何使用 github 来报告问题。
+* 如何克隆 master 并运行测试套件。
+* 如何帮忙解决存在的问题。
+* 如何为 Quasar 文档做出贡献。
+* 如何创建 Quasar App Extension。
+* 如何贡献 Quasar 代码 代码。
 
-Quasar is not "someone else's framework". Many people have contributed to Quasar ranging from a single character to massive architectural changes or significant documentation - all with the goal of making Quasar better for everyone. Even if you don't feel up to writing code or documentation yet, there are a variety of other ways that you can contribute, from reporting issues to testing patches.
+Quasar不是“别人的框架”。许多人为 Quasar 作出了贡献，从单个角色到大规模的架构变化或重大文件 -- 所有这些都是为了让Quasar更好地为服务于每个人。即使您还不能胜任编写代码或文档，您也可以通过各种方式做出贡献，在报告问题到测试修补程序。
 
-## Help with Support
+## 帮助支持
 
-One of the easiest ways to contribute is to answer questions in the different Q&A systems we have. Be a supportive and positive member of the Quasar community by answering questions you know answers to, or even by adding your best guess. Being a part of such discussions can also be a good learning experience. It's a win-win!
+其中一个最简单的贡献方式是回答不同问答系统中的问题。通过回答你知道答案的问题，甚至通过添加你的最佳猜测，成为 Quasar 社区中一个支持和积极的成员。参加这样的讨论也可以是一次很好的学习经历。这是双赢的！
 
-Here are our discussion/Q&A venues:
+以下是我们的讨论/问答场所：
 
-* [Forum](https://forum.quasar.dev/): The best place to ask questions and get answers about Quasar and its ecosystem.
-* [Chat](https://chat.quasar.dev/): A place for Quasar devs to meet and chat in real time.
+* [论坛](https://forum.quasar.dev/)：提出问题的最佳地点并获得关于Quasar及其生态系统的答案。
+* [聊天](https://chat.quasar.dev/)：Quasar Devs 满足实时聊天的地方。
 
-## Share (and Build) Your Experience
+## 分享(并构建)您的体验
 
-Apart from answering questions and sharing resources in the forum and chat, there are a few other less obvious ways to share and expand what you know:
+除了在论坛和聊天中的回答问题和共享资源外，还有其他一些不太明显的方式分享和扩展你所知道的东西：
 
-* **Develop learning materials**. It’s often said that the best way to learn is to teach. If there’s something interesting you’re doing with Quasar, strengthen your expertise by writing a blog post, developing a workshop, or even publishing a gist that you share on social media.
-* **Share your tech stack**. Show others which technologies are well tested and can be integrated with Quasar. Promote your project and [fill out your favorite Quasar-based stack](https://stackshare.io/tool/quasar-framework/decisions). Make sure to mention @Quasarframework and all other relevant technologies.
-* **Watch a repo you care about**. This will send you notifications whenever there’s activity in that repository, giving you insider knowledge about ongoing discussions and upcoming features. It’s a fantastic way to build expertise so that you’re eventually able to help address issues and pull requests.
+* **开发学习资料**。经常说，学习的最佳方式是教。如果您有一些有趣的东西，您可以通过Quasar进行，通过撰写博客文章，开发研讨会，甚至发布您在社交媒体上分享的GIST来加强您的专业知识。
+* **分享您的技术堆栈**。展示其他技术经过良好的技术，可以与按Quasar集成。推广您的项目和[填写您最喜欢的基于准堆栈](https://stackshare.io/tool/quasar-framework/decisions)。请务必提及@quasarframework和所有其他相关技术。
+* **观看您关心的回购**。这将在该存储库中的活动时发送通知，为您提供关于正在进行的讨论和即将到来的功能的内幕知识。这是建立专业知识的绝佳方式，以便您最终能够帮助解决问题和拉拔请求。
 
-## Reporting an Issue
+## 报告一个问题
 
-* [GitHub](https://github.com/quasarframework/quasar/issues): If you have a bug to report or feature to request, that’s what the GitHub issues are for. Make sure that you specify that your bug is related to Quasar v2.
+* [github](https://github.com/quasarframework/quasar/issues)：如果您有一个错误来报告或要求的功能，那就是Github问题所适用的。确保您指定您的错误与准v2相关。
 
 ::: danger Reporting a vulnerability
-Please do not report security vulnerabilities with public GitHub issue reports. Follow the [Report a vulnerability](/security/report-a-vulnerability) steps for security issues.
+请不要将安全漏洞公布在 github 问题列表中。 请遵循安全问题的[报告漏洞步骤](/security/report-a-vulnerability)。
 :::
 
-If you've found a problem in Quasar which is not a security risk, do a search on GitHub under [Issues](https://github.com/quasarframework/quasar/issues) to check if it is already answered or even fixed in the development branch (`dev`).
+如果您在Quasar中发现了一个不存在安全风险的问题，请在GitHub上的[Issues]下搜索(https://github.com/quasarframework/quasar/issues)检查它是否已在开发分支(`dev`)中得到响应或修复。
 
-- The issue list of the [main repo](https://github.com/quasarframework/quasar) is **exclusively** for bug reports and feature requests. Non-conforming issues will be closed immediately.
+- [主存储库](https://github.com/quasarframework/quasar)的问题列表是 **专用** 用于错误报告和功能请求。。不符合要求的问题将立即关闭。
 
-  - For simple beginner questions, you can get quick answers from the [Quasar Discord chat](https://chat.quasar.dev).
+  - 对于简单的初学者问题，您可以从[Quasar Discord chat](https://chat.quasar.dev)获得快速答案。
 
-  - For more complicated questions, you can use [the official forum](https://forum.quasar-framework.org/category/11/help). Make sure to provide enough information when asking your questions - this makes it easier for others to help you!
+  - 对于更复杂的问题，您可以使用[官方论坛](https://forum.quasar-framework.org/category/11/help)。询问您的问题时，请务必提供足够的信息 -- 这使得其他人可以更轻松地帮助您！
 
-- Check if the issue is reproducible with the latest stable version of Quasar. If you are using a pre-release, please indicate the specific version you are using.
+- 检查问题是否与最新稳定版的Quasar版本可重复。如果您使用的是预发布，请说明您使用的特定版本。
 
-- It is **required** that you clearly describe the steps necessary to reproduce the issue you are running into. Although we would love to help our users as much as possible, diagnosing issues without clear reproduction steps is extremely time-consuming and simply not sustainable.
+- 所需**您清楚地描述了重现您运行的问题所需的步骤。虽然我们很乐意尽可能地帮助我们的用户，但诊断没有明确的再生步骤的问题是非常耗时的，并且根本不可持续。
 
-- Use only the minimum amount of code necessary to reproduce the unexpected behavior. A good bug report should isolate specific methods that exhibit unexpected behavior and precisely define how expectations were violated. What did you expect the method or methods to do, and how did the observed behavior differ? The more precisely you isolate the issue, the faster we can investigate.
+- 仅使用再现意外行为所需的最小代码。一个好的错误报告应该隔离有意外行为的特定方法，并准确地定义了如何违反期望。您希望做些什么方法或方法，以及观察到的行为如何不同？更准确的是你隔离问题，我们可以调查速度越快。
 
-- Issues with no clear reproduction steps will not be triaged. If an issue labeled "need repro" receives no further input from the issue author for more than 5 days, it will be closed.
+- 没有明确的复制步骤的问题将不会被交。如果标记为“需要重新repro”的问题没有从发行作者中进一步输入超过5天，则将关闭。
 
-- If your issue is resolved but still open, don’t hesitate to close it. In case you found a solution by yourself, it could be helpful to explain how you fixed it.
+- 如果您的问题已得到解决，但仍然是开放的，请随时关闭它。如果您自己找到了解决方案，请解释您的修复方式可能会有所帮助。
 
-- Most importantly, we beg your patience: the team must balance your request against many other responsibilities — fixing other bugs, answering other questions, new features, new documentation, etc. The issue list is not paid support and we cannot make guarantees about how fast your issue can be resolved, although we do our very best.
+- 我们最重要的是，我们求耐心：团队必须平衡您的要求，以解决许多其他职责 - 修复其他错误，回答其他问题，新功能，新文档等。问题列表不是支付支持，我们无法保证如何保证快速您的问题可以解决，虽然我们做得最好。
 
-## Helping to Resolve Existing Issues
+## 帮助解决现有问题
 
-As a next step beyond reporting issues, you can help the Quasar Team resolve existing ones by providing feedback about them. If you are new to Quasar development, that might be a great way to walk your first steps, you'll get familiar with the code base and the processes.
+作为一个超出报告问题的下一步，您可以通过提供关于它们的反馈来帮助Quasar Team解决现有的团队。如果您是新的标准开发，那可能是走第一步的好方法，您将熟悉代码库和流程。
 
-If you check the issues list in [GitHub Issues](https://github.com/quasarframework/quasar/issues), you'll find lots of issues already requiring attention. What can you do for these? Quite a bit, actually:
+如果您在[github问题](https://github.com/quasarframework/quasar/issues)中查看问题列表，您会发现很多经需要关注的问题。你能为这些做点什么呢？实际上很多：
 
-#### Verifying Bug Reports
+#### 验证错误报告
 
-For starters, it helps just to verify bug reports. Can you reproduce the reported issue on your own computer? If so, you can add a comment to the issue saying that you're seeing the same thing.
+对于初学者，它有助于验证错误报告。您可以在自己的计算机上重现报告的问题吗？如果是这样，您可以向问题添加评论，说您正在看到同样的事情。
 
-If an issue is very vague, can you help narrow it down to something more specific? Maybe you can provide additional information to help reproduce a bug, or help by eliminating needless steps that aren't required to demonstrate the problem.
+如果一个问题非常含糊，你可以帮助将其缩小到更具体的东西吗？也许您可以提供其他信息来帮助重现错误，或通过消除不需要展示问题的不必要步骤来帮助。
 
-Anything you can do to make bug reports more succinct or easier to reproduce helps folks trying to write code to fix those bugs - whether you end up writing the code yourself or not.
+您可以做的任何事情都可以做出错误报告更加简洁或更容易重现帮助人们试图编写代码来修复这些错误 - 无论您最终还是自己编写代码。
 
-#### Testing Patches
+#### 测试补丁
 
-You can also help out by examining pull requests that have been submitted to Quasar via GitHub. In order to apply someone's changes, you need to first create a dedicated branch:
+您还可以通过审查通过Github提交给Quasar的拉出请求来帮助解决。要应用某人的更改，您需要首先创建一个专用分支：
 ```bash
 $ git checkout -b testing_branch
 ```
 
-Then, you can use their remote branch to update your codebase. For example, let's say the GitHub user JohnSmith has forked and pushed to a topic branch "orange" located at https://github.com/JohnSmith/quasar.
+然后，您可以使用他们的远程分支来更新代码库。 例如，假设Github用户Johnsmith已被叉，并推送到位于https://github.com/johnsmith/quasar的主题分支“橙色”。
 ```bash
 $ git remote add JohnSmith https://github.com/JohnSmith/quasar.git
 $ git pull JohnSmith orange
 ```
 
-After applying their branch, test it out! Here are some things to think about:
+在申请他们的分支后，测试它！ 以下是一些要思考的东西：
 
-* Does the change actually work?
-* Does it have the proper documentation coverage? Should documentation elsewhere be updated?
-* Do you like the implementation? Can you think of a nicer or faster way to implement a part of their change?
+* 改变实际上是否有效？
+* 它是否具有适当的文档覆盖范围？ 应该在其他地方进行文件吗？
+* 您喜欢执行吗？ 你能想到更好或更快的方式来实现他们改变的一部分吗？
 
-Once you're happy that the pull request contains a good change, comment on the GitHub issue indicating your approval. Your comment should indicate that you like the change and what you like about it. Something like:
+一旦你很高兴拉扯请求包含一个良好的变化，请评论指示您批准的GitHub问题。 您的评论应该表明您喜欢更改和您喜欢的内容。 就像是：
 
 ::: tip Example pull request comment
-I like the way you've restructured the code in card.vue - much nicer. Documentation is updated too.
+我喜欢你在卡中重组的代码的方式。 文档也更新。
 :::
 
-If your comment simply reads "+1", then odds are that other reviewers aren't going to take it too seriously. Show that you took the time to review the pull request.
+如果您的评论只是写简单写了 “+1”，那么其他评论者不会太认真对待它。 需表明您花了时间审核拉取请求。
 
-## Contributing to the Quasar Documentation
+## 为 Quasar 文档做贡献
 
-You can help improve the Quasar documentation by making it more coherent, consistent, or readable, adding missing information, correcting factual errors, fixing typos, or bringing them up to date with the latest edge Quasar.
+您可以通过使其更加连贯，一致性或可读，添加缺少的信息，纠正事实错误，修复故意错误，或将其与最新的Edge Qualar更新。
 
 ::: tip Typos or small changes can be fixed directly from the documentation
-Use a pencil icon in the top right corner of every documentation page. Edit the source file, preview the changes, add a description of your change and hit `Propose a file change` and on the next screen `Create pull request`.
+在每个文档页面的右上角使用铅笔图标。 编辑源文件，预览更改，添加更改的描述，然后命中“提出文件更改”和“下一个屏幕”“创建拉请求”。
 :::
 
-For larger edits change the Quasar source files (located [here](https://github.com/quasarframework/quasar/tree/dev/docs/src/pages) on GitHub).
+对于较大的编辑，更改标准源文件(位于[这里](https://github.com/quasarframework/quasarframework/quasar/tree/dev/docs/src/pages))。
 
-### Documentation Best Practices
+### 文档最佳实践
 
-Over time we consolidated a set of rules which we follow and following them will speed up the merge process:
-- Capitalize titles, see [How to Use Capitalize My Title](https://capitalizemytitle.com/).
-- Use the present tense.
-- Be concise, avoid text / code duplication.
-- Link to the external sources which are used as master information sources and are usually updated more frequently, like [Mozilla MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript), [Vue.js API](https://v3.vuejs.org/api/) rather than compiled tutorials which tend to be outdated soon.
-- Do the proofreading before opening a PR
-- Do not repeat texts from other sources, but keep only things which are relevant and shows in a context Quasar specific features
-- Use official names. For example use `Firebase` instead of `firebase`
-- Exclude from PR all drafts and unfinished pages
+随着时间的推移，我们整合了一组规则，遵循这些规则将加速合并过程：
+- 大写标题，见[如何使用我的标题大写](https://capitalizemytitle.com/)。
+- 使用现在的时态。
+- 简明扼要，避免文本/代码复制。
+- 链接到用作主信息源的外部源，通常更频繁地更新，如[Mozilla MDN](https://developer.mozilla.org/en-us/docs/web/javascript)，[Vue。 JS API](https://v3.vuejs.org/api/)而不是编译的教程很快就会过时。
+- 打开PR之前进行校对
+- 不要从其他来源重复文本，但只保留相关的东西，这些内容在上下文特定功能中
+- 使用官方名称。例如，使用`firebase`而不是`firebase`
+- 从 PR 中排除所有草稿和未完成的页面
 
-#### Fork
+#### 分支
 
-Navigate to the Quasar [GitHub repository](https://github.com/quasarframework/quasar) and press "Fork" in the upper right-hand corner.
+导航到 Quasar [github存储库](https://github.com/quasarframework/quasar)，然后按右上角的“fork”。
 
 ::: warning Select dev branch
-Make sure you have `dev` branch selected and this is where all the work is done.
+确保选择了`dev`分支，所有工作都在这里完成。
 :::
 
-#### Clone the forked repository
-To be able to change the documentation, you need to clone forked repository:
+#### 克隆分支的存储库
+为了能够更改文档，您需要克隆分支存储库：
 
 ```bash
 $ git clone https://github.com/your-user-name/quasar.git
 $ git checkout dev
 ```
 
-#### Install dependencies
+#### 安装依赖项
 
-Install the required dependencies.
+安装所需的依赖项。
 ```bash
 $ cd quasar/docs
 $ yarn # or npm install
 ```
 
-#### Running documentation against your local repository
+#### 针对本地存储库运行文档
 
 ```bash
 $ quasar dev
 ```
 
-The documentation runs against your local cloned repository.
+文档运行针对本地克隆的存储库。
 
-#### Edit and test your changes locally
+#### 在本地编辑和测试您的更改
 
-#### Commit your changes
+#### 提交更改
 
-When you're happy with the change on your computer, you need to commit the changes to Git:
+当您对计算机上的更改感到满意时，您需要将更改提交到 Git 上：
 
 ```bash
 $ git commit -a
 ```
 
-This should fire up your editor to write a commit message. When you have finished, save and close to continue.
+这将启的编辑器来提交消息。 完成后，保存并关闭以继续。
 
-#### Update your local repository
+#### 更新您的本地存储库
 
-It's pretty likely that other changes to master have happened while you were working. Go get them.
+在你工作的时候，很可能对掌握的其他变化发生了。 去找它们。
 
-1. Add a remote Quasar repository as an upstream
+1. 添加一个远程 Quasar 存储库作为上游
 
 ```bash
 $ git remote add upstream https://github.com/quasarframework/quasar.git
 ```
 
-2. Check out your fork's local `dev` branch.
+2. 查看您的 fork 本地 `dev` 分支。
 
 ```bash
 $ git checkout dev
 > Switched to branch 'dev'
 ```
 
-3. Merge the changes from `upstream/dev` into your local `dev` branch. This brings your fork's `dev` branch into sync with the upstream repository, without losing your local changes.
+3.将`upstream/ dev` 的更改合并到您本地的 `DEV` 分支中。 这将您的 fork 的`dev`分支与上游存储库同步，而不会丢失本地的更改。
 
 ```bash
 $ git merge upstream/dev
 ```
 
-No conflicts? Tests still pass? Change still seems reasonable to you? Then move on and open a pull request to apply your changes to the dev branch in main Quasar repository.
+有冲突没有？测试通过了？改变似乎对你来说似乎是合理的吗？然后继续开启并打开Pull请求以将更改应用于MainQuasar存储库中的 dev 分支。
 
-#### Issue a pull request
+#### 发出拉取请求
 
-Navigate to your repository you just pushed to (e.g. https://github.com/your-user-name/quasar) and click on "New Pull Request" seen in the left top panel.
+导航到您的存储库，您只推向(例如https://github.com/your-user-name/quasar)，然后单击左上面板中看到的“新拉索请求”。
 
-Ensure the change sets you introduced are included. Fill in some details about your potential patch including a meaningful title. When finished, press Click on "Create pull request". The Quasar core team will be notified about your submission.
+确保包含您介绍的更改集。填写有关您潜在补丁的一些细节，包括有意义的标题。完成后，按单击“创建拉请求”。将通知Quasar Core团队对您的提交。
 
-## Write your Story
+## 写下你的故事
 
-We're always looking for great write-ups on how you are using Quasar or the great experiences you've had with Quasar. If you write an article, we will publish it on our Medium publication channel and we'll also make sure your article gets the attention it deserves with our social media presence. If you are interested, please contact blog(at)quasar.dev. We'd love to hear from you!
+我们一直在寻找伟大的笔记本，即如何使用Quasar或者您与Quasar的伟大经历。如果您编写文章，我们将在我们的中型出版渠道上发布它，我们还将确保您的文章引起了我们的社交媒体存在的关注。如果您有兴趣，请联系博客(at)quasar.dev。我们很乐意听取您的意见！
 
-## Create new Quasar App Extension
+## 创建新的Quasar应用程序扩展
 
-An easy way to start to contribute to Quasar is to generalize the code you have created on your project and publish it as a Quasar App Extension. Follow this guide on how to [create a new extension](/app-extensions/development-guide/introduction).
+开始为准贡献的简单方法是概括您在项目上创建的代码，并将其发布为Quasar应用程序扩展名。遵循本指南有关如何[创建新的扩展](/ app-extensions / develop deward /介绍)。
 
-When done, submit a PR on [Quasar Awesome](https://github.com/quasarframework/quasar-awesome/blob/master/README.md#community-app-extensions), share your achievement via [Quasar Forum](https://forum.quasar-framework.org/category/15/v1-app-extensions).
+完成后，提交[Quasar Awesome](https://github.com/quasarframework/quasar-awesome/blob/master/readme.md#community-app-extensions)，通过[Quasar Forum]共享您的成就( https://forum.quasar-framework.org/category/15/v1-app-extensions)。
 
-## Contributing to the Quasar UI Source Code
+## 为Quasar UI源代码贡献
 
-As with any project, there are rules to contributing. Ours are written here, please read them carefully. After that, read the [Quasar code of conduct](https://github.com/quasarframework/quasar/blob/dev/.github/CODE_OF_CONDUCT.md) and you’ll be ready to contribute to Quasar’s core repositories.
+与任何项目一样，有贡献的规则。我们在这里写的，请仔细阅读。之后，阅读[Quasar行为准则](https://github.com/quasarframework/quasar/blob/dev/.github/code_of_conemon.md)，您将准备好为Quasar的核心存储库做出贡献。
 
-An article [Look at the source code](https://medium.com/quasar-framework/wip-look-at-the-source-code-please-1b905ea4906) will help you to get familiar with a Quasar code base.
+文章[查看源代码](https://medium.com/quasar-framework/wip-look-at-the-source-code-please-1b905ea4906)将帮助您熟悉标准代码库。
 
-#### Pull Request Guidelines
+#### 拉请求指南
 
-- Checkout a topic branch from the relevant branch, e.g. `dev` (Qv2) or `v1` (Qv1), and merge back against that branch.
+ - 从相关分支中结帐，例如： `dev`(qv2)或`v1`(qv1)，并合并回到该分支。
 
-- **DO NOT** check in `dist` in the commits.
+ -  **不要**在提交中检查 `dist`。
 
-- It's OK to have multiple small commits as you work on the PR - we will let GitHub automatically squash it before merging.
+ - 在PR上工作时，可以让多个小型提交 - 我们将让GitHub在合并之前自动挤压它。
 
-- If adding new feature:
-  * Provide convincing reason to add this feature. Ideally you should open a suggestion issue first and have it greenlighted before working on it.
+ - 如果添加新功能：
+  * 提供令人信服的原因来添加此功能。理想情况下，您应该首先打开一个建议问题，并在处理它之前将其绿色绿色。
 
-- If fixing a bug:
-  * If you are resolving a special issue, add `(fix: #xxxx[,#xxx])` (#xxxx is the issue id) in your PR title for a better release log, e.g. `fix: update entities encoding/decoding (fix #3899)`.
-  * Provide detailed description of the bug in the PR. Live demo preferred.
+ - 如果修复错误：
+  * 如果要解决特殊问题，请添加`(fix：#xxxx [，#xxx])`(#xxxx是您的PR标题中的发布ID)，以获得更好的发布日志，例如， `fix：更新编码/解码的实体(fix #3899)`。
+  * 提供PR中的错误的详细描述。实时演示首选。
 
-#### Development Setup
+#### 开发设置
 
-You will need [Node.js](http://nodejs.org) version **12.22.1+** along [Yarn](https://yarnpkg.com/) or [NPM](https://docs.npmjs.com/getting-started/installing-node). Read `package.json` and take notice of the scripts you can use.
+您需要[node.js](http://nodejs.org)版本** 12.22.1 + **沿[yarn](https://yarnpkg.com/)或[npm](https：// docs .npmjs.com / geret-install /安装节点)。读取`package.json`并注意您可以使用的脚本。
 
-After cloning the repo run:
+克隆存储库后运行：
 
-``` bash
+```bash
 $ cd ui
 $ yarn # or: npm install
 ```
 
-#### Commonly used NPM scripts
+#### 常用的NPM脚本
 
-``` bash
-# Start dev server with a demo app. This app has Quasar source code linked directly so any change will trigger HMR (Hot Module Reload) on the dev server.
-# There's a section for each feature where tests are made.
+```bash
+# 用一个演示应用程序启动开发服务器。这个应用直接链接了Quasar的源代码，所以任何改变都会在开发服务器上触发HMR(Hot Module Reload)。
+# 每个功能都有一个部分，在那里进行测试。
 $ yarn dev # or: npm run dev
 
-# build all dist files, including npm packages
+# 构建所有的dist文件，包括npm包
 $ yarn build      # or: npm run build
-# build only js dist files
+# 仅构建 js dist 文件
 $ yarn build js   # or: npm run build js
-# build only css dist files
+# 仅构建 css dist 文件
 $ yarn build css  # or: npm run build css
 
 # lint sources
 $ yarn lint # or: npm run lint
 ```
 
-#### Project Structure (/ui)
+#### 项目结构(/ UI)
 
-- `build` - contains build-related configuration files. In most cases you don't need to touch them.
+- `build` - 包含与构建相关的配置文件。在大多数情况下，您不需要触摸它们。
 
-- `src` - contains the source code, obviously. The codebase is written in ES2015.
+- `src` - 包含源代码，显然。 CodeBase是用ES2015编写的。
 
-  - `components` - JS, Sass and JSON (API) files for Quasar Vue components
+  - `components` - JS，SASS和JSON(API)文件用于准vue组件
 
-  - `composables` - Quasar's composables for Vue 3 Composition API
+  - `composables` - “Quasar的兼容”组成API
 
-  - `directives` - Vue directives supplied by Quasar
+  - `directives` - “Quasar提供的Vue指令
 
-  - `plugins` - Quasar plugins
+  - `plugins` - “Quasar插件”
 
-  - `css` - Sass definitions and core code for Quasar themes
+  - `CSS` - 标准主题的SASS定义和核心代码
 
-  - `utils` - utilities used by the framework and exported to the public API
+  - `ults`  - 框架使用的实用程序并导出到公共API
 
-- `lang` - Quasar language packs
+- `lang` -  Quasar Language Packs
 
-- `icon-set` - Quasar icon sets
+- `icon-set` -  Quasar图标集
 
-- `dist` - contains built files for distribution (only after a build). Note this directory is only updated when a release happens; they do not reflect the latest changes in development branches.
+- `dist`  - 包含用于分发的内置文件(仅在构建后)。注意此目录仅在发布发生时更新;他们没有反映发展分支机构的最新变化。
 
-- `dev` - app with Quasar sources linked directly used for testing purposes. Each feature/component has its own `*.vue` file. Adding a new file automatically creates a route for it and adds it to the "homepage" list (based on the file name).
+ - `dev`  - 应用程序与标准源直接用于测试目的。每个功能/组件都有自己的`* .vue`文件。添加新文件会自动为其创建路由，并将其添加到“主页”列表(基于文件名)。
 
-#### Dev Server for Quasar (/ui)
-Running `yarn dev` (or `npm run dev`) starts up a dev server which uses HMR (Hot Module Reload) for Quasar source code. You can easily test your changes by making necessary changes to `/dev` `*.vue` files.
+#### Quasar(/ui) 的 dev服务器
 
-## Quasar Contributors
+运行`yarn dev`(或`npm run dev`)会启动一个使用HMR(Hot Module Reload)作为Quasar源代码的开发服务器。您可以通过对 `/dev` `*.vue` 文件进行必要的更改来轻松测试您的更改。
 
-Thank you to all the people who already [contributed to Quasar](https://github.com/quasarframework/quasar/graphs/contributors)!
+## Quasar 贡献者
+
+感谢所有为[Quasar作出贡献的人](https://github.com/quasarframework/quasar/graphs/contributors)！

@@ -1,19 +1,19 @@
 ---
-title: Supporting TypeScript
-desc: How to enable support for TypeScript in a Quasar app.
+title: 支持TypeScript
+desc: 如何在Quasar应用程序中启用对TypeScript的支持。
 related:
   - /quasar-cli/quasar-conf-js
 ---
 
-The Typescript support is not added by default to your project (unless you selected TS when you created your project folder), but it can be easily integrated by following the guide on this page.
+对Typescript的支持并没有被默认添加到你的项目中(除非你在创建项目文件夹时选择了TS)，但它可以通过本页面的指南轻松集成。
 
 ::: tip
-The following steps are only required when you **have not** selected TypeScript support when creating a fresh Quasar project. If you selected the TS option on project creation, TypeScript support is already enabled.
+只有当你在创建一个新的Quasar项目时**没有选择TypeScript支持时，才需要以下步骤。如果你在创建项目时选择了TS选项，TypeScript支持已经被启用。
 :::
 
-## Installation of TypeScript Support
+## 安装TypeScript支持
 
-In order to support TypeScript, you'll need to edit `/quasar.conf.js`:
+为了支持TypeScript，你需要编辑`/quasar.conf.js`。
 
 ```js
 module.exports = function (ctx) {
@@ -24,7 +24,7 @@ module.exports = function (ctx) {
 }
 ```
 
-Then create `/tsconfig.json` file at the root of you project with this content:
+然后在你的项目根部创建`/tsconfig.json`文件，内容如下。
 
 ```json
 {
@@ -35,19 +35,19 @@ Then create `/tsconfig.json` file at the root of you project with this content:
 }
 ```
 
-Now you can start using TypeScript into your project.
+现在你可以开始在你的项目中使用TypeScript。
 
 ::: tip
-Remember that you must change the extension of your JavaScript files to `.ts` to be allowed to write TypeScript code inside them. To write TS code into your components, instead, change the script opening tag like so `<script lang="ts">`.
+记住，你必须把你的JavaScript文件的扩展名改为`.ts`，以允许在里面写TypeScript代码。要在你的组件中写入TS代码，相反，要改变脚本的开头标签，就像这样`<script lang="ts">`。
 :::
 
 ::: warning
-If you enable the `supportTS` flag but fail to add the `tsconfig.json` file, the application will break at compile time!
+如果你启用了`supportTS`标志，但没有添加`tsconfig.json`文件，应用程序将在编译时中断
 :::
 
-## Handling TS Webpack loaders
+## 处理TS Webpack加载器
 
-Behind the curtains, Quasar uses `ts-loader` and `fork-ts-checker-webpack-plugin` (provided by `@quasar/app` package) to manage TS files. If you ever need to provide a custom configuration for these libs you can do so by making `supportTS` property like so:
+在幕后，Quasar使用`ts-loader`和`fork-ts-checker-webpack-plugin`(由`@quasar/app`包提供)来管理TS文件。如果你需要为这些库提供一个自定义的配置，你可以通过制定`supportTS'属性来实现，就像这样。
 
 ```js
 // quasar.conf.js
@@ -55,11 +55,11 @@ module.exports = function (ctx) {
   return {
     supportTS: {
       tsLoaderConfig: {
-        // `appendTsSuffixTo: [/\.vue$/]` and `transpileOnly: true` are added by default and cannot be overridden
+        // `appendTsSuffixTo: [/\.vue$/]`和`transpileOnly: true`是默认添加的，不能被重写。
         ...
       },
       tsCheckerConfig: {
-        // `vue: true` is added by default and cannot be overridden
+        // `vue: true`是默认添加的，不能被重写。
         ...
       }
     },
@@ -68,15 +68,15 @@ module.exports = function (ctx) {
 }
 ```
 
-### Linting setup
+### 提示性设置
 
-First add needed dependencies:
+首先添加需要的依赖性。
 
 ```bash
 $ yarn add --dev eslint @typescript-eslint/parser @typescript-eslint/eslint-plugin
 ```
 
-Then update your ESLint configuration accordingly, like in the following example:
+然后相应地更新你的ESLint配置，就像下面的示例。
 
 ```js
 // .eslintrc.js
@@ -84,17 +84,17 @@ const { resolve } = require('path');
 
 module.exports = {
   // https://eslint.org/docs/user-guide/configuring#configuration-cascading-and-hierarchy
-  // This option interrupts the configuration hierarchy at this file
-  // Remove this if you have an higher level ESLint config file (it usually happens into a monorepos)
+  // 这个选项在这个文件上中断了配置的层次结构
+  // 如果你有一个更高级别的ESLint配置文件，就把它去掉(它通常会发生在一个monorepos中)。
   root: true,
 
   // https://eslint.vuejs.org/user-guide/#how-to-use-custom-parser
-  // Must use parserOptions instead of "parser" to allow vue-eslint-parser to keep working
-  // `parser: 'vue-eslint-parser'` is already included with any 'plugin:vue/**' config and should be omitted
+  // 必须使用parserOptions而不是 "parser"，以便让vue-eslint-parser继续工作。
+  // `parser: vue-eslint-parser'`已经包含在任何'plugin:vue/**'配置中，应该省略。
   parserOptions: {
     // https://github.com/typescript-eslint/typescript-eslint/tree/master/packages/parser#configuration
     // https://github.com/TypeStrong/fork-ts-checker-webpack-plugin#eslint
-    // Needed to make the parser take into account 'vue' files
+    // 需要使解析器考虑到'vue'文件
     extraFileExtensions: ['.vue'],
     parser: '@typescript-eslint/parser',
     project: resolve(__dirname, './tsconfig.json'),
@@ -103,59 +103,59 @@ module.exports = {
     sourceType: 'module', // Allows for the use of imports
   },
 
-  // Rules order is important, please avoid shuffling them
+  // 规则的顺序很重要，请避免洗牌。
   extends: [
-    // Base ESLint recommended rules
+    // 基础ESLint推荐规则
     'eslint:recommended',
 
     // https://github.com/typescript-eslint/typescript-eslint/tree/master/packages/eslint-plugin#usage
-    // ESLint typescript rules
+    // ESLint排版规则
     'plugin:@typescript-eslint/eslint-recommended',
     'plugin:@typescript-eslint/recommended',
-    // consider disabling this class of rules if linting takes too long
+    // 如果检查时间过长，可以考虑禁用这类规则
     'plugin:@typescript-eslint/recommended-requiring-type-checking',
 
     // https://eslint.vuejs.org/rules/#priority-a-essential-error-prevention
-    // consider switching to `plugin:vue/strongly-recommended` or `plugin:vue/recommended` for stricter rules
+    // 考虑切换到`plugin:vue/strongly-recommended`或`plugin:vue/recommended`以获得更严格的规则
     'plugin:vue/essential',
 
-    // --- ONLY WHEN USING PRETTIER ---
+    // ---只有在使用更漂亮的时候 ---
     // https://github.com/prettier/eslint-config-prettier#installation
-    // usage with Prettier, provided by 'eslint-config-prettier'.
+    // 与Prettier的使用，由'eslint-config-prettier'提供。
     'prettier',
     'prettier/@typescript-eslint',
     'prettier/vue',
   ],
 
   plugins: [
-    // required to apply rules which need type information
+    // 需要应用需要类型信息的规则
     '@typescript-eslint',
 
     // https://eslint.vuejs.org/user-guide/#why-doesn-t-it-work-on-vue-file
-    // required to lint *.vue files
+    // 需要对*.vue文件进行润色
     'vue',
   ],
 
-  // add your custom rules here
+  // 在这里添加你的自定义规则
   rules: {
-    // others rules...
+    // 其他人的规则...
 
-    // TypeScript
+    // 术语表
     'quotes': ['warn', 'single'],
     '@typescript-eslint/explicit-function-return-type': 'off',
   }
 }
 ```
 
-If anything goes wrong, read the [typescript-eslint guide](https://github.com/typescript-eslint/typescript-eslint/blob/master/docs/getting-started/linting/README.md), on which this example is based.
+如果有什么问题，请阅读[typescript-eslint guide](https://github.com/typescript-eslint/typescript-eslint/blob/master/docs/getting-started/linting/README.md)，这个示例就是基于此。
 
-As a last step, update your `yarn lint` command to also lint `.ts` files.
+作为最后一步，更新你的`yarn lint`命令，使其也对`.ts`文件进行检查。
 
 ::: tip
-TypeScript Linting is really slow due to type-checking overhead, we suggest you to disable Webpack lint extension into `quasar.conf.js` for dev builds.
+由于类型检查的开销，TypeScript Linting真的很慢，我们建议你在`quasar.conf.js`中禁用Webpack lint扩展，用于开发构建。
 :::
 
-If you setup TypeScript linting and want `fork-ts-checker-webpack-plugin` (provided by `@quasar/app` package) to take it into account then you should make use of `tsCheckerConfig` property:
+如果你设置了TypeScript linting并希望`fork-ts-checker-webpack-plugin`(由`@quasar/app`包提供)考虑到它，那么你应该使用`tsCheckerConfig`属性。
 
 ```js
 // quasar.conf.js

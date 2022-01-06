@@ -1,30 +1,30 @@
 ---
-title: Scroll Fire Directive
-desc: Vue directive that triggers an event when user scrolls and brings a component into view.
+title: 卷轴式消防指令
+desc: Vue指令，当用户滚动并将一个组件带入视图时，会触发一个事件。
 keys: scroll-fire
 related:
   - /vue-directives/scroll
   - /vue-directives/intersection
 ---
 
-"Scroll Fire" is a directive that enables a method to be called (once and only once) when the user scrolls current page and the DOM element (or component) that it is applied to comes into the viewport.
+"Scroll Fire "是一个指令，它使一个方法在用户滚动当前页面和它所应用的DOM元素(或组件)进入视口时被调用(一次且仅一次)。
 
 ::: tip
-There is also a [Scroll](/vue-directives/scroll) directive which fires whenever user scrolls the page.
+还有一个[Scroll](/vue-directives/scroll)指令，每当用户滚动页面时就会启动。
 :::
 
 ## ScrollFire API
 
 <doc-api file="ScrollFire" />
 
-## Usage
+## 用法
 
 ::: tip Scrolling container
-Please read [here](/vue-components/scroll-observer#determining-scrolling-container) about how Quasar determines the container to attach scrolling events to.
+请阅读[这里](/vue-components/scroll-observer#determining-scrolling-container)关于Quasar如何确定将滚动事件附加到的容器。
 :::
 
-<doc-example title="Basic" file="ScrollFire/Basic" scrollable />
+<doc-example title="基础" file="ScrollFire/Basic" scrollable />
 
 ::: warning IMPORTANT
-For performance purposes, the scroll listener function injected is by default debounced by 50ms.
+出于性能方面的考虑，注入的滚动监听器函数默认为50ms的衰减。
 :::

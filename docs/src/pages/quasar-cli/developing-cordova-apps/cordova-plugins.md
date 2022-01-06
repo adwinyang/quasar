@@ -1,71 +1,71 @@
 ---
-title: Cordova Plugins
-desc: How to use the Cordova plugins in a Quasar app.
+title: Cordova 插件
+desc: 如何在Quasar应用程序中使用Cordova插件。
 ---
-You can hook into the native device APIs by using [Cordova Plugins](https://cordova.apache.org/docs/en/latest/#plugin-apis).
+你可以通过使用[Cordova Plugins](https://cordova.apache.org/docs/en/latest/#plugin-apis)来钩住本地设备API。
 
 ## Cordova Plugins
-A few examples of such plugins:
+此类插件的几个示例。
 
-* Battery Status
-* Camera
-* Contacts
-* Device
-* Device Motion
-* Geolocation
-* Media
-* Media Capture
-* Network Information
-* Splashscreen
-* Vibration
-* Statusbar
+* 电池状态
+* 相机
+* 联系方式
+* 设备
+* 设备运动
+* 地理定位
+* 媒体
+* 媒体捕捉
+* 网络信息
+* 溅射屏幕
+* 震动
+* 状态栏
 
-## Deviceready Event
-You'll notice that some Cordova plugins are usable only after the `deviceready` event has been triggered. We don't need to worry about it too much. Quasar listens to this event and takes care of our root Vue component to be mounted **after** this event has been triggered. But if you need some plugin's own variable and that is initialized after `deviceready` you can follow the example of using the plugin device below
+## Deviceready事件
+你会注意到，有些Cordova插件只有在`deviceready`事件被触发后才能使用。我们不需要太担心这个问题。Quasar会监听这个事件，并在这个事件被触发后**我们的根Vue组件进行安装。但是如果你需要一些插件自己的变量，并且在`deviceready'之后被初始化，你可以按照下面的示例来使用插件设备
 
-### Caveat
-Let's take a vue file for example:
+### 注意事项
+让我们以一个vue文件为例。
 ```html
 <template>
   ... we are sure 'deviceready' has been triggered here ...
 </template>
 
 <script>
-// outside of the default export,
-// we need to listen to the event for ourselves:
+// 在默认出口之外。
+// 我们需要自己听一听这个事件。
 document.addEventListener('deviceready', () => {
-  // it's only now that we are sure
-  // the event has triggered
+  // 直到现在我们才确定
+  // 该事件已被触发
 }, false)
 
 export default {
-  // we are sure 'deviceready' has been triggered here
+  // 我们确信，这里已经触发了 "设备就绪"(deviceready)。
 }
 </script>
 ```
 
-The reason is simple. Quasar listens for the event then mounts the root Vue component. But before this, the Vue files are imported into the `/src/router/routes.js` file, so the code outside of the default export gets executed.
+原因很简单。Quasar监听事件，然后挂载根Vue组件。但在这之前，Vue文件被导入到`/src/router/routes.js`文件中，所以默认导出的代码会被执行。
 
-## Using a Cordova Plugin
-Let's learn by taking some examples, assuming you've added Cordova mode to your Quasar project and installed a platform (android, ios, ...) already.
+## 使用一个Cordova插件
+让我们通过一些示例来学习，假设你已经在Quasar项目中加入了Cordova模式，并且已经安装了一个平台(android, ios, ...)。
 
-### Example: Battery Status
-First step is to read the documentation of the Cordova plugin that we want to use. We look at [Cordova Plugins list](https://cordova.apache.org/docs/en/latest/#plugin-apis) and click on [Battery Status doc page](https://cordova.apache.org/docs/en/latest/reference/cordova-plugin-battery-status/index.html).
+### 示例。电池状态
+第一步是阅读我们要使用的Cordova插件的文档。我们看一下[Cordova插件列表](https://cordova.apache.org/docs/en/latest/#plugin-apis)，然后点击[Battery Status doc page](https://cordova.apache.org/docs/en/latest/reference/cordova-plugin-battery-status/index.html)。
 
-We see instructions on how to install this plugin. It's always a Cordova command. **So we "cd" into `/src-cordova`** (which is a Cordova generated folder) **and issue the install command form there**:
+我们看到关于如何安装这个插件的说明。这总是一个Cordova命令。**所以我们 "cd "到`/src-cordova`**(这是一个Cordova生成的文件夹)**并在那里发出安装命令表格**。
 
 ```bash
 # from /src-cordova:
 $ cordova plugin add cordova-plugin-battery-status
 ```
 
-Now let's put this plugin to some good use. In one of your Quasar project's pages/layouts/components Vue file, we write:
+现在让我们把这个插件好好利用一下。在你的Quasar项目的一个页面/布局/组件Vue文件中，我们写道。
 
 ```html
-// some Vue file
-// remember this is simply an example;
-// only look at how we use the API described in the plugin's page;
-// the rest of things here are of no importance
+// 一些Vue文件
+// 请记住，这只是一个示例。
+// 只看我们如何使用该插件页面中描述的API。
+// 其余的事情在这里并不重要
 
 <template>
   <div>
@@ -84,12 +84,12 @@ export default {
       batteryStatus.value = `Level: ${status.level}, plugged: ${status.isPlugged}`
     }
 
-    // we register the event like on plugin's doc page
+    // 我们像在插件的文档页上一样注册事件
     window.addEventListener('batterystatus', updateBatteryStatus, false)
 
     onBeforeUnmount(() => {
-      // we do some cleanup;
-      // we need to remove the event listener
+      // 我们做一些清理工作。
+      // 我们需要删除事件监听器
       window.removeEventListener('batterystatus', updateBatteryStatus, false)
     })
 
@@ -101,25 +101,25 @@ export default {
 </script>
 ```
 
-### Example: Camera
-First step is to read the documentation of the Cordova plugin that we want to use. We look at [Cordova Plugins list](https://cordova.apache.org/docs/en/latest/#plugin-apis) and click on [Camera doc page](https://cordova.apache.org/docs/en/latest/reference/cordova-plugin-camera/index.html).
+### 示例。相机
+第一步是阅读我们要使用的Cordova插件的文档。我们看一下[Cordova Plugins list](https://cordova.apache.org/docs/en/latest/#plugin-apis)，然后点击[Camera doc page](https://cordova.apache.org/docs/en/latest/reference/cordova-plugin-camera/index.html)。
 
-There's a mention of the `deviceready` event. But we already know how to handle it from the previous sections.
+那里提到了`deviceready`事件。但是我们已经从前面的章节中知道了如何处理它。
 
-We read the instructions on how to install this plugin. It's always a Cordova command. **So we "cd" into `/src-cordova`** (which is a Cordova generated folder) **and issue the install command form there**:
+我们阅读了如何安装这个插件的说明。这总是一个Cordova命令。**所以我们 "cd "到`/src-cordova`**(这是一个Cordova生成的文件夹)，**在那里发出安装命令的形式。
 
 ```bash
 # from /src-cordova:
 $ cordova plugin add cordova-plugin-camera
 ```
 
-Now let's put this plugin to some good use. In one of your Quasar project's pages/layouts/components Vue file, we write:
+现在让我们把这个插件好好利用一下。在你的Quasar项目的一个页面/布局/组件Vue文件中，我们写道。
 
 ```html
-// some Vue file
-// remember this is simply an example;
-// only look at how we use the API described in the plugin's page;
-// the rest of things here are of no importance
+// 一些Vue文件
+// 请记住，这只是一个示例。
+// 只看我们如何使用该插件页面中描述的API。
+// 其余的事情在这里并不重要
 
 <template>
   <div>
@@ -147,7 +147,7 @@ export default {
           $q.notify('Could not access device camera.')
         },
         {
-          // camera options
+          // 相机选项
         }
       )
     }
@@ -161,25 +161,25 @@ export default {
 </script>
 ```
 
-### Example: Device
-First step is to read the documentation of the Cordova plugin that we want to use. Look at the [Cordova Plugins list](https://cordova.apache.org/docs/en/latest/#plugin-apis) and click on [Device doc page](https://cordova.apache.org/docs/en/latest/reference/cordova-plugin-device/index.html).
+### 示例。设备
+第一步是阅读我们要使用的Cordova插件的文档。看一下[Cordova插件列表](https://cordova.apache.org/docs/en/latest/#plugin-apis)，然后点击[设备文档页](https://cordova.apache.org/docs/en/latest/reference/cordova-plugin-device/index.html)。
 
-This plugin initializes a global variable called `device` which describes the device's hardware and software. So it can be accessed with `window.device`.
+这个插件初始化了一个名为`device`的全局变量，描述了设备的硬件和软件。所以它可以用`window.device`来访问。
 
-Read the instructions on how to install this plugin on its cordova doc page. It's always a Cordova command. **So we "cd" into `/src-cordova`** (which is a Cordova generated folder) and **issue the install command from there**:
+请阅读其cordova doc页面上关于如何安装这个插件的说明。它总是一个Cordova命令。**所以我们 "cd "到`/src-cordova`**(这是一个Cordova生成的文件夹)，**从那里发出安装命令。
 
 ```bash
 # from /src-cordova:
 $ cordova plugin add cordova-plugin-device
 ```
 
-Now let's put this plugin to some good use. If you need the information of your device when starting the application, you will have to capture the created event. In one of your Quasar project's pages/layouts/components Vue file, we write:
+现在让我们把这个插件用在一些好的地方。如果你需要你的设备在启动应用程序时的信息，你将不得不捕获创建的事件。在你的Quasar项目的一个页面/布局/组件Vue文件中，我们写道。
 
 ```html
-// some Vue file
-// remember this is simply an example;
-// only look at how we use the API described in the plugin's page;
-// the rest of things here are of no importance
+// 一些Vue文件
+// 请记住，这只是一个示例。
+// 只看我们如何使用该插件页面中描述的API。
+// 其余的事情在这里并不重要
 
 <template>
   <div>

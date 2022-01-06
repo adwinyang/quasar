@@ -1,6 +1,6 @@
 ---
-title: Button Group
-desc: The QBtnGroup Vue component groups QBtn and QBtnDropdown into a single unit.
+title: 按钮组
+desc: QBtnGroup Vue组件将QBtn和QBtnDropdown组合成一个单元。
 keys: QBtnGroup
 related:
   - /vue-components/button
@@ -8,20 +8,20 @@ related:
   - /vue-components/button-toggle
 ---
 
-You can conveniently group [QBtn](/vue-components/button) and [QBtnDropdown](/vue-components/button-dropdown) using QBtnGroup. Be sure to check those component's respective pages to see their props and methods.
+你可以使用QBtnGroup方便地将[QBtn](/vue-components/button)和[QBtnDropdown](/vue-components/button-dropdown)分组。请务必查看这些组件的各自页面，看看它们的属性和方法。
 
 
 ## QBtnGroup API
 
 <doc-api file="QBtnGroup" />
 
-## Usage
-<doc-example title="Examples" file="QBtnGroup/Group" />
+## 使用方法
+<doc-example title="示例" file="QBtnGroup/Group" /> ## 使用方法
 
 ::: warning
-You must use same design props (flat, outline, push, ...) on both the parent QBtnGroup and the children QBtn/QBtnDropdown.
+你必须在父QBtnGroup和子QBtn/QBtnDropdown上使用相同的设计属性(平面、轮廓、推动...)。
 :::
 
-<doc-example title="Spread horizontally" file="QBtnGroup/GroupSpread" />
+<doc-example title="水平传播" file="QBtnGroup/GroupSpread" />
 
-<doc-example title="With QBtnDropdown" file="QBtnGroup/WithDropdown" />
+<doc-example title="使用QBtnDropdown" file="QBtnGroup/WithDropdown" />

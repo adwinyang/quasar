@@ -1,29 +1,29 @@
 ---
-title: App Icons for Cordova
-desc: How to manage the app icons for a Quasar hybrid mobile app with Cordova.
+title: Cordova的应用程序图标
+desc: 如何用Cordova管理Quasar混合移动应用程序的图标。
 ---
 
-Cordova is one of the most complicated of all of the build targets as far as icons go, because not only do you need to place the icons in specific folders, you also need to register them in the `src-cordova/config.xml` file. Further, if you are using splash screens (which you should), you will also need to install `cordova-plugin-splashscreen` and register it in your config.xml.
+就图标而言，Cordova是所有构建目标中最复杂的一个，因为你不仅需要把图标放在特定的文件夹中，还需要在`src-cordova/config.xml`文件中注册它们。此外，如果你使用启动画面(你应该这样做)，你也需要安装`cordova-plugin-splashscreen`，并在你的config.xml中注册它。
 
-If you discover one file that is new or missing, please [open an issue](https://github.com/quasarframework/quasar/issues).
+如果你发现有一个文件是新的或丢失的，请[打开一个问题](https://github.com/quasarframework/quasar/issues)。
 
-<img src="https://cdn.quasar.dev/img/iconfactory.png" style="float:right;max-width:15%;min-width:240px;padding-top:40px" />
+<img src="https://cdn.quasar.dev/img/iconfactory.png" style="float:right;max-width:15%;min-width:240px; padding-top:40px" />
 
 ## Icon Genie CLI
 
 ::: tip
-We highly recommend using the [Icon Genie CLI](/icongenie/introduction), because it consumes a source icon and automatically clones, scales, minifies and places the icons in the appropriate directories for you. When needed, it also tells you what tags you'll need to add to your /src/index.template.html file.
+我们强烈建议使用[Icon Genie CLI](/icongenie/introduction)，因为它可以使用一个源图标，并自动克隆、缩放、最小化，并为你把图标放到适当的目录中。需要时，它还会告诉你需要在你的/src/index.template.html文件中添加哪些标签。
 :::
 
-Quickly bootstrap the necessary images with Icon Genie CLI. For a complete list of options, please visit the [Icon Genie CLI](/icongenie/command-list) command list page.
+用Icon Genie CLI快速启动必要的图像。有关完整的选项清单，请访问[Icon Genie CLI](/icongenie/command-list)命令清单页面。
 
 ```bash
 $ icongenie generate -m cordova -i /path/to/source/icon.png [-b /path/to/background.png]
 ```
 
-## Manual instructions
+## 手工说明
 
-Unless you are using the Icon Genie CLI, this is what you need to do:
+除非你使用Icon Genie CLI，这是你需要做的。
 
 ```bash
 $ cd src-cordova
@@ -98,7 +98,7 @@ src-cordova/
         Default@2x~ipad~anyany.png
 ```
 
-And here is part of what your config.xml should look like:
+这里是你的config.xml的部分内容，应该是这样的。
 
 ```xml
 <platform name="android">

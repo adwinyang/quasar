@@ -1,40 +1,40 @@
 ---
-title: BEX Communication
-desc: How to communicate between different parts of your Browser Extension (BEX) in Quasar.
+title: BEX通信
+desc: 如何在Quasar中的浏览器扩展(BEX)的不同部分之间进行通信。
 ---
-Allowing a Quasar App to communicate with the various parts of the BEX is essential. Quasar closes this gap using a `bridge`.
+允许Quasar应用程序与BEX的各个部分进行通信是至关重要的。Quasar使用一个 `bridge` 来填补这一空白。
 
-There are 4 areas in a BEX which will need a communication layer:
+在一个BEX中，有4个区域需要一个通信层：
 
-1. The Quasar App itself - this is true for all types of BEX i.e Popup, Options Page, Dev Tools or Web Page
-2. Background Script
-3. Content Script
-4. The web page that the BEX is running on
+1. Quasar应用程序本身--这适用于所有类型的BEX，如弹出窗口、选项页、开发工具或网页。
+2. 后台脚本
+3. 内容脚本
+4. BEX所运行的网页
 
-## Communication Rules
+## 通信规则
 
-There is a fundamental rule to understand with the communication bridge in Quasar.
+在Quasar的通信桥梁中，有一条基本规则需要理解。
 
-**Not all BEX types have a content script** - Only BEX which run in the context of a web page will have a content script. This is how browser extensions in general work. This means if you're adding a listener for an event on a content script and trying to trigger it from a Quasar BEX running as Dev Tools, Options Page or Popup - **it won't work**.
+**并非所有的BEX类型都有内容脚本** - 只有在网页背景下运行的BEX才有内容脚本。这就是一般浏览器扩展的工作方式。这意味着如果你在内容脚本上添加一个事件监听器，并试图从作为开发工具、选项页或弹出式窗口运行的Quasar BEX中触发它--**它不会工作。
 
-If you want to allow your Dev Tools, Popup or Options Page BEX to communicate with a web page, you will need to use the background script as a proxy. You would do this by:
+如果你想让你的开发工具、弹出窗口或选项页BEX与网页通信，你将需要使用后台脚本作为代理。你可以通过以下方式做到这一点。
 
-1. Adding a listener on the background script which in turn emits another event.
-2. Add a listener to your Quasar App running in the Web Page context which listens for the event the background script is
-raising
-2. Emitting the event to your background script from your Dev Tools, Popup or Options Page.
+1. 在后台脚本上添加一个监听器，反过来发射另一个事件。
+2. 2.在网页上下文中运行的Quasar应用程序中添加一个监听器，监听后台脚本所发出的事件。
+发出
+2. 从你的开发工具、弹出窗口或选项页面向你的后台脚本发出事件。
 
-Once you get your head around this concept, there are no limits to how the BEX can communicate with each part.
+一旦你理解了这个概念，BEX与每个部分的通信方式就没有限制了。
 
-## The Bridge
+## 桥接器
 
-The bridge is a promise based event system which is shared between all parts of the BEX and as such allows you to listen for events in your Quasar App, emit them from other parts or vice versa. This is what gives Quasar BEX mode it's power.
+桥接器是一个基于承诺的事件系统，在BEX的所有部分之间共享，因此允许你在Quasar应用程序中监听事件，从其他部分发出事件，反之亦然。这就是Quasar BEX模式的力量所在。
 
-To access the bridge from within your Quasar App you can use `$q.bex`. In other areas, the bridge is made available via the `bridge` parameter in the respective hook files.
+要从你的Quasar应用程序中访问该桥，你可以使用`$q.bex`。在其他地区，桥接是通过各自的钩子文件中的`bridge`参数来实现的。
 
-Let's see how it works.
+让我们看看它是如何工作的。
 
-### Trigger an event and wait for the response
+### 触发一个事件并等待响应
 
 ```js
 bridge.send('some.event', { someKey: 'aValue' }).then(response => {
@@ -42,7 +42,7 @@ bridge.send('some.event', { someKey: 'aValue' }).then(response => {
 })
 ```
 
-### Listen for an event and sending a response
+### 监听一个事件并发送一个响应
 
 ```js
 bridge.on('some.event', event => {
@@ -51,20 +51,20 @@ bridge.on('some.event', event => {
 })
 ```
 
-### Clean up your listeners
+### 清理你的听众
 
 ```js
 bridge.off('some.event', this.someFunction)
 ```
 
-Wait, what's `bridge.send(event.eventResponseKey)`?
+等等，什么是`bridge.send(event.eventResponseKey)`？
 
-The Quasar bridge does some work behind the scenes to convert the normal event based communication into promises and as such, in order for the promise to resolve, we need to send a *new* event which is captured and promisified.
+Quasar桥接器在幕后做了一些工作，将正常的基于事件的通信转换为承诺，因此，为了使承诺得到解决，我们需要发送一个*新*的事件，该事件被捕获并被承诺。
 
 ::: warning
-If you omit `bridge.send(event.eventResponseKey)` the promise on `.send()` will not resolve.
+如果你省略了 `bridge.send(event.eventResponseKey)`，`.send()` 上的 promise 将无法解析。
 :::
 
 ::: tip
-The bridge also does some work to split large data which is too big to be transmitted in one go due to the browser extension 60mb data transfer limit. In order for this to happen, the payload must be an array.
+由于浏览器扩展 60mb 数据传输限制，桥接器还做了一些工作来拆分大数据，这些数据太大而无法一次性传输。为了实现这一点，有效载荷必须是一个数组。
 :::

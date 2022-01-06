@@ -1,29 +1,29 @@
 ---
-title: The $q object
-desc: The $q object in Quasar. Why and how to use it.
+title: $q对象
+desc: Quasar中的$q对象。为什么以及如何使用它。
 related:
   - /vue-composables/use-quasar
 ---
 
-Quasar supplies a `$q` object that you can use for various purposes. You will notice it throughout the docs.
+Quasar提供了一个`$q`对象，你可以用于各种用途。你会在整个文档中注意到它。
 
 | Prop name | Type | Description |
 | --- | --- | --- |
-| `$q.version` | String | Quasar version. |
-| `$q.platform` | Object | Same object as [Platform](/options/platform-detection) import from Quasar. |
-| `$q.screen` | Object | Object supplied by [Screen Plugin](/options/screen-plugin). |
-| `$q.lang` | Object | Quasar Language pack management, containing labels etc (one of [lang files](https://github.com/quasarframework/quasar/tree/dev/ui/lang)). Designed for Quasar components, but you can use it in your app components too. More info: [Quasar Language Packs](/options/quasar-language-packs). |
-| `$q.iconSet` | Object | Quasar icon set management (one of [icon set files](https://github.com/quasarframework/quasar/tree/dev/ui/icon-set)). Designed for Quasar components, but you can use it in your app components too. More info: [Quasar Icon Sets](/options/quasar-icon-sets). |
-| `$q.cordova` | Object | Reference to Cordova global object. Available only when running under a Cordova app. |
-| `$q.capacitor` | Object | Reference to Capacitor global object. Available only when running under a Capacitor app. |
+| `$q.version` | String | Quasar版本。|
+| `$q.platform` | Object | 与[Platform](/options/platform-detection)相同的对象，从Quasar导入。|
+| `$q.screen` | 对象 | 由[Screen Plugin](/options/screen-plugin)提供的对象。|
+| `$q.lang` | 对象 | Quasar语言包管理，包含标签等([lang文件]之一(https://github.com/quasarframework/quasar/tree/dev/ui/lang))。专为Quasar组件设计，但你也可以在你的应用程序组件中使用它。更多信息。[Quasar语言包](/options/quasar-language-packs)。|
+| `$q.iconSet` | 对象 | Quasar图标集管理([图标集文件]之一(https://github.com/quasarframework/quasar/tree/dev/ui/icon-set))。专为Quasar组件设计，但你也可以在你的应用程序组件中使用它。更多信息。[Quasar图标集](/options/quasar-icon-sets)。|
+| `$q.cordova` | Object | 对Cordova全局对象的引用。只在Cordova应用程序下运行时可用。|
+| `$q.capacitor` | Object | 对Capacitor全局对象的引用。只有在Capacitor应用程序下运行时才可用。|
 
-## Usage
+## 使用方法
 
-The following sections will teach you how to use it in .vue files (with both Composition API and Options API) and outside of them.
+下面几节将教你如何在.vue文件(包括Composition API和Options API)中和在它们之外使用它。
 
-### Composition API
+### 组合式 API
 
-The following is a .vue file:
+下面是一个.vue文件：
 
 ```html
 <template>
@@ -43,10 +43,10 @@ export default {
 
     console.log($q.platform.is.ios)
 
-    // showing an example on a method, but
-    // can be any part of Vue script
+    // 显示一个方法的示例，但
+    // 可以是Vue脚本的任何部分
     function show () {
-      // prints out Quasar version
+      // 打印出Quasar的版本
       console.log($q.version)
     }
 
@@ -58,32 +58,32 @@ export default {
 </script>
 ```
 
-### Options API
+### 选项式 API
 
-The following is a .vue file:
+以下是一个.vue文件:
 
 ```html
 <template>
   <div>
     <div v-if="$q.platform.is.ios">
-      Gets rendered only on iOS platform.
+      仅在iOS平台上渲染。
     </div>
   </div>
 </template>
 
 <script>
-// not available here outside
-// of the export
+// 此处在导出之外不可用
+
 
 export default {
-  // inside a Vue component script
+  // 在Vue组件的脚本中
   ...,
 
-  // showing an example on a method, but
-  // can be any part of Vue script
+  // 显示一个方法的示例，但
+  // 可以是Vue脚本的任何部分
   methods: {
     show () {
-      // prints out Quasar version
+      // 打印出Quasar的版本
       console.log(this.$q.version)
     }
   }
@@ -91,7 +91,7 @@ export default {
 </script>
 ```
 
-### Outside of a vue file
+### 在一个vue文件的外面
 
 ```js
 import { Quasar } from 'quasar'

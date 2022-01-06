@@ -1,32 +1,32 @@
 ---
-title: Configuring Cordova
-desc: How to manage your Cordova apps with Quasar CLI.
+title: 配置Cordova
+desc: 如何用Quasar CLI管理你的Cordova应用程序。
 related:
   - /quasar-cli/quasar-conf-js
 ---
 
-We'll be using Quasar CLI (and Cordova CLI) to develop and build a Mobile App. The difference between building a SPA, PWA, Electron App or a Mobile App is simply determined by the "mode" parameter in "quasar dev" and "quasar build" commands.
+我们将使用Quasar CLI(和Cordova CLI)来开发和构建一个移动应用程序。构建SPA、PWA、Electron App或移动App之间的区别只是由 "quasar dev "和 "quasar build "命令中的 "mode "参数决定。
 
-There are two configuration files of great importance to your mobile apps. We'll go over each one.
+有两个配置文件对你的移动应用程序非常重要。我们将分别介绍一下。
 
 ## config.xml
-The most important config file for your mobile app is `/src-cordova/config.xml`. The `/src-cordova` folder is a Cordova project, so please refer to [Cordova documentation](https://cordova.apache.org/docs/en/latest/) in order to understand what each file from there does. But for now, have a few moments to read about [config.xml](https://cordova.apache.org/docs/en/latest/config_ref/).
+对你的移动应用程序来说，最重要的配置文件是`/src-cordova/config.xml`。`/src-cordova`文件夹是一个Cordova项目，所以请参考[Cordova文档](https://cordova.apache.org/docs/en/latest/)，以了解那里的每个文件的作用。但现在，请花些时间阅读一下[config.xml](https://cordova.apache.org/docs/en/latest/config_ref/)。
 
-Some properties from this file will get overwritten as we'll see in next section.
+这个文件中的一些属性将被覆盖，我们将在下一节看到。
 
 ## quasar.conf.js
-Quasar CLI helps you in setting some properties of the mobile Apps automatically (from config.xml): the Cordova "id", app version, description and android-versionCode. This is for convenience so you'll be able to have a single point where, for example, you change the version of your app, not multiple files that you need to simultaneously touch which is error prone.
+Quasar CLI帮助你自动设置移动应用程序的一些属性(来自config.xml)：Cordova "id"，应用程序版本，描述和android-versionCode。这是为了方便，所以你可以在一个点上改变你的应用程序的版本，而不是同时接触多个文件，这样容易出错。
 
-For determining the values for each of the properties mentioned above, Quasar CLI:
-1. Looks in `/quasar.conf.js` for a "cordova" Object. Does it have "version", "description" and/or "androidVersionCode"? If yes, it will use them.
-2. If not, then it looks into your `/package.json` for "cordovaId", "version" and "description" fields.
+为了确定上述每个属性的值，Quasar CLI。
+1. 在`/quasar.conf.js`中寻找一个 "cordova "对象。它是否有 "版本"、"描述 "和/或 "androidVersionCode"？如果有，它将使用它们。
+2. 2.如果没有，就在`/package.json`中寻找 "cordovaId"、"版本 "和 "描述 "字段。
 
 ```js
 return {
   capacitor: {
-    // If not present, will look for package.json > version
+    // 如果不存在，将寻找package.json > 版本
     version: '..', // string
-    // If not present, will look for package.json > description
+    // 如果不存在，将寻找package.json > description
     description: '...', // string
     androidVersionCode: '..', // string
 
@@ -42,21 +42,21 @@ return {
 }
 ```
 
-Other options you can configure:
+你可以配置的其他选项。
 
 ```js
 return {
   framework: {
     config: {
       cordova: {
-        // add the dynamic top padding on iOS mobile devices
+        // 在iOS移动设备上添加动态顶部填充物
         iosStatusBarPadding: true/false,
 
-        // Quasar handles app exit on mobile phone back button.
+        // Quasar处理手机后退按钮的应用退出。
         backButtonExit: true/false/'*'/['/login', '/home', '/my-page'],
 
-        // On the other hand, the following completely
-        // disables Quasar's back button management.
+        // 另一方面，以下是完全
+        // 禁用Quasar的返回按钮管理。
         backButton: true/false
       }
     }

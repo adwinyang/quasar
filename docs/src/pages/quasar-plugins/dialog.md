@@ -1,6 +1,6 @@
 ---
-title: Dialog Plugin
-desc: A Quasar plugin that provides an easy way to display a prompt, choice, confirmation or alert in the form of a dialog.
+title: 对话框插件
+desc: 一个Quasar插件，它提供了一种简单的方法，以对话框的形式显示提示、选择、确认或警告。
 keys: Dialog
 related:
   - /vue-components/dialog
@@ -8,42 +8,42 @@ related:
   - /vue-composables/use-dialog-plugin-component
 ---
 
-Quasar Dialogs are a great way to offer the user the ability to choose a specific action or list of actions. They also can provide the user with important information, or require them to make a decision (or multiple decisions).
+Quasar对话是为用户提供选择特定行动或行动列表的能力的一个好方法。它们也可以为用户提供重要的信息，或者要求他们做出一个决定(或多个决定)。
 
-From a UI perspective, you can think of Dialogs as a type of floating modal, which covers only a portion of the screen. This means Dialogs should only be used for quick user actions only.
+从UI的角度来看，你可以把Dialogs看作是一种浮动模式，它只覆盖屏幕的一部分。这意味着Dialogs应该只用于用户的快速操作。
 
 ::: tip
-Dialogs can also be used as a component in your Vue file templates (for complex use-cases, like specific form components, selectable options, etc.). For this, go to [QDialog](/vue-components/dialog) page.
+对话框也可以在你的Vue文件模板中作为一个组件使用(用于复杂的使用情况，如特定的表单组件，可选择的选项等)。为此，请访问[QDialog](/vue-components/dialog)页面。
 :::
 
-The advantage of using Dialogs as Quasar Plugins as opposed to QDialog component is that the plugin can also be called from outside of Vue space and doesn't require you to manage their templates. But as a result, their customization cannot be compared to their component counterpart.
+相对于QDialog组件，将Dialogs作为Quasar Plugins使用的好处是，该插件也可以从Vue空间之外调用，不需要你管理它们的模板。但结果是，它们的定制不能与对应的组件相比。
 
-However, **you can also supply a component for the Dialog Plugin to render** (see the "Invoking custom component" section) which is a great way to avoid cluttering your Vue templates with inline dialogs (and it will also help you better organize your project files and also reuse dialogs).
+然而，**你也可以为对话框插件提供一个组件来渲染**(见 "调用自定义组件 "一节)，这是一个避免用内联对话框弄乱你的Vue模板的好方法(而且它还可以帮助你更好地组织你的项目文件，还可以重复使用对话框)。
 
-With the QDialog plugin, you can programmatically build three types of dialogs with the following form content:
- 1. A prompt dialog - asking the user to fill in some sort of data in an input field.
- 2. A set of options for the user to select from using either radio buttons or toggles (singular selection only) or check boxes (for multiple selections).
- 3. A simple confirmation dialog, where the user can cancel or give her "ok" for a particular action or input.
+通过QDialog插件，你可以通过编程建立三种类型的对话框，其表单内容如下。
+1. 一个提示对话框--要求用户在一个输入字段中填写某种数据。
+2. 一组选项，供用户使用单选按钮或切换按钮(仅单选)或复选框(用于多选)进行选择。
+3. 3.一个简单的确认对话框，用户可以取消或给她一个特定的动作或输入的 "OK"。
 
-In order to create #1, the prompting input form, you have the `prompt` property within the `opts` object.
+为了创建#1，提示输入表单，你有`opts`对象中的`prompt`属性。
 
-In order to create #2, the options selection form, you have the `options` property within the `opts` object.
+为了创建#2, 选项选择表单, 你在`opts`对象中拥有`options`属性.
 
 ## Dialog API
 <doc-api file="Dialog" />
 
-## Installation
+## 安装
 
-<doc-installation plugins="Dialog" />
+<doc-installation plugins="Dialog" /> ## 安装
 
-## Usage
+## 使用方法
 
 ```js
-// outside of a Vue file
+// 在Vue文件之外
 import { Dialog } from 'quasar'
 (Object) Dialog.create({ ... })
 
-// inside of a Vue file
+// 在一个Vue文件中
 import { useQuasar } from 'quasar'
 
 setup () {
@@ -52,16 +52,16 @@ setup () {
 }
 ```
 
-Please check the API card to see what the returned Object is.
+请检查API卡，看看返回的对象是什么。
 
-### Predefined
+### 预定义的
 
 ::: tip
-For all the examples below, also see the browser console while you check them out.
+对于下面所有的示例，在你检查的时候也可以看到浏览器的控制台。
 :::
 
 ::: warning
-This is not an exhaustive list of what you can do with Dialogs as Quasar Plugins. For further exploration check out the API section.
+这并不是一个详尽的清单，你可以用对话框作为Quasar插件做什么。要进一步探索，请查看API部分。
 :::
 
 <doc-example title="Basic" file="Dialog/Basic" />
@@ -93,7 +93,7 @@ You can use HTML on title and message if you specify the `html: true` prop. **Pl
 
 You can also invoke your own custom component rather than relying on the default one that the Dialog plugin comes with out of the box. But in this case you will be responsible for handling everything (including your own component props).
 
-This feature is actually the "bread and butter" of the Dialog plugin. It helps you keep your other vue components html templates clean by separating and reusing your dialog's functionality with ease.
+这个功能实际上是Dialog插件的 "面包和黄油"。它可以帮助你保持你的其他vue组件html模板的整洁，通过分离和重复使用你的对话框的功能，轻松实现。
 
 ```js
 import { useQuasar } from 'quasar'
@@ -105,10 +105,10 @@ setup () {
   $q.dialog({
     component: CustomComponent,
 
-    // props forwarded to your custom component
+    // 转发到你的自定义组件的属性
     componentProps: {
       text: 'something',
-      // ...more..props...
+      // ...更多...属性...
     }
   }).onOk(() => {
     console.log('OK')
@@ -120,15 +120,15 @@ setup () {
 }
 ```
 
-The equivalent of the above with Options API is by directly using `this.$q.dialog({ ... })`.
+上述与Options API等效的方法是直接使用`this.$q.dialog({ ... })`。
 
 ::: warning
-Your custom component however must follow the interface described below in order to perfectly hook into the Dialog plugin. **Notice the "REQUIRED" comments** and take it as is -- just a bare-bone example, nothing more.
+然而，你的自定义组件必须遵循下面描述的接口，以便完美地与对话框插件挂钩。**注意 "必须 "的注释**，并按原样接受它--只是一个赤裸裸的示例，仅此而已。
 :::
 
-#### Composition API variant
+#### 组成API的变体
 
-We will be using the [useDialogPluginComponent](/vue-composables/use-dialog-plugin-component) composable.
+我们将使用[useDialogPluginComponent](/vue-composables/use-dialog-plugin-component)可组合。
 
 ```html
 <template>
@@ -154,43 +154,43 @@ import { useDialogPluginComponent } from 'quasar'
 
 export default {
   props: {
-    // ...your custom props
+    // ...你的定制属性
   },
 
   emits: [
-    // REQUIRED; need to specify some events that your
-    // component will emit through useDialogPluginComponent()
+    // 必须的；需要指定一些事件，你的
+    // 组件将通过useDialogPluginComponent()发出。
     ...useDialogPluginComponent.emits
   ],
 
   setup () {
-    // REQUIRED; must be called inside of setup()
+    // 必需的；必须在setup()中调用。
     const { dialogRef, onDialogHide, onDialogOK, onDialogCancel } = useDialogPluginComponent()
-    // dialogRef      - Vue ref to be applied to QDialog
-    // onDialogHide   - Function to be used as handler for @hide on QDialog
-    // onDialogOK     - Function to call to settle dialog with "ok" outcome
-    //                    example: onDialogOK() - no payload
-    //                    example: onDialogOK({ /*.../* }) - with payload
-    // onDialogCancel - Function to call to settle dialog with "cancel" outcome
+    // dialogRef - 应用于QDialog的Vue ref值
+    // onDialogHide - 用于处理QDialog上的@hide的函数。
+    // onDialogOK - 调用函数，以解决对话框的 "OK "结果。
+    //                    示例：onDialogOK() - 没有有效载荷
+    //                    例如：onDialogOK({ /*.../* })--带有效载荷
+    // onDialogCancel - 用 "取消 "的结果来结算对话框的函数。
 
     return {
-      // This is REQUIRED;
-      // Need to inject these (from useDialogPluginComponent() call)
-      // into the vue scope for the vue html template
+      // 这是必须的。
+      // 需要注入这些(从useDialogPluginComponent()调用)。
+      // 进入vue范围，用于vue html模板
       dialogRef,
       onDialogHide,
 
-      // other methods that we used in our vue html template;
-      // these are part of our example (so not required)
+      // 我们在vue html模板中使用的其他方法。
+      // 这些是我们示例的一部分(所以不是必须的)。
       onOKClick () {
-        // on OK, it is REQUIRED to
-        // call onDialogOK (with optional payload)
+        // 在确定的情况下，它必须是
+        // 调用onDialogOK(带可选的有效载荷)。
         onDialogOK()
-        // or with payload: onDialogOK({ ... })
-        // ...and it will also hide the dialog automatically
+        // 或带有有效载荷：onDialogOK({ ... })
+        // ...它也会自动隐藏该对话框
       },
 
-      // we can passthrough onDialogCancel directly
+      // 我们可以直接通过onDialogCancel。
       onCancelClick: onDialogCancel
     }
   }
@@ -198,15 +198,15 @@ export default {
 </script>
 ```
 
-If you want to define `emits` in Object form, then (requires Quasar v2.2.5+):
+如果你想以对象形式定义`emits'，那么(需要Quasar v2.2.5+)。
 
 ```
 emits: {
-  // REQUIRED; need to specify some events that your
-  // component will emit through useDialogPluginComponent()
+  // 必须的；需要指定一些事件，你的
+  // 组件将通过useDialogPluginComponent()发出。
   ...useDialogPluginComponent.emitsObject,
 
-  // ...your own definitions
+  // ......你自己的定义
 ]
 ```
 
@@ -233,69 +233,69 @@ emits: {
 <script>
 export default {
   props: {
-    // ...your custom props
+    // ...你的定制属性
   },
 
   emits: [
-    // REQUIRED
+    // 必需的
     'ok', 'hide'
   ],
 
   methods: {
-    // following method is REQUIRED
-    // (don't change its name --> "show")
+    // 以下方法是必须的
+    // (不要改变它的名字-->"展示")
     show () {
       this.$refs.dialog.show()
     },
 
-    // following method is REQUIRED
-    // (don't change its name --> "hide")
+    // 以下方法是必须的
+    // (不要改变它的名字-->"隐藏")
     hide () {
       this.$refs.dialog.hide()
     },
 
     onDialogHide () {
-      // required to be emitted
-      // when QDialog emits "hide" event
+      // 需要排放的气体
+      // 当QDialog发出 "隐藏 "事件时
       this.$emit('hide')
     },
 
     onOKClick () {
-      // on OK, it is REQUIRED to
-      // emit "ok" event (with optional payload)
-      // before hiding the QDialog
+      // 在确定的情况下，它必须是
+      // 发出 "ok "事件(有可选的有效载荷)。
+      // 在隐藏QDialog之前
       this.$emit('ok')
-      // or with payload: this.$emit('ok', { ... })
+      // 或带有有效载荷： this.$emit('ok', { ... })
 
-      // then hiding dialog
+      // 然后隐藏对话
       this.hide()
     },
 
     onCancelClick () {
-      // we just need to hide the dialog
+      // 我们只需要隐藏对话框
       this.hide()
     }
   }
 }
 </script>
 ```
-## Cordova/Capacitor back button
-Quasar handles the back button for you by default so it can hide any opened Dialogs instead of the default behavior which is to return to the previous page (which is not a nice user experience).
+## Cordova/Capacitor返回按钮
+Quasar默认为你处理后退按钮，所以它可以隐藏任何打开的对话框，而不是默认的行为，即返回到前一页(这不是一个好的用户体验)。
 
-However, should you wish to disable this behavior, edit your /quasar.conf.js file:
+然而，如果你想禁用这种行为，请编辑你的/quasar.conf.js文件。
 
 ```js
 // quasar.conf.js;
-// for Cordova (only!):
+// 为Cordova(只！)。
 return {
   framework: {
     config: {
       cordova: {
-        // Quasar handles app exit on mobile phone back button.
+        // Quasar处理手机后退按钮的应用退出。
         backButtonExit: true/false/'*'/['/login', '/home', '/my-page'],
 
-        // On the other hand, the following completely
-        // disables Quasar's back button management.
+        // 另一方面，以下是完全
+        // 禁用Quasar的返回按钮管理。
         backButton: true/false
       }
     }
@@ -303,16 +303,16 @@ return {
 }
 
 // quasar.conf.js;
-// for Capacitor (only!)
+// 用于电容器(仅适用于！)。
 return {
   framework: {
     config: {
       capacitor: {
-        // Quasar handles app exit on mobile phone back button.
+        // Quasar处理手机后退按钮的应用退出。
         backButtonExit: true/false/'*'/['/login', '/home', '/my-page'],
 
-        // On the other hand, the following completely
-        // disables Quasar's back button management.
+        // 另一方面，以下是完全
+        // 禁用Quasar的返回按钮管理。
         backButton: true/false
       }
     }

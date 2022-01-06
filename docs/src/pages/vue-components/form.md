@@ -1,6 +1,6 @@
 ---
-title: Form
-desc: The QForm Vue component renders a form and allows easy validation of child form components like QInput, QSelect or QField.
+title: 形状
+desc: QForm Vue组件渲染了一个表单，并允许轻松验证子表单组件，如QInput, QSelect或QField。
 keys: QForm
 related:
   - /vue-components/input
@@ -9,24 +9,24 @@ related:
   - /vue-composables/use-form-child
 ---
 
-The QForm component renders a `<form>` DOM element and allows you to easily validate child form components (like [QInput](/vue-components/input#Internal-validation), [QSelect](/vue-components/select) or your [QField](/vue-components/field) wrapped components) that have the **internal validation** (NOT the external one) through `rules` associated with them.
+QForm组件渲染了一个`<form>`DOM元素，并允许你轻松地验证子表单组件(如[QInput](/vue-components/input#Internal-validation)、[QSelect](/vue-components/select)或你的[QField](/vue-components/field)包装组件)，这些组件具有**内部验证**(不是外部验证)，通过与它们相关的`rules'。
 
 ## QForm API
 
 <doc-api file="QForm" />
 
-## Usage
+## 使用方法
 
 ::: warning
-Please be aware of the following:
-* QForm hooks into QInput, QSelect or QField wrapped components
-* QInput, QSelect or QField wrapped components must use the internal validation (NOT the external one).
-* If you want to take advantage of the `reset` functionality, then be sure to also capture the `@reset` event on QForm and make its handler reset all of the wrapped components models.
+请注意以下几点。
+* QForm钩住了QInput、QSelect或QField包装的组件。
+* QInput, QSelect或QField包装的组件必须使用内部验证(而不是外部验证)。
+* 如果你想利用 "重置 "功能，那么一定要在QForm上捕获"@reset "事件，并使其处理程序重置所有被包装的组件模型。
 :::
 
-<doc-example title="Basic" file="QForm/Basic" />
+<doc-example title="基本" file="QForm/Basic" />
 
-In order for the user to be able to activate the `@submit` or `@reset` events on the form, create a QBtn with `type` set to `submit` or `reset`:
+为了让用户能够激活表单上的"@submit "或"@reset "事件，创建一个QBtn，将 "type "设置为 "submit "或 "reset"。
 
 ```html
 <div>
@@ -35,12 +35,12 @@ In order for the user to be able to activate the `@submit` or `@reset` events on
 </div>
 ```
 
-Alternatively, you can give the QForm a Vue ref name and call the `validate` and `resetValidation` functions directly:
+另外，你可以给QForm一个Vue ref name，并直接调用`validate`和`resetValidation`函数。
 
 ```js
-// Composition API variant
+// 组合式 API 变体
 
-// <q-form ref="myForm">
+// <q-表单 ref="myForm">
 
 setup () {
   const myForm = ref(null)
@@ -48,16 +48,16 @@ setup () {
   function validate () {
     myForm.value.validate().then(success => {
       if (success) {
-        // yay, models are correct
+        // 是的，模型是正确的
       }
       else {
-        // oh no, user has filled in
-        // at least one invalid value
+        // 哦，不，用户已经填写了
+        // 至少有一个无效的值
       }
     })
   }
 
-  // to reset validations:
+  // 来重置验证。
   function reset () {
     myForm.value.resetValidation()
   }
@@ -70,26 +70,26 @@ setup () {
 ```
 
 ```js
-// Options API variant
+// 选项式 API 变体
 
-// <q-form ref="myForm">
+// <q-表单 ref="myForm">
 
 this.$refs.myForm.validate().then(success => {
   if (success) {
-    // yay, models are correct
+    // 是的，模型是正确的
   }
   else {
-    // oh no, user has filled in
-    // at least one invalid value
+    // 哦，不，用户已经填写了
+    // 至少有一个无效的值
   }
 })
 
-// to reset validations:
+// 来重置验证。
 this.$refs.myForm.resetValidation()
 ```
 
-## Turning off Autocompletion
-If you want to turn off the way that some browsers use autocorrection or spellchecking of all of the input elements of your form, you can also add these pure HTML attributes to the QForm component:
+## 关闭自动补全功能
+如果你想关闭某些浏览器对你的表单的所有输入元素使用自动更正或拼写检查的方式，你也可以在QForm组件中添加这些纯HTML属性。
 
 ```html
 autocorrect="off"
@@ -98,8 +98,8 @@ autocomplete="off"
 spellcheck="false"
 ```
 
-## Submitting to a URL (native form submit)
-If you are using the native `action` and `method` attributes on a QForm, please remember to use the `name` prop on each Quasar form component, so that the sent formData to actually contain what the user has filled in.
+## 提交到一个URL(本地表单提交)
+如果你在QForm上使用本地的`action`和`method`属性，请记得在每个Quasar表单组件上使用`name`属性，这样发送的formData才能真正包含用户填写的内容。
 
 ```html
 <q-form action="https://some-url.com" method="post">
@@ -108,9 +108,9 @@ If you are using the native `action` and `method` attributes on a QForm, please 
 </q-form>
 ```
 
-* Control the way the form is submitted by setting `action`, `method`, `enctype` and `target` attributes of QForm
-* If a listener on `@submit` IS NOT present on the QForm then the form will be submitted if the validation is successful
-* If a listener on `@submit` IS present on the QForm then the listener will be called if the validation is successful. In order to do a native submit in this case:
+* 通过设置QForm的`action`、`method`、`enctype`和`target`属性来控制表单的提交方式。
+* 如果QForm上没有`@submit`的监听器，那么如果验证成功，表单将被提交。
+* 如果QForm上有`@submit`的监听器，那么如果验证成功，该监听器将被调用。在这种情况下，为了做一个本地提交。
 
 ```html
 <q-form action="https://some-url.com" method="post" @submit.prevent="onSubmit">
@@ -128,21 +128,21 @@ methods: {
 }
 ```
 
-## Child communication
+## 子实体通信
 
-By default, all the Quasar form components communicate with the parent QForm instance. If, for some reason, you are creating your own form component (**that doesn't wrap a Quasar form component**), then you can make QForm aware of it by using:
+默认情况下，所有的Quasar表单组件都与父代QForm实例进行通信。如果由于某种原因，你正在创建你自己的表单组件(**没有包裹Quasar表单组件**)，那么你可以通过使用以下方法使QForm知道它。
 
 ```js
-// Composition API variant
+// 组合式 API 变体
 
 import { useFormChild } from 'quasar'
 
 setup () {
-  // function validate () { ... }
+  // 函数validate() { ... }
 
   useFormChild({
     validate, // Function; Can be async;
-              // Should return a Boolean (or a Promise resolving to a Boolean)
+              // 应该返回一个布尔值(或一个解析为布尔值的承诺)。
     resetValidation,    // Optional function which resets validation
     requiresQForm: true // should it error out if no parent QForm is found?
   })
@@ -150,23 +150,23 @@ setup () {
 ```
 
 ```js
-// Options API variant
+// 选项式 API 变体
 
 import { QFormChildMixin } from 'quasar'
 
-// some component
+// 某些组件
 export default {
   mixins: [ QFormChildMixin ],
 
   methods: {
-    // required! should return a Boolean
-    // or a Promise resolving to a Boolean
+    // 要求！应该返回一个布尔值
+    // 或一个可解析为布尔值的Promise
     validate () {
       console.log('called my-comp.validate()')
       return true
     },
 
-    // optional function
+    // 可选功能
     resetValidation () {
       // ...
     }

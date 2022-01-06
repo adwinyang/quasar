@@ -1,59 +1,59 @@
 ---
-title: Testing & Auditing
-desc: How to unit and end to end test a Quasar app and also how to audit for quality and security.
+title: 测试与审计
+desc: 如何对Quasar应用程序进行单元和端到端测试，以及如何对质量和安全进行审计。
 ---
 
-Your Quasar projects have the ability to add unit and e2e testing harnesses. This introduction will not go into details about how to write and use tests, for that please consult the specially prepared and maintained documentation at the [Testing repo at GitHub](https://github.com/quasarframework/quasar-testing/tree/next). If you are a beginner, consider reading one of the books in the "Further Reading" section.
+你的Quasar项目有能力添加单元和e2e测试线束。本介绍将不涉及如何编写和使用测试的细节，为此请查阅[GitHub上的测试 repo](https://github.com/quasarframework/quasar-testing/tree/next)中专门编写和维护的文档。如果你是一个初学者，可以考虑阅读 "进一步阅读 "部分中的书籍。
 
-## High level overview
+## 高层概述
 
-You can install multiple pre-rigged testing harnesses to your existing Quasar application by running a simple command. This command will pull and install a node module (with dependencies) into your project's `package.json`, place necessary configuration files as appropriate and if you so choose, it will also add script commands that expose some of the functionality of the respective harness. You can add multiple harnesses and even use them for your continuous integration pipelines - as appropriate.
+你可以通过运行一个简单的命令来为你现有的Quasar应用程序安装多个预操纵的测试线束。这个命令将拉动并安装一个节点模块(含依赖关系)到你的项目的`package.json`中，适当地放置必要的配置文件，如果你选择的话，它还将添加脚本命令，暴露各自线束的一些功能。你可以添加多个线束，甚至将它们用于你的持续集成管道--视情况而定。
 
-Testing is not in and of itself hard. The most complicated part is setting up the testing harness. The trick lies in knowing what to test. If you are new to testing, it is absolutely imperative that you familiarize yourself with some of the concepts and patterns. There are some links for further reading at the end of this document page.
+测试本身并不难。最复杂的部分是设置测试线束。诀窍在于知道要测试什么。如果你是测试的新手，绝对有必要让自己熟悉一些概念和模式。在本文档页面的末尾，有一些进一步阅读的链接。
 
-## Testing documentation
+## 测试文档
 
-Some Qv2-compatible Testing AEs are currently in alpha or beta phase, existing documentation website (https://testing.quasar.dev) still refer to Qv1 AEs.
-You can find the updated documentation into `next` branch of quasar-testing repo.
+一些与Qv2兼容的测试AE目前处于alpha或beta阶段，现有的文档网站(https://testing.quasar.dev)仍然参考Qv1 AEs。
+你可以在quasar-testing repo的`next`分支中找到更新的文档。
 
-<q-btn color="brand-primary" label="Testing repo @next branch" icon-right="launch" no-caps href="https://github.com/quasarframework/quasar-testing/tree/next" target="_blank" />
+<q-btn color="brand-primary" label="Testing repo @next branch" ic-right=" launch" no-caps href="https://github.com/quasarframework/quasar-testing/tree/next" target="_blank" />
 
-## Installing
+## 安装
 
 ```bash
 $ cd your-quasar-project
 $ quasar ext add @quasar/testing
 ```
 
-The lightweight extension installer will ask you which testing harnesses you want to install. Then it will install the respective extensions for these harnesses, which you can configure as you like. It is how multiple testing harnesses are ideally managed within a Quasar project.
+轻量级扩展安装程序会问你想安装哪些测试线束。然后它将为这些线束安装各自的扩展，你可以根据自己的需要进行配置。这就是在一个Quasar项目中管理多个测试线束的理想方式。
 
-It will provide you with a new `quasar run` command that you can use to execute test-runners - and even your HMR dev environment at the same time. This approach can, for example, be quite helpful if you need to pass quasar.ctx to the test runner...
+它将为你提供一个新的`quasar run`命令，你可以用它来执行测试运行器--甚至同时执行你的HMR开发环境。例如，如果你需要将quasar.ctx传递给测试运行器，这种方法会很有帮助...
 
 ```bash
 # Example to run jest && dev server in pwa mode
 $ quasar test --unit jest --dev="-m pwa"
 ```
 
-If you ever need to review your choices you can take a look at `quasar.extensions.json`.
+如果你需要审查你的选择，你可以看一下`quasar.extensions.json`。
 
-If you don't want to install the base package, you don't have to do so. You can install each test harness app extension individually. They are completely standalone, but you won't have the tight integration with the `quasar test` command functionality.
+如果你不想安装基本软件包，你不需要这样做。你可以单独安装每个测试线束应用程序扩展。它们是完全独立的，但你不会有与`quasar test`命令功能的紧密结合。
 
-## Further Reading
+## 进一步阅读
 
-### Books
-- [Testing Vue.js Applications](https://www.manning.com/books/testing-vue-js-applications) by Edd Yerburgh, the author of the `@vue/test-utils` repo
-- [Free Vue Testing Handbook](https://lmiller1990.github.io/vue-testing-handbook/)
+### 书籍
+- 测试Vue.js应用程序](https://www.manning.com/books/testing-vue-js-applications)，作者是Edd Yerburgh，`@vue/test-utils` repo的作者。
+- [免费Vue测试手册](https://lmiller1990.github.io/vue-testing-handbook/)
 
-### Tutorials
-- [Unit Testing Vue Router with Jest](https://medium.com/js-dojo/unit-testing-vue-router-1d091241312)
-- ... add your suggestions here
+### 教程
+- 用Jest对Vue Router进行单元测试](https://medium.com/js-dojo/unit-testing-vue-router-1d091241312)
+- ...在这里添加你的建议
 
-### Documentation
+### 文档
 - [@vue/test-utils](https://vue-test-utils.vuejs.org)
 - [jest 24](https://facebook.github.io/jest/)
 - [cypress](https://docs.cypress.io/guides/core-concepts/introduction-to-cypress.html#Cypress-Is-Simple)
 - [lighthouse](https://developers.google.com/web/tools/lighthouse/#cli)
 - [snyk](https://snyk.io/test)
 - [nlf](https://www.npmjs.com/package/nlf)
-- [chai](http://www.chaijs.com/)
-- [istanbul](https://istanbul.js.org/)
+- [Chai](http://www.chaijs.com/)
+- [伊斯坦布](https://istanbul.js.org/)

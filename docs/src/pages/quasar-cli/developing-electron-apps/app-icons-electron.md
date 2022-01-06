@@ -1,25 +1,25 @@
 ---
-title: App Icons for Electron
-desc: How to manage the app icons for a Desktop Quasar app.
+title: 电子的应用图标
+desc: 如何管理桌面Quasar应用程序的应用程序图标。
 ---
 
-These images are used to display the icon of the application in the desktop operating system in the tray, on the desktop, in the file-browser and in relevant stores. The `icon.ico` file is for Windows and `icon.icns` is for MacOS. If you discover any that are missing, please [open an issue](https://github.com/quasarframework/quasar/issues).
+这些图像用于在桌面操作系统中的托盘、桌面、文件浏览器和相关商店中显示应用程序的图标。`icon.ico`文件用于Windows，`icon.icns`用于MacOS。如果你发现有任何遗漏，请[打开一个问题](https://github.com/quasarframework/quasar/issues)。
 
-<img src="https://cdn.quasar.dev/img/iconfactory.png" style="float:right;max-width:15%;min-width:240px;padding-top:40px" />
+<img src="https://cdn.quasar.dev/img/iconfactory.png" style="float:right;max-width:15%;min-width:240px; padding-top:40px" />
 
 ## Icon Genie CLI
 
 ::: tip
-We highly recommend using the [Icon Genie CLI](/icongenie/introduction), because it consumes a source icon and automatically clones, scales, minifies and places the icons in the appropriate directories for you. When needed, it also tells you what tags you'll need to add to your /src/index.template.html file.
+我们强烈建议使用[Icon Genie CLI](/icongenie/introduction)，因为它可以使用一个源图标，并自动克隆、缩放、最小化，并为你把图标放到适当的目录中。需要时，它还会告诉你需要在你的/src/index.template.html文件中添加哪些标签。
 :::
 
-Quickly bootstrap the necessary images with Icon Genie CLI. For a complete list of options, please visit the [Icon Genie CLI](/icongenie/command-list) command list page.
+用Icon Genie CLI快速启动必要的图像。有关完整的选项清单，请访问[Icon Genie CLI](/icongenie/command-list)命令清单页面。
 
 ```bash
 $ icongenie generate -m electron -i /path/to/source/icon.png
 ```
 
-## Manual instructions
+## ##手册说明
 
 ```
 src-electron/

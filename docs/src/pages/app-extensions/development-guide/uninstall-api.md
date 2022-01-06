@@ -22,7 +22,7 @@ module.exports = function (api) {
 ## api.resolve
 解析运行此应用扩展所在的应用程序中的路径。无需自行导入`path`和解析路径。
 
-``` js
+```js
 // 解析为 app 的 root 目录 (根目录)
 api.resolve.app('src/my-file.js')
 
@@ -109,7 +109,7 @@ if (api.hasExtension(extId)) {
 api.removePath('my-folder')
 ```
 
-上面的例子从应用程序的根目录删除了 "my-folder"。
+上面的示例从应用程序的根目录删除了 "my-folder"。
 
 ## api.getPersistentConf
 

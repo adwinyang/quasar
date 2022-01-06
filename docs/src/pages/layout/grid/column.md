@@ -38,7 +38,7 @@ Flexbox网格行的自动布局也意味着您可以设置一行的高度，其�
 <doc-example title="All breakpoints" file="grid/ColumnAllBreakpoints" />
 
 ### 混搭
-不想让你的行简单地堆在一些网格层中？根据需要，为每个层使用不同的类的组合。请看下面的例子，以更好地了解这一切是如何运作的。
+不想让你的行简单地堆在一些网格层中？根据需要，为每个层使用不同的类的组合。请看下面的示例，以更好地了解这一切是如何运作的。
 
 <doc-example title="Mix and match" file="grid/ColumnMixAndMatch" />
 

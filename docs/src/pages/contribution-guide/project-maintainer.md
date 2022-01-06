@@ -1,36 +1,36 @@
 ---
-title: The Role of the Project Maintainer
-desc: The role of a Quasar project manager
+title: 项目维护者的作用
+desc: Quasar项目经理的作用
 ---
 
-## Your Profile
+## 你的个人资料
 
-- You have a vision on something great that you want to build and own
-- You have enough time to put into it to succeed (although, yes, “You may have a job and the job is your priority, not this Quasar Project” --- this is perfectly fine)
-- You are not already involved in other projects that take a lot of your time and focus
-- You love open source
-- You want to help others
-- You can accept constructive criticism
+ - 你对你想要建造的东西有点愿景
+ - 你有足够的时间来进入成功(虽然，是的，“你可能有一份工作，工作是你的优先事项，而不是这个准项目”---这是完全罚款)
+ - 您尚未参与其他需要花费时间和焦点的项目
+ - 你喜欢开源
+ - 你想帮助他人
+ - 你可以接受建设性的批评
 
-## Your Responsibilities
+## 你的职责
 
-- You are loosely aware of the entire Quasar ecosystem / inner-workings and in a detail of your Quasar feature / component / app extension / area.
-- You are recognized in the community (forum / chat) as the authority and lead over your Quasar feature / component / app extension / area and you actively supports it
-- You document, communicate and keep updated the vision of the Quasar feature / component / app extension / area that you are responsible for
-- You deliver the vision by implementing, fixing bugs, reviewing and merging PRs directly and via contributors
-- You focus on high usability for the end users - demos, documentation, community requests via forum and Discord
-- You provide inputs for Marketing and Media departments for articles on your Quasar Project
-  - you don’t have to be the one writing the articles, although preferred, but at least find someone willing
--  You provide a code review for other Quasar maintainers and request a code review of your contributions
-- You keep track of the ongoing work and reported issues to make sure that it gets reviewed and merged in a timely manner.
-  - You acknowledge every important contributor and give credit for their work (also in written form on the repo README, on every presentation material, on documentation).
-- You have also the final responsibility
-  - If no reviewer can be found for an important contribution, you review.
-  - If no developer can be found to fix an important bug, you develop.
-  - If something goes wrong, it’s eventually your fault.
-- You keep the Quasar team updated at least on bi-weekly basis
-  - You have regular calls with Razvan
-  - You post a short project status into Discord #projects-status channel
-- You are brave to step down when you do not have time - it is perfectly fine to announce it.
+- 您可以松散地了解整个Quasar生态系统/内部工作，并详细介绍了您的Quasar功能/组件/应用程序扩展/区域。
+- 您在社区(论坛/聊天)中被认可为权限并领导您的标准功能/组件/应用程序扩展/区域，您积极支持它
+- 您记录，沟通和保留更新了您负责的Quasar功能/组件/应用程序扩展/区域的愿景
+- 通过实施，修复错误，直接和通过贡献者来提供愿景
+- 您将专注于最终用户的高可用性 - 通过论坛和不和谐的DEMOS，文档，社区请求
+- 您为您的Quasar项目提供营销和媒体部门的投入
+  - 你不必是写文章的人，尽管首选，但至少找人愿意
+- 您为其他代码维护者提供了代码审查，并请求对您的贡献的代码审查
+- 您跟踪正在进行的工作和报告的问题，以确保它及时审核并合并。
+  - 您承认每个重要的贡献者，并为其工作(也是在Repo Readme上的书面形式，在每个演示文档上，在文件上)。
+- 你也有最终的责任
+  - 如果找不到重要贡献，请审核。
+  - 如果没有找到开发人员来修复一个重要的错误，则会开发。
+  - 如果出现问题，最终是您的错。
+- 您将Quasar团队保持至少按照每周进行更新
+  - 你有razvan的常规电话
+  - 您将简短的项目状态发布到Discord#项目状态频道中
+- 当你没有时间时，你勇敢地下台 - 宣布它是完全没事的。
 
-More info - [Best Practices for Maintainers](https://opensource.guide/best-practices/)
+更多信息 -  [维护者的最佳实践](https://opensource.guide/best-practics/)

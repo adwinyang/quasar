@@ -1,26 +1,24 @@
 ---
-title: How-to Start a New Project
-desc: How to start a new project for Quasar.
+title: 如何开始一个新项目
+desc: 如何开始一个新的 Quasar 项目。
 ---
 
-You have a great new idea which is in line with the [Quasar vision](/introduction-to-quasar). Great, here is how to make it happen!
+您有一个很棒的新想法，符合[Quasar Vision](/introduction-to-quasar)标准。 太好了，本章节将介绍如何实现它！
 
-1. Email to Razvan (`razvan.stoenescu [at] gmail [dot] com`) the following:
+1. 发送 email 至 Razvan(`razvan.stoenescu [at] gmail [dot] com`), 内容如下：
 
-   a. **The need** you are fulfilling with the new Quasar Project
+  a. **您需要**您正在与新的Quasar项目履行 **所有者的名称** /维护者该项目？
 
-   b. **Name of the owner**/maintainer the project?
+  b. **愿景**和**技术高级概述**
 
-   c. **Vision** and a **technical high-level overview**
+  c. **你什么时候计划第一个公开发布**？
 
-   d. **When do you plan the first public release**?
+  d. **里程碑**和预计日期
 
-   e. **Milestones** with estimated dates
+  f. **Quasar团队需要多少**时间
 
-   f. How much **time you need from the Quasar team**
+  g. 需要在 **Quasar Core / Extensions**记录**变更**
 
-   g. Document the **changes** which are needed **in the Quasar core / extensions**
+  h. 可持续发展计划 - 任何项目都会对现有的Quasar团队创造更多的工作和压力 - 什么是**您的长期维护计划**
 
-   h. Sustainability plan - any project creates more work and pressure on the existing Quasar team - what is **your long-term maintenance plan**
-
-2. Set up a meeting with Razvan to discuss it and invite all engaged in the project
+2. 与 Razvan 开会讨论并邀请所有参与项目的人

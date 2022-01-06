@@ -1,28 +1,28 @@
 ---
-title: App Handling Assets
-desc: How to use regular app assets and static assets in a Quasar app.
+title: 应用程序处理资产
+desc: 如何在Quasar应用中使用常规应用资产和静态资产。
 ---
-You will notice in the project structure we have two directories for assets: `/public/` and `/src/assets/`. What is the difference between them? Some are static assets while the others are processed and embedded by the build system.
+你会注意到在项目结构中我们有两个资产目录：`/public/`和`/src/assets/`。它们之间有什么区别呢？有些是静态资产，而其他的是由构建系统处理和嵌入的。
 
-So let's try to answer the question above. We'll first talk about using regular assets then we'll see what the difference is for static assets.
+所以让我们试着回答上面的问题。我们先说说使用常规资产，然后再看看静态资产有什么区别。
 
-## Regular assets - /src/assets
-In `*.vue` components, all your templates and CSS are parsed by `vue-html-loader` and `css-loader` to look for asset URLs. For example, in `<img src="./logo.png">` and `background: url(./logo.png)`, `"./logo.png"` is a relative asset path and will be resolved by Webpack as a module dependency.
+## 常规资产 - /src/assets
+在`*.vue`组件中，你所有的模板和CSS都会被`vue-html-loader`和`css-loader`解析，以寻找资产URL。例如，在`<img src="./logo.png">`和`background: url(./logo.png)`中，`"./logo.png "是一个相对资产路径，将被Webpack解析为模块依赖。
 
-Because `logo.png` is not JavaScript, when treated as a module dependency, we need to use `url-loader` and `file-loader` to process it. Quasar CLI has already configured these webpack loaders for you, so you basically get features such as filename fingerprinting and conditional base64 inlining for free, while being able to use relative/module paths without worrying about deployment.
+因为`logo.png`不是JavaScript，当被当作模块依赖时，我们需要使用`url-loader`和`file-loader`来处理它。Quasar CLI已经为你配置了这些webpack加载器，所以你基本上可以免费获得文件名指纹和有条件的base64内联等功能，同时能够使用相对/模块路径而不用担心部署问题。
 
-Since these assets may be inlined/copied/renamed during build, they are essentially part of your source code. This is why it is recommended to place Webpack-processed assets inside `/src/assets`, along side other source files. In fact, you don't even have to put them all in `/src/assets`: you can organize them based on the module/component using them. For example, you can put each component in its own directory, with its static assets right next to it.
+由于这些资产在构建过程中可能被内联/复制/重命名，它们基本上是你源代码的一部分。这就是为什么建议将Webpack处理的资产放在`/src/assets`中，与其他源文件一起。事实上，你甚至不需要把它们全部放在`/src/assets`中：你可以根据使用它们的模块/组件来组织它们。例如，你可以把每个组件放在它自己的目录中，其静态资产就在旁边。
 
-### Asset Resolving Rules
+### 资产解析规则
 
-Relative URLs, e.g. `./assets/logo.png` will be interpreted as a module dependency. They will be replaced with an auto-generated URL based on your Webpack output configuration.
+相对的URLs，例如`./assets/logo.png`将被解释为模块的依赖性。它们将被替换为基于你的Webpack输出配置的自动生成的URL。
 
-URLs prefixed with `~` are treated as a module request, similar to `require('some-module/image.png')`. You need to use this prefix if you want to leverage Webpack's module resolving configurations. Quasar provides `assets` Webpack alias out of the box, so it is recommended that you use it like this: `<img src="~assets/logo.png">`. Notice `~` in front of 'assets'.
+以`~`为前缀的URL将被视为一个模块请求，类似于`require('some-module/image.png')`。如果你想利用Webpack的模块解析配置，你需要使用这个前缀。Quasar提供了`assets`Webpack别名，所以建议你像这样使用它。`<img src="~assets/logo.png">`。注意'assets'前面的'~'。
 
-## Static Assets - /public
-Root-relative URLs (e.g. `/logo.png` -- where '/' is your publicPath) or `logo.png` are not processed at all. This should be placed in `public/`. These won't be processed by Webpack at all. The statics folder is simply copied over to the distributable folder as-is.
+## 静态资产 - /public
+与根相关的URL(例如`/logo.png`--其中'/'是你的publicPath)或`logo.png`完全不被处理。这应该被放在`public/`中。这些根本不会被Webpack处理。statics文件夹会被简单地复制到可分发的文件夹中。
 
-Quasar has some smart algorithms behind the curtains which ensure that no matter what you build (SPA, PWA, Cordova, Electron), your statics are correctly referenced *if and only if* they do not use a relative path.
+Quasar在幕后有一些智能算法，确保无论你构建什么(SPA、PWA、Cordova、Electron)，你的静态文件都能被正确引用*当且仅当它们不使用相对路径。
 
 ```html
 <!-- Good! -->
@@ -37,16 +37,16 @@ Quasar has some smart algorithms behind the curtains which ensure that no matter
 ```
 
 ::: tip Assets vs Statics
-Files in the "assets" folder are only included in your build if they have a literal reference in one of your Vue files.
-Every file and folder from the "public" folder are copied into your production build as-is, no matter what.
+assets "文件夹中的文件只有在你的Vue文件中有字面引用时才会被包含在你的构建中。
+"public "文件夹中的每个文件和文件夹都会按原样复制到你的生产构建中，不管是什么。
 :::
 
 ::: danger
-When not building a SPA/PWA/SSR, then `/public/icons/*` and `/public/favicon.ico` will NOT be embedded into your app because they would not serve any purpose. For example, Electron or Cordova apps do not require those files.
+当不构建SPA/PWA/SSR时，`/public/icons/*`和`/public/favicon.ico`将不会被嵌入你的应用程序，因为它们没有任何作用。例如，Electron或Cordova应用程序就不需要这些文件。
 :::
 
-## Vue Binding Requires Statics Only
-Please note that whenever you bind "src" to a variable in your Vue scope, it must be one from the statics folder. The reason is simple: the URL is dynamic, so Webpack (which packs up assets at compile time) doesn't know which file you'll be referencing at runtime, so it won't process the URL.
+## Vue的绑定只需要statics
+请注意，只要你将 "src "绑定到Vue作用域中的一个变量，它就必须是statics文件夹中的一个。原因很简单：URL是动态的，所以Webpack(在编译时打包资产)不知道你在运行时将引用哪个文件，所以它不会处理这个URL。
 
 ```html
 <template>
@@ -69,11 +69,11 @@ export default {
 </script>
 ```
 
-You can force serving static assets by binding `src` to a value with Vue. Instead of `src="path/to/image"` use `:src=" 'path/to/image' "` or `:src="imageSrc"`. Please note the usage of single quotes within double quotes on the second code example (spaces have been added to see this visually on the documentation website - normally you would not have the spaces).
+你可以通过将`src`绑定到Vue的一个值来强制服务静态资产。使用`:src="path/to/image "而不是`:src="path/to/image""`或`:src="imageSrc"。请注意第二个代码示例中双引号内单引号的用法(为了在文档网站上直观地看到这一点，已经添加了空格--通常情况下，你不会有空格)。
 
-## Getting Asset Paths in JavaScript
+## 在JavaScript中获取资产路径
 
-In order for Webpack to return the correct asset paths, you need to use `require('./relative/path/to/file.jpg')`, which will get processed by `file-loader` and returns the resolved URL. For example:
+为了让Webpack返回正确的资产路径，你需要使用`require('./relative/path/to/file.jpg')`，它将被`file-loader`处理并返回解析后的URL。比如说。
 
 ```js
 computed: {
@@ -83,4 +83,4 @@ computed: {
 }
 ```
 
-Note the above example will include every image under `./bgs/` in the final build. This is because Webpack cannot guess which of them will be used at runtime, so it includes them all.
+请注意，上面的示例将在最终构建中包括`./bgs/`下的每一个图片。这是因为Webpack无法猜测哪些图片会在运行时被使用，所以它包括了所有图片。

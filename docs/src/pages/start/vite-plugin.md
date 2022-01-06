@@ -1,22 +1,22 @@
 ---
-title: Vite plugin for Quasar
-desc: How to embed Quasar into a Vite app.
+title: 用于Quasar的Vite插件
+desc: 如何将Quasar嵌入到Vite应用程序中。
 components:
   - vite-plugin/VitePluginUsage
 ---
 
-If you want to embed Quasar into your existing [Vite](https://vitejs.dev) project then follow this guide to install and use the `@quasar/vite-plugin`.
-What our Vite plugin offers out of the box is tree-shaking for Quasar and also Quasar Sass variables integration.
+如果你想把Quasar嵌入到你现有的[Vite](https://vitejs.dev)项目中，那么请按照这个指南来安装和使用`@quasar/vit-plugin`。
+我们的Vite插件所提供的是Quasar的树形抖动和Quasar Sass变量的整合。
 
 ::: warning Warning! Current limitation:
-SSR builds with Quasar Vite plugin are not yet supported.
+目前还不支持带有Quasar Vite插件的SSR构建。
 :::
 
-> Cross-platform support with Vite is handled by community plugins. These are not tightly integrated with Quasar as with Quasar CLI and may have issues. This is why for the best developer experience we recommend to use Quasar CLI instead. Also, there are plans to release a **Quasar CLI with Vite** under the hood instead of Webpack.
+> Vite的跨平台支持是由社区插件处理的。这些插件没有像Quasar CLI那样与Quasar紧密结合，可能会有问题。这就是为什么我们建议使用Quasar CLI，以获得最佳的开发体验。此外，我们还计划发布一个**Quasar CLI，在引擎盖下使用Vite**而不是Webpack。
 
-## Creating a Vite project
+## 创建一个Vite项目
 
-``` bash
+```bash
 # yarn
 $ yarn create vite my-vue-app --template vue
 
@@ -30,18 +30,18 @@ npm init vite@latest my-vue-app -- --template vue
 pnpm create vite my-vue-app -- --template vue
 ```
 
-For the official (and full) guide, please visit the [Vite guide for scaffolding](https://vitejs.dev/guide/#scaffolding-your-first-vite-project) a Vite project. **Select "Vue" when asked.**
+对于官方(和完整的)指南，请访问[Vite指南的脚手架](https://vitejs.dev/guide/#scaffolding-your-first-vite-project)一个Vite项目。**在询问时选择 "Vue "**。
 
-## Installation
+## 安装
 
-Navigate to your Vite project folder and install the necessary packages.
+导航到你的Vite项目文件夹并安装必要的软件包。
 
 ::: tip
-* Notice that `@quasar/extras` is optional.
-* Also, add `sass@1.32.0` (notice the pinned version) only if you want to use the Quasar Sass/SCSS variables.
+* 注意，`@quasar/extras`是可选的。
+* 另外，只有当你想使用Quasar Sass/SCSS的变量时，才添加`sass@1.32.0`(注意是销号的)。
 :::
 
-``` bash
+```bash
 $ yarn add quasar @quasar/extras
 $ yarn add -D @quasar/vite-plugin sass@1.32.0
 
@@ -54,19 +54,19 @@ $ pnpm add quasar @quasar/extras
 $ pnpm add quasar -D @quasar/vite-plugin sass@1.32.0
 ```
 
-## Using Quasar
+## 使用Quasar
 
-We have built a configurator to help you get started as quick as possible:
+我们已经建立了一个配置器来帮助你尽快开始使用。
 
 <vite-plugin-usage />
 
-## RTL support
+## RTL支持
 
-For enabling, please check out our [RTL Support](/options/rtl-support) page and follow the instructions.
+如果要启用，请查看我们的[RTL支持](/options/rtl-support)页面并按照说明操作。
 
-## Warning when building for production
+## 为生产而构建时的警告
 
-When building for production, you may notice the warning below. You can safely ignore it. This is a known [Vite issue](https://github.com/vitejs/vite/issues/4625).
+当为生产构建时，你可能会注意到下面的警告。你可以安全地忽略它。这是一个已知的[Vite问题](https://github.com/vitejs/vite/issues/4625)。
 
 ```
 warnings when minifying css:

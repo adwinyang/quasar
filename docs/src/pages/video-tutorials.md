@@ -1,30 +1,30 @@
 ---
-title: Video Tutorials
-desc: The list of video tutorials on Quasar created by the community.
+title: 视频教程
+desc: 由社区创建的关于Quasar的视频教程列表。
 keys: Video Tutorials
 components:
   - video-tutorials/TutorialListing
   - introduction-to-quasar/IntroductionVideo
 ---
 
-<introduction-video />
+<介绍-视频 />
 
-The video tutorials below have been created by the community.
+下面的视频教程是由社区创建的。
 
 ::: tip
-If you want to have your own video tutorial listed here, please email `razvan.stoenescu [at] gmail [dot] com` with the details. Thank you.
+如果你想在这里列出你自己的视频教程，请发电子邮件给`razvan.stooenescu [at] gmail [dot] com`并说明细节。谢谢你。
 :::
 
-## Quasar v2 video tutorials
+## Quasar v2视频教程
 
-<tutorial-listing which="quasar-v2" />
+<tutorial-list which="quasar-v2" />
 
 ## Quasar v1 (legacy) video tutorials
 
-<tutorial-listing which="quasar-v1" />
+<tutorial-listing which="quasar-v1" /> ## Quasar 2 (legacy) video tutorial.
 
-## Vue 2 (legacy) video tutorials
+## Vue 2 (legacy) 视频教程
 
-Quasar is based on Vue, so knowledge about it is important too.
+Quasar是基于Vue的，所以有关它的知识也很重要。
 
 <tutorial-listing which="vue" />

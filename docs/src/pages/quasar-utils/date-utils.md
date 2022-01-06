@@ -1,41 +1,41 @@
 ---
-title: Date Utils
-desc: A set of Quasar methods for manipulating JS Date objects without the high additional cost of dedicated libraries.
+title: 日期利用
+desc: 一组Quasar方法用于操作JS Date对象，而不需要专用库的高额额外费用。
 keys: formatDate,buildDate,isValid,addToDate,subtractFromDate,adjustDate,getMinDate,getMaxDate,isBetweenDates,getBetweenDates,isSameDate,getDateDiff,getWeekOfYear,getDayOfYear,getDayOfWeek,daysInMonth,startOfDate,endOfDate,inferDateFormat,clone,extractDate
 ---
 
-Quasar provides a set of useful functions to manipulate JS Date easily in most use cases, without the high additional cost of integrating dedicated libraries like Momentjs.
+Quasar提供了一系列有用的函数，可以在大多数情况下轻松地操作JS日期，而不需要像Momentjs这样集成专用库的高额额外费用。
 
-Most Quasar date functions take as parameter either a Unix timestamp or a String representing a date which needs to be parsable by the native JS [Date constructor](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date). Some examples: `1497159857411`, `Sun Jun 11 2017 08:44:42 GMT+0300`, `2017-06-16`.
+大多数Quasar日期函数以Unix时间戳或代表日期的字符串为参数，需要通过本地JS [Date构造器](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date)进行解析。一些示例。`1497159857411`, `Sun Jun 11 2017 08:44:42 GMT+0300`, `2017-06-16`.
 
-Returned values are all JS Dates.
+返回的值都是JS日期。
 
-Get familiar with JS native Date class, which is very powerful, and remember that you don't need solutions like Momentjs which add hundreds of minified KB to your bundle.
+熟悉JS原生的Date类，它非常强大，记住你不需要像Momentjs这样的解决方案，它给你的bundle增加了数百个minified KB。
 
 ::: tip
-Quasar date utils includes tree shaking, except for the UMD version.
+Quasar date utils包括摇树，除了UMD版本。
 :::
 
-You will notice all examples import `date` Object from Quasar. However, if you need only one method from it, then you can use ES6 destructuring to help Tree Shaking embed only that method and not all of `date`.
+你会注意到所有的示例都从Quasar导入了`date`对象。然而，如果你只需要其中的一个方法，那么你可以使用ES6结构化来帮助Tree Shaking只嵌入该方法而不是所有的`date`。
 
-Example with `addToDate()`:
+以`addToDate()`为例。
 
 ```js
-// we import all of `date`
+// 我们导入所有的 "date"。
 import { date } from 'quasar'
-// destructuring to keep only what is needed
+// 解构，只保留需要的东西
 const { addToDate } = date
 
 const newDate = addToDate(new Date(), { days: 7, months: 1 })
 ```
 
 ::: tip
-For usage with the UMD build see [here](/start/umd#quasar-global-object).
+关于UMD构建的用法，见[here](/start/umd#quasar-global-object)。
 :::
 
-## Format for display
+## 显示的格式
 
-It takes a string of tokens and replaces them with their corresponding date values:
+它接收一串标记，并将其替换为相应的日期值。
 
 ```js
 import { date } from 'quasar'
@@ -44,7 +44,7 @@ const timeStamp = Date.now()
 const formattedString = date.formatDate(timeStamp, 'YYYY-MM-DDTHH:mm:ss.SSSZ')
 ```
 
-For i18n, you can use a third parameter:
+对于i18n，你可以使用第三个参数。
 
 ```js
 const formattedString = date.formatDate(timeStamp, 'MMMM - dddd', {
@@ -84,7 +84,7 @@ Available format tokens:
 const date = new Date();
 ```
 
-The following method is just a wrapper to help you in cases where you just need current time but with a different year, or month, or second etc.
+下面的方法只是一个包装器，在你只需要当前时间，但需要不同的年份、月份或秒数等情况下，可以帮助你。
 
 ```js
 import { date } from 'quasar'
@@ -92,22 +92,22 @@ import { date } from 'quasar'
 const newDate = date.buildDate({ year: 2010, date: 5, hours: 15, milliseconds: 123 })
 ```
 
-You can pass a second argument (a boolean) for setting UTC time (true) instead of local time.
+你可以传递第二个参数(一个布尔值)来设置UTC时间(真)而不是本地时间。
 
-The object literal provided can contain the following keys (all are optional):
+提供的对象字面可以包含以下键(所有都是可选的)。
 
-| Key | Description |
-| --- | --- |
-| `milliseconds` | for the milliseconds component of the date/time |
-| `seconds` | for the seconds component of the date/time |
-| `minutes` | for the minutes component of the date/time |
-| `hours` | for the hours component of the date/time |
-| `date` | for the day component of the date/time |
-| `month` | for the month component of the date/time |
-| `year` | for the year component of the date/time |
+| 关键 | 描述 |
+| `milliseconds` | 用于日期/时间的毫秒部分 |
+| `秒` - 用于日期/时间中的秒数部分。
+| `分钟` - 表示日期/时间中的分钟部分。
+| `hours` | 用于日期/时间的小时部分。
+| `日期` - 表示日期/时间中的日部分。
+| `月'|表示日期/时间的月份部分。
+| `年` - 用于日期/时间的年份部分。
+### 验证
 
-### Validate
-To check if a date string is valid use:
+要检查一个日期字符串是否有效，请使用。
+
 
 ```js
 import { date } from 'quasar'
@@ -115,12 +115,12 @@ import { date } from 'quasar'
 const dateString = 'Wed, 09 Aug 1995 00:00:00 GMT'
 
 if (date.isValid(dateString)) {
-  // Do something with date string
+  // 对日期字符串做一些处理
 }
 ```
 
-### Add/Subtract
-To add/subtract some duration to/from a date use:
+### 加/减
+要在一个日期中增加/减去一些时间，请使用。
 
 ```js
 import { date } from 'quasar'
@@ -128,77 +128,77 @@ import { date } from 'quasar'
 let newDate = new Date(2017, 2, 7)
 
 newDate = date.addToDate(newDate, { days: 7, months: 1 })
-// `newDate` is now 2017-3-14 00:00:00
+// `newDate`现在是2017-3-14 00:00:00
 
 newDate = date.subtractFromDate(newDate, { hours: 24, milliseconds: 10000 })
-// `newDate` is now 2017-3-12 23:59:50
+// `newDate`现在是2017-3-12 23:59:50
 ```
 
-The object literal provided can contain the following keys (all are optional):
+所提供的对象字面可以包含以下键值(都是可选的)。
 
-| Key | Description |
-| --- | --- |
-| `milliseconds` | for a duration in milliseconds |
-| `seconds` | for a duration in seconds |
-| `minutes` | for a duration in minutes |
-| `hours` | for a duration in hours |
-| `days` | for a duration in days |
-| `months` | for a duration in months |
-| `years` | for a duration in years |
+| 关键 | 描述 |
+| `milliseconds` | 表示以毫秒为单位的持续时间。
+| `秒` - 表示以秒为单位的持续时间。
+| `分钟` | 以分钟为单位的持续时间。
+| `hours` | 以小时为单位的持续时间
+| `天` | 以天为单位的持续时间
+| `月` | 以月为单位的持续时间
+| `年'|以年为单位的持续时间。
+### 设置日期/时间
 
-### Set date/time
-To set a specified unit(s) of date/time:
+设置一个指定的日期/时间单位。
+
 
 ```js
 import { date } from 'quasar'
 
 const newDate = new Date(2017, 10, 2)
 const adjustedDate = date.adjustDate(newDate, { year: 2010, month: 2 })
-// `adjustedDate` is 2010-2-2
+// 调整后的日期 "为2010-2-2
 ```
 
-You can pass a third argument (a Boolean) for setting UTC time (`true`) instead of local time.
+你可以传递第三个参数(一个布尔值)来设置UTC时间(`true`)而不是本地时间。
 
-The object literal provided can contain the following keys (all are optional):
+提供的对象字面可以包含以下键(都是可选的)。
 
-| Key | Description |
-| --- | --- |
-| `milliseconds` | for the milliseconds component of the date/time |
-| `seconds` | for the seconds component of the date/time |
-| `minutes` | for the minutes component of the date/time |
-| `hours` | for the hours component of the date/time |
-| `date` | for the day component of the date/time |
-| `month` | for the month component of the date/time |
-| `year` | for the year component of the date/time |
+| 关键 | 描述 |
+| `milliseconds` | 用于日期/时间的毫秒部分 |
+| `秒` - 用于日期/时间中的秒数部分。
+| `分钟` - 表示日期/时间中的分钟部分。
+| `hours` | 用于日期/时间的小时部分。
+| `日期` - 表示日期/时间中的日部分。
+| `月'|表示日期/时间的月份部分。
+| `年` - 用于日期/时间的年份部分。
+## 查询日期
 
-## Query dates
+### 最小/最大
 
-### Minimum/Maximum
-To get the minimum/maximum date of a date set (i.e. array) use:
+要获得一个日期集(即数组)的最小/最大日期，可以使用。
+
 
 ```js
 import { date } from 'quasar'
 
 let min = date.getMinDate(new Date(2017, 6, 24), new Date(2017, 5, 20), new Date(2017, 6, 26))
-// `min` is 2017-5-20
+// `min`是2017-5-20
 let max = date.getMaxDate(new Date(2017, 6, 24), new Date(2017, 5, 20), new Date(2017, 6, 26))
-// `max` is 2017-6-26
+// 最高值 "是2017-6-26
 
-// Or use an array:
+// 或者使用一个数组。
 const dates = [ new Date(2017, 6, 24), new Date(2017, 5, 20), new Date(2017, 6, 26) ]
 let min = date.getMinDate(...dates) // `min` is 2017-5-20
 let max = date.getMaxDate(...dates) // `max` is 2017-6-26
 ```
 
-Note that the returning value is a timestamp.
+请注意，返回值是一个时间戳。
 
 ```js
 console.log(max) // 1497906000000
 console.log(new Date(max)) // Wed Jul 26 2017 00:00:00 GMT+0300 (Eastern European Summer Time)
 ```
 
-### Time range
-To check if a date is in a given date/time range use:
+### 时间范围
+要检查一个日期是否在一个给定的日期/时间范围内，请使用。
 
 ```js
 import { date } from 'quasar'
@@ -207,24 +207,24 @@ const dateTarget = new Date()
 const dateFrom = new Date()
 const dateTo = new Date()
 
-// **strictly** (i.e. exclusive range)
+// **严格**(即排他性范围)
 if (date.isBetweenDates(dateTarget, dateFrom, dateTo)) {
-  // Do something with dateTarget
+  // 对dateTarget做一些事情
 }
 
-// including which margin you want
+// 包括你想要哪种保证金
 if (date.isBetweenDates(dateTarget, dateFrom, dateTo, { inclusiveFrom: true, inclusiveTo: true })) {
-  // Do something with dateTarget
+  // 对dateTarget做一些事情
 }
 
-// if you only care about comparing dates (year/month/day, regardless of time)
-// then you could tip isBetweenDates() about it so it can perform best:
+// 如果你只关心比较日期(年/月/日，不考虑时间)。
+// 那么你可以向isBetweenDates()提示一下，这样它就能发挥出最佳效果。
 if (date.isBetweenDates(dateTarget, dateFrom, dateTo, { onlyDate: true })) {
-  // Do something with dateTarget
+  // 对dateTarget做一些事情
 }
 ```
 
-To normalize a date in a given date/time range use:
+要在一个给定的日期/时间范围内对一个日期进行标准化处理，请使用。
 
 ```js
 import { date } from 'quasar'
@@ -233,11 +233,11 @@ const newDate = new Date()
 const dateMin = new Date(2010, 2, 23)
 const dateMax = new Date(2012, 4, 12)
 const dateNormalized = date.getDateBetween(newDate, dateMin, dateMax)
-// Returns `newDate` if it's between 2010-2-23 and 2012-4-12; `dateMin` if it's lower; `dateMax` if it's greater
+// 如果在2010-2-23和2012-4-12之间，返回 "newDate"；如果较小，返回 "dateMin"；如果较大，返回 "dateMax"。
 ```
 
-### Equality
-To check if two dates' unit are **equal** use:
+### 平等性
+要检查两个日期的单位是否**相等，请使用。
 
 ```js
 import { date } from 'quasar'
@@ -247,23 +247,23 @@ const date2 = new Date(2017, 3, 8)
 const unit = 'year'
 
 if (date.isSameDate(date1, date2, /* optional */ unit)) {
-  // true because date1 and date2's year is the same
+  // true 因为date1和date2的年份相同
 }
 ```
 
-Unit parameter can be omitted, in which case a full date/time comparison will occur, otherwise it allows to perform partial comparison:
+单位参数可以省略，在这种情况下，将进行完整的日期/时间比较，否则，它允许进行部分比较。
 
-| Unit | Description |
-| --- | --- |
-| `second` | test if same second only |
-| `minute` | test if same minute only |
-| `hour` | test if same hour only |
-| `day` | test if same day only |
-| `month` | test if same month only |
-| `year` | test if same year only |
+| 单位 | 说明 |
+| `秒` - 测试是否相同的秒数。
+| `分钟` | 测试是否只有相同的分钟
+| `小时` | 测试是否只有相同的小时
+| `日` - 测试是否只有同一天。
+| `月` - 测试是否相同的月份。
+| `年` - 测试是否相同的年份。
+### 差值
 
-### Difference
-To compute the difference between two dates use:
+要计算两个日期之间的差异，请使用。
+
 
 ```js
 import { date } from 'quasar'
@@ -273,22 +273,22 @@ const date2 = new Date(2017, 3, 8)
 const unit = 'days'
 
 const diff = date.getDateDiff(date1, date2, unit)
-// `diff` is 34 (days)
+// `diff`是34(天)。
 ```
 
-The unit parameter indicates the unit of measurement, if not specified then it is `days` by default:
+单位参数表示测量单位，如果没有指定，则默认为`天'。
 
-| Unit | Description |
-| --- | --- |
-| `seconds` | distance in seconds (disregarding milliseconds) |
-| `minutes` | distance in minutes (disregarding seconds, ...) |
-| `hours` | distance in hours (disregarding minutes, seconds, ...) |
-| `days` | distance in calendar days |
-| `months` | distance in calendar months |
-| `years` | distance in calendar years |
+| 单位 | 说明 |
+| `秒` | 以秒为单位的距离(不考虑毫秒) |
+| `分钟` - 以分钟为单位的距离(不考虑秒，...)。
+| `小时` | 以小时为单位的距离(不考虑分、秒、...)。
+| `天` | 以日历日为单位的距离
+| `月` | 以日历月为单位的距离
+| `年` | 以日历年为单位的距离
+### 日历
 
-### Calendar
-To get the [ISO week number in year](https://en.wikipedia.org/wiki/ISO_week_date) for a given date object use:
+要获得给定日期对象的[ISO年内周数](https://en.wikipedia.org/wiki/ISO_week_date)，请使用。
+
 
 ```js
 import { date } from 'quasar'
@@ -297,7 +297,7 @@ const newDate = new Date(2017, 0, 4)
 const week = date.getWeekOfYear(newDate) // `week` is 1
 ```
 
-To get the day number in year for a given date object use:
+要获得一个给定日期对象的年份中的天数，请使用。
 
 ```js
 import { date } from 'quasar'
@@ -306,7 +306,7 @@ const newDate = new Date(2017, 1, 4)
 const day = date.getDayOfYear(newDate) // `day` is 35
 ```
 
-To get the day number in week for a given date object use:
+要获得一个给定的日期对象在一周内的天数，请使用。
 
 ```js
 import { date } from 'quasar'
@@ -315,7 +315,7 @@ const newDate = new Date(2017, 1, 9)
 const day = date.getDayOfWeek(newDate) // `day` is 4
 ```
 
-To get the number of days in the month for the specified date:
+获取指定日期的一个月的天数。
 
 ```js
 import { date } from 'quasar'
@@ -324,33 +324,33 @@ const newDate = new Date()
 const days = date.daysInMonth(newDate) // e.g. 30
 ```
 
-### Start/End of time
-To mutate the original date object by setting it to the start of a unit of time use:
+### 时间的开始/结束
+要通过将原始日期对象设置为一个时间单位的开始来改变它，请使用。
 
 ```js
 import { date } from 'quasar'
 
 let newDate = new Date(2000)
-// set to beginning of year 2000 (January 1st, 2000, 00:00:00.000)
+// 设置为2000年年初(2000年1月1日，00:00:00.000)。
 newDate = date.startOfDate(newDate, 'year')
-// set to end of year 2000 (December 31st, 2000, 23:59:59.999)
+// 设置为2000年底(2000年12月31日，23:59:59.999)。
 newDate = date.endOfDate(newDate, 'year')
 ```
 
-The second parameter indicates a unit to reset to (beginning of it or end of it):
+第二个参数表示要重置的单位(它的开始或结束)。
 
-| Unit | Description |
-| --- | --- |
-| `second` | reset seconds |
-| `minute` | reset minutes |
-| `hour` | reset hours |
-| `day` | reset days |
-| `month` | reset months |
-| `year` | reset years |
+| 单位 | 说明 |
+| `秒` | 重置秒数 |
+| `分钟` | 重置分钟
+| `小时` | 重置小时
+| `天` | 重置天数
+| `月` | 重置月
+| `年` | 重置年
+## 其他
 
-## Other
+### 获取格式
 
-### Get Format
+
 
 ```js
 import { date } from 'quasar'
@@ -360,7 +360,7 @@ date.inferDateFormat(35346363) // 'number'
 date.inferDateFormat('Mon Feb 05 2018 23:05:29') // string
 ```
 
-### Cloning Date
+# # # 克隆日期
 
 ```js
 import { date } from 'quasar'
@@ -373,23 +373,23 @@ date.addToDate(newDate, { days: 1 })
 console.log(newDate.getDate() === clonedDate.getDate()) // false
 ```
 
-### Extract Date
+### 提取日期
 
-Using locale set by current Quasar language pack, this allows you to parse any string into a date object based on the format passed:
+使用当前Quasar语言包设置的locale，这允许你根据传递的格式将任何字符串解析成一个日期对象。
 
 ```js
 import { date } from 'quasar'
 
-// Example 1
+// 例1
 const date = date.extractDate('2019-10-29 --- 23:12', 'YYYY-MM-DD --- HH:mm')
-// date is a new Date() object
+// date是一个新的Date()对象
 
-// Example 2
+// 例2
 const date = date.extractDate('21/03/1985', 'DD/MM/YYYY')
-// date is a new Date() object
+// date是一个新的Date()对象
 ```
 
-With optional custom locale:
+具有可选择的自定义区域设置。
 
 ```js
 import { date } from 'quasar'
@@ -400,5 +400,5 @@ const obj = date.extractDate('Month: Feb, Day: 11th, Year: 2018', '[Month: ]MMM[
   months: ['Ianuarie', 'Februarie', /* and all the rest of months */],
   monthsShort: ['Ian', 'Feb', /* and all the rest of months */]
 })
-// date is a new Date() object
+// date是一个新的Date()对象
 ```

@@ -1,6 +1,6 @@
 ---
-title: List and List Items
-desc: How to use the QList, QItem, QItemSection and QItemLabel Vue components.
+title: 列表和列表项目
+desc: 如何使用QList、QItem、QItemSection和QItemLabel Vue组件。
 keys: QList,QItem,QItemSection,QItemLabel
 related:
   - /vue-components/expansion-item
@@ -8,14 +8,14 @@ related:
   - /vue-components/separator
 ---
 
-The QList and QItem are a group of components which can work together to present multiple line items vertically as a single continuous element. They are best suited for displaying similar data types as rows of information, such as a contact list, a playlist or menu. Each row is called an Item. QItem can also be used outside of a QList too.
+QList和QItem是一组组件，它们可以一起工作，将多个行项目垂直地呈现为一个连续的元素。它们最适合于显示类似数据类型的信息行，如联系人列表、播放列表或菜单。每一行被称为一个项目。QItem也可以在QList之外使用。
 
-Lists can encapsulate Items or Item-like components, for example [QExpansionItem](/vue-components/expansion-item) or [QSlideItem](/vue-components/slide-item). Also [QSeparator](/vue-components/separator) can be used to split up sections, where needed.
+List可以封装Item或类似Item的组件，例如[QExpansionItem](/vue-components/expansion-item)或[QSlideItem](/vue-components/slide-item) 。此外，[QSeparator](/vue-components/separator)也可以在需要时用来分割部分。
 
-List Items have the following pre-built child components:
+列表项有以下预先建立的子组件。
 
-* **QItemSection** - An item section can have several uses for particular content. They are controlled via the `avatar`, `thumbnail` and `side` props. With no props, it will render the main section of your QItem (which spans to the fullest of available space).
-* **QItemLabel** - An item label is useful for predefined text content type within a QItemSection, or for header-like content of the QList itself.
+**QItemSection** - 一个项目部分可以有几个特定内容的用途。它们通过`avatar'、`thumbnail'和`side'属性来控制。在没有属性的情况下，它将呈现你的QItem的主要部分(它的跨度是最大的可用空间)。
+**QItemLabel** - 项目标签对于QItemSection中预定义的文本内容类型很有用，或者对于QList本身的标题式内容很有用。
 
 ## QList API
 <doc-api file="QList" />
@@ -24,65 +24,65 @@ List Items have the following pre-built child components:
 <doc-api file="QItem" />
 
 ## QItemSection API
-<doc-api file="QItemSection" />
+<doc-api file="QItemSection" /> ## QItemLabel API
 
 ## QItemLabel API
-<doc-api file="QItemLabel" />
+<doc-api file="QItemLabel" /> ## QItemLabel API
 
-## Usage
+## 使用方法
 
-### Basic
+### 基本
 
-<doc-example title="Basic" file="QItem/Basic" />
+<doc-example title="基础" file="QItem/Basic" />
 
-<doc-example title="On a dark background" file="QItem/Dark" dark />
+<doc-example title="深色背景下" file="QItem/Dark" dark />
 
-<doc-example title="Dense" file="QItem/Dense" />
+<doc-example title="密集" file="QItem/Dense" /> 密集。
 
 ### QItemSection
 
-<doc-example title="Left avatar/thumbnail QItemSection" file="QItem/AvatarLeft" />
+<doc-example title="左侧头像/缩略图QItemSection" file="QItem/AvatarLeft" /> ### QItemSection
 
-<doc-example title="Right avatar/thumbnail QItemSection" file="QItem/AvatarRight" />
+<doc-example title="右侧头像/缩略图QItemSection" file="QItem/AvatarRight" /> ### QItemSection
 
 ::: tip
-When you have multi-line items, you could use `top` property on QItemSection side/avatar to align the sections to top, overriding default middle alignment.
+当你有多行项目时，你可以使用QItemSection侧边/avatar上的`top`属性来将各部分对齐到顶部，覆盖默认的中间对齐。
 :::
 
-<doc-example title="Side QItemSection" file="QItem/SideSection" />
+<doc-example title="侧面 QItemSection" file="QItem/SideSection" />
 
-### Active state
+### 活动状态
 
-<doc-example title="Active prop" file="QItem/ActiveState" />
+<doc-example title="活动属性" file="QItem/ActiveState" /> ###活动状态
 
 ### QItemLabel
 
 ::: warning
-Notice you can handle label overflow with `lines` prop, telling it how many lines it can span. However, this feature uses Webkit specific CSS so won't work in IE/Edge.
+注意，你可以用`lines`属性处理标签溢出，告诉它可以跨多少行。但是，这个功能使用了Webkit的特定CSS，所以在IE/Edge中无法使用。
 :::
 
 <doc-example title="ItemLabel" file="QItem/ItemLabel" />
 
-### More involved examples
+### 更多涉及的示例
 
-<doc-example title="Contact list" file="QItem/ExampleContacts" />
+<doc-example title="联系人列表" file="QItem/ExampleContacts" /> ### 涉及的示例
 
-<doc-example title="Settings" file="QItem/ExampleSettings" />
+<doc-example title="设置" file="QItem/ExampleSettings" /> ###涉及的示例
 
-<doc-example title="Emails" file="QItem/ExampleEmails" />
+<doc-example title="电子邮件" file="QItem/ExampleEmails" />
 
-<doc-example title="Folder listing" file="QItem/ExampleFolders" />
+<doc-example title="文件夹列表" file="QItem/ExampleFolders" />
 
-For demoing purposes in the example below, we're using the `active` prop instead of QItem's router props (`to`, `exact`). UMD doesn't have Vue Router so you wouldn't be able to play with it in Codepen/jsFiddle.
+在下面的示例中，为了演示的目的，我们使用`active`属性，而不是QItem的路由器属性(`to`, `exact`)。UMD没有Vue Router，所以你无法在Codepen/jsFiddle中使用它。
 
-<doc-example title="Menu" file="QItem/ExampleMenu" />
+<doc-example title="菜单" file="QItem/ExampleMenu" />
 
 ::: tip
-For more complex menus, consider also using [QExpansionItem](/vue-components/expansion-item).
+对于更复杂的菜单，也可以考虑使用[QExpansionItem](/vue-components/expansion-item)。
 :::
 
-### Connecting to Vue Router
-You can use QItems together with Vue Router through `<router-link>` properties bound to it. These allow for listening to the current app route and also triggering a route when clicked/tapped.
+### 连接到Vue Router
+你可以通过`<router-link>`属性与Vue Router一起使用QItems。这些允许监听当前应用程序的路由，也可以在点击/触摸时触发一个路由。
 
 ```html
 <q-item to="/inbox" exact>

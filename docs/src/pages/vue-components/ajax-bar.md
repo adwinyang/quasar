@@ -1,6 +1,6 @@
 ---
-title: Ajax Bar
-desc: The QAjaxBar Vue component displays a loading bar whenever an Ajax call is in progress.
+title: 阿贾克斯酒吧
+desc: QAjaxBar Vue组件在Ajax调用进行时显示一个加载条。
 keys: QAjaxBar
 related:
   - /quasar-plugins/loading
@@ -8,28 +8,28 @@ related:
   - /quasar-cli/ajax-requests
 ---
 
-In most mobile apps and even some desktop apps, you will most likely have some API communication to a server via an [Ajax call](https://en.wikipedia.org/wiki/Ajax_(programming)). Since these calls can take more than a second or two, it is good UX to offer the user feedback, when such an API call is being made. Which is where QAjaxBar comes into helping you out.
+在大多数移动应用程序，甚至一些桌面应用程序中，你很可能会有一些API通过[Ajax调用](https://en.wikipedia.org/wiki/Ajax_(programming))与服务器通信。由于这些调用可能需要超过一两秒钟的时间，所以当这样的API调用正在进行时，为用户提供反馈是很好的用户体验。这就是QAjaxBar可以帮助你的地方。
 
-QAjaxBar is a component which displays a loading bar (like Youtube) whenever an Ajax call (regardless of Ajax library used) is in progress. It can be manually triggered as well.
+QAjaxBar是一个组件，当一个Ajax调用(不管使用的是什么Ajax库)正在进行时，它会显示一个加载条(像Youtube)。它也可以被手动触发。
 
 ::: tip
-If you'd like **a simpler and more convenient way** to offer an Ajax Bar to your users, have a look at the [Loading Bar Plugin](/quasar-plugins/loading-bar), which is actually **the recommended way**.
+如果你想用**种更简单、更方便的方式**向你的用户提供Ajax Bar，请看一下[Loading Bar Plugin](/quasar-plugins/loading-bar)，这实际上是**种推荐的方式。
 :::
 
 ## QAjaxBar API
 
 <doc-api file="QAjaxBar" />
 
-## Usage
-The QAjaxBar component captures Ajax calls automatically (unless told not to).
+## 使用方法
+QAjaxBar组件会自动捕捉Ajax调用(除非被告知不要这样做)。
 
-The example below triggers events manually for demonstrating purposes only. This one is set to appear at bottom (multiple positions available!) of the page, with a 10px size (default is different) and uses a custom color.
+下面的示例是手动触发事件，仅用于演示目的。这个被设置为出现在页面的底部(有多个位置可用！)，尺寸为10px(默认是不同的)，并使用自定义的颜色。
 
-<doc-example title="Basic" file="QAjaxBar/Basic" />
+<doc-example title="基本" file="QAjaxBar/Basic" />
 
-Please check out the API section for all properties that you can use.
+请查看API部分，了解你可以使用的所有属性。
 
-## Tips
+## 提示
 
-* If multiple events are captured by Ajax Bar simultaneously, `@start` and `@stop` will still be triggered only once: when bar starts showing up and when it becomes hidden.
-* Each Ajax call makes a `start()` call when it is triggered. When it ends, it calls `stop()`. So yes, if you also manually trigger QAjaxBar you must call `start()` each time a new event is starting and `stop()` each time an event finished. QAjaxBar knows to handle multiple events simultaneously.
+* 如果多个事件同时被Ajax Bar捕获，`@start`和`@stop`仍然只被触发一次：当Bar开始显示和当它变成隐藏时。
+* 每个Ajax调用在被触发时都会进行`start()`调用。当它结束时，它会调用`stop()`。所以是的，如果你也手动触发QAjaxBar，你必须在每次新事件开始时调用`start()`，在每次事件结束时调用`stop()`。QAjaxBar知道要同时处理多个事件。

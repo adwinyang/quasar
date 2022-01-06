@@ -1,31 +1,31 @@
 ---
-title: AddressbarColor Plugin
-desc: A Quasar plugin for changing the addressbar color on newer mobile browsers.
+title: 地址栏颜色插件
+desc: 一个Quasar插件，用于在较新的移动浏览器上改变地址栏颜色。
 keys: AddressbarColor
 ---
-Newer mobile browsers have the ability to specify a color for the addressbar, like in the image below.
+较新的移动浏览器能够为地址栏指定一种颜色，就像下面的图片。
 
 ::: warning
-* There isn't yet a Web standard for this so it won't work for all mobile browsers.
-* This applies when building a website only. For coloring top bar on a mobile app (built with Cordova mode), please refer to [cordova-plugin-statusbar](https://cordova.apache.org/docs/en/latest/reference/cordova-plugin-statusbar/).
+* 目前还没有一个网络标准，所以它不会对所有的移动浏览器起作用。
+* 这只适用于建立网站时。对于在移动应用程序(用Cordova模式构建)上着色的顶栏，请参考[cordova-plugin-statusbar](https://cordova.apache.org/docs/en/latest/reference/cordova-plugin-statusbar/)。
 :::
 
-![Mobile Addressbar Coloring](https://cdn.quasar.dev/img/mobile-address-bar-colors.jpg "Mobile Addressbar Coloring")
+![移动地址栏着色](https://cdn.quasar.dev/img/mobile-address-bar-colors.jpg "移动地址栏着色")
 
 ## AddressbarColor API
 
 <doc-api file="AddressbarColor" />
 
-## Installation
+## 安装
 
-<doc-installation plugins="AddressbarColor" />
+<doc-installation plugins="AddressbarColor" /> ## Installation
 
-## Usage
+## 使用方法
 
-We create boot file to initialize its usage: `$ quasar new boot addressbar-color [--format ts]`. A file is created (`/src/boot/addressbar-color.js`). We edit it:
+我们创建启动文件来初始化其使用。`$ quasar new boot addressbar-color [--format ts]`。一个文件被创建(`/src/boot/addressbar-color.js`)。我们编辑它。
 
 ```js
-// file: /src/boot/addressbar-color.js
+// 文件。/src/boot/addressbar-color.js
 import { AddressbarColor } from 'quasar'
 
 export default () => {
@@ -33,9 +33,9 @@ export default () => {
 }
 ```
 
-We then have to tell quasar to use this boot file we just created. To do this we edit the boot section of the quasar config:
+然后我们要告诉quasar使用我们刚刚创建的这个启动文件。要做到这一点，我们要编辑quasar配置中的启动部分。
 ```js
-// file: /quasar.conf.js
+// 文件：/quasar.conf.js
 return {
   boot: [
     'addressbar-color'
@@ -43,19 +43,19 @@ return {
 }
 ```
 
-What this does is that it injects some `<meta>` tags into your `index.html` at runtime.
+它的作用是在运行时将一些`<meta>`标签注入到你的`index.html`。
 
-Because the meta tag doesn't get injected until run time you can dynamically change this color multiple times, based on the page the user is on (by calling the `set` method in the `created()` lifecycle hook on the respective pages):
+因为元标签直到运行时才被注入，你可以根据用户所在的页面，多次动态地改变这个颜色(通过调用相应页面的`created()`生命周期钩子中的`set`方法)。
 
 
 ```js
-// a .vue file representing a page
+// 一个代表页面的.vue文件
 
 import { useQuasar } from 'quasar'
 
 export default {
   setup () {
-    // equivalent to calling this on creating the component
+    // 相当于在创建组件时调用这个
     const $q = useQuasar()
     $q.addressbarColor.set('#a2e3fa')
   }
@@ -63,5 +63,5 @@ export default {
 ```
 
 ::: tip
-Calling `set()` with no parameters will use the primary color.
+调用没有参数的`set()`将使用主色。
 :::

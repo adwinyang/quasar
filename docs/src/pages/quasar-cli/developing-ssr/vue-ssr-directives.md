@@ -1,21 +1,21 @@
 ---
-title: Vue SSR Directives
-desc: Managing the Vue directives for SSR in a Quasar app.
+title: Vue SSR指令
+desc: 在Quasar应用中管理SSR的Vue指令。
 ---
 
-A SSR app has the same code running on server and on client. Declaring a Vue directive (or directly importing it) in a .vue SFC file is usually enough for making it to work on non-SSR builds. But on SSR builds and due to the architecture of Vue 3 (when also using vue-loader to handle the .vue files, like Quasar does), it requires some extra leg work. This page will teach what you need to do.
+一个SSR应用在服务器和客户端上运行的代码是一样的。在.vue SFC文件中声明一个Vue指令(或直接导入它)通常足以让它在非SSR构建中工作。但在SSR构建中，由于Vue 3的架构(当使用vue-loader处理.vue文件时，像Quasar那样)，它需要一些额外的工作。本页将告诉你需要做什么。
 
-When building the server-side of your app, Vue requires you to specify the SSR transformation for each of your custom Vue directives, otherwise it will error out saying that it doesn't know how to handle that specific directive when encountered in your SFC templates.
+当构建你的应用程序的服务器端时，Vue要求你为你的每个自定义Vue指令指定SSR转换，否则它会出错，说它不知道如何在你的SFC模板中处理该特定指令。
 
 ::: tip
-You will NOT need to do anything for the Quasar supplied Vue directives to work. The Quasar App CLI takes care of declaring the SSR transformations for it already.
+你不需要为Quasar提供的Vue指令做任何工作。Quasar App CLI已经处理了声明SSR转换的问题。
 :::
 
-## How to declare a directive
+## 如何声明一个指令
 
-When adding the SSR mode, Quasar CLI will create the `src-ssr/directives` folder. It will watch this folder for any .js (or .ts if TS is enabled) files and inject these transformations into the build.
+当添加SSR模式时，Quasar CLI将创建`src-ssr/directives`文件夹。它将观察这个文件夹中的任何.js(或.ts，如果启用了TS)文件，并将这些转换注入到构建中。
 
-Let's say that we have a custom Vue directive named `my-dir` that we are using in our app. We've declared or imported it into our app, but now in order to make SSR's server-side code running correctly, we now need to create a file for it. Since the directive is named `my-dir`, we'll create the `my-dir.js` file:
+假设我们有一个名为`my-dir`的自定义Vue指令，并在我们的应用程序中使用。我们已经将其声明或导入到我们的应用程序中，但现在为了使SSR的服务器端代码正确运行，我们现在需要为其创建一个文件。由于该指令被命名为`my-dir`，我们将创建`my-dir.js`文件。
 
 ```
 // src-ssr/directives/my-dir.js
@@ -27,18 +27,18 @@ export default (dir) => {
 }
 ```
 
-The above is essentially a noop SSR transformation for our directive. Based on what your Vue directive does on client-side, you should write the appropriate Vue SSR transformation. Then you should repeat the process for all your **non-Quasar** Vue directives.
+上面的内容基本上是我们指令的Noop SSR转换。根据你的Vue指令在客户端的作用，你应该编写适当的Vue SSR转换。然后，你应该为你所有的**非Quasar**Vue指令重复这一过程。
 
 ::: tip
-Please head to the Vue 3 documentation which should explain how to write a Vue SSR transformation for your directive. Please note that at the moment of writing these lines, the Vue 3 SSR documentation website is still incomplete.
+请前往Vue 3文档，它应该解释了如何为你的指令写一个Vue SSR转换。请注意，在写这些行文的时候，Vue 3的SSR文档网站仍然不完整。
 :::
 
-If unsure how to write the necessary transformation function, then simply use the noop transformation from the above code sample for all your directives.
+如果不确定如何编写必要的转换函数，那么只需对你的所有指令使用上述代码样本中的noop转换。
 
 ::: danger
-What you need to make sure is that the name of the files match with the **kebab-case** name of your directives.
+你需要确保的是，文件的名称与你的指令的**kebab大小写**名称一致。
 :::
 
-## Hot module reload
+## 热模块重新加载
 
-Due to the fact that these transformations are supplied to vue-loader, whenever you add/remove/change any of the files directly under the `src-ssr/directives` folder, the dev server will automatically reboot. This means that changes are costly so you should keep this in mind.
+由于这些转换是提供给vue-loader的，每当你直接在`src-ssr/directives`文件夹下添加/删除/改变任何文件，开发服务器将自动重启。这意味着改变的代价很高，所以你应该牢记这一点。

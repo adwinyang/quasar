@@ -1,10 +1,10 @@
 ---
-title: SSR Build Commands
-desc: The Quasar CLI list of commands when developing or building a server-side rendered app.
+title: SSR构建命令
+desc: 在开发或构建服务器端渲染的应用程序时，Quasar CLI的命令列表。
 ---
-[Quasar CLI](/start/quasar-cli) makes it incredibly simple to develop or build the final distributables from your source code.
+[Quasar CLI](/start/quasar-cli)使得从你的源代码中开发或构建最终的可分发文件变得异常简单。
 
-## Developing
+## 开发
 ```bash
 $ quasar dev -m ssr
 
@@ -12,7 +12,7 @@ $ quasar dev -m ssr
 $ quasar dev --mode ssr
 ```
 
-## Building for Production
+## 为生产而建
 ```bash
 $ quasar build -m ssr
 
@@ -20,7 +20,7 @@ $ quasar build -m ssr
 $ quasar build --mode ssr
 ```
 
-If you want a production build with debugging enabled:
+如果你想要一个启用了调试功能的生产构建。
 
 ```bash
 $ quasar build -m ssr -d

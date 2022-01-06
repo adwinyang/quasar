@@ -19,12 +19,12 @@ related:
 <doc-example title="Equal Width Example" file="grid/RowEqualWidth" />
 
 ## 设置一个列宽度
-Flexbox网格列的自动布局也意味着你可以设置一列的宽度，其他的会围绕它自动调整大小。你可以使用预定义的网格类（如下图所示）或内联宽度。注意，无论中心列的宽度如何，其他列都会调整大小。
+Flexbox网格列的自动布局也意味着你可以设置一列的宽度，其他的会围绕它自动调整大小。你可以使用预定义的网格类(如下图所示)或内联宽度。注意，无论中心列的宽度如何，其他列都会调整大小。
 
 <doc-example title="Setting one column width" file="grid/RowColumnWidth" />
 
 ## 可变宽度的内容
-使用`col-{breakpoint}-auto`类，列可以根据其内容的自然宽度来确定自己的大小。这对于单行内容，如输入、数字等，是非常方便的（见本页最后一个例子）。这一点与水平对齐类结合起来，对于在视口宽度变化时将列的大小不均匀的布局居中非常有用。
+使用`col-{breakpoint}-auto`类，列可以根据其内容的自然宽度来确定自己的大小。这对于单行内容，如输入、数字等，是非常方便的(见本页最后一个示例)。这一点与水平对齐类结合起来，对于在视口宽度变化时将列的大小不均匀的布局居中非常有用。
 
 <doc-example title="Variable width content" file="grid/RowVariableWidth" />
 
@@ -38,7 +38,7 @@ Flexbox网格列的自动布局也意味着你可以设置一列的宽度，其�
 <doc-example title="All breakpoints" file="grid/RowAllBreakpoints" />
 
 ### 水平堆放
-使用`.col-12`和`.col-md-*`类的组合，你可以创建一个基本的网格系统，在小型设备上开始是堆叠的，在桌面（中型）设备上变成水平的。
+使用`.col-12`和`.col-md-*`类的组合，你可以创建一个基本的网格系统，在小型设备上开始是堆叠的，在桌面(中型)设备上变成水平的。
 
 <doc-example标题=“堆叠到水平”文件=“grid / towstackedtohorizo​​thontal”/>
 
@@ -71,7 +71,7 @@ Flexbox网格列的自动布局也意味着你可以设置一列的宽度，其�
 <doc-example title="偏移列(Offsetting columns)" file="grid/RowOffsettingColumns" />
 
 ### 嵌套
-要用默认网格嵌套你的内容，在现有的`.col-sm-*`列中添加一个新的 .row 和一组`.col-sm-*`列。嵌套的行应该包括一组加起来为12或更少的列（不不要求使用所有12个可用列）。
+要用默认网格嵌套你的内容，在现有的`.col-sm-*`列中添加一个新的 .row 和一组`.col-sm-*`列。嵌套的行应该包括一组加起来为12或更少的列(不不要求使用所有12个可用列)。
 
 <doc-example title="Nesting" file="grid/RowNesting" />
 

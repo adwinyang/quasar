@@ -1,42 +1,42 @@
 ---
-title: Configuring Capacitor
-desc: How to manage your Capacitor apps with Quasar CLI.
+title: 配置电容
+desc: 如何用Quasar CLI来管理你的Capacitor应用程序。
 related:
   - /quasar-cli/quasar-conf-js
 ---
 
-We'll be using Quasar CLI to develop and build a Mobile App. The difference between building a SPA, PWA, Electron App or a Mobile App is simply determined by the "mode" parameter in "quasar dev" and "quasar build" commands.
+我们将使用Quasar CLI来开发和构建一个移动应用程序。构建SPA、PWA、Electron App或移动App之间的区别只是由 "quasar dev "和 "quasar build "命令中的 "mode "参数决定。
 
-There are two configuration files of great importance to your mobile apps. We'll go over each one.
+有两个配置文件对你的移动应用程序非常重要。我们将分别介绍一下。
 
 ## capacitor.config.json
-The most important config file for your mobile app is `/src-capacitor/capacitor.config.json`. The `/src-capacitor` folder is a Capacitor project, so please refer to [Capacitor documentation](https://capacitor.ionicframework.com) in order to understand what each file from there does. But for now, have a few moments to read about [capacitor.config.json](https://capacitor.ionicframework.com/docs/basics/configuring-your-app/).
+对你的移动应用程序来说，最重要的配置文件是`/src-capacitor/capacitor.config.json`。`/src-capacitor`文件夹是一个Capacitor项目，所以请参考[Capacitor文档](https://capacitor.ionicframework.com)，以了解那里的每个文件的作用。但是现在，请花点时间阅读一下[capacitor.config.json](https://capacitor.ionicframework.com/docs/basics/configuring-your-app/)。
 
-Some properties from this file will get overwritten as we'll see in next section.
+这个文件中的一些属性将被覆盖，我们将在下一节看到。
 
 ## quasar.conf.js
-There are two places in `/quasar.conf.js` where you can configure Quasar specific features for Capacitor.
+在`/quasar.conf.js`中，有两个地方你可以为电容配置Quasar的特定功能。
 
 ```js
 return {
   capacitor: {
-    // (Optional!)
+    // (可选！)
     hideSplashscreen: false, // disables auto-hiding the Splashscreen by Quasar CLI
 
-    // (Optional!)
+    // (可选！)
     capacitorCliPreparationParams: [ 'sync', ctx.targetName ],
 
-    // (Optional) If not present, will look for package.json > name
+    // (可选)如果不存在，将寻找package.json > name
     appName: '...', // string
-    // (Optional) If not present, will look for package.json > version
+    // (可选)如果不存在，将寻找package.json > 版本
     version: '...', // string
-    // (Optional) If not present, will look for package.json > description
+    // (可选)如果不存在，将寻找package.json > description
     description: '...', // string
   }
 }
 ```
 
-And you can also configure:
+而且你还可以进行配置。
 
 ```js
 return {
@@ -50,18 +50,18 @@ return {
 }
 ```
 
-Finally, you can also disable or configure the back button hook (used for Dialogs):
+最后，你还可以禁用或配置返回按钮钩(用于对话框)。
 
 ```js
 return {
   framework: {
     config: {
       capacitor: {
-        // Quasar handles app exit on mobile phone back button.
+        // Quasar处理手机后退按钮的应用退出。
         backButtonExit: true/false/'*'/['/login', '/home', '/my-page'],
 
-        // On the other hand, the following completely
-        // disables Quasar's back button management.
+        // 另一方面，以下是完全
+        // 禁用Quasar的返回按钮管理。
         backButton: true/false
       }
     }

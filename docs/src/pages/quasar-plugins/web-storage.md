@@ -1,13 +1,13 @@
 ---
-title: Local/Session Storage Plugins
-desc: A Quasar plugin that wraps the Local/Session Storage, retrieving data with its original JS type.
+title: 本地/会话存储插件
+desc: 一个包裹本地/会话存储的Quasar插件，以其原始JS类型检索数据。
 keys: LocalStorage,SessionStorage
 ---
 
-Quasar provides a wrapper over [Web Storage API](https://developer.mozilla.org/en-US/docs/Web/API/Web_Storage_API).
+Quasar提供了一个对[网络存储API](https://developer.mozilla.org/en-US/docs/Web/API/Web_Storage_API)的封装器。
 
 ::: tip
-Web Storage API only retrieves strings. **Quasar retrieves data with its original data type.** You tell it to store a Number then to retrieve it and it will still be a Number, not a string representation of the number as with Web Storage API. Same for JSON, Regular Expressions, Dates, Booleans and so on.
+Web Storage API只检索字符串。**Quasar以其原始数据类型检索数据。**你告诉它存储一个数字，然后再检索它，它仍然是一个数字，而不是像Web Storage API那样以字符串表示数字。对于JSON、正则表达式、日期、布尔运算等也是如此。
 :::
 
 ## LocalStorage API
@@ -18,17 +18,17 @@ Web Storage API only retrieves strings. **Quasar retrieves data with its origina
 
 <doc-api file="SessionStorage" />
 
-## Installation
+## 安装
 <doc-installation :plugins="['LocalStorage', 'SessionStorage']" />
 
 ::: danger Note about SSR
-When running the code server-side on SSR builds, this feature can't work. Web Storage is a browser API only. You can however make use of it on the client-side with SSR.
+当在SSR构建的服务器端运行代码时，这个功能无法工作。网络存储只是一个浏览器API。但是你可以通过SSR在客户端使用它。
 :::
 
-## Usage
+## 用法
 
 ```js
-// outside of a Vue file
+// 在Vue文件之外
 import { LocalStorage, SessionStorage } from 'quasar'
 
 LocalStorage.set(key, value)
@@ -39,7 +39,7 @@ let value = SessionStorage.getItem(key)
 ```
 
 ```js
-// inside of a Vue file
+// 在一个Vue文件中
 import { useQuasar } from 'quasar'
 
 setup () {
@@ -53,32 +53,32 @@ setup () {
 }
 ```
 
-For a bulletproof approach when setting a value, it's best to also catch any potential errors raised by the underlying Local/Session Storage Web API, like when exceeding quota:
+为了在设置数值时做到万无一失，最好还能抓住底层本地/会话存储网络API引发的任何潜在错误，比如超过配额时。
 
 ```js
 try {
   $q.localStorage.set(key, value)
 } catch (e) {
-  // data wasn't successfully saved due to
-  // a Web Storage API error
+  // 数据没有成功保存，原因是
+  // 一个网络存储API错误
 }
 ```
 
 ::: tip
-For an exhaustive list of methods, please check the API section.
+有关方法的详尽清单，请查看API部分。
 :::
 
-## Data Types
+## 数据类型
 
-Quasar Storage supports (but not limited to) the following data types out of the box. If you store one of these types, the retrieved data will have the same data type.
+Quasar Storage支持(但不限于)以下开箱即用的数据类型。如果你存储了这些类型中的一种，检索的数据将具有相同的数据类型。
 
-* Dates
-* Regular Expressions
-* Numbers
-* Booleans
-* Strings
-* Plain Javascript Objects
+* 日期
+* 正则表达式
+* 数字
+* 布尔运算
+* 字符串
+* 普通的Javascript对象
 
-If you store any *other* data type, the returned value will be a String.
+如果你存储任何*其他*数据类型，返回值将是一个字符串。
 
-So you can even store functions, but be careful that you need to eval() the returned value (which is a String representation of the function).
+所以你甚至可以存储函数，但要注意你需要评估()返回值(这是函数的一个字符串表示)。

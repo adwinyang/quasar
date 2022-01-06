@@ -1,45 +1,45 @@
 ---
-title: Parallax
-desc: The QParallax Vue component makes it easy to embed a parallax scrolling effect into a page.
+title: 视差
+desc: QParallax Vue组件可以很容易地将视差滚动效果嵌入到一个页面中。
 keys: QParallax
 related:
   - /vue-components/video
 ---
 
-Parallax scrolling is a technique in computer graphics and web design, where background images move by the camera slower than foreground images, creating an illusion of depth in a 2D scene and adding to the immersion.
+视差滚动是计算机图形学和网页设计中的一种技术，即背景图像在相机前的移动速度比前景图像慢，在二维场景中产生深度的错觉，增加了沉浸感。
 
-QParallax takes care of a lot of quirks, including image/video size which can actually be smaller than the window width/height.
+QParallax处理了很多古怪的问题，包括图像/视频的大小实际上可以小于窗口的宽度/高度。
 
 ## QParallax API
 
 <doc-api file="QParallax" />
 
-## Usage
+## 使用方法
 
 ::: tip Scrolling container
-Please read [here](/vue-components/scroll-observer#determining-scrolling-container) about how Quasar determines the container to attach scrolling events to.
+请阅读[这里](/vue-components/scroll-observer#determining-scrolling-container)关于Quasar如何确定将滚动事件附加到的容器。
 :::
 
-### Image background
+### 图像背景
 
-<doc-example title="Image background" file="QParallax/Image" />
+<doc-example title="图像背景" file="QParallax/Image" />
 
-### Video background
+### 视频背景
 
 ::: warning
-On some iOS platforms there may be problems regarding the autoplay feature of the native `<video>` tag. [Reference](https://webkit.org/blog/6784/new-video-policies-for-ios/). QParallax and Quasar are not interfering in any way with the client browser's ability/restrictions on the `<video>` tag.
+在一些iOS平台上，可能存在关于本地`<视频>`标签的自动播放功能的问题。[参考](https://webkit.org/blog/6784/new-video-policies-for-ios/)。QParallax和Quasar不会以任何方式干扰客户端浏览器对`<video>`标签的能力/限制。
 :::
 
 ::: warning
-When using the `video` tag inside QParallax, you **must** provide the `width` and `height` attributes in order for QParallax to work properly because of the intrinsic resizing capabilities of this type of media. Also, be aware that the actual video width and height are not available until the video's metadata has been loaded.
+当在QParallax中使用`video`标签时，你必须**提供`width`和`height`属性，以使QParallax正常工作，因为这种类型的媒体具有内在的尺寸调整能力。另外，请注意，实际的视频宽度和高度在视频的元数据被加载之前是不可用的。
 :::
 
-<doc-example title="Custom height with video background" file="QParallax/Video" />
+<doc-example title="自定义高度与视频背景" file="QParallax/Video" />
 
-### Custom speed
+### 自定义速度
 
-<doc-example title="Custom speed" file="QParallax/Speed" />
+<doc-example title="自定义速度" file="QParallax/Speed" /> ###自定义速度
 
-### Using slot
+### 使用插槽
 
-<doc-example title="Using the slot" file="QParallax/ScopedSlot" />
+<doc-example title="使用槽" file="QParallax/ScopedSlot" /> ### 使用槽

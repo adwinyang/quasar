@@ -1,11 +1,11 @@
 ---
-title: Commands List
-desc: The entire list of Quasar CLI commands.
+title: 命令列表
+desc: Quasar CLI命令的全部列表。
 ---
 
-Familiarize yourself with the list of available commands inside a Quasar project:
+熟悉Quasar项目内部的可用命令列表。
 
-``` bash
+```bash
 $ quasar
 
   ___
@@ -51,40 +51,40 @@ $ quasar
     serve         Create an ad-hoc server on App's distributables
 ```
 
-See help for any command:
-``` bash
+见任何命令的帮助。
+```bash
 $ quasar [command name] --help
 ```
 
-## Create
+## 创建
 
-Creates an App folder with initial project boilerplate.
+创建一个带有初始项目模板的App文件夹。
 
 ```bash
 ## Quasar UI v2
 $ quasar create <folder_name>
 ```
 
-This command will use Quasar App Starter Kit by default, but you can specify a different one via `--kit` option.
+该命令默认使用Quasar App Starter Kit，但你可以通过`--kit`选项指定一个不同的工具包。
 
-`quasar create --kit ui` and `quasar create --kit app-extension` will generate for you App Extension boilerplate: the former when the extension is meant to provide UI Components, the latter in all other cases.
+`quasar create --kit ui`和`quasar create --kit app-extension`将为你生成应用扩展模板：前者是指扩展要提供UI组件，后者是指所有其他情况。
 
-You can use a starter kit stored on your machine by providing a **local path** to a folder (eg. `quasar create --kit ./my-custom-starter-kit`).
+你可以使用存储在你的机器上的启动工具包，提供一个**本地路径**的文件夹(例如：`quasar create --kit ./my-custom-starter-kit`)。
 
-You can use a starter kit stored into any publicly accessible Git repository by providing a reference which follows this schema:
-- GitHub - `github:owner/name` or simply `owner/name`
-- GitLab - `gitlab:owner/name`
-- Bitbucket - `bitbucket:owner/name`
+你可以使用存储在任何可公开访问的Git仓库中的启动工具包，只需提供一个遵循此模式的参考。
+- GitHub - `github:owner/name`或简单的`owner/name`。
+- GitLab - `gitlab:owner/name`。
+- Bitbucket - `bitbucket:owner/name`。
 
-`master` branch will be checked out by default, but you can specify the one you prefer via `--branch <branch name>` (eg. `quasar create --kit owner/name --branch my-branch`).
+`master`分支将被默认签出，但你可以通过`--branch <branch name>`指定你喜欢的分支(例如：`quasar create --kit owner/name --branch my-branch`)。
 
 ::: warning
-The preferred way to build reusable code and UI Components into Quasar ecosystem are App Extensions. Use a custom starter kit only if you really know what you're doing and be aware that it will make more difficult for the Quasar team to provide you assistance.
+在Quasar生态系统中构建可重复使用的代码和用户界面组件的首选方式是应用扩展。只有当你真的知道自己在做什么的时候，才可以使用自定义的启动工具包，并且要注意这将使Quasar团队更难以为你提供帮助。
 :::
 
-## Upgrade
+## 升级
 
-Check (and optionally) upgrade Quasar packages from a Quasar project folder:
+从Quasar项目文件夹中检查(也可以选择)升级Quasar软件包。
 
 ```bash
 # view all options:
@@ -106,14 +106,14 @@ $ quasar upgrade -i
 ```
 
 ::: warning Note for code editor terminals
-If you're using a code editor terminal instead of the real one, you run `quasar upgrade` and get an error *Command not found* or *@quasar/cli* version appears to be *undefined*, you will need to go to the settings of your code editor terminal and untick the option (or its equivalent) *Add 'node_modules/.bin' from the project root to %PATH%* then restart your code editor.
+如果你使用的是代码编辑器终端，而不是真正的终端，你运行`quasar upgrade`并得到一个错误 *Command not found* 或 *@quasar/cli* 版本似乎是*undefined*，你将需要进入你的代码编辑器终端的设置，取消勾选选项(或其等同物) *Add 'node_modules/.bin' from the project root to %PATH%* 然后重新启动你的代码编辑器。
 :::
 
-## Info
-The Quasar CLI is equipped with a stable combination of multiple NPM build packages (Webpack, Vue, etc) which gets updated frequently after heavy testing.
+## 信息
+Quasar CLI配备了多个NPM构建包(Webpack、Vue等)的稳定组合，经过大量测试后，这些构建包会经常更新。
 
-In order for you to see what versions of Node, NPM, Quasar CLI, Quasar, Vue, Webpack, Cordova, Babel and many more, issue this command in a Quasar project folder:
-``` bash
+为了让你看到Node、NPM、Quasar CLI、Quasar、Vue、Webpack、Cordova、Babel等的版本，请在Quasar项目文件夹下发布此命令。
+```bash
 $ quasar info
 ```
 
@@ -169,13 +169,13 @@ $ quasar dev -h
                         [android|ios]
 ```
 
-The Quasar development server allows you to develop your App by compiling and maintaining code in-memory. A web server will serve your App while offering hot-reload out of the box. Running in-memory offers faster rebuilds when you change your code.
+Quasar开发服务器允许你通过在内存中编译和维护代码来开发你的应用程序。网络服务器将为你的App提供服务，同时提供开箱即用的热重载。当你改变你的代码时，在内存中运行提供更快的重建。
 
-> Hot Reload is much more than just refreshing your browser when code changes. It skips the refresh and updates your code on the fly, while maintaining your App's state (like your Vue's model data). Please note that there are cases when this is impossible, so the dev webserver will simply refresh your browser. (Always ensure you are running only one instance of Quasar CLI at a time, otherwise Hot-Reload and other stuff will break!)
+> 热重载不仅仅是在代码改变时刷新你的浏览器。它跳过刷新，并在飞行中更新你的代码，同时保持你的应用程序的状态(如你的Vue的模型数据)。请注意，在某些情况下这是不可能的，所以开发网络服务器将简单地刷新你的浏览器。(一定要确保你在同一时间只运行一个Quasar CLI实例，否则Hot-Reload和其他东西会被破坏！)
 
-Based on what you want to develop, you can start the development server by using "quasar dev" command as follows:
+根据你想开发的内容，你可以通过使用 "quasar dev "命令来启动开发服务器，如下所示。
 
-``` bash
+```bash
 # Developing a SPA
 $ quasar dev
 # ...or
@@ -207,34 +207,34 @@ $ quasar dev -m ios '--' some params --and options --here
 $ quasar dev -m electron '--' --no-sandbox --disable-setuid-sandbox
 ```
 
-If you wish to change the hostname or port serving your App you have 3 options:
-* Edit '/quasar.conf.js':
-  ```js
-  devServer: {
-    host: '...',
-    port: ...
-  }
-  ```
-* Through '-H' (hostname) and '-p' (port) command options.
-* If this is a one time thing, specify the hostname and/or port as an environment variable:
-  ``` bash
-  $ PORT=3000 quasar dev
-  $ HOSTNAME=1.1.1.14 quasar dev
-  ```
+如果你想改变为你的应用程序服务的主机名或端口，你有三个选择。
+* 编辑"/quasar.conf.js"。
+```js
+devServer: {
+host: '...',
+端口: ...
+}
+```
+* 通过'-H'(主机名)和'-p'(端口)命令选项。
+* 如果这是一次性的，可以指定主机名和/或端口作为环境变量。
+```bash
+$ PORT=3000 quasar dev
+$ HOSTNAME=1.1.1.14 quasar dev
+```
 
-If there appears to be an issue with hot reload, you can try two fixes:
-* Change the permissions for the project folder with
+如果出现了热重载的问题，你可以尝试两种修复方法。
+* 用以下方法改变项目文件夹的权限
 
-  ```bash
-  sudo chown -R username: .
-  ```
-* or run the dev server with root privileges
+```bash
+sudo chown -R username: .
+```
+* 或者以root权限运行开发服务器
 
-  ```bash
-  sudo quasar dev
-  ```
+```bash
+sudo quasar dev
+```
 
-## Build
+## 建立
 
 ```bash
 $ quasar build -h
@@ -299,9 +299,9 @@ $ quasar build -h
                      - see https://www.electron.build/configuration/publish
 ```
 
-The Quasar CLI can pack everything together and optimize your App for production. It minifies source code, extracts vendor components, leverages browser cache and much more.
+Quasar CLI可以将所有东西打包，并为生产优化你的应用程序。它简化了源代码，提取了供应商的组件，利用了浏览器的缓存等等。
 
-``` bash
+```bash
 # Build a SPA for production
 $ quasar build
 # ...or
@@ -335,18 +335,18 @@ $ quasar build -m ios '--' some params --and options --here
 $ quasar build -d [-m <mode>]
 ```
 
-## Clean
-Cleans up all the build assets:
+## 清理
+清理所有的构建资产。
 
-``` bash
+```bash
 $ quasar clean
 ```
 
-## New
-Generates Components, Pages, Layouts, Vuex Store.
+## 新
+生成组件、页面、布局、Vuex商店。
 
 ::: tip
-This command is simply a helper in order to quickly scaffold a page/layout/component/vuex store module. You are not required to use it, but can help you when you don't know how to start.
+这个命令只是一个辅助工具，为了快速搭建一个页面/布局/组件/vuex存储模块。你不需要使用它，但可以在你不知道如何开始时帮助你。
 :::
 
 ```bash
@@ -390,7 +390,7 @@ $ quasar new -h
                              * ts - use for TS boot file and store modules only
 ```
 
-## Mode
+## 模式
 
 ```bash
 $ quasar mode -h
@@ -410,28 +410,28 @@ $ quasar mode -h
     --help, -h    Displays this message
 ```
 
-When you initialize a project with the CLI, you can build SPA (Single Page Website/Application), SSR (Server-side Render Website/Application with optional PWA client takeover), PWA (Progressive Web App), Mobile App (through Cordova), and/or Electron Apps. When you develop for SSR, PWA, Cordova or Electron, you need these modes installed. If you issue "quasar dev" or "quasar build" they will automatically be installed.
+当你用CLI初始化一个项目时，你可以构建SPA(单页网站/应用程序)、SSR(服务器端渲染网站/应用程序，可选择PWA客户端接管)、PWA(渐进式Web应用程序)、移动应用程序(通过Cordova)和/或Electron应用程序。当你为SSR、PWA、Cordova或Electron开发时，你需要安装这些模式。如果你发布 "quasar dev "或 "quasar build"，它们将被自动安装。
 
-These modes will add a "src-*" folder into your project with very specific code for it:
+这些模式将在你的项目中添加一个 "src-*"文件夹，其中有非常具体的代码。
 
-| Folder | Mode | Description |
-| --- | --- | --- |
-| src-ssr | ssr | Contains the production Node server files. |
-| src-pwa | pwa | Contains the Service Worker file that you can tweak. |
-| src-cordova | cordova | Is a Cordova project folder that will be using your 'src' as content. Tweak Cordova config, add/remove platforms, splash screens, Cordova plugins and so on from this folder. Do NOT touch "src-cordova/www" folder though as it will get overwritten at every build. |
-| src-electron | electron | Has code for the main Electron thread. The renderer thread will be your app in 'src'. |
-| src-bex | bex | Contains the specific files for Browser Extensions mode. |
+| 文件夹 | 模式 | 描述 |
+| src-ssr | ssr | 包含生产Node服务器文件。|
+| src-pwa | pwa | 包含你可以调整的服务工作器文件。|
+| src-cordova | cordova | 是一个Cordova项目文件夹，将使用你的'src'作为内容。从这个文件夹中调整Cordova配置，添加/删除平台、启动画面、Cordova插件等。但不要碰 "src-cordova/www "文件夹，因为它将在每次构建时被覆盖。|
+| src-electron | electron | 拥有Electron主线程的代码。渲染器线程将是你在 "src "中的应用程序。|
+| src-bex | bex | 包含浏览器扩展模式的特定文件。|
+如果因为某些原因你决定不需要某个模式，你可以将其删除。**这将永久地删除**相应的 "src-*"文件夹。
 
-If for some reason you decide you don't need a mode, you can remove it. **This will permanently delete** the respective "src-*" folder.
+
 
 ```bash
 $ quasar mode remove pwa
 ```
 
 ## Describe
-This command is useful to describe the API of any Quasar components/directives/plugins that your project is using. **It is specific to your Quasar version installed in your project folder.**
+这个命令对于描述你的项目所使用的任何Quasar组件/指令/插件的API非常有用。**它与你的项目文件夹中安装的Quasar版本有关。
 
-Examples: `$ quasar describe QIcon`, `$ quasar describe TouchPan`, `$ quasar describe Cookies`.
+示例。`$ quasar describe QIcon`, `$ quasar describe TouchPan`, `$ quasar describe Cookies`.
 
 ```bash
 $ quasar describe -h
@@ -521,8 +521,8 @@ $ quasar describe QIcon
    *No methods*
 ```
 
-## Inspect
-This command can be used to inspect the Webpack config generated by Quasar CLI.
+## 检查
+这个命令可以用来检查Quasar CLI生成的Webpack配置。
 
 ```bash
 $ quasar inspect -h
@@ -547,7 +547,7 @@ $ quasar inspect -h
 ```
 
 ## Ext
-This command is used to manage [App Extensions](/app-extensions/introduction).
+该命令用于管理[App Extensions](/app-extensions/introduction)。
 
 ```bash
 $ quasar ext -h
@@ -578,8 +578,8 @@ $ quasar ext -h
     --help, -h       Displays this message
 ```
 
-## Run
-This command is used to run commands supplied by the [App Extensions](/app-extensions/introduction) that you've installed into your project folder.
+## 运行
+该命令用于运行你已经安装到项目文件夹中的[App Extensions](/app-extensions/introduction)提供的命令。
 
 ```bash
 $ quasar run -h
@@ -604,7 +604,7 @@ $ quasar run -h
 ```
 
 ## Serve
-This command can be used in production too and it is being supplied by the global installation of `@quasar/cli` package.
+这个命令也可以在生产中使用，它由`@quasar/cli`包的全局安装提供。
 
 ```bash
 $ quasar serve -h
@@ -657,13 +657,13 @@ $ quasar serve -h
     --> will be transformed into app.use(path, httpProxyMiddleware(rule))
 ```
 
-### Custom Node server
-When building a SPA or PWA, the distributable folder can be served by any static webserver. To test it out (assuming you don't have a specific publicPath or not using Vue Router "history" mode), you can use the "http-server" npm package.
+### 自定义节点服务器
+在构建SPA或PWA时，可分发的文件夹可以由任何静态网络服务器提供。为了测试它(假设你没有特定的publicPath或者没有使用Vue Router "历史 "模式)，你可以使用 "http-server "npm包。
 
-Or you can build your own server. Here are some examples:
+或者你可以建立你自己的服务器。这里有一些示例。
 
 ```js
-// when using default Vue Router "hash" mode
+// 当使用默认的Vue Router "hash "模式时
 const
   express = require('express'),
   serveStatic = require('serve-static'),
@@ -676,7 +676,7 @@ app.listen(port)
 ```
 
 ```js
-// when using Vue Router "history" mode
+// 当使用Vue Router "历史 "模式时
 const
   express = require('express'),
   serveStatic = require('serve-static'),
@@ -690,10 +690,10 @@ app.use(serveStatic(...path-to-dist...))
 app.listen(port)
 ```
 
-If you need URL rewrites of API, or simply put you want to proxy your API requests, then you can use "http-proxy-middleware" package:
+如果你需要重写API的URL，或者简单地说，你想代理你的API请求，那么你可以使用 "http-proxy-middleware "包。
 
 ```js
-// add this to one of the two previous examples:
+// 将此添加到前面两个示例中的一个。
 const { createProxyMiddleware } = require('http-proxy-middleware')
 
 // ...
@@ -702,10 +702,10 @@ app.use('/api', createProxyMiddleware({
     pathRewrite: {"^/api" : ""}
   }))
 
-// then app.listen(...)
+// 那么app.listen(...)
 ```
 
-Finally, run one of these files:
+最后，运行这些文件中的一个。
 
 ```bash
 $ node my-server.js

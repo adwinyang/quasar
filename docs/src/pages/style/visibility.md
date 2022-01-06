@@ -1,49 +1,49 @@
 ---
-title: CSS Visibility
-desc: The list of CSS classes supplied by Quasar to manage responsiveness and visibility of components and DOM elements.
+title: CSS可见性
+desc: 由Quasar提供的CSS类列表，用于管理组件和DOM元素的响应性和可见性。
 related:
   - /style/typography
   - /style/positioning
   - /style/spacing
 ---
-There are some CSS classes that you can use out of the box for common functionality.
+有一些CSS类，你可以使用开箱即用的普通功能。
 
-| Class Name | Description |
+| 类的名称 | 说明 |
 | --- | --- |
-| `disabled` | Cursor is changed to notify a 'disable' and opacity is set to a lower value. |
-| `hidden` | Set `display` to `none`. Compare with below - the class `hidden` means the element will not show _and_ will not take up space in the layout. |
-| `invisible` | Set `visibility` to `hidden`. Compare with above - the class `invisible` means the element will not show, but it will still take up space in the layout. |
-| `transparent` | Background color is transparent. |
-| `dimmed` | Apply dark transparent overlay on top of your element. Do not use on elements which already have **:after** pseudoelement. |
-| `light-dimmed` | Apply white transparent overlay on top of your element. Do not use on elements which already have **:after** pseudoelement. |
-| `ellipsis` | Truncates text and shows ellipsis when not enough space available. |
-| `ellipsis-2-lines` | Truncates text and shows ellipsis when not enough space available on two lines (works only on Webkit browsers). |
-| `ellipsis-3-lines` | Truncates text and shows ellipsis when not enough space available on three lines (works only on Webkit browsers). |
-| `z-top` | Positions your element on top of any other component, but behind Popovers, Tooltips, Notifications. |
-| `z-max` | Positions your element on top of any other component (including Drawer, Modals, Notifications, Layout header/footer, ...) |
+| `disabled` | 光标被改变为通知 "禁用"，不透明度被设置为较低的值。|
+| `hidden` | 将`display`设置为`none`。与下面的比较 - `hidden`类意味着该元素将不显示_并且_不会在布局中占用空间。|
+| `invisible` | 设置`visibility`为`hidden`。与上面比较 - `invisible`类意味着该元素将不显示，但仍会在布局中占用空间。|
+| `transparent` | 背景颜色是透明的。|
+| `dimmed` | 在你的元素上面应用深色的透明覆盖层。不要在已经有**:after**伪元素的元素上使用。|
+| `light-dimmed` | 在你的元素上应用白色的透明覆盖层。不要用在已经有**:after**假元素的元素上。|
+| `ellipsis` | 当没有足够的空间时，会截断文本并显示省略号。|
+| `ellipsis-2-lines` | 当两行没有足够的空间时，截断文本并显示省略号(仅适用于Webkit浏览器)。|
+| `ellipsis-3-lines` | 当三行没有足够的空间时，会截断文本并显示省略号(仅适用于Webkit浏览器)。|
+| `z-top` | 将你的元素放置在任何其他组件的顶部，但在弹出窗口、工具提示、通知的后面。|
+| `z-max` | 将您的元素放在任何其他组件的顶部(包括抽屉、模版、通知、布局头/页脚，...)。
 
-## Window Width Related
-First of all, let's define what the breakpoints are:
+## 窗口宽度相关
+首先，让我们定义一下断点是什么。
 
-| Window Size | Prefix | Breakpointspace in pixels |
+| 窗口尺寸 | 前缀 | 断点空间(像素) |
 | --- | --- | --- |
-| Extra Small | xs | Up to 599px |
-| Small | sm | 600px to 1023px |
-| Medium | md | 1024px to 1439px |
-| Large | lg | 1440px to 1919px |
-| Extra Large | xl | Bigger than 1920px |
+| 特小 | xs | 最大599px |
+| 小型 | sm | 600px至1023px |
+| 中型 | md | 1024px至1439px |
+| 大号 | lg | 1440px到1919px |
+| 特大号 | xl | 大于1920px |
 
-Now on to the window width related CSS classes.
+现在来看看与窗口宽度有关的CSS类。
 
-| Class Name | Description |
+| 类的名称 | 说明 |
 | --- | --- |
-| `xs` | Display only on extra small windows |
-| `sm` | Display only on small windows |
-| `md` | Display only on medium-sized windows |
-| `lg` | Display only on large windows |
-| `xl` | Display only on extra large windows |
+| `xs` | 只在超小的窗口显示 |
+| `sm` | 只在小窗口上显示
+| `md` | 只在中等大小的窗口上显示
+| `lg` | 只在大窗口上显示
+| `xl` | 只在超大的窗口显示
 
-You can also show some DOM element or component **if it's lower than one of the sizes**. **Same for greater than one of the sizes**. Just attach `lt-` or `gt-` prefixes, which come from "lower than" and "greater than". Example: `lt-md` (display on xs and sm only), `lt-xl` (display on xs, sm, md and lg windows only), `gt-md` (display on greater than medium windows: lg and xl).
+你也可以显示一些DOM元素或组件，**如果它低于其中一个尺寸**。**大于其中一个尺寸的也是如此**。只需附加`lt-`或`gt-`前缀，这来自于 "低于 "和 "大于"。例如：`lt-md`(仅在xs和sm上显示)，`lt-xl`(仅在xs、sm、md和lg窗口上显示)，`gt-md`(在大于中型窗口上显示：lg和xl)。
 
 ::: tip
 You can combine the visibility classes with the `inline` class for inline-blocks.
@@ -52,52 +52,52 @@ Example: `<span class="gt-sm inline">...</span>`
 :::
 
 ::: tip
-If you want to e.g. show hide based on JavaScript properties, you can use the [Screen Plugin](/options/screen-plugin).
+如果你想例如根据JavaScript属性显示隐藏，你可以使用[屏幕插件](/options/screen-plugin)。
 :::
 
-## Platform Related
-Visible only on:
+## 平台相关
+仅在下列情况下可见。
 
-| Class Name | Description |
+| 类别名称 | 描述 |
 | --- | --- |
-| `desktop-only` | Visible only on desktop |
-| `mobile-only` | Visible only on mobile |
-| `native-mobile-only` | Visible only on Cordova/Capacitor |
-| `cordova-only` | Visible only on Cordova wrapped Apps |
-| `capacitor-only` | Visible only on Capacitor wrapped Apps |
-| `electron-only` | Visible only on Electron wrapped Apps |
-| `touch-only` | Visible only on touch capable platforms |
-| `platform-ios-only` | Visible only on an iOS platform |
-| `platform-android-only` | Visible only on an Android platform |
-| `within-iframe-only` | Visible only when entire website is under an IFRAME tag |
+| `只在台式机上看到` | 只在台式机上可见
+| `mobile-only` | 仅在手机上可见。
+| `native-mobile-only` | 仅在Cordova/Capacitor上可见
+| `cordova-only` | 仅在Cordova包装的应用程序上可见。
+| `capacitor-only` | 仅在Capacitor包装的应用程序上可见。
+| `electron-only` | 仅在Electron包装的应用程序上可见。
+| `touch-only` | 仅在具有触摸功能的平台上可见。
+| `platform-ios-only` | 仅在iOS平台上可见。
+| `platform-android-only` | 仅在安卓平台上可见。
+| `within-iframe-only` | 只有在整个网站处于IFRAME标签下时才可见。
 
-Hide on:
+隐藏在:
 
-| Class Name | Description |
+| 类别名称 | 描述 |
 | --- | --- |
-| `desktop-hide` | Hide on desktop |
-| `mobile-hide` | Hide on mobile |
-| `native-mobile-hide` | Hide on Cordova/Capacitor |
-| `cordova-hide` | Hide on Cordova wrapped Apps |
-| `capacitor-hide` | Hide on Capacitor wrapped Apps |
-| `electron-hide` | Hide on Electron wrapped Apps |
-| `touch-hide` | Hide on touch capable platforms |
-| `platform-ios-hide` | Hide on iOS platform |
-| `platform-android-hide` | Hide on Android platform |
-| `within-iframe-hide` | Hide only when entire website is under an IFRAME tag |
+| `desktop-hide` | 隐藏在桌面上 |
+| `mobile-hide` | 在手机上隐藏 |
+| `native-mobile-hide` | 隐藏在Cordova/Capacitor上 |
+| `cordova-hide` | 隐藏在Cordova包装的应用程序上 |
+| `capacitor-hide` | 隐藏在Capacitor包装的应用程序中
+| `electron-hide` | 隐藏在Electron包装的应用程序上
+| `touch-hide` | 隐藏在具有触摸功能的平台上
+| `platform-ios-hide` | 隐藏在iOS平台上 |
+| `platform-android-hide` | 隐藏在Android平台上 |
+| `within-iframe-hide` | 只在整个网站处于IFRAME标签下时才隐藏。
 
 ::: tip
-Based on your needs, you might want to also check [Platform Detection](/options/platform-detection) page to see how you can achieve the same effect using Javascript. This latter method allows you to not even render a DOM element or component. It is useful when the rendering process is expensive.
+根据你的需要，你可能还想看看[平台检测](/options/platform-detection)页面，看看你如何用Javascript达到同样的效果。后一种方法允许你甚至不渲染一个DOM元素或组件。当渲染过程很昂贵时，它是很有用的。
 :::
 
-## Orientation Related
-| Class Name | Description |
+## 定向相关
+| 类别名称 | 说明 |
 | --- | --- |
-| `orientation-portrait` | Visible only when screen orientation is *Portrait* |
-| `orientation-landscape` | Visible only when screen orientation is *Landscape* |
+| `orientation-portrait` | 仅在屏幕方向为*Portrait*时可见。
+| `orientation-landscape` | 仅在屏幕方向为*Landscape*时可见。
 
-## Printing Related
-| Class Name | Description |
+## 打印相关
+| 类别名称 | 描述 |
 | --- | --- |
-| `print-only` | Visible only on print media - hidden on *screen* media |
-| `print-hide` | Visible on *screen* media - hidden on *print* media |
+| `print-only` | 仅在打印介质上可见，在*屏幕*介质上隐藏
+| `print-hide` | 在*屏幕*媒体上可见，在*打印*媒体上隐藏。

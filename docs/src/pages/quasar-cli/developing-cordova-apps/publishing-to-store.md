@@ -1,12 +1,12 @@
 ---
-title: Publishing to Store
-desc: How to publish a Quasar hybrid mobile app with Cordova to Google Play Store and to Apple App Store.
+title: 发布到商店
+desc: 如何用Cordova发布Quasar混合移动应用程序到Google Play Store和Apple App Store。
 ---
 
-So, you've finished working on your Mobile App. Now it's time to deploy it. Let's learn how.
+所以，你已经完成了你的移动应用程序的工作。现在是时候部署它了。让我们来学习一下。
 
-## Android Publishing
-To generate a release build for Android, we can use the following Quasar CLI command:
+## Android发布
+要为Android生成一个发布版本，我们可以使用以下Quasar CLI命令。
 
 ```bash
 $ quasar build -m cordova -T android
@@ -14,90 +14,90 @@ $ quasar build -m cordova -T android
 $ quasar build -m android
 ```
 
-This will generate a release build based on the settings in your `/src-cordova/config.xml`.
+这将根据你的`/src-cordova/config.xml`中的设置生成一个发布版构建。
 
-Next, we can find our unsigned APK file in "/src-cordova/platforms/android/app/build/outputs/apk/release" or equivalent path (written in the output of terminal). Filename usually ends with "-release-unsigned.apk". Now, we need to sign the unsigned APK and run an alignment utility on it to optimize it and prepare it for the app store. If you already have a signing key, skip these steps and use that one instead.
+接下来，我们可以在"/src-cordova/platforms/android/app/build/outputs/apk/release "或同等路径(写在终端的输出中)找到我们的无签名APK文件。文件名通常以"-release-unsigned.apk "结束。现在，我们需要对未签名的APK进行签名，并对其运行一个对齐工具，以优化它并为应用商店做准备。如果你已经有一个签名密钥，请跳过这些步骤，用它代替。
 
-Let’s generate our private key using the keytool command that comes with the JDK. If this tool isn’t found, refer to the installation guide:
+让我们使用JDK附带的keytool命令生成我们的私钥。如果没有找到这个工具，请参考安装指南。
 
 ```bash
 $ keytool -genkey -v -keystore my-release-key.keystore -alias alias_name -keyalg RSA -keysize 2048 -validity 20000
 ```
 
-You’ll first be prompted to create a password for the keystore. Then, answer the rest of the nice tool’s questions and when it’s all done, you should have a file called my-release-key.keystore created in the current directory.
+首先，你会被提示为钥匙库创建一个密码。然后，回答好工具的其他问题，当它全部完成后，你应该在当前目录下创建一个名为my-release-key.keystore的文件。
 
 ::: danger
-Make sure to save this file somewhere safe, if you lose it you won’t be able to submit updates to your app!
+请确保将此文件保存在安全的地方，如果你丢失了它，你将无法提交你的应用程序的更新。
 :::
 
-To sign the unsigned APK, run the jarsigner tool which is also included in the JDK:
+要签署未签名的APK，请运行JDK中包含的jarsigner工具。
 
 ```bash
 $ jarsigner -verbose -sigalg SHA1withRSA -digestalg SHA1 -keystore my-release-key.keystore <path-to-unsigned-apk-file> alias_name
 ```
 
-This signs the apk in place. Finally, we need to run the zip align tool to optimize the APK. The zipalign tool can be found in `/path/to/Android/sdk/build-tools/VERSION/zipalign`. For example, on OS X with Android Studio installed, zipalign is in `~/Library/Android/sdk/build-tools/VERSION/zipalign`:
+这就把apk签在了原地。最后，我们需要运行zip对齐工具来优化APK。zipalign工具可以在`/path/to/Android/sdk/build-tools/VERSION/zipalign`中找到。例如，在安装了Android Studio的OS X上，zipalign在`~/Library/Android/sdk/build-tools/VERSION/zipalign`中。
 
 ```bash
 $ zipalign -v 4 <path-to-same-apk-file> HelloWorld.apk
 ```
 
-Now we have our final release binary called HelloWorld.apk and we can release this on the Google Play Store for all the world to enjoy!
+现在我们有了最终的发布二进制文件，名为HelloWorld.apk，我们可以在Google Play Store上发布，让全世界的人都能享受到这一服务
 
-(There are a few other ways to sign APKs. Refer to the official Android App Signing documentation for more information.)
+(还有一些其他的方法来签署APKs。更多信息请参考官方Android应用签名文档)。
 
 ### Google Play Store
-Now that we have our release APK ready for the Google Play Store, we can create a Play Store listing and upload our APK.
+现在我们已经为Google Play Store准备好了我们的发布APK，我们可以创建一个Play Store列表并上传我们的APK。
 
-To start, you’ll need to visit the [Google Play Store Developer Console](https://play.google.com/apps/publish) and create a new developer account. Unfortunately, this is not free. However, the cost is only $25 compared to Apple’s $99.
+要开始，你需要访问[Google Play Store开发者控制台](https://play.google.com/apps/publish)并创建一个新的开发者账户。不幸的是，这并不是免费的。然而，与苹果的99美元相比，费用只有25美元。
 
-Once you have a developer account, you can go ahead and click “Publish an Android App on Google Play”.
+一旦你有了开发者账户，你就可以继续点击 "在Google Play上发布Android应用程序"。
 
-Then, you can go ahead and click the button to edit the store listing (We will upload an APK later). You’ll want to fill out the description for the app.
+然后，你可以继续点击按钮，编辑商店列表(我们稍后将上传APK)。你要填写该应用程序的描述。
 
-When you are ready, upload the APK for the release build and publish the listing. Be patient and your hard work should be live in the wild!
+当你准备好后，上传发布构建的APK，并发布列表。耐心点，你的辛勤工作应该是在野外进行的!
 
-### Updating your App
-As you develop your app, you’ll want to update it periodically.
+### 更新你的应用程序
+当你开发你的应用程序时，你会希望定期更新它。
 
-In order for the Google Play Store to accept updated APKs, you’ll need to bump the app version (from `/package.json` or from `/quasar.conf.js > cordova > version`, then rebuild the app for release.
+为了让Google Play商店接受更新的APK，你需要提高应用程序的版本(从`/package.json`或从`/quasar.conf.js > cordova > version`，然后重新构建应用程序进行发布。
 
-## iOS Publishing
-First, you need to enroll in [Apple Developer Program](https://developer.apple.com/programs/). As with Google, if you have a personal account with Apple, you can create an additional one for your applications.
+## iOS发布
+首先，你需要注册[苹果开发者计划](https://developer.apple.com/programs/)。和Google一样，如果你有一个苹果的个人账户，你可以为你的应用程序创建一个额外的账户。
 
-### Connecting Xcode with your developer account
-After you receive your developer status, open Xcode on your Mac and go to Preferences > Accounts. Add your account to Xcode by clicking the `+` button on the lower left-hand side and follow the instructions.
+### 将Xcode与您的开发者账户连接起来
+在你收到你的开发者身份后，在你的Mac上打开Xcode并进入首选项>账户。通过点击左下角的 "+"按钮将您的账户添加到Xcode中，并按照说明操作。
 
-### Signing
-Now that you linked Xcode with your developer account, go to Preferences > Accounts, select your Apple Id on the left-hand side and then click the View Details button shown on the previous image.
+### 签名
+现在您已经将Xcode与您的开发者账户连接起来了，进入Preferences > Accounts，在左侧选择您的Apple Id，然后点击上图中的View Details按钮。
 
-Click the Create button next to the iOS Distribution option.
+点击iOS分布选项旁边的创建按钮。
 
-You can learn more about maintaining your signing identities and certificates from the official documentation.
+你可以从官方文档中了解更多关于维护你的签名身份和证书的信息。
 
-### Setting up the app identifier
-Next, through the Apple Developer Member Center we’ll set up the app ID identifier details. Identifiers are used to allow an app to have access to certain app services like for example Apple Pay. You can login to Apple Developer Member Center with your Apple ID and password.
+### 设置应用程序标识符
+接下来，通过苹果开发者会员中心，我们将设置应用程序ID标识符的详细信息。标识符用于允许一个应用程序访问某些应用程序服务，例如Apple Pay。你可以用你的苹果ID和密码登录到苹果开发者会员中心。
 
-Once you’re logged in you should choose Certificates, Identifiers, and Profiles option. Also select the Identifiers option under the iOS Apps. Then select the `+` button in order to add a new iOS App ID.
+一旦你登录，你应该选择证书、标识符和配置文件选项。同时选择iOS应用程序下的识别器选项。然后选择 "+"按钮，以添加一个新的iOS应用程序ID。
 
-Then you’ll have to set the name of your app, use the Explicit App ID option and set the Bundle ID to the value of the id in your Cordova config.xml tag.
+然后你必须设置你的应用程序的名称，使用Explicit App ID选项，并将Bundle ID设置为Cordova config.xml标签中的ID值。
 
-Additionally, you’ll have to choose any of the services that need to be enabled. For example, if you use Apple Pay or Wallet in your app, you need to choose those option.
+此外，你还得选择任何需要启用的服务。例如，如果你在你的应用程序中使用Apple Pay或Wallet，你需要选择这些选项。
 
-You can learn more about registering app identifiers from the [official documentation](https://developer.apple.com/library/ios/documentation/IDEs/Conceptual/AppDistributionGuide/MaintainingProfiles/MaintainingProfiles.html).
+你可以从[官方文档](https://developer.apple.com/library/ios/documentation/IDEs/Conceptual/AppDistributionGuide/MaintainingProfiles/MaintainingProfiles.html)中了解更多关于注册应用标识符的信息。
 
-### Creating the app listing
-Apple uses iTunes Connect to manage app submissions. After your login, you should select the My Apps button, and on the next screen select the `+` button, just below the iTunes Connect My Apps header.
+### 创建应用程序列表
+苹果使用iTunes Connect来管理应用程序的提交。登录后，你应该选择 "我的应用程序 "按钮，并在下一个屏幕上选择 "+"按钮，就在iTunes Connect My Apps标题的下方。
 
-This will show three options in a dropdown, and you should select the New App. After this the popup appears where you have to choose the name of the application, platform, primary language, bundle ID and SKU.
+这将在一个下拉菜单中显示三个选项，你应该选择新的应用程序。之后会出现弹出窗口，你必须选择应用程序的名称、平台、主要语言、捆绑ID和SKU。
 
-Once you’re done, click on the Create button and you’ll be presented with a screen where you’ll have to set some basic options like Privacy Policy URL, category and sub category.
+一旦你完成了，点击创建按钮，你会看到一个屏幕，你必须设置一些基本的选项，如隐私政策URL，类别和子类别。
 
-Now, before we fill out everything in the listing, we’ll build our app and get it uploaded with Xcode. Then you’ll come back to finish the listing.
+现在，在我们填写列表中的所有内容之前，我们将建立我们的应用程序，并通过Xcode上传它。然后你再回来完成列表。
 
-You can learn more about managing your app in iTunes Connect from the [official documentation](https://developer.apple.com/library/ios/documentation/IDEs/Conceptual/AppDistributionGuide/UsingiTunesConnect/UsingiTunesConnect.html).
+你可以从[官方文档](https://developer.apple.com/library/ios/documentation/IDEs/Conceptual/AppDistributionGuide/UsingiTunesConnect/UsingiTunesConnect.html)中了解更多关于在iTunes Connect中管理你的应用。
 
-### Building the app for production
+### 构建用于生产的应用程序
 
 ```bash
 $ quasar build -m cordova -T ios
@@ -109,46 +109,46 @@ $ quasar build -m ios
 $ quasar build -m ios -- some params --and options --here
 ```
 
-If everything went well you’ll see the `BUILD SUCCEEDED` output in the console.
+如果一切顺利，你会在控制台中看到 "BUILD SUCCEEDED "输出。
 
-### Opening the project in Xcode
-Now, open the `/src-cordova/platforms/ios/<name>.xcodeproj` file in Xcode. You may need to instead use `<name>.xcworkspace` if the next step doesn't work.
+### 在Xcode中打开该项目
+现在，在Xcode中打开`/src-cordova/platforms/ios/<name>.xcodeproj`文件。如果下一步不成功，你可能需要改用`<name>.xcworkspace`。
 
-Once the Xcode opens up the project, you should see the details about your app in the general view.
+一旦Xcode打开了这个项目，你应该在总视图中看到关于你的应用程序的细节。
 
-You should just check that the bundle identifier is set up correctly, so that it’s the same as the value you specified earlier in the app ID. Also, make sure that the version and build numbers are correct. Team option should be set to your Apple developer account. Under the deployment target you can choose which devices your application will support.
+你只需检查捆绑标识符的设置是否正确，使其与你先前在应用程序ID中指定的值相同。另外，确保版本和构建号是正确的。团队选项应该被设置为你的苹果开发者账户。在部署目标下，你可以选择你的应用程序将支持哪些设备。
 
-### Creating an archive of the application
-In Xcode, select Product > Scheme > Edit Scheme to open the scheme editor. Next, select the Archive from the list on the left-hand side. Make sure that the Build configuration is set to Release.
+### 创建应用程序的存档
+在Xcode中，选择产品>方案>编辑方案来打开方案编辑器。接下来，从左侧的列表中选择存档。确保Build配置被设置为Release。
 
-To create an archive, choose a Generic iOS Device, or your device if it’s connected to your Mac (you can’t create an archive if simulator is selected), from the Scheme toolbar menu in the project editor.
+要创建一个存档，从项目编辑器的方案工具栏菜单中选择一个通用的iOS设备，或者你的设备，如果它连接到你的Mac(如果选择模拟器，你不能创建一个存档)。
 
-Next, select Product > Archive, and the Archive organizer appears and displays the new archive. (If it produces an error instead, go back to the last step and open `<name>.xcworkspace`.)
+接下来，选择 "产品">"归档"，"归档 "组织者就会出现并显示新的归档。(如果它反而产生错误，请回到上一步，打开`<名称>.xcworkspace`。)
 
-At this point you can click the `Upload to App Store...` button, and if everything goes fine you’ll have an uploaded app, and the only thing that’s left to do is to complete the iTunes Connect listing and submit it for review!
+在这一点上，你可以点击 "上传至App Store... "按钮，如果一切顺利，你将有一个上传的应用程序，唯一要做的是完成iTunes连接列表并提交审查
 
-At this point you should get an email from iTunes Connect shortly after you uploaded the archive with the content.
+这时，你应该在上传存档后不久收到iTunes Connect的电子邮件，并附上内容。
 
-### Finishing the app list process
-Now you should head back to the iTunes Connect portal and login. Next, click on the Pricing and Availability on the left-hand side under APP STORE INFORMATION.
+### 完成应用程序列表过程
+现在你应该回到iTunes Connect门户网站并登录。接下来，点击左侧APP STORE信息下的定价和可用性。
 
-You don’t have to worry about forgetting to insert any crucial and required information about your application, since you’ll be notified about what’s missing and what needs to be added/changed if you try to submit the app for review before all details are filled in.
+你不必担心忘记插入关于你的应用程序的任何关键和必要的信息，因为如果你在所有细节填写之前试图提交应用程序进行审查，你会被通知缺少什么以及需要添加/修改什么。
 
-Next, click on the 1.0 Prepare for Submission button on the left-hand side, as shown on the image below. When we uploaded our archive, iTunes Connect automatically determined which device sizes are supported. You’ll need to upload at least one screenshot image for each of the various app sizes that were detected by iTunes Connect.
+接下来，点击左侧的1.0准备提交按钮，如下图所示。当我们上传我们的档案时，iTunes Connect自动确定支持哪些设备尺寸。你需要为iTunes Connect检测到的各种应用尺寸至少上传一张屏幕截图图片。
 
-Next, you’ll have to insert Description, Keywords, Support URL and Marketing URL (optionally).
+接下来，你必须插入描述、关键词、支持网址和营销网址(可选)。
 
-In the Build section you have to click on the `+` button and select the build that was uploaded through Xcode in the previous steps.
+在 "构建 "部分，你必须点击 "+"按钮，并选择在前面步骤中通过Xcode上传的构建。
 
-Next, you’ll have to upload the icon, edit the rating, and set some additional info like copyright and your information. Note that the size of the icon that you’ll have to upload here will have to be 1024 by 1024 pixels. Thankfully, you can use the splash.png from the second tutorial. If you’re the sole developer then the data in the App Review Information should be your own. Finally, as the last option, you can leave the default checked option that once your app is approved that it is automatically released to the App Store.
+接下来，你必须上传图标，编辑评级，并设置一些额外的信息，如版权和你的信息。注意，你在这里上传的图标的尺寸必须是1024×1024像素。幸好，你可以使用第二个教程中的splash.png。如果你是唯一的开发者，那么应用程序评论信息中的数据应该是你自己的。最后，作为最后一个选项，你可以保留默认勾选的选项，一旦你的应用程序被批准，它就会自动发布到App Store。
 
-Now that we’re finished with adding all of the details to the app listing, we can press Save and then Submit for Review. Finally, you’ll be presented with the last form that you’ll have to fill out.
+现在，我们已经完成了对应用程序列表的所有细节的添加，我们可以按 "保存"，然后提交审查。最后，你将会看到你必须填写的最后一张表格。
 
-After you submit your app for review you’ll see the status of it in the My Apps as Waiting for review, as shown on the image below. Also, shortly after you submit your app for review you’ll get a confirmation email from iTunes Connect that your app is in review.
+在你提交你的应用程序进行审查后，你会在我的应用程序中看到它的状态为等待审查，如下图所示。此外，在你提交你的应用程序进行审查后不久，你会从iTunes Connect收到一封确认电子邮件，说明你的应用程序正在审查中。
 
-Apple prides itself with a manual review process, which basically means it can take several days for your app to be reviewed. You’ll be notified of any issues or updates to your app status.
+苹果为自己的人工审查过程感到自豪，这基本上意味着你的应用程序可能需要几天的时间来审查。你会被通知任何问题或更新你的应用程序的状态。
 
-### Updating the app
-Since you’ll probably want to update your app at some point you’ll first need to bump the app version (from `/package.json` or from `/quasar.conf.js > cordova > version`, then rebuild the app for release. Finally, you'll have to open it up from the Xcode and follow the same steps all over again.
+### 更新应用程序
+由于你可能想在某些时候更新你的应用程序，你首先需要提升应用程序的版本(从`/package.json`或从`/quasar.conf.js > cordova > version`，然后重建应用程序以便发布。最后，你必须从Xcode中打开它，重新按照同样的步骤进行。
 
-Once you submit for the review, you’ll have to wait for the review process again.
+一旦你提交审查，你将不得不再次等待审查过程。

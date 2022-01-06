@@ -127,7 +127,7 @@ api.extendPackageJson({
 })
 ```
 
-上面的例子在应用程序的 package.json 中添加了一个 npm 脚本，这样你就可以执行 `yarn electron`(或等效的 `npm run electron`)。
+上面的示例在应用程序的 package.json 中添加了一个 npm 脚本，这样你就可以执行 `yarn electron`(或等效的 `npm run electron`)。
 
 ## api.extendJsonFile
 使用新属性扩展 JSON 文件(深度合并)。如果指定现有属性，它将覆盖它们。
@@ -187,7 +187,7 @@ same-floder/__my.css
 ### 使用范围
 您还可以通过使用 [lodash.template](https://www.npmjs.com/package/lodash.template) 语法插入一些决策代码到要渲染的文件中。
 
-例子：
+示例：
 
 ```js
 // src/install.js

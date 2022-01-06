@@ -1,52 +1,52 @@
 ---
-title: Electron Security Concerns
-desc: The things you should know about security in a Quasar desktop app.
+title: 对电子安全的担忧
+desc: 关于Quasar桌面应用程序的安全性，你应该知道的事情。
 ---
-If you are not vigilant when building Electron apps, you will probably be placing the users of your app in tangible digital danger. Things like XSS (Cross Site Scripting) and remote code execution can literally enable attackers to get deep access to the data in your app - and potentially even the underlying operating system.
+如果你在构建Electron应用程序时没有保持警惕，你可能会将你的应用程序的用户置于切实的数字危险之中。像XSS(跨站脚本)和远程代码执行这样的东西，实际上可以使攻击者深入访问你的应用程序中的数据--甚至可能是底层操作系统。
 
-Especially when working "in the open", i.e. as an open-source project, you will definitely want to consider hardening your application with code-signing and integrity checking. (See "Tips" section)
+特别是在 "公开 "工作时，即作为一个开源项目，你肯定要考虑用代码签名和完整性检查来加固你的应用程序。(见 "提示 "部分)
 
 ::: danger
-Under no circumstances should you load and execute remote code. Instead, use only local files (packaged together with your application) to execute Node.js code in your main thread and/or preload script.
+在任何情况下，你都不应该加载和执行远程代码。相反，只使用本地文件(与你的应用程序一起打包)，在你的主线程和/或预加载脚本中执行Node.js代码。
 :::
 
-## Checklist: Security Recommendations
-The Electron team itself makes the following recommendations:
+## 检查表。安全建议
+Electron团队自己提出了以下建议。
 
-1.  Make sure that you leave `webPreferences` > `contextIsolation` set to `true`. Use the [preload script](/quasar-cli/developing-electron-apps/electron-preload-script) to inject only must-have APIs to the renderer thread.
-2.  If you must load remote content and cannot work around that, then [only load secure content](https://electronjs.org/docs/tutorial/security#1-only-load-secure-content)
-3.  [Use  `ses.setPermissionRequestHandler()`  in all sessions that load remote content](https://electronjs.org/docs/tutorial/security#4-handle-session-permission-requests-from-remote-content)
-4.  [Do not disable  `webSecurity`](https://electronjs.org/docs/tutorial/security#5-do-not-disable-websecurity)
-5.  [Do not set  `allowRunningInsecureContent`  to  `true`](https://electronjs.org/docs/tutorial/security#7-do-not-set-allowrunninginsecurecontent-to-true)
-6.  [Do not enable experimental features](https://electronjs.org/docs/tutorial/security#8-do-not-enable-experimental-features)
-7.  [Do not use  `enableBlinkFeatures`](https://electronjs.org/docs/tutorial/security#9-do-not-use-enableblinkfeatures)
-8.  [`<webview>`: Do not use `allowpopups`](https://electronjs.org/docs/tutorial/security#10-do-not-use-allowpopups)
-9.  [`<webview>`: Verify options and params](https://electronjs.org/docs/tutorial/security#11-verify-webview-options-before-creation)
-10.  [Disable or limit navigation](https://electronjs.org/docs/tutorial/security#12-disable-or-limit-navigation)
-11.  [Disable or limit creation of new windows](https://electronjs.org/docs/tutorial/security#13-disable-or-limit-creation-of-new-windows)
+1.  确保你将`webPreferences`>`contextIsolation`设置为`true`。使用[preload script](/quasar-cli/developing-electron-apps/electron-preload-script)，只注入必须的API到渲染器线程。
+2.  如果你必须加载远程内容，并且无法绕过这一点，那么就使用[只加载安全内容](https://electronjs.org/docs/tutorial/security#1-only-load-secure-content)
+3.  [在所有加载远程内容的会话中使用`ses.setPermissionRequestHandler()`](https://electronjs.org/docs/tutorial/security#4-handle-session-permission-requests-from-remote-content)
+4.  4. [不要禁用`webSecurity`](https://electronjs.org/docs/tutorial/security#5-do-not-disable-websecurity)
+5.  [不要将`allowRunningInsecureContent`设置为`true`](https://electronjs.org/docs/tutorial/security#7-do-not-set-allowrunninginsecurecontent-to-true)
+6.  [不要启用实验性功能](https://electronjs.org/docs/tutorial/security#8-do-not-enable-experimental-features)
+7.  7. [不要使用`enableBlinkFeatures`](https://electronjs.org/docs/tutorial/security#9-do-not-use-enableblinkfeatures)
+8.  [`<webview>`: 不要使用`allowpopups`](https://electronjs.org/docs/tutorial/security#10-do-not-use-allowpopups)
+9.  [`<webview>`: 验证选项和参数](https://electronjs.org/docs/tutorial/security#11-verify-webview-options-before-creation)
+10.  [禁用或限制导航](https://electronjs.org/docs/tutorial/security#12-disable-or-limit-navigation)
+11.  [禁止或限制创建新窗口](https://electronjs.org/docs/tutorial/security#13-disable-or-limit-creation-of-new-windows)
 
-Except for items 3 and 4 above, Electron will put a warning in the dev console if one of the these issues have been detected.
+除了上面的第3和第4项，如果检测到这些问题中的一个，Electron会在开发控制台中发出警告。
 
 
-## Tips and Tricks
+## 技巧和窍门
 
-#### Communication Protocols
-You should know this by now, but if you are not using **https** / **sftp** / **wss** then the app's communications with the outside world can be very easily tampered with. Whatever you are building, please use a secure protocol everywhere.
+#### 通讯协议
+你现在应该知道了，但是如果你没有使用**https** / **sftp** / **wss**，那么应用程序与外界的通信就会非常容易被篡改。无论你在构建什么，请在任何地方使用安全协议。
 
-#### Filesystem Access
-Having read & write permissions to the filesystem is the holy grail for penetration testers, and if your app enables this type of interaction, consider using IPC and multiple windows (with varying permissions) in order to minimize the attack surface.
+#### 文件系统访问
+拥有对文件系统的读写权限是渗透测试者的圣杯，如果你的应用程序能够实现这种类型的交互，请考虑使用IPC和多个窗口(具有不同的权限)，以尽量减少攻击面。
 
-#### Encryption
-If the user of your application has secrets like wallet addresses, personal information or some other kind of trade secrets, keep that information encrypted when at rest, un-encrypt it in-memory only when it is needed and make sure to overwrite / destroy the object in memory when you are done with it. But no matter how you approach this, follow these four rules:
+#### 加密
+如果你的应用程序的用户有秘密，如钱包地址、个人信息或其他类型的商业秘密，在休息时保持该信息的加密，只有在需要时才在内存中解密，并确保在你用完它时覆盖/销毁内存中的对象。但无论你如何处理，都要遵循这四条规则。
 
-1. use strong crypto (i.e. collision resistant and not md5)
-2. do not invent a novel type of encryption
-3. follow the implementation instructions explicitly
-4. think about the user-experience
+1.使用强加密(即抗碰撞，而不是md5)。
+2.不要发明一种新的加密类型
+3.明确地遵循实施说明
+4.考虑到用户体验
 
-#### Disable developer tools in production
+#### 在生产中禁用开发者工具
 
-You probably don't want rogue hoody-wearing menaces to be executing something like this in the console of your app:
+你可能不想让那些穿着连帽衫的流氓在你的应用程序的控制台中执行这样的东西。
 
 ```js
 window.location='https://evilsite.com/looks-just-like-your-app'
@@ -62,30 +62,30 @@ $ shasum -a 256 myApp-v1.0.0_darwin-x64.dmg
 40ed03e0fb3c422e554c7e75d41ba71405a4a49d560b1bf92a00ea6f5cbd8daa myApp-v1.0.0_darwin-x64.dmg
 ```
 
-#### Sign the builds
-Although not a hard requirement for sharing your app, signing code is a best practice - and it is required by both the MacOS and Windows stores. Read more about it at this [official Electron tutorial](https://electronjs.org/docs/tutorial/code-signing).
+#### 签署构建
+虽然不是分享你的应用程序的硬性要求，但签署代码是一种最佳做法--而且MacOS和Windows商店都要求这样做。在这个[Electron官方教程]中阅读更多关于它的内容(https://electronjs.org/docs/tutorial/code-signing)。
 
-#### Use SNYK
-[Snyk.io](https://snyk.io) is a service, CLI and even GitHub integration bot that tracks vulnerabilities in node modules by comparing the dependencies in your package.json with its list of compromised modules. In many cases their service can recommend minimum update versions or even provide modules that they themselves have patched. They also undertake research and vulnerability disclosure. For an example of something that should scare the socks off of you if you are doing anything with compressed files (zip, tar, etc.) check out their [writeup](https://snyk.io/research/zip-slip-vulnerability) and [list of affected software](https://github.com/snyk/zip-slip-vulnerability).
+#### 使用SNYK
+[Snyk.io](https://snyk.io)是一个服务、CLI甚至GitHub集成机器人，它通过比较你的package.json中的依赖关系和它的受损模块列表来跟踪节点模块的漏洞。在许多情况下，他们的服务可以推荐最低更新版本，甚至提供他们自己已经打过补丁的模块。他们还进行研究和漏洞披露。如果你正在使用压缩文件(zip、tar等)，可以查看他们的[文章](https://snyk.io/research/zip-slip-vulnerability)和[受影响软件列表](https://github.com/snyk/zip-slip-vulnerability)。
 
 
-#### For the truly paranoid
-Use a dedicated physical desktop machine for each platform target. If you have to keep this device online, make sure the OS is always updated, permits zero inbound connections from the internet / bluetooth (especially for shell / ssh) and run constant virus and rootkit checks.
+#### 对于那些真正的偏执狂
+为每个平台目标使用一个专门的物理桌面机器。如果你必须让这个设备保持在线，确保操作系统一直在更新，允许从互联网/蓝牙(尤其是shell/ssh)的零入站连接，并不断进行病毒和rootkit检查。
 
-Permit only GPG-signed commits to be merged and require at least two team members (who did not make the PR) to review and approve the commit.
+只允许合并有GPG签名的提交，并要求至少有两个团队成员(没有做PR的人)审查和批准该提交。
 
-Reconsider your node package management system:
-- use a private npm registry (like [JFrog](https://jfrog.com/))
-- fix your packages to specific versions known to work
-- use pnpm
-- audit each and every single module and its dependencies
+重新考虑你的node软件包管理系统。
+- 使用一个私有的npm注册表(如[JFrog](https://jfrog.com/))。
+- 将你的包修正为已知的特定版本
+- 使用pnpm
+- 审核每一个模块和它的依赖关系
 
-#### Pay to get hacked
-Somebody smart might have hacked your project (or an underlying library). If you are making money with this app, consider getting a [Hacker One](https://hackerone.com) account and running a constant bounty award. At least you'll be able to convince the hacker to be ethical and NOT sell the exploit to your competitor.
+#### 付出被黑的代价
+某个聪明人可能已经黑掉了你的项目(或一个底层库)。如果你用这个应用程序赚钱，可以考虑获得一个[Hacker One](https://hackerone.com)账户，并不断进行赏金奖励。至少你能说服黑客遵守道德，不要把漏洞卖给你的竞争对手。
 
-#### Get help
-You may feel overwhelmed, because the awesomeness of Electron brings with it a great many headaches that you never wanted to think about. If this is the case, consider [reaching out](mailto:razvan.stoenescu@gmail.com) and getting expert support for the review, audit and hardening of your app by the team of seasoned devs that brought you the Quasar Framework.
+#### 获得帮助
+你可能会感到不知所措，因为Electron的可怕之处带来了许多你从未想过的头痛问题。如果是这种情况，请考虑[联系](mailto:razvan.stoenescu@gmail.com)并获得专家的支持，由给你带来Quasar框架的经验丰富的开发团队对你的应用程序进行审查、审计和加固。
 
 <q-separator class="q-mt-xl" />
 
-> Parts of this page have been taken from the official [Electron Security Guide](https://electronjs.org/docs/tutorial/security).
+> 本页部分内容取自官方的[Electron安全指南](https://electronjs.org/docs/tutorial/security)。

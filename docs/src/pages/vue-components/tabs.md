@@ -1,6 +1,6 @@
 ---
-title: Tabs
-desc: The QTabs, QTab and QRouteTab Vue components are a way of helping the user navigate between pages or tab panels.
+title: 标签
+desc: QTabs、QTab和QRouteTab Vue组件是一种帮助用户在页面或标签面板之间导航的方式。
 keys: QTabs,QTab,QRouteTab
 related:
   - /vue-components/tab-panels
@@ -8,12 +8,12 @@ related:
   - /vue-components/icon
   - /vue-components/badge
 ---
-Tabs are a way of displaying more information using less window real estate. This page describes the tab selection part through QTabs, QTab and QRouteTab.
+标签是一种使用较少的窗口空间来显示更多信息的方式。本页通过QTabs、QTab和QRouteTab来描述标签选择部分。
 
-One common use case for this component is in Layout’s header/footer. Please refer to [Layouts](/layout/layout) and [Header & Footer](/layout/header-and-footer#example--playing-with-qtabs) for references.
+这个组件的一个常见用例是在Layout的页眉/页脚。请参考[Layouts](/layout/layout)和[Header & Footer](/layout/header-and-footer#example--playing-with-qtabs)以获取参考。
 
 ::: tip
-Works great along with [QTabPanels](/vue-components/tab-panels), a component which refers strictly to the panels (tab content) themselves.
+与[QTabPanels](/vue-components/tab-panels)一起使用非常好，这个组件严格指的是面板(标签内容)本身。
 :::
 
 ## QTabs API
@@ -26,92 +26,92 @@ Works great along with [QTabPanels](/vue-components/tab-panels), a component whi
 
 ## QRouteTab API
 
-<doc-api file="QRouteTab" />
+<doc-api file="QRouteTab" /> ## QRouteTab API
 
-## Usage
+## 使用方法
 
 ::: tip TIPS
-* QTabs can be scrolled horizontally when the width is longer than the container width. Adjust your browser accordingly to see this in action.
-* On a desktop you will see chevrons on either side that can be clicked.
-* On a mobile, you can pan the tabs with your finger.
-* If you want to force arrows to be visible on mobile use `mobile-arrows` prop.
+* 当QTabs的宽度长于容器的宽度时，可以水平滚动。相应地调整你的浏览器以看到这个动作。
+* 在桌面上，你会看到两边的雪佛龙，可以点击。
+* 在手机上，你可以用手指平移标签。
+* 如果你想强制箭头在手机上可见，请使用`mobile-arrows`属性。
 :::
 
 ::: warning
-QRouteTab won't and cannot work with the UMD version if you don't also install Vue Router.
+如果你不同时安装Vue Router，QRouteTab不会也不能与UMD版本一起工作。
 :::
 
-### Basic
+### 基本
 
-<doc-example title="Basic" file="QTabs/Basic" />
+<doc-example title="基本" file="QTabs/Basic" />
 
-### Outside, inside and visible on mobile arrows
+### 外部、内部和移动箭头上可见的
 
-<doc-example title="Outside, inside and visible on mobile arrows" file="QTabs/ArrowsModifiers" />
+<doc-example title="移动箭头的外侧、内侧和可见性" file="QTabs/ArrowsModifiers" /> ### 垂直箭头
 
-### Vertical
+### 垂直方向
 
-<doc-example title="Vertical (example with QSplitter)" file="QTabs/Vertical" />
+<doc-example title="垂直(使用QSplitter的示例)" file="QTabs/Vertical" /> ### 垂直
 
-### Dense
+### 密集的
 
-<doc-example title="Dense" file="QTabs/Dense" />
+<doc-example title="密集" file="QTabs/Dense" /> ### 密集的单个颜色
 
-### Individual colors
+### 单独的颜色
 
-<doc-example title="Individual colors" file="QTabs/IndividualColor" />
+<doc-example title="单个颜色" file="QTabs/IndividualColor" /> ###单个颜色
 
-### Ripple
+### 波纹
 
-<doc-example title="No ripple and custom ripple color" file="QTabs/Ripples" />
+<doc-example title="无波纹和自定义波纹颜色" file="QTabs/Ripples" /> ### 波纹
 
-### Custom indicator
+### 自定义指标
 
-In the examples below, please notice the last two QTabs: indicator at top and no indicator.
+在下面的示例中，请注意最后两个QTabs：指标在顶部和没有指标。
 
-<doc-example title="Custom indicator" file="QTabs/CustomIndicator" />
+<doc-example title="自定义指标" file="QTabs/CustomIndicator" />
 
-### Tab notifications
+### 标签通知
 
-There are multiple ways to display tab notifications: with a QBadge, through an alert dot or an alert icon (can be any).
+有多种方法来显示标签的通知：用QBadge，通过警报点或警报图标(可以是任何)。
 
-<doc-example title="Tab notifications" file="QTabs/Notifying" />
+<doc-example title="标签通知" file="QTabs/Notifying" />
 
-### Alignment
+### 对齐方式
 
-QTabs are responsive and the `align` prop (see below) becomes active when the container width (not window width) is bigger than the configured breakpoint. For demoing purposes, the tabs below have breakpoint disabled.
+QTabs是响应式的，当容器的宽度(不是窗口的宽度)大于配置的断点时，`align`属性(见下文)会被激活。为了演示的目的，下面的标签已经禁用了断点。
 
-<doc-example title="Alignment" file="QTabs/Alignment" />
+<doc-example title="对齐" file="QTabs/Alignment" />
 
-In the second QTabs from the example below, if window width is below 1024px then the "Movies" and "Photos" tabs will be replaced by a "More..." dropdown.
+在下面示例的第二个QTabs中，如果窗口宽度低于1024px，那么 "Movies "和 "Photos "标签将被一个 "More... "下拉菜单所取代。
 
-### With dropdown
+### 有下拉菜单
 
-<doc-example title="With a dropdown" file="QTabs/Dropdown" />
+<doc-example title="有下拉菜单" file="QTabs/Dropdown" />
 
-### On QToolbar
+### 在QToolbar上
 
-Notice we need to specify the `shrink` prop. By default, QTabs tries to expand to all the available horizontal space, but in this case we are using it as a child of QToolbar so we don't want that.
+注意我们需要指定`shrink`属性。默认情况下，QTabs试图扩展到所有可用的水平空间，但在这种情况下，我们把它作为QToolbar的一个子节点，所以我们不希望如此。
 
-<doc-example title="Tabs in a QToolbar" file="QTabs/TabsInToolbar" />
+<doc-example title="QToolbar中的标签" file="QTabs/TabsInToolbar" />
 
-### Dynamic update
+### 动态更新
 
-<doc-example title="Dynamic tabs" file="QTabs/DynamicTabs" />
+<doc-example title="动态标签" file="QTabs/DynamicTabs" /> ### 动态更新
 
-### Along with QTabsPanel
+### 与QTabsPanel一起
 
 ::: tip
-QTabPanels can be used as standalone too. They do not depend on the presence of a QTabs. Also, they can be placed anywhere within a page, not just near a QTabs.
+QTabPanels也可以作为独立的使用。它们不依赖于QTabs的存在。而且，它们可以被放置在页面的任何地方，而不仅仅是靠近QTabs。
 :::
 
-<doc-example title="Tabs with tab panels" file="QTabs/TabsWithTabpanels" />
+<doc-example title="带有标签面板的标签" file="QTabs/TabsWithTabpanels" />
 
-More info: [Tab Panels](/vue-components/tab-panels).
+更多信息。[标签面板](/vue-components/tab-panels)。
 
-## Connecting to Vue Router
-You can use tabs together with Vue Router through `QRouteTab` component.
-This component inherits everything from QTab, however it also has `router-link` properties bound to it. These allow for listening to the current app route and also triggering a route when clicked/tapped.
+## 连接到Vue Router
+你可以通过`QRouteTab`组件将标签与Vue Router一起使用。
+这个组件继承了QTab的一切，但是它也有`router-link`属性与之绑定。这些属性允许监听当前应用程序的路由，并在点击/触摸时触发一个路由。
 
 ```html
 <q-tabs>
@@ -129,10 +129,10 @@ This component inherits everything from QTab, however it also has `router-link` 
 ```
 
 ::: warning
-QRouteTab becomes "active" depending on your app's route and not due to the v-model. So the initial value of v-model or changing the v-model directly will not also change the route of your app.
+QRouteTab变得 "活跃 "取决于你的应用程序的路线，而不是由于v-model。所以v-model的初始值或直接改变v-model不会同时改变你的应用程序的路线。
 :::
 
-### Handling custom navigation
+### 处理自定义导航
 
 ```html
 <template>
@@ -157,9 +157,9 @@ export default {
     navDelay (e, go) {
       e.preventDefault() // we cancel the default navigation
 
-      // console.log('triggering navigation in 2s')
+      // console.log('2s内触发导航')
       setTimeout(() => {
-        // console.log('navigating as promised 2s ago')
+        // console.log('按照2s前的承诺进行导航')
         go()
       }, 2000)
     },

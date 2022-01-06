@@ -1,48 +1,48 @@
 ---
-title: Breakpoints
-desc: Quasar's list of CSS breakpoints.
+title: 分割点
+desc: Quasar的CSS中断点列表。
 related:
   - /style/spacing
 ---
 
-Quasar uses the following CSS breakpoints:
+Quasar使用了以下CSS断点。
 
-| Window Size | Name | Breakpoint space in pixels |
+| 窗口大小 | 名称 | 断点空间(像素) |
 | --- | --- | --- |
-| Extra Small | `xs` | Up to 599px |
-| Small | `sm` | 600px to 1023px |
-| Medium | `md` | 1024px to 1439px |
-| Large | `lg` | 1440px to 1919px |
-| Extra Large | `xl` | Bigger than 1920px |
+| 超小 | `xs` | 最大 599px |
+| 小号 | `sm` | 600px 至 1023px |
+| 中型 | `md` | 1024px 至 1439px |
+| 大号 | `lg` | 1440px 至 1919px |
+| 特大号 | `xl` | 大于1920px |
 
-To learn how to use them, please visit the [Visibility](/style/visibility) page.
+要了解如何使用它们，请访问[Visibility](/style/visibility)页面。
 
-You might also want to take a look at the [Introduction to Flexbox](/layout/grid/introduction-to-flexbox#responsive-design) on the "Responsive Design" section.
+你可能还想看看 "响应式设计 "部分的[Flexbox简介](/layout/grid/introduction-to-flexbox#responsive-design)。
 
 ### Sass
 
-You can also use the breakpoints in Sass:
+你也可以使用Sass中的断点。
 
 ```sass
 @media (max-width: $breakpoint-xs-max)
   font-size: 10px
 ```
 
-The syntax for these variables is shown below, where `<breakpoint>` is to be replaced by "xs", "sm", "md", "lg" or "xl":
+这些变量的语法如下，其中`<断点>`要用 "xs"、"sm"、"md"、"lg "或 "xl "代替。
 
 ```
 $breakpoint-<breakpoint>-min
 $breakpoint-<breakpoint>-max
 ```
 
-There's also:
+还有。
 
 ```
 $sizes.<breakpoint>
-// replace <breakpoint> with xs, sm, md, lg or xl
+// 用xs、sm、md、lg或xl替换<breakpoint>。
 ```
 
-[If enabled (only)](/options/screen-plugin#how-to-enable-body-classes), you can also style your content based on a particular set of CSS classes applied to document.body: `screen--xs`, `screen--sm`, ..., `screen--xl`.
+[如果启用(仅)](/options/screen-plugin#how-to-enable-body-classes)，你也可以根据应用于document.body的一组特定的CSS类来设计你的内容：`screen-xs`, `screen-sm`, ..., `screen-xl`。
 
 ```sass
 .my-div

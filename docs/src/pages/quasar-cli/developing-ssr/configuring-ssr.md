@@ -1,13 +1,13 @@
 ---
-title: Configuring SSR
-desc: How to manage your server-side rendered apps with Quasar CLI.
+title: 配置SSR
+desc: 如何用Quasar CLI管理你的服务器端渲染的应用程序。
 related:
   - /quasar-cli/quasar-conf-js
 ---
 
 ## Quasar.conf.js
 
-This is the place where you can configure some SSR options. Like if you want the client side to takeover as a SPA (Single Page Application -- the default behaviour), or as a PWA (Progressive Web App).
+这是你可以配置一些SSR选项的地方。比如你想让客户端以SPA(单页应用--默认行为)或PWA(渐进式Web应用)的形式接管。
 
 ```js
 return {
@@ -16,56 +16,56 @@ return {
     pwa: true/false, // should a PWA take over (default: false), or just a SPA?
 
     manualStoreHydration: true/false,
-        // Manually hydrate the store.
-        // This is detailed in a subsection below
+        // 手动给商店补充水分。
+        // 这一点将在下面的小节中详细说明
 
     manualPostHydrationTrigger: true/false,
-        // Manually trigger the post-hydration logic on client-side.
-        // This is detailed in a subsection below
+        // 在客户端手动触发水化后逻辑。
+        // 这一点将在下面的小节中详细说明
 
     prodPort: 3000, // The default port that the production server should use
-                    // (gets superseded if process.env.PORT is specified at runtime)
+                    // (如果在运行时指定process.env.PORT，则会被取代)
 
     maxAge: 1000 * 60 * 60 * 24 * 30,
-        // Tell browser when a file from the server should expire from cache
-        // (the default value, in ms)
-        // Has effect only when server.static() is used
+        // 告诉浏览器服务器上的文件何时应从缓存中过期
+        // (默认值，单位为ms)
+        // 只有在使用server.static()时才有效。
 
-    // List of SSR middleware files (src-ssr/middlewares/*). Order is important.
+    // SSR中间件文件的列表(src-ssr/middlewares/*)。顺序很重要。
     middlewares: [
       // ...
       'render' // Should not be missing, and should be last in the list.
     ],
 
-    // optional; add/remove/change properties
-    // of production generated package.json
+    // 可选；添加/删除/更改属性
+    // 生产中生成的软件包.json的
     extendPackageJson (pkg) {
-      // directly change props of pkg;
-      // no need to return anything
+      // 直接改变属性的包。
+      // 不需要归还任何东西
     },
 
-    // optional;
-    // handles the Webserver webpack config ONLY
-    // which includes the SSR middleware
+    // 可选。
+    // 处理Webserver webpack config ONLY
+    // 其中包括SSR中间件
     extendWebpackWebserver (cfg) {
-      // directly change props of cfg;
-      // no need to return anything
+      // 直接改变cfg的props。
+      // 不需要归还任何东西
     },
 
-    // optional; EQUIVALENT to extendWebpack() but uses webpack-chain;
-    // handles the Webserver webpack config ONLY
-    // which includes the SSR middleware
+    // 可选；等同于extendWebpack()，但使用webpack-chain。
+    // 处理Webserver webpack config ONLY
+    // 其中包括SSR中间件
     chainWebpackWebserver (chain) {
-      // chain is a webpack-chain instance
-      // of the Webpack configuration
+      // 链是一个webpack-chain实例
+      // 的Webpack配置
     }
   }
 }
 ```
 
-> If you decide to go with a PWA client takeover (**which is a killer combo**), the Quasar CLI PWA mode will be installed too. You may want to check out the [Quasar PWA](/quasar-cli/developing-pwa/introduction) guide too. But most importantly, make sure you read [SSR with PWA](/quasar-cli/developing-ssr/ssr-with-pwa) page.
+> 如果你决定采用PWA客户端接管(**这是个杀手锏)，Quasar CLI PWA模式也将被安装。你可能也想看看[Quasar PWA](/quasar-cli/developing-pwa/introduction)指南。但最重要的是，确保你阅读[带PWA的SSR](/quasar-cli/developing-ssr/ssr-with-pwa)页面。
 
-When building, `extendWebpack()` and `chainWebpack()` will receive one more parameter (Object), currently containing `isServer` or `isClient` boolean props, because there will be two Webpack builds (one for the server-side and one for the client-side).
+在构建时，`extendWebpack()`和`chainWebpack()`会多收到一个参数(Object)，目前包含`isServer`或`isClient`的布尔属性，因为会有两个Webpack的构建(一个用于服务器端，一个用于客户端)。
 
 ```js
 // quasar.conf.js
@@ -74,32 +74,32 @@ build: {
 }
 ```
 
-If you want more information, please see this page that goes into more detail about [handling webpack](/quasar-cli/handling-webpack) in the `quasar.conf.js` file.
+如果你想了解更多信息，请看这个页面，它详细介绍了`quasar.conf.js`文件中的[处理webpack](/quasar-cli/handling-webpack)。
 
-### Manually triggering store hydration
+### 手动触发商店水化
 
-By default, Quasar CLI takes care of hydrating the Vuex store (if you use it) on client-side.
+默认情况下，Quasar CLI会在客户端对Vuex商店(如果你使用它)进行水化。
 
-However, should you wish to manually hydrate it yourself, you need to set quasar.conf.js > ssr > manualStoreHydration: true. Then you need to call `store.replaceState(window.__INITIAL_STATE__)` yourself. One good example is doing it from [a boot file](/quasar-cli/boot-files):
+然而，如果你希望自己手动进行水化，你需要设置quasar.conf.js > ssr > manualStoreHydration: true。然后你需要自己调用`store.replaceState(window.__INITIAL_STATE__)`。一个很好的示例是在[启动文件](/quasar-cli/boot-files)中进行。
 
 ```js
-// some_boot_file
-// MAKE SURE TO CONFIGURE THIS BOOT FILE
-// TO RUN ONLY ON CLIENT-SIDE
+// Some_boot_file
+// 请确保配置这个启动文件
+// 只在客户端运行
 
 export default ({ store }) => {
   store.replaceState(window.__INITIAL_STATE__)
 }
 ```
 
-### Manually triggering post-hydration
+### 手动触发后水化
 
-By default, Quasar CLI wraps your App component and calls `$q.onSSRHydrated()` on the client-side when this wrapper component gets mounted. This is the moment that the client-side takes over. You don't need to configure anything for this to happen.
+默认情况下，Quasar CLI会包装你的App组件，并在这个包装组件被安装时在客户端调用`$q.onSSRHydrated()`。这就是客户端接管的时刻。你不需要配置任何东西来实现这一目标。
 
-However should you wish to override the moment when this happens, you need to set quasar.conf.js > ssr > manualPostHydrationTrigger: true. For whatever your reason is (very custom use-case), this is an example of manually triggering the post hydration:
+然而，如果你想覆盖这一时刻的发生，你需要设置quasar.conf.js > ssr > manualPostHydrationTrigger: true。不管你的原因是什么(非常自定义的用例)，这是一个手动触发水化后的示例。
 
 ```js
-// App.vue - Composition API
+// App.vue - 构成API
 
 import { onMounted } from 'vue'
 import { useQuasar } from 'quasar'
@@ -116,7 +116,7 @@ export default {
 ```
 
 ```js
-// App.vue - Options API
+// App.vue - API选项
 export default {
   mounted () {
     this.$q.onSSRHydrated()
@@ -124,9 +124,9 @@ export default {
 }
 ```
 
-## Nodejs Server
+## Nodejs 服务器
 
-Adding SSR mode to a Quasar project means a new folder will be created: `/src-ssr`, which contains SSR specific files:
+将SSR模式添加到Quasar项目中意味着将创建一个新的文件夹。`/src-ssr`，其中包含SSR特定的文件。
 
 ```bash
 .
@@ -136,15 +136,15 @@ Adding SSR mode to a Quasar project means a new folder will be created: `/src-ss
     └── production-export.js # SSR webserver production export
 ```
 
-You can freely edit these files. Each of the two folders are detailed in their own doc pages (check left-side menu).
+你可以自由编辑这些文件。这两个文件夹中的每一个都在自己的文档页面中详细说明(查看左侧菜单)。
 
-Notice a few things:
+注意几件事。
 
-1. These files run in a Node context (they are NOT transpiled by Babel), so use only the ES6 features that are supported by your Node version. (https://node.green/)
+1. 这些文件在Node上下文中运行(它们不被Babel转译)，所以只使用你的Node版本所支持的ES6特性。(https://node.green/)
 
-2. If you import anything from node_modules, then make sure that the package is specified in package.json > "dependencies" and NOT in "devDependencies".
+2. 2.如果你从node_modules中导入任何东西，那么请确保该包在package.json > "dependencies "中指定，而不是在 "devDependencies "中。
 
-3. The `/src-ssr/middlewares` is built through a separate Webpack config. **You will see this marked as "Webserver" when Quasar App CLI builds your app.** You can chain/extend the Webpack configuration of these files through quasar.conf.js:
+3. 3. `/src-ssr/middlewares`是通过一个单独的Webpack配置建立的。**当Quasar App CLI构建你的应用程序时，你会看到它被标记为 "Webserver"。**你可以通过quasar.conf.js连锁/扩展这些文件的Webpack配置。
 
 ```js
 return {
@@ -152,36 +152,36 @@ return {
   ssr: {
     // ...
 
-    // optional; webpack config Object for
-    // the Webserver part ONLY (/src-ssr/)
-    // which is invoked for production (NOT for dev)
+    // 可选的；webpack的配置对象
+    // 只有Webserver部分(/src-ssr/)。
+    // 这是为生产而调用的(不是为开发而调用)。
     extendWebpackWebserver (cfg) {
-      // directly change props of cfg;
-      // no need to return anything
+      // 直接改变cfg的props。
+      // 不需要归还任何东西
     },
 
-    // optional; EQUIVALENT to extendWebpack() but uses webpack-chain;
-    // the Webserver part ONLY (/src-ssr/)
-    // which is invoked for production (NOT for dev)
+    // 可选；等同于extendWebpack()，但使用webpack-chain。
+    // 只有Webserver部分(/src-ssr/)。
+    // 这是为生产而调用的(不是为开发而调用)。
     chainWebpackWebserver (chain) {
-      // chain is a webpack-chain instance
-      // of the Webpack configuration
+      // 链是一个webpack-chain实例
+      // 的Webpack配置
     }
   }
 }
 ```
 
-4. The `/src-ssr/production-export.js` file is detailed in [SSR Production Export](/quasar-cli/developing-ssr/ssr-production-export) page. Read it especially if you need to support serverless functions.
+4. `/src-ssr/production-export.js`文件详见[SSR Production Export](/quasar-cli/developing-ssr/ssr-production-export)页面。如果你需要支持无服务器功能，请特别阅读它。
 
-## Helping SEO
+## 有助于SEO
 
-One of the main reasons when you develop a SSR instead of a SPA is for taking care of the SEO. And SEO can be greatly improved by using the [Quasar Meta Plugin](/quasar-plugins/meta) to manage dynamic html markup required by the search engines.
+当你开发SSR而不是SPA时，其中一个主要原因是为了照顾到SEO。通过使用[Quasar Meta Plugin](/quasar-plugins/meta)来管理搜索引擎所需的动态HTML标记，可以大大改善SEO。
 
-## Boot Files
+## 启动文件
 
-When running on SSR mode, your application code needs to be isomorphic or "universal", which means that it must run both on a Node context and in the browser. This applies to your [Boot Files](/quasar-cli/boot-files) too.
+当在SSR模式下运行时，你的应用程序代码需要是同构的或 "通用的"，这意味着它必须在Node上下文和浏览器中运行。这也适用于你的[启动文件](/quasar-cli/boot-files)。
 
-However, there are cases where you only want some boot files to run only on the server or only on the client-side. You can achieve that by specifying:
+然而，在有些情况下，你只想让某些引导文件只在服务器上或只在客户端运行。你可以通过指定来实现这一点。
 
 ```js
 // quasar.conf.js
@@ -195,20 +195,20 @@ return {
 }
 ```
 
-Just make sure that your app is consistent, though.
+不过，只要确保你的应用程序是一致的。
 
-When a boot file runs on the server, you will have access to one more parameter (called [ssrContext](/quasar-cli/developing-ssr/ssr-context)) on the default exported function:
+当启动文件在服务器上运行时，你将可以在默认导出的函数上多获得一个参数(称为[ssrContext](/quasar-cli/developing-ssr/ssr-context))。
 
 ```js
-// some boot file
+// 一些引导文件
 export default ({ app, ..., ssrContext }) => {
-  // You can add props to the ssrContext then use them in the src/index.template.html.
-  // Example - let's say we ssrContext.someProp = 'some value', then in index template we can reference it:
-  // {{ someProp }}
+  // 你可以向ssrContext添加props，然后在src/index.template.html中使用它们。
+  // 示例 - 假设我们ssrContext.someProp = 'some value'，那么在索引模板中我们可以引用它。
+  // {{有些作物}}
 }
 ```
 
-When you add such references (`someProp` surrounded by brackets in the example above) into your `src/index.template.html`, make sure you tell Quasar it’s only valid for SSR builds:
+当你在你的`src/index.template.html`中添加这样的引用(上面的示例中用括号包围的`someProp`)时，确保你告诉Quasar它只对SSR构建有效。
 
 ```html
 <!-- index.template.html -->

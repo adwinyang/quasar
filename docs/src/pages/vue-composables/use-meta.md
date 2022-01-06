@@ -1,16 +1,16 @@
 ---
-title: useMeta composable
-desc: What is Quasar's useMeta() composable and how you can use it
+title: 可用Meta组成的
+desc: Quasar的useMeta()可组合性是什么以及如何使用它
 keys: useMeta
 related:
   - /quasar-plugins/meta
 ---
 
-The useMeta composable is part of [Quasar Meta Plugin](/quasar-plugins/meta). If you haven't digged into it by now, please have a first read there.
+useMeta是[Quasar Meta Plugin](/quasar-plugins/meta)的一部分。如果你现在还没有深入了解它，请先阅读一下那里。
 
-## Syntax
+## 语法
 
-For static meta configuration (non-reactive):
+对于静态元配置(非反应式)。
 
 ```js
 import { useMeta } from 'quasar'
@@ -20,23 +20,23 @@ setup () {
 }
 ```
 
-For dynamic meta configuration (reactive):
+对于动态元配置(反应式)。
 
 ```js
 import { useMeta } from 'quasar'
 
 setup () {
-  // essentially acting as a computed property
+  // 本质上是作为一个计算属性的作用
   useMeta(() => {
-    // compute or reference other stuff
-    // in your component
-    // then return:
+    // 计算或引用其他东西
+    // 在你的组件中
+    // 然后返回。
     return { /* meta config */ }
   })
 }
 ```
 
-## Example
+## ###实例
 
 ```html
 <script>
@@ -46,11 +46,11 @@ export default {
   setup () {
     const title = ref('Some title') // we define the "title" prop
 
-    // NOTICE the parameter here is a function
-    // Under the hood, it is converted to a Vue computed prop for reactivity
+    // 注意，这里的参数是一个函数
+    // 在引擎盖下，它被转换为一个Vue计算的属性，以获得反应性
     useMeta(() => {
       return {
-        // whenever "title" from above changes, your meta will automatically update
+        // 只要上面的 "标题 "发生变化，你的元就会自动更新。
         title: title.value
       }
     })

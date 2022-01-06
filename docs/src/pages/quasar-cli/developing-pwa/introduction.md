@@ -1,35 +1,35 @@
 ---
-title: What is a PWA
-desc: Introduction on what a Progressive Web App is and how it can be configured in a Quasar app.
+title: 什么是PWA
+desc: 介绍什么是渐进式网络应用程序，以及如何在Quasar应用程序中配置它。
 ---
-A Progressive Web App (PWA) is a web app that uses modern web capabilities to deliver an app-like experience to users. These apps meet certain requirements (see below), are deployed to web servers and accessible through URLs (on HTTPS protocol).
+渐进式网络应用程序(PWA)是一种网络应用程序，它使用现代网络功能，向用户提供类似应用的体验。这些应用程序满足一定的要求(见下文)，被部署到网络服务器，并通过URL(在HTTPS协议上)访问。
 
-This can work in conjunction with Cordova to provide a multiple deploy targets for all your users. Quasar CLI allows you to deploy your app as a PWA as well as a Mobile app and take advantage of both channels.
+这可以和Cordova一起工作，为你的所有用户提供一个多个部署目标。Quasar CLI允许你将你的应用程序部署成PWA以及移动应用程序，并利用这两个渠道。
 
-## What is Required
-To be considered a Progressive Web App, your app must be:
+## 需要什么
+要被认为是渐进式网络应用程序，你的应用程序必须是。
 
-* Progressive - Work for every user, regardless of browser choice, because they are built with progressive enhancement as a core tenet.
-* Responsive - Fit any form factor, desktop, mobile, tablet, or whatever is next.
-* Connectivity independent - Enhanced with service workers to work offline or on low quality networks.
-* App-like - Use the app-shell model to provide app-style navigation and interactions.
-* Fresh - Always up-to-date thanks to the service worker update process.
-* Safe - Served via HTTPS to prevent snooping and ensure content has not been tampered with.
-* Discoverable - Are identifiable as “applications” thanks to W3C manifests and service worker registration scope allowing search engines to find them.
-* Re-engageable - Make re-engagement easy through features like push notifications.
-* Installable - Allow users to “keep” apps they find most useful on their home screen without the hassle of an app store.
-* Linkable - Easily share via URL and not require complex installation.
+* 渐进式 - 适用于每个用户，无论选择何种浏览器，因为它们是以渐进式增强作为核心原则构建的。
+* 响应性 - 适合任何形式的因素，桌面、手机、平板电脑，或任何下一步。
+* 独立的连接性 - 用服务人员来增强，以便在离线或低质量网络上工作。
+* 类似于应用程序 - 使用应用程序外壳模型，提供应用程序风格的导航和互动。
+* 新鲜 - 由于服务工作者的更新过程，总是最新的。
+* 安全 - 通过HTTPS提供服务，以防止窥探并确保内容没有被篡改。
+* 可发现 - 由于W3C清单和服务工作者的注册范围，可识别为 "应用程序"，使搜索引擎能够找到它们。
+* 可重新参与 - 通过推送通知等功能使重新参与变得容易。
+* 可安装 - 允许用户将他们认为最有用的应用程序 "保留 "在他们的主屏幕上，而不需要应用商店的麻烦。
+* 可链接 - 通过URL轻松分享，不需要复杂的安装。
 
-More information available on Addy Osmani's [article about PWA](https://addyosmani.com/blog/getting-started-with-progressive-web-apps/).
+更多信息可参见Addy Osmani的[关于PWA的文章](https://addyosmani.com/blog/getting-started-with-progressive-web-apps/)。
 
-## Manifest File
-An app manifest file describes the resources your app will need. This includes your app’s displayed name, icons, as well as splash screen. Quasar CLI configures this for you, but you can override any property from within `/quasar.conf.js`. Learn how by visiting the [Configure PWA](/quasar-cli/developing-pwa/configuring-pwa) documentation page.
+## 宣言文件
+应用程序清单文件描述了你的应用程序需要的资源。这包括你的应用程序的显示名称、图标以及启动画面。Quasar CLI为你配置这些，但你可以在`/quasar.conf.js`中覆盖任何属性。通过访问[配置PWA](/quasar-cli/developing-pwa/configuring-pwa)文档页面了解如何配置。
 
-More information: [Manifest file](https://developer.mozilla.org/en-US/docs/Web/Manifest).
+更多信息。[manifest文件](https://developer.mozilla.org/en-US/docs/Web/Manifest)。
 
-## Service Worker
-The Service worker provides a programmatic way to cache app resources (files). The programmatic API allows developers to decide how to handle caching and provides a much more flexible experience than other options.
+## 服务工作器
+服务工作者提供了一种程序化的方式来缓存应用资源(文件)。编程式API允许开发者决定如何处理缓存，并提供比其他选项更灵活的体验。
 
-More information: [Service Worker API](https://developer.mozilla.org/en-US/docs/Web/API/Service_Worker_API).
+更多信息。[Service Worker API](https://developer.mozilla.org/en-US/docs/Web/API/Service_Worker_API)。
 
 

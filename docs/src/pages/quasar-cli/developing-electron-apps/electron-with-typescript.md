@@ -1,18 +1,18 @@
 ---
-title: Electron with Typescript
-desc: How to use Typescript with Electron in Quasar
+title: 带排版的电子版
+desc: 如何在Quasar中使用Electron的类型脚本
 ---
 
-In order to support Electron with Typescript, you will need to:
+为了用Typescript支持Electron，你需要：1:
 
-1. Make sure that you are using `@quasar/app` v3.0.0-beta.8+
-2. Edit quasar.conf.js > supportTS. Set it to `true` or use the Object form.
-3. Rename the extension for your files in /src-electron from `.js` to `.ts` and make the necessary TS code changes.
+1. 确保你正在使用`@quasar/app` v3.0.0-beta.8+。
+2. 编辑quasar.conf.js > supportTS。将其设置为`true`或使用Object形式。
+3. 将/src-electron中的文件扩展名从`.js`改为`.ts`，并进行必要的TS代码修改。
 
 ::: tip
-`electron-packager` and `electron-builder` export their configuration types from their own packages.
-Since autocomplete into `quasar.conf.js` relies on those types, properties `electron.packager` and `electron.builder` will be fully typed only after the respective package is installed.
-You can force the installation of the selected bundler (depending on your `electron.bundler` option) by running a build command in Electron mode: `quasar build -m electron`  
+`electron-packager`和`electron-builder`从它们自己的软件包中导出它们的配置类型。
+由于自动完成到`quasar.conf.js`依赖于这些类型，属性`electron.packager`和`electron.builder`只有在各自的软件包安装后才会被完全输入。
+你可以通过在Electron模式下运行构建命令来强制安装选定的捆绑器(取决于你的`electron.bundler`选项)。`quasar build -m electron`。
 :::
 
-More info: [Supporting TS](/quasar-cli/supporting-ts)
+更多信息。[支持TS](/quasar-cli/supporting-ts)

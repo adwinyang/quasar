@@ -1,68 +1,68 @@
 ---
-title: DOM Utils
-desc: A set of Quasar methods for DOM elements which helps you in retrieving the offset on screen viewport, getting and setting styles, waiting for the DOM to be ready and morphing DOM elements.
+title: DOM利用
+desc: 一组用于DOM元素的Quasar方法，帮助你检索屏幕视口上的偏移量，获取和设置样式，等待DOM准备好，并对DOM元素进行变形。
 keys: offset,style,height,width,css,ready
 ---
 
-### Helping Tree-Shake
-You will notice all examples import different parts of Quasar. However, if you need only one specific util method, then you can use ES6 destructuring to help Tree Shaking embed only that method and not all around it.
+### 帮助树状抖动
+你会发现所有的示例都导入了Quasar的不同部分。然而，如果你只需要一个特定的util方法，那么你可以使用ES6的析构来帮助Tree Shaking只嵌入该方法，而不是在其周围。
 
-Example with `dom` utils:
+使用`dom`utils的示例。
 ```js
 import { dom } from 'quasar'
 const { offset } = dom
 
-// Offset on screen
+// 屏幕上的偏移
 console.log(offset(DomElement))
 // { top: 10, left: 100 }
 ```
 
-You can also import all of dom utils and use whatever you need like this (but note that your bundle will contain unused methods too):
+你也可以导入所有的dom utils，像这样使用你需要的任何东西(但注意你的bundle也会包含未使用的方法)。
 ```js
 import { dom } from 'quasar'
 
-// Offset on screen
+// 屏幕上的偏移
 console.log(dom.offset(DomElement))
 // { top: 10, left: 100 }
 ```
 
 ::: tip
-For usage with the UMD build see [here](/start/umd#quasar-global-object).
+关于UMD构建的用法，见[here](/start/umd#quasar-global-object)。
 :::
 
-## Offset on screen viewport
+## 在屏幕视口上的偏移量
 ```js
 import { dom } from 'quasar'
 const { offset } = dom
 
-// Offset on screen
+// 屏幕上的偏移
 console.log(offset(DomElement))
 // { top: 10, left: 100 }
 ```
 
-## Get Computed Style
-This applies only when DomElement is visible! It returns the **computed** browser style, so the property you are asking for doesn't necessary has to be applied within a `style` attribute.
+## 获取计算的样式
+这只适用于DomElement是可见的情况! 它返回**计算的**浏览器样式，所以你所要求的属性不一定要应用在`style`属性中。
 
 ```js
 import { dom } from 'quasar'
 const { style } = dom
 
-// Get COMPUTED style (when DomElement is visible!)
-// Computed means a DomElement might not have "height" CSS property set,
-// but that does not mean it doesn't have a height when it's displayed.
-// The following method accesses the computed CSS provided by the browser:
+// 获取COMPUTED风格(当DomElement是可见的！)。
+// 计算意味着一个DomElement可能没有设置 "高度 "CSS属性。
+// 但这并不意味着它在显示时没有高度。
+// 下面的方法是访问浏览器提供的计算的CSS。
 console.log(style(DomElement, 'height'))
-// '10px' <<< notice it returns a String ending in 'px'
+// '10px' <<<注意它返回一个以'px'结尾的字符串
 ```
 
-## Get Height / Width
+## 获取高度/宽度
 ```js
 import { dom } from 'quasar'
 const { height, width } = dom
 
 
-// Some aliases of the previous method for "width" and "height" which
-// returns Numbers instead of Strings:
+// 前面的方法对 "宽度 "和 "高度 "的一些别名，它们是
+// 返回数字而不是字符串。
 console.log(
   height(DomElement),
   width(DomElement)
@@ -70,24 +70,24 @@ console.log(
 // 10 100
 ```
 
-## Apply CSS Properties in Batch
+## 在批处理中应用CSS属性
 ```js
 import { dom } from 'quasar'
 const { css } = dom
 
-// Apply a list of CSS properties to a DomNode
+// 给DomNode应用一个CSS属性列表
 css(DomElement, {
   height: '10px',
   display: 'flex'
 })
 ```
 
-## Execute when DOM is ready
+## 当DOM准备好时执行
 ```js
 import { dom } from 'quasar'
 const { ready } = dom
 
-// Execute a Function when DOM is ready:
+// 当DOM准备好时执行一个函数。
 ready(function () {
   // ....
 })

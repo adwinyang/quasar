@@ -1,76 +1,76 @@
 ---
-title: Why Donate?
-desc: Quasar Team's manifesto on why it is essential to donate towards the development of the framework.
+title: 为什么捐款？
+desc: Quasar团队关于为什么必须为该框架的发展捐款的宣言。
 keys: Donate
 components:
   - sponsors-and-backers/DonatingButtons
 ---
 
-Quasar Framework is an MIT-licensed open-source project maintained by Razvan Stoenescu along with his Team and a community of open source contributors. We work on behalf of the community to create new features, fix bugs, and maintain Quasar so you can get on with your own development projects. We’re working to shape the future of the Vue.js ecosystem to write code once and simultaneously deploy it as a website (SPA/PWA/SSR), a Mobile App and/or an Electron App.
+Quasar框架是一个经MIT许可的开源项目，由Razvan Stoenescu和他的团队以及一个开源贡献者社区共同维护。我们代表社区工作，创造新的功能，修复错误，并维护Quasar，这样你就可以继续你自己的开发项目。我们正在努力塑造Vue.js生态系统的未来，只需写一次代码，就可以同时将其部署为网站(SPA/PWA/SSR)、移动应用和/或电子应用。
 
-Like most open source products, Quasar can't do it alone. We rely on *sponsors, backers and supporters* to keep things going. When Quasar starts to bring you some financial stability, please be considerate of the tens of thousands of hours that went into its creation and send some money back to the team that made it possible. And finally, if your company relies on Quasar, the best way to guarantee that Quasar continues to be there for you is to invest in its maintenance!
+像大多数开源产品一样，Quasar不能独自完成。我们依靠*赞助者、支持者和支助者*来维持运转。当Quasar开始给你带来一些经济上的稳定时，请考虑到为创建Quasar所花费的数万个小时，并给使之成为可能的团队送一些钱回来。最后，如果你的公司依赖于Quasar，那么保证Quasar继续为你服务的最好方法就是投资于它的维护工作
 
-## Our Manifesto
+## 我们的宣言
 
-The dream of open source is a noble cause, where communities grow and code is nurtured. In line with the philosophy of Free Open Source, Quasar has committed itself to the tenets of Good Labs' [![Greater-Good Affirmation](https://good-labs.github.io/greater-good-affirmation/assets/images/badge.svg)](https://good-labs.github.io/greater-good-affirmation).
+开源的梦想是一项崇高的事业，社区在这里成长，代码在这里孕育。根据自由开源的理念，Quasar承诺遵守Good Labs的[！[Greater-Good Affirmation](https://good-labs.github.io/greater-good-affirmation/assets/images/badge.svg)](https://good-labs.github.io/greater-good-affirmation)的信条。
 
-Quasar is and always will be free and open source, a self-managed place where everyone who abides by the community rules is invited and encouraged to participate.
+Quasar现在和将来都是自由和开源的，是一个自我管理的地方，每个遵守社区规则的人都被邀请和鼓励参与。
 
-![What do we sustain](https://cdn.quasar.dev/img/what-do-we-sustain.png)
+！[我们维持什么](https://cdn.quasar.dev/img/what-do-we-sustain.png)
 
-### Participation is a Form of Collaborative Appreciation
+### 参与是一种合作欣赏的形式
 
-Many open source projects, like the Quasar Framework and Vue.js, have been developed by people who work on behalf of **their** community on their own time, with no demand for financial compensation. This "code ownership" is actually a very important issue because the owners decide how things are to be further developed.
+许多开源项目，如Quasar框架和Vue.js，都是由代表**社区的人在自己的时间内开发的，没有要求经济补偿。这种 "代码所有权 "实际上是一个非常重要的问题，因为所有者决定事情如何进一步发展。
 
-So who are these people? They are people, like you, in need of a certain feature and have found an open source solution, like Quasar. They are people who use the software and decided to contribute by helping to improve it.
+那么这些人是谁呢？他们是像你一样的人，需要某种功能并找到了像Quasar这样的开源解决方案。他们是使用该软件的人，并决定通过帮助改进它来作出贡献。
 
-Possibly they are passionate about coding and want a project to occupy their talents. There are many reasons to get involved in a community around an open source project. But the majority have one thing in common:
+他们可能对编码充满热情，想要一个项目来发挥他们的才能。有很多理由可以参与到一个开源项目的社区中来。但大多数人都有一个共同点。
 
-> They find free time in their busy schedules of jobs, families and commitments in order to participate because it makes them feel good to be part of something bigger than any one individual.
+> 他们在繁忙的工作、家庭和承诺中找到空闲时间来参与，因为这让他们觉得成为比任何一个人更大的东西的一部分很好。
 
-To give you a bit of perspective, the lead developer and core-maintainer of Quasar, [Razvan Stoenescu](https://github.com/rstoenescu), has spent over 2000 hours during the development phases between 1.0.0-alpha.1 and 1.0.0-rc.1, during which time he logged more than 2000 commits and half of a million lines of code added.
+为了给你一点启示，Quasar的首席开发者和核心维护者[Razvan Stoenescu](https://github.com/rstoenescu)，在1.0.0-alpha.1和1.0.0-rc.1之间的开发阶段已经花费了超过2000个小时，在此期间他记录了超过2000次的提交和50万行的代码添加。
 
-The rest of the team and all of the staff working the chat support lines and fixing code are still (as of June 2019) unpaid volunteers working uncountable hours. They are slowly becoming more and more responsible for units of the project and are an invaluable resource for the community that we must safeguard.
-
-
-### Financial Sponsorship to Guarantee Maintenance
-Nothing is certain, other than the fact that `node_modules` is still the heaviest thing in the universe and that at a certain point regular financial support of some kind is needed in order to guarantee the maintenance of large open-source projects. [Reference](https://github.com/sfosc/sfosc/issues/65#issuecomment-491770533).
-
-That point in time for Quasar is right now and your support will make the difference.
-
-![Sustain with money](https://cdn.quasar.dev/img/sustain-people-code.png)
-
-If your business relies on open source you can hedge the risk of it disappearing by financially supporting it so that you can rest assured that the software will continue to be available for you.
-
-As opposed to long-term licensing contracts for proprietary software, this model works because you encourage innovation, help to develop the next generation of developers and are implicitly empowered to participate in the discussion about features you need and issues you have found.
-
-If open source becomes financially viable for those developing the projects, more people will get involved. If these developers are able to earn enough to support themselves, they are more likely to stay involved.
-
-> Financial sustenance of open-source literally means that those who develop the project have an additional reason to stick around.
-
-Many promising open source projects become "abandonware" because the original developers ran out of steam. The maintenance phase is actually where many open-source projects go to die. Money is a great type of community feedback that says "Stick with it and continue to maintain this project! We need you!!!"
+团队的其他成员和所有从事聊天支持线路和修复代码的工作人员仍然是(截至2019年6月)无报酬的志愿者，工作时间难以计数。他们正慢慢地对项目的各个单元承担越来越多的责任，是我们必须保护的社区的宝贵资源。
 
 
-### What You Get Out of It
-If you support open source, you become part of the community. It is a large community, but tends to be tightly knit. Your support shows you believe in the community, and that makes you a part of the family. If enough financial support comes together, it can also mean that core developers and maintainers are able to work on the project full-time rather than needing a job elsewhere. This in turn fosters an environment where they are able to process fixes and requests faster than if they were working on a “hobby” basis.
+### 财政赞助以保证维护
+除了 "node_modules "仍然是宇宙中最重的东西，以及在某种程度上需要某种定期的财政支持以保证大型开源项目的维护之外，没有什么是肯定的。[参考资料](https://github.com/sfosc/sfosc/issues/65#issuecomment-491770533)。
 
-So maybe you are a business who uses open source software to give themselves a competitive advantage, improve profits, or simply solve a problem other software doesn’t cover. Perhaps you’re an individual who uses an open source solution to the expensive corporate software you just can’t afford. Like [this](https://quasarframework.github.io/quasar-ui-qcalendar/docs).
+对于Quasar来说，这个时间点就是现在，你的支持将使其与众不同。
 
-Or you recognize that the millions of lines of code are lines you don't have to write and are simply appreciative of the effort.
+![用钱维持](https://cdn.quasar.dev/img/sustain-people-code.png)
 
-Whatever you use open source software for, think of those people who have spent long hours developing it and keeping it running for you.
+如果你的企业依赖开放源码，你可以通过财政支持来对冲它消失的风险，这样你就可以放心，软件将继续为你服务。
 
-Even a small donation could mean a huge difference to them, not least because it means someone out there appreciates them enough to let them know.
+相对于专利软件的长期许可合同，这种模式是可行的，因为你鼓励创新，帮助培养下一代的开发者，并隐含地被授权参与讨论你所需要的功能和你所发现的问题。
 
-## Donating
-You can help Quasar Development by making a monthly pledge through Patreon or send a one-time donation through Paypal. If you are representing a company who wants to become a **Sponsor** and need an invoice for your donations, please send an email to `razvan.stoenescu [at] gmail [dot] com`.
+如果开源对开发项目的人来说在经济上是可行的，更多的人就会参与进来。如果这些开发者能够挣到足够的钱来养活自己，他们就更有可能继续参与。
 
-Donating through the **GitHub Sponsorship is recommended** because GitHub will also match your donation (making it worth double your amount).
+> 开源的财务维持，从字面上看，意味着开发项目的人有一个额外的理由坚持下去。
 
-<donating-buttons />
+许多有前途的开源项目变成了 "废弃软件"，因为最初的开发者已经没有了动力。维护阶段实际上是许多开源项目走向死亡的地方。钱是一种很好的社区反馈，它说："坚持下去，继续维护这个项目! 我们需要你！！！"
 
-All donations are used for Quasar Development purposes exclusively.
+
+### 你从中得到了什么
+如果你支持开放源码，你就成为社区的一部分。这是一个庞大的社区，但往往是紧密结合的。你的支持表明你相信这个社区，这使你成为这个家庭的一部分。如果有足够的资金支持，这也意味着核心开发者和维护者能够全职从事该项目，而不是需要在其他地方工作。这反过来又促进了一种环境，使他们能够比在 "业余 "基础上工作更快地处理修复和请求。
+
+所以，也许你是一个使用开源软件的企业，给自己带来竞争优势，提高利润，或者仅仅是解决其他软件没有覆盖的问题。也许你是一个个人，使用开源解决方案来解决你无法负担的昂贵的企业软件。比如[这个](https://quasarframework.github.io/quasar-ui-qcalendar/docs)。
+
+或者你认识到那几百万行的代码是你不需要写的，只是对这种努力表示感谢。
+
+无论你使用开放源码软件的目的是什么，想想那些花了很长时间开发它并使它为你运行的人。
+
+即使是一个小小的捐赠，对他们来说也意味着巨大的不同，尤其是因为这意味着有人在那里欣赏他们，足以让他们知道。
+
+## 捐赠
+你可以通过Patreon每月认捐来帮助Quasar Development，或者通过Paypal发送一次性捐款。如果你代表一家公司想成为**赞助者，并需要你的捐款发票，请发送电子邮件到`razvan.stoleenescu [at] gmail [dot] com`。
+
+建议通过**GitHub赞助进行捐赠，**因为GitHub还将匹配你的捐赠(使你的捐赠价值翻倍)。
+
+<捐赠-按钮 />
+
+所有的捐款都将完全用于Quasar的开发目的。
 
 ::: tip
-For a full list of our wonderful people who make Quasar happen, visit the [Backers](https://github.com/quasarframework/quasar/blob/dev/backers.md) page.
+如果想了解我们那些使Quasar成为现实的优秀人士的完整名单，请访问[支持者](https://github.com/quasarframework/quasar/blob/dev/backers.md)页面。
 :::

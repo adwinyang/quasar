@@ -1,21 +1,21 @@
 ---
-title: Vue CLI Quasar Plugin
-desc: How to embed Quasar into a Vue CLI app.
+title: Quasar Plugin CLI视图
+desc: 如何将Quasar嵌入到Vue CLI应用中。
 ---
 
 ::: warning
-Cross-platform support with Vue CLI is handled by a number of community plugins. This means, putting together what Quasar offers out-of-the-box will take you extra time and effort, will not guarantee you the best experience and you won't have access to a number of features which only Quasar CLI has. Quasar was also not specifically tested with these plugins and thus you could possibly run into issues. This, however, will be valid for any component library, unless they specifically mention having tested their components with third-party plugins.
+Vue CLI的跨平台支持是由一些社区插件处理的。这意味着，将Quasar提供的开箱即用的功能放在一起将花费你额外的时间和精力，并不能保证你获得最好的体验，而且你将无法使用只有Quasar CLI才有的一些功能。Quasar也没有专门对这些插件进行测试，因此你有可能遇到问题。然而，这对任何组件库都是有效的，除非他们特别提到已经用第三方插件测试了他们的组件。
 
-So, before you begin on this path of development with Quasar, we'd like you to understand the following. To guarantee you the best developer experience with Quasar, we highly recommend using Quasar's CLI and building your project with it, because you won't miss any feature that Vue CLI has. You'll get the full range of features offered by Quasar, like full cross-platform build support (but this is just the tip of the iceberg) and you can still do practically everything you'd like to do with Vue too, i.e. use Vue plugins via Quasar's [Boot Files](/quasar-cli/boot-files#Anatomy-of-an-boot-file).
+因此，在你开始使用Quasar进行开发的这条道路之前，我们希望你能理解以下几点。为了保证你在使用Quasar时有最好的开发者体验，我们强烈建议你使用Quasar的CLI，并用它来构建你的项目，因为你不会错过Vue CLI的任何功能。你会得到Quasar提供的全部功能，比如完全的跨平台构建支持(但这只是冰山一角)，而且你也可以做几乎所有你想用Vue做的事情，即通过Quasar的[Boot Files](/quasar-cli/boot-files#Anatomy-of-an-boot-file)使用Vue插件。
 :::
 
-To work with Quasar via its Vue CLI plugin, you will need to make sure you have @vue/cli installed globally. To make sure you have the right version, use this command:
+要通过Vue CLI插件与Quasar一起工作，你需要确保你在全局范围内安装了@vue/cli。为了确保你有正确的版本，请使用这个命令。
 
 ```bash
 $ vue --version
 ```
 
-Should you have Vue CLI 2.x.x. installed, you'll need to uninstall it with:
+如果你安装了Vue CLI 2.x.x.，你就需要用卸载它。
 
 ```bash
 $ npm uninstall -g vue-cli
@@ -23,24 +23,24 @@ $ npm uninstall -g vue-cli
 $ yarn global remove vue-cli
 ```
 
-Install Vue CLI (v4.5.11+) as follows:
+安装Vue CLI(v4.5.11以上)，如下所示。
 
 ```bash
 $ npm install -g @vue/cli
 ```
 
-If you don't yet have a project created with @vue/cli, then do so with the command below. **Make sure that you checkmark on Babel from the Vue CLI feature list prompt that will appear on screen**.
+如果你还没有用@vue/cli创建一个项目，那么就用下面的命令来做。**确保你在屏幕上出现的Vue CLI功能列表提示中勾选Babel，**。
 
 ```bash
 # make sure to pick Vue 3 when asked:
 $ vue create my-app
 ```
 
-## Add Vue CLI Quasar Plugin
-Navigate to the newly created project folder and add the cli plugin. Before installing it, make sure to commit your current changes should you wish to revert them later.
+## 添加Vue CLI Quasar插件
+导航到新创建的项目文件夹并添加cli插件。在安装它之前，请确保提交你当前的修改，如果你想在以后恢复它们。
 
 ::: warning
-Cross-platform support with Vue CLI is handled by community plugins. These are not tightly integrated with Quasar as with Quasar CLI and may have issues.
+Vue CLI的跨平台支持是由社区插件处理的。这些插件没有像Quasar CLI那样与Quasar紧密结合，可能会有问题。
 :::
 
 ```bash
@@ -48,6 +48,6 @@ $ cd my-app
 $ vue add quasar
 ```
 
-The CLI will ask you if you want the plugin to replace some existing files. It is recommended that you do this, if you wish to have an example, so you can quickly develop your app.
+CLI会问你是否希望该插件替换一些现有的文件。建议你这样做，如果你希望有一个示例，那么你可以快速开发你的应用程序。
 
-Your Vue config (in package.json or vue.config.js file, depending on what you chose when you created your vue app) will also contain a `quasar` object with some basic Quasar configuration.
+你的Vue配置(在package.json或vue.config.js文件中，取决于你在创建vue应用时的选择)也将包含一个`quasar`对象，包含一些基本的Quasar配置。

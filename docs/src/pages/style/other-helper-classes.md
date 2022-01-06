@@ -1,63 +1,63 @@
 ---
-title: Other CSS Helper Classes
-desc: The list of CSS helper classes for mouse, size, orientation and border that are supplied by Quasar.
+title: 其他CSS帮助类
+desc: 由Quasar提供的鼠标、大小、方向和边框的CSS辅助类的列表。
 ---
-There are a lot of CSS classes that you can use while writing your Vue templates. Very handy to ease the complexity of your VueModels and templates.
+有很多CSS类，你可以在编写Vue模板时使用。这对缓解你的VueModels和模板的复杂性非常方便。
 
-The list below is not complete. Also check the other CSS documentation pages like Typography, Visibility, Shadows, Positioning.
+下面的列表并不完整。也可以查看其他的CSS文档页面，如排版、可见性、阴影、定位。
 
-## Mouse Related
+## 鼠标相关
 
-| Class Name | Description |
+| 类名 | 说明 |
+| `不能选择` | 用户不能选择DOM节点和它的文本。
+| `无指针事件` | DOM元素不会成为鼠标事件的目标--点击、悬停等。
+| `所有的指针事件` | 与`没有指针事件'正好相反
+| `游标-指针` | 将鼠标指针放在DOM元素上，看起来就像放在一个可点击的链接上。
+| `游标-不允许` | 改变鼠标指针在DOM元素上的位置，使其看起来像是不会被执行的动作。
+| `游标-继承` | 在DOM元素上改变鼠标指针，使其看起来与父选项相同。
+| `cursor-none` | 不呈现鼠标指针。
+## 滚动相关
+
+| 类名 | 说明 |
+
+| `scroll` | 应用CSS调整，使滚动在所有平台上都能发挥其最佳效果。
+| `no-scroll` | 隐藏DOM节点上的滚动条。
+| 溢出-自动` | 设置溢出为自动
+| `overflow-hidden` | 设置溢出为隐藏状态
+| `overflow-hidden-y` | 设置溢出在Y轴上隐藏。
+| `hide-scrollbar` | 移除滚动条
+## 大小相关
+| 类别名称 | 描述 |
+
+| `fit` | 宽度和高度被设置为100% |
+| `full-height` | 高度被设置为100%。
+| `full-width` | 宽度被设置为100% |
+| `window-height` | 高度设置为100vh，上下边距为0。
+| `window-width` |宽度设置为100vw，左右边距为0。
+| `block` | 将`display`属性设置为`block`。
+## 方向相关
+| 类别名称 | 说明 |
 | --- | --- |
-| `non-selectable` | User won't be able to select DOM node along with its text |
-| `no-pointer-events` | DOM element does not become a target of mouse events - clicks, hover and so on |
-| `all-pointer-events` | The opposite of `no-pointer-events` |
-| `cursor-pointer` | Change mouse pointer on DOM element to look as if on a clickable link |
-| `cursor-not-allowed` | Change mouse pointer on DOM element to look as if action will not be carried out |
-| `cursor-inherit` | Change mouse pointer on DOM element to look as the same as parent option |
-| `cursor-none` | No mouse cursor is rendered |
 
-## Scroll Related
-
-| Class Name | Description |
+| `rotate-45` | 旋转45度 |
+| `rotate-90` | 旋转90度 |
+| `rotate-135` | 旋转135度 |
+| `rotate-180` | 旋转180度
+| `rotate-225` | 旋转225度
+| `rotate-270` | 旋转270度
+| `rotate-315` | 旋转315度
+| `翻转-水平` | 水平翻转DOM元素
+| `flip-vertical` | 垂直翻转DOM元素
+## 边界相关
+| 类别名称 | 说明 |
 | --- | --- |
-| `scroll` | Applies CSS tweaks to make scroll work at its best on ALL platforms |
-| `no-scroll` | Hides scrollbars on the DOM node |
-| `overflow-auto` | Sets overflow to auto |
-| `overflow-hidden` | Sets overflow to hidden |
-| `overflow-hidden-y` | Sets overflow to hidden on the y-axis |
-| `hide-scrollbar` | Removes the scrollbar |
 
-## Size Related
-| Class Name | Description |
-| --- | --- |
-| `fit` | Width and Height is set to 100% |
-| `full-height` | Height is set to 100% |
-| `full-width` | Width is set to 100% |
-| `window-height` | Height is set to 100vh with top and bottom margins 0 |
-| `window-width` | Width is set to 100vw with left and right margins 0 |
-| `block` | Sets `display` property set to `block` |
+| `no-border` | 移除任何边框
+| `no-border-radius` | 移除边框可能具有的任何半径。
+| `不使用箱形阴影` - 删除任何应用的箱形阴影。
+| `no-outline` | 删除任何应用在边框上的轮廓线。
+| `圆润的边框` | 应用一般的边框半径
+| 继承边框半径` - 继承父元素的边框半径。
 
-## Orientation Related
-| Class Name | Description |
-| --- | --- |
-| `rotate-45` | Rotate by 45 degrees |
-| `rotate-90` | Rotate by 90 degrees |
-| `rotate-135` | Rotate by 135 degrees |
-| `rotate-180` | Rotate by 180 degrees |
-| `rotate-225` | Rotate by 225 degrees |
-| `rotate-270` | Rotate by 270 degrees |
-| `rotate-315` | Rotate by 315 degrees |
-| `flip-horizontal` | Flip DOM element horizontally |
-| `flip-vertical` | Flip DOM element vertically |
 
-## Border Related
-| Class Name | Description |
-| --- | --- |
-| `no-border` | Removes any border |
-| `no-border-radius` | Removes any radius the border might have |
-| `no-box-shadow` | Removes any applied box-shadow |
-| `no-outline` | Removes any outline applied on the border |
-| `rounded-borders` | Applies a generic border radius |
-| `border-radius-inherit` | Inherit border radius from the parent element |
+

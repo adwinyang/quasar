@@ -1,6 +1,6 @@
 ---
-title: Toolbar
-desc: The QToolbar and QToolbarTitle Vue components are usually part of QHeader or QFooter, but it can be used anywhere on the page.
+title: 工具栏
+desc: QToolbar和QToolbarTitle Vue组件通常是QHeader或QFooter的一部分，但它也可以用在页面的任何地方。
 keys: QToolbar,QToolbarTitle
 related:
   - /layout/header-and-footer
@@ -10,7 +10,7 @@ related:
   - /vue-components/separator
 ---
 
-QToolbar is a component usually part of Layout Header and Footer, but it can be used anywhere on the page.
+QToolbar是一个通常属于Layout Header和Footer的组件，但它也可以在页面的任何地方使用。
 
 ## QToolbar API
 
@@ -20,22 +20,22 @@ QToolbar is a component usually part of Layout Header and Footer, but it can be 
 
 <doc-api file="QToolbarTitle" />
 
-## Usage
+## 使用方法
 
-<doc-example title="Basic" file="QToolbar/Basic" />
+<doc-example title="基本" file="QToolbar/Basic" /> ##使用方法
 
-<doc-example title="With Avatar" file="QToolbar/Avatar" />
+<doc-example title="有头像" file="QToolbar/Avatar" /> ## 使用方法
 
-You can use the `glossy` class to make the toolbar glossy.
+你可以使用`glossy`类来使工具条变得光亮。
 
-<doc-example title="Glossy" file="QToolbar/Glossy" />
+<doc-example title="光泽" file="QToolbar/Glossy" />
 
-<doc-example title="Grouped vertically" file="QToolbar/GroupedVertically" />
+<doc-example title="垂直分组" file="QToolbar/GroupedVertically" />
 
-<doc-example title="Grouped horizontally" file="QToolbar/GroupedHorizontally" />
+<doc-example title="水平分组" file="QToolbar/GroupedHorizontally" />
 
-<doc-example title="With Tabs" file="QToolbar/WithTabs" />
+<doc-example title="使用标签" file="QToolbar/WithTabs" />
 
-<doc-example title="With Button Dropdown" file="QToolbar/WithDropdown" />
+<doc-example title="带有按钮的下拉菜单" file="QToolbar/WithDropdown" />
 
-<doc-example title="With Button Toggle" file="QToolbar/WithBtnToggle" />
+<doc-example title="使用按钮切换" file="QToolbar/WithBtnToggle" />

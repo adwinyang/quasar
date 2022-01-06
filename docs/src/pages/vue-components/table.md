@@ -1,27 +1,27 @@
 ---
-title: Table
-desc: The QTable Vue component allows you to display data in a tabular manner and it's packed with a lot of related features. It's generally called a datatable.
+title: 表
+desc: QTable Vue组件允许你以表格的方式来显示数据，它包含了很多相关的功能。它一般被称为数据表。
 keys: QTable,QTh,QTr,QTd
 related:
   - /vue-components/markup-table
   - /vue-components/pagination
 ---
 
-QTable is a component that allows you to display data in a tabular manner. It's generally called a datatable. It packs the following main features:
+QTable是一个允许你以表格的方式显示数据的组件。它通常被称为数据表。它包含了以下主要功能。
 
-* Filtering
-* Sorting
-* Single / Multiple rows selection with custom selection actions
-* Pagination (including server-side if required)
-* Grid mode (you can use for example QCards to display data in a non-tabular manner)
-* Total customization of rows and cells through scoped slots
-* Ability to add additional row(s) at top or bottom of data rows
-* Column picker (through QTableColumns component described in one of the sections)
-* Custom top and/or bottom Table controls
-* Responsive design
+* 筛选
+* 排序
+* 单行/多行选择与自定义选择动作
+* 分页(如果需要，包括服务器端)。
+* 网格模式(你可以使用例如QCards以非表格的方式显示数据)
+* 通过范围槽对行和单元格进行完全定制
+* 能够在数据行的顶部或底部添加额外的行。
+* 列选取器(通过其中一节描述的QTableColumns组件)。
+* 自定义顶部和/或底部的表格控件
+* 响应式设计
 
 ::: tip
-If you don't need pagination, sorting, filtering, and all other features of QTable, then you may want to check out [QMarkupTable](/vue-components/markup-table) component instead.
+如果你不需要分页、排序、过滤以及QTable的所有其他功能，那么你可能想看看[QMarkupTable](/vue-components/markup-table)组件来代替。
 :::
 
 ## QTable API
@@ -31,66 +31,66 @@ If you don't need pagination, sorting, filtering, and all other features of QTab
 <doc-api file="QTh" />
 
 ## QTr API
-<doc-api file="QTr" />
+<doc-api file="QTr" /> ## QTd API
 
 ## QTd API
 <doc-api file="QTd" />
 
-## Defining the columns
+## 定义列
 
-Let’s take an example of configuring the `columns` property. We are going to tell QTable that `row-key` is ‘name’, which **must** be unique. If this was data fetched from a database we would likely use the row **id**.
+让我们举一个配置 "columns "属性的示例。我们要告诉QTable，"row-key "是 "name"，它***必须是唯一的。如果这是从数据库中获取的数据，我们可能会使用行的**id**。
 
 ```js
 columns: [ // array of Objects
-  // column Object definition
+  // 列 对象定义
   {
-    // unique id
-    // identifies column
-    // (used by pagination.sortBy, "body-cell-[name]" slot, ...)
+    // 唯一标识
+    // 识别列
+    // (由pagination.sortBy, "body-cell-[name]" slot, ...使用)
     name: 'desc',
 
-    // label for header
+    // 标题的标签
     label: 'Dessert (100g serving)',
 
-    // row Object property to determine value for this column
+    // 确定此列值的行对象属性
     field: 'name',
-    // OR field: row => row.some.nested.prop,
+    // 或字段：row => row.some.nested.prop,
 
-    // (optional) if we use visible-columns, this col will always be visible
+    // (可选)如果我们使用可见列，这个列将始终是可见的。
     required: true,
 
-    // (optional) alignment
+    // (可选)对齐
     align: 'left',
 
-    // (optional) tell QTable you want this column sortable
+    // (可选)告诉QTable你想让这一列可排序。
     sortable: true,
 
-    // (optional) compare function if you have
-    // some custom data or want a specific way to compare two rows
+    // (可选)比较函数，如果你有
+    // 一些自定义的数据，或者想用一种特定的方式来比较两行
     sort: (a, b, rowA, rowB) => parseInt(a, 10) - parseInt(b, 10),
-    // function return value:
-    //   * is less than 0 then sort a to an index lower than b, i.e. a comes first
-    //   * is 0 then leave a and b unchanged with respect to each other, but sorted with respect to all different elements
-    //   * is greater than 0 then sort b to an index lower than a, i.e. b comes first
+    // 函数的返回值。
+    //   *小于0，则将a排序到比b低的索引，即a在前。
+    //   *为0，那么让a和b相互之间保持不变，但对所有不同的元素进行排序
+    //   *大于0，则将b排序到比a低的索引，即b排在前面。
 
-    // (optional) override 'column-sort-order' prop;
-    // sets column sort order: 'ad' (ascending-descending) or 'da' (descending-ascending)
+    // (可选)覆盖'column-sort-order'属性。
+    // 设置列的排序顺序。'ad'(升序-降序)或'da'(降序-升序)。
     sortOrder: 'ad', // or 'da'
 
-    // (optional) you can format the data with a function
+    // (可选)，你可以用一个函数来格式化数据
     format: (val, row) => `${val}%`,
-    // one more format example:
-    // format: val => val
-    //   ? /* Unicode checkmark checked */ "\u2611"
-    //   : /* Unicode checkmark unchecked */ "\u2610",
+    // 再举一个格式的示例。
+    // 格式: val => val
+    //   ? /* 勾选Unicode复选标记 */ "\u2611"
+    //   : /*Unicode复选标记未被选中 */ "\u2610",
 
     // body td:
     style: 'width: 500px',
-    // or as Function --> style: row => ... (return String/Array/Object)
+    // 或作为Function --> style: row => ... (返回字符串/数组/对象)
     classes: 'my-special-class',
-    // or as Function --> classes: row => ... (return String)
+    // 或作为Function --> classes: row => ... (返回字符串)
 
-    // header th:
+    // 头部th。
     headerStyle: 'width: 500px',
     headerClasses: 'my-special-class'
   },
@@ -104,264 +104,264 @@ columns: [ // array of Objects
 ]
 ```
 
-## Basic usage
+### 基本的用法
 
-<doc-example title="Basic" file="QTable/Basic" />
+<doc-example title="基本" file="QTable/Basic" />
 
-<doc-example title="Dark" file="QTable/Dark" />
+<doc-example title="黑暗" file="QTable/Dark" />
 
-<doc-example title="Dense" file="QTable/Dense" />
+<doc-example title="密集型" file="QTable/Dense" />
 
 ::: tip
-You can use the `dense` prop along with `$q.screen` to create a responsive behavior. Example: `:dense="$q.screen.lt.md"`. More info: [Screen Plugin](/options/screen-plugin).
+你可以使用`dense`属性和`$q.screen`来创建一个响应行为。例如：`:dense="$q.screen.lt.md"`。更多信息。[屏幕插件](/options/screen-plugin)。
 :::
 
-## Omitting columns definition
+## 省略列的定义
 
-You can omit specifying the `columns`. QTable will infer the columns from the properties of the first row of the data. Note that labels are uppercased and sorting is enabled:
+你可以省略对`columns`的指定。QTable将从数据的第一行的属性中推断出列。请注意，标签是大写的，而且排序是启用的。
 
-<doc-example title="Infering columns from data" file="QTable/InferColumns" />
+<doc-example title="从数据推断列" file="QTable/InferColumns" />
 
-## Sticky header/column
+## 粘性标题/列
 
 ::: warning
-Sticky headers and columns are achieved through CSS with `position: sticky`. This is NOT supported on all browsers. Check [caniuse.com](https://caniuse.com/#search=sticky) before using this technique.
+粘性标题和列是通过CSS的`position: sticky`实现的。这不是所有的浏览器都支持的。在使用这种技术之前，请检查[caniuse.com](https://caniuse.com/#search=sticky)。
 :::
 
-<doc-example title="Sticky header" file="QTable/StickyHeader" />
+<doc-example title="粘性标题" file="QTable/StickyHeader" />
 
-<doc-example title="Sticky column" file="QTable/StickyColumn" />
+<doc-example title="粘性列" file="QTable/StickyColumn" />
 
-<doc-example title="Sticky header and column" file="QTable/StickyHeaderAndColumn" />
+<doc-example title="粘性表头和表列" file="QTable/StickyHeaderAndColumn" />
 
-## Separators
+## 分隔符
 
-<doc-example title="Separators" file="QTable/Separators" />
+<doc-example title="分隔符" file="QTable/Separators" /> ##分隔符
 
-## Styling
+## 样式设计
 
-<doc-example title="Custom column" file="QTable/CustomColumn" />
+<doc-example title="自定义列" file="QTable/CustomColumn" /> ##样式设计
 
-<doc-example title="Custom coloring" file="QTable/CustomColor" />
+<doc-example title="自定义着色" file="QTable/CustomColor" /> ## 自定义颜色
 
-<doc-example title="No header/footer" file="QTable/NoHeaderFooter" />
+<doc-example title="没有页眉/页脚" file="QTable/NoHeaderFooter" />
 
-## Virtual scrolling
+## 虚拟滚动
 
-Notice that when enabling virtual scroll you will need to specify the `table-style` (with a max-height) prop. In the example below, we are also forcing QTable to display all rows at once (note the use of `pagination` and `rows-per-page-options` props).
+注意，当启用虚拟滚动时，你需要指定`table-style`(有最大高度)属性。在下面的示例中，我们还强制QTable一次显示所有的行(注意使用`pagination`和`rows-per-page-options`属性)。
 
-<doc-example title="Basic virtual scroll" file="QTable/VirtscrollBasic" />
+<doc-example title="基本虚拟滚动" file="QTable/VirtscrollBasic" />
 
-You can dynamically load new rows when scroll reaches the end:
+你可以在滚动到达终点时动态地加载新行。
 
-<doc-example title="Dynamic loading virtual scroll" file="QTable/VirtscrollDynamic" />
+<doc-example title="动态加载虚拟卷轴" file="QTable/VirtscrollDynamic" />
 
-You can have both virtual scroll and pagination:
+你可以同时拥有虚拟滚动和分页。
 
-<doc-example title="Virtual scroll and pagination" file="QTable/VirtscrollPagination" />
+<doc-example title="虚拟滚动和分页" file="QTable/VirtscrollPagination" />
 
-The example below shows how virtual scroll can be used along with a sticky header. Notice the `virtual-scroll-sticky-start` prop which is set to the header height.
+下面的示例显示了如何将虚拟滚动与粘性标题一起使用。注意`virtual-scroll-sticky-start`属性，它被设置为标题的高度。
 
-<doc-example title="Virtual scroll with sticky header" file="QTable/VirtscrollSticky" />
+<doc-example title="虚拟滚动与粘性标题" file="QTable/VirtscrollSticky" />
 
-There are 2 utility CSS classes that control VirtualScroll size calculation:
+有2个实用的CSS类来控制VirtualScroll的尺寸计算。
 
-* Use `q-virtual-scroll--with-prev` class on an element rendered by the VirtualScroll to indicate that the element should be grouped with the previous one (main use case is for multiple table rows generated from the same row of data).
-* Use `q-virtual-scroll--skip` class on an element rendered by the VirtualScroll to indicate that the element's size should be ignored in size calculations.
+* 在VirtualScroll渲染的元素上使用`q-virtual-scroll--with-prev`类，表示该元素应该与前一个元素组合在一起(主要用例是由同一行数据生成的多个表格行)。
+* 在VirtualScroll渲染的元素上使用`q-virtual-scroll--skip`类，表示在计算尺寸时应忽略该元素的尺寸。
 
-<doc-example title="Virtual scroll with multiple rows for a data row" file="QTable/VirtscrollMultipleRows" />
+<doc-example title="一个数据行的多行虚拟滚动" file="QTable/VirtscrollMultipleRows" />
 
-## Selection
+## 选择
 
 ::: warning
-The property `row-key` must be set in order for selection to work properly.
+为了使选择正常工作，必须设置属性`行键'。
 :::
 
-<doc-example title="Single selection" file="QTable/SingleSelection" />
+<doc-example title="单一选择" file="QTable/SingleSelection" />
 
-<doc-example title="Multiple selection" file="QTable/MultipleSelection" />
+<doc-example title="多重选择" file="QTable/MultipleSelection" />
 
-<doc-example title="Selection cell slots" file="QTable/SelectionSlots" />
+<doc-example title="选择单元格插槽" file="QTable/SelectionSlots" />
 
-<doc-example title="Custom multiple selection" file="QTable/CustomSelection" />
+<doc-example title="自定义多重选择" file="QTable/CustomSelection" />
 
-## Visible columns, custom top, fullscreen
+## 可见列，自定义顶部，全屏
 
-Please note that columns marked as `required` (in the column definition) cannot be toggled and are always visible.
+请注意，被标记为 "必需 "的列(在列的定义中)不能被切换，总是可见的。
 
-<doc-example title="Visible columns, custom top and fullscreen" file="QTable/VisibleColumns" />
+<doc-example title="可见的列，自定义顶部和全屏" file="QTable/VisibleColumns" />
 
-<doc-example title="Visible columns" file="QTable/VisibleColumns2" />
+<doc-example title="可见的列" file="QTable/VisibleColumns2" />
 
-## Popup editing
+## 弹出式编辑
 
 ::: tip
-Below is an example with the user being able to edit “in place” with the help of **QPopupEdit** component. Please note that we are using the `body` scoped slot. **QPopupEdit** won’t work with cell scoped slots.
+下面是一个示例，用户可以在**QPopupEdit**组件的帮助下 "就地 "编辑。请注意，我们使用的是 "body "范围的槽。**QPopupEdit**不会在单元格范围内工作。
 :::
 
-<doc-example title="Popup editing" file="QTable/PopupEditing" />
+<doc-example title="弹出式编辑" file="QTable/PopupEditing" />
 
-## Grid style
+## 网格风格
 
 ::: tip
-You can use the `grid` prop along with `$q.screen` to create a responsive behavior. Example: `:grid="$q.screen.lt.md"`. More info: [Screen Plugin](/options/screen-plugin).
+你可以使用`grid`属性和`$q.screen`来创建一个响应式的行为。例如：`:grid="$q.screen.lt.md"`。更多信息。[屏幕插件](/options/screen-plugin)。
 :::
 
-In the example below, we let QTable deal with displaying the grid mode (not using the specific slot):
+在下面的示例中，我们让QTable来处理显示网格模式(不使用具体的槽)。
 
-<doc-example title="Grid style" file="QTable/GridStyle" />
+<doc-example title="网格风格" file="QTable/GridStyle" />
 
-<doc-example title="Grid with header" file="QTable/GridHeader" />
+<doc-example title="带有页眉的网格" file="QTable/GridHeader" />
 
-<doc-example title="Colored grid style" file="QTable/GridStyleColored" />
+<doc-example title="彩色的网格风格" file="QTable/GridStyleColored" />
 
-<doc-example title="Masonry like grid" file="QTable/GridMasonry" />
+<doc-example title="类似砖石的网格" file="QTable/GridMasonry" />
 
-However, if you want to fully customize the content, check the example below, where:
+然而，如果你想完全自定义内容，请查看下面的示例，其中。
 
-* We are using a Vue scoped slot called `item` to define how each record (the equivalent of a row in non-grid mode) should look. This allows you total freedom.
-* We are using multiple selection.
+* 我们使用Vue的一个叫`item`的范围槽来定义每条记录(相当于非网格模式下的一行)的外观。这允许你完全自由。
+* 我们正在使用多重选择。
 
-<doc-example title="Grid style with slot" file="QTable/GridStyleSlot" />
+<doc-example title="带槽的网格风格" file="QTable/GridStyleSlot" />
 
-## Expanding rows
+## 展开行数
 
 ::: warning
-Add unique (distinct) `key` on QTr if you generate more than one QTr from a row in data.
+如果你从数据中的一行生成多个QTr，在QTr上添加唯一(不同)的`key`。
 :::
 
-<doc-example title="Internal expansion model" file="QTable/ExpandedRowInternal" />
+<doc-example title="内部扩展模型" file="QTable/ExpandedRowInternal" />
 
-An external expansion model can also be used:
+也可以使用一个外部扩展模型。
 
-<doc-example title="External expansion model" file="QTable/ExpandedRowExternal" />
+<doc-example title="外部扩展模型" file="QTable/ExpandedRowExternal" />
 
-If you are using virtual scroll with QTable, you should know that there are 2 utility CSS classes that control VirtualScroll size calculation:
-* Use `q-virtual-scroll--with-prev` class on an element rendered by the VirtualScroll to indicate that the element should be grouped with the previous one (main use case is for multiple table rows generated from the same row of data).
-* Use `q-virtual-scroll--skip` class on an element rendered by the VirtualScroll to indicate that the element's size should be ignored in size calculations.
+如果你使用QTable的虚拟滚动，你应该知道有2个实用的CSS类来控制VirtualScroll的大小计算。
+* 在虚拟卷轴渲染的元素上使用`q-virtual-scroll--with-prev`类，表示该元素应与前一个元素分组(主要用例是由同一行数据生成的多个表格行)。
+* 在VirtualScroll渲染的元素上使用`q-virtual-scroll--skip`类，表示在计算尺寸时应忽略该元素的尺寸。
 
-<doc-example title="Virtual scroll with expansion model" file="QTable/VirtscrollExpandedRow" />
+<doc-example title="具有扩展模型的虚拟卷轴" file="QTable/VirtscrollExpandedRow" />
 
-## Before/after slots
+## 前/后槽
 
-<doc-example title="Before/After slots (header/footer)" file="QTable/BeforeAfterHeaderFooter" />
+<doc-example title="前/后槽(页眉/页脚)" file="QTable/BeforeAfterHeaderFooter" /> ## 分页方式
 
-## Pagination
+## 分页
 
 ::: tip
-When `pagination` has a property named `rowsNumber`, then this means that you’ll be configuring Table for **server**-side pagination (& sorting & filtering). See *"Server side pagination, filter and sorting"* section.
+当 "分页 "有一个名为 "rowsNumber "的属性时，这意味着你将为**服务器**方的分页(以及排序和过滤)配置Table。参见*"服务器端分页、过滤和排序 "*部分。
 :::
 
-Below are two examples of handling the pagination (and sorting and rows per page).
+下面是两个处理分页的示例(以及每页的排序和行数)。
 
-The first example highlights how to configure the initial pagination:
+第一个示例强调了如何配置初始分页。
 
-<doc-example title="Initial pagination" file="QTable/PaginationInitial" />
+<doc-example title="初始分页" file="QTable/PaginationInitial" />
 
-The second example uses the "v-model:pagination" directive because we want to access its current value at any time. A use-case for the technique below can be to control the pagination from outside of QTable.
+第二个示例使用了 "v-model:pagination "指令，因为我们想在任何时候访问其当前值。下面这个技术的一个用例可以是在QTable之外控制分页。
 
-<doc-example title="Synchronized pagination" file="QTable/PaginationSync" />
+<doc-example title="同步分页" file="QTable/PaginationSync" />
 
-## Pagination slot
+## 分页槽
 
-For learning purposes, we will customize the pagination controls with the default controls in order to help you get started with your own.
+为了学习，我们将用默认的控件来定制分页控件，以便帮助你开始使用你自己的控件。
 
-<doc-example title="Pagination slot" file="QTable/PaginationSlot" />
+<doc-example title="分页槽" file="QTable/PaginationSlot" />
 
-## Loading state
+## 加载状态
 
-<doc-example title="Default loading" file="QTable/Loading" />
+<doc-example title="默认加载" file="QTable/Loading" /> ##加载状态
 
-<doc-example title="Custom loading state" file="QTable/CustomLoading" />
+<doc-example title="自定义加载状态" file="QTable/CustomLoading" /> ## 自定义顶部加载状态
 
-## Custom top
+## 自定义顶部
 
-<doc-example title="Custom top with add/remove row" file="QTable/CustomTop" />
+<doc-example title="自定义顶部与添加/删除行" file="QTable/CustomTop" /> ##自定义顶部
 
-## Body slots
+## 主体槽
 
-The example below shows how you can use a slot to customize the entire row:
+下面的示例显示了你如何使用槽来定制整个行。
 
-<doc-example title="Body slot" file="QTable/SlotBody" />
+<doc-example title="主体槽" file="QTable/SlotBody" />
 
-Below, we use a slot which gets applied to each body cell:
+下面，我们使用一个槽，它被应用于每个体单元。
 
-<doc-example title="Body-cell slot" file="QTable/SlotBodyCell" />
+<doc-example title="体细胞槽" file="QTable/SlotBodyCell" />
 
-We can also customize only one particular column only. The syntax for this slot is `body-cell-[name]`, where `[name]` should be replaced by the property of each row which is used as the row-key.
+我们也可以只定制一个特定的列。这个槽的语法是`body-cell-[name]`，其中`[name]`应该由作为行键的每一行的属性代替。
 
-<doc-example title="Body-cell-[name] slot" file="QTable/SlotBodyCellName" />
+<doc-example title="body-cell-[name] slot" file="QTable/SlotBodyCellName" />
 
-## Header slots
+## 标题槽
 
-The example below shows how you can use a slot to customize the entire header row:
+下面的示例显示了你如何使用槽来定制整个标题行。
 
-<doc-example title="Header slot" file="QTable/SlotHeader" />
+<doc-example title="页眉槽" file="QTable/SlotHeader" />
 
-Below, we use a slot which gets applied to each header cell:
+下面，我们使用一个槽，它被应用到每个标题单元。
 
-<doc-example title="Header-cell slot" file="QTable/SlotHeaderCell" />
+<doc-example title="页眉单元格插槽" file="QTable/SlotHeaderCell" />
 
-We can also customize only one particular header cell only. The syntax for this slot is `header-cell-[name]`, where `[name]` should be replaced by the property of each row which is used as the row-key.
+我们也可以只定制一个特定的标题单元。这个槽的语法是`header-cell-[name]`，其中`[name]`应该被用作行键的每一行的属性所代替。
 
 <doc-example title="Header-cell-[name] slot" file="QTable/SlotHeaderCellName" />
 
-## No data
+## 没有数据
 
-<doc-example title="No Data Label" file="QTable/NoData" />
+<doc-example title="无数据标签" file="QTable/NoData" /> ##无数据
 
-There is also a "no-data" scoped slot (see below) that you can also to customize the messages for both when a filter doesn't returns any results or the table has no data to display. Also type something into the "Search" input.
+还有一个 "无数据 "的范围槽(见下文)，你也可以自定义过滤器没有返回任何结果或表没有数据可显示时的信息。也可以在 "搜索 "输入中键入一些内容。
 
-<doc-example title="No Data Slot" file="QTable/NoDataSlot" />
+<doc-example title="无数据槽" file="QTable/NoDataSlot" />
 
-## Handling bottom layer
+## 处理底层
 
-There are a few properties that you can use to hide the bottom layer or specific parts of it. You can play with it below:
+有几个属性可以用来隐藏底层或它的特定部分。你可以在下面玩一下。
 
-<doc-example title="Hiding bottom layer" file="QTable/HideBottom" />
+<doc-example title="隐藏底层" file="QTable/HideBottom" />
 
-## Custom sorting
+## 自定义排序
 
-<doc-example title="Custom sorting" file="QTable/CustomSorting" />
+<doc-example title="自定义排序" file="QTable/CustomSorting" /> ##自定义排序
 
-## Responsive tables
+## 响应式表格
 
-In order to create responsive tables, we have two tools at our disposal: `dense` and `grid` properties. We can connect these with `$q.screen`. More info: [Screen Plugin](/options/screen-plugin).
+为了创建响应式表格，我们有两个工具可以使用。`密集'和`网格'属性。我们可以用`$q.screen`来连接这些。更多信息。[屏幕插件](/options/screen-plugin)。
 
-First example below uses `$q.screen.lt.md` (for enabling dense mode) and the second examples uses `$q.screen.xs` to enable grid mode, so play with browser width to see them in action.
+下面的第一个示例使用`$q.screen.lt.md`(用于启用密集模式)，第二个示例使用`$q.screen.xs`来启用网格模式，所以要玩玩浏览器的宽度来看看它们的作用。
 
-<doc-example title="Using dense prop" file="QTable/ResponsiveDense" />
+<doc-example title="使用密集属性" file="QTable/ResponsiveDense" />
 
-<doc-example title="Using grid prop" file="QTable/ResponsiveGrid" />
+<doc-example title="使用网格属性" file="QTable/ResponsiveGrid" />
 
-## Server side pagination, filter and sorting
+## 服务器端的分页、过滤和排序
 
-When your database contains a big number of rows for a Table, obviously it’s not feasible to load them all for multiple reasons (memory, UI rendering performance, …). Instead, you can load only a Table page. Whenever the user wants to navigate to another Table page, or wants to sort by a column or wants to filter the Table, a **request** is sent to the **server** to fetch the partially paged data.
+当你的数据库包含大量的表的行时，由于多种原因(内存、UI渲染性能......)，将它们全部加载显然是不可行的。相反，你可以只加载一个表页。每当用户想浏览另一个表页，或想按列排序，或想过滤表时，就会向**服务器发送一个**请求，以获取部分分页的数据。
 
-1. First step to enable this behavior is to specify `pagination` prop, which MUST contain `rowsNumber`. QTable needs to know the total number of rows available in order to correctly render the pagination links. Should filtering cause the `rowsNumber` to change then it must be modified dynamically.
+1. 启用这一行为的第一步是指定`pagination`属性，其中必须包含`rowsNumber`。QTable需要知道可用的总行数，以便正确呈现分页链接。如果过滤导致`rowsNumber`改变，那么它必须被动态修改。
 
-2. Second step is to listen for `@request` event on QTable. This event is triggered when data needs to be fetched from the **server** because either page number or sorting or filtering changed.
+2. 第二步是监听QTable上的`@request`事件。当需要从**服务器上获取数据时，这个事件就会被触发，因为页码、排序或过滤发生了变化。
 
-3. It’s best that you also specify the `loading` prop in order to notify the user that a background process is in progress.
-
-::: tip
-In the example below, steps have been taken to emulate an ajax call to a server. While the concepts are similar, if you use this code you will need to make the appropriate changes to connect to your own data source.
-:::
-
-<doc-example title="Synchronizing with server" file="QTable/Synchronizing" />
-
-## Exporting data
-
-Below is an example of a naive csv encoding and then exporting table data by using the [exportFile](/quasar-utils/other-utils#export-file) Quasar util. The browser should trigger a file download. For a more professional approach in regards to encoding we do recommend using [csv-parse](https://csv.js.org/parse/) and [csv-stringify](https://csv.js.org/stringify/) packages.
+3. 3.你最好同时指定`loading`属性，以便通知用户一个后台进程正在进行。
 
 ::: tip
-You could also make use of the `filteredSortedRows` internal computed property of QTable should you want to export the user filtered + sorted data.
+在下面的示例中，已经采取了一些步骤来模拟对服务器的ajax调用。虽然概念是相似的，但如果你使用这段代码，你将需要做适当的修改以连接到你自己的数据源。
 :::
 
-<doc-example title="Export to csv" file="QTable/ExportCsv" />
+<doc-example title="与服务器同步" file="QTable/Synchronizing" />
 
-## Keyboard navigation
+## 导出数据
 
-Below is an example of keyboard navigation in the table using selected row. Use `ArrowUp`, `ArrowDown`, `PageUp`, `PageDown`, `Home` and `End` keys to navigate.
+下面是一个天真的csv编码的示例，然后通过使用[exportFile](/quasar-utils/other-utils#export-file)Quasar工具导出表格数据。浏览器应该会触发一个文件下载。对于更专业的编码方法，我们确实推荐使用[csv-parse](https://csv.js.org/parse/)和[csv-stringify](https://csv.js.org/stringify/)软件包。
 
-<doc-example title="Keyboard navigation" file="QTable/KeyboardNavigation" />
+::: tip
+如果你想导出用户过滤+排序的数据，你也可以利用QTable的`filteredSortedRows`内部计算属性。
+:::
+
+<doc-example title="导出到csv" file="QTable/ExportCsv" />
+
+## 键盘导航
+
+下面是一个使用选定行在表中进行键盘导航的示例。使用`ArrowUp`、`ArrowDown`、`PageUp`、`PageDown`、`Home`和`End`键来导航。
+
+<doc-example title="键盘导航" file="QTable/KeyboardNavigation" />

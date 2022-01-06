@@ -54,13 +54,13 @@ You will need [Node.js](http://nodejs.org) **version 12.22.1+** along [Yarn](htt
 
 After cloning the repo, in each subfolder run:
 
-``` bash
+```bash
 $ yarn # or: npm install
 ```
 
 ### Commonly used NPM scripts
 
-``` bash
+```bash
 # Start dev server with a demo app. This app has Quasar source code linked directly so any change will trigger HMR (Hot Module Reload) on the dev server.
 # There's a section for each feature where tests are made.
 $ yarn dev [theme] # or: npm run dev [theme]

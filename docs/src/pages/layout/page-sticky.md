@@ -1,38 +1,38 @@
 ---
-title: Layout QPageSticky
-desc: How to use the QPageSticky component. Statically place components on the layout without overlapping with header/footer/sidebars.
+title: QPageSticky 布局
+desc: 如何使用 QPageSticky 组件。 静态地将组件放置在布局上而不与标题/页脚/侧栏重叠。
 keys: QPageSticky
 related:
   - /layout/layout
   - /layout/page
 ---
 
-The QPageSticky component helps in placing DOM elements / components wrapped by it into a static position within the content area of your QPage, no matter where the user scrolls.
+QPageSticky 组件有助于将其包裹的 DOM 元素/组件放置到 QPage 内容区域内的静态位置，无论用户滚动到何处。
 
-The great advantage of this is that the elements wrapped by this component will never overlap the layout header, footer or drawer(s), even if those are not configured to be fixed. In the latter case, the position will be offset so that the overlap won't occur.
-Try it out with a non-fixed footer for example. When user reaches bottom of screen and footer comes into view, the component will shift up so it won't overlap with the footer.
+这样做的最大好处是，由该组件包裹的元素永远不会与布局页眉、页脚或抽屉重叠，即使这些元素没有配置为固定的。在后一种情况下，位置将被偏移，以便不会发生重叠。
+例如，尝试使用非固定页脚。当用户到达屏幕底部并且页脚进入视野时，组件将向上移动，因此它不会与页脚重叠。
 
 ## QPageSticky API
 <doc-api file="QPageSticky" />
 
-## Usage
+## 用法
 ::: tip
-Since QPageSticky needs a layout and QLayout by default manages the entire window, then for demoing purposes we are going to use containerized QLayouts. But remember that by no means you are required to use containerized QLayouts for QPageSticky.
+由于 QPageSticky 需要一个布局并且 QLayout 默认管理整个窗口，因此出于演示目的，我们将使用容器化的 QLayout。但请记住，您绝不需要为 QPageSticky 使用容器化的 QLayouts。
 :::
 
 ::: warning
-* In order for QPageSticky to work, it must be placed within a QLayout component.
-* QPageSticky must be the last child element within its parent, so it can display on top of other content
+*为了使QPageSticky工作，必须将其放在QLayout组件中。
+* QPageSticky必须是其父级中的最后一个子元素，因此它可以显示在其他内容之上
 :::
 
-### Basic
-In the example below, click on the menu buttons to show/hide Drawers, scroll the inner page, and resize the browser window so that the enclosing QLayout hits the Drawer's 700px and 500px breakpoints.
+### 基础
+在下面的示例中，点击菜单按钮来显示/隐藏抽屉，滚动内页，调整浏览器窗口的大小，使包围的QLayout碰到抽屉的700px和500px断点。
 
 <doc-example title="Basic" file="QPageSticky/Basic" />
 
-### Expanded
-In the example below, click on the menu buttons to show/hide Drawers, scroll the inner page, and resize the browser window so that the enclosing QLayout hits the Drawer's 700px and 500px breakpoints.
+### 扩展
+在下面的示例中，单击菜单按钮以显示/隐藏抽屉、滚动内页并调整浏览器窗口的大小，以便封闭的 QLayout 命中抽屉的 700px 和 500px 断点。
 
-By using expanded QPageSticky you can, for example, have a page-specific QToolbar as below.
+例如，通过使用扩展的 QPageSticky，您可以拥有一个特定于页面的 QToolbar，如下所示。
 
 <doc-example title="Expanded" file="QPageSticky/Expanded" />

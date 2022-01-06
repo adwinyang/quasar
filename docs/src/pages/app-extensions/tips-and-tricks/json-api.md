@@ -298,7 +298,7 @@ null
       "params": {
         "shouldFocus": {
           "type": "Boolean",
-          "desc": "在提交表单时，告诉它是否应该关注有错误的组件；如果指定的话，覆盖'no-focus-error'道具"
+          "desc": "在提交表单时，告诉它是否应该关注有错误的组件；如果指定的话，覆盖'no-focus-error'属性"
         }
       },
       "return"。{

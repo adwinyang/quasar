@@ -1,12 +1,12 @@
 ---
-title: App Vuex Store
-desc: How to manage the Vuex Store in a Quasar App.
+title: 应用程序Vuex商店
+desc: 如何在Quasar应用程序中管理Vuex商店。
 ---
-In large applications, state management often becomes complex due to multiple pieces of state scattered across many components and the interactions between them. It is often overlooked that the source of truth in Vue instances is the raw data object - a Vue instance simply proxies access to it. Therefore, if you have a piece of state that should be shared by multiple instances, you should avoid duplicating it and share it by identity.
+在大型应用中，由于多块状态散落在许多组件中以及它们之间的交互，状态管理往往变得复杂。人们常常忽略的是，Vue实例中的真相来源是原始数据对象--Vue实例只是代理了对它的访问。因此，如果你有一块应该被多个实例共享的状态，你应该避免重复它，而是通过身份来共享它。
 
-The recommended way to go if you want components sharing state is Vuex. Take a look at its [documentation](https://vuex.vuejs.org/) before diving in. It has a great feature when used along the [Vue dev-tools](https://github.com/vuejs/vue-devtools) browser extension like Time Travel debugging.
+如果你想让组件共享状态，推荐的方法是Vuex。在深入研究之前，先看看它的[文档](https://vuex.vuejs.org/)。当与[Vue dev-tools](https://github.com/vuejs/vue-devtools)浏览器扩展一起使用时，它有一个伟大的功能，如时间旅行调试。
 
-We won't go into details on how to configure or use Vuex since it has great docs. Instead we'll just show you what the folder structure looks like when using it on a Quasar project.
+由于Vuex有很好的文档，我们不会详细介绍如何配置或使用它。相反，我们将向你展示在Quasar项目中使用它时的文件夹结构。
 
 ```bash
 .
@@ -17,24 +17,24 @@ We won't go into details on how to configure or use Vuex since it has great docs
         └── <folder>         # Vuex Store Module...
 ```
 
-By default, if you choose to use Vuex when you create a project folder with Quasar CLI, it will set you up on using Vuex modules. Each sub-folder of `/src/store` represents a Vuex Module.
+默认情况下，如果你在用Quasar CLI创建项目文件夹时选择使用Vuex，它将为你设置使用Vuex模块。`/src/store`的每个子文件夹代表一个Vuex模块。
 
-If you don't choose the Vuex option during project creation but would like to add it later then all you need to do is to check the next section and create the `src/store/index.js` file.
+如果你在创建项目时没有选择Vuex选项，但想在以后添加它，那么你需要做的就是检查下一节，并创建`src/store/index.js`文件。
 
 ::: tip
-If Vuex Modules is too much for your website app, you can change `/src/store/index.js` and avoid importing any module.
+如果Vuex模块对你的网站应用来说太多，你可以改变`/src/store/index.js`，避免导入任何模块。
 :::
 
-## Adding a Vuex Module.
-Adding a Vuex Module is made easy by Quasar CLI through the `$ quasar new` command.
+## 添加一个Vuex模块。
+Quasar CLI通过`$ quasar new`命令使添加Vuex模块变得简单。
 
 ```bash
 $ quasar new store <store_name>
 ```
 
-It will create a folder in `/src/store` named by "store_name" from the command above. It will contain all the boilerplate that you need.
+它将在`/src/store`中创建一个文件夹，以上述命令中的 "store_name "命名。它将包含所有你需要的模板。
 
-Let's say that you want to create a "showcase" Vuex Module. You issue `$ quasar new store showcase`. You then notice the newly created `/src/store/showcase` folder, which holds the following files:
+假设你想创建一个 "展示 "Vuex模块。你发出`$ quasar new store showcase`。然后你注意到新创建的`/src/store/showcase`文件夹，它包含以下文件。
 
 ```bash
 .
@@ -49,7 +49,7 @@ Let's say that you want to create a "showcase" Vuex Module. You issue `$ quasar 
             └── state.js     # Module state
 ```
 
-We've created the new Vuex Module, but we haven't yet informed Vuex to use it. So we edit `/src/store/index.js` and add a reference to it:
+我们已经创建了新的Vuex模块，但我们还没有通知Vuex使用它。所以我们编辑`/src/store/index.js`，并添加一个对它的引用。
 
 ```js
 import { createStore } from 'vuex'
@@ -61,8 +61,8 @@ export default function (/* { ssrContext } */) {
       showcase
     },
 
-    // enable strict mode (adds overhead!)
-    // for dev mode and --debug builds only
+    // 启用严格模式(增加开销！)。
+    // 仅适用于开发模式和-调试构建
     strict: process.env.DEBUGGING
   })
 
@@ -71,10 +71,10 @@ export default function (/* { ssrContext } */) {
 ```
 
 ::: tip
-If you are developing a SSR app, then you can check out the [ssrContext](/quasar-cli/developing-ssr/ssr-context) Object that gets supplied server-side.
+如果你正在开发一个SSR应用程序，那么你可以看看[ssrContext](/quasar-cli/developing-ssr/ssr-context)对象，它被提供到服务器端。
 :::
 
-Now we can use this Vuex Module in our Vue files. Here is a quick example. Assume we configured `drawerState` in the state and added `updateDrawerState` mutation.
+现在我们可以在我们的Vue文件中使用这个Vuex模块。下面是一个快速的示例。假设我们在状态中配置了`drawerState`并添加了`updateDrawerState`突变。
 
 ```js
 // src/store/showcase/mutations.js
@@ -83,7 +83,7 @@ export const updateDrawerState = (state, opened) => {
 }
 
 // src/store/showcase/state.js
-// Always use a function to return state if you use SSR
+// 如果你使用SSR，一定要使用一个函数来返回状态
 export default function () {
   return {
     drawerState: true
@@ -91,7 +91,7 @@ export default function () {
 }
 ```
 
-In a Vue file:
+在一个Vue文件中。
 
 ```html
 <template>
@@ -123,10 +123,10 @@ export default {
 </script>
 ```
 
-## TypeScript support
+## TypeScript支持
 
-If you choose to use Vuex and TypeScript when you create a project folder with Quasar CLI, it will add some typing code in `src/store/index.ts`.
-To get a typed Vuex store in your component you will need to modify your Vue file like this:
+如果你在用Quasar CLI创建项目文件夹时选择使用Vuex和TypeScript，它将在`src/store/index.ts`中添加一些类型化代码。
+为了在你的组件中获得一个类型化的Vuex商店，你将需要像这样修改你的Vue文件。
 
 ```html
 <template>
@@ -140,11 +140,11 @@ import { useStore } from 'src/store';
 export default defineComponent({
   setup () {
     const $store = useStore()
-    // You can use the $store, example: $store.state.someStoreModule.someData
+    // 你可以使用$store，例如：$store.state.someStoreModule.someData
   }
 })
 </script>
 ```
 
-## Store Code Splitting
-You can take advantage of the [PreFetch Feature](/quasar-cli/prefetch-feature#Store-Code-Splitting) to code-split Vuex modules.
+## 存储代码拆分
+你可以利用[PreFetch Feature](/quasar-cli/prefetch-feature#Store-Code-Splitting)对Vuex模块进行代码分割。

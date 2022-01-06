@@ -1,25 +1,25 @@
 ---
-title: App Icons for PWA
-desc: How to manage the app icons for a Quasar Progressive Web App.
+title: PWA的应用程序图标
+desc: 如何管理Quasar Progressive Web App的应用图标。
 ---
 
-This build target includes a variety of special icons for individual browsers and operating systems. You need all of them - and if you discover one that is new or missing, please [open an issue](https://github.com/quasarframework/quasar/issues).
+这个构建目标包括各种用于个别浏览器和操作系统的特殊图标。你需要所有这些图标--如果你发现一个新的或丢失的图标，请[打开一个问题](https://github.com/quasarframework/quasar/issues)。
 
-<img src="https://cdn.quasar.dev/img/iconfactory.png" style="float:right;max-width:15%;min-width:240px;padding-top:40px" />
+<img src="https://cdn.quasar.dev/img/iconfactory.png" style="float:right;max-width:15%;min-width:240px; padding-top:40px" />
 
 ## Icon Genie CLI
 
 ::: tip
-We highly recommend using the [Icon Genie CLI](/icongenie/introduction), because it consumes a source icon and automatically clones, scales, minifies and places the icons in the appropriate directories for you. When needed, it also tells you what tags you'll need to add to your /src/index.template.html file.
+我们强烈建议使用[Icon Genie CLI](/icongenie/introduction)，因为它可以使用一个源图标，并自动克隆、缩放、最小化，并为你把图标放到适当的目录中。需要时，它还会告诉你需要在你的/src/index.template.html文件中添加哪些标签。
 :::
 
-Quickly bootstrap the necessary images with Icon Genie CLI. For a complete list of options, please visit the [Icon Genie CLI](/icongenie/command-list) command list page.
+用Icon Genie CLI快速启动必要的图像。有关完整的选项清单，请访问[Icon Genie CLI](/icongenie/command-list)命令清单页面。
 
 ```bash
 $ icongenie generate -m pwa -i /path/to/source/icon.png [-b /path/to/background.png]
 ```
 
-## Manual instructions
+## ##手册说明
 
 ```
 public/
@@ -52,7 +52,7 @@ public/
       apple-launch-2048x2732.png
 ```
 
-The required HTML code that goes into `/src/index.template.html` to reference the above files (notice not all files need to be manually referenced as Quasar CLI automatically injects the other PWA ones):
+进入`/src/index.template.html`所需的HTML代码，以引用上述文件(注意不是所有文件都需要手动引用，因为Quasar CLI自动注入其他PWA文件)。
 
 ```html
 <link rel="icon" type="image/ico" href="icons/favicon.ico">
