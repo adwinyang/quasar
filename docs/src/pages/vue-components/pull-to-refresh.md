@@ -37,7 +37,7 @@ QPullToRefresh是一个允许用户下拉以刷新页面内容(或检索最新�
 ## 提示
 
 ::: tip Scrolling container
-请阅读[这里](/vue-components/scroll-observer#determining-scrolling-container)关于Quasar如何确定将滚动事件附加到的容器。
+请阅读[这里](/vue-components/scroll-observer#determining-scrolling-container)关于 Quasar 如何确定将滚动事件附加到的容器。
 :::
 
 * 如果使用QLayout，那么建议你把QPullToRefresh作为QPage的直接子节点，并用它来包装你的页面内容。

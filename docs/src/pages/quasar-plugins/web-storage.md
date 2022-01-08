@@ -1,10 +1,10 @@
 ---
 title: 本地/会话存储插件
-desc: 一个包裹本地/会话存储的Quasar插件，以其原始JS类型检索数据。
+desc: 一个包裹本地/会话存储的 Quasar 插件，以其原始JS类型检索数据。
 keys: LocalStorage,SessionStorage
 ---
 
-Quasar提供了一个对[网络存储API](https://developer.mozilla.org/en-US/docs/Web/API/Web_Storage_API)的封装器。
+ Quasar 提供了一个对[网络存储API](https://developer.mozilla.org/en-US/docs/Web/API/Web_Storage_API)的封装器。
 
 ::: tip
 Web Storage API只检索字符串。**Quasar以其原始数据类型检索数据。**你告诉它存储一个数字，然后再检索它，它仍然是一个数字，而不是像Web Storage API那样以字符串表示数字。对于JSON、正则表达式、日期、布尔运算等也是如此。

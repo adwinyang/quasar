@@ -1,15 +1,15 @@
 ---
 title: 故障排除和提示
-desc: 使用Electron的Quasar桌面应用程序的技巧和窍门。
+desc: 使用 Electron 的 Quasar 桌面应用程序的技巧和窍门。
 ---
 
 ## 浏览器开发工具
 你可能希望你的应用程序只在开发模式下才允许访问浏览器的开发工具。在生产版本中(没有启用调试功能)，你会希望禁用这一行为。
 
-既然如此，为什么不在开发模式时默认打开devtools呢。
+既然如此，为什么不在开发模式时默认打开 devtools 呢。
 
 ```js
-// 电子-main.[js|ts]
+//  Electron -main.[js|ts]
 
 function createWindow () {
   mainWindow = new BrowserWindow({ ... })
@@ -36,7 +36,7 @@ For help, see: https://nodejs.org/en/docs/inspector
 ```
 
 ## 应用程序在Windows上不能以黑暗主题打开
-一些Chrome DevTools扩展程序在电子6以上的Windows黑暗主题下不能正常运行。Quasar在默认的`electron-main.js`中提供了一个变通方法，在启动应用程序之前删除`DevTools Extensions`。
+一些Chrome DevTools扩展程序在 Electron 6以上的Windows黑暗主题下不能正常运行。Quasar在默认的`electron-main.js`中提供了一个变通方法，在启动应用程序之前删除`DevTools Extensions`。
 
 ```javascript
 import { app, BrowserWindow, nativeTheme } from 'electron'
@@ -48,4 +48,4 @@ try {
 } catch (_) { }
 ```
 
-更多细节请关注[electron bug report](https://github.com/electron/electron/issues/19468)。
+更多细节请关注 [electron bug report](https://github.com/electron/electron/issues/19468) 。

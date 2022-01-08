@@ -3,7 +3,7 @@ title: 触摸重复指令
 desc: Vue指令，当用户触摸并按住一个组件或元素时，在指定的时间间隔内触发一个事件。
 keys: touch-repeat
 ---
-Quasar提供了全功能的Vue指令，可以完全取代Hammerjs等库：`v-touch-pan`, `v-touch-swipe`, `v-touch-hold` 和 `v-touch-repeat`。
+ Quasar 提供了全功能的Vue指令，可以完全取代Hammerjs等库：`v-touch-pan`, `v-touch-swipe`, `v-touch-hold` 和 `v-touch-repeat`。
 
 > **这些指令也适用于鼠标事件，而不仅仅是触摸事件**，所以你也能够在桌面上为你的应用程序建立很酷的功能。
 

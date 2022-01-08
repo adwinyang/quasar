@@ -1,6 +1,6 @@
 ---
 title: 交叉点
-desc: QIntersection vue组件，是Quasar的Intersection指令的封装器。
+desc: QIntersection vue组件，是 Quasar 的Intersection指令的封装器。
 keys: QIntersection
 related:
   - /vue-directives/intersection
@@ -43,7 +43,7 @@ QIntersection组件本质上是对[Intersection指令](/vue-directives/intersect
 
 ### 有过渡的
 
-在下面的示例中，我们使用了一个Quasar过渡。有关完整的列表，请前往[过渡](/options/transitions)页面。
+在下面的示例中，我们使用了一个 Quasar 过渡。有关完整的列表，请前往[过渡](/options/transitions)页面。
 
 <doc-example title="有过渡" file="QIntersection/Transition" scrollable no-edit />
 

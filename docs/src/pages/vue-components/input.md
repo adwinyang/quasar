@@ -81,7 +81,7 @@ Rounded "属性只与Filled、Outlined和Standout设计一起使用，正如下�
 下面的QInputs使用了`type`属性，以便在其内部呈现本地等价的`<input type="...">`。
 
 ::: warning
-支持和行为完全是渲染页面的浏览器的主题，而不是Quasar的核心代码。
+支持和行为完全是渲染页面的浏览器的主题，而不是 Quasar 的核心代码。
 :::
 
 <doc-example title="输入类型" file="QInput/InputTypes" />
@@ -316,6 +316,6 @@ value => value.includes('Hello') || 'Field must contain word Hello'
 
 ## 本地表单提交
 
-当处理一个有 "action "和 "method "的本地表单时(例如，当使用Quasar和ASP.NET控制器时)，你需要在QInput上指定 "name "属性，否则formData将不包含它(如果它应该包含)。
+当处理一个有 "action "和 "method "的本地表单时(例如，当使用 Quasar 和ASP.NET控制器时)，你需要在QInput上指定 "name "属性，否则formData将不包含它(如果它应该包含)。
 
 <doc-example title="本地表单" file="QInput/NativeForm" />

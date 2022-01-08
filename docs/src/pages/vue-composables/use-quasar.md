@@ -1,5 +1,5 @@
 ---
-title: 使用Quasar的可组合性
+title: 使用 Quasar 的可组合性
 desc: 什么是useQuasar()的可组合性以及如何使用它
 keys: useQuasar
 related:
@@ -41,7 +41,7 @@ export default {
     // 显示一个方法的示例，但
     // 可以是Vue脚本的任何部分
     function show () {
-      // 打印出Quasar的版本
+      // 打印出 Quasar 的版本
       console.log($q.version)
     }
 

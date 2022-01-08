@@ -1,12 +1,12 @@
 ---
 title: 颜色利用
-desc: 一组Quasar方法，用于改变应用程序的品牌颜色和操作颜色字符串。
+desc: 一组 Quasar 方法，用于改变应用程序的品牌颜色和操作颜色字符串。
 keys: rgbToHex,rgbToHsv,hexToRgb,textToRgb,hsvToRgb,lighten,luminosity,brightness,blend,changeAlpha,getPaletteColor
 related:
   - style/color-palette
 ---
 
-Quasar提供了一套有用的函数，可以在大多数使用情况下轻松地操作颜色，而不需要集成专用库的高额额外费用。
+ Quasar 提供了一套有用的函数，可以在大多数使用情况下轻松地操作颜色，而不需要集成专用库的高额额外费用。
 
 ::: tip
 关于UMD构建的用法，见[here](/start/umd#quasar-global-object)。

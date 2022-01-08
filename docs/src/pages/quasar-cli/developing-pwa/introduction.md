@@ -1,10 +1,10 @@
 ---
-title: 什么是PWA
-desc: 介绍什么是渐进式网络应用程序，以及如何在Quasar应用程序中配置它。
+title: 什么是 PWA
+desc: 介绍什么是渐进式网络应用程序，以及如何在 Quasar 应用程序中配置它。
 ---
 渐进式网络应用程序(PWA)是一种网络应用程序，它使用现代网络功能，向用户提供类似应用的体验。这些应用程序满足一定的要求(见下文)，被部署到网络服务器，并通过URL(在HTTPS协议上)访问。
 
-这可以和Cordova一起工作，为你的所有用户提供一个多个部署目标。Quasar CLI允许你将你的应用程序部署成PWA以及移动应用程序，并利用这两个渠道。
+这可以和 Cordova 一起工作，为你的所有用户提供一个多个部署目标。 Quasar CLI 允许你将你的应用程序部署成PWA以及移动应用程序，并利用这两个渠道。
 
 ## 需要什么
 要被认为是渐进式网络应用程序，你的应用程序必须是。
@@ -20,14 +20,14 @@ desc: 介绍什么是渐进式网络应用程序，以及如何在Quasar应用�
 * 可安装 - 允许用户将他们认为最有用的应用程序 "保留 "在他们的主屏幕上，而不需要应用商店的麻烦。
 * 可链接 - 通过URL轻松分享，不需要复杂的安装。
 
-更多信息可参见Addy Osmani的[关于PWA的文章](https://addyosmani.com/blog/getting-started-with-progressive-web-apps/)。
+更多信息可参见 Addy Osmani 的[关于PWA的文章](https://addyosmani.com/blog/getting-started-with-progressive-web-apps/) 。
 
 ## 宣言文件
-应用程序清单文件描述了你的应用程序需要的资源。这包括你的应用程序的显示名称、图标以及启动画面。Quasar CLI为你配置这些，但你可以在`/quasar.conf.js`中覆盖任何属性。通过访问[配置PWA](/quasar-cli/developing-pwa/configuring-pwa)文档页面了解如何配置。
+应用程序清单文件描述了你的应用程序需要的资源。这包括你的应用程序的显示名称、图标以及启动画面。 Quasar CLI 为你配置这些，但你可以在`/quasar.conf.js`中覆盖任何属性。通过访问[配置PWA](/quasar-cli/developing-pwa/configuring-pwa) 文档页面了解如何配置。
 
-更多信息。[manifest文件](https://developer.mozilla.org/en-US/docs/Web/Manifest)。
+更多信息：[manifest文件](https://developer.mozilla.org/en-US/docs/Web/Manifest) 。
 
-## 服务工作器
+## 服务工作者
 服务工作者提供了一种程序化的方式来缓存应用资源(文件)。编程式API允许开发者决定如何处理缓存，并提供比其他选项更灵活的体验。
 
 更多信息。[Service Worker API](https://developer.mozilla.org/en-US/docs/Web/API/Service_Worker_API)。

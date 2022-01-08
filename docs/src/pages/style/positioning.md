@@ -1,12 +1,12 @@
 ---
 title: CSS定位类
-desc: 由Quasar提供的CSS类的列表，以简化DOM元素的定位。
+desc: 由 Quasar 提供的CSS类的列表，以简化DOM元素的定位。
 related:
   - /style/typography
   - /style/visibility
   - /style/spacing
 ---
-Quasar提供了一些CSS类来帮助你轻松定位DOM元素。
+ Quasar 提供了一些CSS类来帮助你轻松定位DOM元素。
 
 | 类的名称 | 说明 |
 | --- | --- |
@@ -35,7 +35,7 @@ Quasar提供了一些CSS类来帮助你轻松定位DOM元素。
 | `on-right` | 设置左边的小边距；常用于有其他兄弟姐妹的图标元素。
 
 ::: tip
-我们建议你阅读Quasar网格系统，而不是使用`float-left`或`float-right`。
+我们建议你阅读 Quasar 网格系统，而不是使用`float-left`或`float-right`。
 :::
 
 垂直排列。

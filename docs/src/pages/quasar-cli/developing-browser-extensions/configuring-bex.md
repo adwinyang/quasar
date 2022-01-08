@@ -1,6 +1,6 @@
 ---
 title: 配置BEX
-desc: 如何用Quasar CLI管理您的浏览器扩展。
+desc: 如何用 Quasar CLI 管理您的浏览器扩展。
 ---
 
 在配置任何东西之前，我们需要了解BEX是如何结构的。一个BEX可以是以下的一个(或多个)。
@@ -9,9 +9,9 @@ desc: 如何用Quasar CLI管理您的浏览器扩展。
 2. 在[开发工具](https://developer.chrome.com/extensions/devtools) 窗口中运行。
 3. 在[弹出](https://developer.chrome.com/extensions/user_interface#popup) 窗口中运行。
 4. 以[选项](https://developer.chrome.com/extensions/options) 窗口运行。
-5. 5.在网页的背景下运行(注入网站)。
+5. 在网页的背景下运行(注入网站)。
 
-您不需要为上述每一种BEX类型开发新的Quasar应用程序，因为一个Quasar应用程序可以在上述**的所有实例中运行。你可以在[类型部分](/quasar-cli/developing-browser-extensions/types-of-bex)中了解更多信息。
+您不需要为上述每一种BEX类型开发新的 Quasar 应用程序，因为一个 Quasar 应用程序可以在上述**的所有实例中运行。你可以在[类型部分](/quasar-cli/developing-browser-extensions/types-of-bex)中了解更多信息。
 
 ## Manifest.json
 
@@ -38,7 +38,7 @@ desc: 如何用Quasar CLI管理您的浏览器扩展。
 
 ## CSS
 
-任何你想提供给你的网页(而不是你的Quasar应用程序)的样式都应该包含在`src-bex/css/content-css.css`中，因为这个文件会自动注入`manifest.json`文件。
+任何你想提供给你的网页(而不是你的 Quasar 应用程序)的样式都应该包含在`src-bex/css/content-css.css`中，因为这个文件会自动注入`manifest.json`文件。
 
 ::: warning
 这必须是本地CSS，因为它没有通过Sass进行预处理。

@@ -5,7 +5,7 @@ keys: QScrollObserver
 related:
   - /vue-components/resize-observer
 ---
-QScrollObserver是一个Quasar组件，每当用户滚动页面或溢出的容器上应用了`.scroll`CSS类时，就会发出`scroll`事件。
+QScrollObserver是一个 Quasar 组件，每当用户滚动页面或溢出的容器上应用了`.scroll`CSS类时，就会发出`scroll`事件。
 
 ## QScrollObserver API
 
@@ -17,7 +17,7 @@ QScrollObserver是一个Quasar组件，每当用户滚动页面或溢出的容�
 <doc-example title="基本" file="QScrollObserver/Basic" /> ##使用方法
 
 ## 确定滚动容器
-Quasar中的所有组件或指令都有一个简单的算法来确定支持滚动的容器。
+ Quasar 中的所有组件或指令都有一个简单的算法来确定支持滚动的容器。
 - 如果组件上有一个 "scroll-target "属性，那么它就会尝试使用它作为滚动容器。
 - 然后搜索一个父DOM元素，该元素上有`scroll`、`scroll-y`或`overflow-auto` Quasar CSS辅助类。
 - 如果没有找到，那么它就认为滚动是在文档本身发生的。

@@ -1,6 +1,6 @@
 ---
 title: useFormChild可组成
-desc: 什么是Quasar的useFormChild()可组合性，以及如何使用它
+desc: 什么是 Quasar 的useFormChild()可组合性，以及如何使用它
 keys: useFormChild
 related:
   - /vue-components/form

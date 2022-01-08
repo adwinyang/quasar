@@ -82,7 +82,7 @@ import { Quasar } from 'quasar'
 import iconSet from 'quasar/icon-set/fontawesome-v5'
 import '@quasar/extras/fontawesome-v5/fontawesome-v5.css'
 // ...
-app.use(Quasar, {
+app.use( Quasar , {
   // ...,
   iconSet: iconSet
 })
@@ -96,7 +96,7 @@ import iconSet from 'quasar/icon-set/fontawesome-v5'
 // ...
 import { Quasar } from 'quasar'
 // ...
-app.use(Quasar, {
+app.use( Quasar , {
   // ...,
   iconSet: iconSet
 })

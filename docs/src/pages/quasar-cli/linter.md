@@ -1,10 +1,10 @@
 ---
 title: ESLint
-desc: 如何在Quasar应用程序中配置一个代码转换器。
+desc: 如何在 Quasar 应用程序中配置一个代码转换器。
 ---
 强烈推荐使用代码衬垫器(如[ESLint](https://eslint.org/))，它可以确保你的代码看起来清晰可读。它还可以帮助你在运行代码之前捕获一些错误。
 
-当你用Quasar CLI创建一个Quasar项目文件夹时，它会问你是否需要一个linter，以及你想为ESLint做什么设置。
+当你用 Quasar CLI 创建一个 Quasar 项目文件夹时，它会问你是否需要一个linter，以及你想为ESLint做什么设置。
 
 * [标准](https://github.com/standard/standard)
 * [Airbnb](https://github.com/airbnb/javascript)

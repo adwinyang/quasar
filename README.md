@@ -13,7 +13,7 @@
 请通过您的网站/应用程序/Quasar教程/视频等向 https://github.com/quasarframework/quasar-awesome 提交PR，谢谢！
 
 ## 支持 Quasar
-Quasar框架是一个 MIT 许可的开源项目。它的持续发展得益于这些令人尊敬的[支持者](https://github.com/rstoenescu/quasar-framework/blob/dev/backers.md)的支持
+ Quasar 框架是一个 MIT 许可的开源项目。它的持续发展得益于这些令人尊敬的[支持者](https://github.com/rstoenescu/quasar-framework/blob/dev/backers.md)的支持
 
 **请阅读我们关于 [为什么捐款很重要](https://quasar.dev/why-donate)**。如果你想成为一名捐赠者，请查看 [Quasar 框架的捐赠活动](https://donate.quasar.dev).
 
@@ -135,10 +135,10 @@ Quasar框架是一个 MIT 许可的开源项目。它的持续发展得益于这
 
 在提出请求之前，请务必阅读 [贡献指南](./CONTRIBUTING.md)。如果您有与 Quasar 相关的项目/组件/工具，请将其与 pull 请求一起添加到 [策划的列表](https://github.com/quasarframework/quasar-awesome)！  
 
-感谢所有已经[为Quasar作出贡献]的人(https://github.com/quasarframework/quasar/graphs/contributors)!
+感谢所有已经[为 Quasar 作出贡献]的人(https://github.com/quasarframework/quasar/graphs/contributors)!
 
 ## 语义
-Quasar遵循[Semantic Versioning 2.0](https://semver.org/)。
+ Quasar 遵循[Semantic Versioning 2.0](https://semver.org/)。
 
 ## 许可证
 

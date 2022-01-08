@@ -1,14 +1,14 @@
 ---
 title: 部署SSR
-desc: 如何发布Quasar服务器端渲染的应用程序。
+desc: 如何发布 Quasar 服务器端渲染的应用程序。
 ---
-当作为SPA或PWA进行部署时，由Quasar CLI生成的distributables文件夹可以由静态Web服务器提供。然而，在SSR(服务器端渲染)构建中，情况就不是这样了。在这种情况下，你的distributables也包含你的生产网络服务器--可以从`/src-ssr`中进行调整。
+当作为SPA或PWA进行部署时，由 Quasar CLI 生成的distributables文件夹可以由静态Web服务器提供。然而，在SSR(服务器端渲染)构建中，情况就不是这样了。在这种情况下，你的 distributables 也包含你的生产网络服务器--可以从`/src-ssr`中进行调整。
 
-默认情况下，SSR可分发文件使用[Express](https://expressjs.com/)，但你可以用你选择的webserver来替换它。
+默认情况下，SSR可分发文件使用[Express](https://expressjs.com/) ，但你可以用你选择的webserver来替换它。
 
 ## Serverless <q-badge align="top" color="brand-primary" label="@quasar/app v3.2+" />
 
-如果你要部署到无服务器服务，那么请阅读[SSR Production Export](/quasar-cli/developing-ssr/ssr-production-export)关于如何准备的内容。
+如果你要部署到无服务器服务，那么请阅读[SSR Production Export](/quasar-cli/developing-ssr/ssr-production-export) 关于如何准备的内容。
 
 ## 分布式文件夹
 在SSR模式下构建你的应用程序(`$ quasar build -m ssr`)后，生成的文件夹包含了一个独立的webserver，并为SSR服务进行了调整。
@@ -28,7 +28,7 @@ desc: 如何发布Quasar服务器端渲染的应用程序。
 :::
 
 ## 增强性能
-默认情况下，Webserver只运行在服务器的一个可用内核上。你可以做的是让它使用所有内核。这方面有一个解决方案。[PM2](http://pm2.keymetrics.io/)。
+默认情况下，Webserver只运行在服务器的一个可用内核上。你可以做的是让它使用所有内核。这方面有一个解决方案。[PM2](http://pm2.keymetrics.io/) 。
 
 在你的服务器上安装PM2后，你的npm启动脚本可以改成这样。
 ```js
@@ -37,8 +37,8 @@ desc: 如何发布Quasar服务器端渲染的应用程序。
 }
 ```
 
-## 使用Cleavr进行部署
-你可以使用[Cleavr](https://cleavr.io)将Quasar SSR应用程序部署到几个流行的VPS供应商。Cleavr会自动为你的应用程序设置启用集群模式的PM2。
+## 使用 Cleavr 进行部署
+你可以使用[Cleavr](https://cleavr.io) 将Quasar SSR应用程序部署到几个流行的VPS供应商。Cleavr 会自动为你的应用程序设置启用集群模式的PM2。
 
 在Cleavr中添加一个新的**NodeJS SSR**站点，然后用以下方式配置网络应用程序设置。
 

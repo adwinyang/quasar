@@ -1,6 +1,6 @@
 ---
 title: 处理Webpack
-desc: 如何在Quasar应用程序中管理Webpack。
+desc: 如何在 Quasar 应用程序中管理Webpack。
 related:
   - /quasar-cli/quasar-conf-js
 ---
@@ -25,7 +25,7 @@ build: {
 }
 ```
 
-注意，你不需要返回任何东西。extendWebpack(cfg)的参数是由Quasar为你生成的Webpack配置对象。你可以在其中添加/删除/替换任何东西，前提是你真的知道自己在做什么。
+注意，你不需要返回任何东西。extendWebpack(cfg)的参数是由 Quasar 为你生成的Webpack配置对象。你可以在其中添加/删除/替换任何东西，前提是你真的知道自己在做什么。
 
 相当于chainWebpack()的quasar.conf。
 
@@ -56,49 +56,49 @@ build: {
 :::
 
 ## 检查Webpack配置
-Quasar CLI为此提供了一个有用的命令。
+ Quasar CLI 为此提供了一个有用的命令。
 
 ```bash
 $ quasar inspect -h
 
-  Description
-    Inspect Quasar generated Webpack config
+  描述
+    检查 Quasar 生成的 Webpack 配置
 
-  Usage
+  用法
     $ quasar inspect
     $ quasar inspect -c build
     $ quasar inspect -m electron -p 'module.rules'
 
-  Options
-    --cmd, -c        Quasar command [dev|build] (default: dev)
-    --mode, -m       App mode [spa|ssr|pwa|cordova|electron] (default: spa)
-    --depth, -d      Number of levels deep (default: 5)
-    --path, -p       Path of config in dot notation
-                        Examples:
-                          -p module.rules
-                          -p plugins
-    --help, -h       Displays this message
+  选项
+    --cmd, -c     Quasar 命令 [dev|build]（默认值：dev）
+    --mode, -m    应用模式 [spa|ssr|pwa|cordova|electron]（默认：spa）
+    --depth, -d   深度级别数（默认值：5）
+    --path, -p    点符号中的配置路径
+                  例子：
+                    -p 模块.规则
+                    -p 插件
+    --help, -h 显示此消息
 ```
 
 ## Webpack别名
-Quasar预设了一堆有用的Webpack别名。你可以在项目的任何地方使用它们，webpack会解析出正确的路径。
+ Quasar 预设了一堆有用的Webpack别名。你可以在项目的任何地方使用它们，webpack会解析出正确的路径。
 
 | 别名 | 解析为 |
-| `src` | /src
-| `app` | / / |
-| `components` | /src/components !
-| `layouts` | /src/layouts !
-| `pages` | /src/pages
+| --- | --- |
+| `src` | /src |
+| `app` | /  |
+| `components` | /src/components |
+| `layouts` | /src/layouts |
+| `pages` | /src/pages |
 | `资产` | /src/assets |
-| `boot` | /src/boot !
+| `boot` | /src/boot |
+
 此外，如果你配置为使用Vue编译器版本进行构建(quasar.conf > build > vueCompiler: true)，`vue$`会解析为`vue/dist/vue.esm.js`。
 
 ### 添加Webpack别名
 
 要添加你自己的别名，你可以扩展webpack配置，并将其与现有的别名合并。
-
 使用`path.resolve`帮助器来解析你想要的别名的路径。
-
 
 ```js
 // quasar.conf.js
@@ -140,7 +140,7 @@ module.exports = function (ctx) {
 
 ## Webpack v5的兼容性问题
 
-Quasar App CLI使用的是Webpack v5。如果你将现有项目从Webpack v4项目转移到Quasar，你可能会遇到一些与第三方库的兼容性问题。Webpack v5删除了用于网络客户端构建的Node.js polyfills。如果你在Web客户端上使用依赖Node.js API的包，你会得到一些包丢失的错误提示。例如：缓冲区"、"加密"、"os"、"path"、"stream"、"assert"。
+Quasar App CLI使用的是Webpack v5。如果你将现有项目从Webpack v4项目转移到 Quasar ，你可能会遇到一些与第三方库的兼容性问题。Webpack v5删除了用于网络客户端构建的Node.js polyfills。如果你在Web客户端上使用依赖Node.js API的包，你会得到一些包丢失的错误提示。例如：缓冲区"、"加密"、"os"、"path"、"stream"、"assert"。
 
 这些问题需要由软件包的所有者来解决。但是如果你不想等待，只想运行你的应用程序/网站(有一点风险)，那么你可以手动安装`node-polyfill-webpack-plugin`(`yarn add --dev node-polyfill-webpack-plugin`)并在`quasar.conf.js > build > chainWebpack`中引用它。例如：
 
@@ -158,9 +158,9 @@ build: {
 构建系统使用Webpack，所以它依赖于使用Webpack加载器来处理不同类型的文件(js、css、styl、scss、json等等)。默认情况下，最常用的加载器是默认提供的。
 
 ### 安装加载器
-让我们举个示例。你希望能够导入`.json`文件。**开箱即用，Quasar提供了对json的支持，所以你实际上不需要遵循这些步骤，但是为了演示如何添加一个加载器，我们将假装Quasar没有提供它。
+让我们举个示例。你希望能够导入`.json`文件。**开箱即用，Quasar提供了对json的支持，所以你实际上不需要遵循这些步骤，但是为了演示如何添加一个加载器，我们将假装 Quasar 没有提供它。
 
-所以，你需要一个加载器。你在谷歌上搜索，看看你需要什么webpack加载器。在这种情况下，它是 "json-loader"。我们首先安装它。
+所以，你需要一个加载器。你在 Google 上搜索，看看你需要什么webpack加载器。在这种情况下，它是 "json-loader"。我们首先安装它。
 
 ```bash
 $ yarn add --dev json-loader

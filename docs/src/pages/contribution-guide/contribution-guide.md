@@ -18,7 +18,7 @@ desc: 如何为 Quasar 框架做出贡献。
 * 如何创建 Quasar App Extension。
 * 如何贡献 Quasar 代码 代码。
 
-Quasar不是“别人的框架”。许多人为 Quasar 作出了贡献，从单个角色到大规模的架构变化或重大文件 -- 所有这些都是为了让Quasar更好地为服务于每个人。即使您还不能胜任编写代码或文档，您也可以通过各种方式做出贡献，在报告问题到测试修补程序。
+ Quasar 不是“别人的框架”。许多人为 Quasar 作出了贡献，从单个角色到大规模的架构变化或重大文件 -- 所有这些都是为了让 Quasar 更好地为服务于每个人。即使您还不能胜任编写代码或文档，您也可以通过各种方式做出贡献，在报告问题到测试修补程序。
 
 ## 帮助支持
 
@@ -26,15 +26,15 @@ Quasar不是“别人的框架”。许多人为 Quasar 作出了贡献，从单
 
 以下是我们的讨论/问答场所：
 
-* [论坛](https://forum.quasar.dev/)：提出问题的最佳地点并获得关于Quasar及其生态系统的答案。
+* [论坛](https://forum.quasar.dev/)：提出问题的最佳地点并获得关于 Quasar 及其生态系统的答案。
 * [聊天](https://chat.quasar.dev/)：Quasar Devs 满足实时聊天的地方。
 
 ## 分享(并构建)您的体验
 
 除了在论坛和聊天中的回答问题和共享资源外，还有其他一些不太明显的方式分享和扩展你所知道的东西：
 
-* **开发学习资料**。经常说，学习的最佳方式是教。如果您有一些有趣的东西，您可以通过Quasar进行，通过撰写博客文章，开发研讨会，甚至发布您在社交媒体上分享的GIST来加强您的专业知识。
-* **分享您的技术堆栈**。展示其他技术经过良好的技术，可以与按Quasar集成。推广您的项目和[填写您最喜欢的基于准堆栈](https://stackshare.io/tool/quasar-framework/decisions)。请务必提及@quasarframework和所有其他相关技术。
+* **开发学习资料**。经常说，学习的最佳方式是教。如果您有一些有趣的东西，您可以通过 Quasar 进行，通过撰写博客文章，开发研讨会，甚至发布您在社交媒体上分享的GIST来加强您的专业知识。
+* **分享您的技术堆栈**。展示其他技术经过良好的技术，可以与按 Quasar 集成。推广您的项目和[填写您最喜欢的基于准堆栈](https://stackshare.io/tool/quasar-framework/decisions)。请务必提及@quasarframework和所有其他相关技术。
 * **观看您关心的回购**。这将在该存储库中的活动时发送通知，为您提供关于正在进行的讨论和即将到来的功能的内幕知识。这是建立专业知识的绝佳方式，以便您最终能够帮助解决问题和拉拔请求。
 
 ## 报告一个问题
@@ -45,7 +45,7 @@ Quasar不是“别人的框架”。许多人为 Quasar 作出了贡献，从单
 请不要将安全漏洞公布在 github 问题列表中。 请遵循安全问题的[报告漏洞步骤](/security/report-a-vulnerability)。
 :::
 
-如果您在Quasar中发现了一个不存在安全风险的问题，请在GitHub上的[Issues]下搜索(https://github.com/quasarframework/quasar/issues)检查它是否已在开发分支(`dev`)中得到响应或修复。
+如果您在 Quasar 中发现了一个不存在安全风险的问题，请在GitHub上的[Issues]下搜索(https://github.com/quasarframework/quasar/issues)检查它是否已在开发分支(`dev`)中得到响应或修复。
 
 - [主存储库](https://github.com/quasarframework/quasar)的问题列表是 **专用** 用于错误报告和功能请求。。不符合要求的问题将立即关闭。
 
@@ -53,7 +53,7 @@ Quasar不是“别人的框架”。许多人为 Quasar 作出了贡献，从单
 
   - 对于更复杂的问题，您可以使用[官方论坛](https://forum.quasar-framework.org/category/11/help)。询问您的问题时，请务必提供足够的信息 -- 这使得其他人可以更轻松地帮助您！
 
-- 检查问题是否与最新稳定版的Quasar版本可重复。如果您使用的是预发布，请说明您使用的特定版本。
+- 检查问题是否与最新稳定版的 Quasar 版本可重复。如果您使用的是预发布，请说明您使用的特定版本。
 
 - 所需**您清楚地描述了重现您运行的问题所需的步骤。虽然我们很乐意尽可能地帮助我们的用户，但诊断没有明确的再生步骤的问题是非常耗时的，并且根本不可持续。
 
@@ -81,7 +81,7 @@ Quasar不是“别人的框架”。许多人为 Quasar 作出了贡献，从单
 
 #### 测试补丁
 
-您还可以通过审查通过Github提交给Quasar的拉出请求来帮助解决。要应用某人的更改，您需要首先创建一个专用分支：
+您还可以通过审查通过Github提交给 Quasar 的拉出请求来帮助解决。要应用某人的更改，您需要首先创建一个专用分支：
 ```bash
 $ git checkout -b testing_branch
 ```
@@ -205,17 +205,17 @@ $ git merge upstream/dev
 
 ## 写下你的故事
 
-我们一直在寻找伟大的笔记本，即如何使用Quasar或者您与Quasar的伟大经历。如果您编写文章，我们将在我们的中型出版渠道上发布它，我们还将确保您的文章引起了我们的社交媒体存在的关注。如果您有兴趣，请联系博客(at)quasar.dev。我们很乐意听取您的意见！
+我们一直在寻找伟大的笔记本，即如何使用 Quasar 或者您与 Quasar 的伟大经历。如果您编写文章，我们将在我们的中型出版渠道上发布它，我们还将确保您的文章引起了我们的社交媒体存在的关注。如果您有兴趣，请联系博客(at)quasar.dev。我们很乐意听取您的意见！
 
-## 创建新的Quasar应用程序扩展
+## 创建新的 Quasar 应用程序扩展
 
-开始为准贡献的简单方法是概括您在项目上创建的代码，并将其发布为Quasar应用程序扩展名。遵循本指南有关如何[创建新的扩展](/ app-extensions / develop deward /介绍)。
+开始为准贡献的简单方法是概括您在项目上创建的代码，并将其发布为 Quasar 应用程序扩展名。遵循本指南有关如何[创建新的扩展](/ app-extensions / develop deward /介绍)。
 
 完成后，提交[Quasar Awesome](https://github.com/quasarframework/quasar-awesome/blob/master/readme.md#community-app-extensions)，通过[Quasar Forum]共享您的成就( https://forum.quasar-framework.org/category/15/v1-app-extensions)。
 
 ## 为Quasar UI源代码贡献
 
-与任何项目一样，有贡献的规则。我们在这里写的，请仔细阅读。之后，阅读[Quasar行为准则](https://github.com/quasarframework/quasar/blob/dev/.github/code_of_conemon.md)，您将准备好为Quasar的核心存储库做出贡献。
+与任何项目一样，有贡献的规则。我们在这里写的，请仔细阅读。之后，阅读[Quasar行为准则](https://github.com/quasarframework/quasar/blob/dev/.github/code_of_conemon.md)，您将准备好为 Quasar 的核心存储库做出贡献。
 
 文章[查看源代码](https://medium.com/quasar-framework/wip-look-at-the-source-code-please-1b905ea4906)将帮助您熟悉标准代码库。
 
@@ -248,7 +248,7 @@ $ yarn # or: npm install
 #### 常用的NPM脚本
 
 ```bash
-# 用一个演示应用程序启动开发服务器。这个应用直接链接了Quasar的源代码，所以任何改变都会在开发服务器上触发HMR(Hot Module Reload)。
+# 用一个演示应用程序启动开发服务器。这个应用直接链接了 Quasar 的源代码，所以任何改变都会在开发服务器上触发HMR(Hot Module Reload)。
 # 每个功能都有一个部分，在那里进行测试。
 $ yarn dev # or: npm run dev
 
@@ -271,11 +271,11 @@ $ yarn lint # or: npm run lint
 
   - `components` - JS，SASS和JSON(API)文件用于准vue组件
 
-  - `composables` - “Quasar的兼容”组成API
+  - `composables` - “ Quasar 的兼容”组成API
 
-  - `directives` - “Quasar提供的Vue指令
+  - `directives` - “ Quasar 提供的Vue指令
 
-  - `plugins` - “Quasar插件”
+  - `plugins` - “ Quasar 插件”
 
   - `CSS` - 标准主题的SASS定义和核心代码
 
@@ -291,7 +291,7 @@ $ yarn lint # or: npm run lint
 
 #### Quasar(/ui) 的 dev服务器
 
-运行`yarn dev`(或`npm run dev`)会启动一个使用HMR(Hot Module Reload)作为Quasar源代码的开发服务器。您可以通过对 `/dev` `*.vue` 文件进行必要的更改来轻松测试您的更改。
+运行`yarn dev`(或`npm run dev`)会启动一个使用HMR(Hot Module Reload)作为 Quasar 源代码的开发服务器。您可以通过对 `/dev` `*.vue` 文件进行必要的更改来轻松测试您的更改。
 
 ## Quasar 贡献者
 

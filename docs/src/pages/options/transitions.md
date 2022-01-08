@@ -5,7 +5,7 @@ components:
   - transitions/TransitionList
 ---
 
-有一些Quasar组件通过`transition-show`/`transition-hide`或`transition-prev`/`transition-next`或简单的`transition`属性提到了过渡的问题。我们将在这里展示这些过渡。
+有一些 Quasar 组件通过`transition-show`/`transition-hide`或`transition-prev`/`transition-next`或简单的`transition`属性提到了过渡的问题。我们将在这里展示这些过渡。
 
 <transition-list />
 

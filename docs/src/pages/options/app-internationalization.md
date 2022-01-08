@@ -1,6 +1,6 @@
 ---
 title: 应用程序国际化(i18n)
-desc: 如何在Quasar应用程序中使用 vue-i18n。
+desc: 如何在 Quasar 应用程序中使用 vue-i18n。
 related:
   - /options/rtl-support
   - /options/quasar-language-packs
@@ -13,7 +13,7 @@ related:
 :::
 
 ::: warning
-Quasar文档假定你已经熟悉了[vue-i18n](https://github.com/intlify/vue-i18n-next) 。下面我们只描述了如何在Quasar CLI项目中使用它的基本情况。对于其功能的完整列表，请访问 [Vue I18n documentation](https://vue-i18n.intlify.dev) 。
+ Quasar 文档假定你已经熟悉了[vue-i18n](https://github.com/intlify/vue-i18n-next) 。下面我们只描述了如何在 Quasar CLI 项目中使用它的基本情况。对于其功能的完整列表，请访问 [Vue I18n documentation](https://vue-i18n.intlify.dev) 。
 :::
 
 ## 手动设置
@@ -66,7 +66,7 @@ return {
 
 ## 在你的SFC中设置翻译块
 
-如果我们想在Quasar CLI项目中的SFC(单一文件组件)内添加对`<i18n>`标签的支持，那么我们需要修改现有的配置。
+如果我们想在 Quasar CLI 项目中的SFC(单一文件组件)内添加对`<i18n>`标签的支持，那么我们需要修改现有的配置。
 
 我们首先安装`@intlify/vue-i18n-loader`包。
 
@@ -198,7 +198,7 @@ QBtn组件会使用CSS的`text-transform: uppercase`规则来自动将其标签�
 2. 在你的标签中使用 `no-caps` 属性，并使用 `$q.lang.getLocale()` 检测到的语言环境，用[toLocaleUpperCase](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/toLocaleUpperCase) 重写该字符串。
 
 ## 检测语言环境
-还有一种确定用户地域的开箱即用的方法，由Quasar提供：
+还有一种确定用户地域的开箱即用的方法，由 Quasar 提供：
 
 ```js
 // 在Vue文件之外
@@ -215,5 +215,5 @@ setup () {
 ```
 
 ::: warning
-如果你使用Quasar的设置方法(`$q.lang.set()`)，这将不会反映在上面的 Quasar 的 getLocale 中。原因是`getLocale()`将总是返回*用户*的语言环境设置(基于浏览器的设置)。`set()`方法是指Quasars内部的设置，用来决定使用哪种语言文件。如果你想看看`set()`设置的语言环境，可以使用`$q.lang.isoName`。
+如果你使用 Quasar 的设置方法(`$q.lang.set()`)，这将不会反映在上面的 Quasar 的 getLocale 中。原因是`getLocale()`将总是返回*用户*的语言环境设置(基于浏览器的设置)。`set()`方法是指 Quasar s内部的设置，用来决定使用哪种语言文件。如果你想看看`set()`设置的语言环境，可以使用`$q.lang.isoName`。
 :::

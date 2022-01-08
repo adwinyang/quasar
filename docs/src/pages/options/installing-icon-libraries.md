@@ -1,6 +1,6 @@
 ---
 title: 安装图标库
-desc: 如何在Quasar应用程序中使用图标库。
+desc: 如何在 Quasar 应用程序中使用图标库。
 related:
   - /options/quasar-icon-sets
   - /vue-components/icon
@@ -79,7 +79,7 @@ $ quasar new boot fontawesome-pro [--format ts] 。
     // 'fontawesome' // 禁用免费版本!
   ],
   framework: {
-    // 如果你想让Quasar的图标使用Fontawesome的话
+    // 如果你想让 Quasar 的图标使用Fontawesome的话
     iconSet: 'fontawesome-v5-pro'.
   }
 ```

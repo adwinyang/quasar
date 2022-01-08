@@ -44,6 +44,6 @@ QKnob组件用于通过鼠标/触摸平移从用户那里获取数字输入。�
 
 ### 本地表单提交
 
-当处理一个有 "action "和 "method "的本地表单时(例如，当使用Quasar和ASP.NET控制器时)，你需要在QKnob上指定 "name "属性，否则formData将不包含它(如果它应该包含)。
+当处理一个有 "action "和 "method "的本地表单时(例如，当使用 Quasar 和ASP.NET控制器时)，你需要在QKnob上指定 "name "属性，否则formData将不包含它(如果它应该包含)。
 
 <doc-example title="本地表单" file="QKnob/NativeForm" />

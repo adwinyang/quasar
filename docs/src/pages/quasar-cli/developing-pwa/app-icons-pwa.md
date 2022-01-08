@@ -13,13 +13,13 @@ desc: 如何管理Quasar Progressive Web App的应用图标。
 我们强烈建议使用[Icon Genie CLI](/icongenie/introduction)，因为它可以使用一个源图标，并自动克隆、缩放、最小化，并为你把图标放到适当的目录中。需要时，它还会告诉你需要在你的/src/index.template.html文件中添加哪些标签。
 :::
 
-用Icon Genie CLI快速启动必要的图像。有关完整的选项清单，请访问[Icon Genie CLI](/icongenie/command-list)命令清单页面。
+用Icon Genie CLI快速启动必要的图像。有关完整的选项清单，请访问 [Icon Genie CLI](/icongenie/command-list) 命令清单页面。
 
 ```bash
 $ icongenie generate -m pwa -i /path/to/source/icon.png [-b /path/to/background.png]
 ```
 
-## ##手册说明
+## 手册说明
 
 ```
 public/
@@ -52,7 +52,7 @@ public/
       apple-launch-2048x2732.png
 ```
 
-进入`/src/index.template.html`所需的HTML代码，以引用上述文件(注意不是所有文件都需要手动引用，因为Quasar CLI自动注入其他PWA文件)。
+进入`/src/index.template.html`所需的HTML代码，以引用上述文件(注意不是所有文件都需要手动引用，因为 Quasar CLI 自动注入其他PWA文件)。
 
 ```html
 <link rel="icon" type="image/ico" href="icons/favicon.ico">

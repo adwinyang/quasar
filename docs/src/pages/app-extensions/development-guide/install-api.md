@@ -83,7 +83,7 @@ if (api.hasPackage('quasar', '^1.0.0')) {
 ```
 
 ## api.hasExtension
-检查另一个应用扩展是否已安装npm，并且Quasar CLI已调用它。
+检查另一个应用扩展是否已安装npm，并且 Quasar CLI 已调用它。
 
 ```js
 /**

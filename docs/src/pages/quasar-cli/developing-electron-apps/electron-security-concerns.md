@@ -1,6 +1,6 @@
 ---
-title: 对电子安全的担忧
-desc: 关于Quasar桌面应用程序的安全性，你应该知道的事情。
+title: 对 Electron 安全的担忧
+desc: 关于 Quasar 桌面应用程序的安全性，你应该知道的事情。
 ---
 如果你在构建Electron应用程序时没有保持警惕，你可能会将你的应用程序的用户置于切实的数字危险之中。像XSS(跨站脚本)和远程代码执行这样的东西，实际上可以使攻击者深入访问你的应用程序中的数据--甚至可能是底层操作系统。
 
@@ -10,16 +10,16 @@ desc: 关于Quasar桌面应用程序的安全性，你应该知道的事情。
 在任何情况下，你都不应该加载和执行远程代码。相反，只使用本地文件(与你的应用程序一起打包)，在你的主线程和/或预加载脚本中执行Node.js代码。
 :::
 
-## 检查表。安全建议
-Electron团队自己提出了以下建议。
+## 检查表：安全建议
+Electron团队自己提出了以下建议：
 
 1.  确保你将`webPreferences`>`contextIsolation`设置为`true`。使用[preload script](/quasar-cli/developing-electron-apps/electron-preload-script)，只注入必须的API到渲染器线程。
 2.  如果你必须加载远程内容，并且无法绕过这一点，那么就使用[只加载安全内容](https://electronjs.org/docs/tutorial/security#1-only-load-secure-content)
 3.  [在所有加载远程内容的会话中使用`ses.setPermissionRequestHandler()`](https://electronjs.org/docs/tutorial/security#4-handle-session-permission-requests-from-remote-content)
-4.  4. [不要禁用`webSecurity`](https://electronjs.org/docs/tutorial/security#5-do-not-disable-websecurity)
+4.  [不要禁用`webSecurity`](https://electronjs.org/docs/tutorial/security#5-do-not-disable-websecurity)
 5.  [不要将`allowRunningInsecureContent`设置为`true`](https://electronjs.org/docs/tutorial/security#7-do-not-set-allowrunninginsecurecontent-to-true)
 6.  [不要启用实验性功能](https://electronjs.org/docs/tutorial/security#8-do-not-enable-experimental-features)
-7.  7. [不要使用`enableBlinkFeatures`](https://electronjs.org/docs/tutorial/security#9-do-not-use-enableblinkfeatures)
+7.  [不要使用`enableBlinkFeatures`](https://electronjs.org/docs/tutorial/security#9-do-not-use-enableblinkfeatures)
 8.  [`<webview>`: 不要使用`allowpopups`](https://electronjs.org/docs/tutorial/security#10-do-not-use-allowpopups)
 9.  [`<webview>`: 验证选项和参数](https://electronjs.org/docs/tutorial/security#11-verify-webview-options-before-creation)
 10.  [禁用或限制导航](https://electronjs.org/docs/tutorial/security#12-disable-or-limit-navigation)
@@ -46,7 +46,7 @@ Electron团队自己提出了以下建议。
 
 #### 在生产中禁用开发者工具
 
-你可能不想让那些穿着连帽衫的流氓在你的应用程序的控制台中执行这样的东西。
+你可能不想让那些穿着连帽衫的流氓在你的应用程序的控制台中执行这样的东西：
 
 ```js
 window.location='https://evilsite.com/looks-just-like-your-app'
@@ -65,26 +65,26 @@ $ shasum -a 256 myApp-v1.0.0_darwin-x64.dmg
 #### 签署构建
 虽然不是分享你的应用程序的硬性要求，但签署代码是一种最佳做法--而且MacOS和Windows商店都要求这样做。在这个[Electron官方教程]中阅读更多关于它的内容(https://electronjs.org/docs/tutorial/code-signing)。
 
-#### 使用SNYK
+#### 使用 SNYK
 [Snyk.io](https://snyk.io)是一个服务、CLI甚至GitHub集成机器人，它通过比较你的package.json中的依赖关系和它的受损模块列表来跟踪节点模块的漏洞。在许多情况下，他们的服务可以推荐最低更新版本，甚至提供他们自己已经打过补丁的模块。他们还进行研究和漏洞披露。如果你正在使用压缩文件(zip、tar等)，可以查看他们的[文章](https://snyk.io/research/zip-slip-vulnerability)和[受影响软件列表](https://github.com/snyk/zip-slip-vulnerability)。
 
 
 #### 对于那些真正的偏执狂
-为每个平台目标使用一个专门的物理桌面机器。如果你必须让这个设备保持在线，确保操作系统一直在更新，允许从互联网/蓝牙(尤其是shell/ssh)的零入站连接，并不断进行病毒和rootkit检查。
+为每个平台目标使用一个专门的物理桌面机器。如果你必须让这个设备保持在线，确保操作系统一直在更新，允许从互联网/蓝牙(尤其是shell/ssh)的零入站连接，并不断进行病毒和 rootkit 检查。
 
 只允许合并有GPG签名的提交，并要求至少有两个团队成员(没有做PR的人)审查和批准该提交。
 
 重新考虑你的node软件包管理系统。
-- 使用一个私有的npm注册表(如[JFrog](https://jfrog.com/))。
+- 使用一个私有的npm注册表(如[JFrog](https://jfrog.com/)) 。
 - 将你的包修正为已知的特定版本
-- 使用pnpm
+- 使用 pnpm
 - 审核每一个模块和它的依赖关系
 
 #### 付出被黑的代价
 某个聪明人可能已经黑掉了你的项目(或一个底层库)。如果你用这个应用程序赚钱，可以考虑获得一个[Hacker One](https://hackerone.com)账户，并不断进行赏金奖励。至少你能说服黑客遵守道德，不要把漏洞卖给你的竞争对手。
 
 #### 获得帮助
-你可能会感到不知所措，因为Electron的可怕之处带来了许多你从未想过的头痛问题。如果是这种情况，请考虑[联系](mailto:razvan.stoenescu@gmail.com)并获得专家的支持，由给你带来Quasar框架的经验丰富的开发团队对你的应用程序进行审查、审计和加固。
+你可能会感到不知所措，因为Electron的可怕之处带来了许多你从未想过的头痛问题。如果是这种情况，请考虑[联系](mailto:razvan.stoenescu@gmail.com)并获得专家的支持，由给你带来 Quasar 框架的经验丰富的开发团队对你的应用程序进行审查、审计和加固。
 
 <q-separator class="q-mt-xl" />
 

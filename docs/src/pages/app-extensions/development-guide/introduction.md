@@ -11,7 +11,7 @@ desc: 如何为 Quasar 应用扩展开发(App Extension Development)设置计算
 
 一个**应用扩展**是一个 npm 包。有两个用于创建**应用扩展**的官方工具包。官方的 "应用扩展" 入门工具包应用于创建不带 UI 的应用扩展，如组件或指令，
 除非目的是将第三方库安装到Vue中。第二个官方工具包是 "UI" 工具包。它有一个用于创建组件/指令的`ui`文件夹，一个 `ui/dev` Quasar应用程序
-用于单独测试你的组件/指令，还有一个`app-extension`文件夹用于创建应用程序扩展，通过 Quasar CLI 将你的组件/指令注入到Quasar应用程序。
+用于单独测试你的组件/指令，还有一个`app-extension`文件夹用于创建应用程序扩展，通过 Quasar CLI 将你的组件/指令注入到 Quasar 应用程序。
 UI工具包也可使你自定义的组件/指令 与 Quasar Vite 插件或 Vue CLI 或 UMD 一起使用。
 
 ```bash
@@ -85,12 +85,12 @@ $ quasar create my-ui --kit ui
 例如: 你正在创建一个依赖 "my-table" npm包的UI组件(假设的名字，仅作为示例)，那么你应该把 "my-table" 安装到你的App Extension文件夹中。
 
 :: 警告
-千万不要用 yarn/npm 安装由Quasar CLI提供的软件包，因为App Extensions不应该如此具有侵入性，强迫用户使用某个Quasar版本。相反，对这些包要使用 "api.compatibleWith()"，这相当于轻声说 "对不起，如果你想利用我的应用扩展，你需要安装这个版本的Quasar"。
+千万不要用 yarn/npm 安装由 Quasar CLI 提供的软件包，因为App Extensions不应该如此具有侵入性，强迫用户使用某个 Quasar 版本。相反，对这些包要使用 "api.compatibleWith()"，这相当于轻声说 "对不起，如果你想利用我的应用扩展，你需要安装这个版本的 Quasar "。
 :::
 
 ## 手动测试
 
-我们需要创建一个Quasar项目文件夹，以便在开发应用扩展时能够对其进行测试。
+我们需要创建一个 Quasar 项目文件夹，以便在开发应用扩展时能够对其进行测试。
 
 ```bash
 $ quasar create test-app
@@ -102,7 +102,7 @@ $ quasar create test-app
 了解更多关于[Prompts API](/app-extensions/development-guide/prompts-api)和[Install API](/app-extensions/development-guide/install-api)可以做什么。
 :::
 
-在测试Quasar项目文件夹内，我们手动添加我们的App Extension。注意，我们没有指定npm包的名称(它还没有发布！)，而是指定了我们开发的App Extension文件夹的路径，因为我们想测试未发布的工作。
+在测试 Quasar 项目文件夹内，我们手动添加我们的App Extension。注意，我们没有指定npm包的名称(它还没有发布！)，而是指定了我们开发的App Extension文件夹的路径，因为我们想测试未发布的工作。
 
 ```bash
 $ yarn add --dev file://path/to/our/app/ext/root
@@ -113,7 +113,7 @@ $ yarn add --dev link://path/to/our/app/ext/root
 你需要弄清楚哪条命令最适合你的环境。
 
 ::: warning
-有许多关于通过`file:`和`link:`链接的问题报告。这不在Quasar的范围之内，但可能与你的开发环境有关，也就是你在Windows下的里程会有所不同。
+有许多关于通过`file:`和`link:`链接的问题报告。这不在 Quasar 的范围之内，但可能与你的开发环境有关，也就是你在Windows下的里程会有所不同。
 :::
 
 然后我们调用它。调用过程假定App Extension的软件包已经安装了yarn/npm(我们之前已经安装了)，因此跳过了这一步。
@@ -161,7 +161,7 @@ chainWebpack (chain) {
 $ quasar ext uninvoke my-ext
 ```
 
-上述命令同样没有修改或删除 package.json 和 node_modules 中的 npm 包。它只是调用卸载脚本，将其从测试Quasar应用项目文件夹的注册/安装的应用扩展列表中删除。然而，你的最终用户将调用`$ quasar ext remove my-ext`来卸载它，这也会卸载 npm 包。
+上述命令同样没有修改或删除 package.json 和 node_modules 中的 npm 包。它只是调用卸载脚本，将其从测试 Quasar 应用项目文件夹的注册/安装的应用扩展列表中删除。然而，你的最终用户将调用`$ quasar ext remove my-ext`来卸载它，这也会卸载 npm 包。
 
 你需要重做这些安装步骤，并在每次你对卸载脚本进行修改并想测试时发出 uninvoke 命令。
 
@@ -169,11 +169,11 @@ $ quasar ext uninvoke my-ext
 
 在上面的章节中，我们描述了如何测试提示、安装和卸载脚本。现在是索引脚本的时间了，它是你的应用扩展的核心。
 
-在这里你可以篡改所有的`quasar.config.js`选项，扩展Webpack配置，注册Quasar CLI命令，启动开发应用程序所需的外部服务等等。
+在这里你可以篡改所有的`quasar.config.js`选项，扩展Webpack配置，注册 Quasar CLI 命令，启动开发应用程序所需的外部服务等等。
 
 因此，每次执行`$ quasar dev`和`$ quasar build`时，都会运行索引脚本。
 
-为了测试索引脚本，你可以在每次改变App Extension脚本代码中的某些内容时，重复上述的卸载和安装程序。但这变得非常乏味。如果你在Unix操作系统(MacOS, Linux)上开发，你可以利用`yarn link`命令，从Quasar测试应用的node_modules文件夹创建一个[符号链接](https://en.wikipedia.org/wiki/Symbolic_link)到你的扩展文件夹中。
+为了测试索引脚本，你可以在每次改变App Extension脚本代码中的某些内容时，重复上述的卸载和安装程序。但这变得非常乏味。如果你在Unix操作系统(MacOS, Linux)上开发，你可以利用`yarn link`命令，从 Quasar 测试应用的node_modules文件夹创建一个[符号链接](https://en.wikipedia.org/wiki/Symbolic_link)到你的扩展文件夹中。
 
 ```bash
 $ cd /path/to/app/extension/folder
@@ -209,7 +209,7 @@ $ quasar ext invoke my-ext
 你实际上只需要`quasar ext invoke my-ext`(安装)应用扩展就可以重新安装它。上面的信息是为了完整起见。
 
 ::: warning
-有很多关于Windows上`yarn link`的问题报告。这不在Quasar的范围之内，但很可能与你的开发环境有关，也就是你在Windows上的里程数会有所不同。
+有很多关于Windows上`yarn link`的问题报告。这不在 Quasar 的范围之内，但很可能与你的开发环境有关，也就是你在Windows上的里程数会有所不同。
 :::
 
 ::: tip

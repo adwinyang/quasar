@@ -1,6 +1,6 @@
 ---
 title: 阿贾克斯请求
-desc: 在Quasar应用中使用Axios来获取数据。
+desc: 在 Quasar 应用中使用Axios来获取数据。
 ---
 
 > 我们建议在项目初始化时选择Axios。
@@ -34,10 +34,10 @@ export { axios, api }
 还要确保yarn/npm安装`axios`包。
 
 ::: tip
-如果你使用Quasar CLI，请务必查看[预取功能](/quasar-cli/prefetch-feature)。
+如果你使用 Quasar CLI ，请务必查看[预取功能](/quasar-cli/prefetch-feature) 。
 :::
 
-在你的单一文件组件方法中的用法将像下面一样。注意，在下一个示例中，我们使用Quasar的[Notify插件](/quasar-plugins/notify)(通过`$q = useQuasar()`和`$q.notify`)，你需要安装它(按照前面的链接)。
+在你的单一文件组件方法中的用法将像下面一样。注意，在下一个示例中，我们使用 Quasar 的[Notify插件](/quasar-plugins/notify)(通过`$q = useQuasar()`和`$q.notify`)，你需要安装它(按照前面的链接)。
 
 ```js
 import { api } from 'boot/axios'

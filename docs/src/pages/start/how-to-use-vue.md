@@ -1,18 +1,18 @@
 ---
 title: 如何使用Vue
-desc: 关于Vue原则以及如何将其用于Quasar的快速教程。
+desc: 关于Vue原则以及如何将其用于 Quasar 的快速教程。
 ---
-在你开始使用Quasar之前，最好先熟悉ES6并对Vue 3的工作原理有相当的了解。([ES6快速概述](https://github.com/lukehoban/es6features)和[ES6完整功能列表](http://es6-features.org/#Constants) -- 别担心，你不需要了解ES6的全部内容)。对于有反应式UI经验的开发者来说，[Vue 3文档](https://v3.vuejs.org/)本身最多需要半天时间从上到下阅读，它将帮助你了解如何使用和配置Quasar组件。
+在你开始使用 Quasar 之前，最好先熟悉ES6并对Vue 3的工作原理有相当的了解。([ES6快速概述](https://github.com/lukehoban/es6features)和[ES6完整功能列表](http://es6-features.org/#Constants) -- 别担心，你不需要了解ES6的全部内容)。对于有反应式UI经验的开发者来说，[Vue 3文档](https://v3.vuejs.org/)本身最多需要半天时间从上到下阅读，它将帮助你了解如何使用和配置 Quasar 组件。
 
 ::: tip
-如果你是Vue和反应式UI库的完全初学者，想要一个好的教程，我们推荐你看一下[Vue和Quasar视频教程](/video-tutorials)。
+如果你是Vue和反应式UI库的完全初学者，想要一个好的教程，我们推荐你看一下[Vue和 Quasar 视频教程](/video-tutorials)。
 :::
 
-在阅读完Vue文档后，让我们来理清一些最常见的问题，比如*"我如何使用Quasar组件、Vue属性、方法和事件 "*。
+在阅读完Vue文档后，让我们来理清一些最常见的问题，比如*"我如何使用 Quasar 组件、Vue属性、方法和事件 "*。
 
 ## Vue单文件组件(SFC)
 
-你将使用包含多个部分的`*.vue`文件来构建你的Quasar应用程序。`template`(HTML)，`script`(Javascript)和`style`(CSS/SASS/SCSS/Stylus/Less)都在同一个文件中。
+你将使用包含多个部分的`*.vue`文件来构建你的 Quasar 应用程序。`template`(HTML)，`script`(Javascript)和`style`(CSS/SASS/SCSS/Stylus/Less)都在同一个文件中。
 
 ```html
 <template>
@@ -55,11 +55,11 @@ export default {
 </style>
 ```
 
-## 使用Quasar指令
+## 使用 Quasar 指令
 
-Quasar带有一些自定义的[Vue Directives](https://v3.vuejs.org/guide/custom-directive.html)。这些指令几乎可以应用于任何DOM元素或组件。
+ Quasar 带有一些自定义的[Vue Directives](https://v3.vuejs.org/guide/custom-directive.html)。这些指令几乎可以应用于任何DOM元素或组件。
 
-Quasar指令的示例。
+ Quasar 指令的示例。
 
 ```html
 <div v-ripple>Click Me</div>
@@ -73,8 +73,8 @@ Quasar指令的示例。
 <div v-ripple>Click me. I got ripples.</div>
 ```
 
-## 使用Quasar组件
-Quasar组件的名字以 "Q "开头，如 "QBtn "或 "QElementResizeObserver"。为了使用它们，你需要在`/quasar.conf.js`中添加一个对它们的引用。
+## 使用 Quasar 组件
+ Quasar 组件的名字以 "Q "开头，如 "QBtn "或 "QElementResizeObserver"。为了使用它们，你需要在`/quasar.conf.js`中添加一个对它们的引用。
 
 让我们以QBtn和QIcon为例，然后看看如何将这些组件嵌入我们的应用程序中。
 
@@ -87,8 +87,8 @@ Quasar组件的名字以 "Q "开头，如 "QBtn "或 "QElementResizeObserver"。
 
 > 注意QBtn在Vue的HTML模板中是如何被用作`<q-btn>`的。如果我们导入QElementResizeObserver，那么我们就可以在模板中以`<q-element-resize-observer>`的方式使用它。
 
-## 使用Quasar插件
-Quasar插件是你可以在Vue文件中以及在文件之外使用的功能，比如Notify, BottomSheet, AppVisibility等等。
+## 使用 Quasar 插件
+ Quasar 插件是你可以在Vue文件中以及在文件之外使用的功能，比如Notify, BottomSheet, AppVisibility等等。
 
 ::: warning
 **在你的应用程序中使用它们之前，你需要在`/quasar.conf.js`中添加对它们的引用(如下所示)。
@@ -167,7 +167,7 @@ Notify.create('My message')
 当你使用**Quasar UMD版本时，请不要使用自闭标签形式。在Vue解析你的DOM元素之前，你的浏览器正在解释HTML，所以你的HTML语法必须是正确的。未知的标签(如Vue组件)不能是自闭的，因为你的浏览器会把这些标签解释为你在打开一个标签，但从未关闭它。
 :::
 
-一些Quasar组件不需要你在它们里面包含HTML内容。在这种情况下，你可以把它们作为自闭标签使用。下面是一个使用QIcon的示例。
+一些 Quasar 组件不需要你在它们里面包含HTML内容。在这种情况下，你可以把它们作为自闭标签使用。下面是一个使用QIcon的示例。
 
 ```html
 <q-icon name="cloud" />
@@ -190,7 +190,7 @@ Notify.create('My message')
 一些eslint-plugin-vue的linting规则实际上是强制使用自我封闭的语法。
 
 ## 处理Vue属性
-让我们用一个支持以下属性的假Quasar组件(我们称之为QBogus)来举一些示例。我们将在下面的章节中讨论Vue属性的每一种类型。
+让我们用一个支持以下属性的假 Quasar 组件(我们称之为QBogus)来举一些示例。我们将在下面的章节中讨论Vue属性的每一种类型。
 
 | Vue属性|类型|描述|
 | `infinite` | Boolean | 无限滑动滚动 |
@@ -204,7 +204,7 @@ Notify.create('My message')
 
 
 ::: tip
-在Quasar中，所有布尔属性都有`false`作为默认值。因此，你不需要明确地给它们分配 "false "值。
+在 Quasar 中，所有布尔属性都有`false`作为默认值。因此，你不需要明确地给它们分配 "false "值。
 :::
 
 如果你想控制该属性并在运行时动态地改变它，那么就把它绑定到你的作用域中的一个变量。
@@ -362,7 +362,7 @@ export default {
 ```
 
 ## 处理Vue方法
-你会注意到在整个文档中，一些Quasar组件有可以被调用的方法。例如：
+你会注意到在整个文档中，一些 Quasar 组件有可以被调用的方法。例如：
 
 | Vue方法 | 描述 |
 | `next()` | 转到下一张幻灯片。|
@@ -430,7 +430,7 @@ export default {
 ```
 
 ## 处理Vue事件
-你会注意到在整个文档中，一些Quasar组件有一个部分叫做 "Vue事件"。
+你会注意到在整个文档中，一些 Quasar 组件有一个部分叫做 "Vue事件"。
 
 "Vue事件 "的示例。
 

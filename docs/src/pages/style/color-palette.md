@@ -1,16 +1,16 @@
 ---
 title: 色调
-desc: 如何使用和定制Quasar调色板。
+desc: 如何使用和定制 Quasar 调色板。
 components:
   - color-palette/BrandColors
   - color-palette/ColorList
 related:
   - quasar-utils/color-utils
 ---
-Quasar框架开箱即提供了大量的颜色选择。你可以在你的CSS代码中作为Sass/SCSS变量使用它们，也可以在你的HTML模板中直接作为CSS类使用。
+ Quasar 框架开箱即提供了大量的颜色选择。你可以在你的CSS代码中作为Sass/SCSS变量使用它们，也可以在你的HTML模板中直接作为CSS类使用。
 
 ## 品牌颜色
-Quasar组件使用的大多数颜色都与这三种颜色密切相关，你可以改变它们。选择这些颜色是区分应用程序设计时应该采取的第一步。在改变它们的默认值后，你会立即注意到Quasar组件遵循这些颜色作为指导原则。
+ Quasar 组件使用的大多数颜色都与这三种颜色密切相关，你可以改变它们。选择这些颜色是区分应用程序设计时应该采取的第一步。在改变它们的默认值后，你会立即注意到 Quasar 组件遵循这些颜色作为指导原则。
 
 <brand-colors />
 
@@ -93,7 +93,7 @@ CSS自定义属性使用与普通CSS相同的继承规则，所以你只能重�
 
 ### Util: setCssVar
 
-Quasar提供了一个用于设置Quasar CSS变量的辅助函数，也可用于品牌颜色：`setCssVar(colorName, colorValue[, element])`。
+ Quasar 提供了一个用于设置Quasar CSS变量的辅助函数，也可用于品牌颜色：`setCssVar(colorName, colorValue[, element])`。
 
 | 参数 | 类型 | 要求 | 描述 |
 | `colorName` | String | *Yes* | `primary`, `secondary`, `accent`, `dark`, `positive`, `negative`, `info`, `warning`之一
@@ -120,7 +120,7 @@ document.body.style.setProperty('--q-primary', '#0273d4')
 
 ### Util: getCssVar
 
-Quasar提供了一个获取Quasar CSS变量值的辅助函数，它也可以用于品牌颜色：`getCssVar(colorName[, element])`。
+ Quasar 提供了一个获取Quasar CSS变量值的辅助函数，它也可以用于品牌颜色：`getCssVar(colorName[, element])`。
 
 | 参数 | 类型 | 要求 | 描述 |
 | `colorName` | String | *Yes* | `primary`, `secondary`, `accent`, `dark`, `positive`, `negative`, `info`, `warning`之一
@@ -193,7 +193,7 @@ export default () => {
 
 ```js
 // UMD或Quasar Vite插件或Vue CLI
-app.use(Quasar, {
+app.use( Quasar , {
   brand: {
     primary: '#ff0000',
     // ...

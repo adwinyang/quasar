@@ -1,6 +1,6 @@
 ---
 title: 用于SPA的应用程序图标
-desc: 如何管理Quasar单页应用程序的应用程序图标。
+desc: 如何管理 Quasar 单页应用程序的应用程序图标。
 ---
 
 这个构建目标包括各种用于个别浏览器和操作系统的特殊图标。你需要所有这些图标--如果你发现一个新的或丢失的图标，请[打开一个问题](https://github.com/quasarframework/quasar/issues)。
@@ -31,7 +31,7 @@ public/
       favicon-16x16.png
 ```
 
-进入`/src/index.template.html`的所需HTML代码，以引用上述文件。
+进入`/src/index.template.html`的所需HTML代码，以引用上述文件：
 
 ```html
 <link rel="icon" type="image/ico" href="favicon.ico">

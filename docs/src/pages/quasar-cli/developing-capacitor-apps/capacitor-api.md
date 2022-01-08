@@ -1,36 +1,36 @@
 ---
-title: 电容器API
-desc: 如何在Quasar应用程序中使用电容插件。
+title:  Capacitor API
+desc: 如何在 Quasar 应用程序中使用 Capacitor 插件。
 ---
-你可以通过使用[Capacitor APIs](https://capacitor.ionicframework.com/docs/apis)来钩住本地设备的API。
+你可以通过使用 [Capacitor APIs](https://capacitor.ionicframework.com/docs/apis) 来连接本地设备的API。
 
 ## Capacitor APIs
-这类API的几个示例。
+这类API的几个示例：
 
-* 背景任务
+* 后台任务
 * 相机
 * 控制台
 * 设备
 * 文件系统
 * 地理定位
-*运动
+* 运动
 * 网络
 * 推送通知
 * 分享
-* 闪光屏
+* 启动画面
 * 状态栏
 
-## 使用电容器API
-假设你已经在你的Quasar项目中加入了Capacitor模式，让我们通过一些示例来学习。
+## 使用 Capacitor API
+假设你已经在你的 Quasar 项目中加入了Capacitor模式，让我们通过一些示例来学习。
 
-### 示例。地理定位
-第一步是阅读我们想要使用的Capacitor API的文档。我们看一下Capacitor的[Geolocation API](https://capacitor.ionicframework.com/docs/apis/geolocation)。
+### 示例：地理定位
+第一步是阅读我们想要使用的Capacitor API的文档。我们看一下Capacitor的[Geolocation API](https://capacitor.ionicframework.com/docs/apis/geolocation) 。
 
-现在让我们把这个插件好好利用一下。在你的Quasar项目的一个页面/布局/组件Vue文件中，我们写道。
+现在让我们把这个插件好好利用一下。在你的 Quasar项目的一个页面/布局/组件Vue文件中：
 
 ```html
 // 一些Vue文件
-// 请记住，这只是一个示例。
+// 请记住，这只是一个示例;
 // 只看我们如何使用该插件页面中描述的API。
 // 其余的事情在这里并不重要
 
@@ -80,10 +80,10 @@ export default {
 </script>
 ```
 
-### 示例。相机
-第一步是阅读我们要使用的Capacitor API的文档。我们看一下Capacitor的[Camera API](https://capacitor.ionicframework.com/docs/apis/camera)。
+### 示例：相机
+第一步是阅读我们要使用的Capacitor API的文档。我们看一下Capacitor的[Camera API](https://capacitor.ionicframework.com/docs/apis/camera) 。
 
-现在让我们把这个API好好利用一下。在你的Quasar项目的一个页面/布局/组件Vue文件中，我们写道。
+现在让我们把这个API好好利用一下。在你的 Quasar 项目的一个页面/布局/组件Vue文件中，我们写道。
 
 ```html
 // 一些Vue文件
@@ -136,7 +136,7 @@ export default {
 $ npm install @ionic/pwa-elements
 ```
 
-然后创建一个启动文件来初始化它们，例如`src/boot/capacitor.js`。
+然后创建一个启动文件来初始化它们，例如`src/boot/capacitor.js`：
 
 ```js
 import { defineCustomElements } from '@ionic/pwa-elements/loader'
@@ -146,7 +146,7 @@ export default () => {
 }
 ```
 
-不要忘记在`quasar.conf.js`中调用启动脚本。
+不要忘记在`quasar.conf.js`中调用启动脚本
 
 ```js
 boot: ['capacitor']
@@ -155,10 +155,10 @@ boot: ['capacitor']
 现在，你不仅可以在原生的Android或iOS中使用相机API，还可以在基于Web的项目中使用，如SPA或PWA。
 
 
-### 示例。设备
-第一步是阅读我们要使用的Capacitor API的文档。看一下Capacitor的[设备API](https://capacitor.ionicframework.com/docs/apis/device)。
+### 示例：设备
+第一步是阅读我们要使用的Capacitor API的文档。看一下Capacitor的[设备API](https://capacitor.ionicframework.com/docs/apis/device) 。
 
-现在让我们把这个API好好利用一下。在你的Quasar项目的一个页面/布局/组件Vue文件中，我们写道。
+现在让我们把这个API好好利用一下。在你的 Quasar 项目的一个页面/布局/组件Vue文件中：
 
 ```html
 // 一些Vue文件

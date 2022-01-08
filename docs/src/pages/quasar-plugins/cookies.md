@@ -1,6 +1,6 @@
 ---
 title: 饼干
-desc: 一个Quasar插件，它通过标准化的 "document.cookie "管理浏览器的cookie，即使使用SSR应用程序也能轻松读写cookie。
+desc: 一个 Quasar 插件，它通过标准化的 "document.cookie "管理浏览器的cookie，即使使用SSR应用程序也能轻松读写cookie。
 keys: Cookies
 ---
 这是对标准化的`document.cookie'的包装。
@@ -199,7 +199,7 @@ secure: true
 如果为真，cookie的传输需要安全协议(HTTPS)，不会通过HTTP发送。默认值是`false`。
 
 ::: tip
-如果使用Quasar CLI和[在开发模式下](/quasar-cli/quasar-conf-js#Property%3A-devServer)，你可以通过quasar.conf.js > devServer > https: true启用HTTPS。
+如果使用 Quasar CLI 和[在开发模式下](/quasar-cli/quasar-conf-js#Property%3A-devServer)，你可以通过quasar.conf.js > devServer > https: true启用HTTPS。
 :::
 
 ### 选项：其他
@@ -208,7 +208,7 @@ secure: true
 other: 'SomeNewProp'
 ```
 
-其他cookie选项的原始字符串。作为最后的手段，用于目前Quasar中尚未实现的可能的较新属性。
+其他cookie选项的原始字符串。作为最后的手段，用于目前 Quasar 中尚未实现的可能的较新属性。
 
 ## 移除一个cookie
 ```js

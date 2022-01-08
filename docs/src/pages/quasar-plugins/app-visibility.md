@@ -1,9 +1,9 @@
 ---
 title: 应用程序的可见性
-desc: 一个Quasar插件，包装了页面可见性API，让你知道你的应用程序何时可见或处于焦点。
+desc: 一个 Quasar 插件，包装了页面可见性API，让你知道你的应用程序何时可见或处于焦点。
 keys: AppVisibility
 ---
-Quasar使用网络[页面可见性API](https://developer.mozilla.org/en-US/docs/Web/API/Page_Visibility_API)，它可以让你知道一个网站/应用程序何时可见或处于焦点。
+ Quasar 使用网络[页面可见性API](https://developer.mozilla.org/en-US/docs/Web/API/Page_Visibility_API)，它可以让你知道一个网站/应用程序何时可见或处于焦点。
 
 ## AppVisibility API
 

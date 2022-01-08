@@ -1,6 +1,6 @@
 ---
 title: 内容钩子
-desc: 如何在Quasar浏览器扩展模式下使用你的内容脚本与你的Quasar应用程序和后台脚本进行通信。
+desc: 如何在 Quasar 浏览器扩展模式下使用你的内容脚本与你的 Quasar 应用程序和后台脚本进行通信。
 ---
 
 `src-bex/js/content-hooks.js`本质上是一个标准的[内容脚本](https://developer.chrome.com/extensions/content_scripts) ，我们欢迎你这样使用它。内容脚本能够访问底层网页的DOM，因此你能够操纵上述网页的内容。

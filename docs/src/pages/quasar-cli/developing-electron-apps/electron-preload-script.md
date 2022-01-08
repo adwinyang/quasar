@@ -1,6 +1,6 @@
 ---
-title: 电子预加载脚本
-desc: 如何用Quasar CLI处理Electron节点与Electron预加载脚本的集成。
+title:  Electron 预加载脚本
+desc: 如何用 Quasar CLI 处理Electron节点与Electron预加载脚本的集成。
 ---
 
 出于安全考虑，渲染器线程(你在`/src`的UI代码)不能访问Node.js的东西。然而，你可以运行Node.js代码，并通过位于`/src-electron/electron-preload.[js|ts]`的Electron预加载脚本将其连接到渲染器线程。使用`contextBridge`(来自`electron`包)来暴露你的用户界面所需要的东西。
@@ -10,10 +10,10 @@ desc: 如何用Quasar CLI处理Electron节点与Electron预加载脚本的集成
 ## 如何使用它
 在`/src-electron/`文件夹中，有一个名为`electron-preload.js`的文件。将你的预加载代码填入其中。
 
-确保你的`/src-electron/electron-main.[js|ts]`有以下内容(靠近 "webPreferences "部分)。
+确保你的`/src-electron/electron-main.[js|ts]`有以下内容(靠近 "webPreferences "部分)：
 
 ```js
-// 文件。/src-electron/electron-main.[js|ts]
+// 文件：/src-electron/electron-main.[js|ts]
 
 // 在顶部添加这个。
 import path from 'path'
@@ -31,7 +31,7 @@ function createWindow () {
   })
 ```
 
-`/src-electron/electron-preload.[js|ts]`内容的示例。
+`/src-electron/electron-preload.[js|ts]`内容的示例：
 
 ```js
 // 示例，它将window.myAPI.doAThing()注入到渲染器中。
@@ -46,7 +46,7 @@ contextBridge.exposeInMainWorld('myAPI', {
 
 ::: warning
 1. 请注意该文件是在Node.js环境下运行的。
-2. 2.如果你从node_modules中导入任何东西，那么请确保该包是在/package.json > "dependencies "中指定的，而不是在 "devDependencies "中。
+2. 如果你从node_modules中导入任何东西，那么请确保该包是在/package.json > "dependencies "中指定的，而不是在 "devDependencies "中。
 :::
 
 ## 安全考虑

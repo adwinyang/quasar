@@ -31,7 +31,7 @@ desc: 关于如何向 Quasar应用扩展的主机应用提供 Vue 指令的技�
 让我们分解一下：
 
 ```js
-//文件。/index.js
+//文件：/index.js
 module.exports = function (api) {
   // (可选！)。
   // Quasar兼容性检查；你可能需要
@@ -47,13 +47,13 @@ module.exports = function (api) {
 }
 ```
 
-第一组是做与Quasar的兼容性检查(可选，但推建)。如果你的组件使用的Quasar功能是在某个版本之后才有的，你可以确保安装的Quasar版本是正确的。
+第一组是做与 Quasar 的兼容性检查(可选，但推建)。如果你的组件使用的 Quasar 功能是在某个版本之后才有的，你可以确保安装的 Quasar 版本是正确的。
 
 ::: tip
-你不仅可以做`api.compatibleWith()`来检查Quasar软件包，还可以检查任何其他可用的软件包(你没有通过你的App Extension自己提供)。请阅读App Extension Development Guide > Introduction页面中的[Handling package-dependencies](/app-extensions/development-guide/introduction#handling-package-dependencies)部分以了解更多信息。
+你不仅可以做`api.compatibleWith()`来检查 Quasar 软件包，还可以检查任何其他可用的软件包(你没有通过你的App Extension自己提供)。请阅读App Extension Development Guide > Introduction页面中的[Handling package-dependencies](/app-extensions/development-guide/introduction#handling-package-dependencies)部分以了解更多信息。
 :::
 
-第二组告诉Quasar在 `extendQuasarConf` CLI生命周期钩子被调用时调用我们的自定义函数。它看起来会像这样。
+第二组告诉 Quasar 在 `extendQuasarConf` CLI生命周期钩子被调用时调用我们的自定义函数。它看起来会像这样。
 
 ```js
 //文件: /index.js

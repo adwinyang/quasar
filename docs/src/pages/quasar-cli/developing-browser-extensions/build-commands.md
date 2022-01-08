@@ -1,6 +1,6 @@
 ---
 title: BEX构建命令
-desc: 在开发或构建浏览器扩展(BEX)时，Quasar CLI的命令列表。
+desc: 在开发或构建浏览器扩展(BEX)时， Quasar CLI 的命令列表。
 ---
 
 使用[Quasar CLI](/start/quasar-cli)，开发和构建浏览器扩展的可分发程序是非常容易的。下面，我们将详细解释这两个过程。
@@ -26,14 +26,14 @@ $ quasar dev --mode bex
 
 ### Chrome浏览器
 
-![在Chrome浏览器中安装Quasar浏览器扩展](https://cdn.quasar.dev/img/adding-bex-to-chrome-with-debug.png)
+![在Chrome浏览器中安装 Quasar 浏览器扩展](https://cdn.quasar.dev/img/adding-bex-to-chrome-with-debug.png)
 
 按照上面的截图，必须采取以下步骤：
 
 1. 在Chrome浏览器中，导航到`chrome://extensions`。
 2. 切换 "开发者模式"。
-3. 3. 点击 "加载解压"。这将使你看到*文件夹*的选择对话框。导航并选择你的 "src-bex "文件夹。
-4. 4.现在你应该看到你的BEX在Chrome中被安装了。
+3.  点击 "加载解压"。这将使你看到*文件夹*的选择对话框。导航并选择你的 "src-bex "文件夹。
+4. 现在你应该看到你的BEX在Chrome中被安装了。
 
 关于调试Chrome浏览器扩展的更多信息可以在[官方文档](https://developer.chrome.com/extensions/tut_debugging)中找到。
 
@@ -43,7 +43,7 @@ $ quasar dev --mode bex
 
 ### Firefox
 
-![在Firefox中安装Quasar浏览器扩展](https://cdn.quasar.dev/img/adding-bex-to-firefox.png)
+![在Firefox中安装 Quasar 浏览器扩展](https://cdn.quasar.dev/img/adding-bex-to-firefox.png)
 
 与上面的截图一致，必须采取以下步骤：
 
@@ -56,7 +56,7 @@ $ quasar dev --mode bex
 
 ### 热模块重新载入(HMR)
 
-HMR与浏览器扩展开发一起工作，但根据你在哪个浏览器上开发，工作方式略有不同。在这两种情况下，正在构建的Quasar应用程序将在发生变化时重新加载。在这种情况下，Quasar应用程序指的是对`src`文件夹下的一切所做的改变。
+HMR与浏览器扩展开发一起工作，但根据你在哪个浏览器上开发，工作方式略有不同。在这两种情况下，正在构建的 Quasar 应用程序将在发生变化时重新加载。在这种情况下，Quasar应用程序指的是对`src`文件夹下的一切所做的改变。
 
 ::: tip
 **Chrome与Firefox的差异** - 在开发你的浏览器扩展时，你经常需要对`src-bex`文件夹下的文件进行修改。这将在配置钩子、设置弹出窗口等时进行。火狐浏览器会看到这些变化并自动重新加载浏览器扩展。另一方面，Chrome则不会。当你在Chrome浏览器中做了这些改变后，你将需要导航到你的扩展(见上面的Chrome部分)并点击开发浏览器扩展中的刷新图标。
@@ -119,7 +119,7 @@ $ quasar build --mode bex
 
 ## 发布到商店
 
-因为Quasar消除了构建和打包浏览器扩展的负担，所以一旦完成扩展的开发，它就可以发布了。不同浏览器的发布过程不同，但官方文档将指导您完成发布过程。
+因为 Quasar 消除了构建和打包浏览器扩展的负担，所以一旦完成扩展的开发，它就可以发布了。不同浏览器的发布过程不同，但官方文档将指导您完成发布过程。
 
 **Chrome** - [发布Chrome浏览器扩展](https://developer.chrome.com/webstore/publish)
 

@@ -9,7 +9,7 @@ related:
   - /layout/grid/flex-playground
 ---
 
-Quasar提供了许多CSS类，以帮助您在 [FlexBox](https://css-tricks.com/snippets/css/a-guide-to-flexbox/) 的帮助下轻松构建UI。将其视为使用具有许多选项的行和列进行操作。
+ Quasar 提供了许多CSS类，以帮助您在 [FlexBox](https://css-tricks.com/snippets/css/a-guide-to-flexbox/) 的帮助下轻松构建UI。将其视为使用具有许多选项的行和列进行操作。
 
 Flexbox(Quasar Flex CSS类的基础)模块旨在提供一种更有效的方式来布局、对齐和分配容器中的元素之间的空间，即使它们的大小未知或动态的(因此称为“Flex”)。
 

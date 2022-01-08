@@ -1,6 +1,6 @@
 ---
 title: 相当于入门套件
-desc: 关于如何使用Quasar应用程序扩展来创建相当于入门套件的技巧和窍门。
+desc: 关于如何使用 Quasar 应用程序扩展来创建相当于入门套件的技巧和窍门。
 ---
 
 本指南适用于您想要创建本质上是 “入门工具包” 的内容，该工具包在官方入门工具包之上添加内容(/quasar.conf.js 配置、文件夹、文件、CLI 挂钩)。
@@ -90,7 +90,7 @@ module.exports = function (api) {
 
 ## 索引脚本
 
-我们在 index 脚本中做了几件事，比如扩展/quasar.conf.js，钩住众多Index API钩子中的一个(在本例中是onPublish)，并将Webpack配置链化。
+我们在 index 脚本中做了几件事，比如扩展/quasar.conf.js，连接众多Index API钩子中的一个(在本例中是onPublish)，并将Webpack配置链化。
 
 ```js
 // src/index.js
@@ -151,7 +151,7 @@ function onPublish (api, { arg, distDir }) {
   // 你的发布逻辑在这里...
   console.log('We should publish now. But maybe later?:) ')
 
-  // 我们是要发布一个Cordova应用程序吗？
+  // 我们是要发布一个 Cordova 应用程序吗？
   if (api.ctx.modeName === 'cordova') {
     // 做点什么
   }

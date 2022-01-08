@@ -1,6 +1,6 @@
 ---
 title: 升级指南
-desc: 如何将Quasar从旧版本升级到最新版本。
+desc: 如何将 Quasar 从旧版本升级到最新版本。
 components:
   - upgrade-guide/UpgradeVideoLink
 ---
@@ -19,14 +19,14 @@ components:
 
 <q-badge align="top" color="brand-primary" label="New" />
 
-点击下面的海报将打开一个Youtube播放列表，介绍将Quasar CLI项目从Quasar v1升级到Quasar v2的过程。 随着Quasar v2的进展，它可能会变得不同步，但它可能有助于你开始。
+点击下面的海报将打开一个Youtube播放列表，介绍将 Quasar CLI 项目从Quasar v1升级到Quasar v2的过程。 随着Quasar v2的进展，它可能会变得不同步，但它可能有助于你开始。
 
 <upgrade-video-link />
 
 ## 旧的v2到最新的v2
 
 ### 使用UMD
-只需将所有引用Quasar的CSS和JS标签中的版本字符串替换为较新的版本。
+只需将所有引用 Quasar 的CSS和JS标签中的版本字符串替换为较新的版本。
 
 ### 使用Quasar CLI
 
@@ -77,7 +77,7 @@ $ yarn add @quasar/extras@latest
 
 ## 从v1迁移到v2
 
-**本指南指的是Quasar CLI和UMD项目**，但这里的信息也可以用于Vue CLI。对于已经在项目中使用Vue CLI的开发者，你可以查看如何安装[vue-cli-plugin-quasar](/start/vue-cli-plugin)包，它可以与Quasar v2一起使用。 你还需要对你的main.js做一些修改。 js(同时升级你的Vue CLI项目以支持Vue 3)(目前最好的方法是为Vue 3生成一个新的Vue CLI项目，然后按照vue-cli-plugin的[安装步骤](/start/vue-cli-plugin#add-vue-cli-quasar-plugin)进行安装，检查该/src文件夹发生的变化，然后对你目前的Vue CLI项目应用同样的原则)。
+**本指南指的是 Quasar CLI 和UMD项目**，但这里的信息也可以用于Vue CLI。对于已经在项目中使用Vue CLI的开发者，你可以查看如何安装[vue-cli-plugin-quasar](/start/vue-cli-plugin)包，它可以与Quasar v2一起使用。 你还需要对你的main.js做一些修改。 js(同时升级你的Vue CLI项目以支持Vue 3)(目前最好的方法是为Vue 3生成一个新的Vue CLI项目，然后按照vue-cli-plugin的[安装步骤](/start/vue-cli-plugin#add-vue-cli-quasar-plugin)进行安装，检查该/src文件夹发生的变化，然后对你目前的Vue CLI项目应用同样的原则)。
 
 ### 介绍
 
@@ -85,14 +85,14 @@ $ yarn add @quasar/extras@latest
 
 Quasar UI v2是基于Vue 3的，而之前的版本是基于Vue 2的。这意味着你的应用程序代码(Vue组件、指令等)也应该符合Vue 3，而不仅仅是Quasar UI的源代码。如果你在你的应用程序中使用其他库，请确保你使用的是Vue 3版本。
 
-Quasar UI v2不仅仅是对Vue 3和Composition API的移植。__在Quasar的算法中也有很多显著的性能提升！__你会喜欢它的
+Quasar UI v2不仅仅是对Vue 3和Composition API的移植。__在 Quasar 的算法中也有很多显著的性能提升！__你会喜欢它的
 
 ::: warning IMPORTANT!
 * 不支持IE11 - Vue 3也不支持IE11。如果您的项目必须支持IE11，那么请继续使用Quasar UI v1。
 * 为了支持Node 13+(以及其他许多好处)，我们已经**将Webpack从v4升级到v5**。你可能需要相应地升级你的webpack插件。
 * Quasar Stylus变量不再可用(只有Sass/SCSS)。但这并不意味着你不能再使用Stylus。
 * 并非所有的官方应用扩展都与Quasar UI v2兼容，我们正在努力为它们发布新的兼容版本。
-* Node v10已经达到了它的生命末期，所以对它的支持已经被放弃。请务必更新Node(至少更新到v12.22.1)和npm/yarn，以适应新的版本，其中包括对最新安全问题的修复。这个Node版本还包括对ESM模块的支持，这将有助于我们在Quasar v2的生命周期内进一步实现Quasar代码库的现代化，而不会出现破坏性的变化。
+* Node v10已经达到了它的生命末期，所以对它的支持已经被放弃。请务必更新Node(至少更新到v12.22.1)和npm/yarn，以适应新的版本，其中包括对最新安全问题的修复。这个Node版本还包括对ESM模块的支持，这将有助于我们在Quasar v2的生命周期内进一步实现 Quasar 代码库的现代化，而不会出现破坏性的变化。
 :::
 
 在你开始这个将你的项目从v1升级到v2的旅程之前，你应该知道一些额外的事情。
@@ -103,7 +103,7 @@ Quasar UI v2不仅仅是对Vue 3和Composition API的移植。__在Quasar的算�
 5)除非绝对必要，不要用CSS选择器来定位内部组件的东西。
 6) 我们尽可能地推荐`yarn`，因为它的速度和使用效率。然而，当使用globals时，我们仍然建议使用`npm`，特别是当你使用`nvm`(Node版本管理器)时。
 7) 使用`git`进行版本库管理，并定期提交，这就像在过程中做笔记一样，让你在遇到困难时恢复到以前的状态。
-8) 使用Quasar启动文件，用于任何预挂载的应用程序例程。
+8) 使用 Quasar 启动文件，用于任何预挂载的应用程序例程。
 9) 最后，成为[支持者/赞助者](https://donate.quasar.dev)，可以进入特殊的Discord支持聊天室，获得优先支持。这也有助于项目的生存。
 
 如果你被卡住了，请查看论坛或访问我们的Discord服务器，以获得帮助，这不仅来自工作人员，也来自社区。
@@ -190,7 +190,7 @@ $ yarn add vuex@4
 $ npm install vuex@4
 ```
 
-8) 编辑quasar.conf.js > framework > lang。它将在本页面的 "Quasar语言包 "部分进行解释。
+8) 编辑quasar.conf.js > framework > lang。它将在本页面的 " Quasar 语言包 "部分进行解释。
 ```js
 // 老方法
 framework: {
@@ -208,7 +208,7 @@ lang: 'en-US
 
 #### 选项2：创建一个项目
 
-第二个选项是创建一个新的项目，然后一点一点地移植到它。我们认为这个方案是最坏的情况(你遇到的是Vue 3和Vue Router v4的问题，而不是Quasar本身的问题)，我们只是为了本指南的完整性而提到它。
+第二个选项是创建一个新的项目，然后一点一点地移植到它。我们认为这个方案是最坏的情况(你遇到的是Vue 3和Vue Router v4的问题，而不是 Quasar 本身的问题)，我们只是为了本指南的完整性而提到它。
 
 你可以生成一个新的Quasar v2项目，如下图所示，然后你就可以把你的应用程序移植到它上面。
 
@@ -237,7 +237,7 @@ build: {
 ```
 
 #### Webpack devserver
-作为升级到Webpack 5的一部分，Quasar CLI现在提供了[webpack-dev-server v4](https://github.com/webpack/webpack-dev-server)和[webpack-dev-middleware v4](https://github.com/webpack/webpack-dev-middleware)，它们都带有各自的突破性变化。这影响了quasar.conf.js > devServer选项。下面是一些最常用的prop。
+作为升级到Webpack 5的一部分， Quasar CLI 现在提供了[webpack-dev-server v4](https://github.com/webpack/webpack-dev-server)和[webpack-dev-middleware v4](https://github.com/webpack/webpack-dev-middleware)，它们都带有各自的突破性变化。这影响了quasar.conf.js > devServer选项。下面是一些最常用的prop。
 
 |属性名称 | 类型 | 描述 |
 | devMiddleware | Object | 提供给webpack-dev-middleware v4的配置
@@ -278,7 +278,7 @@ build: {
 ### Vue 3
 
 ::: tip
-对于Quasar CLI项目，你不需要手动安装/升级`vue`包，因为"@quasar/app" v3已经为你提供了正确版本的Vue。
+对于 Quasar CLI 项目，你不需要手动安装/升级`vue`包，因为"@quasar/app" v3已经为你提供了正确版本的Vue。
 :::
 
 由于你也将切换到[Vue 3](https://v3.vuejs.org)，你最好在读完本迁移指南后**看看其[迁移指南](https://v3.vuejs.org/guide/migration/introduction.html)。
@@ -291,7 +291,7 @@ build: {
 
 #### Vue 3中断变化的示例
 
-在处理Vue 3时，最重要的突破性变化之一是v-model的工作方式。它现在是`model-value`+`@update:model-value`组合的别名，而不是`value`+`@input`。这对所有使用v-model的Quasar组件都有影响。如果你在.vue文件中编写你的组件，那么你不需要担心这个问题，因为vue-loader会正确地为你翻译它。
+在处理Vue 3时，最重要的突破性变化之一是v-model的工作方式。它现在是`model-value`+`@update:model-value`组合的别名，而不是`value`+`@input`。这对所有使用v-model的 Quasar 组件都有影响。如果你在.vue文件中编写你的组件，那么你不需要担心这个问题，因为vue-loader会正确地为你翻译它。
 
 此外，如果你从你的Vue组件中发出自定义事件，你将需要明确地指定它们，如下所示。
 
@@ -315,7 +315,7 @@ export default {
 ### Vue Router v4
 
 ::: tip
-对于Quasar CLI项目，你不需要手动安装/升级`vue-router`包，因为"@quasar/app" v3已经为你提供了正确版本的Vue Router。
+对于 Quasar CLI 项目，你不需要手动安装/升级`vue-router`包，因为"@quasar/app" v3已经为你提供了正确版本的Vue Router。
 :::
 
 这是一个Vue 3生态系统上游的突破性变化。更新 src/router 文件以匹配 Vue Router v4 的 API。Vue Router v4有它自己的[breakening changes](https://next.router.vuejs.org/guide/migration/index.html)。特别注意下面我们是如何处理404错误的。
@@ -473,7 +473,7 @@ $ yarn remove @vue/composition-api
 
 #### Vue 3和v-model
 
-`v-model`现在是`model-value`+`@update:model-value`组合的别名，而不是`value`+`@input`。这对所有使用v-model的Quasar组件都有影响。如果你用.vue文件编写你的组件，那么你不需要担心这个问题，因为vue-loader会正确的为你翻译它。
+`v-model`现在是`model-value`+`@update:model-value`组合的别名，而不是`value`+`@input`。这对所有使用v-model的 Quasar 组件都有影响。如果你用.vue文件编写你的组件，那么你不需要担心这个问题，因为vue-loader会正确的为你翻译它。
 
 建议：你可能想对`:value`和`@input`进行搜索和替换。请小心替换`:value`，因为有些组件(QLinearProgress, QCircularProgress)不与v-model绑定，仍然使用`value`作为属性。
 
@@ -483,7 +483,7 @@ $ yarn remove @vue/composition-api
 
 #### QDrawer/QDialog/QMenu/QTooltip
 
-对上述Quasar组件使用 "class "和 "style "属性，而不是 "content-class" / "content-style "属性。
+对上述 Quasar 组件使用 "class "和 "style "属性，而不是 "content-class" / "content-style "属性。
 
 #### QBtn/QItem/QBreadcrumbs/QRouteTab
 
@@ -526,7 +526,7 @@ function onClick (e, go) {
 
 #### QChatMessage
 
-现在默认情况下，"label"、"name"、"text "和 "stamp "都受到保护，不会受到XSS攻击。这意味着所有的 "*-sanitize "属性都被放弃，因为这种行为现在已经成为Quasar的标准。如果你想为这些属性显示HTML内容，你现在需要通过新的布尔属性(`*-html`)明确指定它们。
+现在默认情况下，"label"、"name"、"text "和 "stamp "都受到保护，不会受到XSS攻击。这意味着所有的 "*-sanitize "属性都被放弃，因为这种行为现在已经成为 Quasar 的标准。如果你想为这些属性显示HTML内容，你现在需要通过新的布尔属性(`*-html`)明确指定它们。
 
 | 移除的布尔型属性 | 新的相反的布尔型属性 |
 | label-sanitize | label-html |
@@ -841,7 +841,7 @@ someProp: someValue,
 })
 ```
 2. `parent`和`root`属性已被删除。由于Vue 3的架构，我们不能再使用 "父 "组件来提供/注入功能。但你仍然能够在你的自定义组件中使用Vue Router/Vuex/等。
-3. 3.如果用自定义组件调用Dialog插件，你需要添加`emits: ['ok', 'cancel']`到你的组件中，因为Vue 3现在需要一个组件可能发出的事件的明确列表。你也可以将该组件转换为Composition API。详细情况请见[调用自定义组件](/quasar-plugins/dialog#invoking-custom-component)。
+3. 如果用自定义组件调用Dialog插件，你需要添加`emits: ['ok', 'cancel']`到你的组件中，因为Vue 3现在需要一个组件可能发出的事件的明确列表。你也可以将该组件转换为Composition API。详细情况请见[调用自定义组件](/quasar-plugins/dialog#invoking-custom-component)。
 ```js
 //被调用组件的代码
 出口默认 {
@@ -948,7 +948,7 @@ setCssVar('primary', '#f3c')
 ```
 
 ### Quasar语言包
-我们改变了语言包的文件名以反映浏览器使用的标准命名。这将允许你在想动态导入Quasar语言包文件时使用`$q.lang.getLocale()`。
+我们改变了语言包的文件名以反映浏览器使用的标准命名。这将允许你在想动态导入 Quasar 语言包文件时使用`$q.lang.getLocale()`。
 
 完整的变化列表。
 | 旧名称 | 新名称 |
@@ -964,7 +964,7 @@ setCssVar('primary', '#f3c')
 | 辽宁沈阳 | 辽宁沈阳
 | zh-hant | zh-TW |
 
-如果你在quasar.conf.js中配置了一个默认的Quasar语言包，那么你需要编辑它。
+如果你在quasar.conf.js中配置了一个默认的 Quasar 语言包，那么你需要编辑它。
 
 ```js
 // 故道
@@ -1054,7 +1054,7 @@ supportTS: {
 ### Quasar App CLI Electron模式
 
 ::: warning
-如果你有一个使用Quasar电子模式的项目，那么阅读它自己的[电子模式升级指南](/quasar-cli/developing-electron-apps/electron-upgrade-guide#Upgrading-from-Quasar-v1)是很有必要的。
+如果你有一个使用Quasar Electron 模式的项目，那么阅读它自己的[ Electron 模式升级指南](/quasar-cli/developing-electron-apps/electron-upgrade-guide#Upgrading-from- Quasar -v1)是很有必要的。
 :::
 
 开箱即用的[对TS的支持](/quasar-cli/developing-electron-apps/electron-with-typescript)现在可用。

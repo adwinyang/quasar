@@ -38,7 +38,7 @@ QBar对于无框架的Electron应用程序特别有用，你可以把它集成�
 
 <doc-example title="带有QToolbar的QHeader" file="QBar/Header" />
 
-### 无框电子窗
+### 无框 Electron 窗
 在开发Electron应用程序时，QBar组件可以派上用场，特别是当你选择使用无框架的窗口时。
 
-阅读更多关于[无框电子窗](/quasar-cli/developing-electron-apps/frameless-electron-window)页面。
+阅读更多关于[无框 Electron 窗](/quasar-cli/developing-electron-apps/frameless-electron-window)页面。

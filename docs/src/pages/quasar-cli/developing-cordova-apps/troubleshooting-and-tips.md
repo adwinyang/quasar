@@ -1,23 +1,23 @@
 ---
 title: 可多瓦的故障排除和提示
-desc: 使用Cordova的Quasar混合移动应用程序的技巧和窍门。
+desc: 使用 Cordova 的 Quasar 混合移动应用程序的技巧和窍门。
 ---
 
 ## $q.cordova
-当你用Cordova模式开发一个移动应用程序时，你可以在你的Vue文件中访问`$q.cordova`。这是对全局的`cordova`对象的别名。
+当你用 Cordova 模式开发一个移动应用程序时，你可以在你的Vue文件中访问`$q.cordova`。这是对全局的`cordova`对象的别名。
 
 ## Android提示
 
 ### Android远程调试
-如果你正在调试Android应用程序，你可以通过连接到Android手机/平板电脑的USB线，使用谷歌浏览器[远程调试](https://developers.google.com/web/tools/chrome-devtools/debug/remote-debugging/remote-debugging?hl=en)。它也可以用于仿真器。
+如果你正在调试Android应用程序，你可以通过连接到Android手机/平板电脑的USB线，使用 Google 浏览器[远程调试](https://developers.google.com/web/tools/chrome-devtools/debug/remote-debugging/remote-debugging?hl=en)。它也可以用于仿真器。
 
-这样，你就可以直接使用Chrome开发工具，在模拟器/手机/平板电脑上运行你的应用程序。检查元素，检查控制台输出，等等，等等。
+这样，你就可以直接使用Chrome开发工具，在模拟器/手机/平板电脑上运行你的应用程序。检查元素，检查控制台输出，等等。
 
-![安卓远程调试](https://cdn.quasar.dev/img/remote-debug.png "Android Remote Debugging")
+![安卓远程调试](https://cdn.quasar.dev/img/remote-debug.png "Android远程调试")
 ![Android远程调试](https://cdn.quasar.dev/img/remote-debug-2.png "Android远程调试")
 
 ### 接受许可证
-如果你在让Android构建完成时遇到问题，并且看到类似的信息。
+如果你在让Android构建完成时遇到问题，并且看到类似的信息：
 
 ```
 > Failed to install the following Android SDK packages as some licenses have not been accepted.
@@ -29,7 +29,7 @@ desc: 使用Cordova的Quasar混合移动应用程序的技巧和窍门。
 - macOS: `~ Library/Android/sdk/tools/bin/sdkmanager --licenses`。
 - Windows: `%ANDROID_SDK_ROOT%/tools/bin/sdkmanager --licenses`.
 
-### 安装SDK后未找到Android SDK
+### 安装SDK后未找到 Android SDK
 
 ::: warning
 环境变量`ANDROID_HOME`已被废弃，取而代之的是`ANDROID_SDK_ROOT`。根据你的Android Studio的版本，你可能需要一个或另一个。两者都设置也无妨。
@@ -51,7 +51,7 @@ Looked here: /home/your_user/Android/Sdk/tools/templates/gradle/wrapper
 Error: Some of requirements check failed
 ```
 
-这可能有两个不同的原因。通常情况下，路径的配置是不正确的。第一步是验证你的路径是否设置正确。这可以通过运行以下命令来完成。
+这可能有两个不同的原因。通常情况下，路径的配置是不正确的。第一步是验证你的路径是否设置正确。这可以通过运行以下命令来完成：
 
 ```bash
 $ echo $ANDROID_HOME
@@ -78,17 +78,17 @@ $ ls -la $ANDROID_SDK_ROOT
 $ echo $PATH
 ```
 
-输出应该包含Android SDK的 "工具 "文件夹和 "平台工具 "的每一个条目。这可能看起来像这样。
+输出应该包含Android SDK的 "工具 "文件夹和 "平台工具 "的每一个条目。这可能看起来像这样：
 
 ```bash
 /home/your_user/bin:/home/your_user/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/home/your_user/Android/Sdk/tools:/home/your_user/Android/Sdk/platform-tools
 ```
 
-> 如果你确保了你的路径设置正确，但仍然在 "cordova要求 "上得到错误，你可以尝试以下修复。[手动替换Android Studio的 "工具 "文件夹](https://github.com/meteor/meteor/issues/8464#issuecomment-288112504)
+> 如果你确保了你的路径设置正确，但仍然在 `cordova 需求` 上得到错误，你可以尝试以下修复。[手动替换Android Studio的 "工具 "文件夹](https://github.com/meteor/meteor/issues/8464#issuecomment-288112504)
 
 ### Android Studio
 
-在Android Studio中(如果你在`/src-cordova/platforms/android`上打开它)，你会看到一条信息，建议升级Gradle版本。**不要升级Gradle**，因为这将破坏Cordova项目。任何其他要求的升级也是如此。
+在Android Studio中(如果你在`/src-cordova/platforms/android`上打开它)，你会看到一条信息，建议升级 Gradle 版本。**不要升级 Gradle**，因为这将破坏 Cordova 项目。任何其他要求的升级也是如此。
 
 <img src="https://cdn.quasar.dev/img/gradle-upgrade-notice.png" alt="Gradle升级" class="q-mb-md fit rounded-borders" style="max-width: 350px">。
 
@@ -103,8 +103,8 @@ $ echo $PATH
 以下是你如何解决这个问题。
 
 ```bash
-# create the .rules file and insert the content
-# from below this example
+# 创建 .rules 文件并插入内容
+# 从下面这个例子
 sudo vim /etc/udev/rules.d/51-android.rules
 sudo chmod 644   /etc/udev/rules.d/51-android.rules
 sudo chown root. /etc/udev/rules.d/51-android.rules
@@ -154,10 +154,10 @@ SUBSYSTEM=="usb", ATTRS{idVendor}=="1bbb", MODE="0666"
 在`quasar dev`和发布一个完整的应用程序之间，有一些中间状态可以帮助调试。如果你的应用程序在`quasar dev`上运行正常，但在`quasar build`后不能正常运行，你有两个选择。
 
 * 进入你的`src-cordova`目录，`cordova run [platform]`。
-*你将运行最终构建，但你仍然可以通过有线连接使用Chrome DevTools远程调试(见上文)，以检查内部网络的内部结构。在运行.apk文件时，您不能这样做。
-* 如需了解更多细节，请阅读Cordova [平台指南](https://cordova.apache.org/docs/en/latest/guide/platforms/android/#using-buildjson)和[CLI参考](https://cordova.apache.org/docs/en/latest/reference/cordova-cli/index.html)
+* 你将运行最终构建，但你仍然可以通过有线连接使用Chrome DevTools远程调试(见上文)，以检查内部网络的内部结构。在运行.apk文件时，您不能这样做。
+* 如需了解更多细节，请阅读Cordova [平台指南](https://cordova.apache.org/docs/en/latest/guide/platforms/android/#using-buildjson) 和 [CLI参考](https://cordova.apache.org/docs/en/latest/reference/cordova-cli/index.html)
 * 打开Android Studio，观看Logcat
-*在这里你可以观看与应用程序有关的一切，以及它与底层Android操作系统的互动。在Android Studio中打开你的Cordova项目后，从顶部菜单进入`Run`...`Debug`。Android Studio将要求你确认设备或模拟器，然后将部署应用程序。在底部窗口，选择`Logcat`你可能想使用过滤器来减少信息量。你应该看到`[你的应用程序ID].MainActivity.onCreate()`标志着应用程序的启动，然后是与你的应用程序功能相关的各种信息。
+* 在这里你可以观看与应用程序有关的一切，以及它与底层Android操作系统的互动。在Android Studio中打开你的 Cordova 项目后，从顶部菜单进入`Run`...`Debug`。Android Studio将要求你确认设备或模拟器，然后将部署应用程序。在底部窗口，选择`Logcat`你可能想使用过滤器来减少信息量。你应该看到`[你的应用程序ID].MainActivity.onCreate()`标志着应用程序的启动，然后是与你的应用程序功能相关的各种信息。
 * 注意：这应该只适用于有经验的Android开发者。如果你的应用程序不能正常运行，更有可能是`quasar dev`或`cordova run`可以揭示问题。
 
 ::: danger Important!
@@ -167,23 +167,23 @@ SUBSYSTEM=="usb", ATTRS{idVendor}=="1bbb", MODE="0666"
 ## ###iOS提示
 
 ### 未找到设备类型
-如果你在运行"$ quasar dev -m cordova -T ios "时遇到这个错误。
+如果你在运行 `$ quasar dev -m cordova -T ios` 时遇到这个错误：
 
 ```
 No target specified for emulator. Deploying to undefined simulator
 Device type "com.apple.CoreSimulator.SimDeviceType.undefined" could not be found.
 ```
 
-那么这意味着你需要指定一个模拟器。根据你的Cordova CLI版本，这里有一些示例。
+那么这意味着你需要指定一个模拟器。根据你的 Cordova CLI 版本，这里有一些示例。
 
 ```bash
 $ quasar dev -m cordova -T ios -e iPhone-X,12.2
-# or with older versions of Cordova CLI installed on your machine:
+# 或者在计算机上安装旧版本的Cordova CLI时：
 $ quasar dev -m cordova -T ios -e iPhone-X,com.apple.CoreSimulator.SimRuntime.iOS-12-2
 ```
 
 ### 启用现代构建
-默认情况下，由于Cordova问题，iOS的Xcode现代构建被禁用。然而，如果你知道你在做什么，并且你想启用它，可以从`/quasar.conf.js`中这样做。
+默认情况下，由于 Cordova 问题，iOS的Xcode现代构建被禁用。然而，如果你知道你在做什么，并且你想启用它，可以从`/quasar.conf.js`中这样做。
 
 ```js
 cordova: {
@@ -191,7 +191,7 @@ cordova: {
 }
 ```
 
-如果你想在你的 "build.json "中指定构建类型，上述内容也适用。
+如果你想在你的 "build.json" 中指定构建类型，上述内容也适用。
 
 ### iOS远程调试
 如果你正在调试iOS应用程序，你可以使用Safari开发者工具，通过连接到iOS手机/平板电脑的USB线进行远程调试。它也可以用于仿真器。
@@ -201,24 +201,24 @@ cordova: {
 首先在Safari的设置中启用 "开发者 "菜单选项。然后，如果你导航到 "开发者 "菜单选项，你会看到你的模拟器或连接的设备列在靠近顶部的位置。从这里你可以打开开发者工具。
 
 ### 状态栏和凹槽安全区域
-由于手机有状态栏和/或凹槽，在Cordova上构建时，你的应用程序的风格可能需要一些调整。为了防止你的应用程序的部分内容进入状态栏后面，有一个全局CSS变量可以用来创建一个 "安全区域"。这个变量可以应用在你的应用程序的顶部和底部的padding或margin。
+由于手机有状态栏和/或凹槽，在 Cordova 上构建时，你的应用程序的风格可能需要一些调整。为了防止你的应用程序的部分内容进入状态栏后面，有一个全局CSS变量可以用来创建一个 "安全区域"。这个变量可以应用在你的应用程序的顶部和底部的padding或margin。
 
-Quasar在QHeader/QFooter和Notify中默认支持这些CSS安全区域。然而，重要的是要经常在几个模型上检查你的Cordova构建，看看你的应用程序的所有情况是否正确处理了安全区域。
+ Quasar 在QHeader/QFooter和Notify中默认支持这些CSS安全区域。然而，重要的是要经常在几个模型上检查你的 Cordova 构建，看看你的应用程序的所有情况是否正确处理了安全区域。
 
 如果你需要手动调整你的CSS，你可以用。
 
 ```css
-/* for your app's header */
+/* 用于应用程序的页眉 */
 padding-top: constant(safe-area-inset-top); // for iOS 11.0
 padding-top: env(safe-area-inset-top); // for iOS 11.2 +
-/* for your app's footer */
+/* 用于应用程序的页脚 */
 padding-bottom: constant(safe-area-inset-bottom);
 padding-bottom: env(safe-area-inset-bottom);
 ```
 
 当然，你也可以根据你的应用，用`margin`代替`padding`来使用上述示例。
 
-为了确保这些内容只有在通过Cordova构建在移动端打开时才会被添加，你可以检查CSS类`.cordova`，它是由Quasar自动添加到主体中的。例如：
+为了确保这些内容只有在通过 Cordova 构建在移动端打开时才会被添加，你可以检查CSS类`.cordova`，它是由 Quasar 自动添加到主体中的。例如：
 
 ```css
 body.cordova .my-selector {
@@ -227,8 +227,8 @@ body.cordova .my-selector {
 }
 ```
 
-### 禁用iOS的橡皮筋效应
-当用Cordova构建一个iOS应用程序时，如果你想[禁用橡皮筋效应](https://www.youtube.com/watch?v=UjuNGpU29Mk)，请在你的`/src-cordova/config.xml`中添加这个。
+### 禁用iOS的橡皮筋效果
+当用 Cordova 构建一个 iOS 应用程序时，如果你想[禁用橡皮筋效应](https://www.youtube.com/watch?v=UjuNGpU29Mk) ，请在你的`/src-cordova/config.xml`中添加这个：
 
 ```xml
 <preference name="DisallowOverscroll" value="true" />

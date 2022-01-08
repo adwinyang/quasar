@@ -1,6 +1,6 @@
 ---
 title: 黑暗模式
-desc: 用Quasar处理黑暗模式。
+desc: 用 Quasar 处理黑暗模式。
 related:
   - /quasar-plugins/dark
   - /style/theme-builder
@@ -17,9 +17,9 @@ related:
 ## 它的作用
 
 1. 它为页面设置了一个默认的深色背景(你可以通过CSS的`body.body--dark`选择器轻松覆盖)。
-2. 2. 所有具有`dark`属性的Quasar组件将自动设置为`true`。不需要手动操作。
+2.  所有具有`dark`属性的 Quasar 组件将自动设置为`true`。不需要手动操作。
 
-自动检测是通过查看`prefers-color-scheme: dark`媒体查询进行的，并且是动态的。如果客户端浏览器/平台在你的应用程序运行时切换到/从黑暗模式，它也会更新Quasar的黑暗模式(如果黑暗模式被设置为 "自动")。
+自动检测是通过查看`prefers-color-scheme: dark`媒体查询进行的，并且是动态的。如果客户端浏览器/平台在你的应用程序运行时切换到/从黑暗模式，它也会更新 Quasar 的黑暗模式(如果黑暗模式被设置为 "自动")。
 
 ## 如何使用它
 

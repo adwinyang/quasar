@@ -43,7 +43,7 @@ import { Quasar } from 'quasar'
 // ...
 import langDe from 'quasar/lang/de'
 // ...
-app.use(Quasar, {
+app.use( Quasar , {
   // ...,
   lang: langDe
 })
@@ -58,7 +58,7 @@ import { Quasar } from 'quasar'
 // ...
 import langDe from 'quasar/lang/de'
 // ...
-app.use(Quasar, {
+app.use( Quasar , {
   // ...,
   lang: langDe
 })

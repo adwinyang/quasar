@@ -1,11 +1,11 @@
 ---
 title: 格式化工具
-desc: 一组用于格式化数值的Quasar方法。大写、填充、正常化等等。
+desc: 一组用于格式化数值的 Quasar 方法。大写、填充、正常化等等。
 keys: capitalize,humanStorageSize,between,normalizeToInterval,pad
 ---
 
 ### 帮助树状抖动
-你会注意到所有的示例都从Quasar导入了`format`对象。然而，如果你只需要其中的一个格式化方法，那么你可以使用ES6结构化来帮助Tree Shaking只嵌入该方法而不是所有的`format`。
+你会注意到所有的示例都从 Quasar 导入了`format`对象。然而，如果你只需要其中的一个格式化方法，那么你可以使用ES6结构化来帮助Tree Shaking只嵌入该方法而不是所有的`format`。
 
 示例。
 ```js

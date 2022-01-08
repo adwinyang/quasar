@@ -1,6 +1,6 @@
 ---
 title: CSS可见性
-desc: 由Quasar提供的CSS类列表，用于管理组件和DOM元素的响应性和可见性。
+desc: 由 Quasar 提供的CSS类列表，用于管理组件和DOM元素的响应性和可见性。
 related:
   - /style/typography
   - /style/positioning
@@ -62,8 +62,8 @@ Example: `<span class="gt-sm inline">...</span>`
 | --- | --- |
 | `只在台式机上看到` | 只在台式机上可见
 | `mobile-only` | 仅在手机上可见。
-| `native-mobile-only` | 仅在Cordova/Capacitor上可见
-| `cordova-only` | 仅在Cordova包装的应用程序上可见。
+| `native-mobile-only` | 仅在 Cordova /Capacitor上可见
+| `cordova-only` | 仅在 Cordova 包装的应用程序上可见。
 | `capacitor-only` | 仅在Capacitor包装的应用程序上可见。
 | `electron-only` | 仅在Electron包装的应用程序上可见。
 | `touch-only` | 仅在具有触摸功能的平台上可见。
@@ -77,8 +77,8 @@ Example: `<span class="gt-sm inline">...</span>`
 | --- | --- |
 | `desktop-hide` | 隐藏在桌面上 |
 | `mobile-hide` | 在手机上隐藏 |
-| `native-mobile-hide` | 隐藏在Cordova/Capacitor上 |
-| `cordova-hide` | 隐藏在Cordova包装的应用程序上 |
+| `native-mobile-hide` | 隐藏在 Cordova /Capacitor上 |
+| `cordova-hide` | 隐藏在 Cordova 包装的应用程序上 |
 | `capacitor-hide` | 隐藏在Capacitor包装的应用程序中
 | `electron-hide` | 隐藏在Electron包装的应用程序上
 | `touch-hide` | 隐藏在具有触摸功能的平台上

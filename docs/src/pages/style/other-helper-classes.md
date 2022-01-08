@@ -1,6 +1,6 @@
 ---
 title: 其他CSS帮助类
-desc: 由Quasar提供的鼠标、大小、方向和边框的CSS辅助类的列表。
+desc: 由 Quasar 提供的鼠标、大小、方向和边框的CSS辅助类的列表。
 ---
 有很多CSS类，你可以在编写Vue模板时使用。这对缓解你的VueModels和模板的复杂性非常方便。
 

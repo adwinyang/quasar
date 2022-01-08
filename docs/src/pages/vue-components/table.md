@@ -342,7 +342,7 @@ columns: [ // array of Objects
 
 2. 第二步是监听QTable上的`@request`事件。当需要从**服务器上获取数据时，这个事件就会被触发，因为页码、排序或过滤发生了变化。
 
-3. 3.你最好同时指定`loading`属性，以便通知用户一个后台进程正在进行。
+3. 你最好同时指定`loading`属性，以便通知用户一个后台进程正在进行。
 
 ::: tip
 在下面的示例中，已经采取了一些步骤来模拟对服务器的ajax调用。虽然概念是相似的，但如果你使用这段代码，你将需要做适当的修改以连接到你自己的数据源。
@@ -352,7 +352,7 @@ columns: [ // array of Objects
 
 ## 导出数据
 
-下面是一个天真的csv编码的示例，然后通过使用[exportFile](/quasar-utils/other-utils#export-file)Quasar工具导出表格数据。浏览器应该会触发一个文件下载。对于更专业的编码方法，我们确实推荐使用[csv-parse](https://csv.js.org/parse/)和[csv-stringify](https://csv.js.org/stringify/)软件包。
+下面是一个天真的csv编码的示例，然后通过使用[exportFile](/quasar-utils/other-utils#export-file) Quasar 工具导出表格数据。浏览器应该会触发一个文件下载。对于更专业的编码方法，我们确实推荐使用[csv-parse](https://csv.js.org/parse/)和[csv-stringify](https://csv.js.org/stringify/)软件包。
 
 ::: tip
 如果你想导出用户过滤+排序的数据，你也可以利用QTable的`filteredSortedRows`内部计算属性。

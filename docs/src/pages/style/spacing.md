@@ -1,13 +1,13 @@
 ---
 title: CSS 间距类
-desc: 由Quasar提供的CSS类的列表，以简化响应式围栏和边距的规范。
+desc: 由 Quasar 提供的CSS类的列表，以简化响应式围栏和边距的规范。
 related:
   - /style/typography
   - /style/positioning
   - /style/visibility
   - /style/breakpoints
 ---
-Quasar提供了一些CSS类来帮助你处理DOM元素或组件的间距。所有的选项都以
+ Quasar 提供了一些CSS类来帮助你处理DOM元素或组件的间距。所有的选项都以
 前缀为`q-`，然后细分为类型(T)、方向(D)和大小(S)。请看下面的表格
 以了解所有可能的排列组合。
 

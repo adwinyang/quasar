@@ -1,6 +1,6 @@
 ---
-title: 带排版的电子版
-desc: 如何在Quasar中使用Electron的类型脚本
+title: 带排版的 Electron 版
+desc: 如何在 Quasar 中使用Electron的类型脚本
 ---
 
 为了用Typescript支持Electron，你需要：1:

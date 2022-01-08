@@ -1,12 +1,12 @@
 ---
 title: 准备参加BEX
-desc: 如何将浏览器扩展(BEX)模式添加到Quasar应用程序中。
+desc: 如何将浏览器扩展(BEX)模式添加到 Quasar 应用程序中。
 ---
 
 构建SPA、Mobile App、Electron App、BEX或SSR之间的区别只是由 "quasar dev" 和 "quasar build" 命令中的 "mode" 参数决定。
 
 ## 1. 添加Quasar BEX模式
-为了构建一个BEX，我们首先需要在Quasar项目中添加BEX模式。
+为了构建一个BEX，我们首先需要在 Quasar 项目中添加BEX模式。
 
 ```bash
 $ quasar mode add bex

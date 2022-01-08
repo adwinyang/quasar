@@ -30,7 +30,7 @@ Vue的准官方国际化包(Internationali(s/z)ation)允许你在key的值中存
 ![Don't be eval()](https://cdn.quasar.dev/img/dont-be-eval.png "Don't be eval()" )
 
 ## Quasar组件
-一些Quasar组件和插件可以被配置为允许渲染 "不安全的内容"。这是一个选择功能，通过使用`*-html`类型的布尔属性来执行。这些组件将在下面讨论。
+一些 Quasar 组件和插件可以被配置为允许渲染 "不安全的内容"。这是一个选择功能，通过使用`*-html`类型的布尔属性来执行。这些组件将在下面讨论。
 
 ### QSelect
 如果你没有定制与菜单相关的作用域槽(即`option`作用域槽)，**DO**防止该组件在标签和子标签中渲染HTML(通过组件属性不启用它)。一般来说，这不是用户提供的数据。如果你要定制这个槽，你有责任自己做消毒处理。
@@ -106,13 +106,13 @@ QChatMessage "组件默认不以HTML形式显示内容。但你可以启用它(�
 - **DO**签署你所有的构建文件
 - **DO**对所有的静态数据进行加密
 
-[Cordova Docs Page](https://cordova.apache.org/docs/en/latest/guide/appdev/security/)详细介绍了Cordova的安全问题，虽然它似乎已经过时，但大部分信息仍然是正确的。
+[Cordova Docs Page](https://cordova.apache.org/docs/en/latest/guide/appdev/security/)详细介绍了 Cordova 的安全问题，虽然它似乎已经过时，但大部分信息仍然是正确的。
 
 ### Electron
 Electron是一个非常特殊的情况，因为XSS和远程代码注入实际上可以导致最终用户(甚至是开发者)的设备完全被破坏。
 - **不要**禁用 "网络安全"。
 - **不要**启用远程代码执行
-- **DO**阅读我们关于增强[电子安全]的指南(/quasar-cli/developing-electron-apps/electron-security-concerns)。
+- **DO**阅读我们关于增强[ Electron 安全]的指南(/quasar-cli/developing-electron-apps/electron-security-concerns)。
 
 ### SSR
 当你用SSR模式生成你的项目时，你会得到一个最小的Express服务器。你有责任加固你的环境以保护你的服务器和你的用户。为此，我们提供了一个重要的HEADERS集合，在你的项目进入生产阶段之前，你可以考虑并应选择性地激活这些HEADERS(见`src-ssr/index.js`)。重要的是要记住，HEADERS并不是无懈可击的，因为这取决于浏览器供应商是否尊重它们--例如，如果你的内容安全策略使用`sandbox`值，[Chrome会破坏PDF浏览](https://bugs.chromium.org/p/chromium/issues/detail?id=413851)。

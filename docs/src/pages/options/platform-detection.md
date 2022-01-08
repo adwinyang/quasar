@@ -1,6 +1,6 @@
 ---
 title: 平台检测
-desc: 如何检测Quasar应用程序的运行平台。
+desc: 如何检测 Quasar 应用程序的运行平台。
 ---
 
 帮助程序内置于 Quasar 中，用于检测代码运行环境中的平台(及其能力)。
@@ -74,7 +74,7 @@ import { Platform } from 'quasar'
 | 属性 | 类型 | 含义 |
 | --- | --- | --- |
 | `Platform.is.mobile` | Boolean | 代码是否在移动设备上运行？               |
-| `Platform.is.cordova` | Boolean | 代码是否在Cordova内运行？                   |
+| `Platform.is.cordova` | Boolean | 代码是否在 Cordova 内运行？                   |
 | `Platform.is.capacitor` | Boolean | 代码是在Capacitor中运行吗？|
 | `Platform.is.electron` | Boolean | 代码是否在Electron内运行？                  |
 | `Platform.is.desktop` | Boolean | 代码是否在桌面浏览器上运行？             |
@@ -102,7 +102,7 @@ import { Platform } from 'quasar'
 | `Platform.within.iframe` | Boolean | 应用程序是否在IFRAME中运行？                  |
 
 ::: tip
-在移动端运行意味着你可以让这段代码在移动设备(手机或平板电脑)上运行，但要用浏览器，而不是在Cordova包装器内。
+在移动端运行意味着你可以让这段代码在移动设备(手机或平板电脑)上运行，但要用浏览器，而不是在 Cordova 包装器内。
 :::
 
 ## SSR 注意事项

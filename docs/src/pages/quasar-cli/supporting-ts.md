@@ -1,6 +1,6 @@
 ---
 title: 支持TypeScript
-desc: 如何在Quasar应用程序中启用对TypeScript的支持。
+desc: 如何在 Quasar 应用程序中启用对TypeScript的支持。
 related:
   - /quasar-cli/quasar-conf-js
 ---
@@ -8,7 +8,7 @@ related:
 对Typescript的支持并没有被默认添加到你的项目中(除非你在创建项目文件夹时选择了TS)，但它可以通过本页面的指南轻松集成。
 
 ::: tip
-只有当你在创建一个新的Quasar项目时**没有选择TypeScript支持时，才需要以下步骤。如果你在创建项目时选择了TS选项，TypeScript支持已经被启用。
+只有当你在创建一个新的 Quasar 项目时**没有选择TypeScript支持时，才需要以下步骤。如果你在创建项目时选择了TS选项，TypeScript支持已经被启用。
 :::
 
 ## 安装TypeScript支持

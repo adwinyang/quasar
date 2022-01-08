@@ -4,7 +4,7 @@ desc: Vue指令，使用Mutation Observer API来观察DOM树的变化。
 keys: mutation
 ---
 
-"Mutation "是一个Quasar指令，它提供了观察DOM树变化的能力，并在这些变化被触发时调用一个方法。
+"Mutation "是一个 Quasar 指令，它提供了观察DOM树变化的能力，并在这些变化被触发时调用一个方法。
 
 在引擎盖下，它使用[Mutation Observer API](https://developer.mozilla.org/en-US/docs/Web/API/MutationObserver)。
 

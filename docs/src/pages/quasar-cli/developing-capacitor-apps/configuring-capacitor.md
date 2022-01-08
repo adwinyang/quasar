@@ -1,11 +1,11 @@
 ---
-title: 配置电容
-desc: 如何用Quasar CLI来管理你的Capacitor应用程序。
+title: 配置 Capacitor
+desc: 如何用 Quasar CLI 来管理你的Capacitor应用程序。
 related:
   - /quasar-cli/quasar-conf-js
 ---
 
-我们将使用Quasar CLI来开发和构建一个移动应用程序。构建SPA、PWA、Electron App或移动App之间的区别只是由 "quasar dev "和 "quasar build "命令中的 "mode "参数决定。
+我们将使用 Quasar CLI 来开发和构建一个移动应用程序。构建SPA、PWA、Electron App或移动App之间的区别只是由 "quasar dev "和 "quasar build "命令中的 "mode "参数决定。
 
 有两个配置文件对你的移动应用程序非常重要。我们将分别介绍一下。
 
@@ -15,7 +15,7 @@ related:
 这个文件中的一些属性将被覆盖，我们将在下一节看到。
 
 ## quasar.conf.js
-在`/quasar.conf.js`中，有两个地方你可以为电容配置Quasar的特定功能。
+在`/quasar.conf.js`中，有两个地方你可以为 Capacitor 配置 Quasar 的特定功能。
 
 ```js
 return {
@@ -43,14 +43,14 @@ return {
   framework: {
     config: {
       capacitor: {
-        iosStatusBarPadding: true/false, // add the dynamic top padding on iOS mobile devices
+        iosStatusBarPadding: true/false, // 在iOS移动设备上添加动态顶部填充
       }
     }
   }
 }
 ```
 
-最后，你还可以禁用或配置返回按钮钩(用于对话框)。
+最后，你还可以禁用或配置返回按钮钩(用于对话框)：
 
 ```js
 return {
@@ -61,7 +61,7 @@ return {
         backButtonExit: true/false/'*'/['/login', '/home', '/my-page'],
 
         // 另一方面，以下是完全
-        // 禁用Quasar的返回按钮管理。
+        // 禁用 Quasar 的返回按钮管理。
         backButton: true/false
       }
     }

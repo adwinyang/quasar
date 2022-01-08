@@ -1,6 +1,6 @@
 ---
 title: 应用程序处理资产
-desc: 如何在Quasar应用中使用常规应用资产和静态资产。
+desc: 如何在 Quasar 应用中使用常规应用资产和静态资产。
 ---
 你会注意到在项目结构中我们有两个资产目录：`/public/`和`/src/assets/`。它们之间有什么区别呢？有些是静态资产，而其他的是由构建系统处理和嵌入的。
 
@@ -9,7 +9,7 @@ desc: 如何在Quasar应用中使用常规应用资产和静态资产。
 ## 常规资产 - /src/assets
 在`*.vue`组件中，你所有的模板和CSS都会被`vue-html-loader`和`css-loader`解析，以寻找资产URL。例如，在`<img src="./logo.png">`和`background: url(./logo.png)`中，`"./logo.png "是一个相对资产路径，将被Webpack解析为模块依赖。
 
-因为`logo.png`不是JavaScript，当被当作模块依赖时，我们需要使用`url-loader`和`file-loader`来处理它。Quasar CLI已经为你配置了这些webpack加载器，所以你基本上可以免费获得文件名指纹和有条件的base64内联等功能，同时能够使用相对/模块路径而不用担心部署问题。
+因为`logo.png`不是JavaScript，当被当作模块依赖时，我们需要使用`url-loader`和`file-loader`来处理它。 Quasar CLI 已经为你配置了这些webpack加载器，所以你基本上可以免费获得文件名指纹和有条件的base64内联等功能，同时能够使用相对/模块路径而不用担心部署问题。
 
 由于这些资产在构建过程中可能被内联/复制/重命名，它们基本上是你源代码的一部分。这就是为什么建议将Webpack处理的资产放在`/src/assets`中，与其他源文件一起。事实上，你甚至不需要把它们全部放在`/src/assets`中：你可以根据使用它们的模块/组件来组织它们。例如，你可以把每个组件放在它自己的目录中，其静态资产就在旁边。
 
@@ -22,7 +22,7 @@ desc: 如何在Quasar应用中使用常规应用资产和静态资产。
 ## 静态资产 - /public
 与根相关的URL(例如`/logo.png`--其中'/'是你的publicPath)或`logo.png`完全不被处理。这应该被放在`public/`中。这些根本不会被Webpack处理。statics文件夹会被简单地复制到可分发的文件夹中。
 
-Quasar在幕后有一些智能算法，确保无论你构建什么(SPA、PWA、Cordova、Electron)，你的静态文件都能被正确引用*当且仅当它们不使用相对路径。
+ Quasar 在幕后有一些智能算法，确保无论你构建什么(SPA、PWA、 Cordova 、Electron)，你的静态文件都能被正确引用*当且仅当它们不使用相对路径。
 
 ```html
 <!-- Good! -->
@@ -42,7 +42,7 @@ assets "文件夹中的文件只有在你的Vue文件中有字面引用时才会
 :::
 
 ::: danger
-当不构建SPA/PWA/SSR时，`/public/icons/*`和`/public/favicon.ico`将不会被嵌入你的应用程序，因为它们没有任何作用。例如，Electron或Cordova应用程序就不需要这些文件。
+当不构建SPA/PWA/SSR时，`/public/icons/*`和`/public/favicon.ico`将不会被嵌入你的应用程序，因为它们没有任何作用。例如，Electron或 Cordova 应用程序就不需要这些文件。
 :::
 
 ## Vue的绑定只需要statics
@@ -50,7 +50,7 @@ assets "文件夹中的文件只有在你的Vue文件中有字面引用时才会
 
 ```html
 <template>
-  <!-- imageSrc MUST reference a file from /public -->
+  <!-- imageSrc 必须引用来自 /public 的文件 -->
   <img :src="imageSrc">
 </template>
 
@@ -59,8 +59,8 @@ export default {
   setup () {
     return {
       /*
-        Referencing /public.
-        Notice string doesn't start with a slash. (/)
+        参考 /public。
+        请注意，字符串不是以斜杠开头的。(/)
       */
       imageSrc: 'logo.png'
     }

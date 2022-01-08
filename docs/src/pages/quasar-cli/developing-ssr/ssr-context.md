@@ -11,7 +11,7 @@ desc: Quasar SSR中的ssrContext对象
 `ssrContext`对象只在SSR构建中可用，在服务器端编译(当`process.env.SERVER == true`)。
 :::
 
-在其他地方，它作为参数提供给[boot files](/quasar-cli/boot-files)、[Vuex store](/quasar-cli/vuex-store)和[Vue Router](/quasar-cli/routing)初始化函数，以及[preFetch](/quasar-cli/refetch-feature) 方法。
+在其他地方，它作为参数提供给[boot files](/quasar-cli/boot-files) 、[Vuex store](/quasar-cli/vuex-store) 和[Vue Router](/quasar-cli/routing) 初始化函数，以及[preFetch](/quasar-cli/refetch-feature) 方法。
 
 ```js
 // 一个启动文件
@@ -27,7 +27,7 @@ export default ({ ..., ssrContext }) { /* ... */ }
 preFetch ({ ..., ssrContext }) { /* ... */ }
 ```
 
-你也可以在你的Vue组件中访问ssrContext。下面是两个示例，一个用Composition API，一个用Options API。
+你也可以在你的Vue组件中访问ssrContext。下面是两个示例，一个用组合式 API，一个用选项式 API：
 
 ```js
 // 组成API

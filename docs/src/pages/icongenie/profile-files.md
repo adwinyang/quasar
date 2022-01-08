@@ -29,8 +29,8 @@ JSON配置文件文件的通用形式是：
 | 属性名 | 类型 | 描述 | 示例 |
 | --- | --- | --- | --- |
 | include  | Array  |  包括Icon Genie硬编码组的特定标准模式  | `["spa"，"pwa"]`/`["all"]` |
-| icon | String | 源文件的路径图标;可以是绝对的或相对于Quasar项目文件夹的根`my-icon.png` |
-| background | String | 可选背景源文件(用于启动屏幕图像)的路径;可以是绝对的或相对于Quasar项目文件夹的根`my-bg.png` |
+| icon | String | 源文件的路径图标;可以是绝对的或相对于 Quasar 项目文件夹的根`my-icon.png` |
+| background | String | 可选背景源文件(用于启动屏幕图像)的路径;可以是绝对的或相对于 Quasar 项目文件夹的根`my-bg.png` |
 | filter | String | 可选择通过发电机过滤资产;使用时，它只能生成一种类型的资产而不是全部 |  `ico` |
 | quality | Number [1-12]  | 生成文件的质量;更高的质量意味着更大的文件化，较慢;较低的质量意味着更小的文件化，更快 |`12` |
 | padding | Array [编号] |  (v2.1 +)修剪后将固定填充物应用于图标图像;语法：[<hize_px>，<vert_px>];默认为：[0,0]  | `[10，0]`/`[5,5]` |

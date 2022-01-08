@@ -1,6 +1,6 @@
 ---
 title: 配置VS代码
-desc: 如何配置VSCode以达到与Quasar的最佳使用效果。
+desc: 如何配置VSCode以达到与 Quasar 的最佳使用效果。
 ---
 
 ::: tip
@@ -38,7 +38,7 @@ desc: 如何配置VSCode以达到与Quasar的最佳使用效果。
 }
 ```
 
-### 在一个新的Quasar项目上测试标准
+### 在一个新的 Quasar 项目上测试标准
 
 ```bash
 # I selected default values for all options to create this guide
@@ -80,7 +80,7 @@ VS Code可以使用Prettier扩展来在保存时自动格式化你的代码。
 }
 ```
 
-### 在一个新的Quasar项目上测试Prettier
+### 在一个新的 Quasar 项目上测试Prettier
 
 ```bash
 # I selected default values for all options to create this guide
@@ -189,10 +189,10 @@ $ quasar dev
 }
 ```
 
-## 在VS代码中调试Quasar项目
+## 在VS代码中调试 Quasar 项目
 
 1. 首先，前往[Debugger for Chrome](https://marketplace.visualstudio.com/items?itemName=msjsdiag.debugger-for-chrome)，并彻底阅读它。
-2. 2.然后，由于Quasar是基于Vue的，你还需要参考[Vue Cookbook for VSCode debugging](https://vuejs.org/v2/cookbook/debugging-in-vscode.html)来设置调试Vue应用程序。
+2. 然后，由于 Quasar 是基于Vue的，你还需要参考[Vue Cookbook for VSCode debugging](https://vuejs.org/v2/cookbook/debugging-in-vscode.html)来设置调试Vue应用程序。
 
 最好的方法是在本页面旁边的浏览器中打开，这样你就可以在阅读这些说明时回顾这些说明。并在你的项目中应用这些改变。
 
@@ -211,7 +211,7 @@ build: {
 }
 ```
 
-然后你需要告诉VSCode为调试器添加一个配置。最简单的方法是点击操作栏上的bug图标(对于ltr语言，就是最左边的那个栏)。一旦你点击了那个bug图标，文件树区域就会切换到调试和运行区域。点击该窗口标题栏中的齿轮图标，它将弹出一个名为_launch.json_的文件。这是你把启动要调试的应用程序的不同配置放在这里。下面是在Chrome中启动Quasar应用程序的设置。对于Firefox版本，请看上面提到的Vue cookbook。
+然后你需要告诉VSCode为调试器添加一个配置。最简单的方法是点击操作栏上的bug图标(对于ltr语言，就是最左边的那个栏)。一旦你点击了那个bug图标，文件树区域就会切换到调试和运行区域。点击该窗口标题栏中的齿轮图标，它将弹出一个名为_launch.json_的文件。这是你把启动要调试的应用程序的不同配置放在这里。下面是在Chrome中启动 Quasar 应用程序的设置。对于Firefox版本，请看上面提到的Vue cookbook。
 
 ```js
 {

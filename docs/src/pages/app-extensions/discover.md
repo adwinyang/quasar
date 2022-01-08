@@ -13,7 +13,7 @@ desc: 查找官方和社区 Quasar 应用程序扩展。
 
 
 ## 官方应用程序扩展
-以下是由Quasar团队成员创建的官方应用扩展的列表。
+以下是由 Quasar 团队成员创建的官方应用扩展的列表。
 
 ### 工具
 
@@ -38,11 +38,11 @@ desc: 查找官方和社区 Quasar 应用程序扩展。
 | [@quasar/qoverlay](https://github.com/quasarframework/app-extension-qoverlay) | 简化的覆盖图。在叠加的基础上添加任何组件  |
 | [@quasar/qactivity](https://github.com/quasarframework/app-extension-qactivity) | 创建活动时间轴   |
 | [@quasar/qmarkdown](https://github.com/quasarframework/app-extension-qmarkdown) | 为你的页面提供标记功能  |
-| [@quasar/qpdfviewer](https://github.com/quasarframework/app-extension-qpdfviewer) | 在你的Quasar应用程序中查看PDF文档。|
+| [@quasar/qpdfviewer](https://github.com/quasarframework/app-extension-qpdfviewer) | 在你的 Quasar 应用程序中查看PDF文档。|
 | [@quasar/qcalendar](https://github.com/quasarframework/quasar-ui-qcalendar) | Quasar的日历 |
 | [@quasar/qscroller](https://github.com/quasarframework/app-extension-qscroller) | 许多滚动组件，包括QScroller、QTimeScroller、QDateScroller、QDateTimeScroller 和滚动日期时间范围 |
 | [@quasar/qwindow](https://github.com/quasarframework/app-extension-qwindow) | Quasar的浮动、可移动、可调整大小的互动窗口 |
 | [@quasar/qplaceholder](https://github.com/quasarframework/app-extension-qplaceholder) | 在你的数据到达之前显示一个占位符。|
-| [@quasar/qiconpicker](https://github.com/quasarframework/quasar-ui-qiconpicker) | 为您的Quasar应用程序提供图标选择器。  |
+| [@quasar/qiconpicker](https://github.com/quasarframework/quasar-ui-qiconpicker) | 为您的 Quasar 应用程序提供图标选择器。  |
 | [@quasar/qribbon](https://github.com/quasarframework/app-extension-qribbon) | Quasar应用程序的QRibbon UI组件。   |
 | [@quasar/qzoom](https://github.com/quasarframework/app-extension-qzoom) | 缩放任何内容(图片、视频、文本、组件...)  |

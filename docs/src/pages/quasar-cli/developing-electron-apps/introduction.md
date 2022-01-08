@@ -1,8 +1,8 @@
 ---
-title: 什么是电子
-desc: 关于Quasar桌面应用程序背后的技术介绍。
+title: 什么是 Electron
+desc: 关于 Quasar 桌面应用程序背后的技术介绍。
 ---
-[Electron](https://electronjs.org/)(原名Atom Shell)是一个开源框架，由Cheng Zhao创建，现在由GitHub开发。**它允许使用最初为网络应用开发的前端和后端组件开发桌面GUI应用**。后台使用Node.js运行时间，前端使用Chromium。Electron是几个著名的开源项目背后的主要GUI框架，包括GitHub的Atom和微软的Visual Studio Code源代码编辑器、Tidal音乐流媒体服务桌面应用程序和Light Table IDE，此外还有Discord聊天服务的免费桌面客户端。
+[Electron](https://electronjs.org/) (原名Atom Shell)是一个开源框架，由 Cheng Zhao 创建，现在由GitHub开发。**它允许使用最初为网络应用开发的前端和后端组件开发桌面GUI应用**。后台使用Node.js运行时间，前端使用Chromium。Electron是几个著名的开源项目背后的主要GUI框架，包括GitHub的Atom和微软的Visual Studio Code源代码编辑器、Tidal音乐流媒体服务桌面应用程序和Light Table IDE，此外还有Discord聊天服务的免费桌面客户端。
 
 每个Electron应用程序都有两个线程：一个是主线程(处理应用程序窗口和启动)，一个是渲染器线程(基本上是你的UI网页代码)。还有一个预加载脚本来连接这两个 "世界"。
 

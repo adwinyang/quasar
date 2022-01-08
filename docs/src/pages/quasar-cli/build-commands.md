@@ -1,11 +1,11 @@
 ---
 title: 构建命令
-desc: Quasar CLI用于开发和构建Quasar应用程序的命令列表。
+desc:  Quasar CLI 用于开发和构建 Quasar 应用程序的命令列表。
 ---
 我们将涵盖开发和生产构建命令。
 
 ::: tip
-Quasar CLI命令的完整列表。[Commands List](/quasar-cli/commands-list)。
+ Quasar CLI 命令的完整列表。[Commands List](/quasar-cli/commands-list) 。
 :::
 
 ### 开发

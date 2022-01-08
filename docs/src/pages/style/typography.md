@@ -9,7 +9,7 @@ related:
   - /style/positioning
   - /style/spacing
 ---
-我们将在下面的章节中处理Quasar提供的排版。
+我们将在下面的章节中处理 Quasar 提供的排版。
 
 ## 标题
 <typography-headings />

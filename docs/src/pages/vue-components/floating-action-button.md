@@ -1,6 +1,6 @@
 ---
 title: 浮动的行动按钮
-desc: 如何使用QFab组件。为你的Quasar应用程序提供浮动的动作按钮。
+desc: 如何使用QFab组件。为你的 Quasar 应用程序提供浮动的动作按钮。
 keys: QFab
 related:
   - /layout/layout

@@ -10,23 +10,23 @@ Quasar 组件有它们自己的图标。Quasar不是强迫你使用一个特定�
 
 你可以安装多个图标库，但你仅能选择一个用于 Quasar 的组件。
 
-Quasar目前支持。[Material Icons](https://material.io/icons/) , [Font Awesome](http://fontawesome.io/icons/), [Ionicons](http://ionicons.com/), [MDI](https://materialdesignicons.com/), [Eva Icons](https://akveo.github.io/eva-icons), [Themify Icons](https://themify.me/themify-icons), [Line Awesome](https://icons8.com/line-awesome) 和 [Bootstrap Icons](https://icons.getbootstrap.com/) 。
+ Quasar 目前支持。[Material Icons](https://material.io/icons/) , [Font Awesome](http://fontawesome.io/icons/), [Ionicons](http://ionicons.com/), [MDI](https://materialdesignicons.com/), [Eva Icons](https://akveo.github.io/eva-icons), [Themify Icons](https://themify.me/themify-icons), [Line Awesome](https://icons8.com/line-awesome) 和 [Bootstrap Icons](https://icons.getbootstrap.com/) 。
 
-你也可以在任何Quasar组件中使用你自己的图标(作为自定义的svgs或任何格式的图像)，参见[QIcon](/vue-components/icon#image-icons)页面以了解更多相关信息。
+你也可以在任何 Quasar 组件中使用你自己的图标(作为自定义的svgs或任何格式的图像)，参见[QIcon](/vue-components/icon#image-icons)页面以了解更多相关信息。
 
 ::: tip
 相关页面。[安装图标库](/options/installing-icon-libraries)和[QIcon组件](/vue-components/icon)。
 :::
 
 ## 配置默认的图标集
-**有两种类型的Quasar图标集：基于web字体和基于svg。
+**有两种类型的 Quasar 图标集：基于web字体和基于svg。
 
-除非另有配置，Quasar使用Material Icons网页字体作为其组件的图标集。但是你可以告诉Quasar使用其他的图标集，但是如果是基于webfont的图标集，那么一定要在你的网站/应用程序中包含它的图标库(见[安装图标库](/options/installing-icon-libraries))。
+除非另有配置，Quasar使用Material Icons网页字体作为其组件的图标集。但是你可以告诉 Quasar 使用其他的图标集，但是如果是基于webfont的图标集，那么一定要在你的网站/应用程序中包含它的图标库(见[安装图标库](/options/installing-icon-libraries))。
 
 ### 硬编码
-如果默认的Quasar图标集不是动态确定的(例如，不依赖于cookies)，那么你可以。
+如果默认的 Quasar 图标集不是动态确定的(例如，不依赖于cookies)，那么你可以。
 
-#### Quasar CLI方式
+####  Quasar CLI 方式
 我们再次编辑`/quasar.conf.js`:
 
 ```js
@@ -45,7 +45,7 @@ framework: {
 
 对于所有可用的选项，请访问[GitHub](https://github.com/quasarframework/quasar/tree/dev/ui/icon-set) 仓库。
 
-包括MDI和Fontawesome并告诉Quasar在其组件中使用Fontawesome的完整示例。
+包括MDI和Fontawesome并告诉 Quasar 在其组件中使用Fontawesome的完整示例。
 
 ```js
 extras: [
@@ -57,10 +57,10 @@ framework: {
 }
 ```
 
-这将使你能够在你的应用程序中同时使用MDI和Fontawesome网页字体，而且所有Quasar组件都将显示Fontawesome图标。
+这将使你能够在你的应用程序中同时使用MDI和Fontawesome网页字体，而且所有 Quasar 组件都将显示Fontawesome图标。
 
 #### UMD方式
-包括你的Quasar版本的Quasar图标集标签，同时告诉Quasar使用它。例如:
+包括你的 Quasar 版本的 Quasar 图标集标签，同时告诉 Quasar 使用它。例如:
 
 ```html
 <!-- 在 Quasar JS 标签之后加上这个 -->
@@ -82,7 +82,7 @@ import { Quasar } from 'quasar'
 import iconSet from 'quasar/icon-set/fontawesome-v5'
 import '@quasar/extras/fontawesome-v5/fontawesome-v5.css'
 // ...
-app.use(Quasar, {
+app.use( Quasar , {
   // ... ,
   iconSet: iconSet
 })
@@ -96,14 +96,14 @@ import iconSet from 'quasar/icon-set/fontawesome-v5'
 // ...
 import { Quasar } from 'quasar'
 // ...
-app.use(Quasar, {
+app.use( Quasar , {
   // ... ,
   iconSet: iconSet
 })
 ```
 
 ### 动态的(非SSR)
-Quasar CLI: 如果您所需要的Quasar图标集必须是动态选择的(例如：取决于cookie)，那么您需要创建一个启动文件。`$ quasar new boot quasar-icon-set [-format ts]`。这将创建`/src/boot/quasar-icon-set.js`文件。把它编辑成:
+Quasar CLI: 如果您所需要的 Quasar 图标集必须是动态选择的(例如：取决于cookie)，那么您需要创建一个启动文件。`$ quasar new boot quasar-icon-set [-format ts]`。这将创建`/src/boot/quasar-icon-set.js`文件。把它编辑成:
 
 ```js
 import { Quasar } from 'quasar'
@@ -121,7 +121,7 @@ export default async () => {
       })
   }
   catch (err) {
-    // 要求的Quasar图标集不存在。
+    // 要求的 Quasar 图标集不存在。
     // 让我们不要破坏应用程序，所以捕捉错误
   }
 }
@@ -160,7 +160,7 @@ export default async ({ ssrContext }) => {
       })
   }
   catch (err) {
-    // 要求的Quasar图标集不存在。
+    // 要求的 Quasar 图标集不存在。
     // 让我们不要破坏应用程序，所以捕捉错误
   }
 }

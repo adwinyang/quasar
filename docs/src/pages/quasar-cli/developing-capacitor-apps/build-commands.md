@@ -1,6 +1,6 @@
 ---
-title: 电容器构建命令
-desc: 使用Capacitor开发或建立混合移动应用程序时，Quasar CLI的命令列表。
+title:  Capacitor 构建命令
+desc: 使用 Capacitor 开发或构建混合移动应用程序时的 Quasar CLI 命令列表。
 ---
 
 [Quasar CLI](/quasar-cli/installation)使得从你的源代码中开发或构建最终的可分发文件变得异常简单。
@@ -10,14 +10,14 @@ desc: 使用Capacitor开发或建立混合移动应用程序时，Quasar CLI的�
 ```bash
 $ quasar dev -m capacitor -T [ios|android]
 
-# ..or the longer form:
+# ..或者更长的形式:
 $ quasar dev --mode capacitor --target [ios|android]
 ```
 
-它将打开IDE(Android Studio / Xcode)，从那里你可以手动选择模拟器(或同时选择多个模拟器！)，并在它/他们身上安装开发应用。你也可以在真正的移动/平板电脑设备上运行开发应用程序。
+它将打开 IDE(Android Studio / Xcode)，从那里你可以手动选择模拟器(或同时选择多个模拟器！)，并在它/他们身上安装开发应用。你也可以在真正的移动/平板电脑设备上运行开发应用程序。
 
 ::: warning
-在Android Studio中，你会看到一条信息，建议升级Gradle版本。**不要升级Gradle**，因为这将破坏Capacitor项目。任何其他要求的升级也是如此。
+在Android Studio中，你会看到一条信息，建议升级 Gradle 版本。**不要升级 Gradle**，因为这将破坏Capacitor项目。任何其他要求的升级也是如此。
 
 <img src="https://cdn.quasar.dev/img/gradle-upgrade-notice.png" alt="Gradle升级" class="q-my-md fit rounded-borders" style="max-width: 350px">。
 
@@ -27,7 +27,7 @@ $ quasar dev --mode capacitor --target [ios|android]
 
 :::
 
-为了使你能够在设备模拟器上或直接在手机上开发(包括热模块重装)，Quasar CLI遵循以下步骤。
+为了使你能够在设备模拟器上或直接在手机上开发(包括热模块重装)，Quasar CLI 遵循以下步骤。
 
 1. 检测你的机器的外部IP地址。如果检测到有多个这样的IP，那么它会要求你选择一个。如果你将使用手机进行开发，那么选择你的机器的IP地址，该地址可以从手机/平板电脑上ping到。
 2. 它在你的机器上启动了一个开发服务器。
@@ -48,11 +48,11 @@ $ quasar build -m capacitor -T [ios|android]
 $ quasar build --mode capacitor --target [ios|android]
 ```
 
-* 这些命令解析并构建你的`/src`文件夹，然后覆盖`/src-capacitor/www`，然后使用Gradle/xcodebuild生成最终的资产，进入手机/平板电脑。
+* 这些命令解析并构建你的`/src`文件夹，然后覆盖`/src-capacitor/www`，然后使用 Gradle /xcodebuild生成最终的资产，进入手机/平板电脑。
 
 * 除非另有配置，否则构建的包将位于`/dist/capacitor`中。
 
-* 如果你希望跳过Gradle/xcodebuild步骤，只填充`/src-capacitor/www`文件夹。
+* 如果你希望跳过 Gradle /xcodebuild步骤，只填充`/src-capacitor/www`文件夹。
 
 ```bash
 $ quasar build -m capacitor -T [ios|android] --skip-pkg
@@ -65,7 +65,7 @@ $ quasar build -m capacitor -T [ios|android] --ide
 ```
 
 ::: warning
-在Android Studio中，你会看到一条信息，建议升级Gradle版本。**不要升级Gradle**，因为这将破坏Capacitor项目。任何其他要求的升级也是如此。
+在Android Studio中，你会看到一条信息，建议升级 Gradle 版本。**不要升级 Gradle**，因为这将破坏Capacitor项目。任何其他要求的升级也是如此。
 
 <img src="https://cdn.quasar.dev/img/gradle-upgrade-notice.png" alt="Gradle升级" class="q-my-md fit rounded-borders" style="max-width: 350px">。
 
@@ -80,6 +80,6 @@ $ quasar build -m capacitor -T [ios|android] --ide
 ```bash
 $ quasar build -m capacitor -T [ios|android] -d
 
-# ..or the longer form
+# ..或者更长的形式
 $ quasar build -m capacitor -T [ios|android] --debug
 ```

@@ -1,6 +1,6 @@
 ---
 title: 对话框插件
-desc: 一个Quasar插件，它提供了一种简单的方法，以对话框的形式显示提示、选择、确认或警告。
+desc: 一个 Quasar 插件，它提供了一种简单的方法，以对话框的形式显示提示、选择、确认或警告。
 keys: Dialog
 related:
   - /vue-components/dialog
@@ -8,7 +8,7 @@ related:
   - /vue-composables/use-dialog-plugin-component
 ---
 
-Quasar对话是为用户提供选择特定行动或行动列表的能力的一个好方法。它们也可以为用户提供重要的信息，或者要求他们做出一个决定(或多个决定)。
+ Quasar 对话是为用户提供选择特定行动或行动列表的能力的一个好方法。它们也可以为用户提供重要的信息，或者要求他们做出一个决定(或多个决定)。
 
 从UI的角度来看，你可以把Dialogs看作是一种浮动模式，它只覆盖屏幕的一部分。这意味着Dialogs应该只用于用户的快速操作。
 
@@ -23,7 +23,7 @@ Quasar对话是为用户提供选择特定行动或行动列表的能力的一�
 通过QDialog插件，你可以通过编程建立三种类型的对话框，其表单内容如下。
 1. 一个提示对话框--要求用户在一个输入字段中填写某种数据。
 2. 一组选项，供用户使用单选按钮或切换按钮(仅单选)或复选框(用于多选)进行选择。
-3. 3.一个简单的确认对话框，用户可以取消或给她一个特定的动作或输入的 "OK"。
+3. 一个简单的确认对话框，用户可以取消或给她一个特定的动作或输入的 "OK"。
 
 为了创建#1，提示输入表单，你有`opts`对象中的`prompt`属性。
 
@@ -61,7 +61,7 @@ setup () {
 :::
 
 ::: warning
-这并不是一个详尽的清单，你可以用对话框作为Quasar插件做什么。要进一步探索，请查看API部分。
+这并不是一个详尽的清单，你可以用对话框作为 Quasar 插件做什么。要进一步探索，请查看API部分。
 :::
 
 <doc-example title="Basic" file="Dialog/Basic" />
@@ -280,13 +280,13 @@ export default {
 </script>
 ```
 ## Cordova/Capacitor返回按钮
-Quasar默认为你处理后退按钮，所以它可以隐藏任何打开的对话框，而不是默认的行为，即返回到前一页(这不是一个好的用户体验)。
+ Quasar 默认为你处理后退按钮，所以它可以隐藏任何打开的对话框，而不是默认的行为，即返回到前一页(这不是一个好的用户体验)。
 
 然而，如果你想禁用这种行为，请编辑你的/quasar.conf.js文件。
 
 ```js
 // quasar.conf.js;
-// 为Cordova(只！)。
+// 为 Cordova (只！)。
 return {
   framework: {
     config: {
@@ -295,7 +295,7 @@ return {
         backButtonExit: true/false/'*'/['/login', '/home', '/my-page'],
 
         // 另一方面，以下是完全
-        // 禁用Quasar的返回按钮管理。
+        // 禁用 Quasar 的返回按钮管理。
         backButton: true/false
       }
     }
@@ -303,7 +303,7 @@ return {
 }
 
 // quasar.conf.js;
-// 用于电容器(仅适用于！)。
+// 用于 Capacitor (仅适用于！)。
 return {
   framework: {
     config: {
@@ -312,7 +312,7 @@ return {
         backButtonExit: true/false/'*'/['/login', '/home', '/my-page'],
 
         // 另一方面，以下是完全
-        // 禁用Quasar的返回按钮管理。
+        // 禁用 Quasar 的返回按钮管理。
         backButton: true/false
       }
     }

@@ -1,6 +1,6 @@
 ---
 title: 视频教程
-desc: 由社区创建的关于Quasar的视频教程列表。
+desc: 由社区创建的关于 Quasar 的视频教程列表。
 keys: Video Tutorials
 components:
   - video-tutorials/TutorialListing
@@ -25,6 +25,6 @@ components:
 
 ## Vue 2 (legacy) 视频教程
 
-Quasar是基于Vue的，所以有关它的知识也很重要。
+ Quasar 是基于Vue的，所以有关它的知识也很重要。
 
 <tutorial-listing which="vue" />

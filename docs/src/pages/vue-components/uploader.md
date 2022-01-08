@@ -6,7 +6,7 @@ related:
   - /vue-components/file-picker
 ---
 
-Quasar为你提供了一种通过QUploader组件上传文件的方法。
+ Quasar 为你提供了一种通过QUploader组件上传文件的方法。
 
 ::: tip
 如果你想要的只是一个输入文件，你可以考虑使用[QFile](/vue-components/file-picker)拾取器组件来代替。

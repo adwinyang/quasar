@@ -1,6 +1,6 @@
 ---
 title: 加载插件
-desc: 一个Quasar插件，可以通过一个带有旋转器和信息的覆盖物来显示你的应用程序的加载状态。
+desc: 一个 Quasar 插件，可以通过一个带有旋转器和信息的覆盖物来显示你的应用程序的加载状态。
 keys: Loading
 related:
   - /vue-components/linear-progress

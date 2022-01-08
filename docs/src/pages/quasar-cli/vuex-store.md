@@ -1,12 +1,12 @@
 ---
 title: 应用程序Vuex商店
-desc: 如何在Quasar应用程序中管理Vuex商店。
+desc: 如何在 Quasar 应用程序中管理Vuex商店。
 ---
 在大型应用中，由于多块状态散落在许多组件中以及它们之间的交互，状态管理往往变得复杂。人们常常忽略的是，Vue实例中的真相来源是原始数据对象--Vue实例只是代理了对它的访问。因此，如果你有一块应该被多个实例共享的状态，你应该避免重复它，而是通过身份来共享它。
 
 如果你想让组件共享状态，推荐的方法是Vuex。在深入研究之前，先看看它的[文档](https://vuex.vuejs.org/)。当与[Vue dev-tools](https://github.com/vuejs/vue-devtools)浏览器扩展一起使用时，它有一个伟大的功能，如时间旅行调试。
 
-由于Vuex有很好的文档，我们不会详细介绍如何配置或使用它。相反，我们将向你展示在Quasar项目中使用它时的文件夹结构。
+由于Vuex有很好的文档，我们不会详细介绍如何配置或使用它。相反，我们将向你展示在 Quasar 项目中使用它时的文件夹结构。
 
 ```bash
 .
@@ -17,7 +17,7 @@ desc: 如何在Quasar应用程序中管理Vuex商店。
         └── <folder>         # Vuex Store Module...
 ```
 
-默认情况下，如果你在用Quasar CLI创建项目文件夹时选择使用Vuex，它将为你设置使用Vuex模块。`/src/store`的每个子文件夹代表一个Vuex模块。
+默认情况下，如果你在用 Quasar CLI 创建项目文件夹时选择使用Vuex，它将为你设置使用Vuex模块。`/src/store`的每个子文件夹代表一个Vuex模块。
 
 如果你在创建项目时没有选择Vuex选项，但想在以后添加它，那么你需要做的就是检查下一节，并创建`src/store/index.js`文件。
 
@@ -26,7 +26,7 @@ desc: 如何在Quasar应用程序中管理Vuex商店。
 :::
 
 ## 添加一个Vuex模块。
-Quasar CLI通过`$ quasar new`命令使添加Vuex模块变得简单。
+ Quasar CLI 通过`$ quasar new`命令使添加Vuex模块变得简单。
 
 ```bash
 $ quasar new store <store_name>
@@ -125,7 +125,7 @@ export default {
 
 ## TypeScript支持
 
-如果你在用Quasar CLI创建项目文件夹时选择使用Vuex和TypeScript，它将在`src/store/index.ts`中添加一些类型化代码。
+如果你在用 Quasar CLI 创建项目文件夹时选择使用Vuex和TypeScript，它将在`src/store/index.ts`中添加一些类型化代码。
 为了在你的组件中获得一个类型化的Vuex商店，你将需要像这样修改你的Vue文件。
 
 ```html

@@ -1,6 +1,6 @@
 ---
 title: Quasar Playground
-desc: 在jsFiddle、Codepen或Codesandbox模板上玩Quasar。
+desc: 在jsFiddle、Codepen或Codesandbox模板上玩 Quasar 。
 ---
 
 你也可以在GitHub上分叉并使用这些链接来报告问题。这些链接(显然)使用Quasar UMD版本。
@@ -14,7 +14,7 @@ desc: 在jsFiddle、Codepen或Codesandbox模板上玩Quasar。
 
 #### Codesandbox模板
 
-对于更复杂的Quasar代码示例，比如使用引导文件、Vuex等时，可以叉开我们的Codesandbox。
+对于更复杂的 Quasar 代码示例，比如使用引导文件、Vuex等时，可以叉开我们的Codesandbox。
 
 | 供应商 | URL |
 | Codesandbox | [https://codesandbox.quasar.dev](https://codesandbox.quasar.dev) |

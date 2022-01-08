@@ -82,13 +82,13 @@ It's best that your QDialog main content is a QCard. However, if you are plannin
 <doc-example title="尺寸示例" file="QDialog/Sizing" />
 
 ## Cordova/Capacitor的返回按钮
-Quasar默认为你处理后退按钮，所以它可以隐藏任何打开的对话框，而不是默认行为，即返回到上一页(这不是一个好的用户体验)。
+ Quasar 默认为你处理后退按钮，所以它可以隐藏任何打开的对话框，而不是默认行为，即返回到上一页(这不是一个好的用户体验)。
 
 然而，如果你想禁用这一行为，请编辑你的/quasar.conf.js文件。
 
 ```js
 // quasar.conf.js;
-// 为Cordova(只！)。
+// 为 Cordova (只！)。
 return {
   framework: {
     config: {
@@ -97,7 +97,7 @@ return {
         backButtonExit: true/false/'*'/['/login', '/home', '/my-page'],
 
         // 另一方面，以下是完全
-        // 禁用Quasar的返回按钮管理。
+        // 禁用 Quasar 的返回按钮管理。
         backButton: true/false
       }
     }
@@ -105,7 +105,7 @@ return {
 }
 
 // quasar.conf.js;
-// 用于电容器(仅适用于！)。
+// 用于 Capacitor (仅适用于！)。
 return {
   framework: {
     config: {
@@ -114,7 +114,7 @@ return {
         backButtonExit: true/false/'*'/['/login', '/home', '/my-page'],
 
         // 另一方面，以下是完全
-        // 禁用Quasar的返回按钮管理。
+        // 禁用 Quasar 的返回按钮管理。
         backButton: true/false
       }
     }

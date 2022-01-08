@@ -1,6 +1,6 @@
 ---
 title: 黑暗插件
-desc: 一个Quasar插件，用于切换或配置你的应用程序的黑暗模式状态。
+desc: 一个 Quasar 插件，用于切换或配置你的应用程序的黑暗模式状态。
 keys: Dark
 related:
   - /style/dark-mode
@@ -8,7 +8,7 @@ related:
 ---
 
 ::: tip
-为了更好地了解这个Quasar插件，请前往风格和身份[黑暗模式](/style/dark-mode)页面。
+为了更好地了解这个 Quasar 插件，请前往风格和身份[黑暗模式](/style/dark-mode)页面。
 :::
 
 ## Dark API

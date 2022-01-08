@@ -38,11 +38,11 @@ function initQuasar (bridge, quasarInstance) {
 }
 
 export default function detectQuasar (bridge) {
-  if (window.Quasar) { // UMD
+  if (window. Quasar ) { // UMD
     initQuasar(bridge, {
       version: window.Quasar.version,
       dark: window.Quasar.Dark,
-      ...window.Quasar,
+      ...window. Quasar ,
       umd: true
     })
   }

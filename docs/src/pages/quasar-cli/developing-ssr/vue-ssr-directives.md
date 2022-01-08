@@ -1,19 +1,19 @@
 ---
 title: Vue SSR指令
-desc: 在Quasar应用中管理SSR的Vue指令。
+desc: 在 Quasar 应用中管理SSR的Vue指令。
 ---
 
-一个SSR应用在服务器和客户端上运行的代码是一样的。在.vue SFC文件中声明一个Vue指令(或直接导入它)通常足以让它在非SSR构建中工作。但在SSR构建中，由于Vue 3的架构(当使用vue-loader处理.vue文件时，像Quasar那样)，它需要一些额外的工作。本页将告诉你需要做什么。
+一个SSR应用在服务器和客户端上运行的代码是一样的。在.vue SFC文件中声明一个Vue指令(或直接导入它)通常足以让它在非SSR构建中工作。但在SSR构建中，由于Vue 3的架构(当使用vue-loader处理.vue文件时，像 Quasar 那样)，它需要一些额外的工作。本页将告诉你需要做什么。
 
 当构建你的应用程序的服务器端时，Vue要求你为你的每个自定义Vue指令指定SSR转换，否则它会出错，说它不知道如何在你的SFC模板中处理该特定指令。
 
 ::: tip
-你不需要为Quasar提供的Vue指令做任何工作。Quasar App CLI已经处理了声明SSR转换的问题。
+你不需要为 Quasar 提供的Vue指令做任何工作。Quasar App CLI已经处理了声明SSR转换的问题。
 :::
 
 ## 如何声明一个指令
 
-当添加SSR模式时，Quasar CLI将创建`src-ssr/directives`文件夹。它将观察这个文件夹中的任何.js(或.ts，如果启用了TS)文件，并将这些转换注入到构建中。
+当添加SSR模式时， Quasar CLI 将创建`src-ssr/directives`文件夹。它将观察这个文件夹中的任何.js(或.ts，如果启用了TS)文件，并将这些转换注入到构建中。
 
 假设我们有一个名为`my-dir`的自定义Vue指令，并在我们的应用程序中使用。我们已经将其声明或导入到我们的应用程序中，但现在为了使SSR的服务器端代码正确运行，我们现在需要为其创建一个文件。由于该指令被命名为`my-dir`，我们将创建`my-dir.js`文件。
 

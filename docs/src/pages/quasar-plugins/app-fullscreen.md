@@ -1,10 +1,10 @@
 ---
 title: 全屏插件
-desc: 一个Quasar插件，通过Web Fullscreen API切换你的应用程序的全屏状态。
+desc: 一个 Quasar 插件，通过Web Fullscreen API切换你的应用程序的全屏状态。
 keys: AppFullScreen
 ---
 有些时候，你希望你的网站或应用程序能以全屏方式运行。
-Quasar通过封装[Web Fullscreen API](https://developer.mozilla.org/en-US/docs/Web/API/Fullscreen_API)使之变得简单。
+ Quasar 通过封装[Web Fullscreen API](https://developer.mozilla.org/en-US/docs/Web/API/Fullscreen_API)使之变得简单。
 
 ::: warning
 请注意，由于Web Fullscreen API还没有一个固定的Web标准，代码运行在哪个平台上，行为就会不同。

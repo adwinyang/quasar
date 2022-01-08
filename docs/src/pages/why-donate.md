@@ -6,23 +6,23 @@ components:
   - sponsors-and-backers/DonatingButtons
 ---
 
-Quasar框架是一个经MIT许可的开源项目，由Razvan Stoenescu和他的团队以及一个开源贡献者社区共同维护。我们代表社区工作，创造新的功能，修复错误，并维护Quasar，这样你就可以继续你自己的开发项目。我们正在努力塑造Vue.js生态系统的未来，只需写一次代码，就可以同时将其部署为网站(SPA/PWA/SSR)、移动应用和/或电子应用。
+ Quasar 框架是一个经MIT许可的开源项目，由Razvan Stoenescu和他的团队以及一个开源贡献者社区共同维护。我们代表社区工作，创造新的功能，修复错误，并维护 Quasar ，这样你就可以继续你自己的开发项目。我们正在努力塑造Vue.js生态系统的未来，只需写一次代码，就可以同时将其部署为网站(SPA/PWA/SSR)、移动应用和/或 Electron 应用。
 
-像大多数开源产品一样，Quasar不能独自完成。我们依靠*赞助者、支持者和支助者*来维持运转。当Quasar开始给你带来一些经济上的稳定时，请考虑到为创建Quasar所花费的数万个小时，并给使之成为可能的团队送一些钱回来。最后，如果你的公司依赖于Quasar，那么保证Quasar继续为你服务的最好方法就是投资于它的维护工作
+像大多数开源产品一样，Quasar不能独自完成。我们依靠*赞助者、支持者和支助者*来维持运转。当 Quasar 开始给你带来一些经济上的稳定时，请考虑到为创建 Quasar 所花费的数万个小时，并给使之成为可能的团队送一些钱回来。最后，如果你的公司依赖于 Quasar ，那么保证 Quasar 继续为你服务的最好方法就是投资于它的维护工作
 
 ## 我们的宣言
 
 开源的梦想是一项崇高的事业，社区在这里成长，代码在这里孕育。根据自由开源的理念，Quasar承诺遵守Good Labs的[！[Greater-Good Affirmation](https://good-labs.github.io/greater-good-affirmation/assets/images/badge.svg)](https://good-labs.github.io/greater-good-affirmation)的信条。
 
-Quasar现在和将来都是自由和开源的，是一个自我管理的地方，每个遵守社区规则的人都被邀请和鼓励参与。
+ Quasar 现在和将来都是自由和开源的，是一个自我管理的地方，每个遵守社区规则的人都被邀请和鼓励参与。
 
 ！[我们维持什么](https://cdn.quasar.dev/img/what-do-we-sustain.png)
 
 ### 参与是一种合作欣赏的形式
 
-许多开源项目，如Quasar框架和Vue.js，都是由代表**社区的人在自己的时间内开发的，没有要求经济补偿。这种 "代码所有权 "实际上是一个非常重要的问题，因为所有者决定事情如何进一步发展。
+许多开源项目，如 Quasar 框架和Vue.js，都是由代表**社区的人在自己的时间内开发的，没有要求经济补偿。这种 "代码所有权 "实际上是一个非常重要的问题，因为所有者决定事情如何进一步发展。
 
-那么这些人是谁呢？他们是像你一样的人，需要某种功能并找到了像Quasar这样的开源解决方案。他们是使用该软件的人，并决定通过帮助改进它来作出贡献。
+那么这些人是谁呢？他们是像你一样的人，需要某种功能并找到了像 Quasar 这样的开源解决方案。他们是使用该软件的人，并决定通过帮助改进它来作出贡献。
 
 他们可能对编码充满热情，想要一个项目来发挥他们的才能。有很多理由可以参与到一个开源项目的社区中来。但大多数人都有一个共同点。
 
@@ -36,7 +36,7 @@ Quasar现在和将来都是自由和开源的，是一个自我管理的地方�
 ### 财政赞助以保证维护
 除了 "node_modules "仍然是宇宙中最重的东西，以及在某种程度上需要某种定期的财政支持以保证大型开源项目的维护之外，没有什么是肯定的。[参考资料](https://github.com/sfosc/sfosc/issues/65#issuecomment-491770533)。
 
-对于Quasar来说，这个时间点就是现在，你的支持将使其与众不同。
+对于 Quasar 来说，这个时间点就是现在，你的支持将使其与众不同。
 
 ![用钱维持](https://cdn.quasar.dev/img/sustain-people-code.png)
 
@@ -69,8 +69,8 @@ Quasar现在和将来都是自由和开源的，是一个自我管理的地方�
 
 <捐赠-按钮 />
 
-所有的捐款都将完全用于Quasar的开发目的。
+所有的捐款都将完全用于 Quasar 的开发目的。
 
 ::: tip
-如果想了解我们那些使Quasar成为现实的优秀人士的完整名单，请访问[支持者](https://github.com/quasarframework/quasar/blob/dev/backers.md)页面。
+如果想了解我们那些使 Quasar 成为现实的优秀人士的完整名单，请访问[支持者](https://github.com/quasarframework/quasar/blob/dev/backers.md)页面。
 :::

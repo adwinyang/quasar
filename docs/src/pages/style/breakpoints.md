@@ -5,7 +5,7 @@ related:
   - /style/spacing
 ---
 
-Quasar使用了以下CSS断点。
+ Quasar 使用了以下CSS断点。
 
 | 窗口大小 | 名称 | 断点空间(像素) |
 | --- | --- | --- |

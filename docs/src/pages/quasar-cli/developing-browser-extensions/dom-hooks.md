@@ -1,9 +1,9 @@
 ---
 title: DOM 钩子
-desc: 如何在Quasar浏览器扩展模式下使用dom钩子与底层网页通信。
+desc: 如何在 Quasar 浏览器扩展模式下使用dom钩子与底层网页通信。
 ---
 
-`src-bex/js/dom-hooks.js`是一个javascript文件，它被Quasar自动注入到底层网页中，但与所有其他钩子文件一样，可以通过访问桥接。
+`src-bex/js/dom-hooks.js`是一个javascript文件，它被 Quasar 自动注入到底层网页中，但与所有其他钩子文件一样，可以通过访问桥接。
 
 ```js
 export default function attachDomHooks (bridge) {
@@ -12,7 +12,7 @@ export default function attachDomHooks (bridge) {
 
 如果你发现自己需要将一个JS文件注入到你的底层网页中，你可以使用dom钩子来代替，因为这意味着你可以在BEX中保持这种通信链。
 
-例如，假设你想写一个BEX来检测一个Quasar应用程序是否在页面上运行，唯一的方法就是在网页的上下文中运行一些javascript。
+例如，假设你想写一个BEX来检测一个 Quasar 应用程序是否在页面上运行，唯一的方法就是在网页的上下文中运行一些javascript。
 
 ```js
 // detect-quasar.js:
@@ -38,11 +38,11 @@ function initQuasar (bridge, quasarInstance) {
 }
 
 export default function detectQuasar (bridge) {
-  if (window.Quasar) { // UMD
+  if (window. Quasar ) { // UMD
     initQuasar(bridge, {
       version: window.Quasar.version,
       dark: window.Quasar.Dark,
-      ...window.Quasar,
+      ...window. Quasar ,
       umd: true
     })
   }

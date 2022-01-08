@@ -1,6 +1,6 @@
 ---
 title: 其他用途
-desc: 一组杂七杂八的Quasar方法，用于调试或节流功能、深度复制对象、跨平台URL打开或处理DOM事件。
+desc: 一组杂七杂八的 Quasar 方法，用于调试或节流功能、深度复制对象、跨平台URL打开或处理DOM事件。
 keys: openURL,copyToClipboard,exportFile,debounce,frameDebounce,throttle,extend,uid,event
 ---
 
@@ -23,9 +23,9 @@ openURL(
 )
 ```
 
-它将处理在Cordova、Electron或浏览器上运行时涉及的古怪问题，包括通知用户他/她必须确认打开弹出窗口。
+它将处理在 Cordova 、Electron或浏览器上运行时涉及的古怪问题，包括通知用户他/她必须确认打开弹出窗口。
 
-当用Cordova(或Capacitor)包装时，最好(但不是 "必须做")是[InAppBrowser](https://cordova.apache.org/docs/en/latest/reference/cordova-plugin-inappbrowser/) Cordova插件也被安装，这样openURL就可以钩住它。
+当用 Cordova (或Capacitor)包装时，最好(但不是 "必须做")是[InAppBrowser](https://cordova.apache.org/docs/en/latest/reference/cordova-plugin-inappbrowser/) Cordova插件也被安装，这样openURL就可以连接它。
 
 如果在iOS上运行，并且安装了[cordova-plugin-safariviewcontroller](https://github.com/EddyVerbruggen/cordova-plugin-safariviewcontroller)，那么openURL将首先尝试挂接到它。
 
@@ -51,7 +51,7 @@ openURL(
 ```
 
 ::: tip
-如果你想在Cordova应用程序中打开电话拨号器，不要使用`openURL()`。相反，你应该直接使用`<a href="tel:123456789">`标签或`<QBtn href="tel:123456789">`。
+如果你想在 Cordova 应用程序中打开电话拨号器，不要使用`openURL()`。相反，你应该直接使用`<a href="tel:123456789">`标签或`<QBtn href="tel:123456789">`。
 :::
 
 ## 复制到剪贴板

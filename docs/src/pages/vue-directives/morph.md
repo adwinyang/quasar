@@ -6,7 +6,7 @@ related:
   - /quasar-utils/morph-utils
 ---
 
-"Morph "是一个Quasar指令，它提供了在两种状态下对DOM元素进行变形的能力。
+"Morph "是一个 Quasar 指令，它提供了在两种状态下对DOM元素进行变形的能力。
 
 在引擎盖下，它使用Quasar [Morph function util](/quasar-utils/morph-utils)。
 

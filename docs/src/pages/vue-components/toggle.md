@@ -93,6 +93,6 @@ QToggle组件是另一个用于用户输入的基本元素。你可以用它来�
 
 ### 本地表单提交
 
-当处理一个有 "action "和 "method "的本地表单时(例如，当使用Quasar和ASP.NET控制器时)，你需要在QToggle上指定 "name "属性，否则formData将不包含它(如果它应该包含的话)--所有的值都被转换为字符串(本地行为，所以不要使用Object值)。
+当处理一个有 "action "和 "method "的本地表单时(例如，当使用 Quasar 和ASP.NET控制器时)，你需要在QToggle上指定 "name "属性，否则formData将不包含它(如果它应该包含的话)--所有的值都被转换为字符串(本地行为，所以不要使用Object值)。
 
 <doc-example title="本地表单" file="QToggle/NativeForm" />

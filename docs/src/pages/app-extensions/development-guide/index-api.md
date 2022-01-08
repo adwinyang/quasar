@@ -160,7 +160,7 @@ module.exports = function (api, ctx) {
 ```
 
 ::: tip
-注意路径前面的波浪号(`~`)。这告诉Quasar CLI，该路径是来自node_modules的依赖关系，而不是应用扩展(App Extension)索引脚本文件的相对路径。
+注意路径前面的波浪号(`~`)。这告诉 Quasar CLI ，该路径是来自node_modules的依赖关系，而不是应用扩展(App Extension)索引脚本文件的相对路径。
 :::
 
 ## api.chainWebpack

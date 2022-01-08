@@ -1,14 +1,14 @@
 ---
-title: 搬运服务人员
+title: 处理服务工作者
 desc: 如何在Quasar Progressive Web App中配置服务工作者。
 ---
 在这里，你将学习如何在你的网站/应用程序空间内与服务工作者互动。记住，**服务工作者必须通过HTTPS提供服务**。
 
-值得注意的是，服务工作器(由Workbox自动生成--或者你已经将Quasar CLI配置为使用你的自定义服务工作器)在一个单独的线程中运行。然而，你可以从应用空间中的`/src-pwa/register-service-worker.js`文件中与它进行交互。
+值得注意的是，服务工作器(由Workbox自动生成--或者你已经将 Quasar CLI 配置为使用你的自定义服务工作器)在一个单独的线程中运行。然而，你可以从应用空间中的`/src-pwa/register-service-worker.js`文件中与它进行交互。
 
 ## 与服务工作者互动
 
-注意[register-service-worker](https://github.com/yyx990803/register-service-worker) npm包，它与Quasar CLI一起开箱即用(所以不要自己安装)。
+注意[register-service-worker](https://github.com/yyx990803/register-service-worker) npm包，它与 Quasar CLI 一起开箱即用(所以不要自己安装)。
 
 ```js
 // src-pwa/register-service-worker.js文件
@@ -47,7 +47,7 @@ register(process.env.SERVICE_WORKER_FILE, {
 ```
 
 ::: tip
-这个文件会被Quasar CLI自动捆绑到你的网站/应用程序中，因为它被认为是应用程序空间`/src`的一部分。这意味着你可以使用ES6，导入其他文件等。
+这个文件会被 Quasar CLI 自动捆绑到你的网站/应用程序中，因为它被认为是应用程序空间`/src`的一部分。这意味着你可以使用ES6，导入其他文件等。
 :::
 
 ## SSL证书
@@ -57,7 +57,7 @@ register(process.env.SERVICE_WORKER_FILE, {
 - 设置一个从localhost到127.0.0.1的环路(但这并不是没有安全问题)。
 - 通过ngrok为你的localhost服务，并使用ngrok提供的https地址。
 
-当你在quasar.conf.js文件中设置`devServer > https: true`时，Quasar将为你自动生成一个SSL证书。然而，如果你想自己为你的本地主机创建一个，那么请查看[Filippo](https://blog.filippo.io/mkcert-valid-https-certificates-for-localhost/)的这篇博文。然后你的`quasar.conf.js > devServer > https`应该是这样的。
+当你在quasar.conf.js文件中设置`devServer > https: true`时，Quasar将为你自动生成一个SSL证书。然而，如果你想自己为你的本地主机创建一个，那么请查看[Filippo](https://blog.filippo.io/mkcert-valid-https-certificates-for-localhost/)的这篇博文。然后你的`quasar.conf.js > devServer > https`应该是这样的：
 
 ```js
 // quasar.conf.js
@@ -84,7 +84,7 @@ devServer: {
 
 这就是为什么你必须始终确保添加`"Cache-Control": "no-cache"`到`service-worker.js`文件的标题中，通过你的主机服务。
 
-以Google Firebase为例，你可以在`firebase.json`配置中添加以下内容。
+以Google Firebase为例，你可以在`firebase.json`配置中添加以下内容：
 
 ```json
 {

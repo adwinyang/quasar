@@ -79,7 +79,7 @@ export default {
       //标题+页脚的高度，占用屏幕，
       //基于QLayout“View”的Prop配置
 
-      //这实际上是默认的样式 -  FN在Quasar中所做的
+      //这实际上是默认的样式 -  FN在 Quasar 中所做的
       return { minHeight: offset ? `calc(100vh - ${offset}px)` : '100vh' }
     }
   }

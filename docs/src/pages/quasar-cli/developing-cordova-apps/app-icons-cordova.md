@@ -1,11 +1,11 @@
 ---
-title: Cordova的应用程序图标
-desc: 如何用Cordova管理Quasar混合移动应用程序的图标。
+title: Cordova 的应用程序图标
+desc: 如何用 Cordova 管理 Quasar 混合移动应用程序的图标。
 ---
 
 就图标而言，Cordova是所有构建目标中最复杂的一个，因为你不仅需要把图标放在特定的文件夹中，还需要在`src-cordova/config.xml`文件中注册它们。此外，如果你使用启动画面(你应该这样做)，你也需要安装`cordova-plugin-splashscreen`，并在你的config.xml中注册它。
 
-如果你发现有一个文件是新的或丢失的，请[打开一个问题](https://github.com/quasarframework/quasar/issues)。
+如果你发现有一个文件是新的或丢失的，请[打开一个问题](https://github.com/quasarframework/quasar/issues) 。
 
 <img src="https://cdn.quasar.dev/img/iconfactory.png" style="float:right;max-width:15%;min-width:240px; padding-top:40px" />
 
@@ -15,7 +15,7 @@ desc: 如何用Cordova管理Quasar混合移动应用程序的图标。
 我们强烈建议使用[Icon Genie CLI](/icongenie/introduction)，因为它可以使用一个源图标，并自动克隆、缩放、最小化，并为你把图标放到适当的目录中。需要时，它还会告诉你需要在你的/src/index.template.html文件中添加哪些标签。
 :::
 
-用Icon Genie CLI快速启动必要的图像。有关完整的选项清单，请访问[Icon Genie CLI](/icongenie/command-list)命令清单页面。
+用Icon Genie CLI快速启动必要的图像。有关完整的选项清单，请访问[Icon Genie CLI](/icongenie/command-list) 命令清单页面。
 
 ```bash
 $ icongenie generate -m cordova -i /path/to/source/icon.png [-b /path/to/background.png]
@@ -98,7 +98,7 @@ src-cordova/
         Default@2x~ipad~anyany.png
 ```
 
-这里是你的config.xml的部分内容，应该是这样的。
+这里是你的config.xml的部分内容，应该是这样的：
 
 ```xml
 <platform name="android">

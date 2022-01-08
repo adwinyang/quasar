@@ -6,7 +6,7 @@ related:
   - /vue-directives/touch-swipe
   - /vue-directives/touch-hold
 ---
-Quasar提供了全功能的Vue指令，可以完全取代Hammerjs等库：`v-touch-pan`, `v-touch-swipe`, `v-touch-hold`甚至`v-touch-repeat`。
+ Quasar 提供了全功能的Vue指令，可以完全取代Hammerjs等库：`v-touch-pan`, `v-touch-swipe`, `v-touch-hold`甚至`v-touch-repeat`。
 
 > **这些指令也适用于鼠标事件，而不仅仅是触摸事件**，所以你也能够在桌面上为你的应用程序建立很酷的功能。
 

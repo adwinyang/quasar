@@ -1,6 +1,6 @@
 ---
 title: 底层表单插件
-desc: 一个Quasar插件，用于显示一个从应用窗口底部边缘滑上的用户操作列表。
+desc: 一个 Quasar 插件，用于显示一个从应用窗口底部边缘滑上的用户操作列表。
 keys: BottomSheet
 related:
   - /quasar-plugins/dialog
@@ -37,7 +37,7 @@ setup () {
 ```
 
 ::: tip
-当用户点击手机/平板电脑的返回键(仅适用于Cordova应用程序)，Action Sheet将被自动关闭。
+当用户点击手机/平板电脑的返回键(仅适用于 Cordova 应用程序)，Action Sheet将被自动关闭。
 
 另外，当在桌面浏览器上，点击`ESCAPE`键也会关闭Action Sheet。
 :::

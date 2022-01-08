@@ -16,7 +16,7 @@ export default function attachBackgroundHooks (bridge, activeConnections) {
 
 `bridge` 参数是用于通信的桥接器。 `activeConnections` 参数提供了通过桥接器注册的所有 BEX 连接的数组，即同一个 Quasar 应用程序使用的所有网页、选项、弹出窗口和开发工具 BEX。
 
-例如，假设我们想监听在网页浏览器中打开的新标签，然后在我们的Quasar应用程序中对其作出反应。首先，我们需要监听新的标签页被打开，并发出一个新的事件来告诉Quasar应用程序这已经发生。
+例如，假设我们想监听在网页浏览器中打开的新标签，然后在我们的 Quasar 应用程序中对其作出反应。首先，我们需要监听新的标签页被打开，并发出一个新的事件来告诉 Quasar 应用程序这已经发生。
 
 ```js
 chrome.tabs.onUpdated.addListener((tabId, changeInfo, tab) => {
@@ -24,7 +24,7 @@ chrome.tabs.onUpdated.addListener((tabId, changeInfo, tab) => {
 })
 ```
 
-然后在我们的Quasar应用程序中，我们会在我们的一个组件生命周期钩子中监听这个，像这样：
+然后在我们的 Quasar 应用程序中，我们会在我们的一个组件生命周期钩子中监听这个，像这样：
 
 ```js
 import { useQuasar } from 'quasar'

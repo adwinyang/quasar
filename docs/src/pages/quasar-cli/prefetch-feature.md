@@ -1,11 +1,11 @@
 ---
 title: 预取功能
-desc: 如何在Quasar应用中预取数据并初始化你的Vuex商店，验证路由并重定向到另一个页面。
+desc: 如何在 Quasar 应用中预取数据并初始化你的Vuex商店，验证路由并重定向到另一个页面。
 related:
   - /quasar-cli/quasar-conf-js
 ---
 
-PreFetch是一项功能(**只在使用Quasar CLI时可用)，它允许Vue Router(定义在`/src/router/routes.js`)拾取的组件。
+PreFetch是一项功能(**只在使用 Quasar CLI 时可用)，它允许Vue Router(定义在`/src/router/routes.js`)拾取的组件。
 
 * 预先获取数据
 * 验证路由
@@ -14,7 +14,7 @@ PreFetch是一项功能(**只在使用Quasar CLI时可用)，它允许Vue Router
 
 所有上述内容将在实际路由组件呈现之前运行。
 
-**它被设计用于所有Quasar模式**(SPA、PWA、SSR、Cordova、Electron)，但它对SSR的构建特别有用。
+**它被设计用于所有 Quasar 模式**(SPA、PWA、SSR、 Cordova 、Electron)，但它对SSR的构建特别有用。
 
 ## 安装
 
@@ -32,7 +32,7 @@ return {
 ## PreFetch如何帮助SSR模式
 这个功能对SSR模式特别有用(但不只限于此)。在SSR期间，我们基本上是在渲染我们的应用程序的 "快照"，所以如果应用程序依赖于一些异步数据，**那么这些数据需要在我们开始渲染过程之前被预取和解决**。
 
-另一个问题是，在客户端，同样的数据需要在我们挂载客户端应用程序之前可用--否则，客户端应用程序将使用不同的状态进行渲染，水合就会失败。
+另一个问题是，在客户端，同样的数据需要在我们挂载客户端应用程序之前可用--否则，客户端应用程序将使用不同的状态进行渲染，激活就会失败。
 
 为了解决这个问题，获取的数据需要存在于视图组件之外，在一个专门的数据存储或 "状态容器 "中。在服务器上，我们可以在渲染前预取并将数据填充到存储中。在我们加载应用程序之前，客户端的存储将直接获取服务器的状态。
 
@@ -193,7 +193,7 @@ export default {
 ```js
 // src/store/foo.js
 // 我们已经把所有的东西都合并到一个文件里。
-// 一个初始化的Quasar项目将Vuex模块的每一个组件分割开来
+// 一个初始化的 Quasar 项目将Vuex模块的每一个组件分割开来
 // 到不同的文件中，但为了这个示例的目的
 // 在文档中，我们把这个模块显示为一个单独的文件
 
@@ -290,10 +290,10 @@ export default {
 :::
 
 ## 加载状态
-一个好的用户体验包括在用户等待页面准备好的时候，通知他/她有东西正在后台处理。Quasar CLI为此提供了两个开箱即用的选项。
+一个好的用户体验包括在用户等待页面准备好的时候，通知他/她有东西正在后台处理。 Quasar CLI 为此提供了两个开箱即用的选项。
 
 ### LoadingBar
-当你把Quasar [LoadingBar](/quasar-plugins/loading-bar)插件添加到你的应用程序中时，Quasar CLI将在运行preFetch钩子时默认使用它。
+当你把Quasar [LoadingBar](/quasar-plugins/loading-bar)插件添加到你的应用程序中时， Quasar CLI 将在运行preFetch钩子时默认使用它。
 
 ### 加载
 也有可能使用Quasar [Loading](/quasar-plugins/loading)插件。下面是一个示例：

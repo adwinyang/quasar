@@ -1,6 +1,6 @@
 ---
 title: 装载条
-desc: 一个Quasar插件，它包装了QAjaxBar组件，以最简单的方式在应用程序中显示这样一个加载指标。
+desc: 一个 Quasar 插件，它包装了QAjaxBar组件，以最简单的方式在应用程序中显示这样一个加载指标。
 keys: LoadingBar
 related:
   - /vue-components/ajax-bar
@@ -22,7 +22,7 @@ Quasar LoadingBar插件提供了一个简单的方法来为你的应用程序设
 LoadingBar的选项与配置[QAjaxBar](/vue-components/ajax-bar)时相同。
 
 ::: warning
-当使用UMD版本的Quasar时，所有的组件、指令和插件都是默认安装的。这包括LoadingBar。如果你想禁用它，请指定`loadingBar: { skipHijack: true }`(它关闭了对Ajax流量的监听)。
+当使用UMD版本的 Quasar 时，所有的组件、指令和插件都是默认安装的。这包括LoadingBar。如果你想禁用它，请指定`loadingBar: { skipHijack: true }`(它关闭了对Ajax流量的监听)。
 :::
 
 ## 用法

@@ -95,7 +95,7 @@ QDate组件提供了一个输入日期的方法。目前它支持公历(默认)�
 `mask`属性标记可以在[Quasar Utils > Date utils](/quasar-utils/dateutils#format-for-display)找到。
 
 ::: warning Note on SSR
-在掩码中使用`x`或`X`(时间戳)可能会导致客户端的水合错误，因为模型字符串的解码必须用`new Date()`来完成，它需要考虑到当地的时区。因此，如果服务器与客户端处于不同的时区，那么服务器的渲染输出将与客户端的输出不同，所以水化将失败。
+在掩码中使用`x`或`X`(时间戳)可能会导致客户端的激活错误，因为模型字符串的解码必须用`new Date()`来完成，它需要考虑到当地的时区。因此，如果服务器与客户端处于不同的时区，那么服务器的渲染输出将与客户端的输出不同，所以水化将失败。
 :::
 
 ::: danger Note on persian calendar
@@ -118,7 +118,7 @@ QDate组件提供了一个输入日期的方法。目前它支持公历(默认)�
 
 ### 自定义特定的语言环境
 
-如果由于某种原因，你需要使用一个自定义的特定语言，而不是当前已经设置的Quasar语言包，你可以使用`locale`属性。
+如果由于某种原因，你需要使用一个自定义的特定语言，而不是当前已经设置的 Quasar 语言包，你可以使用`locale`属性。
 
 <doc-example title="自定义特定语言 "file="QDate/CustomLocale" overflow />。
 
@@ -184,7 +184,7 @@ QDate组件提供了一个输入日期的方法。目前它支持公历(默认)�
 
 ### 波斯日历
 ::: tip
-你可以把它与Quasar[语言包](/options/quasar-language-packs)结合起来，如波斯语(Farsi, `fa-ir`)，使QDate字符串也得到翻译，以获得完整的体验。
+你可以把它与 Quasar [语言包](/options/quasar-language-packs)结合起来，如波斯语(Farsi, `fa-ir`)，使QDate字符串也得到翻译，以获得完整的体验。
 :::
 
 ::: warning
@@ -195,6 +195,6 @@ QDate组件提供了一个输入日期的方法。目前它支持公历(默认)�
 
 ### 本地表单提交
 
-当处理一个有 "action "和 "method "的本地表单时(例如，当使用Quasar和ASP.NET控制器时)，你需要指定QDate的 "name "属性，否则formData将不包含它(如果它应该包含)。
+当处理一个有 "action "和 "method "的本地表单时(例如，当使用 Quasar 和ASP.NET控制器时)，你需要指定QDate的 "name "属性，否则formData将不包含它(如果它应该包含)。
 
 <doc-example title="本地表单" file="QDate/NativeForm" />

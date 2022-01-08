@@ -25,7 +25,7 @@ desc: 关于如何使用 Quasar App Extension 来配置主机应用程序使用 
 `/index.js`看起来像这样:
 
 ```js
-//文件。/index.js
+//文件：/index.js
 module.exports = function (api) {
   // (可选！)。
   // Quasar兼容性检查；你可能需要

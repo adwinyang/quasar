@@ -1,6 +1,6 @@
 ---
 title: RTL支持
-desc: 在Quasar应用程序中支持从右到左。
+desc: 在 Quasar 应用程序中支持从右到左。
 related:
   - /options/quasar-language-packs
   - /options/app-internationalization
@@ -42,15 +42,15 @@ module.exports = {
 ```
 
 ## 它是如何工作的
-RTL与[Quasar语言包](/options/quasar-language-packs)紧密相连。**当Quasar被设置为使用RTL语言**(语言包的 "rtl "属性设置为 "true")，并且**RTL支持被启用**(查看上面的 "启用RTL支持 "部分)，那么用户界面将动态地转换Quasar和你的网站/应用程序代码为RTL。
+RTL与[Quasar语言包](/options/quasar-language-packs)紧密相连。**当 Quasar 被设置为使用RTL语言**(语言包的 "rtl "属性设置为 "true")，并且**RTL支持被启用**(查看上面的 "启用RTL支持 "部分)，那么用户界面将动态地转换 Quasar 和你的网站/应用程序代码为RTL。
 
 让我们来讨论一下这些要求中的每一项:
 
 1. *Quasar需要被设置为使用一种RTL语言*。
 请参阅[Quasar语言包](/options/quasar-language-packs)了解如何设置语言。你可以将语言设置为默认语言或动态设置。
 
-2. 2. *RTL支持需要被启用*。
-请仔细检查上面的 "启用RTL支持 "部分。它的作用是为您的网站/应用程序代码和Quasar组件编译CSS，并自动添加相应的RTL CSS规则。由于增加了这些CSS规则，你的CSS包的大小将略有增加。
+2.  *RTL支持需要被启用*。
+请仔细检查上面的 "启用RTL支持 "部分。它的作用是为您的网站/应用程序代码和 Quasar 组件编译CSS，并自动添加相应的RTL CSS规则。由于增加了这些CSS规则，你的CSS包的大小将略有增加。
 
 3. 可选的。*将devland源代码的CSS视为RTL*。
 默认情况下，Quasar假定所有的样式都是以LTR方向编写的，并为它们生成相应的RTL样式。如果你想直接用RTL写你自己的css，那么你需要。
@@ -59,7 +59,7 @@ RTL与[Quasar语言包](/options/quasar-language-packs)紧密相连。**当Quasa
 
 ## 配置
 
-Quasar CLI使用了[postcss-rtlcss](https://github.com/elchininet/postcss-rtlcss)，所以如果你想通过quasar.conf.js > build > rtl来调整RTL设置，那么它必须符合[postcss-rtlcss options](https://github.com/elchininet/postcss-rtlcss#options)。
+ Quasar CLI 使用了[postcss-rtlcss](https://github.com/elchininet/postcss-rtlcss)，所以如果你想通过quasar.conf.js > build > rtl来调整RTL设置，那么它必须符合[postcss-rtlcss options](https://github.com/elchininet/postcss-rtlcss#options)。
 
 ## 需要记住的事情
 
@@ -127,13 +127,13 @@ Quasar CLI使用了[postcss-rtlcss](https://github.com/elchininet/postcss-rtlcss
 <div dir="ltr">
   <!--
     此DIV及其所有内容将使用非RTL模式
-    不考虑Quasar语言包RTL设置
+    不考虑 Quasar 语言包RTL设置
   -->
 </div>
 ```
 
 ## 处理 Quasar UMD
-要在UMD中启用RTL UIs，你需要为你的Quasar版本包含RTL等效的CSS标签，同时还要打包Quasar RTL语言包(如希伯来语或波斯语)。例如：
+要在UMD中启用RTL UIs，你需要为你的 Quasar 版本包含RTL等效的CSS标签，同时还要打包Quasar RTL语言包(如希伯来语或波斯语)。例如：
 
 ```html
 <html>

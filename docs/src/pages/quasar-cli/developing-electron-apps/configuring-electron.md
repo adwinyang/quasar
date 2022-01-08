@@ -1,15 +1,15 @@
 ---
-title: 配置电子
-desc: 如何用Quasar CLI管理你的Electron应用程序。
+title: 配置 Electron
+desc: 如何用 Quasar CLI 管理你的 Electron 应用程序。
 related:
   - /quasar-cli/quasar-conf-js
 ---
-我们将使用Quasar CLI来开发和构建一个Electron App。构建SPA、PWA、移动应用或Electron应用之间的区别只是由 "quasar dev "和 "quasar build "命令中的 "mode "参数决定。
+我们将使用 Quasar CLI 来开发和构建一个Electron App。构建SPA、PWA、移动应用或Electron应用之间的区别只是由 "quasar dev "和 "quasar build "命令中的 "mode "参数决定。
 
 但首先，让我们学习一下如何配置Electron构建。
 
 ## Quasar.conf.js
-你可能会注意到，`/quasar.conf.js`包含一个名为`电子'的属性。
+你可能会注意到，`/quasar.conf.js`包含一个名为 `Electron` 的属性。
 
 ```js
 // 如果你想改变默认文件
@@ -19,17 +19,17 @@ sourceFiles: {
   electronPreload: 'src-electron/electron-preload'
 },
 
-// 电子配置
+//  Electron 配置
 electron: {
   bundler: 'packager', // or 'builder'
 
-  // 电子包装器选项
+  //  Electron 包装器选项
   // https://electron.github.io/electron-packager/master/
   packager: {
     //...
   },
 
-  // 电子构建器选项
+  //  Electron 构建器选项
   // https://www.electron.build/configuration/configuration
   builder: {
     //...
@@ -37,7 +37,7 @@ electron: {
 
   // 在yarn/npm安装时指定额外参数
   // 捆绑前，在未打包的文件夹中，与以下任何一种文件捆绑在一起
-  // 电子包装师或电子建造师。
+  //  Electron 包装师或 Electron 建造师。
   // 示例。['--ignore-optional', '--some-other-param' ]
   unPackagedInstallParams: [],
 
@@ -86,9 +86,9 @@ electron: {
 }
 ```
 
-"packager "属性指的是[electron-packager options](https://github.com/electron-userland/electron-packager/blob/master/docs/api.md#options)。`dir`和`out`属性会被Quasar CLI覆盖以确保最佳效果。
+"packager" 属性指的是[electron-packager 选项](https://github.com/electron-userland/electron-packager/blob/master/docs/api.md#options) 。`dir`和`out`属性会被 Quasar CLI 覆盖以确保最佳效果。
 
-builder "属性指的是[electron-builder options](https://www.electron.build/configuration/configuration)。
+builder "属性指的是[electron-builder 选项](https://www.electron.build/configuration/configuration)。
 
 ## 打包者与构建者
 你必须选择使用打包器或构建器。它们都是优秀的开源项目，但是它们的需求略有不同。使用packager，你将能够从一台机器上为所有主要的平台构建未签署的项目(有限制)。虽然这很好，但如果你只是想做一些快速和肮脏的事情，在构建器中有更多的平台粒度(和一般抛光)。在一台电脑上交叉编译你的二进制文件，在builder中并不奏效(或者我们还没有找到配方......)。

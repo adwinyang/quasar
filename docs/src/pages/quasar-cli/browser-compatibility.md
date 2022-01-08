@@ -1,6 +1,6 @@
 ---
 title: 浏览器兼容性
-desc: 如何用Quasar CLI处理浏览器的支持。
+desc: 如何用 Quasar CLI 处理浏览器的支持。
 related:
   - /quasar-cli/quasar-conf-js
 ---
@@ -10,7 +10,7 @@ related:
 
 Babel会准确地寻找需要转译的JS功能(基于配置的浏览器)并应用它们。不过要注意这一点，因为在选项列表中增加一个 "坏苹果 "就足够了，这将使你的代码变回ES5的水平。
 
-以下是你创建Quasar项目时默认的 "浏览器列表"。
+以下是你创建 Quasar 项目时默认的 "浏览器列表"。
 
 ```js
 // package.json
@@ -28,4 +28,4 @@ Babel会准确地寻找需要转译的JS功能(基于配置的浏览器)并应�
 ]
 ```
 
-关于如何指定浏览器范围的更多信息。[browserslist](https://github.com/browserslist/browserslist)。
+关于如何指定浏览器范围的更多信息。[browserslist](https://github.com/browserslist/browserslist) 。

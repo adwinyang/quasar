@@ -34,7 +34,7 @@ Quasar Framework 是一个采用 MIT-许可证 的开源项目。由于这些令
 前往官方社区论坛：[https://forum.quasar.dev](https://forum.quasar.dev)
 
 ## Semver
-Quasar正在遵循[语义版本控制2.0](https://semver.org/)。
+ Quasar 正在遵循[语义版本控制2.0](https://semver.org/)。
 
 ## 许可
 

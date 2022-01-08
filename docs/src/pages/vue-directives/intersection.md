@@ -9,7 +9,7 @@ related:
   - /options/transitions
 ---
 
-"交叉 "是一个Quasar指令，当用户滚动时，它所应用的DOM元素(或组件)进入或离开视口时，可以调用一个方法。
+"交叉 "是一个 Quasar 指令，当用户滚动时，它所应用的DOM元素(或组件)进入或离开视口时，可以调用一个方法。
 
 在引擎盖下，它使用[Intersection Observer API](https://developer.mozilla.org/en-US/docs/Web/API/Intersection_Observer_API)。
 
@@ -77,5 +77,5 @@ Intersection指令要么接受一个处理函数作为参数，要么接受一�
 <doc-example title="滚动的卡片" file="Intersection/ScrollingCards" scrollable no-edit />
 
 ::: tip
-在上面的示例中，我们使用了一个Quasar过渡。完整的列表，请前往[过渡](/options/transitions)页面。
+在上面的示例中，我们使用了一个 Quasar 过渡。完整的列表，请前往[过渡](/options/transitions)页面。
 :::

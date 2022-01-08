@@ -5,16 +5,16 @@ related:
   - /vue-composables/use-quasar
 ---
 
-Quasar提供了一个`$q`对象，你可以用于各种用途。你会在整个文档中注意到它。
+ Quasar 提供了一个`$q`对象，你可以用于各种用途。你会在整个文档中注意到它。
 
 | Prop name | Type | Description |
 | --- | --- | --- |
 | `$q.version` | String | Quasar版本。|
-| `$q.platform` | Object | 与[Platform](/options/platform-detection)相同的对象，从Quasar导入。|
+| `$q.platform` | Object | 与[Platform](/options/platform-detection)相同的对象，从 Quasar 导入。|
 | `$q.screen` | 对象 | 由[Screen Plugin](/options/screen-plugin)提供的对象。|
-| `$q.lang` | 对象 | Quasar语言包管理，包含标签等([lang文件]之一(https://github.com/quasarframework/quasar/tree/dev/ui/lang))。专为Quasar组件设计，但你也可以在你的应用程序组件中使用它。更多信息。[Quasar语言包](/options/quasar-language-packs)。|
-| `$q.iconSet` | 对象 | Quasar图标集管理([图标集文件]之一(https://github.com/quasarframework/quasar/tree/dev/ui/icon-set))。专为Quasar组件设计，但你也可以在你的应用程序组件中使用它。更多信息。[Quasar图标集](/options/quasar-icon-sets)。|
-| `$q.cordova` | Object | 对Cordova全局对象的引用。只在Cordova应用程序下运行时可用。|
+| `$q.lang` | 对象 | Quasar语言包管理，包含标签等([lang文件]之一(https://github.com/quasarframework/quasar/tree/dev/ui/lang))。专为 Quasar 组件设计，但你也可以在你的应用程序组件中使用它。更多信息。[Quasar语言包](/options/quasar-language-packs)。|
+| `$q.iconSet` | 对象 | Quasar图标集管理([图标集文件]之一(https://github.com/quasarframework/quasar/tree/dev/ui/icon-set))。专为 Quasar 组件设计，但你也可以在你的应用程序组件中使用它。更多信息。[Quasar图标集](/options/quasar-icon-sets)。|
+| `$q.cordova` | Object | 对 Cordova 全局对象的引用。只在 Cordova 应用程序下运行时可用。|
 | `$q.capacitor` | Object | 对Capacitor全局对象的引用。只有在Capacitor应用程序下运行时才可用。|
 
 ## 使用方法
@@ -46,7 +46,7 @@ export default {
     // 显示一个方法的示例，但
     // 可以是Vue脚本的任何部分
     function show () {
-      // 打印出Quasar的版本
+      // 打印出 Quasar 的版本
       console.log($q.version)
     }
 
@@ -83,7 +83,7 @@ export default {
   // 可以是Vue脚本的任何部分
   methods: {
     show () {
-      // 打印出Quasar的版本
+      // 打印出 Quasar 的版本
       console.log(this.$q.version)
     }
   }

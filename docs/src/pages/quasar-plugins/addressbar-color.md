@@ -1,13 +1,13 @@
 ---
 title: 地址栏颜色插件
-desc: 一个Quasar插件，用于在较新的移动浏览器上改变地址栏颜色。
+desc: 一个 Quasar 插件，用于在较新的移动浏览器上改变地址栏颜色。
 keys: AddressbarColor
 ---
 较新的移动浏览器能够为地址栏指定一种颜色，就像下面的图片。
 
 ::: warning
 * 目前还没有一个网络标准，所以它不会对所有的移动浏览器起作用。
-* 这只适用于建立网站时。对于在移动应用程序(用Cordova模式构建)上着色的顶栏，请参考[cordova-plugin-statusbar](https://cordova.apache.org/docs/en/latest/reference/cordova-plugin-statusbar/)。
+* 这只适用于建立网站时。对于在移动应用程序(用 Cordova 模式构建)上着色的顶栏，请参考[cordova-plugin-statusbar](https://cordova.apache.org/docs/en/latest/reference/cordova-plugin-statusbar/)。
 :::
 
 ![移动地址栏着色](https://cdn.quasar.dev/img/mobile-address-bar-colors.jpg "移动地址栏着色")
@@ -25,7 +25,7 @@ keys: AddressbarColor
 我们创建启动文件来初始化其使用。`$ quasar new boot addressbar-color [--format ts]`。一个文件被创建(`/src/boot/addressbar-color.js`)。我们编辑它。
 
 ```js
-// 文件。/src/boot/addressbar-color.js
+// 文件：/src/boot/addressbar-color.js
 import { AddressbarColor } from 'quasar'
 
 export default () => {

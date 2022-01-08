@@ -8,11 +8,11 @@ related:
 ---
 
 QIcon组件允许你轻松地在其他组件或页面的任何其他区域插入图标。
-Quasar支持开箱即用。[Material Icons](https://material.io/icons/), [Font Awesome](http://fontawesome.io/icons/), [Ionicons](http://ionicons.com/), [MDI](https://materialdesignicons.com/), [Eva Icons](https://akveo.github.io/eva-icons), [Themify Icons](https://themify.me/themify-icons), [Line Awesome](https://icons8.com/line-awesome) 和 [Bootstrap Icons](https://icons.getbootstrap.com/) 。
+ Quasar 支持开箱即用。[Material Icons](https://material.io/icons/), [Font Awesome](http://fontawesome.io/icons/), [Ionicons](http://ionicons.com/), [MDI](https://materialdesignicons.com/), [Eva Icons](https://akveo.github.io/eva-icons), [Themify Icons](https://themify.me/themify-icons), [Line Awesome](https://icons8.com/line-awesome) 和 [Bootstrap Icons](https://icons.getbootstrap.com/) 。
 
 此外，你可以为任何图标库[自行添加支持](/vue-components/icon#custom-mapping) 。
 
-Quasar中有多种类型的图标：基于网页字体的、基于svg的和基于图像的。你不一定要在你的网站/应用程序中只使用一种类型。
+ Quasar 中有多种类型的图标：基于网页字体的、基于svg的和基于图像的。你不一定要在你的网站/应用程序中只使用一种类型。
 
 ::: tip
 相关页面。[安装图标库](/options/installing-icon-libraries)和[Quasar图标集](/options/quasar-icon-sets)。
@@ -27,7 +27,7 @@ QIcon的大小是由`font-size`CSS属性来操纵的。此外，QIcon还继承�
 
 <doc-example title="基本" file="QIcon/Basic" />
 
-对于不同Quasar组件上的`icon`属性，你不会有办法为每个平台指定一个图标，但你可以用以下方法达到同样的效果。
+对于不同 Quasar 组件上的`icon`属性，你不会有办法为每个平台指定一个图标，但你可以用以下方法达到同样的效果。
 
 ```html
 <q-btn
@@ -174,7 +174,7 @@ Svg图标由`@quasar/extras`提供(尽管你也可以提供[你自己的svg图�
 
 * 进入[Material Icons](https://material.io/icons/)，寻找你想要的图标并记住它的名字(例如："all_inbox")，用 "mat "作为前缀，并将结果用骆驼大写字母表示(例如："matAllInbox")。
 * 导入语句示例：`import { matAllInbox } from '@quasar/extras/material-icons'`。
-#### SVG材料图标概述(谷歌)
+#### SVG材料图标概述( Google )
 
 * 图标名称采用骆驼字母大小写，并且总是以 "outlined "前缀开始。
 
@@ -378,7 +378,7 @@ P is a path tag with following syntax (each are attributes):
 </svg>
 ```
 
-要通过QIcon与Quasar一起使用这个文件(确保你从你的公共或静态文件夹中引用了正确的文件)。
+要通过QIcon与 Quasar 一起使用这个文件(确保你从你的公共或静态文件夹中引用了正确的文件)。
 
 ```html
 <q-icon name="svguse:icons.svg#icon-1">
@@ -414,7 +414,7 @@ P is a path tag with following syntax (each are attributes):
 ## 图像图标
 你也可以通过使用`img:`前缀，让图标指向一个图片URL，而不是依赖任何网络字体。
 
-**所有与Quasar组件的图标相关的属性都可以使用这个功能**。
+**所有与 Quasar 组件的图标相关的属性都可以使用这个功能**。
 
 ```html
 <q-icon name="img:https://cdn.quasar.dev/logo-v2/svg/logo.svg" />
@@ -474,7 +474,7 @@ iconMapFn (String: iconName) => Object / void 0 (undefined)
   2. Acts essentially as a map to another icon
   {
     icon: String // the mapped icon String, which will be handled
-                 // 被Quasar使用，就像原来的QIcon名称是这个值一样。
+                 // 被 Quasar 使用，就像原来的QIcon名称是这个值一样。
   }
 */
 ```
@@ -483,7 +483,7 @@ iconMapFn (String: iconName) => Object / void 0 (undefined)
 
 #### 1. 对自定义图标库的支持
 
-当你使用一个自定义的图标库(不是Quasar和它的`@quasar/extras`包自带的)时，这一点特别有用。
+当你使用一个自定义的图标库(不是 Quasar 和它的`@quasar/extras`包自带的)时，这一点特别有用。
 
 ```js
 import { useQuasar } from 'quasar'
@@ -511,7 +511,7 @@ setup () {
     }
 
     // 当我们没有从我们的
-    // iconMapFn，默认的Quasar图标映射。
+    // iconMapFn，默认的 Quasar 图标映射。
     // 接管
   }
 }

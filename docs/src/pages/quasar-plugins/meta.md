@@ -1,6 +1,6 @@
 ---
 title: Quasar Meta Plugin
-desc: 一个Quasar插件，可以轻松地处理一个应用程序的元标签，帮助你增加SEO。它可以管理元标签、样式和脚本标签、HTML和正文属性以及页面标题。
+desc: 一个 Quasar 插件，可以轻松地处理一个应用程序的元标签，帮助你增加SEO。它可以管理元标签、样式和脚本标签、HTML和正文属性以及页面标题。
 keys: Meta
 related:
   - /vue-composables/use-meta

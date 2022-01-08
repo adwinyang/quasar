@@ -1,12 +1,12 @@
 ---
 title: 日期利用
-desc: 一组Quasar方法用于操作JS Date对象，而不需要专用库的高额额外费用。
+desc: 一组 Quasar 方法用于操作JS Date对象，而不需要专用库的高额额外费用。
 keys: formatDate,buildDate,isValid,addToDate,subtractFromDate,adjustDate,getMinDate,getMaxDate,isBetweenDates,getBetweenDates,isSameDate,getDateDiff,getWeekOfYear,getDayOfYear,getDayOfWeek,daysInMonth,startOfDate,endOfDate,inferDateFormat,clone,extractDate
 ---
 
-Quasar提供了一系列有用的函数，可以在大多数情况下轻松地操作JS日期，而不需要像Momentjs这样集成专用库的高额额外费用。
+ Quasar 提供了一系列有用的函数，可以在大多数情况下轻松地操作JS日期，而不需要像Momentjs这样集成专用库的高额额外费用。
 
-大多数Quasar日期函数以Unix时间戳或代表日期的字符串为参数，需要通过本地JS [Date构造器](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date)进行解析。一些示例。`1497159857411`, `Sun Jun 11 2017 08:44:42 GMT+0300`, `2017-06-16`.
+大多数 Quasar 日期函数以Unix时间戳或代表日期的字符串为参数，需要通过本地JS [Date构造器](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date)进行解析。一些示例。`1497159857411`, `Sun Jun 11 2017 08:44:42 GMT+0300`, `2017-06-16`.
 
 返回的值都是JS日期。
 
@@ -16,7 +16,7 @@ Quasar提供了一系列有用的函数，可以在大多数情况下轻松地�
 Quasar date utils包括摇树，除了UMD版本。
 :::
 
-你会注意到所有的示例都从Quasar导入了`date`对象。然而，如果你只需要其中的一个方法，那么你可以使用ES6结构化来帮助Tree Shaking只嵌入该方法而不是所有的`date`。
+你会注意到所有的示例都从 Quasar 导入了`date`对象。然而，如果你只需要其中的一个方法，那么你可以使用ES6结构化来帮助Tree Shaking只嵌入该方法而不是所有的`date`。
 
 以`addToDate()`为例。
 
@@ -375,7 +375,7 @@ console.log(newDate.getDate() === clonedDate.getDate()) // false
 
 ### 提取日期
 
-使用当前Quasar语言包设置的locale，这允许你根据传递的格式将任何字符串解析成一个日期对象。
+使用当前 Quasar 语言包设置的locale，这允许你根据传递的格式将任何字符串解析成一个日期对象。
 
 ```js
 import { date } from 'quasar'

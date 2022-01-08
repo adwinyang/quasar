@@ -1,11 +1,11 @@
 ---
 title: DOM利用
-desc: 一组用于DOM元素的Quasar方法，帮助你检索屏幕视口上的偏移量，获取和设置样式，等待DOM准备好，并对DOM元素进行变形。
+desc: 一组用于DOM元素的 Quasar 方法，帮助你检索屏幕视口上的偏移量，获取和设置样式，等待DOM准备好，并对DOM元素进行变形。
 keys: offset,style,height,width,css,ready
 ---
 
 ### 帮助树状抖动
-你会发现所有的示例都导入了Quasar的不同部分。然而，如果你只需要一个特定的util方法，那么你可以使用ES6的析构来帮助Tree Shaking只嵌入该方法，而不是在其周围。
+你会发现所有的示例都导入了 Quasar 的不同部分。然而，如果你只需要一个特定的util方法，那么你可以使用ES6的析构来帮助Tree Shaking只嵌入该方法，而不是在其周围。
 
 使用`dom`utils的示例。
 ```js

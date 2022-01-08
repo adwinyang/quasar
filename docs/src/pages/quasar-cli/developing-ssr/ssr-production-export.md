@@ -1,10 +1,10 @@
 ---
-title: SSR生产出口
-desc: 为不同平台配置Quasar SSR网络服务器，包括无服务器架构。
+title: SSR 生产导出
+desc: 为不同平台配置 Quasar SSR 网络服务器，包括无服务器架构。
 ---
 
 ::: danger
-* 你需要运行在"@quasar/app" v3.2以上才能使用这个功能。
+* 你需要运行在 "@quasar/app" v3.2以上才能使用这个功能。
 * 这个文件只用于你的生产构建，而不是在开发时使用。
 :::
 
@@ -97,7 +97,7 @@ export default ({
 
 ## 默认内容
 
-以下是在Quasar CLI项目中添加SSR支持时`/src-ssr/production-export.js`的默认内容。
+以下是在 Quasar CLI 项目中添加SSR支持时`/src-ssr/production-export.js`的默认内容。
 
 ```js
 import { ssrProductionExport } from 'quasar/wrappers'
@@ -120,7 +120,7 @@ export default ssrProductionExport(({ app, port, isReady }) => {
 
 ### 在一个端口上收听
 
-这是你在Quasar CLI项目中添加SSR支持时得到的默认选项。它开始监听配置的端口(process.env.PORT或quasar.conf > ssr > prodPort)。
+这是你在 Quasar CLI 项目中添加SSR支持时得到的默认选项。它开始监听配置的端口(process.env.PORT或quasar.conf > ssr > prodPort)。
 
 ```js
 // src-ssr/production-export.[js|ts]
@@ -149,7 +149,7 @@ export default ssrProductionExport(({ app, port, isReady }) => {
 module.exports.handler = __your_handler__
 ```
 
-那么你需要做的是。
+那么你需要做的是：
 
 ```js
 // src-ssr/production-export.[js|ts]

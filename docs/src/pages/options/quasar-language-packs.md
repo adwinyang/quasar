@@ -1,20 +1,20 @@
 ---
 title: Quasar 语言包
-desc: 如何在Quasar应用程序中配置Quasar语言包。
+desc: 如何在 Quasar 应用程序中配置 Quasar 语言包。
 related:
   - /options/rtl-support
   - /options/app-internationalization
 ---
-Quasar语言包指的是Quasar自身组件的国际化，其中一些组件有标签。
+ Quasar 语言包指的是 Quasar 自身组件的国际化，其中一些组件有标签。
 
 ::: warning
-需要注意的是，下面所描述的只是Quasar组件的国际化。如果你需要对自己的组件进行国际化，请阅读[App Internationalization](/options/app-internationalization)文档页。
+需要注意的是，下面所描述的只是 Quasar 组件的国际化。如果你需要对自己的组件进行国际化，请阅读[App Internationalization](/options/app-internationalization)文档页。
 :::
 
-如上所述，一些Quasar组件有自己的标签。当涉及到国际化时，一种选择是通过Quasar组件(如QTable)的每个实例的标签属性来配置标签。这样你就可以自定义文本以匹配所选语言。然而，这需要时间并给你的网站/应用程序增加不必要的复杂性。**相反，你可以使用Quasar语言包，它为你翻译了许多标准标签定义，如 "取消"、"清除"、"选择"、"更新 "等。不需要再翻译这些内容了! 而且它是开箱即用的。
+如上所述，一些 Quasar 组件有自己的标签。当涉及到国际化时，一种选择是通过 Quasar 组件(如QTable)的每个实例的标签属性来配置标签。这样你就可以自定义文本以匹配所选语言。然而，这需要时间并给你的网站/应用程序增加不必要的复杂性。**相反，你可以使用 Quasar 语言包，它为你翻译了许多标准标签定义，如 "取消"、"清除"、"选择"、"更新 "等。不需要再翻译这些内容了! 而且它是开箱即用的。
 
 ::: tip
-关于可用的Quasar语言的完整列表，请查看[GitHub上的Quasar语言](https://github.com/quasarframework/quasar/tree/dev/ui/lang) 。
+关于可用的 Quasar 语言的完整列表，请查看[GitHub上的 Quasar 语言](https://github.com/quasarframework/quasar/tree/dev/ui/lang) 。
 <br><br>**如果您想要的语言不在该列表中**，请随时提交 PR 以添加它。最多需要 5 到 10 分钟。我们欢迎任何语言！
 :::
 
@@ -23,7 +23,7 @@ Quasar语言包指的是Quasar自身组件的国际化，其中一些组件有�
 除非另有配置(见下文)，Quasar 默认使用 "en-US "语言包。
 
 ### 硬编码
-如果默认的Quasar语言包不是动态确定的(例如不依赖于cookies)，那么你可以：
+如果默认的 Quasar 语言包不是动态确定的(例如不依赖于cookies)，那么你可以：
 
 #### Quasar CLI
 编辑`/quasar.conf.js`：
@@ -43,7 +43,7 @@ import { Quasar } from 'quasar'
 // ...
 import langDe from 'quasar/lang/de'
 // ...
-app.use(Quasar, {
+app.use( Quasar , {
   // ... ,
   lang: langDe
 })
@@ -58,14 +58,14 @@ import { Quasar } from 'quasar'
 // ...
 import langDe from 'quasar/lang/de'
 // ...
-app.use(Quasar, {
+app.use( Quasar , {
   // ... ,
   lang: langDe
 })
 ```
 
 #### Quasar UMD
-包括你的Quasar版本的语言包JS标签，同时告诉Quasar使用它。例如：
+包括你的 Quasar 版本的语言包JS标签，同时告诉 Quasar 使用它。例如：
 
 ```html
 <!-- include this after Quasar JS tag -->
@@ -78,7 +78,7 @@ app.use(Quasar, {
 在[UMD / Standalone](/start/umd)页面上查看你的HTML文件中需要包含哪些标签。
 
 ### 动态(非SSR)
-Quasar CLI: 如果您所需要的Quasar语言包必须是动态选择的(例如：取决于cookie)，那么您需要创建一个启动文件。`$ quasar new boot quasar-lang-pack [-format ts]`。这将创建`/src/boot/quasar-lang-pack.js`文件。把它编辑成：
+Quasar CLI: 如果您所需要的 Quasar 语言包必须是动态选择的(例如：取决于cookie)，那么您需要创建一个启动文件。`$ quasar new boot quasar-lang-pack [-format ts]`。这将创建`/src/boot/quasar-lang-pack.js`文件。把它编辑成：
 
 ```js
 import { Quasar } from 'quasar'
@@ -96,7 +96,7 @@ export default async () => {
       })
   }
   catch (err) {
-    // 要求的Quasar语言包不存在。
+    // 要求的 Quasar 语言包不存在。
     // 让我们不要破坏应用程序，所以捕捉错误
   }
 }
@@ -135,13 +135,13 @@ export default async ({ ssrContext }) => {
       })
   }
   catch (err) {
-    // 要求的Quasar语言包不存在。
+    // 要求的 Quasar 语言包不存在。
     // 让我们不要破坏应用程序，所以捕捉错误
   }
 }
 ```
 
-## 在运行时改变Quasar语言包
+## 在运行时改变 Quasar 语言包
 使用 QSelect 动态改变 Quasar 组件语言的示例：
 
 ```html
@@ -196,18 +196,18 @@ export default {
 </script>
 ```
 
-## 在应用程序空间中使用Quasar语言包
-尽管Quasar语言包**只为Quasar组件的内部使用而设计**，但你仍然可以将其标签用于你自己的网站/应用程序组件。
+## 在应用程序空间中使用 Quasar 语言包
+尽管 Quasar 语言包**只为 Quasar 组件的内部使用而设计**，但你仍然可以将其标签用于你自己的网站/应用程序组件。
 
 ```html
 "Close" label in current Quasar Language Pack is:
 {{ $q.lang.label.close }}
 ```
 
-查看[GitHub](https://github.com/quasarframework/quasar/tree/dev/ui/lang) 上的Quasar语言包，可以看到`$q.lang`的结构。
+查看[GitHub](https://github.com/quasarframework/quasar/tree/dev/ui/lang) 上的 Quasar 语言包，可以看到`$q.lang`的结构。
 
 ## 检测地区设置
-Quasar还提供了一种方法来确定用户的地域性，这种方法是开箱即用的。
+ Quasar 还提供了一种方法来确定用户的地域性，这种方法是开箱即用的。
 
 ```js
 // 在Vue文件之外

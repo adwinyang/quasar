@@ -98,7 +98,7 @@ Quasar Tree代表了一个高度可配置的组件，可以显示分层数据，
 | |<nodeKey\> | String, Number | 会产生一个错误 | 节点的键。从`nodeKey`属性中指定的键中挑选。|
 | label | String | 该项目没有标签 | 节点的标签。当`labelKey`属性被设置时，标签将从该键中提取。|
 | icon | String | 使用默认的图标 | 节点的图标。|
-| iconColor | String | 继承的颜色被使用 | 节点的图标颜色。从Quasar调色板中选择一个。|
+| iconColor | String | 继承的颜色被使用 | 节点的图标颜色。从 Quasar 调色板中选择一个。|
 | img | String | 不显示图片 | 节点的图片。使用/public文件夹。例如：'mountain.png' | |
 | avatar | String | 不显示头像 | 节点的头像。使用/public文件夹。示例: 'boy-avatar.png' | 子女 | 数组
 | children | Array | 此节点没有子节点 | 子节点的数组。|

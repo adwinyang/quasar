@@ -1,6 +1,6 @@
 ---
 title: 滚动利用
-desc: 一组与滚动有关的Quasar方法，如获取滚动目标或改变页面的滚动位置。
+desc: 一组与滚动有关的 Quasar 方法，如获取滚动目标或改变页面的滚动位置。
 keys: getScrollTarget,getVerticalScrollPosition,setVerticalScrollPosition,getHorizontalScrollPosition,setHorizontalScrollPosition,getScrollHeight,getScrollWidth,getScrollbarWidth
 ---
 

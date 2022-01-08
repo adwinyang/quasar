@@ -17,7 +17,7 @@ QParallax处理了很多古怪的问题，包括图像/视频的大小实际上�
 ## 使用方法
 
 ::: tip Scrolling container
-请阅读[这里](/vue-components/scroll-observer#determining-scrolling-container)关于Quasar如何确定将滚动事件附加到的容器。
+请阅读[这里](/vue-components/scroll-observer#determining-scrolling-container)关于 Quasar 如何确定将滚动事件附加到的容器。
 :::
 
 ### 图像背景
@@ -27,7 +27,7 @@ QParallax处理了很多古怪的问题，包括图像/视频的大小实际上�
 ### 视频背景
 
 ::: warning
-在一些iOS平台上，可能存在关于本地`<视频>`标签的自动播放功能的问题。[参考](https://webkit.org/blog/6784/new-video-policies-for-ios/)。QParallax和Quasar不会以任何方式干扰客户端浏览器对`<video>`标签的能力/限制。
+在一些iOS平台上，可能存在关于本地`<视频>`标签的自动播放功能的问题。[参考](https://webkit.org/blog/6784/new-video-policies-for-ios/)。QParallax和 Quasar 不会以任何方式干扰客户端浏览器对`<video>`标签的能力/限制。
 :::
 
 ::: warning

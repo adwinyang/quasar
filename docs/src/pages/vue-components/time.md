@@ -51,7 +51,7 @@ QTime组件提供了一个输入时间的方法。
 `mask`属性标记可以在[Quasar Utils > Date utils](/quasar-utils/dateutils#format-for-display)找到。
 
 ::: warning Note on SSR
-在掩码中使用`x`或`X`(时间戳)可能会导致客户端的水合错误，因为模型字符串的解码必须用`new Date()`来完成，它需要考虑到当地的时区。因此，如果服务器与客户端处于不同的时区，那么服务器的渲染输出将与客户端的输出不同，所以水化将失败。
+在掩码中使用`x`或`X`(时间戳)可能会导致客户端的激活错误，因为模型字符串的解码必须用`new Date()`来完成，它需要考虑到当地的时区。因此，如果服务器与客户端处于不同的时区，那么服务器的渲染输出将与客户端的输出不同，所以水化将失败。
 :::
 
 ::: danger Note on persian calendar
@@ -70,7 +70,7 @@ QTime组件提供了一个输入时间的方法。
 
 ### 自定义特定的区域设置
 
-如果由于某种原因，你需要使用一个自定义的特定语言，而不是当前已经设置的Quasar语言包，你可以使用`locale`属性。
+如果由于某种原因，你需要使用一个自定义的特定语言，而不是当前已经设置的 Quasar 语言包，你可以使用`locale`属性。
 
 <doc-example title="自定义特定地区语言" file="QTime/CustomLocale" overflow />
 
@@ -112,6 +112,6 @@ QTime组件提供了一个输入时间的方法。
 
 ### 本地表单提交
 
-当处理一个有`action`和`method`的本地表单时(例如在ASP.NET控制器中使用Quasar)，你需要在QTime上指定`name`属性，否则formData将不包含它(如果它应该包含)。
+当处理一个有`action`和`method`的本地表单时(例如在ASP.NET控制器中使用 Quasar )，你需要在QTime上指定`name`属性，否则formData将不包含它(如果它应该包含)。
 
 <doc-example title="本地表单" file="QTime/NativeForm" />

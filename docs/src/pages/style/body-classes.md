@@ -3,7 +3,7 @@ title: 身体课
 desc: Quasar的辅助类会被添加到document.body中。
 ---
 
-Quasar为document.body附加了一些非常有用的辅助CSS类，你可以利用它们。
+ Quasar 为document.body附加了一些非常有用的辅助CSS类，你可以利用它们。
 
 | 名称 | 描述 |
 | --- | --- |

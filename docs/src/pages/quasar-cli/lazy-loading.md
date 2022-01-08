@@ -1,6 +1,6 @@
 ---
 title: 懒惰加载/代码拆分
-desc: 如何在Quasar应用程序中创建Webpack chunks。
+desc: 如何在 Quasar 应用程序中创建Webpack chunks。
 ---
 当你的网站/应用程序很小的时候，你可以将所有的布局/页面/组件加载到初始的捆绑包中，并在启动时提供所有的服务。但是，当你的代码变得复杂，并且有许多布局/页面/组件时，这样做就不是最理想的，因为这将大大影响加载时间。幸运的是，有一种方法可以解决这个问题。
 
@@ -10,7 +10,7 @@ desc: 如何在Quasar应用程序中创建Webpack chunks。
 使用Vue Router调用静态组件是很正常的，如下所示。
 
 ::: warning
-Quasar文档假定你已经熟悉了[Vue Router](https://github.com/vuejs/vue-router-next)。下面我们只描述了如何在Quasar CLI项目中使用它的基本情况。对于其功能的完整列表，请访问[Vue Router 文档](https://next.router.vuejs.org/)。
+ Quasar 文档假定你已经熟悉了[Vue Router](https://github.com/vuejs/vue-router-next)。下面我们只描述了如何在 Quasar CLI 项目中使用它的基本情况。对于其功能的完整列表，请访问[Vue Router 文档](https://next.router.vuejs.org/)。
 :::
 
 ```js

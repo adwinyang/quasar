@@ -1,16 +1,16 @@
 ---
-title: 电容器的故障排除和提示
-desc: 使用Capacitor的Quasar混合移动应用程序的技巧和窍门。
+title:  Capacitor 的故障排除和提示
+desc: 使用Capacitor的 Quasar 混合移动应用程序的技巧和窍门。
 ---
 
 ## $q.capacitor
-当你用电容模式开发移动应用程序时，你可以在你的Vue文件中访问`$q.capacitor`。这是对全局的`Capacitor`对象的别名。
+当你用 Capacitor 模式开发移动应用程序时，你可以在你的Vue文件中访问`$q.capacitor`。这是对全局的`Capacitor`对象的别名。
 
 ## Android提示
 
 ### Android远程调试
 
-如果你正在调试安卓应用程序，你可以通过连接到安卓手机/平板电脑的USB线使用谷歌浏览器[远程调试](https://developers.google.com/web/tools/chrome-devtools/debug/remote-debugging/remote-debugging?hl=en)。它也可以用于仿真器。
+如果你正在调试安卓应用程序，你可以通过连接到安卓手机/平板电脑的USB线使用 Google 浏览器[远程调试](https://developers.google.com/web/tools/chrome-devtools/debug/remote-debugging/remote-debugging?hl=en)。它也可以用于仿真器。
 
 这样，你就可以直接使用Chrome开发工具，在模拟器/手机/平板电脑上运行你的应用程序。检查元素，检查控制台输出，等等，等等。
 
@@ -22,7 +22,7 @@ desc: 使用Capacitor的Quasar混合移动应用程序的技巧和窍门。
 如果你在让Android构建完成时遇到问题，并且看到类似的信息。
 
 ```
-> Failed to install the following Android SDK packages as some licenses have not been accepted.
+> Failed to install the following Android SDK packages as some licenses have not been accepted. (由于某些许可未被接受，因此无法安装以下 Android SDK 包。)
 ```
 
 如果是这种情况，你需要接受所有的许可证。值得庆幸的是，有一个工具可以做到这一点。
@@ -76,7 +76,7 @@ $ echo $PATH
 
 ### Android Studio
 
-在Android Studio中(如果你在`/src-capacitor/android`上打开它)，你会看到一条信息，建议升级Gradle版本。**不要升级Gradle**，因为这将破坏Capacitor项目。其他要求的升级也是如此。
+在Android Studio中(如果你在`/src-capacitor/android`上打开它)，你会看到一条信息，建议升级 Gradle 版本。**不要升级 Gradle**，因为这将破坏Capacitor项目。其他要求的升级也是如此。
 
 <img src="https://cdn.quasar.dev/img/gradle-upgrade-notice.png" alt="Gradle升级" class="q-mb-md fit rounded-borders" style="max-width: 350px">。
 
@@ -100,7 +100,7 @@ sudo service udev restart
 sudo killall adb
 ```
 
-`51-android.rules`的内容。
+`51-android.rules` 的内容：
 
 ```
 SUBSYSTEM=="usb", ATTRS{idVendor}=="0bb4", MODE="0666"
@@ -153,7 +153,7 @@ SUBSYSTEM=="usb", ATTRS{idVendor}=="1bbb", MODE="0666"
 
 由于手机有状态栏和/或凹槽，在Capacitor上开发时，你的应用程序的风格可能需要进行一些调整。为了防止你的应用程序的部分内容进入状态栏后面，有一个全局CSS变量可以用来创建一个 "安全区域"。这个变量可以应用于你的应用程序的顶部和底部的填充或边距。
 
-Quasar在QHeader/QFooter和Notify中默认支持这些CSS安全区域。然而，重要的是要经常在几个模型上检查你的Capacitor构建，看看你的应用程序的所有情况是否都正确地处理了安全区域。
+ Quasar 在QHeader/QFooter和Notify中默认支持这些CSS安全区域。然而，重要的是要经常在几个模型上检查你的Capacitor构建，看看你的应用程序的所有情况是否都正确地处理了安全区域。
 
 如果你需要手动调整你的CSS，你可以这样做。
 

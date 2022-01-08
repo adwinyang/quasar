@@ -1,9 +1,9 @@
 ---
 title: SSR对404和500错误的处理
-desc: 在Quasar服务器端渲染的应用程序中管理常见的404和500 HTTP错误。
+desc: 在 Quasar 服务器端渲染的应用程序中管理常见的404和500 HTTP错误。
 ---
 
-在SSR上对404和500错误的处理与其他模式(如SPA)有点不同。如果你查看`/src-ssr/middlewares/render.js`，你会发现以下部分。
+在SSR上对404和500错误的处理与其他模式(如SPA)有点不同。如果你查看`/src-ssr/middlewares/render.js`，你会发现以下部分：
 
 ```js
 export default ({ app, resolve, render, serve }) => {
@@ -65,7 +65,7 @@ export default ({ app, resolve, render, serve }) => {
 
 ### 错误404
 
-如果你在Vue Router的`/src/router/routes.js`文件中定义了一个等价的404路由(如下图)，那么上面示例中的`if (err.code === 404) {`部分将永远不会是`true`，因为Vue Router已经处理了它。
+如果你在Vue Router的`/src/router/routes.js`文件中定义了一个等价的404路由(如下图)，那么上面示例中的`if (err.code === 404) {`部分将永远不会是`true`，因为Vue Router已经处理了它：
 
 ```js
 // 用Vue Router抓取404的路由实例
@@ -76,7 +76,7 @@ export default ({ app, resolve, render, serve }) => {
 
 在页面顶部的`/src-ssr/middlewares/render.js`示例中，注意到如果webserver遇到任何渲染错误，我们会发送一个简单的字符串回给客户端('500 | 内部服务器错误')。如果你想显示一个漂亮的页面，你可以这样做。
 
-1. 在`/src/router/routes.js`中添加一个特定的路由，比如。
+1. 在`/src/router/routes.js`中添加一个特定的路由，比如：
 ```js
 { path: 'error500', component: () => import('pages/Error500.vue') }
 ```
@@ -96,7 +96,7 @@ res.redirect(resolve.urlPath('error500')) // 保持对publicPath的考虑!
 唯一需要注意的是，你需要确保在渲染'/error500'路线时，你不会得到另一个500错误，这将使你的应用程序进入一个无限循环！"。
 :::
 
-一个完美的方法是直接从`/src-ssr/middlewares/render.js`返回错误500页面的HTML(作为字符串)。
+一个完美的方法是直接从`/src-ssr/middlewares/render.js`返回错误500页面的HTML(作为字符串)：
 
 ```js
 res.status(500).send(`<html>....</html>`)

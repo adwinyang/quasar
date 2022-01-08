@@ -1,6 +1,6 @@
 ---
 title: 应用程序扩展提示 API
-desc: 为配置Quasar应用程序扩展而向用户提出的问题的语法。
+desc: 为配置 Quasar 应用程序扩展而向用户提出的问题的语法。
 ---
 
 本页指的是`src/prompts.js`文件，该文件在安装App Extension时处理提示问题。并非所有的应用扩展都需要提示--这是一个可选的步骤。
@@ -22,7 +22,7 @@ module.exports = function () {
 现在让我们关注定义问题的返回数组的结构。以下各节提供了最常用问题类型的示例。
 
 ::: warning
-以下并不是一个可能的问题类型的详尽列表，也绝不是描述了全部可用的API。请查看[Inquirer.js](https://github.com/SBoudrias/Inquirer.js#readme)，以了解这方面的情况(Quasar CLI在后台使用)。
+以下并不是一个可能的问题类型的详尽列表，也绝不是描述了全部可用的API。请查看[Inquirer.js](https://github.com/SBoudrias/Inquirer.js#readme)，以了解这方面的情况( Quasar CLI 在后台使用)。
 :::
 
 ## 字符串

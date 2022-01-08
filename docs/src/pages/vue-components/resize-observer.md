@@ -5,7 +5,7 @@ keys: QResizeObserver
 related:
   - /vue-components/scroll-observer
 ---
-QResizeObserver是一个Quasar组件，当包裹的DOM元素/组件(定义为QResizeObserver的直接父级)改变其尺寸(宽度和/或高度)时，它就会发出一个`resize'事件。请注意，不涉及轮询，但过度使用它也是有代价的。
+QResizeObserver是一个 Quasar 组件，当包裹的DOM元素/组件(定义为QResizeObserver的直接父级)改变其尺寸(宽度和/或高度)时，它就会发出一个`resize'事件。请注意，不涉及轮询，但过度使用它也是有代价的。
 
 
 ## QResizeObserver API

@@ -1,12 +1,12 @@
 ---
-title: Quasar CLI安装
-desc: 如何在你的开发机器上安装Quasar CLI。
+title:  Quasar CLI 安装
+desc: 如何在你的开发机器上安装 Quasar CLI 。
 ---
 
 确保你的机器上安装了Node >=12.22.1和NPM >=6.14.12。
 
 ::: warning
-**不要使用不均衡的Node版本，如13、15等。**这些版本没有经过Quasar的测试，由于其实验性质，经常会出现问题。我们强烈建议始终使用Node的LTS版本。
+**不要使用不均衡的Node版本，如13、15等。**这些版本没有经过 Quasar 的测试，由于其实验性质，经常会出现问题。我们强烈建议始终使用Node的LTS版本。
 :::
 
 ```bash
@@ -31,7 +31,7 @@ set -U fish_user_paths (yarn global bin) $fish_user_paths
 在Windows下，修改用户的PATH环境变量。如果你使用yarn，那么添加`%LOCALAPPDATA%\yarn\bin`，否则如果你使用npm，那么添加`%APPDATA%\npm`。
 :::
 
-然后我们用Quasar CLI创建一个项目文件夹。
+然后我们用 Quasar CLI 创建一个项目文件夹。
 
 ```bash
 ## Quasar UI v2
@@ -39,7 +39,7 @@ $ quasar create <folder_name>
 ```
 
 ::: tip
-一些**先进的**情况需要使用自定义的启动套件(例如，测试或个人预设)。在这些**罕见的**情况下，你可以使用`--套件`选项。在[create command](/quasar-cli/commands-list#create)描述中阅读更多关于这个的信息。请记住，推荐的方法是通过编写Quasar应用扩展来实现。
+一些**先进的**情况需要使用自定义的启动套件(例如，测试或个人预设)。在这些**罕见的**情况下，你可以使用`--套件`选项。在[create command](/quasar-cli/commands-list#create)描述中阅读更多关于这个的信息。请记住，推荐的方法是通过编写 Quasar 应用扩展来实现。
 :::
 
 ::: tip WSL2
@@ -50,13 +50,13 @@ $ quasar create <folder_name>
 
 注意，如果你想建立任何可用的平台，你不需要单独的项目。这一个项目可以无缝地处理所有的项目。
 
-为了继续学习Quasar，你应该深入地熟悉Quasar CLI，因为你会经常使用它。
+为了继续学习 Quasar ，你应该深入地熟悉 Quasar CLI ，因为你会经常使用它。
 
 ## 它是如何工作的
 
-Quasar CLI是由两个包组成的。`@quasar/cli`和`@quasar/app`。第一个包是可选的，只允许你创建一个项目文件夹和全局运行Quasar命令。第二个包是它的核心，它被安装到每个Quasar项目文件夹中。
+ Quasar CLI 是由两个包组成的。`@quasar/cli`和`@quasar/app`。第一个包是可选的，只允许你创建一个项目文件夹和全局运行 Quasar 命令。第二个包是它的核心，它被安装到每个 Quasar 项目文件夹中。
 
-一旦项目文件夹被生成，Quasar CLI将只帮助全局运行`@quasar/app`的命令。在这一点上，你不需要它做其他事情。为了确保完全独立于Quasar CLI，你可以编写npm脚本(在你的`package.json`中)来运行Quasar命令。`@quasar/app`(每个项目都有特定的)将运行所有的CLI命令。
+一旦项目文件夹被生成， Quasar CLI 将只帮助全局运行`@quasar/app`的命令。在这一点上，你不需要它做其他事情。为了确保完全独立于 Quasar CLI ，你可以编写npm脚本(在你的`package.json`中)来运行 Quasar 命令。`@quasar/app`(每个项目都有特定的)将运行所有的CLI命令。
 
 在你的`package.json`中添加一些npm脚本的示例。
 

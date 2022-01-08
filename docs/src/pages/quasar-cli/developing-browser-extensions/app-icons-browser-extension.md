@@ -1,6 +1,6 @@
 ---
 title: App Icons for (BEX)
-desc: 如何管理Quasar浏览器扩展(BEX)的应用程序图标。
+desc: 如何管理 Quasar 浏览器扩展(BEX)的应用程序图标。
 ---
 
 这个构建目标包括浏览器扩展所需的图标。你需要所有这些图标--如果你发现有新的或缺失的图标，请[打开一个问题](https://github.com/quasarframework/quasar/issues) 。

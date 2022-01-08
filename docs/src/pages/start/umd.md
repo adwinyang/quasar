@@ -1,14 +1,14 @@
 ---
 title: Quasar UMD - CDN安装
-desc: 如何使用Quasar的统一模块定义形式。
+desc: 如何使用 Quasar 的统一模块定义形式。
 components:
   - umd/UmdTags
 ---
 
-如果你想把Quasar嵌入到你现有的网站项目中，以渐进的方式整合它，那么请选择UMD/Standalone(统一模块定义)版本。
+如果你想把 Quasar 嵌入到你现有的网站项目中，以渐进的方式整合它，那么请选择UMD/Standalone(统一模块定义)版本。
 
 ## 安装
-UMD是关于添加Quasar风格和javascript标签。请选择你要使用的内容，并查看它下面的输出。
+UMD是关于添加 Quasar 风格和javascript标签。请选择你要使用的内容，并查看它下面的输出。
 
 <umd-tags />
 
@@ -19,7 +19,7 @@ UMD是关于添加Quasar风格和javascript标签。请选择你要使用的内�
 :::
 
 ::: tip
-所有组件、指令和Quasar插件都可以开箱即用。不需要额外的代码来安装它们。只要确保你不会使用自闭标签。
+所有组件、指令和 Quasar 插件都可以开箱即用。不需要额外的代码来安装它们。只要确保你不会使用自闭标签。
 :::
 
 ## JsFiddle / Codepen
@@ -44,7 +44,7 @@ Quasar = {
   ...plugins, // Quasar plugins
   ...utils, // Quasar utils
 
-  // 如果你想改变当前的图标集或Quasar语言包
+  // 如果你想改变当前的图标集或 Quasar 语言包
   // (必须包括CDN链接，以便它们首先可用！)
   lang,
   iconSet
@@ -64,7 +64,7 @@ Quasar.Notify.create('Hi and welcome!')
 有一些Quasar & Quasar插件的配置选项。
 
 ```js
-app.use(Quasar, {
+app.use( Quasar , {
   config: {
     brand: {
       primary: '#e46262',
@@ -79,13 +79,13 @@ app.use(Quasar, {
 ```
 
 ## 用法
-所以，在你想出需要嵌入到你的网页中的CDN链接后，现在是使用Quasar的时候了。
+所以，在你想出需要嵌入到你的网页中的CDN链接后，现在是使用 Quasar 的时候了。
 
 ::: tip
-你会注意到，所有的Quasar组件、Quasar指令和Quasar插件在其页面的顶部都有一个安装部分。
+你会注意到，所有的 Quasar 组件、 Quasar 指令和 Quasar 插件在其页面的顶部都有一个安装部分。
 :::
 
-通过使用UMD版本，你将有所有的组件、指令和Quasar插件已经为你安装。你只需要开始使用它们。
+通过使用UMD版本，你将有所有的组件、指令和 Quasar 插件已经为你安装。你只需要开始使用它们。
 
 **在UMD版本中不要使用自闭标签：**。
 你会注意到，你将不能使用任何组件的自我关闭标签形式。你必须关闭所有组件的标签。
@@ -127,8 +127,8 @@ Quasar.BottomSheet.create({...})
 Quasar.openURL('https://quasar.dev')
 ```
 
-### 改变Quasar图标集
-假设你已经包含了你最喜欢的Quasar图标集的CDN链接(除非你使用的是默认使用的Material Icons)，那么你就可以告诉Quasar使用它。
+### 改变 Quasar 图标集
+假设你已经包含了你最喜欢的 Quasar 图标集的CDN链接(除非你使用的是默认使用的Material Icons)，那么你就可以告诉 Quasar 使用它。
 
 ```js
 Quasar.iconSet.set(Quasar.iconSet.fontawesomeV5)
@@ -136,8 +136,8 @@ Quasar.iconSet.set(Quasar.iconSet.fontawesomeV5)
 
 可用的[Quasar图标集](/options/quasar-icon-sets)列表可以在[GitHub](https://github.com/quasarframework/quasar/tree/dev/ui/icon-set)上找到。
 
-### 改变Quasar语言包
-假设您已经包含了您想要的Quasar I18n语言的CDN链接(除非您想要默认使用的 "en-US "语言包)，您可以告诉Quasar使用它。
+### 改变 Quasar 语言包
+假设您已经包含了您想要的Quasar I18n语言的CDN链接(除非您想要默认使用的 "en-US "语言包)，您可以告诉 Quasar 使用它。
 
 ```js
 // 示例设置德语。

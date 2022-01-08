@@ -1,13 +1,13 @@
 ---
 title: 发布到商店
-desc: 如何用Capacitor发布Quasar混合移动应用程序到Google Play Store和Apple App Store。
+desc: 如何用Capacitor发布 Quasar 混合移动应用程序到Google Play Store和Apple App Store。
 ---
 
 所以，你已经完成了你的移动应用程序的工作。现在是时候部署它了。让我们来学习一下。
 
 ## Android发布
 
-要为Android生成一个发布版本，我们可以使用以下Quasar CLI命令。
+要为Android生成一个发布版本，我们可以使用以下 Quasar CLI 命令。
 
 ```bash
 $ quasar build -m capacitor -T android
@@ -49,7 +49,7 @@ $ zipalign -v 4 <path-to-same-apk-file> HelloWorld.apk
 
 现在我们已经为Google Play Store准备好了我们的发布APK，我们可以创建一个Play Store列表并上传我们的APK。
 
-要开始，你需要访问[Google Play Store开发者控制台](https://play.google.com/apps/publish)并创建一个新的开发者账户。不幸的是，这并不是免费的。然而，与苹果的99美元相比，费用只有25美元。
+要开始，你需要访问[Google Play Store开发者控制台](https://play.google.com/apps/publish) 并创建一个新的开发者账户。不幸的是，这并不是免费的。然而，与苹果的99美元相比，费用只有25美元。
 
 一旦你有了开发者账户，你就可以继续点击 "在Google Play上发布Android应用程序"。
 
@@ -65,7 +65,7 @@ $ zipalign -v 4 <path-to-same-apk-file> HelloWorld.apk
 
 ## iOS发布
 
-首先，你需要在[Apple Developer Program](https://developer.apple.com/programs/)注册。和Google一样，如果你有一个苹果的个人账户，你可以为你的应用程序创建一个额外的账户。
+首先，你需要在[Apple Developer Program](https://developer.apple.com/programs/) 注册。和Google一样，如果你有一个苹果的个人账户，你可以为你的应用程序创建一个额外的账户。
 
 ### 将Xcode与您的开发者账户连接起来
 
@@ -89,7 +89,7 @@ $ zipalign -v 4 <path-to-same-apk-file> HelloWorld.apk
 
 此外，你还得选择任何需要启用的服务。例如，如果你在应用中使用Apple Pay或Wallet，你需要选择这些选项。
 
-你可以从[官方文档](https://developer.apple.com/library/ios/documentation/IDEs/Conceptual/AppDistributionGuide/MaintainingProfiles/MaintainingProfiles.html)中了解更多关于注册应用标识符的信息。
+你可以从[官方文档](https://developer.apple.com/library/ios/documentation/IDEs/Conceptual/AppDistributionGuide/MaintainingProfiles/MaintainingProfiles.html) 中了解更多关于注册应用标识符的信息。
 
 ### 创建应用程序列表
 
@@ -101,7 +101,7 @@ $ zipalign -v 4 <path-to-same-apk-file> HelloWorld.apk
 
 现在，在我们填写列表中的所有内容之前，我们将建立我们的应用程序，并通过Xcode上传它。然后你再回来完成列表。
 
-你可以从[官方文档](https://developer.apple.com/library/ios/documentation/IDEs/Conceptual/AppDistributionGuide/UsingiTunesConnect/UsingiTunesConnect.html)中了解更多关于在iTunes Connect中管理你的应用。
+你可以从[官方文档](https://developer.apple.com/library/ios/documentation/IDEs/Conceptual/AppDistributionGuide/UsingiTunesConnect/UsingiTunesConnect.html) 中了解更多关于在iTunes Connect中管理你的应用。
 
 ### 构建用于生产的应用程序
 
