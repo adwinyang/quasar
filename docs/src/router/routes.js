@@ -87,7 +87,7 @@ const routes = [
     children: docsPages
   },
 
-  // externals
+  // 外部
   {
     path: '/layout-builder',
     component: () => import('layouts/LayoutBuilder.vue')
@@ -109,7 +109,7 @@ const routes = [
     ]
   })),
 
-  // Always leave this as last one
+  // 始终将此作为最后一个
   {
     path: '/:catchAll(.*)*',
     component: DocLayout,

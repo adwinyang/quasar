@@ -20,7 +20,7 @@ return {
         // 这一点将在下面的小节中详细说明
 
     manualPostHydrationTrigger: true/false,
-        // 在客户端手动触发水化后逻辑。
+        // 在客户端手动触发激活后逻辑。
         // 这一点将在下面的小节中详细说明
 
     prodPort: 3000, // 生产服务器应该使用的默认端口
@@ -80,7 +80,7 @@ build: {
 
 默认情况下， Quasar CLI 会在客户端对Vuex商店(如果你使用它)进行激活。
 
-然而，如果你希望自己手动进行水化，你需要设置quasar.conf.js > ssr > manualStoreHydration: true。然后你需要自己调用`store.replaceState(window.__INITIAL_STATE__)`。一个很好的示例是在[启动文件](/quasar-cli/boot-files)中进行。
+然而，如果你希望自己手动进行激活，你需要设置quasar.conf.js > ssr > manualStoreHydration: true。然后你需要自己调用`store.replaceState(window.__INITIAL_STATE__)`。一个很好的示例是在[启动文件](/quasar-cli/boot-files)中进行。
 
 ```js
 // Some_boot_file

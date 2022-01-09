@@ -1,5 +1,5 @@
 ---
-title: 输入
+title: 输入框
 desc: QInput Vue组件用于捕捉用户的文本输入。
 keys: QInput
 ---

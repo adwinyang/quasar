@@ -36,7 +36,7 @@ export function copyHeading (id) {
   copyToClipboard(text)
 
   Notify.create({
-    message: 'Anchor has been copied to clipboard.',
+    message: '锚点已复制到剪贴板。',
     position: 'top',
     actions: [{ icon: 'cancel', color: 'white', dense: true, round: true }],
     timeout: 2000

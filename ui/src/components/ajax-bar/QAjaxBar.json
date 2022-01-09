@@ -1,9 +1,9 @@
 {
   "meta": {
-    "docsUrl": "https://v2.quasar.dev/vue-components/ajax-bar-------"
+    "docsUrl": "https://v2.quasar.dev/vue-components/ajax-bar"
   },
 
-  "属性": {
+  "props": {
     "position": {
       "type": "String",
       "desc": "Position within window of where QAjaxBar should be displayed",
@@ -24,8 +24,7 @@
 
     "skip-hijack": {
       "type": "Boolean",
-      "desc1": "Skip Ajax hijacking (not a reactive prop)",
-      "desc": "跳过Ajax劫持（不是一个反应式的属性）",
+      "desc": "Skip Ajax hijacking (not a reactive prop)",
       "category": "behavior"
     },
 

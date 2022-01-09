@@ -472,8 +472,8 @@ export default {
         ? describe[ props.type ](props.definition)
         : [
             h('div', { class: 'q-pa-md doc-api__nothing-to-show' }, [
-              h('div', 'No matching entries found on this tab.'),
-              h('div', 'Please check the other tabs/subtabs with a number badge on their label or refine the filter.')
+              h('div', '在此选项卡上找不到匹配的条目。'),
+              h('div', '请检查标签上带有数字标记的其他选项卡/子选项卡，或优化过滤器。')
             ])
           ]
 

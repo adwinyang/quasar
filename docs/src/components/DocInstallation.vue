@@ -62,9 +62,9 @@ export default {
     const QuasarCli = computed(() => {
       if (props.plugins === void 0 && quasarConf.value === null) {
         return `/*
- * No installation step is necessary.
- * It gets installed by default by @quasar/app.
- */`
+* 无需安装步骤。
+* 它默认由 @quasar/app 安装。
+*/`
       }
 
       const parts = []
@@ -94,8 +94,8 @@ return {
       const config = quasarConf.value !== null
         ? `
 
-// Optional;
-// Place the global quasarConfig Object in a script tag BEFORE your Quasar script tag
+// 可选的。
+// 将全局的quasarConfig对象放在Quasar脚本标签之前的一个脚本标签中。
 app.use(Quasar, {
   config: {
     ${quasarConf.value}
@@ -104,9 +104,9 @@ app.use(Quasar, {
         : ''
 
       const content = `/*
- * No installation step is necessary.
- * It gets installed by default.
- */`
+* 无需安装步骤。
+* 它默认安装。
+*/`
 
       return content + config
     })

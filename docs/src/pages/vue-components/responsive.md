@@ -1,5 +1,5 @@
 ---
-title: 响应性
+title: 反应式
 desc: QResponsive Vue组件强迫内容保持基于其宽度的长宽比。
 keys: QResponsive
 ---

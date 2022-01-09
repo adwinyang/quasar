@@ -6,7 +6,8 @@ div
     use-input
     hide-selected
     fill-input
-    placeholder="Names of Quasar components, directives or plugins"
+    placeholder1="Names of Quasar components, directives or plugins"
+    placeholder="Quasar 组件、指令或插件的名称"
     input-debounce="0"
     :options="options"
     clearable

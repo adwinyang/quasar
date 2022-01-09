@@ -27,7 +27,8 @@ export default function (title, links) {
         title,
         noEdit: true,
         metaTitle: title,
-        metaDesc: `List of pages under the '${title}' section`
+        // metaDesc: `List of pages under the '${title}' section`
+        metaDesc: `${title}部分下的页面列表`
       }, getContent)
     }
   }

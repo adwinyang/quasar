@@ -5,7 +5,7 @@
         color="secondary"
         @click="toggleFullscreen"
         :icon="$q.fullscreen.isActive ? 'fullscreen_exit' : 'fullscreen'"
-        :label="$q.fullscreen.isActive ? 'Exit Fullscreen' : 'Try playground in Fullscreen'"
+        :label="$q.fullscreen.isActive ? '退出全屏' : 'Try playground in Fullscreen'"
       />
     </div>
     <div class="text-subtitle2 q-pb-md">Parent Properties (container)</div>

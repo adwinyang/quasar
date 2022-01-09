@@ -1,5 +1,5 @@
 ---
-title: 弹出式编辑
+title: 弹出编辑
 desc: QPopupEdit Vue组件可以用来 "就地"编辑一个值，例如在QTable的一个单元格上。
 keys: QPopupEdit
 related:

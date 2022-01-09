@@ -8,7 +8,7 @@ q-page.doc-page
     a.doc-page__top-link.text-brand-primary.flex.flex-center(v-if="noEdit === false", :href="editHref", target="_blank", rel="noopener noreferrer")
       q-icon(:name="mdiPencil")
       q-tooltip
-        span Caught a mistake? Edit page in browser
+        span 犯了个错误？在浏览器中编辑页面
         q-icon.q-ml-xs(:name="mdiFlash" size="2em")
 
   .doc-page-nav.text-brand-primary(v-if="related !== void 0")
@@ -50,8 +50,8 @@ q-page.doc-page
     q-separator.q-mb-sm
 
     .q-mb-md(v-if="noEdit === false")
-      span Caught a mistake?
-      doc-link.q-ml-xs(:to="editHref") Edit this page in browser
+      span 犯了个错误？
+      doc-link.q-ml-xs(:to="editHref") 在浏览器中编辑此页
 
     .doc-page-footer__icons.row.items-center.q-gutter-sm
       a(href="https://github.quasar.dev", target="_blank", rel="noopener")

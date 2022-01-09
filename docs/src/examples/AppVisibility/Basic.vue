@@ -1,7 +1,7 @@
 <template>
   <div class="q-pa-md">
     <div>
-      Switch to another browser tab or app then come back here to see some changes.
+      切换到另一个浏览器标签或应用程序，然后回到这里，看到一些变化。
     </div>
 
     <q-markup-table v-if="eventList.length > 0" class="q-mt-md">

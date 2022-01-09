@@ -7,11 +7,11 @@ q-card.doc-example.q-my-lg(:class="classes", flat, bordered)
 
     div.col-auto(v-if="!loading")
       q-btn(dense, flat, round, :icon="fabGithub", @click="openGitHub")
-        q-tooltip View on GitHub
+        q-tooltip 在 GitHub 上查看
       q-btn.q-ml-sm(v-if="noEdit === false", dense, flat, round, :icon="fabCodepen", @click="openCodepen")
-        q-tooltip Edit in Codepen
+        q-tooltip 在 Codepen 中编辑
       q-btn.q-ml-sm(dense, flat, round, icon="code", @click="expanded = !expanded")
-        q-tooltip View Source
+        q-tooltip 查看源代码
 
   q-separator.doc-example__separator
 

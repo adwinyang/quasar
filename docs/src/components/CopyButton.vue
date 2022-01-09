@@ -8,7 +8,7 @@
     :icon="mdiContentCopy"
     @click="copy"
   )
-    q-tooltip Copy to Clipboard
+    q-tooltip 复制到剪切板
 
   transition(
     enter-active-class="animated fadeIn"

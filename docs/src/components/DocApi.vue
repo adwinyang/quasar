@@ -12,7 +12,7 @@ q-card.doc-api.q-my-lg(flat bordered)
 
   template(v-else-if="nothingToShow")
     q-separator
-    .doc-api__nothing-to-show Nothing to display
+    .doc-api__nothing-to-show 无内容显示
 
   template(v-else)
     q-separator

@@ -1,21 +1,21 @@
 <template lang="pug">
 .app-search
   .app-search__instructions.flex.flex-center(v-if="searchHasFocus" key="instr-focused")
-    span Navigate
+    span 导航
     kbd.q-ml-sm
       q-icon(:name="down")
     kbd.q-mr-sm
       q-icon(:name="up")
-    span Select
+    span 选择
     kbd.q-mx-sm
       q-icon(:name="select")
-    span Close
+    span 关闭
     kbd.q-ml-sm
       q-icon(:name="close")
   .app-search__instructions.flex.flex-center(v-else key="instr-unfocused")
-    span Type
+    span 类型
     kbd.q-mx-sm.q-px-sm /
-    span to focus on searchbox
+    span 关注搜索框
 
   .app-search__section(
     v-for="group in results.groupList"

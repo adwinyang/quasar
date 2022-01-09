@@ -1,7 +1,7 @@
 <template lang="pug">
 q-banner(v-if="!hasEnded").survey-countdown
   .q-gutter-sm.row(:class="[paddingClass, alignClass]")
-    | Quasar Scaffolding Survey closes in...
+    | Quasar 脚手架调查结束...
 
     q-badge.text-bold(v-if="days > 0" :color="color" :text-color="textColor") {{ days }} Days
     q-badge.text-bold(v-if="hours > 0" :color="color" :text-color="textColor") {{ hours }} Hours

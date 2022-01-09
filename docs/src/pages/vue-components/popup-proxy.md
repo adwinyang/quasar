@@ -1,5 +1,5 @@
 ---
-title: Popup Proxy
+title: 弹出代理
 desc: QPopupProxy是一个Vue组件，当你需要显示QMenu或QDialog(在较小的屏幕上)时，应该使用它。
 keys: QPopupProxy
 related:

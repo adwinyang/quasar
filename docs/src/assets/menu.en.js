@@ -1,10 +1,10 @@
 const gettingStarted = [
   {
-    name: '选择 Quasar 风格',
+    name: 'Pick Quasar Flavour',
     path: 'pick-quasar-flavour'
   },
   {
-    name: 'Quasar 风格',
+    name: 'Quasar Flavours',
     opened: true,
     children: [
       {
@@ -12,128 +12,128 @@ const gettingStarted = [
         path: 'quasar-cli'
       },
       {
-        name: 'UMD / 独立',
+        name: 'UMD / Standalone',
         path: 'umd'
       },
       {
-        name: 'Vite 插件',
+        name: 'Vite Plugin',
         badge: 'new',
         path: 'vite-plugin'
       },
       {
-        name: 'Vue CLI 插件',
+        name: 'Vue CLI Plugin',
         path: 'vue-cli-plugin'
       }
     ]
   },
   {
-    name: '如何使用 Vue',
+    name: 'How to use Vue',
     path: 'how-to-use-vue'
   },
   {
-    name: '练习场',
+    name: 'Playground',
     path: 'playground'
   },
   {
-    name: '发行说明',
+    name: 'Release notes',
     path: 'release-notes'
   },
   {
-    name: '路线图',
+    name: 'Roadmap',
     path: 'roadmap'
   },
   {
-    name: '升级指南',
+    name: 'Upgrade guide',
     badge: 'new',
     path: 'upgrade-guide'
   },
   {
-    name: 'VS code 配置',
+    name: 'VS Code Configuration',
     path: 'vs-code-configuration'
   }
 ]
 
 const contributionGuide = [
   {
-    name: '捐款指南',
+    name: 'Contribution Guide',
     path: 'contribution-guide'
   },
   {
-    name: '运行项目',
+    name: 'Running Projects',
     path: 'running-projects'
   },
   {
-    name: '开始一个新项目',
+    name: 'Start a New Project',
     path: 'new-project'
   },
   {
-    name: '项目维护者的角色',
+    name: 'Project Maintainer Role',
     path: 'project-maintainer'
   },
   {
-    name: '承诺公约',
+    name: 'Commit Conventions',
     path: 'commit-conventions'
   }
 ]
 
 const options = [
   {
-    name: '$q 对象',
+    name: 'The $q object',
     path: 'the-q-object'
   },
   {
-    name: '应用程序图标',
+    name: 'App Icons',
     path: 'app-icons'
   },
   {
-    name: '搜索引擎优化',
+    name: 'SEO',
     path: 'seo'
   },
   {
-    name: 'Quasar 语言包',
+    name: 'Quasar Language Packs',
     path: 'quasar-language-packs'
   },
   {
-    name: '应用程序国际化',
+    name: 'App Internationalization',
     path: 'app-internationalization'
   },
   {
-    name: 'RTL支持',
+    name: 'RTL Support',
     path: 'rtl-support'
   },
   {
-    name: '安装图标库',
+    name: 'Installing Icon Libraries',
     path: 'installing-icon-libraries'
   },
   {
-    name: 'Quasar 图标集',
+    name: 'Quasar Icon Sets',
     path: 'quasar-icon-sets'
   },
   {
-    name: '平台检测',
+    name: 'Platform Detection',
     path: 'platform-detection'
   },
   {
-    name: '屏幕插件',
+    name: 'Screen Plugin',
     path: 'screen-plugin'
   },
   {
-    name: '动画',
+    name: 'Animations',
     path: 'animations'
   },
   {
-    name: '过渡',
+    name: 'Transitions',
     path: 'transitions'
   }
 ]
 
 const security = [
   {
-    name: '该做什么和不该做什么',
+    name: 'DO\'s and DON\'Ts',
     path: 'dos-and-donts'
   },
   {
-    name: '报告一个漏洞',
+    name: 'Report a vulnerability',
     path: 'report-a-vulnerability'
   }
   // Re-enable when ready again
@@ -145,7 +145,7 @@ const security = [
 
 const cli = [
   {
-    name: '安装',
+    name: 'Installation',
     path: 'installation'
   },
   {
@@ -153,118 +153,118 @@ const cli = [
     path: 'quasar-conf-js'
   },
   {
-    name: '浏览器兼容性',
+    name: 'Browser Compatibility',
     path: 'browser-compatibility'
   },
   {
-    name: '支持 TypeScript',
+    name: 'Supporting TypeScript',
     path: 'supporting-ts'
   },
   {
-    name: '目录结构',
+    name: 'Directory Structure',
     path: 'directory-structure'
   },
   {
-    name: '构建命令',
+    name: 'Build Commands',
     path: 'build-commands'
   },
   {
-    name: '命令列表',
+    name: 'Commands List',
     path: 'commands-list'
   },
   {
-    name: 'CSS 预处理程序',
+    name: 'CSS Preprocessors',
     path: 'css-preprocessors'
   },
   {
-    name: '路由',
+    name: 'Routing',
     path: 'routing'
   },
   {
-    name: '延迟加载 - 代码拆分',
+    name: 'Lazy Loading - Code Splitting',
     path: 'lazy-loading'
   },
   {
-    name: '处理静态资源',
+    name: 'Handling Assets',
     path: 'handling-assets'
   },
   {
-    name: '启动文件',
+    name: 'Boot Files',
     path: 'boot-files'
   },
   {
-    name: '预取功能',
+    name: 'Prefetch Feature',
     path: 'prefetch-feature'
   },
   {
-    name: 'API 代理',
+    name: 'API Proxying',
     path: 'api-proxying'
   },
   {
-    name: '处理 Webpack',
+    name: 'Handling Webpack',
     path: 'handling-webpack'
   },
   {
-    name: '处理 process.env',
+    name: 'Handling process.env',
     path: 'handling-process-env'
   },
   {
-    name: 'Vuex 仓库',
+    name: 'Vuex Store',
     path: 'vuex-store'
   },
   {
-    name: '代码检查(linter)',
+    name: 'Linter',
     path: 'linter'
   },
   {
-    name: '测试与审计',
+    name: 'Testing & Auditing',
     path: 'testing-and-auditing'
   },
   {
-    name: '开发 SPA',
+    name: 'Developing SPA',
     path: 'developing-spa',
     children: [
       {
-        name: '简介',
+        name: 'Introduction',
         path: 'introduction'
       },
       {
-        name: '用于SPA的应用程序图标',
+        name: 'App Icons for SPA',
         path: 'app-icons-spa'
       },
       {
-        name: '构建命令',
+        name: 'Build Commands',
         path: 'build-commands'
       },
       {
-        name: '部署',
+        name: 'Deploying',
         path: 'deploying'
       }
     ]
   },
   {
-    name: '开发 SSR',
+    name: 'Developing SSR',
     path: 'developing-ssr',
     children: [
       {
-        name: '简介',
+        name: 'Introduction',
         path: 'introduction'
       },
       {
-        name: '编写通用代码',
+        name: 'Writing Universal Code',
         path: 'writing-universal-code'
       },
       {
-        name: '升级指南',
+        name: 'Upgrade guide',
         badge: 'new',
         path: 'ssr-upgrade-guide'
       },
       {
-        name: '准备工作',
+        name: 'Preparation',
         path: 'preparation'
       },
       {
-        name: '配置SSR',
+        name: 'Configuring SSR',
         path: 'configuring-ssr'
       },
       {
@@ -273,670 +273,670 @@ const cli = [
         path: 'ssr-context'
       },
       {
-        name: 'SSR 中间件',
+        name: 'SSR Middleware',
         badge: 'new',
         path: 'ssr-middleware'
       },
       {
-        name: 'SSR 生产导出',
+        name: 'SSR Production Export',
         badge: 'new',
         path: 'ssr-production-export'
       },
       {
-        name: 'Vue SSR指令',
+        name: 'Vue SSR Directives',
         badge: 'new',
         path: 'vue-ssr-directives'
       },
       {
-        name: 'SSR 的应用程序图标',
+        name: 'App Icons for SSR',
         path: 'app-icons-ssr'
       },
       {
-        name: '为 SSR 做 SEO',
+        name: 'SEO for SSR',
         path: 'seo-for-ssr'
       },
       {
-        name: '客户端激活',
+        name: 'Client Side Hydration',
         path: 'client-side-hydration'
       },
       {
-        name: '处理404和500错误',
+        name: 'Handling 404 and 500 Errors',
         path: 'handling-404-and-500-errors'
       },
       {
-        name: '带PWA的SSR',
+        name: 'SSR with PWA',
         path: 'ssr-with-pwa'
       },
       {
-        name: 'SSR常见的问题',
+        name: 'SSR Frequently Asked Questions',
         path: 'ssr-frequently-asked-questions'
       },
       {
-        name: '构建命令',
+        name: 'Build Commands',
         path: 'build-commands'
       },
       {
-        name: '带类型的SSR',
+        name: 'SSR with Typescript',
         badge: 'new',
         path: 'ssr-with-typescript'
       },
       {
-        name: '部署',
+        name: 'Deploying',
         path: 'deploying'
       }
     ]
   },
   {
-    name: '开发PWA',
+    name: 'Developing PWA',
     path: 'developing-pwa',
     children: [
       {
-        name: '简介',
+        name: 'Introduction',
         path: 'introduction'
       },
       {
-        name: '准备工作',
+        name: 'Preparation',
         path: 'preparation'
       },
       {
-        name: '构建命令',
+        name: 'Build Commands',
         path: 'build-commands'
       },
       {
-        name: '配置PWA',
+        name: 'Configuring PWA',
         path: 'configuring-pwa'
       },
       {
-        name: 'PWA的HMR',
+        name: 'HMR for PWA',
         path: 'hmr-for-dev'
       },
       {
-        name: 'PWA的应用程序图标',
+        name: 'App Icons for PWA',
         path: 'app-icons-pwa'
       },
       {
-        name: '搬运服务人员',
+        name: 'Handling Service Worker',
         path: 'handling-service-worker'
       },
       {
-        name: '使用Typescript的PWA',
+        name: 'PWA with Typescript',
         badge: 'new',
         path: 'pwa-with-typescript'
       }
     ]
   },
   {
-    name: '开发移动应用程序',
+    name: 'Developing Mobile Apps',
     path: 'developing-mobile-apps'
   },
   {
-    name: '开发 Capacitor 应用程序',
+    name: 'Developing Capacitor Apps',
     path: 'developing-capacitor-apps',
     children: [
       {
-        name: '简介',
+        name: 'Introduction',
         path: 'introduction'
       },
       {
-        name: '准备工作',
+        name: 'Preparation',
         path: 'preparation'
       },
       {
-        name: ' Capacitor 版本',
+        name: 'Capacitor versions',
         badge: 'new',
         path: 'capacitor-version-support'
       },
       {
-        name: '配置 Capacitor ',
+        name: 'Configuring Capacitor',
         path: 'configuring-capacitor'
       },
       {
-        name: ' Capacitor 的应用程序图标',
+        name: 'App Icons for Capacitor',
         path: 'app-icons-capacitor'
       },
       {
-        name: ' Capacitor API',
+        name: 'Capacitor API',
         path: 'capacitor-api'
       },
       {
-        name: '构建命令',
+        name: 'Build Commands',
         path: 'build-commands'
       },
       {
-        name: '故障排除和提示',
+        name: 'Troubleshooting and Tips',
         path: 'troubleshooting-and-tips'
       },
       {
-        name: '管理 Google Analytics',
+        name: 'Managing Google Analytics',
         path: 'managing-google-analytics'
       },
       {
-        name: '发布到商店',
+        name: 'Publishing to Store',
         path: 'publishing-to-store'
       }
     ]
   },
   {
-    name: '开发 Cordova 应用程序',
+    name: 'Developing Cordova Apps',
     path: 'developing-cordova-apps',
     children: [
       {
-        name: '简介',
+        name: 'Introduction',
         path: 'introduction'
       },
       {
-        name: '准备工作',
+        name: 'Preparation',
         path: 'preparation'
       },
       {
-        name: '配置Cordova',
+        name: 'Configuring Cordova',
         path: 'configuring-cordova'
       },
       {
-        name: 'Cordova 的应用程序图标',
+        name: 'App Icons for Cordova',
         path: 'app-icons-cordova'
       },
       {
-        name: 'Cordova 插件',
+        name: 'Cordova Plugins',
         path: 'cordova-plugins'
       },
       {
-        name: '构建命令',
+        name: 'Build Commands',
         path: 'build-commands'
       },
       {
-        name: '故障排除和提示',
+        name: 'Troubleshooting and Tips',
         path: 'troubleshooting-and-tips'
       },
       {
-        name: '管理 Google Analytics',
+        name: 'Managing Google Analytics',
         path: 'managing-google-analytics'
       },
       {
-        name: '发布到商店',
+        name: 'Publishing to Store',
         path: 'publishing-to-store'
       }
     ]
   },
   {
-    name: '开发 Electron 应用程序',
+    name: 'Developing Electron Apps',
     path: 'developing-electron-apps',
     children: [
       {
-        name: '简介',
+        name: 'Introduction',
         path: 'introduction'
       },
       {
-        name: '升级指南',
+        name: 'Upgrade guide',
         path: 'electron-upgrade-guide',
         badge: 'new'
       },
       {
-        name: '准备工作',
+        name: 'Preparation',
         path: 'preparation'
       },
       {
-        name: '配置电子',
+        name: 'Configuring Electron',
         path: 'configuring-electron'
       },
       {
-        name: 'Electron 应用图标',
+        name: 'App Icons for Electron',
         path: 'app-icons-electron'
       },
       {
-        name: '构建命令',
+        name: 'Build Commands',
         path: 'build-commands'
       },
       {
-        name: '预加载脚本',
+        name: 'Preload Script',
         path: 'electron-preload-script'
       },
       {
-        name: 'Electron 包',
+        name: 'Electron Packages',
         path: 'electron-packages'
       },
       {
-        name: '访问文件',
+        name: 'Accessing files',
         path: 'electron-accessing-files'
       },
       {
-        name: '无框 Electron 窗',
+        name: 'Frameless Electron Window',
         path: 'frameless-electron-window'
       },
       {
-        name: '带 Typescript 的 Electron',
+        name: 'Electron with Typescript',
         badge: 'new',
         path: 'electron-with-typescript'
       },
       {
-        name: 'Electron 安全问题',
+        name: 'Electron Security Concerns',
         path: 'electron-security-concerns'
       },
       {
-        name: '故障排除和提示',
+        name: 'Troubleshooting and Tips',
         path: 'troubleshooting-and-tips'
       }
     ]
   },
   {
-    name: '开发浏览器扩展',
+    name: 'Developing Browser Extensions',
     path: 'developing-browser-extensions',
     children: [
       {
-        name: '简介',
+        name: 'Introduction',
         path: 'introduction'
       },
       {
-        name: '准备工作',
+        name: 'Preparation',
         path: 'preparation'
       },
       {
-        name: '配置BEX',
+        name: 'Configuring BEX',
         path: 'configuring-bex'
       },
       {
-        name: 'BEX的应用程序图标',
+        name: 'App Icons for BEX',
         path: 'app-icons-browser-extension'
       },
       {
-        name: '构建命令',
+        name: 'Build Commands',
         path: 'build-commands'
       },
       {
-        name: 'BEX的类型',
+        name: 'Types of BEX',
         path: 'types-of-bex'
       },
       {
-        name: 'BEX交流/活动',
+        name: 'BEX Communication / Events',
         path: 'bex-communication'
       },
       {
-        name: '背景钩子',
+        name: 'Background Hooks',
         path: 'background-hooks'
       },
       {
-        name: '内容钩子',
+        name: 'Content Hooks',
         path: 'content-hooks'
       },
       {
-        name: 'DOM 钩子',
+        name: 'DOM Hooks',
         path: 'dom-hooks'
       }
     ]
   },
   {
-    name: 'Ajax 请求',
+    name: 'Ajax Requests',
     path: 'ajax-requests'
   },
   {
-    name: '向公众开放开发服务器',
+    name: 'Opening Dev Server To Public',
     path: 'opening-dev-server-to-public'
   }
 ]
 
 const icongenie = [
   {
-    name: '简介',
+    name: 'Introduction',
     path: 'introduction'
   },
 
   {
-    name: '安装/升级说明',
+    name: 'Installation / Upgrade notes',
     path: 'installation'
   },
 
   {
-    name: '命令列表',
+    name: 'Command list',
     path: 'command-list'
   },
 
   {
-    name: '应用程序图标列表',
+    name: 'App Icons List',
     path: 'app-icons-list'
   },
 
   {
-    name: '简介文件',
+    name: 'Profile files',
     path: 'profile-files'
   }
 ]
 
 const style = [
   {
-    name: '排版学',
+    name: 'Typography',
     path: 'typography'
   },
   {
-    name: '色调',
+    name: 'Color Palette',
     path: 'color-palette'
   },
   {
-    name: '主题生成器',
+    name: 'Theme Builder',
     path: 'theme-builder'
   },
   {
-    name: '黑暗模式',
+    name: 'Dark Mode',
     path: 'dark-mode'
   },
   {
-    name: '间距类',
+    name: 'Spacing',
     path: 'spacing'
   },
   {
-    name: '阴影',
+    name: 'Shadows',
     path: 'shadows'
   },
   {
-    name: '断点',
+    name: 'Breakpoints',
     path: 'breakpoints'
   },
   {
-    name: '主体类',
+    name: 'Body classes',
     path: 'body-classes'
   },
   {
-    name: '可见性',
+    name: 'Visibility',
     path: 'visibility'
   },
   {
-    name: '定位',
+    name: 'Positioning',
     path: 'positioning'
   },
   {
-    name: 'Sass/SCSS变量',
+    name: 'Sass/SCSS Variables',
     path: 'sass-scss-variables'
   },
   {
-    name: '其他辅助帮类',
+    name: 'Other Helper Classes',
     path: 'other-helper-classes'
   }
 ]
 
 const layout = [
   {
-    name: '弹性网格',
+    name: 'Flex Grid',
     path: 'grid',
     opened: true,
     children: [
       {
-        name: 'Flexbox 简介',
+        name: 'Introduction to Flexbox',
         path: 'introduction-to-flexbox'
       },
       {
-        name: '网格行',
+        name: 'Grid Row',
         path: 'row'
       },
       {
-        name: '网格列',
+        name: 'Grid Column',
         path: 'column'
       },
       {
-        name: '网格间隔',
+        name: 'Grid Gutter',
         path: 'gutter'
       },
       {
-        name: 'Flexbox 模式',
+        name: 'Flexbox patterns',
         path: 'flexbox-patterns'
       },
       {
-        name: 'Flex 练习场',
+        name: 'Flex Playground',
         path: 'flex-playground'
       }
     ]
   },
   {
-    name: '布局',
+    name: 'Layout',
     path: 'layout'
   },
   {
-    name: '用布局和页面进行路由',
+    name: 'Routing with Layouts and Pages',
     path: 'routing-with-layouts-and-pages'
   },
   {
-    name: '布局页眉和页脚',
+    name: 'Layout Header and Footer',
     path: 'header-and-footer'
   },
   {
-    name: '布局抽屉',
+    name: 'Layout Drawer',
     path: 'drawer'
   },
   {
-    name: '布局页面',
+    name: 'Layout Page',
     path: 'page'
   },
   {
-    name: '布局构建者',
+    name: 'Layout Builder',
     external: true,
     path: '/layout-builder'
   },
   {
-    name: '布局图库',
+    name: 'Layout Gallery',
     path: 'gallery'
   },
   {
-    name: '页面粘性',
+    name: 'Page Sticky',
     path: 'page-sticky'
   },
   {
-    name: '页面滚动条',
+    name: 'Page Scroller',
     path: 'page-scroller'
   }
 ]
 
 const components = [
   {
-    name: 'Ajax 状态栏',
+    name: 'Ajax Bar',
     path: 'ajax-bar'
   },
   {
-    name: '头像',
+    name: 'Avatar',
     path: 'avatar'
   },
   {
-    name: '徽章',
+    name: 'Badge',
     path: 'badge'
   },
   {
-    name: '横幅',
+    name: 'Banner',
     path: 'banner'
   },
   {
-    name: '栏',
+    name: 'Bar',
     path: 'bar'
   },
   {
-    name: '面包屑',
+    name: 'Breadcrumbs',
     path: 'breadcrumbs'
   },
   {
-    name: '按钮',
+    name: 'Buttons',
     listPath: 'buttons',
     children: [
       {
-        name: '按钮',
+        name: 'Button',
         path: 'button'
       },
       {
-        name: '按钮组',
+        name: 'Button Group',
         path: 'button-group'
       },
       {
-        name: '按钮下拉',
+        name: 'Button Dropdown',
         path: 'button-dropdown'
       }
     ]
   },
   {
-    name: '卡片',
+    name: 'Card',
     path: 'card'
   },
   {
-    name: '走马灯',
+    name: 'Carousel',
     path: 'carousel'
   },
   {
-    name: '聊天信息',
+    name: 'Chat Message',
     path: 'chat'
   },
   {
-    name: '碎片',
+    name: 'Chip',
     path: 'chip'
   },
   {
-    name: '循环进度条',
+    name: 'Circular Progress',
     path: 'circular-progress'
   },
   {
-    name: '颜色选择器',
+    name: 'Color Picker',
     path: 'color-picker'
   },
   {
-    name: '对话框',
+    name: 'Dialog',
     path: 'dialog'
   },
   {
-    name: '编辑器 - 所见即所得',
+    name: 'Editor - WYSIWYG',
     path: 'editor'
   },
   {
-    name: '扩展项',
+    name: 'Expansion Item',
     path: 'expansion-item'
   },
   {
-    name: '浮动的操作按钮',
+    name: 'Floating Action Button',
     path: 'floating-action-button'
   },
   {
-    name: '表格组件',
+    name: 'Form Components',
     opened: true,
     listPath: 'form-components',
     children: [
       {
-        name: '输入框',
+        name: 'Input Textfield',
         path: 'input'
       },
       {
-        name: '选择',
+        name: 'Select',
         path: 'select'
       },
       {
-        name: '文件选取器',
+        name: 'File picker',
         path: 'file-picker'
       },
       {
-        name: '表单',
+        name: 'Form',
         path: 'form'
       },
       {
-        name: '字段(包装器)',
+        name: 'Field (wrapper)',
         path: 'field'
       },
       {
-        name: '单选框',
+        name: 'Radio',
         path: 'radio'
       },
       {
-        name: '复选框',
+        name: 'Checkbox',
         path: 'checkbox'
       },
       {
-        name: '切换开关',
+        name: 'Toggle',
         path: 'toggle'
       },
       {
-        name: '按钮切换',
+        name: 'Button Toggle',
         path: 'button-toggle'
       },
       {
-        name: '选项组',
+        name: 'Option Group',
         path: 'option-group'
       },
       {
-        name: '滑块',
+        name: 'Slider',
         path: 'slider'
       },
       {
-        name: '范围',
+        name: 'Range',
         path: 'range'
       },
       {
-        name: '时间选择器',
+        name: 'Time Picker',
         path: 'time'
       },
       {
-        name: '日期选择器',
+        name: 'Date Picker',
         path: 'date'
       }
     ]
   },
   {
-    name: '图标',
+    name: 'Icon',
     path: 'icon'
   },
   {
-    name: '印象',
+    name: 'Img',
     path: 'img'
   },
   {
-    name: '无限滚动',
+    name: 'Infinite Scroll',
     path: 'infinite-scroll'
   },
   {
-    name: '内部装载',
+    name: 'Inner Loading',
     path: 'inner-loading'
   },
   {
-    name: '交叉点',
+    name: 'Intersection',
     path: 'intersection'
   },
   {
-    name: '旋钮',
+    name: 'Knob',
     path: 'knob'
   },
   {
-    name: '线性进度条',
+    name: 'Linear Progress',
     path: 'linear-progress'
   },
   {
-    name: '列表和列表项',
+    name: 'List & List Items',
     path: 'list-and-list-items'
   },
   {
-    name: '标记表格',
+    name: 'Markup Table',
     path: 'markup-table'
   },
   {
-    name: '菜单',
+    name: 'Menu',
     path: 'menu'
   },
   {
-    name: '无 SSR',
+    name: 'No SSR',
     path: 'no-ssr'
   },
   {
-    name: '监听器(观察者)',
+    name: 'Observers',
     listPath: 'observers',
     children: [
       {
-        name: '调整大小监听器(针对元素)',
+        name: 'Resize Observer (for Element)',
         path: 'resize-observer'
       },
       {
-        name: '滚动监听器',
+        name: 'Scroll Observer',
         path: 'scroll-observer'
       }
     ]
   },
   {
-    name: '分页',
+    name: 'Pagination',
     path: 'pagination'
   },
   {
-    name: '视差',
+    name: 'Parallax',
     path: 'parallax'
   },
   {
-    name: '弹出式编辑',
+    name: 'Popup Edit',
     path: 'popup-edit'
   },
   {
@@ -944,157 +944,157 @@ const components = [
     path: 'popup-proxy'
   },
   {
-    name: '下拉刷新',
+    name: 'Pull to refresh',
     path: 'pull-to-refresh'
   },
   {
-    name: '评价',
+    name: 'Rating',
     path: 'rating'
   },
   {
-    name: '反应式',
+    name: 'Responsive',
     path: 'responsive'
   },
   {
-    name: '滚动区域',
+    name: 'Scroll Area',
     path: 'scroll-area'
   },
   {
-    name: '分割线',
+    name: 'Separator',
     path: 'separator'
   },
   {
-    name: '骨架屏',
+    name: 'Skeleton',
     path: 'skeleton'
   },
   {
-    name: '幻灯片项',
+    name: 'Slide Item',
     path: 'slide-item'
   },
   {
-    name: '幻灯片过渡',
+    name: 'Slide Transition',
     path: 'slide-transition'
   },
   {
-    name: '间距',
+    name: 'Space',
     path: 'space'
   },
   {
-    name: '旋转器',
+    name: 'Spinners',
     path: 'spinners'
   },
   {
-    name: '分割容器',
+    name: 'Splitter',
     path: 'splitter'
   },
   {
-    name: '步骤条',
+    name: 'Stepper',
     path: 'stepper'
   },
   {
-    name: '表格',
+    name: 'Table',
     path: 'table'
   },
   {
-    name: '标签',
+    name: 'Tabs',
     path: 'tabs'
   },
   {
-    name: '标签面板',
+    name: 'Tab Panels',
     path: 'tab-panels'
   },
   {
-    name: '时间轴',
+    name: 'Timeline',
     path: 'timeline'
   },
   {
-    name: '工具栏',
+    name: 'Toolbar',
     path: 'toolbar'
   },
   {
-    name: '工具提示',
+    name: 'Tooltip',
     path: 'tooltip'
   },
   {
-    name: '树形控件',
+    name: 'Tree',
     path: 'tree'
   },
   {
-    name: '上传器',
+    name: 'Uploader',
     path: 'uploader'
   },
   {
-    name: '视频',
+    name: 'Video',
     path: 'video'
   },
   {
-    name: '虚拟滚动',
+    name: 'Virtual Scroll',
     path: 'virtual-scroll'
   }
 ]
 
 const directives = [
   {
-    name: '关闭弹出窗口',
+    name: 'Close Popup',
     path: 'close-popup'
   },
   {
-    name: '交叉点',
+    name: 'Intersection',
     path: 'intersection'
   },
   {
-    name: '材料波纹',
+    name: 'Material Ripples',
     path: 'material-ripple'
   },
   {
-    name: '突变',
+    name: 'Mutation',
     path: 'mutation'
   },
   {
-    name: '变形',
+    name: 'Morph',
     path: 'morph'
   },
   {
-    name: '滚动',
+    name: 'Scroll',
     path: 'scroll'
   },
   {
-    name: '滚动触发',
+    name: 'Scroll Fire',
     path: 'scroll-fire'
   },
   {
-    name: '触摸保持',
+    name: 'Touch Hold',
     path: 'touch-hold'
   },
   {
-    name: '触摸平移',
+    name: 'Touch Pan',
     path: 'touch-pan'
   },
   {
-    name: '触摸重复',
+    name: 'Touch Repeat',
     path: 'touch-repeat'
   },
   {
-    name: '触摸轻扫',
+    name: 'Touch Swipe',
     path: 'touch-swipe'
   }
 ]
 
 const plugins = [
   {
-    name: '地址栏颜色',
+    name: 'Addressbar Color',
     path: 'addressbar-color'
   },
   {
-    name: '应用程序全屏',
+    name: 'App Fullscreen',
     path: 'app-fullscreen'
   },
   {
-    name: '应用程序的可见性',
+    name: 'App Visibility',
     path: 'app-visibility'
   },
   {
-    name: '底部工作表',
+    name: 'Bottom Sheet',
     path: 'bottom-sheet'
   },
   {
@@ -1102,23 +1102,23 @@ const plugins = [
     path: 'cookies'
   },
   {
-    name: '黑暗',
+    name: 'Dark',
     path: 'dark'
   },
   {
-    name: '对话框',
+    name: 'Dialog',
     path: 'dialog'
   },
   {
-    name: '加载',
+    name: 'Loading',
     path: 'loading'
   },
   {
-    name: '装载条',
+    name: 'Loading Bar',
     path: 'loading-bar'
   },
   {
-    name: '本地/会话存储',
+    name: 'Local/Session Storage',
     path: 'web-storage'
   },
   {
@@ -1126,7 +1126,7 @@ const plugins = [
     path: 'meta'
   },
   {
-    name: '通知',
+    name: 'Notify',
     path: 'notify'
   }
 ]
@@ -1152,67 +1152,67 @@ const composables = [
 
 const appExtensions = [
   {
-    name: '简介',
+    name: 'Introduction',
     path: 'introduction'
   },
   {
-    name: '发现应用扩展',
+    name: 'Discover App Extensions',
     path: 'discover'
   },
   {
-    name: '开发指南',
+    name: 'Development Guide',
     path: 'development-guide',
     opened: true,
     children: [
       {
-        name: '简介',
+        name: 'Introduction',
         path: 'introduction'
       },
       {
-        name: '提示 API',
+        name: 'Prompts API',
         path: 'prompts-api'
       },
       {
-        name: '安装 API',
+        name: 'Install API',
         path: 'install-api'
       },
       {
-        name: '索引 API',
+        name: 'Index API',
         path: 'index-api'
       },
       {
-        name: '卸载 API',
+        name: 'Uninstall API',
         path: 'uninstall-api'
       }
     ]
   },
   {
-    name: '技巧和窍门',
+    name: 'Tips and Tricks',
     path: 'tips-and-tricks',
     opened: true,
     children: [
       {
-        name: '简介',
+        name: 'Introduction',
         path: 'introduction'
       },
       {
-        name: '提供一个UI组件',
+        name: 'Provide a UI component',
         path: 'provide-a-ui-component'
       },
       {
-        name: '提供一个指令',
+        name: 'Provide a directive',
         path: 'provide-a-directive'
       },
       {
-        name: '注入Quasar插件',
+        name: 'Inject Quasar Plugin',
         path: 'inject-quasar-plugin'
       },
       {
-        name: '相当于入门套件',
+        name: 'Starter kit equivalent',
         path: 'starter-kit-equivalent'
       },
       {
-        name: 'Webpack 链',
+        name: 'Chain Webpack',
         path: 'chain-webpack'
       }
     ]
@@ -1221,122 +1221,122 @@ const appExtensions = [
 
 const utils = [
   {
-    name: '日期工具',
+    name: 'Date Utils',
     path: 'date-utils'
   },
   {
-    name: '颜色工具',
+    name: 'Color Utils',
     path: 'color-utils'
   },
   {
-    name: 'DOM工具',
+    name: 'DOM Utils',
     path: 'dom-utils'
   },
   {
-    name: '变形工具',
+    name: 'Morph Utils',
     path: 'morph-utils'
   },
   {
-    name: '格式化工具',
+    name: 'Formatter Utils',
     path: 'formatter-utils'
   },
   {
-    name: '滚动工具',
+    name: 'Scrolling Utils',
     path: 'scrolling-utils'
   },
   {
-    name: '其他工具',
+    name: 'Other Utils',
     path: 'other-utils'
   }
 ]
 
 module.exports = [
   {
-    name: '为什么是 Quasar？',
+    name: 'Why Quasar?',
     icon: 'room',
     path: 'introduction-to-quasar'
   },
   {
-    name: '赞助商和支持者',
+    name: 'Sponsors and Backers',
     icon: 'favorite',
     path: 'sponsors-and-backers'
   },
   {
-    name: '为什么捐款很重要',
+    name: 'Why Donations Are Important',
     icon: 'assignment_late',
     path: 'why-donate'
   },
   {
-    name: 'API 浏览器',
+    name: 'API Explorer',
     icon: 'travel_explore',
     path: 'api-explorer'
   },
   {
-    name: '视频教程',
+    name: 'Video Tutorials',
     icon: 'ondemand_video',
     path: 'video-tutorials'
   },
   {
-    name: '认识我们的团队',
+    name: 'Meet the Team',
     icon: 'people',
     path: 'meet-the-team'
   },
   {
-    name: '入门',
+    name: 'Getting Started',
     icon: 'flight_takeoff',
     path: 'start',
     children: gettingStarted
   },
   {
-    name: '捐款指南',
+    name: 'Contribution Guide',
     icon: 'code',
     path: 'contribution-guide',
     children: contributionGuide
   },
   {
-    name: '选项和帮助者',
+    name: 'Options & Helpers',
     icon: 'tune',
     path: 'options',
     children: options
   },
   {
-    name: '风格与身份',
+    name: 'Style & Identity',
     icon: 'style',
     path: 'style',
     children: style
   },
   {
-    name: '布局和网格',
+    name: 'Layout and Grid',
     icon: 'view_quilt',
     path: 'layout',
     children: layout
   },
   {
-    name: 'Vue 组件',
+    name: 'Vue Components',
     icon: 'widgets',
     path: 'vue-components',
     children: components
   },
   {
-    name: 'Vue 指令',
+    name: 'Vue Directives',
     icon: 'swap_calls',
     path: 'vue-directives',
     children: directives
   },
   {
-    name: 'Quasar 插件',
+    name: 'Quasar Plugins',
     icon: 'extension',
     path: 'quasar-plugins',
     children: plugins
   },
   {
-    name: 'Vue 可组合性',
+    name: 'Vue Composables',
     icon: 'developer_mode',
     path: 'vue-composables',
     children: composables
   },
   {
-    name: '安全问题',
+    name: 'Security',
     icon: 'security',
     path: 'security',
     children: security
@@ -1348,19 +1348,19 @@ module.exports = [
     children: cli
   },
   {
-    name: 'Genie CLI Icon',
+    name: 'Icon Genie CLI',
     icon: 'stars',
     path: 'icongenie',
     children: icongenie
   },
   {
-    name: '应用程序扩展',
+    name: 'App Extensions',
     icon: 'note_add',
     path: 'app-extensions',
     children: appExtensions
   },
   {
-    name: 'Quasar 工具',
+    name: 'Quasar Utils',
     icon: 'healing',
     path: 'quasar-utils',
     children: utils
