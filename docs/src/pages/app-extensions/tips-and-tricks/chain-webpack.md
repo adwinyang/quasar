@@ -6,14 +6,14 @@ desc: 关于如何使用 Quasar App Extension 来配置主机应用程序使用 
 本指南适用于你希望确保将 [Webpack Loader](https://webpack.js.org/loaders/) 链接到托管应用程序的情况，因为你要依赖它来让自己App Extension(应用扩展)正常工作。
 
 ::: tip
-为了创建一个App Extension项目文件夹，请先阅读[开发指南>简介](/app-extensions/development-guide/introduction)。
+为了创建一个App Extension项目文件夹，请先阅读[开发指南>简介](/app-extensions/development-guide/introduction) 。
 :::
 
 :::tip Full Example
-要看我们要建立的示例，请转到[完整示例](https://github.com/quasarframework/app-extension-examples/tree/v2/chain-webpack)，这是一个包含此内容的 GitHub 存储库应用扩展。。
+要看我们要建立的示例，请转到[完整示例](https://github.com/quasarframework/app-extension-examples/tree/v2/chain-webpack) ，这是一个包含此内容的 GitHub 存储库应用扩展。。
 :::
 
-我们只需要`/index.js`脚本，因为我们可以使用[Index API](/app-extensions/development-guide/index-api)来配置主机应用中的quasar.conf.js，以包括我们的Webpack链。
+我们只需要`/index.js`脚本，因为我们可以使用[Index API](/app-extensions/development-guide/index-api) 来配置主机应用中的quasar.conf.js，以包括我们的Webpack链。
 
 ```bash
 .

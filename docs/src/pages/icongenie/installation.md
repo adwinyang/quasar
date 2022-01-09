@@ -27,7 +27,7 @@ $ npm install -g @quasar/icongenie
 
 ## 安装提示
 
-如果您使用的是 yarn，请确保 yarn[全局安装位置](https://yarnpkg.com/lang/en/docs/cli/global/)在您的路径中：
+如果您使用的是 yarn，请确保 yarn[全局安装位置](https://yarnpkg.com/lang/en/docs/cli/global/) 在您的路径中：
 
 ```bash
 # in ~/.bashrc or equivalent
@@ -42,7 +42,7 @@ export PATH="$(yarn global bin):$PATH"
 
 ### NPM包名称更改
 
-版本1是 Quasar [App Extension](/ app-extensions /介绍)，因此您将其安装到项目文件夹中。 新版本(v2)不需要在全局安装时本地安装。 您的CI / CD不需要它，因为它是一个一次性进程，输出文件(图像)将被直接添加到项目文件夹中。
+版本1是 Quasar [App Extension](/app-extensions/introduction) ，因此您将其安装到项目文件夹中。 新版本(v2)不需要在全局安装时本地安装。 您的CI / CD不需要它，因为它是一个一次性进程，输出文件(图像)将被直接添加到项目文件夹中。
 
 因此，请从项目文件夹中卸载Icon Genie V1：
 
@@ -72,10 +72,10 @@ Icon Genie V2是从上到下的完整重写。
 * 您现在可以为图标输入文件配置填充。 (v2.1 +)
 * 我们已经改进了生成的图标和启动屏幕图像列表，以符合最新标准，并避免重复。
 * 启动屏幕图像以更好的方式创建，在后台上的图标(具有您想要的任何尺寸比的图标，包括0，这意味着：“我只希望在顶部没有图标的背景图像”)
-* 新命令：[生成](/icongenie/ command-list#生成)，[验证](/icongenie/command-list#验证)，和[配置](/icongenie/command-list#配置)，每个都有它自己的目的。
+* 新命令：[生成](/icongenie/command-list#生成)，[验证](/icongenie/command-list#验证) ，和[配置](/icongenie/command-list#配置) ，每个都有它自己的目的。
 * `generate` 命令现在还向您展示了您在`/src/index.template.html` 文件中所需的标签。
 * `verify` 命令甚至可以检查每个文件是否位于正确的位置，并且它具有正确的高度宽度。
-* 很多新参数：quality，svg-color, png-color, splashscreen-color, splashscreen-icon-ratio 等。查看[命令列表](/icongenie/command-list)页面。
+* 很多新参数：quality，svg-color, png-color, splashscreen-color, splashscreen-icon-ratio 等。查看[命令列表](/icongenie/command-list) 页面。
 * 您现在可以单独控制每个标准模式的每种类型的资产(ico, png, splashscreen,...)，每个都具有自己的设置/参数。检查`--filter`, `--quality` 和所有颜色参数。一个很好示例是`.ico`文件。
 * 现在可以通过 Icon Genie [配置文件文件](/icongenie/profile-files) 实现自动化。
 * 您现在可以通过 [配置文件](/icongenie/profile-files) 使用 Icon Genie API **生成自定义图像文件**。

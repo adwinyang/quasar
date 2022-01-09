@@ -1,13 +1,13 @@
 ---
-title: 浮动的行动按钮
-desc: 如何使用QFab组件。为你的 Quasar 应用程序提供浮动的动作按钮。
+title: 浮动的操作按钮
+desc: 如何使用QFab组件。为你的Quasar应用程序提供浮动的操作按钮。
 keys: QFab
 related:
   - /layout/layout
   - /layout/page
 ---
 
-浮动动作按钮(FAB)代表了一个页面中的主要动作。但是，它并不局限于一个单一的动作。它也可以包含任何数量的子行动。更重要的是，它也可以在你的页面或布局中在线使用。
+浮动操作按钮 (FAB) 表示页面中的主要操作。但是，它不仅限于单个动作。它也可以包含任意数量的子操作。更重要的是，它还可以在您的页面或布局中内联使用。
 
 注意，你不需要一个QLayout来使用FABs。
 
@@ -17,10 +17,10 @@ related:
 
 ## QFabAction API
 
-<doc-api file="QFabAction" /> ## QFabAction API
+<doc-api file="QFabAction" />
 
 ## 使用方法
-有两种类型的FABs：可扩展(有子行动)和不可扩展。
+有两种类型的FABs：可扩展(有子操作)和不可扩展。
 
 ::: tip
 关于详尽的选项清单，请阅读API卡(在本页面顶部)。
@@ -33,13 +33,13 @@ related:
 
 ### 可扩展
 
-<doc-example title="可扩展" file="QFab/Expandable" /> ###可扩展。
+<doc-example title="可扩展" file="QFab/Expandable" />
 
 ### 内部标签
 
-<doc-example title="内部标签" file="QFab/InternalLabel" /> ###内部标签
+<doc-example title="内部标签" file="QFab/InternalLabel" />
 
-<doc-example title="切换内部标签" file="QFab/InternalLabelToggling" /> ###内部标签
+<doc-example title="切换内部标签" file="QFab/InternalLabelToggling" />
 
 当标签是内部的，并且你的QFab是垂直打开的(向上或向下)，那么你也可以选择如何垂直对齐子操作。
 
@@ -69,7 +69,7 @@ QFab的默认padding是 "md"，QFabAction的padding是 "sm"。然而，你可以
 
 ### 方形样式
 
-<doc-example title="方形样式" file="QFab/SquareStyle" /> ###方形样式
+<doc-example title="方形样式" file="QFab/SquareStyle" />
 
 ### 槽 <q-badge align="top" color="brand-primary" label="v2.4+" />
 
@@ -79,10 +79,10 @@ QFab的默认padding是 "md"，QFabAction的padding是 "sm"。然而，你可以
 
 ### 使用QPageSticky
 
-<doc-example title="使用QPageSticky" file="QFab/PageSticky" /> ### 使用QPageSticky
+<doc-example title="使用QPageSticky" file="QFab/PageSticky" />
 
 ### 可拖动的
 
-下面是一个使用[TouchPan](/vue-directives/touch-pan)使QFab在屏幕上可拖动的好示例。
+下面是一个使用[TouchPan](/vue-directives/touch-pan)使QFab在屏幕上可拖动的好例子。
 
 <doc-example title="Draggable" file="QFab/Draggable" />

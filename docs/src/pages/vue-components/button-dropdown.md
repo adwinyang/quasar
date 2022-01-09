@@ -16,9 +16,9 @@ QBtnDropdown是一个非常方便的下拉按钮。它与[QList](/vue-components
 
 ## 使用方法
 
-<doc-example title="基本" file="QBtnDropdown/Basic" /> ##使用方法
+<doc-example title="基础" file="QBtnDropdown/Basic" />
 
-<doc-example title="各种内容" file="QBtnDropdown/VariousContent" /> ## 使用方法
+<doc-example title="各种内容" file="QBtnDropdown/VariousContent" />
 
 <doc-example title="分割" file="QBtnDropdown/Split" />
 
@@ -32,6 +32,6 @@ QBtnDropdown是一个非常方便的下拉按钮。它与[QList](/vue-components
 
 <doc-example title="禁用" file="QBtnDropdown/Disable" />
 
-下面的示例在UMD版本中不能工作(所以在Codepen/jsFiddle中也不能)，因为它依赖于Vue Router的存在。
+下面的例子在UMD版本中不能工作(所以在Codepen/jsFiddle中也不能)，因为它依赖于Vue Router的存在。
 
 <doc-example title="主界面上的分割和路由器链接" file="QBtnDropdown/Link" no-edit />

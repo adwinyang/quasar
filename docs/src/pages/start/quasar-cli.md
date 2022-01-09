@@ -5,11 +5,11 @@ desc: 如何使用，免费的高级开发者体验。
 
 Quasar CLI 是 Quasar 框架的骄傲。你可以无缝地构建。
 
-* 一个SPA(单页应用程序/网站)。
-* SSR(服务器端渲染的应用程序/网站)。
-* PWA(渐进式网络应用程序)。
-* BEX(浏览器扩展)。
-* 一个移动应用程序(通过 Cordova )。
+* 一个SPA(单页应用程序/网站),
+* SSR(服务器端渲染的应用程序/网站),
+* PWA(渐进式网络应用程序),
+* BEX(浏览器扩展),
+* 一个移动应用程序(通过 Cordova ),
 * 一个Electron App
 
 ...在同一个项目文件夹中，确保你**遵循最好的 Quasar 实践，同时所有的东西都能开箱即用**。
@@ -32,10 +32,10 @@ Quasar CLI 是 Quasar 框架的骄傲。你可以无缝地构建。
 
 为生产开发(`$ quasar build`)。
 
-* 用[UglifyJS](https://github.com/mishoo/UglifyJS2)对Javascript进行最小化。
-* 用[html-minifier](https://github.com/kangax/html-minifier)对HTML进行压缩
-* 所有组件的CSS都被提取(并自动添加前缀)到一个文件中，并用[cssnano](https://github.com/ben-eb/cssnano)进行粉碎。
+* 用[UglifyJS](https://github.com/mishoo/UglifyJS2) 对Javascript进行最小化。
+* 用[html-minifier](https://github.com/kangax/html-minifier) 对HTML进行压缩
+* 所有组件的CSS都被提取(并自动添加前缀)到一个文件中，并用[cssnano](https://github.com/ben-eb/cssnano) 进行粉碎。
 * 所有的静态资产都是用版本哈希值编译的，以便进行有效的长期缓存，并且自动生成index.html，并为这些生成的资产提供适当的URL。
 * ...更多
 
-请注意你的项目文件夹根部的`/quasar.conf.js`文件。这个文件帮助你快速配置你的网站/应用程序的工作方式。我们将在[配置](/quasar-cli/quasar-conf-js)部分对其进行介绍。
+请注意你的项目文件夹根部的`/quasar.conf.js`文件。这个文件帮助你快速配置你的网站/应用程序的工作方式。我们将在[配置](/quasar-cli/quasar-conf-js) 部分对其进行介绍。

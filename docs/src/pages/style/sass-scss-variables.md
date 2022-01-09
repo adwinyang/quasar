@@ -17,14 +17,14 @@ related:
 在你的应用程序的`*.vue`文件或.sass/.scss文件中，你可以使用任何Quasar Sass/SCSS变量(示例：`$primary`, `$red-1`)，以及任何其他你在使用 Quasar CLI 时在`/src/css/quasar.variables.sass`或完全等同的`/src/css/quasar.variables.scss`(取决于你喜欢的Sass风味)声明的Sass/SCSS的变量。
 
 ```html
-<!-- Notice lang="sass" -->
+<!-- 注意 lang="sass" -->
 <style lang="sass">
 div
   color: $red-1
   background-color: $grey-5
 </style>
 
-<!-- Notice lang="scss" -->
+<!-- 注意 lang="scss" -->
 <style lang="scss">
 div {
   color: $red-1;
@@ -43,7 +43,7 @@ div {
 
 ## 注意事项
 
- Quasar CLI 会检测文件是否至少包含一个'$'字符，如果是，它会自动导入Quasar Sass/SCSS的变量。
+Quasar CLI 会检测文件是否至少包含一个'$'字符，如果是，它会自动导入 Quasar Sass/SCSS的变量。
 
 然而，如果你有一个嵌套的导入语句，而你要导入的文件不包含任何'$'字符，这将无法工作。在这种情况下，你需要添加一个简单的注释(`// $`)，这样 Quasar 就能检测到至少一个'$'字符。
 

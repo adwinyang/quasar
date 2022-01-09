@@ -13,7 +13,7 @@ related:
 从UI的角度来看，你可以把Dialogs看作是一种浮动模式，它只覆盖屏幕的一部分。这意味着Dialogs应该只用于用户的快速操作。
 
 ::: tip
-对话框也可以在你的Vue文件模板中作为一个组件使用(用于复杂的使用情况，如特定的表单组件，可选择的选项等)。为此，请访问[QDialog](/vue-components/dialog)页面。
+对话框也可以在你的Vue文件模板中作为一个组件使用(用于复杂的使用情况，如特定的表单组件，可选择的选项等)。为此，请访问[QDialog](/vue-components/dialog) 页面。
 :::
 
 相对于QDialog组件，将Dialogs作为Quasar Plugins使用的好处是，该插件也可以从Vue空间之外调用，不需要你管理它们的模板。但结果是，它们的定制不能与对应的组件相比。
@@ -25,16 +25,16 @@ related:
 2. 一组选项，供用户使用单选按钮或切换按钮(仅单选)或复选框(用于多选)进行选择。
 3. 一个简单的确认对话框，用户可以取消或给她一个特定的动作或输入的 "OK"。
 
-为了创建#1，提示输入表单，你有`opts`对象中的`prompt`属性。
+为了创建 #1，提示输入表单，你在`opts`对象中有`prompt`属性。
 
-为了创建#2, 选项选择表单, 你在`opts`对象中拥有`options`属性.
+为了创建 #2，选项选择表单, 你在`opts`对象中有`options`属性.
 
 ## Dialog API
 <doc-api file="Dialog" />
 
 ## 安装
 
-<doc-installation plugins="Dialog" /> ## 安装
+<doc-installation plugins="Dialog" />
 
 ## 使用方法
 
@@ -72,28 +72,28 @@ setup () {
 
 <doc-example title="Other options" file="Dialog/OtherOptions" />
 
-### Basic validation
+### 基础验证
 
-There is a basic validation system that you can use so that the user won't be able to submit the dialog (click/tap on "OK" or press <kbd>ENTER</kbd>) until the expected values are filled in.
+您可以使用一个基本的验证系统，以便用户在填写预期值之前无法提交对话框（单击/点击“确定”或按<kbd>ENTER</kbd>）。
 
 <doc-example title="Prompt with validation" file="Dialog/ValidationPrompt" />
 
 <doc-example title="Options with validation" file="Dialog/ValidationOptions" />
 
-### Progress
+### 进度条
 
 <doc-example title="Showing progress" file="Dialog/Progress" />
 
-### Using HTML
-You can use HTML on title and message if you specify the `html: true` prop. **Please note that this can lead to XSS attacks**, so make sure that you sanitize the message by yourself.
+### 使用 HTML
+如果您指定 `html: true` 属性，则可以在标题和消息上使用 HTML。 **请注意，这可能会导致 XSS 攻击**，因此请确保已对消息进行了清理。
 
 <doc-example title="Unsafe HTML message" file="Dialog/UnsafeHtml" />
 
-### Invoking custom component
+### 调用自定义组件
 
-You can also invoke your own custom component rather than relying on the default one that the Dialog plugin comes with out of the box. But in this case you will be responsible for handling everything (including your own component props).
+您还可以调用自己的自定义组件，而不是依赖 Dialog 插件自带的默认组件。但在这种情况下，您将负责处理所有事情（包括您自己的组件道具）。
 
-这个功能实际上是Dialog插件的 "面包和黄油"。它可以帮助你保持你的其他vue组件html模板的整洁，通过分离和重复使用你的对话框的功能，轻松实现。
+这个功能实际上是对话框插件的 "面包和黄油"。它通过分离和重复使用对话框的功能，帮助你保持其他vue组件html模板的整洁。
 
 ```js
 import { useQuasar } from 'quasar'
@@ -123,24 +123,24 @@ setup () {
 上述与Options API等效的方法是直接使用`this.$q.dialog({ ... })`。
 
 ::: warning
-然而，你的自定义组件必须遵循下面描述的接口，以便完美地与对话框插件挂钩。**注意 "必须 "的注释**，并按原样接受它--只是一个赤裸裸的示例，仅此而已。
+然而，你的自定义组件必须遵循下面描述的接口，以便完美地与对话框插件挂钩。**注意"必须"的注释**，并按原样接受它--只是一个赤裸裸的示例，仅此而已。
 :::
 
-#### 组成API的变体
+#### 组合式 API 的变体
 
-我们将使用[useDialogPluginComponent](/vue-composables/use-dialog-plugin-component)可组合。
+我们将使用 [useDialogPluginComponent](/vue-composables/use-dialog-plugin-component) 组合。
 
 ```html
 <template>
-  <!-- notice dialogRef here -->
+  <!-- 注意这儿的 dialogRef  -->
   <q-dialog ref="dialogRef" @hide="onDialogHide">
     <q-card class="q-dialog-plugin">
       <!--
-        ...content
-        ... use q-card-section for it?
+        ...内容
+        ... 使用 q-card-section 吗?
       -->
 
-      <!-- buttons example -->
+      <!-- 按钮示例 -->
       <q-card-actions align="right">
         <q-btn color="primary" label="OK" @click="onOKClick" />
         <q-btn color="primary" label="Cancel" @click="onCancelClick" />
@@ -198,7 +198,7 @@ export default {
 </script>
 ```
 
-如果你想以对象形式定义`emits'，那么(需要Quasar v2.2.5+)。
+如果你想以对象形式定义`emits`，那么(需要Quasar v2.2.5+)：
 
 ```
 emits: {
@@ -210,18 +210,18 @@ emits: {
 ]
 ```
 
-#### Options API variant
+#### 选项式 API 变体
 
 ```html
 <template>
   <q-dialog ref="dialog" @hide="onDialogHide">
     <q-card class="q-dialog-plugin">
       <!--
-        ...content
-        ... use q-card-section for it?
+        ...内容
+        ... 使用 q-card-section 吗?
       -->
 
-      <!-- buttons example -->
+      <!-- 按钮示例 -->
       <q-card-actions align="right">
         <q-btn color="primary" label="OK" @click="onOKClick" />
         <q-btn color="primary" label="Cancel" @click="onCancelClick" />
@@ -279,23 +279,23 @@ export default {
 }
 </script>
 ```
-## Cordova/Capacitor返回按钮
+## Cordova/Capacitor 后退按钮
  Quasar 默认为你处理后退按钮，所以它可以隐藏任何打开的对话框，而不是默认的行为，即返回到前一页(这不是一个好的用户体验)。
 
-然而，如果你想禁用这种行为，请编辑你的/quasar.conf.js文件。
+然而，如果你想禁用这种行为，请编辑你的/quasar.conf.js文件：
 
 ```js
 // quasar.conf.js;
-// 为 Cordova (只！)。
+// 仅适用于 Cordova
 return {
   framework: {
     config: {
       cordova: {
-        // Quasar处理手机后退按钮的应用退出。
+        // Quasar 在手机后退按钮上处理应用程序退出。
         backButtonExit: true/false/'*'/['/login', '/home', '/my-page'],
 
-        // 另一方面，以下是完全
-        // 禁用 Quasar 的返回按钮管理。
+        // 另一方面，以下是完全地
+        // 禁用 Quasar 的后退按钮管理。
         backButton: true/false
       }
     }
@@ -303,16 +303,16 @@ return {
 }
 
 // quasar.conf.js;
-// 用于 Capacitor (仅适用于！)。
+// 仅适用用于 Capacitor
 return {
   framework: {
     config: {
       capacitor: {
-        // Quasar处理手机后退按钮的应用退出。
+        // Quasar 在手机后退按钮上处理应用程序退出。
         backButtonExit: true/false/'*'/['/login', '/home', '/my-page'],
 
-        // 另一方面，以下是完全
-        // 禁用 Quasar 的返回按钮管理。
+        // 另一方面，以下是完全地
+        // 禁用 Quasar 的后退按钮管理。
         backButton: true/false
       }
     }

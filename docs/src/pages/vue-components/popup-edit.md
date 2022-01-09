@@ -1,6 +1,6 @@
 ---
 title: 弹出式编辑
-desc: QPopupEdit Vue组件可以用来 "就地 "编辑一个值，例如在QTable的一个单元格上。
+desc: QPopupEdit Vue组件可以用来 "就地"编辑一个值，例如在QTable的一个单元格上。
 keys: QPopupEdit
 related:
   - /vue-components/input
@@ -32,7 +32,7 @@ QPopupEdit组件可以用来 "就地 "编辑一个值，比如说QTable中的一
 
 ### 自定义
 
-<doc-example title="自定义QPopupEdit" file="QPopupEdit/Customizing" /> ###自定义
+<doc-example title="自定义QPopupEdit" file="QPopupEdit/Customizing" />
 
 ### 持久性和带有按钮
 你也可以用`buttons`属性添加两个按钮，"取消 "和 "设置"(默认标签)。这些按钮有助于控制用户的输入。除了 "按钮 "属性，你还有 "持久 "属性，它可以阻止用户用转义键关闭弹出窗口或在弹出窗口外点击/敲击。"persistent "属性在 "carbs "栏中展示。最后，你可以用`label-set`和`label-cancel`属性来控制两个按钮的标签，如 "Protein "一栏所示。注意 "保存 "代替了 "设置"，"关闭 "代替了 "取消"。
@@ -71,7 +71,7 @@ QPopupEdit也允许对输入进行简单的验证。要使用它，你给它一�
 :::
 
 ::: tip Tip 2
-在这个示例中，我们使用了QInput的外部错误处理。我们也可以使用QInput的验证属性，并向QPopupEdit的验证属性发射值。同样的概念也可以在使用Vuelidate时实现。换句话说，给QPopupEdit的验证函数的值可以来自任何地方。
+在这个例子中，我们使用了QInput的外部错误处理。我们也可以使用QInput的验证属性，并向QPopupEdit的验证属性发射值。同样的概念也可以在使用Vuelidate时实现。换句话说，给QPopupEdit的验证函数的值可以来自任何地方。
 :::
 
 <doc-example title="带验证的编辑" file="QPopupEdit/WithValidation" />

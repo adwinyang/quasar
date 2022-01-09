@@ -91,7 +91,7 @@ export default async ({ app, router, store }) => {
 ### 适当使用引导文件的示例
 
 * 你的Vue插件有安装说明，比如需要对其调用`app.use()`。
-* 你的Vue插件需要对添加到根实例的数据进行实例化 - 一个示例是[vue-i18n](https://github.com/kazupon/vue-i18n/)。
+* 你的Vue插件需要对添加到根实例的数据进行实例化 - 一个示例是[vue-i18n](https://github.com/kazupon/vue-i18n/) 。
 * 你想用`app.mixin()`添加一个全局混合器。
 * 你想在Vue应用的globalProperties中添加一些东西以方便访问 - 一个示例是在你的Vue文件中方便地使用`this.$axios`(用于选项式 API)，而不是在每个文件中导入Axios。
 * 你想干扰路由器 - 一个示例是使用`router.beforeEach`进行验证。

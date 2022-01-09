@@ -20,7 +20,7 @@ console.log( humanStorageSize(13087) )
 // 12.8kB
 ```
 
-你也可以导入所有的格式化器，像这样使用你需要的任何东西(但注意你的捆绑包也可能包含未使用的方法)。
+你也可以导入所有的格式化器，像这样使用你需要的任何东西(但注意你的捆绑包也可能包含未使用的方法)：
 ```js
 import { format } from 'quasar'
 
@@ -29,7 +29,7 @@ console.log( format.humanStorageSize(13087) )
 ```
 
 ::: tip
-关于UMD构建的用法，见[here](/start/umd#quasar-global-object)。
+关于UMD构建的用法，见[here](/start/umd#quasar-global-object) 。
 :::
 
 ## 大写
@@ -56,7 +56,7 @@ console.log( humanStorageSize(13087) )
 import { format } from 'quasar'
 const { between } = format
 
-// (Number) between(Number, Number min, Number max)
+// (Number) between(Number, Number min, Number max) // (Number) 介于 (Number, Number 最小, Number 最大) 之间
 console.log( between(50, 10, 20) )
 // 20
 ```
@@ -65,7 +65,7 @@ console.log( between(50, 10, 20) )
 import { format } from 'quasar'
 const { normalizeToInterval } = format
 
-// (Number) normalizeToInterval(Number, Number lower_margin, Number upper_margin)
+// (Number) normalizeToInterval(Number, Number lower_margin, Number upper_margin) // (Number) 标准化时间间隔 (Number, Number 下限, Number 上限)
 
 console.log( normalizeToInterval(21, 10, 20) ) // 10
 console.log( normalizeToInterval(33, 10, 20) ) // 11
@@ -73,7 +73,7 @@ console.log( normalizeToInterval(52, 10, 20) ) // 19
 console.log( normalizeToInterval(5, 10, 16) ) // 12
 ```
 
-## Pad String
+## 填充字符串
 ```js
 import { format } from 'quasar'
 const { pad } = format

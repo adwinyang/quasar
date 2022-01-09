@@ -14,4 +14,4 @@ QSlideTransition根据DOM元素(或组件)的可见度向上或向下滑动：�
 
 ## 使用方法
 
-<doc-example title="基本" file="QSlideTransition/Basic" /> ##使用方法
+<doc-example title="基础" file="QSlideTransition/Basic" />

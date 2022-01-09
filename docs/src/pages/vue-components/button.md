@@ -25,33 +25,33 @@ related:
 
 ### 自定义颜色
 
-<doc-example title="自定义颜色" file="QBtn/CustomColor" /> ###自定义颜色
+<doc-example title="自定义颜色" file="QBtn/CustomColor" />
 
 ### 带图标
 
-<doc-example title="带图标" file="QBtn/WithIcons" /> ###带图标
+<doc-example title="带图标" file="QBtn/WithIcons" />
 
 ### 圆形
 
-<doc-example title="圆形按钮" file="QBtn/Round" /> ###自定义内容
+<doc-example title="圆形按钮" file="QBtn/Round" />
 
 ### 自定义内容
 
-<doc-example title="自定义内容" file="QBtn/CustomContent" /> ###自定义内容
+<doc-example title="自定义内容" file="QBtn/CustomContent" />
 
-<doc-example title="截断标签" file="QBtn/TruncateLabel" /> ###自定义内容
+<doc-example title="截断标签" file="QBtn/TruncateLabel" />
 
 ### 设计
 
-<doc-example title="按钮设计" file="QBtn/ButtonDesign" /> ###设计
+<doc-example title="按钮设计" file="QBtn/ButtonDesign" />
 
 ### 排列方式
 
-<doc-example title="按钮对齐 "file="QBtn/ButtonAlignment" /> ### 尺寸
+<doc-example title="按钮对齐 "file="QBtn/ButtonAlignment" />
 
 ### 尺寸
 
-<doc-example title="按钮尺寸" file="QBtn/ButtonSize" /> ### 尺寸
+<doc-example title="按钮尺寸" file="QBtn/ButtonSize" />
 
 ### 填充
 
@@ -71,13 +71,13 @@ related:
 
 ### 自定义波纹
 
-<doc-example title="自定义波纹" file="QBtn/CustomRipple" /> ###自定义波纹
+<doc-example title="自定义波纹" file="QBtn/CustomRipple" />
 
 ### 处理导航 <q-badge align="top" color="brand-primary" label="uped for v2.4+" />
 
 ::: warning UMD usage
 * 如果你将使用`to`和`replace`属性，请确保你在项目中也注入Vue Router。否则就使用替代的`href`属性。
-* 由于上述原因，下面的一些QBtn在Codepen/jsFiddle中也无法工作。
+* 由于上述原因，下面的一些 QBtn在Codepen/jsFiddle 中也无法工作。
 :::
 
 ::: tip
@@ -92,17 +92,17 @@ related:
 
 ### 其他选项
 
-<doc-example title="其他选项" file="QBtn/OtherOptions" /> ### 其他选项
+<doc-example title="其他选项" file="QBtn/OtherOptions" />
 
 ### 禁用
 
-<doc-example title="禁用" file="QBtn/Disabled" /> ###禁用
+<doc-example title="禁用" file="QBtn/Disabled" />
 
 ### 控制表单提交的按钮
 当你有一个向服务器提交表单输入的按钮时，比如 "保存 "按钮，很多时候你也想让用户按一下ENTER键就能提交表单。如果你还想给用户反馈正在进行的保存过程，并防止用户重复按下按钮，你需要让按钮显示一个加载旋钮，并从点击事件中禁用。QBtn允许这种行为，如果这样配置的话。
 
 ::: warning
-当把类型为 "submit "的QBtn放在QField、QInput或QSelect的 "before"、"after"、"prepend "或 "append "槽中时，你还应该在相关的QBtn上添加一个`@click`监听器。这个监听器应该调用提交表单的方法。所有在这些槽中的 "点击 "事件都不会传播到它们的父元素。
+当把类型为 "submit"的QBtn放在QField、QInput或QSelect的 "before"、"after"、"prepend"或 "append"槽中时，你还应该在相关的QBtn上添加一个`@click`监听器。这个监听器应该调用提交表单的方法。所有在这些槽中的 "点击 "事件都不会传播到它们的父元素。
 :::
 
 <doc-example title="表单提交" file="QBtn/FormSubmission" />

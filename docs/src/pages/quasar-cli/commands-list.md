@@ -547,7 +547,7 @@ $ quasar inspect -h
 ```
 
 ## Ext
-该命令用于管理[App Extensions](/app-extensions/introduction)。
+该命令用于管理[App Extensions](/app-extensions/introduction) 。
 
 ```bash
 $ quasar ext -h

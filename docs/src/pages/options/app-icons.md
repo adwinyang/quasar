@@ -10,5 +10,5 @@ desc: 管理 Quasar 应用中的所有App图标和启动画面。
 ## Icon Genie CLI
 
 ::: tip
-我们强烈建议使用[Icon Genie CLI](/icongenie/introduction)，因为它可以使用一个源图标，并自动克隆、缩放、最小化，并为你把图标放到适当的目录中。需要时，它还会告诉你需要在你的 `/src/index.template.html` 文件中添加哪些标签。
+我们强烈建议使用[Icon Genie CLI](/icongenie/introduction) ，因为它可以使用一个源图标，并自动克隆、缩放、最小化，并为你把图标放到适当的目录中。需要时，它还会告诉你需要在你的 `/src/index.template.html` 文件中添加哪些标签。
 :::

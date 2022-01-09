@@ -33,7 +33,7 @@ App Extensions 是一种轻松注入具有各种依赖项、启动文件、模�
 * `quasar-app-extension-awesomeness`的ext-id是`awesomeness`。
 * `@some-npm-org/quasar-app-extension-awesomeness`的外部id是`@some-npm-org/awesomeness`。
 
-这种命名方案的好处之一是，它使 Quasar 应用扩展在搜索其 npm 包时易于发现。[App Extension - Discover](/app-extensions/discover)。
+这种命名方案的好处之一是，它使 Quasar 应用扩展在搜索其 npm 包时易于发现。[App Extension - Discover](/app-extensions/discover) 。
 
 ## 剖析应用扩展
 应用扩展可以被安装、执行，也可以被卸载。下面的指南以抽象的方式进行讨论。关于各个扩展的细节以及如何使用它们，请查阅它们各自的仓库。

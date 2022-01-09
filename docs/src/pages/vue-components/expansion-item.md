@@ -18,25 +18,25 @@ QExpansionItem组件允许隐藏那些与用户没有直接关系的内容。可
 
 ## 使用方法
 
-### 基本
+### 基础
 
-<doc-example title="基本" file="QExpansionItem/Basic" /> ## 使用方法 ## 基本
+<doc-example title="基础" file="QExpansionItem/Basic" />
 
 ### 控制扩展状态
 
-<doc-example title="控制扩展状态" file="QExpansionItem/ControlExpansionState" /> ### 控制扩展状态
+<doc-example title="控制扩展状态" file="QExpansionItem/ControlExpansionState" />
 
 ### 风格
 
-<doc-example title="密集" file="QExpansionItem/Dense" /> ###风格
+<doc-example title="密集" file="QExpansionItem/Dense" />
 
 <doc-example title="在深色背景上" file="QExpansionItem/Dark" dark />
 
 ### 选项
 
-<doc-example title="切换切换面" file="QExpansionItem/SwitchToggleSide" /> ###选项
+<doc-example title="切换切换面" file="QExpansionItem/SwitchToggleSide" />
 
-<doc-example title="头槽" file="QExpansionItem/HeaderSlot" /> ###选项
+<doc-example title="头槽" file="QExpansionItem/HeaderSlot" />
 
 <doc-example title="处理事件" file="QExpansionItem/HandlingEvents" />
 

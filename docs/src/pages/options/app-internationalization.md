@@ -9,7 +9,7 @@ related:
 国际化是一个设计过程，它确保产品(网站或应用程序)可以适应不同的语言和地区，而无需对源代码进行工程更改。将国际化视为本地化的准备。
 
 ::: tip
-处理网站/应用程序的推荐包是 [vue-i18n](https://github.com/intlify/vue-i18n-next) 。这个软件包应该通过[Boot File](/quasar-cli/boot-files)添加。在Boot File文档页面，你可以看到一个插入 vue-i18n 的具体示例。
+处理网站/应用程序的推荐包是 [vue-i18n](https://github.com/intlify/vue-i18n-next) 。这个软件包应该通过[Boot File](/quasar-cli/boot-files) 添加。在Boot File文档页面，你可以看到一个插入 vue-i18n 的具体示例。
 :::
 
 ::: warning

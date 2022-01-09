@@ -1,19 +1,19 @@
 ---
-title: 支持TypeScript
-desc: 如何在 Quasar 应用程序中启用对TypeScript的支持。
+title: 支持 TypeScript
+desc: 如何在 Quasar 应用程序中启用对 TypeScript 的支持。
 related:
   - /quasar-cli/quasar-conf-js
 ---
 
-对Typescript的支持并没有被默认添加到你的项目中(除非你在创建项目文件夹时选择了TS)，但它可以通过本页面的指南轻松集成。
+对 Typescript 的支持并没有被默认添加到你的项目中(除非你在创建项目文件夹时选择了TS)，但它可以通过本页面的指南轻松集成。
 
 ::: tip
-只有当你在创建一个新的 Quasar 项目时**没有选择TypeScript支持时，才需要以下步骤。如果你在创建项目时选择了TS选项，TypeScript支持已经被启用。
+只有当你在创建一个新的 Quasar 项目时**没有**选择 TypeScript 支持时，才需要以下步骤。如果你在创建项目时选择了TS选项， TypeScript 支持已经被启用。
 :::
 
-## 安装TypeScript支持
+## 安装 TypeScript 支持
 
-为了支持TypeScript，你需要编辑`/quasar.conf.js`。
+为了支持 TypeScript ，你需要编辑`/quasar.conf.js`：
 
 ```js
 module.exports = function (ctx) {
@@ -24,7 +24,7 @@ module.exports = function (ctx) {
 }
 ```
 
-然后在你的项目根部创建`/tsconfig.json`文件，内容如下。
+然后在你的项目根部创建`/tsconfig.json`文件，内容如下：
 
 ```json
 {
@@ -35,10 +35,10 @@ module.exports = function (ctx) {
 }
 ```
 
-现在你可以开始在你的项目中使用TypeScript。
+现在你可以开始在你的项目中使用 TypeScript 。
 
 ::: tip
-记住，你必须把你的JavaScript文件的扩展名改为`.ts`，以允许在里面写TypeScript代码。要在你的组件中写入TS代码，相反，要改变脚本的开头标签，就像这样`<script lang="ts">`。
+记住，你必须把你的JavaScript文件的扩展名改为`.ts`，以允许在里面写 TypeScript 代码。要在你的组件中写入TS代码，相反，要改变脚本的开头标签，就像这样`<script lang="ts">`。
 :::
 
 ::: warning
@@ -47,7 +47,7 @@ module.exports = function (ctx) {
 
 ## 处理TS Webpack加载器
 
-在幕后，Quasar使用`ts-loader`和`fork-ts-checker-webpack-plugin`(由`@quasar/app`包提供)来管理TS文件。如果你需要为这些库提供一个自定义的配置，你可以通过制定`supportTS'属性来实现，就像这样。
+在幕后，Quasar使用`ts-loader`和`fork-ts-checker-webpack-plugin`(由`@quasar/app`包提供)来管理TS文件。如果你需要为这些库提供一个自定义的配置，你可以通过制定`supportTS'属性来实现，就像这样：
 
 ```js
 // quasar.conf.js
@@ -76,7 +76,7 @@ module.exports = function (ctx) {
 $ yarn add --dev eslint @typescript-eslint/parser @typescript-eslint/eslint-plugin
 ```
 
-然后相应地更新你的ESLint配置，就像下面的示例。
+然后相应地更新你的ESLint配置，就像下面的示例：
 
 ```js
 // .eslintrc.js
@@ -147,15 +147,15 @@ module.exports = {
 }
 ```
 
-如果有什么问题，请阅读[typescript-eslint guide](https://github.com/typescript-eslint/typescript-eslint/blob/master/docs/getting-started/linting/README.md)，这个示例就是基于此。
+如果有什么问题，请阅读[typescript-eslint guide](https://github.com/typescript-eslint/typescript-eslint/blob/master/docs/getting-started/linting/README.md) ，这个示例就是基于此。
 
 作为最后一步，更新你的`yarn lint`命令，使其也对`.ts`文件进行检查。
 
 ::: tip
-由于类型检查的开销，TypeScript Linting真的很慢，我们建议你在`quasar.conf.js`中禁用Webpack lint扩展，用于开发构建。
+由于类型检查的开销， TypeScript  Linting真的很慢，我们建议你在`quasar.conf.js`中禁用Webpack lint扩展，用于开发构建。
 :::
 
-如果你设置了TypeScript linting并希望`fork-ts-checker-webpack-plugin`(由`@quasar/app`包提供)考虑到它，那么你应该使用`tsCheckerConfig`属性。
+如果你设置了 TypeScript  linting并希望`fork-ts-checker-webpack-plugin`(由`@quasar/app`包提供)考虑到它，那么你应该使用`tsCheckerConfig`属性。
 
 ```js
 // quasar.conf.js

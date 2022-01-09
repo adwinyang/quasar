@@ -8,7 +8,7 @@ related:
   - /layout/grid/flex-playground
 ---
 
-希望您之前读过[FlexBox简介](/layout/grid/introduction-to-flexbox)理论，让我们深入了解行。
+希望您之前读过[FlexBox简介](/layout/grid/introduction-to-flexbox) 理论，让我们深入了解行。
 
 对等宽列使用断点特定的列类。为每个需要的断点添加任意数量的无单元类，每个列的宽度都相同。
 

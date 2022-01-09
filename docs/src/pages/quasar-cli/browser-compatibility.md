@@ -28,4 +28,4 @@ Babel会准确地寻找需要转译的JS功能(基于配置的浏览器)并应�
 ]
 ```
 
-关于如何指定浏览器范围的更多信息。[browserslist](https://github.com/browserslist/browserslist) 。
+关于如何指定浏览器范围的更多信息：[browserslist](https://github.com/browserslist/browserslist) 。

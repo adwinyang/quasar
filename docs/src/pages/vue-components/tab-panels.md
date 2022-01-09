@@ -35,11 +35,11 @@ related:
 * 如果你需要`keep-alive-include`或`keep-alive-exclude`属性，那么QTabPanel的`name`s必须是有效的Vue组件名称(不允许有空格，不要以数字开头等)。
 :::
 
-### 基本
+### 基础
 
-<doc-example title="基本" file="QTabPanels/Basic" />
+<doc-example title="基础" file="QTabPanels/Basic" />
 
-### 使用QTabs
+### 使用 QTabs
 
 ::: tip
 QTabPanels也可以作为独立的使用。它们不依赖于QTabs的存在。而且，它们可以被放置在页面的任何地方，而不仅仅是靠近QTabs。
@@ -47,28 +47,28 @@ QTabPanels也可以作为独立的使用。它们不依赖于QTabs的存在。�
 
 <doc-example title="使用QTabs" file="QTabPanels/WithQTabs" />
 
-<doc-example title="一个更复杂的示例" file="QTabPanels/WithNestedQTabs" />
+<doc-example title="一个更复杂的例子" file="QTabPanels/WithNestedQTabs" />
 
 ### 着色
 
-<doc-example title="着色" file="QTabPanels/Coloring" /> ###着色
+<doc-example title="着色" file="QTabPanels/Coloring" />
 
-### 使用垂直的QTabs和QSplitter
+### 使用垂直的 QTabs和 QSplitter
 
-<doc-example title="有垂直的QTabs和QSplitter" file="QTabs/Vertical" /> ###有垂直的QTabs和QSplitter。
+<doc-example title="有垂直的QTabs和QSplitter" file="QTabs/Vertical" />
 
 关于过渡的完整列表，请查看[过渡](/options/transitions)。
 
-### 自定义转场
+### 自定义过渡
 
 <doc-example title="自定义过渡实例" file="QTabPanels/Transition" />
 
-在下面的示例中，用你的鼠标在面板中滑动，或者，如果在一个有触摸功能的设备上，用你的手指来滑动。
+在下面的例子中，用你的鼠标在面板中滑动，或者，如果在一个有触摸功能的设备上，用你的手指来滑动。
 
 ### 可滑动和无限的
 
 <doc-example title="可滑动和无限" file="QTabPanels/Swipeable" />
 
-### 可垂直刷卡和无限刷卡
+### 可垂直和无限滑动
 
-<doc-example title="垂直刷卡和无限刷卡" file="QTabPanels/VerticalSwipeable" /> ### 垂直刷卡和无限刷卡
+<doc-example title="可垂直和无限滑动" file="QTabPanels/VerticalSwipeable" />

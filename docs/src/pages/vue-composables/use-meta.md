@@ -1,6 +1,6 @@
 ---
-title: 可用Meta组成的
-desc: Quasar的useMeta()可组合性是什么以及如何使用它
+title: useMeta 可组合性
+desc: Quasar 的 useMeta() 可组合性是什么以及如何使用它
 keys: useMeta
 related:
   - /quasar-plugins/meta
@@ -10,7 +10,7 @@ useMeta是[Quasar Meta Plugin](/quasar-plugins/meta)的一部分。如果你现�
 
 ## 语法
 
-对于静态元配置(非反应式)。
+对于静态元配置(非反应式)：
 
 ```js
 import { useMeta } from 'quasar'
@@ -36,7 +36,7 @@ setup () {
 }
 ```
 
-## ###实例
+## 实例
 
 ```html
 <script>
@@ -44,10 +44,10 @@ import { useMeta } from 'quasar'
 
 export default {
   setup () {
-    const title = ref('Some title') // we define the "title" prop
+    const title = ref('Some title') // 我们定义 "title" 属性
 
     // 注意，这里的参数是一个函数
-    // 在引擎盖下，它被转换为一个Vue计算的属性，以获得反应性
+    // 在底层，它被转换为一个Vue计算的属性，以获得反应性
     useMeta(() => {
       return {
         // 只要上面的 "标题 "发生变化，你的元就会自动更新。
@@ -56,7 +56,7 @@ export default {
     })
 
     function setAnotherTitle () {
-      title.value = 'Another title' // will automatically trigger a Meta update due to the binding
+      title.value = 'Another title' // 由于绑定，将自动触发 Meta 更新
     }
 
     return {

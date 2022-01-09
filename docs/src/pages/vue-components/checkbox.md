@@ -28,17 +28,17 @@ QCheckbox组件是另一个用于用户输入的基本元素。你可以用它�
 
 ### 标签
 
-<doc-example title="标签" file="QCheckbox/Label" /> ### 标签
+<doc-example title="标签" file="QCheckbox/Label" />
 
 ### 着色
 
-在下面示例的第二行中，属性`keep-color`被用来在复选框不处于切换状态时保留传入的颜色。
+在下面例子的第二行中，属性`keep-color`被用来在复选框不处于切换状态时保留传入的颜色。
 
 <doc-example title="着色" file="QCheckbox/Coloring" />
 
-### 密集和黑暗
+### 浓密和黑暗
 
-<doc-example title="密集" file="QCheckbox/Dense" /> ###密集和黑暗
+<doc-example title="浓密" file="QCheckbox/Dense" />
 
 <doc-example title="深色背景下" file="QCheckbox/OnDarkBackground" dark />
 
@@ -50,7 +50,7 @@ QCheckbox组件是另一个用于用户输入的基本元素。你可以用它�
 
 ### 不确定的状态
 
-在下面的示例中，一旦你点击了第一个复选框，它就开始在真/假之间切换。另一方面，第二个复选框在 "toggle-indeterminate "的帮助下在三种状态(不定/真/假)之间切换。你可以选择设置属性`indeterminat-value`，否则，不确定的值将被视为`null`。
+在下面的例子中，一旦你点击了第一个复选框，它就开始在真/假之间切换。另一方面，第二个复选框在 "toggle-indeterminate "的帮助下在三种状态(不定/真/假)之间切换。你可以选择设置属性`indeterminat-value`，否则，不确定的值将被视为`null`。
 
 <doc-example title="不确定的状态" file="QCheckbox/IndeterminateState" />
 
@@ -67,32 +67,34 @@ QCheckbox组件是另一个用于用户输入的基本元素。你可以用它�
 
 ### 阵列模型
 
-<doc-example title="数组作为模型" file="QCheckbox/ArrayAsModel" /> ###自定义模型值
+<doc-example title="数组作为模型" file="QCheckbox/ArrayAsModel" />
 
 ### 自定义模型值
 
-<doc-example title="自定义模型值" file="QCheckbox/CustomModel" /> ###自定义模型值
+<doc-example title="自定义模型值" file="QCheckbox/CustomModel" />
 
-### 使用QOptionGroup
+### 使用 QOptionGroup
 
 ::: tip
-你也可以使用[QOptionGroup](/vue-components/option-group)，当你有一组复选框时，它可以简化使用，就像下面的示例。
+你也可以使用[QOptionGroup](/vue-components/option-group)，当你有一组复选框时，它可以简化使用，就像下面的例子。
 :::
 
 <doc-example title="Usage with QOptionGroup" file="QCheckbox/OptionGroup" />
 
-### With QItem
+### 使用 QItem
 
-In the example below, we are rendering a `<label>` tag (notice `tag="label"`) so the QCheckbox will respond to clicks on QItems to change toggle state.
+在下面的例子中，我们渲染了一个`<label>`标签(注意`tag="label"`)，所以QCheckbox会响应QItems的点击来改变切换状态。
 
 <doc-example title="With QItem" file="QCheckbox/InaList" />
 
-### Disable
+### 禁用
 
 <doc-example title="Disable" file="QCheckbox/Disable" />
 
 ### Native form submit
 
-When dealing with a native form which has an `action` and a `method` (eg. when using Quasar with ASP.NET controllers), you need to specify the `name` property on QCheckbox, otherwise formData will not contain it (if it should) - all value are converted to string (native behaviour, so do not use Object values):
+### 本地表单提交
+
+当处理一个有 `action`和`method`的本地表单时(例如，当使用Quasar和ASP.NET控制器时)，你需要在QCheckbox上指定`name`属性，否则formData将不包含它(如果它应该包含的话)--所有的值都被转换为字符串(本地行为，所以不要使用Object值)：
 
 <doc-example title="Native form" file="QCheckbox/NativeForm" />

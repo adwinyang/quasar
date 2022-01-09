@@ -41,10 +41,10 @@ desc: 如何配置VSCode以达到与 Quasar 的最佳使用效果。
 ### 在一个新的 Quasar 项目上测试标准
 
 ```bash
-# I selected default values for all options to create this guide
+# 我为创建本指南的所有选项选择了默认值
 $ quasar create qt
 
-# Verify it runs without error
+# 验证它是否正常运行
 $ cd qt
 $ quasar dev
 ```
@@ -227,7 +227,7 @@ build: {
 }
 ```
 
-现在保存该文件，然后在调试和运行窗格的标题栏的下拉菜单中选择该配置。在你启动调试器之前，应用程序必须正在运行。在命令行中，用`quasar dev`启动你的应用程序的开发模式。然后在调试和运行窗格中点击绿色的 "go "按钮，启动调试会话，并附加到你正在运行的应用程序。你现在可以设置断点，控制步进/步出等，所有这些都来自VSCode。你也可以启动内置的Chrome调试器，它将保持同步。如果你还安装了[Vue devtools](https://chrome.google.com/webstore/detail/vuejs-devtools/nhdogjmejiglipccpnnnanhbledajbpd)(强烈推荐)，这可能很有用。
+现在保存该文件，然后在调试和运行窗格的标题栏的下拉菜单中选择该配置。在你启动调试器之前，应用程序必须正在运行。在命令行中，用`quasar dev`启动你的应用程序的开发模式。然后在调试和运行窗格中点击绿色的 "go "按钮，启动调试会话，并附加到你正在运行的应用程序。你现在可以设置断点，控制步进/步出等，所有这些都来自VSCode。你也可以启动内置的Chrome调试器，它将保持同步。如果你还安装了[Vue devtools](https://chrome.google.com/webstore/detail/vuejs-devtools/nhdogjmejiglipccpnnnanhbledajbpd) (强烈推荐)，这可能很有用。
 
 ::: tip
 如果你只是想使用Chrome或Firefox的调试器，但你发现很难在浏览器的源代码标签中找到正确的源代码文件，那么你可以在代码中使用调试器语句，强制调试器在该行停止，并调出正确的源代码。

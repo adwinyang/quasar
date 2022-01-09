@@ -5,12 +5,12 @@ related:
   - /quasar-cli/quasar-conf-js
 ---
 
-PreFetch是一项功能(**只在使用 Quasar CLI 时可用)，它允许Vue Router(定义在`/src/router/routes.js`)拾取的组件。
+PreFetch 是一项功能(**只在使用 Quasar CLI 时可用**)，它允许Vue Router(定义在`/src/router/routes.js`)挑选的组件：
 
 * 预先获取数据
 * 验证路由
 * 当某些条件不满足时(如用户没有登录)，重定向到另一个路由。
-*可以帮助初始化商店的状态
+* 可以帮助初始化商店的状态
 
 所有上述内容将在实际路由组件呈现之前运行。
 
@@ -34,15 +34,15 @@ return {
 
 另一个问题是，在客户端，同样的数据需要在我们挂载客户端应用程序之前可用--否则，客户端应用程序将使用不同的状态进行渲染，激活就会失败。
 
-为了解决这个问题，获取的数据需要存在于视图组件之外，在一个专门的数据存储或 "状态容器 "中。在服务器上，我们可以在渲染前预取并将数据填充到存储中。在我们加载应用程序之前，客户端的存储将直接获取服务器的状态。
+为了解决这个问题，获取的数据需要存在于视图组件之外，在一个专门的数据存储或 "状态容器" 中。在服务器上，我们可以在渲染前预取并将数据填充到存储中。在我们加载应用程序之前，客户端的存储将直接获取服务器的状态。
 
-## 当PreFetch被激活时
+## 当 PreFetch 被激活时
 `preFetch`钩子(在接下来的章节中描述)是由访问的路由决定的--这也决定了哪些组件被渲染。事实上，一个给定的路由所需要的数据也是在该路由渲染的组件所需要的数据。**所以很自然地(也是必须的)将钩子逻辑只放在路由组件内。**这包括`/src/App.vue`，在这种情况下，它只在应用程序启动时运行一次。
 
-让我们举个示例，以了解钩子何时被调用。假设我们有这些路由，并且我们为所有这些组件写了`preFetch`钩子。
+让我们举个示例，以了解钩子何时被调用。假设我们有这些路由，并且我们为所有这些组件写了`preFetch`钩子：
 
 ```js
-// 航线
+// 路由
 [
   {
     path: '/',
@@ -89,7 +89,7 @@ return {
 这个钩子被定义为我们路由组件上的一个自定义静态函数，叫做`preFetch`。注意，因为这个函数将在组件实例化之前被调用，所以它不能访问`this`。
 
 ```html
-<!-- some .vue component used as route -->
+<!-- 一些 .vue 组件用作路由 -->
 <template>
   <div>{{ item.title }}</div>
 </template>
@@ -107,7 +107,7 @@ export default {
     // 这里没有访问 "这个 "的权限
 
     // 如果你正在运行一个异步作业，返回一个Promise。
-    // 示例。
+    // 示例：
     return store.dispatch('fetchItem', currentRoute.params.id)
   },
 
@@ -123,7 +123,7 @@ export default {
 </script>
 ```
 
-如果你使用的是`<script setup>`，那么就在它之外添加一个`<script>`部分，它只是用preFetch()方法返回一个对象。
+如果你使用的是`<script setup>`，那么就在它之外添加一个`<script>`部分，它只是用preFetch()方法返回一个对象：
 
 ```html
 <script>
@@ -139,7 +139,7 @@ export default {
 ```
 
 ::: tip
-如果你正在开发一个SSR应用程序，那么你可以看看[ssrContext](/quasar-cli/developing-ssr/ssr-context)对象，它被提供到服务器端。
+如果你正在开发一个SSR应用程序，那么你可以看看[ssrContext](/quasar-cli/developing-ssr/ssr-context) 对象，它被提供到服务器端。
 :::
 
 ```js
@@ -187,8 +187,8 @@ export default {
 }
 ```
 
-### 商店代码拆分
-在一个大型的应用程序中，你的Vuex商店可能会被分割成多个模块。当然，也可以将这些模块的代码分割成相应的路由组件块。假设我们有以下的商店模块。
+### 存储代码拆分
+在一个大型的应用程序中，你的Vuex商店可能会被分割成多个模块。当然，也可以将这些模块的代码分割成相应的路由组件块。假设我们有以下的商店模块：
 
 ```js
 // src/store/foo.js
@@ -293,13 +293,13 @@ export default {
 一个好的用户体验包括在用户等待页面准备好的时候，通知他/她有东西正在后台处理。 Quasar CLI 为此提供了两个开箱即用的选项。
 
 ### LoadingBar
-当你把Quasar [LoadingBar](/quasar-plugins/loading-bar)插件添加到你的应用程序中时， Quasar CLI 将在运行preFetch钩子时默认使用它。
+当你把Quasar [LoadingBar](/quasar-plugins/loading-bar)插件添加到你的应用程序中时，Quasar CLI 将在运行preFetch钩子时默认使用它。
 
 ### 加载
-也有可能使用Quasar [Loading](/quasar-plugins/loading)插件。下面是一个示例：
+也有可能使用Quasar [Loading](/quasar-plugins/loading) 插件。下面是一个示例：
 
 ```js
-// 路径.vue组件
+// .vue 路由组件
 import { Loading } from 'quasar'
 
 export default {

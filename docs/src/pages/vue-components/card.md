@@ -8,7 +8,7 @@ related:
 
 QCard组件是显示重要的分组内容的一个好方法。这种模式正在迅速崛起，成为应用程序、网站预览和电子邮件内容的核心设计模式。它通过包含和组织信息来帮助浏览者，同时也设置了可预测的预期。
 
-由于有这么多的内容需要同时显示，而屏幕上的空间往往又非常小，卡片已经迅速成为许多公司的首选设计模式，包括像 Google 和Twitter。
+由于有这么多的内容需要同时显示，而屏幕上的空间往往又非常小，卡片已经迅速成为许多公司的首选设计模式，包括像谷歌和Twitter。
 
 QCard组件是有意轻量级的，本质上是一个包含元素，能够 "承载 "任何其他合适的组件。
 
@@ -19,7 +19,7 @@ QCard组件是有意轻量级的，本质上是一个包含元素，能够 "承�
 <doc-api file="QCardSection" />
 
 ## QCardActions API
-<doc-api file="QCardActions" /> ## QCardActions API
+<doc-api file="QCardActions" />
 
 ## 使用方法
 
@@ -57,12 +57,12 @@ It's recommended that you use QImg component instead of native `<img>` when deal
 ### Various content
 <doc-example title="Various content" file="QCard/VariousContent" />
 
-<doc-example title="表格" file="QCard/Table" /> ###各种内容
+<doc-example title="表格" file="QCard/Table" />
 
 <doc-example title="标签" file="QCard/Tabs" />
 
 ### 可扩展
 
-在下面的示例中，点击右下角的圆形按钮可以看到扩展的动作。
+在下面的例子中，点击右下角的圆形按钮可以看到扩展的动作。
 
-<doc-example title="可扩展" file="QCard/Expandable" /> ###可扩展
+<doc-example title="可扩展" file="QCard/Expandable" />

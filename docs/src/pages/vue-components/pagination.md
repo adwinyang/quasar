@@ -19,30 +19,30 @@ QPagination有两种操作模式：只使用按钮或使用输入框。后者允
 
 ### 自定义图标
 
-<doc-example title="用图标替换" file="QPagination/Icons" /> ###自定义图标
+<doc-example title="用图标替换" file="QPagination/Icons" />
 
 ### 带输入
 
-<doc-example title="有输入" file="QPagination/Input" /> ### 有输入
+<doc-example title="有输入" file="QPagination/Input" />
 
-<doc-example title="带输入颜色" file="QPagination/InputColor" /> ###带输入颜色
+<doc-example title="带输入颜色" file="QPagination/InputColor" />
 
 ### 显示的最大页面
 
-<doc-example title="显示的最大页数" file="QPagination/MaxPages" /> ### 最大显示页数
+<doc-example title="显示的最大页数" file="QPagination/MaxPages" />
 
-<doc-example title="移除省略号" file="QPagination/Ellipses" /> ### 处理边界问题。
+<doc-example title="移除省略号" file="QPagination/Ellipses" />
 
 ### 处理边界
 
-<doc-example title="使用边界数字" file="QPagination/BoundaryNumbers" /> ###处理边界
+<doc-example title="使用边界数字" file="QPagination/BoundaryNumbers" />
 
-<doc-example title="有边界链接" file="QPagination/BoundaryLinks" /> ###处理边界
+<doc-example title="有边界链接" file="QPagination/BoundaryLinks" />
 
 <doc-example title="带方向链接" file="QPagination/DirectionLinks" />
 
 ### 样式
 
-下面是一些示例，但不是一个详尽的清单。
+下面是一些例子，但不是一个详尽的清单：
 
-<doc-example title="样式" file="QPagination/Styles" />#### 样式的示例。
+<doc-example title="样式" file="QPagination/Styles" />

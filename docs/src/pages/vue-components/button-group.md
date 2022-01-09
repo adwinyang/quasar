@@ -16,7 +16,7 @@ related:
 <doc-api file="QBtnGroup" />
 
 ## 使用方法
-<doc-example title="示例" file="QBtnGroup/Group" /> ## 使用方法
+<doc-example title="例子" file="QBtnGroup/Group" />
 
 ::: warning
 你必须在父QBtnGroup和子QBtn/QBtnDropdown上使用相同的设计属性(平面、轮廓、推动...)。

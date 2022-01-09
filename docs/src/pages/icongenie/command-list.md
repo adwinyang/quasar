@@ -39,7 +39,7 @@ $ icongenie [command_name] --help
 
 对于启动屏幕图像，如果您希望将图标放在背景之上，则可能需要将其与`--background`(或`-b`)结合使用。
 
-您可能还想使用`--profile`(或`-p`)参数，该参数可以运行一个或多个 Icon Genie [配置文件文件](/icongenie/profile-files)。
+您可能还想使用`--profile`(或`-p`)参数，该参数可以运行一个或多个 Icon Genie [配置文件文件](/icongenie/profile-files) 。
 
 ```bash
 $ icongenie generate -h
@@ -227,7 +227,7 @@ JSON 配置文件文件的通用形式为：
 }
 ```
 
-您还可以生成多个配置文件(具有不同的 params/settings)。 有关更多信息，请返回[配置文件文件](/icongenie/profile-files)页面。
+您还可以生成多个配置文件(具有不同的 params/settings)。 有关更多信息，请返回[配置文件文件](/icongenie/profile-files) 页面。
 
 ```bash
 $ icongenie profile -h

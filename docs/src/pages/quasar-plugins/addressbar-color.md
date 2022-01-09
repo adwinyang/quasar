@@ -7,7 +7,7 @@ keys: AddressbarColor
 
 ::: warning
 * 目前还没有一个网络标准，所以它不会对所有的移动浏览器起作用。
-* 这只适用于建立网站时。对于在移动应用程序(用 Cordova 模式构建)上着色的顶栏，请参考[cordova-plugin-statusbar](https://cordova.apache.org/docs/en/latest/reference/cordova-plugin-statusbar/)。
+* 这只适用于建立网站时。对于在移动应用程序(用 Cordova 模式构建)上着色的顶栏，请参考[cordova-plugin-statusbar](https://cordova.apache.org/docs/en/latest/reference/cordova-plugin-statusbar/) 。
 :::
 
 ![移动地址栏着色](https://cdn.quasar.dev/img/mobile-address-bar-colors.jpg "移动地址栏着色")
@@ -18,11 +18,11 @@ keys: AddressbarColor
 
 ## 安装
 
-<doc-installation plugins="AddressbarColor" /> ## Installation
+<doc-installation plugins="AddressbarColor" />
 
 ## 使用方法
 
-我们创建启动文件来初始化其使用。`$ quasar new boot addressbar-color [--format ts]`。一个文件被创建(`/src/boot/addressbar-color.js`)。我们编辑它。
+我们创建启动文件来初始化其使用。`$ quasar new boot addressbar-color [--format ts]`。一个文件被创建(`/src/boot/addressbar-color.js`)。我们编辑它：
 
 ```js
 // 文件：/src/boot/addressbar-color.js
@@ -45,7 +45,7 @@ return {
 
 它的作用是在运行时将一些`<meta>`标签注入到你的`index.html`。
 
-因为元标签直到运行时才被注入，你可以根据用户所在的页面，多次动态地改变这个颜色(通过调用相应页面的`created()`生命周期钩子中的`set`方法)。
+因为元标签直到运行时才被注入，你可以根据用户所在的页面，多次动态地改变这个颜色(通过调用相应页面的`created()`生命周期钩子中的`set`方法)：
 
 
 ```js
@@ -63,5 +63,5 @@ export default {
 ```
 
 ::: tip
-调用没有参数的`set()`将使用主色。
+调用没有参数的`set()`将使用原色。
 :::

@@ -101,7 +101,7 @@ pwa: {
     // 链是一个webpack-chain实例
     // 的Webpack配置
 
-    // 示例。
+    // 示例：
     // chain.plugin('eslint-webpack-plugin')
     //   .use(ESLintPlugin, [{ extensions: [ 'js' ] }] )
   }
@@ -233,7 +233,7 @@ pwa: {
 ::::
 
 ## PWA检查表
-更多信息。[PWA检查表](https://web.dev/pwa-checklist/)
+更多信息：[PWA检查表](https://web.dev/pwa-checklist/)
 
 ::: danger
 不要在你的开发构建中运行[Lighthouse](https://developers.google.com/web/tools/lighthouse/) ，因为在这个阶段，代码故意没有被优化，并且包含嵌入式源码图(以及许多其他东西)。更多信息请参见本文档的[测试和审计](/quasar-cli/testing-and-auditing) 部分。

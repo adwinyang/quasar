@@ -30,6 +30,6 @@ desc: 介绍什么是渐进式网络应用程序，以及如何在 Quasar 应用
 ## 服务工作者
 服务工作者提供了一种程序化的方式来缓存应用资源(文件)。编程式API允许开发者决定如何处理缓存，并提供比其他选项更灵活的体验。
 
-更多信息。[Service Worker API](https://developer.mozilla.org/en-US/docs/Web/API/Service_Worker_API)。
+更多信息：[Service Worker API](https://developer.mozilla.org/en-US/docs/Web/API/Service_Worker_API)。
 
 

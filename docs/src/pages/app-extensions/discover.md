@@ -7,9 +7,9 @@ desc: 查找官方和社区 Quasar 应用程序扩展。
 
 ## 社区应用扩展
 
-审查提交  的[社区应用扩展](https://github.com/quasarframework/quasar-awesome/blob/master/README.md#community-app-extensions)。
+审查提交  的[社区应用扩展](https://github.com/quasarframework/quasar-awesome/blob/master/README.md#community-app-extensions) 。
 
-> 也请不要忘记提交你自己的! 了解什么是Quasar [App Extensions](/app-extensions/introduction)以及如何[创建一个](/app-extensions/development-guide/introduction)。
+> 也请不要忘记提交你自己的! 了解什么是Quasar [App Extensions](/app-extensions/introduction)以及如何[创建一个](/app-extensions/development-guide/introduction) 。
 
 
 ## 官方应用程序扩展

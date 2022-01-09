@@ -23,7 +23,7 @@ QOptionGroup组件是一个辅助组件，它允许你更好地控制二进制(�
 
 ### 使用QCheckbox或QToggle
 
-<doc-example title="使用复选框" file="QOptionGroup/Checkbox" /> ###使用QCheckbox或QToggle
+<doc-example title="使用复选框" file="QOptionGroup/Checkbox" />
 
 ::: warning
 复选框/切换器的模型必须是一个数组。
@@ -45,18 +45,18 @@ QOptionGroup组件是一个辅助组件，它允许你更好地控制二进制(�
 
 ### 内联
 
-<doc-example title="内联" file="QOptionGroup/Inline" /> ### 内联
+<doc-example title="内联" file="QOptionGroup/Inline" />
 
 ### 密集型
 
-<doc-example title="密集和内联" file="QOptionGroup/DenseInline" /> ###密集型
+<doc-example title="密集和内联" file="QOptionGroup/DenseInline" />
 
 ### 禁用
 
-<doc-example title="禁用" file="QOptionGroup/Disable" /> ###禁用
+<doc-example title="禁用" file="QOptionGroup/Disable" />
 
 ::: tip
-`options`数组中的对象可以持有QToggle、QCheckbox或QRadio中的任何属性，例如`disable`或`leftLabel`。请看下面的示例。
+`options`数组中的对象可以持有QToggle、QCheckbox或QRadio中的任何属性，例如`disable`或`leftLabel`。请看下面的例子。
 :::
 
 ### 禁用某些选项
@@ -69,6 +69,6 @@ QOptionGroup组件是一个辅助组件，它允许你更好地控制二进制(�
 
 ### 本地表单提交
 
-当处理一个有 "action "和 "method "的本地表单时(例如，当使用 Quasar 和ASP.NET控制器时)，你需要在QOptionGroup上指定 "name "属性，否则formData将不包含它(如果它应该包含的话)--所有的值都被转换为字符串(本地行为，所以不要使用Object值)。
+当处理一个有 `action` 和`method` 的本地表单时(例如，当使用Quasar和ASP.NET控制器时)，你需要在QOptionGroup上指定 `name` 属性，否则formData将不包含它(如果它应该包含的话)--所有的值都被转换为字符串(本地行为，所以不要使用Object值)。
 
 <doc-example title="本地表单" file="QOptionGroup/NativeForm" />

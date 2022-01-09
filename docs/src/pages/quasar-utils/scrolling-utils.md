@@ -1,15 +1,15 @@
 ---
-title: 滚动利用
+title: 滚动工具
 desc: 一组与滚动有关的 Quasar 方法，如获取滚动目标或改变页面的滚动位置。
 keys: getScrollTarget,getVerticalScrollPosition,setVerticalScrollPosition,getHorizontalScrollPosition,setHorizontalScrollPosition,getScrollHeight,getScrollWidth,getScrollbarWidth
 ---
 
 ::: tip
-关于UMD构建的用法，见[here](/start/umd#quasar-global-object)。
+关于UMD构建的用法，见[这里](/start/umd#quasar-global-object) 。
 :::
 
 ## 确定滚动的容器
-可能值得一读的是如何做到这一点[这里](/vue-components/scroll-observer#determining-scrolling-container)。
+可能值得一读的是如何做到这一点[这里](/vue-components/scroll-observer#determining-scrolling-container) 。
 
 ```js
 import { scroll } from 'quasar'
@@ -24,35 +24,35 @@ getScrollTarget(DomElement) // returns a DOM Element (or window Object)
 
 请注意，简单地将`scroll`CSS类附加到DOM元素或Vue组件上，如果相应的元素没有被溢出，则不会有任何效果(例如，用。CSS `overflow: hidden`和高度小于其内部内容高度)。
 
-好的容器的示例。
+好的容器的示例：
 
 ```html
 <!--
-  Quasar CSS helper 'overflow-hidden' is
-  equivalent to style="overflow: hidden"
+  Quasar CSS辅助类 'overflow-hidden' 相当于
+  相当于style="overflow: hidden"
 -->
 <div class="scroll overflow-hidden" style="height: 100px">
-  ...content expanding over the 100px height from container...
+  ...内容从容器扩展到100像素的高度...
 </div>
 ```
 
 ## 获取/设置滚动位置
-垂直方向。
+垂直方向：
 
 ```js
 import { scroll } from 'quasar'
 const { getVerticalScrollPosition, setVerticalScrollPosition } = scroll
 
 // 获取一个元素或页面的滚动位置。
-// 与 "getScrollTarget() "结合使用。
-getVerticalScrollPosition(scrollTargetDomElement) // returns a Number (pixels)
+// 与 `getScrollTarget()` 结合使用。
+getVerticalScrollPosition(scrollTargetDomElement) // 返回一个数值 (像素)
 
 // 设置一个元素或页面的滚动位置。
 setVerticalScrollPosition (scrollTargetElement, offset[, duration])
-// 如果指定了 "持续时间"，那么它将对滚动进行动画处理。
+// 如果指定了 "durtaion"(持续时间)，那么它将对滚动进行动画处理。
 ```
 
-水平方向。
+水平方向：
 
 ```js
 import { scroll } from 'quasar'
@@ -60,11 +60,11 @@ const { getHorizontalScrollPosition, setHorizontalScrollPosition } = scroll
 
 // 获取一个元素或页面的滚动位置。
 // 与 "getScrollTarget() "结合使用。
-getHorizontalScrollPosition(scrollTargetDomElement) // returns a Number (pixels)
+getHorizontalScrollPosition(scrollTargetDomElement) // 返回一个数值 (像素)
 
 // 设置一个元素或页面的滚动位置。
 setHorizontalScrollPosition (scrollTargetElement, offset[, duration])
-// 如果指定了 "持续时间"，那么它将对滚动进行动画处理。
+// 如果指定了 "durtaion"(持续时间)，那么它将对滚动进行动画处理。
 ```
 
 ### 滚动到一个元素
@@ -84,7 +84,7 @@ function scrollToElement (el) {
 ```
 
 ## 确定卷轴大小
-垂直方向。
+垂直方向：
 
 ```js
 import { scroll } from 'quasar'
@@ -104,7 +104,7 @@ import { scroll } from 'quasar'
 const { getScrollWidth } = scroll
 
 // 获得滚动容器的内部高度
-getScrollWidth(scrollTargetDomElement) // returns a Number
+getScrollWidth(scrollTargetDomElement) // 返回一个数值
 
 console.log( getScrollWidth(el) )
 // 824 (它总是以像素为单位)
@@ -117,5 +117,5 @@ console.log( getScrollWidth(el) )
 import { scroll } from 'quasar'
 const { getScrollbarWidth } = scroll
 
-console.log(getScrollbarWidth()) // 16 (it's in pixels)
+console.log(getScrollbarWidth()) // 16 (以像素为单位)
 ```

@@ -2,16 +2,16 @@
 
 ## Quasar 框架文档
 
-> 在有限时间内构建高性能的 VueJS 用户界面：响应单页应用，SSR应用程序，PWAS，浏览器扩展，混合移动应用和 Electron 应用。这些都可以使用相同的代码库来构建！
+> 在创纪录的时间内构建高性能 VueJS 用户界面：响应单页应用，SSR应用程序，PWAS，浏览器扩展，混合移动应用和 Electron 应用。这些都可以使用相同的代码库来构建！
 
-[![加入聊天 https://discord.gg/5tdhbdg](https://img.shields.io/badge/chat-on%20discord-7289da.svg)，https：//discord.gg/ 5TDHBDG)
-<a href="https://forum.quasar.dev" target="_blank"> <img src="https://img.shields.io/badge/community-forum-brightgreen.svg"> </ a >
-[![https://good-labs.github.io/greater-good-affation/assets/images/badge.svg](https://good-labs.github.io/greater-good- afimation/assets/images/badge.svg)](https://good-labs.github.io/greater-good- affirmation)
+[![Join the chat at https://discord.gg/5TDhbDg](https://img.shields.io/badge/chat-on%20discord-7289da.svg)](https://discord.gg/5TDhbDg)
+<a href="https://forum.quasar.dev" target="_blank"><img src="https://img.shields.io/badge/community-forum-brightgreen.svg"></a>
+[![https://good-labs.github.io/greater-good-affirmation/assets/images/badge.svg](https://good-labs.github.io/greater-good-affirmation/assets/images/badge.svg)](https://good-labs.github.io/greater-good-affirmation)
 
 ## 支持 Quasar
-Quasar Framework 是一个采用 MIT-许可证 的开源项目。由于这些令人尊敬的[支持者]的支持(https://github.com/rstoenescu/quasar-framework/blob/dev/backers.md)，所以它才可持续发展。
+Quasar Framework 是一个采用 MIT-许可证 的开源项目。由于这些令人尊敬的[支持者](https://github.com/rstoenescu/quasar-framework/blob/dev/backers.md) 的支持，所以它才可持续发展。
 
- **请阅读我们的清单[为什么捐赠很重要](https://quasar.dev/why-donate)**。如果您想成为捐赠者，请查看[Quasar Framework的捐赠者竞选活动](https://donate.quasar.dev)。
+ **请阅读我们的清单[为什么捐赠很重要](https://quasar.dev/why-donate) **。如果您想成为捐赠者，请查看[Quasar Framework的捐赠者竞选活动](https://donate.quasar.dev) 。
 
 ## Quasar 路线图
 

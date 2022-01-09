@@ -1,6 +1,6 @@
 ---
-title: QDate
-desc: QDate Vue组件提供了一种方法来输入公历或波斯历的日期。
+title: 日期选择器
+desc: QDate Vue 组件提供了一种方法来输入公历或波斯历的日期。
 keys: QDate
 related:
   - /vue-components/time
@@ -24,12 +24,12 @@ QDate组件提供了一个输入日期的方法。目前它支持公历(默认)�
 请注意，该模型的实际日期都是字符串格式。
 :::
 
-### 基本
+### 基础
 
 <doc-example title="基础" file="QDate/Basic" overflow />
 
 ::: tip
-对于横向模式，你可以和`$q.screen`一起使用，使QDate具有响应性。例如：`:landscape="$q.screen.gt.xs"`。更多信息。[Quasar Screen Plugin](/options/screen-plugin)。
+对于横向模式，你可以和`$q.screen`一起使用，使QDate具有响应性。例如：`:landscape="$q.screen.gt.xs"`。更多信息：[Quasar Screen Plugin](/options/screen-plugin)。
 :::
 
 <doc-example title="景观" file="QDate/Landscape" overflow />
@@ -44,7 +44,7 @@ QDate组件提供了一个输入日期的方法。目前它支持公历(默认)�
 
 ### 范围选择
 
-注意在下面的示例中，模型是一个对象(单选)或一个对象的数组(多选)。
+注意在下面的例子中，模型是一个对象(单选)或一个对象的数组(多选)。
 
 ::: tip TIPS
 * 点击一个已经选择的日子将取消选择它。
@@ -53,7 +53,7 @@ QDate组件提供了一个输入日期的方法。目前它支持公历(默认)�
 :::
 
 ::: warning
-范围 "属性只与 "选项 "属性部分兼容：选择的范围也可能包括 "不可选择 "的日子。
+范围 "属性只与 "选项 "属性部分兼容：选择的范围也可能包括 "不可选择" 的日子。
 :::
 
 <doc-example title="单一范围" file="QDate/SelectionRange" overflow />
@@ -62,7 +62,7 @@ QDate组件提供了一个输入日期的方法。目前它支持公历(默认)�
 
 ### 自定义标题和副标题
 
-当不在 "最小 "模式时，QDate有一个计算的标题和副标题。你可以覆盖它，就像下面的示例。
+当不在 "最小 "模式时，QDate有一个计算的标题和副标题。你可以覆盖它，就像下面的例子。
 
 当点击标题时，QDate的视图就会变成日历，而当点击副标题时，视图就会切换到年份选择。
 
@@ -78,7 +78,7 @@ QDate组件提供了一个输入日期的方法。目前它支持公历(默认)�
 
 <doc-example title="默认视图" file="QDate/DefaultView" overflow /> 默认视图可以改变。
 
-每周第一天的应用取决于你所设置的[Quasar语言包](/options/quasar-language-packs)，但你也可以强制它，就像下面的示例。
+每周第一天的应用取决于你所设置的[Quasar语言包](/options/quasar-language-packs)，但你也可以强制它，就像下面的例子。
 
 <doc-example title="一周的第一天" file="QDate/FirstDayOfWeek" overflow />
 
@@ -95,7 +95,7 @@ QDate组件提供了一个输入日期的方法。目前它支持公历(默认)�
 `mask`属性标记可以在[Quasar Utils > Date utils](/quasar-utils/dateutils#format-for-display)找到。
 
 ::: warning Note on SSR
-在掩码中使用`x`或`X`(时间戳)可能会导致客户端的激活错误，因为模型字符串的解码必须用`new Date()`来完成，它需要考虑到当地的时区。因此，如果服务器与客户端处于不同的时区，那么服务器的渲染输出将与客户端的输出不同，所以水化将失败。
+在掩码中使用`x`或`X`(时间戳)可能会导致客户端的水合错误，因为模型字符串的解码必须用`new Date()`来完成，它需要考虑到当地的时区。因此，如果服务器与客户端处于不同的时区，那么服务器的渲染输出将与客户端的输出不同，所以水化将失败。
 :::
 
 ::: danger Note on persian calendar
@@ -118,19 +118,19 @@ QDate组件提供了一个输入日期的方法。目前它支持公历(默认)�
 
 ### 自定义特定的语言环境
 
-如果由于某种原因，你需要使用一个自定义的特定语言，而不是当前已经设置的 Quasar 语言包，你可以使用`locale`属性。
+如果由于某种原因，你需要使用一个自定义的特定语言，而不是当前已经设置的Quasar语言包，你可以使用`locale`属性。
 
 <doc-example title="自定义特定语言 "file="QDate/CustomLocale" overflow />。
 
 ### 着色
 
-<doc-example title="着色" file="QDate/Color" overflow /> ### 颜色
+<doc-example title="着色" file="QDate/Color" overflow />
 
 <doc-example title="黑暗 "file="QDate/Dark" overflow dark />
 
 ### 突出显示事件
 
-第一个示例是使用一个数组，第二个示例是使用一个函数。
+第一个例子是使用一个数组，第二个例子是使用一个函数。
 
 <doc-example title="事件" file="QDate/Events" 溢出 />
 
@@ -139,7 +139,7 @@ QDate组件提供了一个输入日期的方法。目前它支持公历(默认)�
 ### 限制性选项
 
 * 你可以使用`options`属性来限制用户选择某些时间。
-* 另外，为了更深入地限制选项，你也可以为`options-fn`属性提供一个函数(下面第二个和第三个示例)。
+* 另外，为了更深入地限制选项，你也可以为`options-fn`属性提供一个函数(下面第二个和第三个例子)。
 
 ::: warning
 `options`属性只与`range`属性部分兼容。范围可能包含 "不可选择的 "日子。
@@ -149,7 +149,7 @@ QDate组件提供了一个输入日期的方法。目前它支持公历(默认)�
 
 ### 应用导航边界
 
-在下面的示例中，导航被限制在2020/07和2020/09之间。
+在下面的例子中，导航被限制在2020/07和2020/09之间。
 
 <doc-example title="导航边界" file="QDate/NavigationBoundaries" overflow /> 溢出。
 
@@ -157,13 +157,13 @@ QDate组件提供了一个输入日期的方法。目前它支持公历(默认)�
 
 你可以使用默认的槽来添加按钮。
 
-<doc-example title="有了额外的按钮" file="QDate/AdditionalButtons" overflow /> ### 有了QSplitter和NavigationBoundaries，你可以使用默认的槽来添加按钮。
+<doc-example title="有了额外的按钮" file="QDate/AdditionalButtons" overflow />
 
 ### 使用QSplitter和QTabPanels
 
 <doc-example title="使用QSplitter和QTabPanels" file="QDate/Splitter" />
 
-更多信息。[QSplitter](/vue-components/splitter), [QTabPanels](/vue-components/tab-panels)。
+更多信息：[QSplitter](/vue-components/splitter), [QTabPanels](/vue-components/tab-panels)。
 
 ### 使用QInput
 
@@ -173,18 +173,18 @@ QDate组件提供了一个输入日期的方法。目前它支持公历(默认)�
 
 <doc-example title="用QInput连接QDate和QTime" file="QDate/InputFull" overflow />
 
-下面是QInput `mask`和`rules`属性的**帮助。你可以使用这些以获得便利，或者写下指定你的[自定义需求]的字符串(/vue-components/input#mask)。
+下面是QInput `mask`和`rules`属性的**帮助**。你可以使用这些以获得便利，或者写下指定你的[自定义需求]的字符串(/vue-components/input#mask)。
 
 * 属性`mask`帮助器。[完整列表](https://github.com/quasarframework/quasar/blob/dev/ui/src/components/input/use-mask.js#L6)。
 * Property `rules` helpers: [完整列表](https://github.com/quasarframework/quasar/blob/dev/ui/src/utils/patterns.js)。
 
-示例。"date", "time", "fulltime".
+示例："date", "time", "fulltime".
 
-更多信息。[QInput](/vue-components/input)。
+更多信息：[QInput](/vue-components/input)。
 
 ### 波斯日历
 ::: tip
-你可以把它与 Quasar [语言包](/options/quasar-language-packs)结合起来，如波斯语(Farsi, `fa-ir`)，使QDate字符串也得到翻译，以获得完整的体验。
+你可以把它与Quasar[语言包](/options/quasar-language-packs)结合起来，如波斯语(Farsi, `fa-ir`)，使QDate字符串也得到翻译，以获得完整的体验。
 :::
 
 ::: warning
@@ -195,6 +195,6 @@ QDate组件提供了一个输入日期的方法。目前它支持公历(默认)�
 
 ### 本地表单提交
 
-当处理一个有 "action "和 "method "的本地表单时(例如，当使用 Quasar 和ASP.NET控制器时)，你需要指定QDate的 "name "属性，否则formData将不包含它(如果它应该包含)。
+当处理一个有 `action`和`method`的本地表单时(例如，当使用Quasar和ASP.NET控制器时)，你需要指定QDate的 "name "属性，否则formData将不包含它(如果它应该包含)。
 
 <doc-example title="本地表单" file="QDate/NativeForm" />

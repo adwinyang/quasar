@@ -11,9 +11,9 @@ QBadge组件允许你创建一个小徽章，用于添加需要突出和引起�
 
 ## 使用方法
 
-<doc-example title="基本" file="QBadge/Basic" /> ##使用方法
+<doc-example title="基础" file="QBadge/Basic" />
 
-<doc-example title="对齐" file="QBadge/Align" /> ## 使用方法
+<doc-example title="对齐" file="QBadge/Align" />
 
 <doc-example title="浮动" file="QBadge/Floating" />
 

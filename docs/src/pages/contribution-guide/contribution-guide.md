@@ -5,7 +5,7 @@ desc: 如何为 Quasar 框架做出贡献。
 
 本指南涵盖了您可以成为 Quasar 持续发展的一部分的方式。
 
-但是，在我们开始之前，首先要注意的是。每个在 Quasar 上互动的人都要遵守[Quasar行为准则](https://github.com/quasarframework/quasar/blob/dev/.github/CODE_OF_CONDUCT.md)。
+但是，在我们开始之前，首先要注意的是。每个在 Quasar 上互动的人都要遵守[Quasar行为准则](https://github.com/quasarframework/quasar/blob/dev/.github/CODE_OF_CONDUCT.md) 。
 
 现在我们已经解决了这个问题，让我们开始吧！
 
@@ -26,32 +26,32 @@ desc: 如何为 Quasar 框架做出贡献。
 
 以下是我们的讨论/问答场所：
 
-* [论坛](https://forum.quasar.dev/)：提出问题的最佳地点并获得关于 Quasar 及其生态系统的答案。
-* [聊天](https://chat.quasar.dev/)：Quasar Devs 满足实时聊天的地方。
+* [论坛](https://forum.quasar.dev/) ：提出问题的最佳地点并获得关于 Quasar 及其生态系统的答案。
+* [聊天](https://chat.quasar.dev/) ：Quasar Devs 满足实时聊天的地方。
 
 ## 分享(并构建)您的体验
 
 除了在论坛和聊天中的回答问题和共享资源外，还有其他一些不太明显的方式分享和扩展你所知道的东西：
 
 * **开发学习资料**。经常说，学习的最佳方式是教。如果您有一些有趣的东西，您可以通过 Quasar 进行，通过撰写博客文章，开发研讨会，甚至发布您在社交媒体上分享的GIST来加强您的专业知识。
-* **分享您的技术堆栈**。展示其他技术经过良好的技术，可以与按 Quasar 集成。推广您的项目和[填写您最喜欢的基于准堆栈](https://stackshare.io/tool/quasar-framework/decisions)。请务必提及@quasarframework和所有其他相关技术。
+* **分享您的技术堆栈**。展示其他技术经过良好的技术，可以与按 Quasar 集成。推广您的项目和[填写您最喜欢的基于准堆栈](https://stackshare.io/tool/quasar-framework/decisions) 。请务必提及@quasarframework和所有其他相关技术。
 * **观看您关心的回购**。这将在该存储库中的活动时发送通知，为您提供关于正在进行的讨论和即将到来的功能的内幕知识。这是建立专业知识的绝佳方式，以便您最终能够帮助解决问题和拉拔请求。
 
 ## 报告一个问题
 
-* [github](https://github.com/quasarframework/quasar/issues)：如果您有一个错误来报告或要求的功能，那就是Github问题所适用的。确保您指定您的错误与准v2相关。
+* [github](https://github.com/quasarframework/quasar/issues) ：如果您有一个错误来报告或要求的功能，那就是Github问题所适用的。确保您指定您的错误与准v2相关。
 
 ::: danger Reporting a vulnerability
-请不要将安全漏洞公布在 github 问题列表中。 请遵循安全问题的[报告漏洞步骤](/security/report-a-vulnerability)。
+请不要将安全漏洞公布在 github 问题列表中。 请遵循安全问题的[报告漏洞步骤](/security/report-a-vulnerability) 。
 :::
 
 如果您在 Quasar 中发现了一个不存在安全风险的问题，请在GitHub上的[Issues]下搜索(https://github.com/quasarframework/quasar/issues)检查它是否已在开发分支(`dev`)中得到响应或修复。
 
-- [主存储库](https://github.com/quasarframework/quasar)的问题列表是 **专用** 用于错误报告和功能请求。。不符合要求的问题将立即关闭。
+- [主存储库](https://github.com/quasarframework/quasar) 的问题列表是 **专用** 用于错误报告和功能请求。。不符合要求的问题将立即关闭。
 
-  - 对于简单的初学者问题，您可以从[Quasar Discord chat](https://chat.quasar.dev)获得快速答案。
+  - 对于简单的初学者问题，您可以从[Quasar Discord chat](https://chat.quasar.dev) 获得快速答案。
 
-  - 对于更复杂的问题，您可以使用[官方论坛](https://forum.quasar-framework.org/category/11/help)。询问您的问题时，请务必提供足够的信息 -- 这使得其他人可以更轻松地帮助您！
+  - 对于更复杂的问题，您可以使用[官方论坛](https://forum.quasar-framework.org/category/11/help) 。询问您的问题时，请务必提供足够的信息 -- 这使得其他人可以更轻松地帮助您！
 
 - 检查问题是否与最新稳定版的 Quasar 版本可重复。如果您使用的是预发布，请说明您使用的特定版本。
 
@@ -69,7 +69,7 @@ desc: 如何为 Quasar 框架做出贡献。
 
 作为一个超出报告问题的下一步，您可以通过提供关于它们的反馈来帮助Quasar Team解决现有的团队。如果您是新的标准开发，那可能是走第一步的好方法，您将熟悉代码库和流程。
 
-如果您在[github问题](https://github.com/quasarframework/quasar/issues)中查看问题列表，您会发现很多经需要关注的问题。你能为这些做点什么呢？实际上很多：
+如果您在[github问题](https://github.com/quasarframework/quasar/issues) 中查看问题列表，您会发现很多经需要关注的问题。你能为这些做点什么呢？实际上很多：
 
 #### 验证错误报告
 
@@ -114,15 +114,15 @@ $ git pull JohnSmith orange
 在每个文档页面的右上角使用铅笔图标。 编辑源文件，预览更改，添加更改的描述，然后命中“提出文件更改”和“下一个屏幕”“创建拉请求”。
 :::
 
-对于较大的编辑，更改标准源文件(位于[这里](https://github.com/quasarframework/quasarframework/quasar/tree/dev/docs/src/pages))。
+对于较大的编辑，更改标准源文件(位于[这里](https://github.com/quasarframework/quasarframework/quasar/tree/dev/docs/src/pages)) 。
 
 ### 文档最佳实践
 
 随着时间的推移，我们整合了一组规则，遵循这些规则将加速合并过程：
-- 大写标题，见[如何使用我的标题大写](https://capitalizemytitle.com/)。
+- 大写标题，见[如何使用我的标题大写](https://capitalizemytitle.com/) 。
 - 使用现在的时态。
 - 简明扼要，避免文本/代码复制。
-- 链接到用作主信息源的外部源，通常更频繁地更新，如[Mozilla MDN](https://developer.mozilla.org/en-us/docs/web/javascript)，[Vue。 JS API](https://v3.vuejs.org/api/)而不是编译的教程很快就会过时。
+- 链接到用作主信息源的外部源，通常更频繁地更新，如[Mozilla MDN](https://developer.mozilla.org/en-us/docs/web/javascript)，[Vue。 JS API](https://v3.vuejs.org/api/) 而不是编译的教程很快就会过时。
 - 打开PR之前进行校对
 - 不要从其他来源重复文本，但只保留相关的东西，这些内容在上下文特定功能中
 - 使用官方名称。例如，使用`firebase`而不是`firebase`
@@ -130,7 +130,7 @@ $ git pull JohnSmith orange
 
 #### 分支
 
-导航到 Quasar [github存储库](https://github.com/quasarframework/quasar)，然后按右上角的“fork”。
+导航到 Quasar [github存储库](https://github.com/quasarframework/quasar) ，然后按右上角的“fork”。
 
 ::: warning Select dev branch
 确保选择了`dev`分支，所有工作都在这里完成。
@@ -209,15 +209,15 @@ $ git merge upstream/dev
 
 ## 创建新的 Quasar 应用程序扩展
 
-开始为准贡献的简单方法是概括您在项目上创建的代码，并将其发布为 Quasar 应用程序扩展名。遵循本指南有关如何[创建新的扩展](/ app-extensions / develop deward /介绍)。
+开始为准贡献的简单方法是概括您在项目上创建的代码，并将其发布为 Quasar 应用程序扩展名。遵循本指南有关如何 [创建新的扩展](/app-extensions/development-guide/introduction) 。
 
-完成后，提交[Quasar Awesome](https://github.com/quasarframework/quasar-awesome/blob/master/readme.md#community-app-extensions)，通过[Quasar Forum]共享您的成就( https://forum.quasar-framework.org/category/15/v1-app-extensions)。
+完成后，提交[Quasar Awesome](https://github.com/quasarframework/quasar-awesome/blob/master/readme.md#community-app-extensions) ，通过[Quasar Forum]共享您的成就( https://forum.quasar-framework.org/category/15/v1-app-extensions) 。
 
 ## 为Quasar UI源代码贡献
 
-与任何项目一样，有贡献的规则。我们在这里写的，请仔细阅读。之后，阅读[Quasar行为准则](https://github.com/quasarframework/quasar/blob/dev/.github/code_of_conemon.md)，您将准备好为 Quasar 的核心存储库做出贡献。
+与任何项目一样，有贡献的规则。我们在这里写的，请仔细阅读。之后，阅读[Quasar行为准则](https://github.com/quasarframework/quasar/blob/dev/.github/code_of_conemon.md) ，您将准备好为 Quasar 的核心存储库做出贡献。
 
-文章[查看源代码](https://medium.com/quasar-framework/wip-look-at-the-source-code-please-1b905ea4906)将帮助您熟悉标准代码库。
+文章[查看源代码](https://medium.com/quasar-framework/wip-look-at-the-source-code-please-1b905ea4906) 将帮助您熟悉标准代码库。
 
 #### 拉请求指南
 
@@ -236,7 +236,7 @@ $ git merge upstream/dev
 
 #### 开发设置
 
-您需要[node.js](http://nodejs.org)版本** 12.22.1 + **沿[yarn](https://yarnpkg.com/)或[npm](https：// docs .npmjs.com / geret-install /安装节点)。读取`package.json`并注意您可以使用的脚本。
+您需要[node.js](http://nodejs.org)版本** 12.22.1 + **沿 [yarn](https://yarnpkg.com/) 或 [npm](https://docs.npmjs.com/getting-started/installing-node) 。读取`package.json`并注意您可以使用的脚本。
 
 克隆存储库后运行：
 
@@ -295,4 +295,4 @@ $ yarn lint # or: npm run lint
 
 ## Quasar 贡献者
 
-感谢所有为[Quasar作出贡献的人](https://github.com/quasarframework/quasar/graphs/contributors)！
+感谢所有为[Quasar作出贡献的人](https://github.com/quasarframework/quasar/graphs/contributors) ！

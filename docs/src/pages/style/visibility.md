@@ -1,6 +1,6 @@
 ---
-title: CSS可见性
-desc: 由 Quasar 提供的CSS类列表，用于管理组件和DOM元素的响应性和可见性。
+title: CSS 可见性
+desc: 由 Quasar 提供的 CSS 类列表，用于管理组件和DOM元素的响应性和可见性。
 related:
   - /style/typography
   - /style/positioning
@@ -20,7 +20,7 @@ related:
 | `ellipsis-2-lines` | 当两行没有足够的空间时，截断文本并显示省略号(仅适用于Webkit浏览器)。|
 | `ellipsis-3-lines` | 当三行没有足够的空间时，会截断文本并显示省略号(仅适用于Webkit浏览器)。|
 | `z-top` | 将你的元素放置在任何其他组件的顶部，但在弹出窗口、工具提示、通知的后面。|
-| `z-max` | 将您的元素放在任何其他组件的顶部(包括抽屉、模版、通知、布局头/页脚，...)。
+| `z-max` | 将您的元素放在任何其他组件的顶部(包括抽屉、模版、通知、布局头/页脚，...) |
 
 ## 窗口宽度相关
 首先，让我们定义一下断点是什么。
@@ -60,16 +60,16 @@ Example: `<span class="gt-sm inline">...</span>`
 
 | 类别名称 | 描述 |
 | --- | --- |
-| `只在台式机上看到` | 只在台式机上可见
-| `mobile-only` | 仅在手机上可见。
-| `native-mobile-only` | 仅在 Cordova /Capacitor上可见
-| `cordova-only` | 仅在 Cordova 包装的应用程序上可见。
-| `capacitor-only` | 仅在Capacitor包装的应用程序上可见。
-| `electron-only` | 仅在Electron包装的应用程序上可见。
-| `touch-only` | 仅在具有触摸功能的平台上可见。
-| `platform-ios-only` | 仅在iOS平台上可见。
-| `platform-android-only` | 仅在安卓平台上可见。
-| `within-iframe-only` | 只有在整个网站处于IFRAME标签下时才可见。
+| `desktop-only` | 只在台式机上可见 |
+| `mobile-only` | 仅在手机上可见 |
+| `native-mobile-only` | 仅在 Cordova / Capacitor上可见 |
+| `cordova-only` | 仅在 Cordova 包装的应用程序上可见 |
+| `capacitor-only` | 仅在Capacitor包装的应用程序上可见
+| `electron-only` | 仅在Electron包装的应用程序上可见 |
+| `touch-only` | 仅在具有触摸功能的平台上可见 |
+| `platform-ios-only` | 仅在iOS平台上可见 |
+| `platform-android-only` | 仅在安卓平台上可见 |
+| `within-iframe-only` | 只有在整个网站处于IFRAME标签下时才可见 |
 
 隐藏在:
 
@@ -84,7 +84,7 @@ Example: `<span class="gt-sm inline">...</span>`
 | `touch-hide` | 隐藏在具有触摸功能的平台上
 | `platform-ios-hide` | 隐藏在iOS平台上 |
 | `platform-android-hide` | 隐藏在Android平台上 |
-| `within-iframe-hide` | 只在整个网站处于IFRAME标签下时才隐藏。
+| `within-iframe-hide` | 只在整个网站处于IFRAME标签下时才隐藏 |
 
 ::: tip
 根据你的需要，你可能还想看看[平台检测](/options/platform-detection)页面，看看你如何用Javascript达到同样的效果。后一种方法允许你甚至不渲染一个DOM元素或组件。当渲染过程很昂贵时，它是很有用的。
@@ -93,11 +93,11 @@ Example: `<span class="gt-sm inline">...</span>`
 ## 定向相关
 | 类别名称 | 说明 |
 | --- | --- |
-| `orientation-portrait` | 仅在屏幕方向为*Portrait*时可见。
-| `orientation-landscape` | 仅在屏幕方向为*Landscape*时可见。
+| `orientation-portrait` | 仅在屏幕方向为*纵向*时可见 |
+| `orientation-landscape` | 仅在屏幕方向为*横向*时可见 |
 
 ## 打印相关
 | 类别名称 | 描述 |
 | --- | --- |
-| `print-only` | 仅在打印介质上可见，在*屏幕*介质上隐藏
-| `print-hide` | 在*屏幕*媒体上可见，在*打印*媒体上隐藏。
+| `print-only` | 仅在打印介质上可见，在*屏幕*介质上隐藏 |
+| `print-hide` | 在*屏幕*媒体上可见，在*打印*媒体上隐藏 |

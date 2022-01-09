@@ -147,6 +147,6 @@ JSON配置文件文件的通用形式是：
 
 ## Bootstrap 配置文件
 
-Icon Genie 还提供[配置文件命令](/icongenie/command-list#配置)，其可以为您引导JSON配置文件。 它可以帮助您创建一个或多个这样的文件，然后可以通过[生成命令](/icongenie/command-list#生成) 与`--profile` 参数(或较短的`-p`) 批量运行这些文件。
+Icon Genie 还提供[配置文件命令](/icongenie/command-list#配置) ，其可以为您引导JSON配置文件。 它可以帮助您创建一个或多个这样的文件，然后可以通过[生成命令](/icongenie/command-list#生成) 与`--profile` 参数(或较短的`-p`) 批量运行这些文件。
 
 最方便的用例是将多个配置文件生成到一个特定的文件夹中，每个文件都有自己的参数，然后通过`$ icongenie generate -p /patp/to/folder` 运行所有的文件。

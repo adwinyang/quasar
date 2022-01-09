@@ -3,17 +3,17 @@ title: 注入 Quasar 插件
 desc: 关于如何使用 Quasar 应用扩展来配置主机应用以使用 Quasar 插件的技巧和窍门。
 ---
 
-本指南适用于当你想确保将[Quasar Plugin](/quasar-plugins)注入到托管应用程序的情况，因为依赖它来使你自己的应用扩展工作。
+本指南适用于当你想确保将[Quasar Plugin](/quasar-plugins) 注入到托管应用程序的情况，因为依赖它来使你自己的应用扩展工作。
 
 ::: tip
-要创建应用程序扩展项目文件夹，请先阅读[开发指南>简介](/App extensions/Development Guide/Introduction)。
+要创建应用程序扩展项目文件夹，请先阅读[开发指南>简介](/App extensions/Development Guide/Introduction) 。
 :::
 
 ::: tip Full Example
-要查看我们构建的示例，请转到 [完整示例](https://github.com/quasarframework/app-extension-examples/v2/master/inject-quasar-plugin)，这是一个 GitHub 存储库，里面有这个应用扩展(App Extension)。
+要查看我们构建的示例，请转到 [完整示例](https://github.com/quasarframework/app-extension-examples/v2/master/inject-quasar-plugin )，这是一个 GitHub 存储库，里面有这个应用扩展(App Extension)。
 :::
 
-我们只需要 /index.js 脚本，因为我们可以使用[Index API](/app-extensions/development-guide/index-api)配置主机应用中的 quasar.conf.js，
+我们只需要 /index.js 脚本，因为我们可以使用[Index API](/app-extensions/development-guide/index-api) 配置主机应用中的 quasar.conf.js，
 用来包含我们需要的 Quasar 插件。
 
 ```bash

@@ -26,7 +26,7 @@ QSlider是一种很好的方式，用户可以在最小值和最大值之间指�
 
 ### 垂直方向
 
-<doc-example title="垂直方向" file="QSlider/Vertical" /> ### 垂直方向
+<doc-example title="垂直方向" file="QSlider/Vertical" />
 
 ### 带有内部最小/最大值 <q-badge align="top" color="brand-primary" label="v2.4+" />
 
@@ -36,7 +36,7 @@ QSlider是一种很好的方式，用户可以在最小值和最大值之间指�
 
 ### 带步骤
 
-<doc-example title="有步骤" file="QSlider/Step" /> ###有步骤
+<doc-example title="有步骤" file="QSlider/Step" />
 
 阶梯 "属性也可以是浮点数(如果你需要无限的精度，也可以是数字 "0")。
 
@@ -46,7 +46,7 @@ QSlider是一种很好的方式，用户可以在最小值和最大值之间指�
 
 ### 带标签
 
-在下面的示例中，移动滑块可以看到标签。
+在下面的例子中，移动滑块可以看到标签。
 
 <doc-example title="有标签" file="QSlider/Label" />
 
@@ -54,17 +54,17 @@ QSlider是一种很好的方式，用户可以在最小值和最大值之间指�
 
 <doc-example title="自定义标签值" file="QSlider/LabelValue" />
 
-下面的示例更好地强调了QSlider如何处理标签的定位，使其始终保持在QSlider的水平方向上的框内。
+下面的例子更好地强调了QSlider如何处理标签的定位，使其始终保持在QSlider的水平方向上的框内。
 
 <doc-example title="长标签" file="QSlider/LabelLong" />
 
 ### 标记
 
-<doc-example title="标记" file="QSlider/Markers" /> ### 标记标签
+<doc-example title="标记" file="QSlider/Markers" />
 
 ### 标记标签 <q-badge align="top" color="brand-primary" label="v2.4+"
 
-<doc-example title="标记标签" file="QSlider/MarkerLabels" /> ###标记标签
+<doc-example title="标记标签" file="QSlider/MarkerLabels" />
 
 ::: tip TIP on slots
 为了使用标记标签槽(见下文)，你必须通过使用`标记-标签'属性来启用它们。
@@ -74,7 +74,7 @@ QSlider是一种很好的方式，用户可以在最小值和最大值之间指�
 
 ### 其他定制 <q-badge align="top" color="brand-primary" label="v2.4+"
 
-<doc-example title="颜色定制" file="QSlider/SliderColoring" /> ###其他定制。
+<doc-example title="颜色定制" file="QSlider/SliderColoring" />
 
 <doc-example title="隐藏选择栏" file="QSlider/NoSelection" />
 
@@ -84,30 +84,30 @@ QSlider是一种很好的方式，用户可以在最小值和最大值之间指�
 
 ### 懒惰的输入
 
-<doc-example title="懒人输入" file="QSlider/Lazy" /> ###懒人输入
+<doc-example title="懒人输入" file="QSlider/Lazy" />
 
 ### 空值
 
-<doc-example title="空值" file="QSlider/Null" /> ### 空值
+<doc-example title="空值" file="QSlider/Null" />
 
 ### 反向
 
-<doc-example title="反转" file="QSlider/Reverse" /> ### 反转?
+<doc-example title="反转" file="QSlider/Reverse" />
 
 ### 黑暗、只读、禁用
 
-<doc-example title="黑暗" file="QSlider/Dark" dark /> ###黑暗、只读、禁用
+<doc-example title="黑暗" file="QSlider/Dark" dark />
 
-<doc-example title="只读" file="QSlider/Readonly" /> ###暗部、只读、禁用
+<doc-example title="只读" file="QSlider/Readonly" />
 
 <doc-example title="禁用" file="QSlider/Disable" />
 
 ### 使用QItem
 
-<doc-example title="使用QItem" file="QSlider/List" /> ### 使用QItem
+<doc-example title="使用QItem" file="QSlider/List" />
 
 ### 本地表单提交
 
-当处理一个有 "action "和 "method "的本地表单时(例如，当使用 Quasar 和ASP.NET控制器时)，你需要指定QSlider的 "name "属性，否则formData将不包含它(如果它应该包含)。
+当处理一个有 `action` 和 `method` 的本地表单时(例如，当使用Quasar和ASP.NET控制器时)，你需要指定QSlider的 `name` 属性，否则formData将不包含它(如果它应该包含)。
 
 <doc-example title="本地表单" file="QSlider/NativeForm" />

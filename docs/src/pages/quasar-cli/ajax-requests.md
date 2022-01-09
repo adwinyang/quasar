@@ -80,4 +80,4 @@ export function register ({ commit }, form) {
 }
 ```
 
-也可以看看[Axios docs](https://github.com/axios/axios)，了解更多信息。
+也可以看看[Axios docs](https://github.com/axios/axios) ，了解更多信息。

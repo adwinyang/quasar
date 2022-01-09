@@ -1,12 +1,12 @@
 ---
-title: 上传者
+title: 上传器
 desc: QUploader Vue组件是一种让用户向后端服务器上传文件的方式。
 keys: QUploader
 related:
   - /vue-components/file-picker
 ---
 
- Quasar 为你提供了一种通过QUploader组件上传文件的方法。
+Quasar为你提供了一种通过QUploader组件上传文件的方法。
 
 ::: tip
 如果你想要的只是一个输入文件，你可以考虑使用[QFile](/vue-components/file-picker)拾取器组件来代替。
@@ -19,11 +19,11 @@ related:
 ## 使用方法
 
 ::: warning
-QUploader需要一个后端服务器来接收文件。下面的示例将不会实际上传。
+QUploader需要一个后端服务器来接收文件。下面的例子将不会实际上传。
 :::
 
 ::: tip
-QUploader符合 "拖放 "原则。
+QUploader 是**可拖放**的(`drag and drop`(拖放) 兼容)。
 :::
 
 ::: warning
@@ -32,13 +32,13 @@ QUploader符合 "拖放 "原则。
 
 ### 设计
 
-<doc-example title="基本" file="QUploader/Basic" />
+<doc-example title="基础" file="QUploader/Basic" />
 
 <doc-example title="黑暗" file="QUploader/Dark" />
 
 ### 上传多个文件
 
-默认情况下，多个文件将被单独上传(每个文件一个线程)。如果你想在一个线程中上传所有文件，请使用`batch'属性(下面示例中的第二个QUploader)。
+默认情况下，多个文件将被单独上传(每个文件一个线程)。如果你想在一个线程中上传所有文件，请使用`batch'属性(下面例子中的第二个QUploader)。
 
 <doc-example title="多个" file="QUploader/Multiple" />
 
@@ -47,11 +47,11 @@ QUploader符合 "拖放 "原则。
 <doc-example title="基本限制" file="QUploader/RestrictionBasic" />
 
 ::: tip
-在上面的示例中，我们使用`accept`属性。它的值必须是一个逗号分隔的唯一文件类型指定器的列表。映射到本地输入type=file元素的'accept'属性。[更多信息](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/file#Unique_file_type_specifiers)。
+在上面的例子中，我们使用`accept`属性。它的值必须是一个逗号分隔的唯一文件类型指定器的列表。映射到本地输入type=file元素的'accept'属性。[更多信息](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/file#Unique_file_type_specifiers) 。
 :::
 
 ::: warning
-建议 "接受 "属性的格式为"<媒介型>/<扩展型>"。例如："image/png", "image/png". QUploader在后台使用`<input type="file">`，它完全依赖主机浏览器来触发文件选择器。如果`accept`属性(被应用于输入)不正确，屏幕上将不会出现文件选取器，或者它将出现，但它将接受所有文件类型。
+建议 `accept` 属性的格式为`<mediatype>/<extension>`。例如:"image/png", "image/png". QUploader在后台使用`<input type="file">`，它完全依赖主机浏览器来触发文件选择器。如果`accept`属性(被应用于输入)不正确，则屏幕上不会出现文件选择器，或者会出现但它会接受所有文件类型。
 :::
 
 你也可以应用自定义过滤器(在用户挑选文件后执行)。
@@ -91,9 +91,9 @@ QUploader符合 "拖放 "原则。
 
 <doc-example title="立即返回工厂函数" file="QUploader/FactoryImmediate" />
 
-### 槽位
+### 插槽
 
-在下面的示例中，我们展示的是相当于默认的头。还注意到一些你可以使用的布尔范围属性。`scope.canAddFiles`, `scope.canUpload`, `scope.isUploading`。
+在下面的例子中，我们展示的是相当于默认的头。还注意到一些你可以使用的布尔范围属性。`scope.canAddFiles`, `scope.canUpload`, `scope.isUploading`。
 
 ::: warning
 注意，你必须再安装和使用一个组件(QUploaderAddTrigger)，以便能够将文件添加到队列中。这个组件需要放在一个具有`position: relative`的DOM节点下(提示：QBtn已经有了)，当用户点击它的父节点时将自动注入必要的事件(不要手动添加`@click="scope.pickFiles"`)。如果触发器不工作，检查你是否有一个元素渲染在它上面，并相应改变QUploaderAddTrigger的zIndex。
@@ -108,12 +108,12 @@ QUploader符合 "拖放 "原则。
 QUploader默认使用HTTP(S)协议来上传文件(但它并不局限于此，你将在后面的章节中看到)。
 
 ::: tip
-这绝不是要求像下面这样使用Nodejs服务器或Spring或ASP.NET -- 你可以随心所欲地处理文件上传，只要你使用的方法符合HTTP协议。使用[PHP](https://secure.php.net/manual/en/features.file-upload.php)的示例。
+这绝不是要求像下面这样使用Nodejs服务器或Spring或ASP.NET -- 你可以随心所欲地处理文件上传，只要你使用的方法符合HTTP协议。使用[PHP](https://secure.php.net/manual/en/features.file-upload.php)的例子。
 :::
 
 ### Nodejs
 
-下面是一个用Nodejs编写的基本服务器示例。除了接收文件外，它什么都不做，所以可以把它作为一个起点。
+下面是一个用Nodejs编写的基本服务器例子。除了接收文件外，它什么都不做，所以可以把它作为一个起点。
 
 ```js
 const
@@ -133,7 +133,7 @@ if (!fs.existsSync(folder)) {
 }
 
 app.set('port', port)
-app.use(throttle(1024 * 128)) // throttling bandwidth
+app.use(throttle(1024 * 128)) // 带宽限制
 
 app.use((req, res, next) => {
   res.header('Access-Control-Allow-Origin', '*')
@@ -187,7 +187,7 @@ export default {
   methods: {
     factoryFn (file) {
       return new Promise((resolve, reject) => {
-        // 从你的商店检索JWT令牌。
+        // 从你的存储中检索JWT令牌。
         const token = "myToken";
         resolve({
           url: 'http://localhost:4444/fileuploader/upload',
@@ -203,8 +203,8 @@ export default {
 </script>
 ```
 
-QUploader的文件有效载荷将是一个正确形成的``IFormFileCollection``对象，你可以通过ASP.NET Web API控制器的``.Request``属性读取。
-ASP.NET Core 2.2控制器。
+QUploader的文件有效载荷将是一个正确形成的```IFormFileCollection```对象，你可以通过ASP.NET Web API控制器的```.Request```属性读取。
+ASP.NET Core 2.2控制器：
 
 ```
 [Route("api/[controller]")]
@@ -234,10 +234,10 @@ public class FileUploaderController : ControllerBase
 
 ### Spring
 
-下面是一个[Spring](https://spring.io/guides/gs/uploading-files/)的示例。属性`fieldName="file"`与`@RequestPart(value = "file")`进行了映射。
+下面是一个[Spring](https://spring.io/guides/gs/uploading-files/)的例子。属性 `fieldName="file"` 与 `@RequestPart(value = "file")` 进行了映射。
 
 ```
-// 爪哇
+// java
 @RestController
 public class UploadRest {
 	@PostMapping("/upload")
@@ -252,14 +252,14 @@ public class UploadRest {
 	}
 }
 
-// 语境
+// html
 <q-uploader field-name="file" url="YOUR_URL_BACK/upload" with-credentials />
 ```
 
 ### Python/Flask
 
 ```
-// 蟒蛇
+// python
 from flask import Flask, request
 from werkzeug import secure_filename
 from flask_cors import CORS
@@ -267,8 +267,8 @@ import os
 
 app = Flask(__name__)
 
-# This is necessary because QUploader uses an AJAX request
-# to send the file
+# 这是必要的，因为QUploader使用AJAX请求
+# 发送文件
 cors = CORS()
 cors.init_app(app, resource={r"/api/*": {"origins": "*"}})
 
@@ -288,7 +288,7 @@ if __name__ == '__main__':
 ```
 
 
-### 朱莉娅/吉尼
+### Julia/Genie
 
 ```
 # Julia Genie
@@ -331,7 +331,7 @@ QUploader目前支持通过HTTP(S)协议进行上传。但你也可以扩展该�
 我们也非常乐意接受支持其他上传服务的PR，以便其他人能够受益。请点击本页底部的 "在浏览器中编辑本页 "链接或本页顶部的铅笔图标。
 :::
 
-下面是一个示例，你需要向`createUploaderComponent()` Quasar util提供API。这将创建一个Vue组件，你可以在你的应用程序中导入。
+下面是一个例子，你需要向`createUploaderComponent()` Quasar util提供API。这将创建一个Vue组件，你可以在你的应用程序中导入。
 
 ```js
 // MyUploader.js
@@ -395,7 +395,7 @@ export default createUploaderComponent({
 ```
 
 ::: tip TIPS
-* 对于这种插件形式的默认XHR实现，请查看[源代码](https://github.com/quasarframework/quasar/blob/dev/ui/src/components/uploader/xhr-uploader-plugin.js)。
+* 对于这种插件形式的默认XHR实现，请查看[源代码](https://github.com/quasarframework/quasar/blob/dev/ui/src/components/uploader/xhr-uploader-plugin.js) 。
 * 对于UMD版本，使用`Quasar.createUploaderComponent({ ... })`。
 :::
 
@@ -403,14 +403,14 @@ export default createUploaderComponent({
 
 ```js
 // 在启动文件中全面注册你的组件
-import MyUploader from '../../path/to/MyUploader' // the file from above
+import MyUploader from '../../path/to/MyUploader' // 上面的文件
 
 export default ({ app }) {
   app.component('MyUploader', MyUploader)
 }
 
 // 或在一个.vue文件中声明它
-import MyUploader from '../../path/to/MyUploader' // the file from above
+import MyUploader from '../../path/to/MyUploader' // 上面的文件
 export default {
   // ...
   components: {

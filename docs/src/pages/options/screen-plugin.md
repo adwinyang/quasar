@@ -2,7 +2,7 @@
 title: 屏幕插件
 desc: Quasar插件，有助于通过Javascript代码编写动态和响应式UI。
 ---
-Quasar Screen插件允许你在处理Javascript代码时拥有一个动态的、响应式的用户界面。在可能的情况下，出于性能的考虑，建议使用[响应式CSS类](/style/visibility#window-width-related)代替。
+Quasar Screen插件允许你在处理Javascript代码时拥有一个动态的、响应式的用户界面。在可能的情况下，出于性能的考虑，建议使用[响应式CSS类](/style/visibility#window-width-related) 代替。
 
 ## 安装
 你不需要做任何事情。屏幕插件会自动安装。

@@ -6,7 +6,7 @@ desc: 如何检测 Quasar 应用程序的运行平台。
 帮助程序内置于 Quasar 中，用于检测代码运行环境中的平台(及其能力)。
 
 ::: tip
-根据你的需要，你可能还想看看[Style & Identity &gt; Visibility](/style/visibility)页面，看看你如何单独使用CSS达到同样的效果。虽然后一种方法会渲染你的DOM元素或组件，而不考虑平台，所以在你想如何处理你的应用程序的性能上要明智地选择。
+根据你的需要，你可能还想看看[Style & Identity &gt; Visibility](/style/visibility) 页面，看看你如何单独使用CSS达到同样的效果。虽然后一种方法会渲染你的DOM元素或组件，而不考虑平台，所以在你想如何处理你的应用程序的性能上要明智地选择。
 :::
 
 ## 用法
@@ -121,7 +121,7 @@ function (ssrContext) {
 }
 ```
 
-`ssrContext`在[boot files](/quasar-cli/boot-files)中可用。还有在[preFetch](/quasar-cli/prefetch-feature)功能中，它被作为一个参数提供。
+`ssrContext`在[boot files](/quasar-cli/boot-files)中可用。还有在[preFetch](/quasar-cli/prefetch-feature) 功能中，它被作为一个参数提供。
 
 这一切的原因是，在一个纯客户端的应用程序中，每个用户将在他们的浏览器中使用一个新的应用程序实例。对于服务器端的渲染，我们也希望如此：每个请求都应该有一个新鲜的、孤立的应用程序实例，这样就不会有跨请求的状态污染。所以平台需要分别与每个请求绑定。
 

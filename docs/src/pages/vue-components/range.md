@@ -1,6 +1,6 @@
 ---
 title: 范围
-desc: QRange Vue组件为用户提供了一种方法，可以从一个最大值和最大值之间的子范围中进行选择，并可以选择步骤。
+desc: QRange Vue组件为用户提供了一种方法，可以从一个最小值和最大值之间的子范围中进行选择，并带有可选步骤。
 keys: QRange
 related:
   - /vue-components/slider
@@ -28,7 +28,7 @@ QRange组件是一个很好的方法，可以为用户提供一个最小值和�
 
 ### 垂直方向
 
-<doc-example title="垂直方向" file="QRange/Vertical" /> ###垂直方向
+<doc-example title="垂直方向" file="QRange/Vertical" />
 
 ### 带有内部最小/最大值 <q-badge align="top" color="brand-primary" label="v2.4+" />
 
@@ -38,7 +38,7 @@ QRange组件是一个很好的方法，可以为用户提供一个最小值和�
 
 ### 带步骤
 
-<doc-example title="有步骤" file="QRange/Step" /> ###有步骤
+<doc-example title="有步骤" file="QRange/Step" />
 
 阶梯 "属性也可以是一个浮点数(如果你需要无限的精度，也可以是数字 "0")。
 
@@ -48,7 +48,7 @@ QRange组件是一个很好的方法，可以为用户提供一个最小值和�
 
 ### 带标签
 
-在下面的示例中，移动滑块可以看到标签。
+在下面的例子中，移动滑块可以看到标签。
 
 <doc-example title="有标签" file="QRange/Label" />
 
@@ -56,17 +56,17 @@ QRange组件是一个很好的方法，可以为用户提供一个最小值和�
 
 <doc-example title="自定义标签值" file="QRange/LabelValue" />
 
-下面的示例更好地强调了QRange是如何处理标签定位的，以便它总是在水平方向上停留在QRange的盒子里。
+下面的例子更好地强调了QRange是如何处理标签定位的，以便它总是在水平方向上停留在QRange的盒子里。
 
 <doc-example title="长标签" file="QRange/LabelLong" />
 
 ### 标记
 
-<doc-example title="标记" file="QRange/Markers" /> ### 标记标签
+<doc-example title="标记" file="QRange/Markers" />
 
 ### 标记标签 <q-badge align="top" color="brand-primary" label="v2.4+" />
 
-<doc-example title="标记标签" file="QRange/MarkerLabels" /> ###标记标签
+<doc-example title="标记标签" file="QRange/MarkerLabels" />
 
 ::: tip TIP on slots
 为了使用标记标签槽(见下文)，你必须通过使用`标记-标签'属性来启用它们。
@@ -76,7 +76,7 @@ QRange组件是一个很好的方法，可以为用户提供一个最小值和�
 
 ### 其他定制 <q-badge align="top" color="brand-primary" label="v2.4+" />
 
-<doc-example title="颜色定制" file="QRange/RangeColoring" /> ###其他定制。
+<doc-example title="颜色定制" file="QRange/RangeColoring" />
 
 <doc-example title="隐藏选择栏" file="QRange/NoSelection" />
 
@@ -96,30 +96,30 @@ QRange组件是一个很好的方法，可以为用户提供一个最小值和�
 
 ### 懒惰的输入
 
-<doc-example title="懒人输入" file="QRange/Lazy" /> ###懒人输入
+<doc-example title="懒人输入" file="QRange/Lazy" />
 
 ### 空值
 
-<doc-example title="空值" file="QRange/Null" /> ### 空值
+<doc-example title="空值" file="QRange/Null" />
 
 ### 反向
 
-<doc-example title="反转" file="QRange/Reverse" /> ### 反转？
+<doc-example title="反转" file="QRange/Reverse" />
 
 ### 黑暗、只读、禁用
 
-<doc-example title="黑暗" file="QRange/Dark" dark /> ###黑暗、只读、禁用
+<doc-example title="黑暗" file="QRange/Dark" dark />
 
-<doc-example title="只读" file="QRange/Readonly" /> ###黑暗、只读、禁用
+<doc-example title="只读" file="QRange/Readonly" />
 
 <doc-example title="禁用" file="QRange/Disable" />
 
-### 使用QItem
+### 使用 QItem
 
-<doc-example title="使用QItem" file="QRange/List" /> ### 使用QItem
+<doc-example title="使用QItem" file="QRange/List" />
 
 ### 本地表单提交
 
-当处理一个有 "action "和 "method "的本地表单时(例如，当使用 Quasar 和ASP.NET控制器时)，你需要指定QRange上的 "name "属性，否则formData将不包含它(如果它应该包含)。
+当处理一个有 `action`和`method`的本地表单时(例如，当使用Quasar和ASP.NET控制器时)，你需要指定QRange上的 "name "属性，否则formData将不包含它(如果它应该包含)。
 
 <doc-example title="本地表单" file="QRange/NativeForm" />

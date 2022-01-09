@@ -20,38 +20,38 @@ QInput组件用于从用户那里获取文本输入。它使用`v-model`，类�
 
 ### 着色
 
-<doc-example title="着色" file="QInput/Coloring" /> ### 标准的着色。
+<doc-example title="着色" file="QInput/Coloring" />
 
 ### 标准
-<doc-example title="标准" file="QInput/DesignStandard" /> ### 标准
+<doc-example title="标准" file="QInput/DesignStandard" />
 
 ### 填充型
-<doc-example title="填充 "file="QInput/DesignFilled" /> ### 填充型
+<doc-example title="填充 "file="QInput/DesignFilled" />
 
 ### 勾画
-<doc-example title="轮廓线 "file="QInput/DesignOutlined" /> ###轮廓线
+<doc-example title="轮廓线 "file="QInput/DesignOutlined" />
 
 ### 突出显示
-<doc-example title="突出 "file="QInput/DesignStandout" /> ###突出
+<doc-example title="突出 "file="QInput/DesignStandout" />
 
 Standout设计最合适的使用情况之一是在QToolbar中。
 
 <doc-example title="QToolbar中的Standout "file="QInput/StandoutToolbar" />
 
 ### 无边界
-无边界 "设计允许你将你的QInput无缝地集成到其他组件中，而不需要QInput在自己周围画一个边界或改变其背景颜色。
+`无边界(borderless)`设计允许你将你的QInput无缝地集成到其他组件中，而不需要QInput在自己周围画一个边界或改变其背景颜色。
 
 <doc-example title="无边界" file="QInput/Borderless" />
 
 ### 圆形设计
 
-Rounded "属性只与Filled、Outlined和Standout设计一起使用，正如下面的示例所展示的。
+`Rounded` 属性只与Filled、Outlined和Standout设计一起使用，正如下面的例子所展示的：
 
 <doc-example title="圆形" file="QInput/Rounded" />
 
 ### 方形边框
 
-方形 "属性只对填充式、轮廓式和突出式设计有意义，正如下面的示例所展示的那样。
+方形 "属性只对填充式、轮廓式和突出式设计有意义，正如下面的例子所展示的那样：
 
 <doc-example title="方形边框" file="QInput/SquareBorders" />
 
@@ -59,20 +59,20 @@ Rounded "属性只与Filled、Outlined和Standout设计一起使用，正如下�
 
 <doc-example title="暗色" file="QInput/Dark" dark />
 
-### 基本特征
+## 基本特征
 
 ### 本地属性
 
-所有在 "QInput "上设置的属性，如果不在**API**的 "props "列表中，将被传递给本地字段("input "或 "textarea")。一些示例：自动完成，占位符。
+所有在 "QInput "上设置的属性，如果不在**API**的 "props" 列表中，将被传递给本地字段("input "或 "textarea")。一些例子：自动完成，占位符。
 
 请查看这些资源以了解更多关于本地属性的信息(对于输入，也请查看每种类型的具体属性)。
 
 * [input](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input)
 * [textarea](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/textarea)
 
-### Clearable
+### 可清除
 
-作为一个辅助工具，你可以使用`clearable`属性，这样用户可以通过一个附加的图标将模型重置为`null`。下面示例中的第二个QInput相当于使用`clearable`。
+作为一个辅助工具，你可以使用`clearable`属性，这样用户可以通过一个附加的图标将模型重置为`null`。下面例子中的第二个QInput相当于使用`clearable`。
 
 <doc-example title="可清除" file="QInput/Clearable" />
 
@@ -81,7 +81,7 @@ Rounded "属性只与Filled、Outlined和Standout设计一起使用，正如下�
 下面的QInputs使用了`type`属性，以便在其内部呈现本地等价的`<input type="...">`。
 
 ::: warning
-支持和行为完全是渲染页面的浏览器的主题，而不是 Quasar 的核心代码。
+支持和行为完全是渲染页面的浏览器的主题，而不是Quasar的核心代码。
 :::
 
 <doc-example title="输入类型" file="QInput/InputTypes" />
@@ -110,15 +110,15 @@ Rounded "属性只与Filled、Outlined和Standout设计一起使用，正如下�
 
 ### Textarea
 
-<doc-example title="Textarea" file="QInput/Textarea" /> ### Textarea
+<doc-example title="Textarea" file="QInput/Textarea" />
 
-当你需要QInput与它的内容一起增长时，请使用`autogrow`属性，如下面的示例。
+当你需要QInput与它的内容一起增长时，请使用`autogrow`属性，如下面的例子。
 
 <doc-example title="Autogrow" file="QInput/Autogrow" />
 
 ### 前缀和后缀
 
-<doc-example title="前缀和后缀" file="QInput/PrefixSuffix" /> ###自定义标签
+<doc-example title="前缀和后缀" file="QInput/PrefixSuffix" />
 
 ### 自定义标签
 
@@ -134,7 +134,7 @@ Rounded "属性只与Filled、Outlined和Standout设计一起使用，正如下�
 
 ### 阴影文本
 
-<doc-example title="阴影文本" file="QInput/ShadowText" /> ###阴影文本
+<doc-example title="阴影文本" file="QInput/ShadowText" />
 
 ### 带有QBtn类型 "提交 "的插槽
 
@@ -150,7 +150,7 @@ Rounded "属性只与Filled、Outlined和Standout设计一起使用，正如下�
 
 ### 加载状态
 
-<doc-example title="加载状态" file="QInput/LoadingState" /> ###加载状态
+<doc-example title="加载状态" file="QInput/LoadingState" />
 
 ## 掩码
 
@@ -160,27 +160,29 @@ Rounded "属性只与Filled、Outlined和Standout设计一起使用，正如下�
 只有当 "类型 "是 "文本"(默认)、"搜索"、"网址"、"电话 "或 "密码 "之一时，掩码才可用。
 :::
 
-下面是掩码令牌。
+下面是掩码标记：
 
 | 代号 | 描述 |
+| --- | --- |
 | `#` | 数字 |
-| `S` | 字母，从a到z，不区分大小写。
-| `N` | 字母数字，对字母不区分大小写。
-| `A` | 字母，转换为大写字母
-| `a` | 字母，转换为小写字母
-| `X` | 字母数字，转化为大写的字母。
-| `x` | 字母数字，转换为小写的字母。
-对于QInput `mask`属性，有**的帮助。[完整列表](https://github.com/quasarframework/quasar/blob/dev/ui/src/components/input/use-mask.js#L6)。你可以为了方便而使用这些(示例："电话"、"卡")，或者写出指定你的自定义需求的字符串。
+| `S` | 字母，从a到z，不区分大小写 |
+| `N` | 字母数字，对字母不区分大小写。|
+| `A` | 字母，转换为大写字母 |
+| `a` | 字母，转换为小写字母 |
+| `X` | 字母数字，转化为大写的字母。 |
+| `x` | 字母数字，转换为小写的字母。|
 
-<doc-example title="基本" file="QInput/MaskBasic" />
+对于QInput `mask`属性，有**的帮助。[完整列表](https://github.com/quasarframework/quasar/blob/dev/ui/src/components/input/use-mask.js#L6)。你可以为了方便而使用这些(例子："电话"、"卡")，或者写出指定你的自定义需求的字符串。
+
+<doc-example title="基础" file="QInput/MaskBasic" />
 
 <doc-example title="填充掩码" file="QInput/MaskFill" />
 
-如果你想强制用户输入某种格式，但你想让模型包含原始值，那么 "未屏蔽值 "就很有用。
+如果你想强制用户输入某种格式，但你想让模型包含原始值，那么 `unmasked-value` 就很有用。
 
 <doc-example title="未屏蔽的模型" file="QInput/MaskUnmaskedModel" />
 
-如果你想强迫用户从头到尾填写掩码，并允许非固定长度的输入，那么 "反向填充掩码 "就很有用。
+如果你想强迫用户从头到尾填写掩码，并允许非固定长度的输入，那么 `reverse-fill-mask` 就很有用。
 
 <doc-example title="反向填充掩码" file="QInput/MaskFillReverse" />
 
@@ -189,8 +191,6 @@ Rounded "属性只与Filled、Outlined和Standout设计一起使用，正如下�
 你可以通过对你的QInput做一些小的调整，轻松地使用任何第三方掩码处理器。
 
 从这样的一个QInput开始。
-
-
 
 ```html
 <q-input
@@ -231,7 +231,7 @@ moneyFormatForDirective: {
 }
 ```
 
-或者你可以使用货币成分。
+或者你可以使用货币组件：
 
 ```html
 <q-field
@@ -279,9 +279,9 @@ value => value.includes('Hello') || 'Field must contain word Hello'
 
 你可以通过调用QInput的`resetValidation()`方法来重置验证。
 
-对于QInput的 "规则 "属性有**的帮助。[完整列表](https://github.com/quasarframework/quasar/blob/dev/ui/src/utils/patterns.js)。你可以为了方便而使用这些(示例："date"、"time"、"hexColor"、"rgbOrRgbaColor"、"anyColor")，或者编写字符串，指定你的自定义需求。
+对于QInput的 "规则 "属性有**的帮助。[完整列表](https://github.com/quasarframework/quasar/blob/dev/ui/src/utils/patterns.js) 。你可以为了方便而使用这些(例子："date"、"time"、"hexColor"、"rgbOrRgbaColor"、"anyColor")，或者编写字符串，指定你的自定义需求。
 
-<doc-example title="基本" file="QInput/ValidationRequired" />
+<doc-example title="基础" file="QInput/ValidationRequired" />
 
 <doc-example title="最大长度" file="QInput/ValidationMaxLength" />
 
@@ -316,6 +316,6 @@ value => value.includes('Hello') || 'Field must contain word Hello'
 
 ## 本地表单提交
 
-当处理一个有 "action "和 "method "的本地表单时(例如，当使用 Quasar 和ASP.NET控制器时)，你需要在QInput上指定 "name "属性，否则formData将不包含它(如果它应该包含)。
+当处理一个有 `action` 和 `method` 的本地表单时(例如，当使用Quasar和ASP.NET控制器时)，你需要在QInput上指定`name`属性，否则formData将不包含它(如果它应该包含)。
 
 <doc-example title="本地表单" file="QInput/NativeForm" />

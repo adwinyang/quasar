@@ -1,5 +1,5 @@
 ---
-title: 电台
+title: 单选框
 desc: QRadio Vue组件是一个用户输入的基本元素。它可以用来为用户提供一种方式，让他们从多个选择中挑选一个选项。
 keys: QRadio
 related:
@@ -27,11 +27,11 @@ QRadio组件是另一个用于用户输入的基本元素。你可以用它来�
 
 ### 密集型
 
-<doc-example title="密集" file="QRadio/Dense" /> ###密集型
+<doc-example title="密集" file="QRadio/Dense" />
 
 ### 着色
 
-在下面示例的第二行中，属性`keep-color`被用来在单选按钮不处于切换状态时保留传入的颜色。
+在下面例子的第二行中，属性`keep-color`被用来在单选按钮不处于切换状态时保留传入的颜色。
 
 <doc-example title="着色" file="QLadio/Coloring" />
 
@@ -39,11 +39,11 @@ QRadio组件是另一个用于用户输入的基本元素。你可以用它来�
 
 <doc-example title="在黑暗背景下" file="QRadio/OnDarkBackground" dark />
 
-<doc-example title="禁用" file="QRadio/Disable" /> ### 左侧的标签
+<doc-example title="禁用" file="QRadio/Disable" />
 
 ### 左侧的标签
 
-<doc-example title="标签在左侧" file="QRadio/LabelPosition" /> ### 标签在左侧
+<doc-example title="标签在左侧" file="QRadio/LabelPosition" />
 
 ### 尺寸
 
@@ -54,7 +54,7 @@ QRadio组件是另一个用于用户输入的基本元素。你可以用它来�
 ### 使用QOptionGroup
 
 ::: tip
-你也可以使用[QOptionGroup](/vue-components/option-group)，当你有一组收音机时，它可以简化使用，比如下面的示例。
+你也可以使用[QOptionGroup](/vue-components/option-group)，当你有一组收音机时，它可以简化使用，比如下面的例子。
 :::
 
 <doc-example title="Usage with QOptionGroup" file="QRadio/OptionGroup" />

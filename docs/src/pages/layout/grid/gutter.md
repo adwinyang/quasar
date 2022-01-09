@@ -8,9 +8,9 @@ related:
   - /layout/grid/flex-playground
 ---
 
-希望您之前读过[FlexBox简介](/layout/grid/introduction-to-flexbox)理论，让我们深入了解Gutter。
+希望您之前读过[FlexBox简介](/layout/grid/introduction-to-flexbox) 理论，让我们深入了解Gutter。
 
-Gutter Quasar CSS 类提供了一种简单的方法来将元素(特别是在[Grid Row](/layout/grid/row)中)以相等的距离彼此隔开。
+Gutter Quasar CSS 类提供了一种简单的方法来将元素(特别是在[Grid Row](/layout/grid/row) 中)以相等的距离彼此隔开。
 
 ## 类型
 根据您的用例，有两种主要类型的Gutter：`q-gutter-{size}`和`q-col-gutter-{size}`。第一种方法是在要彼此隔开的元素不使用指定宽度的`col-*`或`offset-*`类时使用，第二种方法是在元素具有指定宽度的`col-*`或`offset-*`类时使用。

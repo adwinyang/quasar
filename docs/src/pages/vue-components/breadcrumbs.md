@@ -16,11 +16,11 @@ QBreadcrumbs组件在用户界面中被用作一种导航辅助工具。它允�
 <doc-api file="QBreadcrumbsEl" />
 
 ## 使用方法
-<doc-example title="基本" file="QBreadcrumbs/Basic" /> ##使用方法
+<doc-example title="基础" file="QBreadcrumbs/Basic" />
 
 <doc-example title="在QToolbar中" file="QBreadcrumbs/Toolbar" />
 
-<doc-example title="自定义分离器" file="QBreadcrumbs/Separator" />
+<doc-example title="自定义分隔条" file="QBreadcrumbs/Separator" />
 
 下面的示例不会在UMD版本中工作(所以在Codepen/jsFiddle中也是)，因为它依赖于Vue Router。
 

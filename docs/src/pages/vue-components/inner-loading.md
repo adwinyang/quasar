@@ -27,12 +27,12 @@ QInnerLoading组件允许你在一个组件中添加一个进度动画。与[加
 QInnerLoading必须是其父辈内部的最后一个元素，这样它才能出现在其他内容的上面。
 :::
 
-### 基本
+### 基础
 
-<doc-example title="基本" file="QInnerLoading/Basic" />
+<doc-example title="基础" file="QInnerLoading/Basic" />
 
 ### 标签 <q-badge align="top" color="brand-primary" label="v2.2+" />
 
-你可以在使用默认槽时添加一个标签，但你也可以使用 "标签 "属性来代替。
+你可以在使用默认槽时添加一个标签，但你也可以使用 "标签" 属性来代替。
 
 <doc-example title="标签属性" file="QInnerLoading/LabelProp" />

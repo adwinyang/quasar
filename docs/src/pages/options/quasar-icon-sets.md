@@ -12,16 +12,16 @@ Quasar 组件有它们自己的图标。Quasar不是强迫你使用一个特定�
 
  Quasar 目前支持。[Material Icons](https://material.io/icons/) , [Font Awesome](http://fontawesome.io/icons/), [Ionicons](http://ionicons.com/), [MDI](https://materialdesignicons.com/), [Eva Icons](https://akveo.github.io/eva-icons), [Themify Icons](https://themify.me/themify-icons), [Line Awesome](https://icons8.com/line-awesome) 和 [Bootstrap Icons](https://icons.getbootstrap.com/) 。
 
-你也可以在任何 Quasar 组件中使用你自己的图标(作为自定义的svgs或任何格式的图像)，参见[QIcon](/vue-components/icon#image-icons)页面以了解更多相关信息。
+你也可以在任何 Quasar 组件中使用你自己的图标(作为自定义的svgs或任何格式的图像)，参见[QIcon](/vue-components/icon#image-icons) 页面以了解更多相关信息。
 
 ::: tip
-相关页面。[安装图标库](/options/installing-icon-libraries)和[QIcon组件](/vue-components/icon)。
+相关页面。[安装图标库](/options/installing-icon-libraries)和[QIcon组件](/vue-components/icon) 。
 :::
 
 ## 配置默认的图标集
 **有两种类型的 Quasar 图标集：基于web字体和基于svg。
 
-除非另有配置，Quasar使用Material Icons网页字体作为其组件的图标集。但是你可以告诉 Quasar 使用其他的图标集，但是如果是基于webfont的图标集，那么一定要在你的网站/应用程序中包含它的图标库(见[安装图标库](/options/installing-icon-libraries))。
+除非另有配置，Quasar使用Material Icons网页字体作为其组件的图标集。但是你可以告诉 Quasar 使用其他的图标集，但是如果是基于webfont的图标集，那么一定要在你的网站/应用程序中包含它的图标库(见[安装图标库](/options/installing-icon-libraries) )。
 
 ### 硬编码
 如果默认的 Quasar 图标集不是动态确定的(例如，不依赖于cookies)，那么你可以。
@@ -70,7 +70,7 @@ framework: {
 </script>
 ```
 
-在[UMD / Standalone](/start/umd)页面查看你需要在HTML文件中包含哪些标签。
+在[UMD / Standalone](/start/umd) 页面查看你需要在HTML文件中包含哪些标签。
 
 #### Quasar Vite 插件方式
 我们编辑你的`main.js`。

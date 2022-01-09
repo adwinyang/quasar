@@ -4,7 +4,7 @@ desc: 如何将 Vue Router 与您的 Quasar 布局和页面连接起来。
 ---
 您可以在使用 Quasar Layout 构建路由的同时受益于 Vue Router 的功能。以下信息只是建议，并非必须遵守。 Quasar 为您提供充分的自由。仅以下面几行为例。
 
-[QLayout](/layout/layout)是用来封装页面的组件，让多个页面共享同一个页眉、抽屉等。但是，您也可以按页眉/页脚/抽屉进行配置，但它们都必须是 QLayout 组件的子项。为了理解这是如何工作的，您需要阅读一些关于 [Vue Router 嵌套路由](http://router.vuejs.org/en/essentials/nested-routes.html) 的内容。
+[QLayout](/layout/layout) 是用来封装页面的组件，让多个页面共享同一个页眉、抽屉等。但是，您也可以按页眉/页脚/抽屉进行配置，但它们都必须是 QLayout 组件的子项。为了理解这是如何工作的，您需要阅读一些关于 [Vue Router 嵌套路由](http://router.vuejs.org/en/essentials/nested-routes.html) 的内容。
 
 要使它更加清晰，让我们举个示例。我们有一个布局('user')和两页('user-feed'和'user-profile')。我们要配置这样的网站/App路由：`/user/feed`和`/user/profile`。
 
@@ -72,7 +72,7 @@ export default routes
 ```
 
 ::: tip
-更深入地分析[延迟加载/代码分块]( quasar-cli/lazy-loading)。
+更深入地分析[延迟加载/代码分块]( quasar-cli/lazy-loading) 。
 :::
 
 ::: tip
@@ -195,7 +195,7 @@ export default [
 
 请注意以下几点：
 
-* 我们使用的是布局和页面的延迟加载(`() => import (<path>)`)。如果您的网站/App 很小，那么您可以跳过懒加载，因为它们会增加更多的开销：
+* 我们使用的是布局和页面的延迟加载(`() => import (<path>)`)。如果您的网站/App 很小，那么您可以跳过延迟加载，因为它们会增加更多的开销：
   ```js
   import UserLayout from 'layouts/user'
   import UserFeed from 'pages/user-feed'

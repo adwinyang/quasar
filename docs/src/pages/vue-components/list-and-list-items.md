@@ -1,5 +1,5 @@
 ---
-title: 列表和列表项目
+title: 列表和列表项
 desc: 如何使用QList、QItem、QItemSection和QItemLabel Vue组件。
 keys: QList,QItem,QItemSection,QItemLabel
 related:
@@ -12,9 +12,9 @@ QList和QItem是一组组件，它们可以一起工作，将多个行项目垂�
 
 List可以封装Item或类似Item的组件，例如[QExpansionItem](/vue-components/expansion-item)或[QSlideItem](/vue-components/slide-item) 。此外，[QSeparator](/vue-components/separator)也可以在需要时用来分割部分。
 
-列表项有以下预先建立的子组件。
+列表项有以下预先建立的子组件：
 
-**QItemSection** - 一个项目部分可以有几个特定内容的用途。它们通过`avatar'、`thumbnail'和`side'属性来控制。在没有属性的情况下，它将呈现你的QItem的主要部分(它的跨度是最大的可用空间)。
+**QItemSection** - 一个项目部分可以有几个特定内容的用途。它们通过`avatar'、`thumbnail`和`side`属性来控制。在没有属性的情况下，它将呈现你的QItem的主要部分(它的跨度是最大的可用空间)。
 **QItemLabel** - 项目标签对于QItemSection中预定义的文本内容类型很有用，或者对于QList本身的标题式内容很有用。
 
 ## QList API
@@ -24,26 +24,26 @@ List可以封装Item或类似Item的组件，例如[QExpansionItem](/vue-compone
 <doc-api file="QItem" />
 
 ## QItemSection API
-<doc-api file="QItemSection" /> ## QItemLabel API
+<doc-api file="QItemSection" />
 
 ## QItemLabel API
-<doc-api file="QItemLabel" /> ## QItemLabel API
+<doc-api file="QItemLabel" />
 
 ## 使用方法
 
-### 基本
+### 基础
 
 <doc-example title="基础" file="QItem/Basic" />
 
 <doc-example title="深色背景下" file="QItem/Dark" dark />
 
-<doc-example title="密集" file="QItem/Dense" /> 密集。
+<doc-example title="密集" file="QItem/Dense" />
 
 ### QItemSection
 
-<doc-example title="左侧头像/缩略图QItemSection" file="QItem/AvatarLeft" /> ### QItemSection
+<doc-example title="左侧头像/缩略图QItemSection" file="QItem/AvatarLeft" />
 
-<doc-example title="右侧头像/缩略图QItemSection" file="QItem/AvatarRight" /> ### QItemSection
+<doc-example title="右侧头像/缩略图QItemSection" file="QItem/AvatarRight" />
 
 ::: tip
 当你有多行项目时，你可以使用QItemSection侧边/avatar上的`top`属性来将各部分对齐到顶部，覆盖默认的中间对齐。
@@ -53,7 +53,7 @@ List可以封装Item或类似Item的组件，例如[QExpansionItem](/vue-compone
 
 ### 活动状态
 
-<doc-example title="活动属性" file="QItem/ActiveState" /> ###活动状态
+<doc-example title="活动属性" file="QItem/ActiveState" />
 
 ### QItemLabel
 
@@ -63,17 +63,17 @@ List可以封装Item或类似Item的组件，例如[QExpansionItem](/vue-compone
 
 <doc-example title="ItemLabel" file="QItem/ItemLabel" />
 
-### 更多涉及的示例
+### 更多涉及的例子
 
-<doc-example title="联系人列表" file="QItem/ExampleContacts" /> ### 涉及的示例
+<doc-example title="联系人列表" file="QItem/ExampleContacts" />
 
-<doc-example title="设置" file="QItem/ExampleSettings" /> ###涉及的示例
+<doc-example title="设置" file="QItem/ExampleSettings" />
 
 <doc-example title="电子邮件" file="QItem/ExampleEmails" />
 
 <doc-example title="文件夹列表" file="QItem/ExampleFolders" />
 
-在下面的示例中，为了演示的目的，我们使用`active`属性，而不是QItem的路由器属性(`to`, `exact`)。UMD没有Vue Router，所以你无法在Codepen/jsFiddle中使用它。
+在下面的例子中，为了演示的目的，我们使用`active`属性，而不是QItem的路由器属性(`to`, `exact`)。UMD没有Vue Router，所以你无法在Codepen/jsFiddle中使用它。
 
 <doc-example title="菜单" file="QItem/ExampleMenu" />
 

@@ -29,12 +29,12 @@ related:
 
 ### 断点
 
-在下面的示例中，点击输入中的图标。
+在下面的例子中，点击输入中的图标。
 
 <doc-example title="突破点 @600px" file="QPopupProxy/Breakpoint" />
 
 ### 穿越属性
-请记住，所有来自[QMenu](/vue-components/menu)和[QDialog](/vue-components/dialog)的属性都通过这个组件传递。所以像 "offset "或 "transition-show"(仅仅是一个示例)这样的属性可以和QPopupProxy一起使用。
+请记住，所有来自[QMenu](/vue-components/menu)和[QDialog](/vue-components/dialog)的属性都通过这个组件传递。所以像 "offset "或 "transition-show"(仅仅是一个例子)这样的属性可以和QPopupProxy一起使用。
 
 <doc-example title="来自QMenu或QDialog的props" file="QPopupProxy/Passthrough" />
 

@@ -1,12 +1,12 @@
 ---
-title: 使用 Quasar 的可组合性
-desc: 什么是useQuasar()的可组合性以及如何使用它
+title: useQuasar 的可组合性
+desc: 什么是 useQuasar() 的可组合性以及如何使用它
 keys: useQuasar
 related:
   - /options/the-q-object
 ---
 
-为了获得对[$q对象](/options/the-q-object)的访问，可以使用useQuasar组合。
+为了获得对[$q 对象](/options/the-q-object)的访问，可以使用useQuasar组合。
 
 ## 语法
 

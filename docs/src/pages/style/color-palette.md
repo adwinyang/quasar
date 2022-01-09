@@ -1,5 +1,5 @@
 ---
-title: 色调
+title: 调色板
 desc: 如何使用和定制 Quasar 调色板。
 components:
   - color-palette/BrandColors
@@ -28,10 +28,10 @@ related:
 使用`text-`或`bg-`前缀作为类名来改变文本的颜色或背景的颜色。
 
 ```html
-<!-- changing text color -->
+<!-- 变更文本颜色 -->
 <p class="text-primary">....</p>
 
-<!-- changing background color -->
+<!-- 变更背景颜色 -->
 <p class="bg-positive">...</p>
 ```
 
@@ -40,7 +40,7 @@ related:
 在你的应用程序的`*.vue`文件中，你可以使用颜色作为`$primary`，`$red-1`，等等。
 
 ```html
-<!-- Notice lang="sass" -->
+<!-- 注意 lang="sass" -->
 <style lang="sass">
 div
   color: $red-1
@@ -49,7 +49,7 @@ div
 ```
 
 ```html
-<!-- Notice lang="scss" -->
+<!-- 注意 lang="scss" -->
 <style lang="scss">
 div {
   color: $red-1;
@@ -96,12 +96,12 @@ CSS自定义属性使用与普通CSS相同的继承规则，所以你只能重�
  Quasar 提供了一个用于设置Quasar CSS变量的辅助函数，也可用于品牌颜色：`setCssVar(colorName, colorValue[, element])`。
 
 | 参数 | 类型 | 要求 | 描述 |
-| `colorName` | String | *Yes* | `primary`, `secondary`, `accent`, `dark`, `positive`, `negative`, `info`, `warning`之一
+| --- | --- | --- | --- |
+| `colorName` | String | *Yes* | `primary`, `secondary`, `accent`, `dark`, `positive`, `negative`, `info`, `warning`之一 |
 | `colorValue` | String | *Yes* | 有效的CSS颜色值 |
-| `element` | 元素 | - | (默认: `document.body`) 将设置自定义属性的元素。|
+| `element` | Element | - | (默认: `document.body`) 将设置自定义属性的元素。|
+
 使用帮助器设置品牌颜色的示例。
-
-
 
 ```js
 import { setCssVar } from 'quasar'
@@ -118,16 +118,16 @@ setCssVar('primary', '#F33', document.getElementById('rebranded-section-id'))
 document.body.style.setProperty('--q-primary', '#0273d4')
 ```
 
-### Util: getCssVar
+### 工具: getCssVar
 
  Quasar 提供了一个获取Quasar CSS变量值的辅助函数，它也可以用于品牌颜色：`getCssVar(colorName[, element])`。
 
 | 参数 | 类型 | 要求 | 描述 |
-| `colorName` | String | *Yes* | `primary`, `secondary`, `accent`, `dark`, `positive`, `negative`, `info`, `warning`之一
+| --- | --- | --- | --- |
+| `colorName` | String | *Yes* | `primary`, `secondary`, `accent`, `dark`, `positive`, `negative`, `info`, `warning`之一 |
 | `element` | Element | - | (默认: `document.body`) 读取自定义属性的元素。|
+
 使用帮助器获取品牌颜色的示例。
-
-
 
 ```js
 import { getCssVar } from 'quasar'

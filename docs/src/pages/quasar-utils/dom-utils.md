@@ -1,13 +1,13 @@
 ---
-title: DOM利用
-desc: 一组用于DOM元素的 Quasar 方法，帮助你检索屏幕视口上的偏移量，获取和设置样式，等待DOM准备好，并对DOM元素进行变形。
+title: DOM  工具
+desc: 一组用于 DOM 元素的 Quasar 方法，帮助你检索屏幕视口上的偏移量，获取和设置样式，等待 DOM 准备好，并对 DOM 元素进行变形。
 keys: offset,style,height,width,css,ready
 ---
 
-### 帮助树状抖动
+### 帮助(Tree-Shake)
 你会发现所有的示例都导入了 Quasar 的不同部分。然而，如果你只需要一个特定的util方法，那么你可以使用ES6的析构来帮助Tree Shaking只嵌入该方法，而不是在其周围。
 
-使用`dom`utils的示例。
+使用`dom`工具的示例：
 ```js
 import { dom } from 'quasar'
 const { offset } = dom
@@ -17,7 +17,7 @@ console.log(offset(DomElement))
 // { top: 10, left: 100 }
 ```
 
-你也可以导入所有的dom utils，像这样使用你需要的任何东西(但注意你的bundle也会包含未使用的方法)。
+你也可以导入所有的 dom 具，像这样使用你需要的任何东西(但注意你的bundle也会包含未使用的方法)：
 ```js
 import { dom } from 'quasar'
 
@@ -27,7 +27,7 @@ console.log(dom.offset(DomElement))
 ```
 
 ::: tip
-关于UMD构建的用法，见[here](/start/umd#quasar-global-object)。
+关于UMD构建的用法，见[here](/start/umd#quasar-global-object) 。
 :::
 
 ## 在屏幕视口上的偏移量
@@ -82,12 +82,12 @@ css(DomElement, {
 })
 ```
 
-## 当DOM准备好时执行
+## 当 DOM 准备好时执行
 ```js
 import { dom } from 'quasar'
 const { ready } = dom
 
-// 当DOM准备好时执行一个函数。
+// 当 DOM 准备好时执行一个函数。
 ready(function () {
   // ....
 })

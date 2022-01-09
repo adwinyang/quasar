@@ -8,7 +8,7 @@ desc: Quasar提交约定
  - 浏览历史时提供更好的信息
 
 ::: warning
-此规则适用于所有[Quasar存储库](https://github.com/quasarframework)。
+此规则适用于所有[Quasar存储库](https://github.com/quasarframework) 。
 :::
 
 被关心的日志是一个美丽而有用的东西。 `git责备责备，`恢复`，`rebase`，`log`，`shortlog`和其他子命令。 审查他人的提交和拉拔请求变得值得做，突然可以独立完成。 了解为什么几个月或几年前的事情不仅可能而且有效。

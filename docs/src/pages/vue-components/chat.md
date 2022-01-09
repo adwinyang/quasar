@@ -16,13 +16,13 @@ QChatMessage Vue组件显示一个包含一个或多个用户信息的聊天条�
 
 ## 使用方法
 
-### 基本知识
+### 基础知识
 
 ::: tip
 使用属性`sent`是为聊天信息的发送者准备的。另一边是针对收到的消息。
 :::
 
-<doc-example title="基本" file="QChatMessage/Basic" />
+<doc-example title="基础" file="QChatMessage/Basic" />
 
 <doc-example title="名称" file="QChatMessage/Name" />
 
@@ -34,20 +34,20 @@ QChatMessage Vue组件显示一个包含一个或多个用户信息的聊天条�
 
 ### 自定义
 
-<doc-example title="文本和背景颜色" file="QChatMessage/Color" /> ###自定义
+<doc-example title="文本和背景颜色" file="QChatMessage/Color" />
 
-<doc-example title="大小" file="QChatMessage/Size" /> ### 槽 位
+<doc-example title="大小" file="QChatMessage/Size" />
 
 ### 槽位
 
-<doc-example title="默认插槽" file="QChatMessage/SlotDefault" /> ###插槽
+<doc-example title="默认插槽" file="QChatMessage/SlotDefault" />
 
-<doc-example title="头像/图章/名字插槽" file="QChatMessage/SlotAvatarStampName" /> ###消毒处理
+<doc-example title="头像/图章/名字插槽" file="QChatMessage/SlotAvatarStampName" />
 
 ### 消毒处理
 
 ::: warning
-如果你不相信源头(如果值来自于用户输入)，总是对值进行消毒。
+如果你不相信源头(如果值来自于用户输入)，总是对值时行清理。
 :::
 
 <doc-example title="消毒的内容" file="QChatMessage/Sanitize" />

@@ -38,7 +38,7 @@ electron: {
   // 在yarn/npm安装时指定额外参数
   // 捆绑前，在未打包的文件夹中，与以下任何一种文件捆绑在一起
   //  Electron 包装师或 Electron 建造师。
-  // 示例。['--ignore-optional', '--some-other-param' ]
+  // 示例：['--ignore-optional', '--some-other-param' ]
   unPackagedInstallParams: [],
 
   // 可选；添加/删除/更改属性
@@ -61,7 +61,7 @@ electron: {
     // 链是一个webpack-chain实例
     // 的Webpack配置
 
-    // 示例。
+    // 示例：
     // chain.plugin('eslint-webpack-plugin')
     //   .use(ESLintPlugin, [{ extensions: [ 'js' ] }] )
   },
@@ -79,7 +79,7 @@ electron: {
     // 链是一个webpack-chain实例
     // 的Webpack配置
 
-    // 示例。
+    // 示例：
     // chain.plugin('eslint-webpack-plugin')
     //   .use(ESLintPlugin, [{ extensions: [ 'js' ] }] )
   }

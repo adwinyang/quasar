@@ -8,7 +8,7 @@ related:
   - /layout/grid/flex-playground
 ---
 
-在此之前请先阅读[Flexbox简介](/layout/grid/introduction-to-flexbox)，让我们深入了解一下"列"。
+在此之前请先阅读[Flexbox简介](/layout/grid/introduction-to-flexbox) ，让我们深入了解一下"列"。
 
 利用特定断点的行类来实现等高的行。为你需要的每个断点添加任意数量的无单元类，每一行都将是相同的高度。
 

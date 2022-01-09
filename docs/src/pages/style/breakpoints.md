@@ -1,5 +1,5 @@
 ---
-title: 分割点
+title: 断点
 desc: Quasar的CSS中断点列表。
 related:
   - /style/spacing
@@ -28,14 +28,14 @@ related:
   font-size: 10px
 ```
 
-这些变量的语法如下，其中`<断点>`要用 "xs"、"sm"、"md"、"lg "或 "xl "代替。
+这些变量的语法如下，其中`<breakpoint>`要用 "xs"、"sm"、"md"、"lg "或 "xl "代替。
 
 ```
 $breakpoint-<breakpoint>-min
 $breakpoint-<breakpoint>-max
 ```
 
-还有。
+还有：
 
 ```
 $sizes.<breakpoint>

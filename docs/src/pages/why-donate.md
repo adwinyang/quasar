@@ -1,26 +1,26 @@
 ---
 title: 为什么捐款？
-desc: Quasar团队关于为什么必须为该框架的发展捐款的宣言。
+desc: Quasar 团队关于为什么必须为该框架的发展捐款的宣言。
 keys: Donate
 components:
   - sponsors-and-backers/DonatingButtons
 ---
 
- Quasar 框架是一个经MIT许可的开源项目，由Razvan Stoenescu和他的团队以及一个开源贡献者社区共同维护。我们代表社区工作，创造新的功能，修复错误，并维护 Quasar ，这样你就可以继续你自己的开发项目。我们正在努力塑造Vue.js生态系统的未来，只需写一次代码，就可以同时将其部署为网站(SPA/PWA/SSR)、移动应用和/或 Electron 应用。
+Quasar 框架是一个经 MIT-许可 的开源项目，由 Razvan Stoenescu 和他的团队以及一个开源贡献者社区共同维护。我们代表社区工作，创造新的功能，修复错误，并维护 Quasar ，这样你就可以继续你自己的开发项目。我们正在努力塑造Vue.js生态系统的未来，只需写一次代码，就可以同时将其部署为网站(SPA/PWA/SSR)、移动应用和/或 Electron 应用。
 
 像大多数开源产品一样，Quasar不能独自完成。我们依靠*赞助者、支持者和支助者*来维持运转。当 Quasar 开始给你带来一些经济上的稳定时，请考虑到为创建 Quasar 所花费的数万个小时，并给使之成为可能的团队送一些钱回来。最后，如果你的公司依赖于 Quasar ，那么保证 Quasar 继续为你服务的最好方法就是投资于它的维护工作
 
 ## 我们的宣言
 
-开源的梦想是一项崇高的事业，社区在这里成长，代码在这里孕育。根据自由开源的理念，Quasar承诺遵守Good Labs的[！[Greater-Good Affirmation](https://good-labs.github.io/greater-good-affirmation/assets/images/badge.svg)](https://good-labs.github.io/greater-good-affirmation)的信条。
+开源的梦想是一项崇高的事业，社区在这里成长，代码在这里孕育。根据自由开源的理念，Quasar承诺遵守Good Labs的[![Greater-Good Affirmation](https://good-labs.github.io/greater-good-affirmation/assets/images/badge.svg)](https://good-labs.github.io/greater-good-affirmation) 的信条。
 
  Quasar 现在和将来都是自由和开源的，是一个自我管理的地方，每个遵守社区规则的人都被邀请和鼓励参与。
 
-！[我们维持什么](https://cdn.quasar.dev/img/what-do-we-sustain.png)
+![我们维持什么](https://cdn.quasar.dev/img/what-do-we-sustain.png)
 
-### 参与是一种合作欣赏的形式
+### 参与是合作欣赏的一种形式
 
-许多开源项目，如 Quasar 框架和Vue.js，都是由代表**社区的人在自己的时间内开发的，没有要求经济补偿。这种 "代码所有权 "实际上是一个非常重要的问题，因为所有者决定事情如何进一步发展。
+许多开源项目，如 Quasar 框架和 Vue.js，都是由**代表**社区的人在自己的时间内开发的，没有要求经济补偿。这种 "代码所有权 "实际上是一个非常重要的问题，因为所有者决定事情如何进一步发展。
 
 那么这些人是谁呢？他们是像你一样的人，需要某种功能并找到了像 Quasar 这样的开源解决方案。他们是使用该软件的人，并决定通过帮助改进它来作出贡献。
 
@@ -28,13 +28,13 @@ components:
 
 > 他们在繁忙的工作、家庭和承诺中找到空闲时间来参与，因为这让他们觉得成为比任何一个人更大的东西的一部分很好。
 
-为了给你一点启示，Quasar的首席开发者和核心维护者[Razvan Stoenescu](https://github.com/rstoenescu)，在1.0.0-alpha.1和1.0.0-rc.1之间的开发阶段已经花费了超过2000个小时，在此期间他记录了超过2000次的提交和50万行的代码添加。
+为了给你一点启示，Quasar的首席开发者和核心维护者[Razvan Stoenescu](https://github.com/rstoenescu) ，在1.0.0-alpha.1和1.0.0-rc.1之间的开发阶段已经花费了超过2000个小时，在此期间他记录了超过2000次的提交和50万行的代码添加。
 
 团队的其他成员和所有从事聊天支持线路和修复代码的工作人员仍然是(截至2019年6月)无报酬的志愿者，工作时间难以计数。他们正慢慢地对项目的各个单元承担越来越多的责任，是我们必须保护的社区的宝贵资源。
 
 
-### 财政赞助以保证维护
-除了 "node_modules "仍然是宇宙中最重的东西，以及在某种程度上需要某种定期的财政支持以保证大型开源项目的维护之外，没有什么是肯定的。[参考资料](https://github.com/sfosc/sfosc/issues/65#issuecomment-491770533)。
+### 保证维护的财务赞助
+除了 `node_modules` 仍然是宇宙中最重的东西，以及在某种程度上需要某种定期的财务支持以保证大型开源项目的维护之外，没有什么是肯定的。[参考资料](https://github.com/sfosc/sfosc/issues/65#issuecomment-491770533) 。
 
 对于 Quasar 来说，这个时间点就是现在，你的支持将使其与众不同。
 
@@ -54,7 +54,7 @@ components:
 ### 你从中得到了什么
 如果你支持开放源码，你就成为社区的一部分。这是一个庞大的社区，但往往是紧密结合的。你的支持表明你相信这个社区，这使你成为这个家庭的一部分。如果有足够的资金支持，这也意味着核心开发者和维护者能够全职从事该项目，而不是需要在其他地方工作。这反过来又促进了一种环境，使他们能够比在 "业余 "基础上工作更快地处理修复和请求。
 
-所以，也许你是一个使用开源软件的企业，给自己带来竞争优势，提高利润，或者仅仅是解决其他软件没有覆盖的问题。也许你是一个个人，使用开源解决方案来解决你无法负担的昂贵的企业软件。比如[这个](https://quasarframework.github.io/quasar-ui-qcalendar/docs)。
+所以，也许你是一个使用开源软件的企业，给自己带来竞争优势，提高利润，或者仅仅是解决其他软件没有覆盖的问题。也许你是一个个人，使用开源解决方案来解决你无法负担的昂贵的企业软件。比如[这个](https://quasarframework.github.io/quasar-ui-qcalendar/docs) 。
 
 或者你认识到那几百万行的代码是你不需要写的，只是对这种努力表示感谢。
 
@@ -65,12 +65,12 @@ components:
 ## 捐赠
 你可以通过Patreon每月认捐来帮助Quasar Development，或者通过Paypal发送一次性捐款。如果你代表一家公司想成为**赞助者，并需要你的捐款发票，请发送电子邮件到`razvan.stoleenescu [at] gmail [dot] com`。
 
-建议通过**GitHub赞助进行捐赠，**因为GitHub还将匹配你的捐赠(使你的捐赠价值翻倍)。
+建议通过**GitHub 赞助进行捐赠**，因为 GitHub 也将与你的捐赠相匹配(使你的捐赠价值翻倍)。
 
-<捐赠-按钮 />
+<donating-buttons />
 
 所有的捐款都将完全用于 Quasar 的开发目的。
 
 ::: tip
-如果想了解我们那些使 Quasar 成为现实的优秀人士的完整名单，请访问[支持者](https://github.com/quasarframework/quasar/blob/dev/backers.md)页面。
+如果想了解我们那些使 Quasar 成为现实的、优秀人士的完整名单，请访问[支持者](https://github.com/quasarframework/quasar/blob/dev/backers.md)页面。
 :::

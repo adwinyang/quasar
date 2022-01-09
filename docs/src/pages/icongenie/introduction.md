@@ -19,4 +19,4 @@ desc: Quasar 工具，用于生成 100 多种格式的应用程序图标和启�
 
 ## 要求
 
-这个工具由 Quasar 团队尤其是**与标准的CLI项目结构在于**。 如果将项目文件夹与另一个CLI构建，则应浏览Icon Genie [配置文件文件](/icongenie/profile-files)。
+这个工具由 Quasar 团队尤其是**与标准的CLI项目结构在于**。 如果将项目文件夹与另一个CLI构建，则应浏览Icon Genie [配置文件文件](/icongenie/profile-files) 。

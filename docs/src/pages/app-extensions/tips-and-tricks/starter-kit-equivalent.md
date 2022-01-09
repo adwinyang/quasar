@@ -7,11 +7,11 @@ desc: 关于如何使用 Quasar 应用程序扩展来创建相当于入门套件
 这允许您让多个项目共享一个公共结构/逻辑(并且只有一个包来管理它们，而不必单独更改所有项目以匹配您的公共模式)，并且还允许您与社区分享所有这些。
 
 ::: tip
-要创建一个App Extension项目文件夹，请先阅读[开发指南>简介](/app-extensions/development-guide/introduction)。
+要创建一个App Extension项目文件夹，请先阅读[开发指南>简介](/app-extensions/development-guide/introduction) 。
 :::
 
 ::: tip Full Example
-要看我们要创建的示例，请到[MyStarterKit完整示例](https://github.com/quasarframework/app-extension-examples/tree/v2/my-starter-kit)，这是该App Extension的github repo。
+要看我们要创建的示例，请到[MyStarterKit完整示例](https://github.com/quasarframework/app-extension-examples/tree/v2/my-starter-kit) ，这是该App Extension的github repo。
 :::
 
 我们将创建一个应用扩展的示例，它的作用如下。

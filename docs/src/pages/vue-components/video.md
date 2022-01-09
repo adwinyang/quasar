@@ -16,12 +16,12 @@ keys: QVideo
 
 ## 使用方法
 
-# ### 基本
-<doc-example title="基本" file="QVideo/Basic" /> ## 使用方法
+### 基础
+<doc-example title="基础" file="QVideo/Basic" />
 
 ### 带长宽比
 
-<doc-example title="有宽高比" file="QVideo/Ratio" /> ### 有宽高比时
+<doc-example title="有宽高比" file="QVideo/Ratio" />
 
 ### 等价的标记
-<doc-example title="HTML标记" file="QVideo/HtmlMarkup" /> ### Markup equivalent
+<doc-example title="HTML标记" file="QVideo/HtmlMarkup" />

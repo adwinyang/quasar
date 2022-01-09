@@ -1,6 +1,6 @@
 ---
-title: 吧台
-desc: QBar Vue组件被用来在不同的平台上创建顶栏。
+title: 栏
+desc: QBar Vue 组件被用来在不同的平台上创建顶栏。
 keys: QBar
 related:
   - /quasar-cli/developing-electron-apps/frameless-electron-window
@@ -8,7 +8,7 @@ related:
 
 QBar是一个小型组件，用于在不同类型的移动或桌面网站/应用程序上创建顶栏。例如，在桌面应用程序中，QBar会有诸如关闭、最小化或最大化按钮以及其他应用程序的菜单控件。
 
-QBar对于无框架的Electron应用程序特别有用，你可以把它集成到QHeader中。
+QBar对于无框架的 Electron 应用程序特别有用，你可以把它集成到 QHeader 中。
 
 ## QBar API
 
@@ -32,9 +32,9 @@ QBar对于无框架的Electron应用程序特别有用，你可以把它集成�
 
 ### 与其他组件
 
-<doc-example title="QMenu" file="QBar/Menu" /> ###与其他组件的关系
+<doc-example title="QMenu" file="QBar/Menu" />
 
-<doc-example title="QDialog" file="QBar/Dialog" /> ###与其他组件的关系
+<doc-example title="QDialog" file="QBar/Dialog" />
 
 <doc-example title="带有QToolbar的QHeader" file="QBar/Header" />
 

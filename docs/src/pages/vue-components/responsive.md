@@ -13,15 +13,15 @@ QResponsive是一个组件，它可以强制内容保持基于其宽度的长宽
 ## 使用方法
 
 ::: tip TIPS
-* The component can be used with any content, as long you specify **only one direct child**. If you need multiple elements inside of it, wrap them in a `<div>`.
-* It is your responsibility to make sure that your content won't overflow the container.
+* 该组件可以与任何内容一起使用，只要您指定**一个直接子级**。如果您需要其中的多个元素，请将它们包装在 `<div>` 中。
+* 您有责任确保您的内容不会溢出容器。
 :::
 
 ::: warning
-不要在已经有`比率`属性的 Quasar 组件上使用，如QImg或QVideo，或在有强制高度的组件上使用。
+不要在已经有`ration`(比率)属性的Quasar组件上使用，如QImg或QVideo，或在有强制高度的组件上使用。
 :::
 
-### 基本
+### 基础
 
 <doc-example title="基本用法" file="QResponsive/Basic" />
 
@@ -33,7 +33,7 @@ QResponsive是一个组件，它可以强制内容保持基于其宽度的长宽
 
 ### 在某些组件上
 
-下面只是几个示例。QResponsive并不只限于QCard和QCarousel。
+下面只是几个例子。QResponsive并不只限于QCard和QCarousel。
 
 <doc-example title="关于QCard" file="QResponsive/Card" />
 

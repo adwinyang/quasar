@@ -1,5 +1,5 @@
 ---
-title: 拉动以刷新
+title: 拉动刷新
 desc: QPullToRefresh Vue组件允许用户下拉，以刷新或检索页面上的最新内容。
 keys: QPullToRefresh
 related:
@@ -16,7 +16,7 @@ QPullToRefresh是一个允许用户下拉以刷新页面内容(或检索最新�
 
 ## 使用方法
 
-### 基本
+### 基础
 
 ::: warning
 在你的`@refresh`函数中，别忘了在你完成加载更多数据时调用传递的`done()`函数。
@@ -24,20 +24,20 @@ QPullToRefresh是一个允许用户下拉以刷新页面内容(或检索最新�
 
 要刷新，当内部滚动位置是顶部时，在下面的内容上向下拉(用鼠标或通过手指触摸)。
 
-<doc-example title="基本" file="QPullToRefresh/Basic" />
+<doc-example title="基础" file="QPullToRefresh/Basic" />
 
 ### 自定义图标
 
-<doc-example title="自定义图标" file="QPullToRefresh/Icon" /> ###自定义图标
+<doc-example title="自定义图标" file="QPullToRefresh/Icon" />
 
 ### 自定义着色
 
-<doc-example title="自定义着色" file="QPullToRefresh/CustomColoring" /> ###自定义着色
+<doc-example title="自定义着色" file="QPullToRefresh/CustomColoring" />
 
 ## 提示
 
 ::: tip Scrolling container
-请阅读[这里](/vue-components/scroll-observer#determining-scrolling-container)关于 Quasar 如何确定将滚动事件附加到的容器。
+请阅读[这里](/vue-components/scroll-observer#determining-scrolling-container)关于Quasar如何确定将滚动事件附加到的容器。
 :::
 
 * 如果使用QLayout，那么建议你把QPullToRefresh作为QPage的直接子节点，并用它来包装你的页面内容。

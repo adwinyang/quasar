@@ -1,5 +1,5 @@
 ---
-title: 切换
+title: 切换开关
 desc: QToggle组件是一个用户输入的基本元素。你可以用它来打开和关闭设置、功能或真/假输入。
 keys: QToggle
 related:
@@ -20,23 +20,23 @@ QToggle组件是另一个用于用户输入的基本元素。你可以用它来�
 
 ## 使用方法
 
-### 基本
+### 基础
 
 使用`color`属性来控制toggle的颜色。
 
-<doc-example title="基本" file="QToggle/Standard" /> ### 带标签
+<doc-example title="基础" file="QToggle/Standard" />
 
 ### 带有标签
 
-<doc-example title="有标签" file="QToggle/Labels" /> ###有标签
+<doc-example title="有标签" file="QToggle/Labels" />
 
 ### 保持颜色
 
-<doc-example title="保留颜色" file="QToggle/KeepColor" /> ### 保留颜色
+<doc-example title="保留颜色" file="QToggle/KeepColor" />
 
 ### 有图标
 
-<doc-example title="图标" file="QToggle/Icons" /> ### 带图标
+<doc-example title="图标" file="QToggle/Icons" />
 
 ### 自定义模型值
 
@@ -46,7 +46,7 @@ QToggle组件是另一个用于用户输入的基本元素。你可以用它来�
 
 ### 不确定的状态
 
-在下面的示例中，一旦你点击第一个QToggle，它就开始在真/假之间切换。另一方面，第二个QToggle在`toggle-indeterminate`的帮助下，在三种状态(不定/真/假)之间切换。你可以选择设置属性`indeterminate-value`，否则不确定的值将被视为`null`。
+在下面的例子中，一旦你点击第一个QToggle，它就开始在真/假之间切换。另一方面，第二个QToggle在`toggle-indeterminate`的帮助下，在三种状态(不定/真/假)之间切换。你可以选择设置属性`indeterminate-value`，否则不确定的值将被视为`null`。
 
 <doc-example title="不确定的状态" file="QToggle/IndeterminateState" />
 
@@ -56,12 +56,12 @@ QToggle组件是另一个用于用户输入的基本元素。你可以用它来�
 
 切换的顺序是。
 
-* 如果`toggle-indetinate`为真，那么：indet -> 第一状态 -> 第二状态 -> indet (并重复)
-* 否则(没有切换不定)：indet -> 第一状态 -> 第二状态 -> 第一状态 -> 第二状态 -> ...
+* 如果`toggle-indetinate`为`true`，那么：不确定 -> 第一状态 -> 第二状态 -> indet (并重复)
+* 否则(没有切换"不确定")：indet -> 第一状态 -> 第二状态 -> 第一状态 -> 第二状态 -> ...
 
 <doc-example title="切换顺序" file="QToggle/ToggleOrder" />
 
-### 阵列模型
+### 数组模型
 
 如果你为一个选择有许多切换，可以使用一个数组作为所有这些切换的模型，并在每个切换上指定`val`属性。如果切换器被勾选，它的`val`将被插入数组中，反之亦然。
 
@@ -82,17 +82,17 @@ QToggle组件是另一个用于用户输入的基本元素。你可以用它来�
 ### 使用QOptionGroup
 
 ::: tip
-你也可以使用[QOptionGroup](/vue-components/option-group)，当你有成组的切换器时，它可以简化使用，就像下面的示例。
+你也可以使用[QOptionGroup](/vue-components/option-group)，当你有成组的切换器时，它可以简化使用，就像下面的例子。
 :::
 
 <doc-example title="使用QOptionGroup" file="QToggle/OptionGroup" />
 
 ### 使用QItem
 
-<doc-example title="使用QItem" file="QToggle/List" /> ### 使用QItem
+<doc-example title="使用QItem" file="QToggle/List" />
 
 ### 本地表单提交
 
-当处理一个有 "action "和 "method "的本地表单时(例如，当使用 Quasar 和ASP.NET控制器时)，你需要在QToggle上指定 "name "属性，否则formData将不包含它(如果它应该包含的话)--所有的值都被转换为字符串(本地行为，所以不要使用Object值)。
+当处理一个有 `action`和`method`的本地表单时(例如，当使用Quasar和ASP.NET控制器时)，你需要在QToggle上指定`name`属性，否则formData将不包含它(如果它应该包含的话)--所有的值都被转换为字符串(本地行为，所以不要使用Object值)。
 
 <doc-example title="本地表单" file="QToggle/NativeForm" />

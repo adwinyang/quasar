@@ -94,7 +94,7 @@ export default [
         avatar: 'niccolo_menozzi.jpg',
         github: 'NiccoloMenozzi',
         // desc: 'UX manager, brand management, communication, business strategy.'
-        desc: '用户体验经理、品牌管理、沟通、商业战略'
+        desc: '用户体验经理、品牌管理、虚拟滚动、商业战略'
       }
     ]
   },

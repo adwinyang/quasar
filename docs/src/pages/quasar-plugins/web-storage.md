@@ -1,13 +1,13 @@
 ---
 title: 本地/会话存储插件
-desc: 一个包裹本地/会话存储的 Quasar 插件，以其原始JS类型检索数据。
+desc: 一个封封本地/会话存储的 Quasar 插件，以其原始JS类型检索数据。
 keys: LocalStorage,SessionStorage
 ---
 
- Quasar 提供了一个对[网络存储API](https://developer.mozilla.org/en-US/docs/Web/API/Web_Storage_API)的封装器。
+ Quasar 提供了一个对 [网络存储（Web Storage）API](https://developer.mozilla.org/en-US/docs/Web/API/Web_Storage_API) 的封装器。
 
 ::: tip
-Web Storage API只检索字符串。**Quasar以其原始数据类型检索数据。**你告诉它存储一个数字，然后再检索它，它仍然是一个数字，而不是像Web Storage API那样以字符串表示数字。对于JSON、正则表达式、日期、布尔运算等也是如此。
+Web Storage API只检索字符串。**Quasar以其原始数据类型检索数据**。你告诉它存储一个数字，然后再检索它，它仍然是一个数字，而不是像 Web Storage API 那样以字符串表示数字。对于JSON、正则表达式、日期、布尔运算等也是如此。
 :::
 
 ## LocalStorage API
@@ -53,7 +53,7 @@ setup () {
 }
 ```
 
-为了在设置数值时做到万无一失，最好还能抓住底层本地/会话存储网络API引发的任何潜在错误，比如超过配额时。
+为了在设置数值时做到万无一失，最好还能抓住底层本地/会话存储网络API引发的任何潜在错误，比如超过配额时：
 
 ```js
 try {
@@ -72,13 +72,13 @@ try {
 
 Quasar Storage支持(但不限于)以下开箱即用的数据类型。如果你存储了这些类型中的一种，检索的数据将具有相同的数据类型。
 
-* 日期
-* 正则表达式
-* 数字
-* 布尔运算
-* 字符串
-* 普通的Javascript对象
+* Dates (日期)
+* Regular Expressions (正则表达式)
+* Numbers (数字)
+* Booleans (布尔)
+* Strings (字符串)
+* Plain Javascript Objects (普通的Javascript对象)
 
-如果你存储任何*其他*数据类型，返回值将是一个字符串。
+如果你存储任何 *其他* 数据类型，返回值将是一个字符串。
 
-所以你甚至可以存储函数，但要注意你需要评估()返回值(这是函数的一个字符串表示)。
+你甚至可以存储函数，但请注意，你需要对返回值（函数的字符串表示形式）使用 eval() 来求值。

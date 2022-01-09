@@ -80,7 +80,7 @@ $ quasar create my-ui --kit ui
 
 ## 处理软件包的依赖性
 
-如果你的应用扩展需要依赖某些软件包才能运行(Quasar CLI 提供的软件包除外，如 "quasar"、"@quasar/extras"、"@quasar/app" -- 你应该在/install.js和/index.js中调用 "api.compatibleWith()" -- 检查[Install API](/app-extensions/development-guide/install-api)和[Index API](/app-extensions/development-guide/index-api))，然后使用 yarn/npm 将它们安装到你的App Extension文件夹中，并提拱给托管应用程序。
+如果你的应用扩展需要依赖某些软件包才能运行(Quasar CLI 提供的软件包除外，如 "quasar"、"@quasar/extras"、"@quasar/app" -- 你应该在/install.js和/index.js中调用 "api.compatibleWith()" -- 检查[Install API](/app-extensions/development-guide/install-api)和[Index API](/app-extensions/development-guide/index-api) )，然后使用 yarn/npm 将它们安装到你的App Extension文件夹中，并提拱给托管应用程序。
 
 例如: 你正在创建一个依赖 "my-table" npm包的UI组件(假设的名字，仅作为示例)，那么你应该把 "my-table" 安装到你的App Extension文件夹中。
 
@@ -99,7 +99,7 @@ $ quasar create test-app
 ### 安装和提示脚本
 
 ::: tip
-了解更多关于[Prompts API](/app-extensions/development-guide/prompts-api)和[Install API](/app-extensions/development-guide/install-api)可以做什么。
+了解更多关于[Prompts API](/app-extensions/development-guide/prompts-api)和[Install API](/app-extensions/development-guide/install-api) 可以做什么。
 :::
 
 在测试 Quasar 项目文件夹内，我们手动添加我们的App Extension。注意，我们没有指定npm包的名称(它还没有发布！)，而是指定了我们开发的App Extension文件夹的路径，因为我们想测试未发布的工作。
@@ -152,7 +152,7 @@ chainWebpack (chain) {
 ### 卸载脚本
 
 ::: tip
-了解更多关于[Uninstall API](/app-extensions/development-guide/uninstall-api)可以做什么。
+了解更多关于[Uninstall API](/app-extensions/development-guide/uninstall-api) 可以做什么。
 :::
 
 假设你已经按照上面的部分安装了你的App Extension，我们现在可以测试卸载脚本(如果你有的话)。
@@ -173,7 +173,7 @@ $ quasar ext uninvoke my-ext
 
 因此，每次执行`$ quasar dev`和`$ quasar build`时，都会运行索引脚本。
 
-为了测试索引脚本，你可以在每次改变App Extension脚本代码中的某些内容时，重复上述的卸载和安装程序。但这变得非常乏味。如果你在Unix操作系统(MacOS, Linux)上开发，你可以利用`yarn link`命令，从 Quasar 测试应用的node_modules文件夹创建一个[符号链接](https://en.wikipedia.org/wiki/Symbolic_link)到你的扩展文件夹中。
+为了测试索引脚本，你可以在每次改变App Extension脚本代码中的某些内容时，重复上述的卸载和安装程序。但这变得非常乏味。如果你在Unix操作系统(MacOS, Linux)上开发，你可以利用`yarn link`命令，从 Quasar 测试应用的node_modules文件夹创建一个[符号链接](https://en.wikipedia.org/wiki/Symbolic_link) 到你的扩展文件夹中。
 
 ```bash
 $ cd /path/to/app/extension/folder
@@ -213,14 +213,14 @@ $ quasar ext invoke my-ext
 :::
 
 ::: tip
-了解更多关于你能用[索引API](/app-extensions/development-guide/index-api)做什么。
+了解更多关于你能用[索引API](/app-extensions/development-guide/index-api) 做什么。
 :::
 
 ## 发布
 
 当你完成了你的App Extension并准备部署它时，你需要做的就是把它发布到npm仓库。
 
-在你的App Extension文件夹中，运行[yarn publish](https://yarnpkg.com/lang/en/docs/cli/publish/)或[npm publish](https://docs.npmjs.com/cli/publish)。两者都做同样的事情。
+在你的App Extension文件夹中，运行[yarn publish](https://yarnpkg.com/lang/en/docs/cli/publish/) 或[npm publish](https://docs.npmjs.com/cli/publish) 。两者都做同样的事情。
 
 ::: warning
 一定要记住不要把`quasar-app-extension-`前缀从扩展的`package.json`的`name`属性中剥离出来，否则 Quasar CLI 将无法识别它。

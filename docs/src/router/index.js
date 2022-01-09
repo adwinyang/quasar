@@ -4,14 +4,14 @@ import { createRouter, createMemoryHistory, createWebHistory } from 'vue-router'
 
 import routes from './routes'
 
-/*
- * If not building with SSR mode, you can
- * directly export the Router instantiation;
+/**
+ * 如果不使用 SSR 模式构建，您可以
+ *  直接导出 Router 实例化；
  *
- * The function below can be async too; either use
- * async/await or return a Promise which resolves
- * with the Router instance.
- */
+ * 下面的函数也可以是异步的；要么使用
+ * async/await 或返回一个解决的 Promise
+ * 与 Router 实例。
+*/
 
 export default function () {
   const createHistory = process.env.SERVER
@@ -26,7 +26,7 @@ export default function () {
     ),
     routes,
 
-    // Leave this as is and make changes in quasar.conf.js instead!
+    // 保持原样并在 quasar.conf.js 中进行更改！
     // quasar.conf.js -> build -> vueRouterMode
     // quasar.conf.js -> build -> publicPath
     history: createHistory(process.env.MODE === 'ssr' ? void 0 : process.env.VUE_ROUTER_BASE)

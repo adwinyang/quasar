@@ -1,5 +1,5 @@
 ---
-title: 标签
+title: 标签页
 desc: QTabs、QTab和QRouteTab Vue组件是一种帮助用户在页面或标签面板之间导航的方式。
 keys: QTabs,QTab,QRouteTab
 related:
@@ -26,7 +26,7 @@ related:
 
 ## QRouteTab API
 
-<doc-api file="QRouteTab" /> ## QRouteTab API
+<doc-api file="QRouteTab" />
 
 ## 使用方法
 
@@ -41,33 +41,33 @@ related:
 如果你不同时安装Vue Router，QRouteTab不会也不能与UMD版本一起工作。
 :::
 
-### 基本
+### 基础
 
-<doc-example title="基本" file="QTabs/Basic" />
+<doc-example title="基础" file="QTabs/Basic" />
 
 ### 外部、内部和移动箭头上可见的
 
-<doc-example title="移动箭头的外侧、内侧和可见性" file="QTabs/ArrowsModifiers" /> ### 垂直箭头
+<doc-example title="移动箭头的外侧、内侧和可见性" file="QTabs/ArrowsModifiers" />
 
 ### 垂直方向
 
-<doc-example title="垂直(使用QSplitter的示例)" file="QTabs/Vertical" /> ### 垂直
+<doc-example title="垂直(使用QSplitter的例子)" file="QTabs/Vertical" />
 
 ### 密集的
 
-<doc-example title="密集" file="QTabs/Dense" /> ### 密集的单个颜色
+<doc-example title="密集" file="QTabs/Dense" />
 
 ### 单独的颜色
 
-<doc-example title="单个颜色" file="QTabs/IndividualColor" /> ###单个颜色
+<doc-example title="单个颜色" file="QTabs/IndividualColor" />
 
 ### 波纹
 
-<doc-example title="无波纹和自定义波纹颜色" file="QTabs/Ripples" /> ### 波纹
+<doc-example title="无波纹和自定义波纹颜色" file="QTabs/Ripples" />
 
 ### 自定义指标
 
-在下面的示例中，请注意最后两个QTabs：指标在顶部和没有指标。
+在下面的例子中，请注意最后两个QTabs：指标在顶部和没有指标。
 
 <doc-example title="自定义指标" file="QTabs/CustomIndicator" />
 
@@ -83,7 +83,7 @@ QTabs是响应式的，当容器的宽度(不是窗口的宽度)大于配置的�
 
 <doc-example title="对齐" file="QTabs/Alignment" />
 
-在下面示例的第二个QTabs中，如果窗口宽度低于1024px，那么 "Movies "和 "Photos "标签将被一个 "More... "下拉菜单所取代。
+在下面例子的第二个QTabs中，如果窗口宽度低于1024px，那么 "Movies "和 "Photos "标签将被一个 "More... "下拉菜单所取代。
 
 ### 有下拉菜单
 
@@ -97,7 +97,7 @@ QTabs是响应式的，当容器的宽度(不是窗口的宽度)大于配置的�
 
 ### 动态更新
 
-<doc-example title="动态标签" file="QTabs/DynamicTabs" /> ### 动态更新
+<doc-example title="动态标签" file="QTabs/DynamicTabs" />
 
 ### 与QTabsPanel一起
 
@@ -107,7 +107,7 @@ QTabPanels也可以作为独立的使用。它们不依赖于QTabs的存在。�
 
 <doc-example title="带有标签面板的标签" file="QTabs/TabsWithTabpanels" />
 
-更多信息。[标签面板](/vue-components/tab-panels)。
+更多信息：[标签面板](/vue-components/tab-panels)。
 
 ## 连接到Vue Router
 你可以通过`QRouteTab`组件将标签与Vue Router一起使用。
@@ -155,7 +155,7 @@ QRouteTab变得 "活跃 "取决于你的应用程序的路线，而不是由于v
 export default {
   methods: {
     navDelay (e, go) {
-      e.preventDefault() // we cancel the default navigation
+      e.preventDefault() // 我们取消默认导航
 
       // console.log('2s内触发导航')
       setTimeout(() => {
@@ -165,11 +165,11 @@ export default {
     },
 
     navCancel (e) {
-      e.preventDefault() // we cancel the default navigation
+      e.preventDefault() // 我们取消默认导航
     },
 
     navRedirect (e, go) {
-      e.preventDefault() // we cancel the default navigation
+      e.preventDefault() // 我们取消默认导航
       go({ query: { tab: '2', noScroll: true } })
     },
 

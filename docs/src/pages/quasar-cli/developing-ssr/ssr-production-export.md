@@ -71,7 +71,7 @@ export default ({
   ssrHandler, // Prebuilt app handler if your serverless service
               // 并不要求以特定的方式来提供它。
               // 表格：ssrHandler (req, res, next)
-              // 提示：它在引擎盖下已经使用了isReady()。
+              // 提示：它在底层已经使用了isReady()。
 
   // 下列各项都是
   // 为SSR中间件(查看其文档页面)。

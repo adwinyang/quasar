@@ -8,7 +8,7 @@ related:
  Quasar 语言包指的是 Quasar 自身组件的国际化，其中一些组件有标签。
 
 ::: warning
-需要注意的是，下面所描述的只是 Quasar 组件的国际化。如果你需要对自己的组件进行国际化，请阅读[App Internationalization](/options/app-internationalization)文档页。
+需要注意的是，下面所描述的只是 Quasar 组件的国际化。如果你需要对自己的组件进行国际化，请阅读[App Internationalization](/options/app-internationalization) 文档页。
 :::
 
 如上所述，一些 Quasar 组件有自己的标签。当涉及到国际化时，一种选择是通过 Quasar 组件(如QTable)的每个实例的标签属性来配置标签。这样你就可以自定义文本以匹配所选语言。然而，这需要时间并给你的网站/应用程序增加不必要的复杂性。**相反，你可以使用 Quasar 语言包，它为你翻译了许多标准标签定义，如 "取消"、"清除"、"选择"、"更新 "等。不需要再翻译这些内容了! 而且它是开箱即用的。
@@ -75,7 +75,7 @@ app.use( Quasar , {
 </script>
 ```
 
-在[UMD / Standalone](/start/umd)页面上查看你的HTML文件中需要包含哪些标签。
+在[UMD / Standalone](/start/umd) 页面上查看你的HTML文件中需要包含哪些标签。
 
 ### 动态(非SSR)
 Quasar CLI: 如果您所需要的 Quasar 语言包必须是动态选择的(例如：取决于cookie)，那么您需要创建一个启动文件。`$ quasar new boot quasar-lang-pack [-format ts]`。这将创建`/src/boot/quasar-lang-pack.js`文件。把它编辑成：

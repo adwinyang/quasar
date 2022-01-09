@@ -22,9 +22,9 @@ QToolbar是一个通常属于Layout Header和Footer的组件，但它也可以�
 
 ## 使用方法
 
-<doc-example title="基本" file="QToolbar/Basic" /> ##使用方法
+<doc-example title="基础" file="QToolbar/Basic" />
 
-<doc-example title="有头像" file="QToolbar/Avatar" /> ## 使用方法
+<doc-example title="有头像" file="QToolbar/Avatar" />
 
 你可以使用`glossy`类来使工具条变得光亮。
 

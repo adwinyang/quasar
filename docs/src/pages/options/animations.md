@@ -38,7 +38,7 @@ animations: [
 ```
 
 ::: warning
-需要注意的是，当你通过 `<link>` 标签导入 Animate.css 时，所有动画 CSS 类都必须以 `animate__` 为前缀。这是 Animate.css 从 v3 到 v4 迁移的重大变化。如果你想避免使用前缀，你可以导入[兼容版本](https://animate.style/#migration)。但是，如果您使用的是 **Quasar CLI**，则无需进行其他更改。
+需要注意的是，当你通过 `<link>` 标签导入 Animate.css 时，所有动画 CSS 类都必须以 `animate__` 为前缀。这是 Animate.css 从 v3 到 v4 迁移的重大变化。如果你想避免使用前缀，你可以导入[兼容版本](https://animate.style/#migration) 。但是，如果您使用的是 **Quasar CLI**，则无需进行其他更改。
 :::
 
 ## 用法

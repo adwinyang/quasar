@@ -31,7 +31,7 @@ Quasar 框架是一个 MIT 许可的开源项目，完全可以免费使用。�
 # 支持者
 
 You can join them in [supporting Quasar](https://donate.quasar.dev) development! Backers in the same pledge level appear in the order of pledge date.
-你可以和他们一起[支持 Quasar ](https://donate.quasar.dev)发展! 相同捐赠级别的支持者按捐赠日期的顺序出现。
+你可以和他们一起[支持 Quasar ](https://donate.quasar.dev) 发展! 相同捐赠级别的支持者按捐赠日期的顺序出现。
 
 ### $500
 

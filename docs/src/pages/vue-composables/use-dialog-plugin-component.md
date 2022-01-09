@@ -1,13 +1,13 @@
 ---
-title: useDialogPluginComponent可组成的
-desc: Quasar的useDialogPluginComponent()的可组合性是什么，以及你如何使用它
+title: useDialogPluginComponent 可组合性
+desc: Quasar 的 useDialogPluginComponent() 的可组合性是什么，以及如何使用它
 keys: useDialogPluginComponent
 related:
   - /quasar-plugins/dialog
 ---
 
 ::: tip
-useDialogPluginComponent是[Quasar Dialog Plugin](/quasar-plugins/dialog#invoking-custom-component)(调用自定义组件)的一部分。如果你现在还没有深入研究，请先阅读一下那里。
+useDialogPluginComponent 是 [Quasar Dialog Plugin](/quasar-plugins/dialog#调用自定义组件)(调用自定义组件)的一部分。如果你现在还没有深入研究，请先读一读。
 :::
 
 这个可组合的组件将被用于调用Dialog插件的自定义组件上。它将引导组件与插件之间的所有必要通信。

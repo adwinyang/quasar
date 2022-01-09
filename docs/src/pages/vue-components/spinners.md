@@ -1,6 +1,6 @@
 ---
-title: 纺纱机
-desc: QSpinner及其衍生的Vue组件被用来向用户展示当前正在进行的一个及时的进程。它让用户感觉到系统正在继续为长期活动工作。
+title: 旋转器
+desc: QSpinner 及其派生的 Vue 组件用于向用户显示当前正在发生的及时过程。它让用户感觉系统正在继续为长期活动工作。
 keys: QSpinner,QSpinnerAudio,QSpinnerBall,QSpinnerBars,QSpinnerBox,QSpinnerClock,QSpinnerComment,QSpinnerCube,QSpinnerDots,QSpinnerFacebook,QSpinnerGears,QSpinnerGrid,QSpinnerHearts,QSpinnerHourglass,QSpinnerInfinity,QSpinnerIos,QSpinnerOrbit,QSpinnerOval,QSpinnerPie,QSpinnerPuff,QSpinnerRadio,QSpinnerRings,QSpinnerTail
 related:
   - /vue-components/linear-progress
@@ -20,7 +20,7 @@ related:
 ## 其他Spinner API
 
 ::: tip
-下面的API适用于所有的旋转器，除了QSpinner。用QSpinnerCube制作一个示例。
+下面的API适用于所有的旋转器，除了QSpinner。用QSpinnerCube制作一个例子。
 :::
 
 <doc-api file="QSpinnerCube" />
@@ -29,7 +29,7 @@ related:
 
 <doc-example title="QSpinner" file="QSpinner/Default" />
 
-在下面的示例中，将鼠标悬停在旋转器上可以看到它们的名字。
+在下面的例子中，将鼠标悬停在旋转器上可以看到它们的名字。
 
 <doc-example title="其他旋转器" file="QSpinner/Others" />
 

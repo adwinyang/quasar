@@ -1,5 +1,5 @@
 ---
-title: 骨架
+title: 骨架屏
 desc: QSkeleton Vue组件用于在加载实际页面数据之前显示内容的占位符预览。
 keys: QSkeleton
 related:
@@ -18,27 +18,27 @@ QSkeleton是一个组件，用于在加载实际页面数据之前显示内容�
 
 ## 使用方法
 
-<doc-example title="在QCard上" file="QSkeleton/Card" /> ## 使用方法
+<doc-example title="在QCard上" file="QSkeleton/Card" />
 
 ### 预定义的类型
 
-下面你可以看到预定义的类型。有一些基本的类型(文本、矩形、圆形)，还有一些特殊的方便类型，它们准确地尊重 Quasar 组件的大小和边界半径。
+下面你可以看到预定义的类型。有一些基本的类型(文本、矩形、圆形)，还有一些特殊的方便类型，它们准确地尊重Quasar组件的大小和边界半径。
 
 <doc-example title="QSkeleton类型" file="QSkeleton/Types" />
 
 ### 动画
 
-<doc-example title="动画" file="QSkeleton/Animations" /> ### 动画
+<doc-example title="动画" file="QSkeleton/Animations" />
 
 ### 尺寸
 
-<doc-example title="尺寸" file="QSkeleton/Sizing" /> ### 尺寸
+<doc-example title="尺寸" file="QSkeleton/Sizing" />
 
 ### 样式设计
 
-<doc-example title="有边框" file="QSkeleton/StylingBordered" /> ### 样式设计
+<doc-example title="有边框" file="QSkeleton/StylingBordered" />
 
-<doc-example title="方形边框" file="QSkeleton/StylingSquare" /> ###样式设计
+<doc-example title="方形边框" file="QSkeleton/StylingSquare" />
 
 <doc-example title="自定义颜色" file="QSkeleton/StylingColor" />
 

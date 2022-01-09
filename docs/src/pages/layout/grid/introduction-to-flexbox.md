@@ -14,7 +14,7 @@ related:
 Flexbox(Quasar Flex CSS类的基础)模块旨在提供一种更有效的方式来布局、对齐和分配容器中的元素之间的空间，即使它们的大小未知或动态的(因此称为“Flex”)。
 
 ::: tip
-此页面介绍了 Quasar Flex CSS 类的基本原理，并为[Grid Row](/layout/grid/row)、[Grid Column](/layout/grid/column)、[Grid Gutter](/layout/grid/gutter) 的深入了解做好准备。
+此页面介绍了 Quasar Flex CSS 类的基本原理，并为[Grid Row](/layout/grid/row)、[Grid Column](/layout/grid/column) 、[Grid Gutter](/layout/grid/gutter) 的深入了解做好准备。
 :::
 
 ## 关键概念
@@ -218,7 +218,7 @@ CSS 辅助类 `col-shrink` 使单元格最多填充它需要渲染的空间，�
 </div>
 ```
 
-还可以查看[Visibility](/style/Visibility#window width related)样式页面，查看窗口宽度上的阈值以及这些单独用于隐藏或显示DOM元素的标记(xs、sm、md、lg、xl)。
+还可以查看[Visibility](/style/Visibility#window width related) 样式页面，查看窗口宽度上的阈值以及这些单独用于隐藏或显示DOM元素的标记(xs、sm、md、lg、xl)。
 
 ## Flex 插件.
 

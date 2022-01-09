@@ -1,5 +1,5 @@
 ---
-title: 启明星辰
+title: 图像
 desc: QImg Vue组件使响应式图片的工作变得简单，还为它们添加了一个漂亮的加载效果，以及许多其他功能，如自定义长宽比和标题。
 keys: QImg
 related:
@@ -14,21 +14,21 @@ QImg组件使处理图片(任何图片格式)变得简单，并且还为它增�
 
 ## 使用方法
 
-### 基本
+### 基础
 
-<doc-example title="基本" file="QImg/Basic" />
+<doc-example title="基础" file="QImg/Basic" />
 
 ### 纵横比
 
-<doc-example title="自定义长宽比" file="QImg/Ratio" /> ### 长宽比
+<doc-example title="自定义长宽比" file="QImg/Ratio" />
 
 ### 标题
 
-<doc-example title="标题" file="QImg/Caption" /> ### 标题
+<doc-example title="标题" file="QImg/Caption" />
 
 ### 图像样式
 
-在下面的示例中，我们添加了模糊和棕褐色的效果。此外，我们还使用了 "圆形边框 "的CSS辅助类。
+在下面的例子中，我们添加了模糊和棕褐色的效果。此外，我们还使用了 "圆形边框 "的CSS辅助类。
 
 <doc-example title="自定义图像样式" file="QImg/CustomImageStyle" />
 
@@ -44,9 +44,9 @@ QImg组件使处理图片(任何图片格式)变得简单，并且还为它增�
 
 ### 加载状态
 
-<doc-example title="加载状态" file="QImg/LoadingState" /> ###加载状态
+<doc-example title="加载状态" file="QImg/LoadingState" />
 
-当你有大尺寸的图片时，你可以使用一个占位符图片(建议用base64编码指定)，就像下面的示例。该占位符将被显示，直到目标图像被加载。我们正在切换QImg标签，这样你就可以看到占位符图像的作用。
+当你有大尺寸的图片时，你可以使用一个占位符图片(建议用base64编码指定)，就像下面的例子。该占位符将被显示，直到目标图像被加载。我们正在切换QImg标签，这样你就可以看到占位符图像的作用。
 
 <doc-example title="占位符来源" file="QImg/PlaceholderSrc" />
 
@@ -78,7 +78,7 @@ QImg组件使处理图片(任何图片格式)变得简单，并且还为它增�
 
 ### 没有本地上下文菜单
 
-在下面的示例中，我们禁用了图像上的本地上下文菜单。
+在下面的例子中，我们禁用了图像上的本地上下文菜单。
 
 ::: warning
 当你使用这个选项时，一定要注意将`default'或`error'槽的内容包裹在`div'元素中，或者在元素上添加`all-pointer-events'类。

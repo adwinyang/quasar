@@ -1,5 +1,5 @@
 ---
-title: 形状
+title: 表单
 desc: QForm Vue组件渲染了一个表单，并允许轻松验证子表单组件，如QInput, QSelect或QField。
 keys: QForm
 related:
@@ -19,12 +19,12 @@ QForm组件渲染了一个`<form>`DOM元素，并允许你轻松地验证子表�
 
 ::: warning
 请注意以下几点。
-* QForm连接了QInput、QSelect或QField包装的组件。
+* QForm钩住了QInput、QSelect或QField包装的组件。
 * QInput, QSelect或QField包装的组件必须使用内部验证(而不是外部验证)。
 * 如果你想利用 "重置 "功能，那么一定要在QForm上捕获"@reset "事件，并使其处理程序重置所有被包装的组件模型。
 :::
 
-<doc-example title="基本" file="QForm/Basic" />
+<doc-example title="基础" file="QForm/Basic" />
 
 为了让用户能够激活表单上的"@submit "或"@reset "事件，创建一个QBtn，将 "type "设置为 "submit "或 "reset"。
 
@@ -38,7 +38,7 @@ QForm组件渲染了一个`<form>`DOM元素，并允许你轻松地验证子表�
 另外，你可以给QForm一个Vue ref name，并直接调用`validate`和`resetValidation`函数。
 
 ```js
-// 组合式 API 变体
+// 组成API变体
 
 // <q-表单 ref="myForm">
 
@@ -70,7 +70,7 @@ setup () {
 ```
 
 ```js
-// 选项式 API 变体
+// 选项API变体
 
 // <q-表单 ref="myForm">
 
@@ -99,7 +99,7 @@ spellcheck="false"
 ```
 
 ## 提交到一个URL(本地表单提交)
-如果你在QForm上使用本地的`action`和`method`属性，请记得在每个 Quasar 表单组件上使用`name`属性，这样发送的formData才能真正包含用户填写的内容。
+如果你在QForm上使用本地的`action`和`method`属性，请记得在每个Quasar表单组件上使用`name`属性，这样发送的formData才能真正包含用户填写的内容。
 
 ```html
 <q-form action="https://some-url.com" method="post">
@@ -130,10 +130,10 @@ methods: {
 
 ## 子实体通信
 
-默认情况下，所有的 Quasar 表单组件都与父代QForm实例进行通信。如果由于某种原因，你正在创建你自己的表单组件(**没有包裹 Quasar 表单组件**)，那么你可以通过使用以下方法使QForm知道它。
+默认情况下，所有的Quasar表单组件都与父代QForm实例进行通信。如果由于某种原因，你正在创建你自己的表单组件(**没有包裹Quasar表单组件**)，那么你可以通过使用以下方法使QForm知道它。
 
 ```js
-// 组合式 API 变体
+// 组成API变体
 
 import { useFormChild } from 'quasar'
 
@@ -150,7 +150,7 @@ setup () {
 ```
 
 ```js
-// 选项式 API 变体
+// 选项API变体
 
 import { QFormChildMixin } from 'quasar'
 

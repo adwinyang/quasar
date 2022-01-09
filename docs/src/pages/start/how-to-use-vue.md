@@ -2,10 +2,10 @@
 title: 如何使用Vue
 desc: 关于Vue原则以及如何将其用于 Quasar 的快速教程。
 ---
-在你开始使用 Quasar 之前，最好先熟悉ES6并对Vue 3的工作原理有相当的了解。([ES6快速概述](https://github.com/lukehoban/es6features)和[ES6完整功能列表](http://es6-features.org/#Constants) -- 别担心，你不需要了解ES6的全部内容)。对于有反应式UI经验的开发者来说，[Vue 3文档](https://v3.vuejs.org/)本身最多需要半天时间从上到下阅读，它将帮助你了解如何使用和配置 Quasar 组件。
+在你开始使用 Quasar 之前，最好先熟悉ES6并对Vue 3的工作原理有相当的了解。([ES6快速概述](https://github.com/lukehoban/es6features) 和[ES6完整功能列表](http://es6-features.org/#Constants) -- 别担心，你不需要了解ES6的全部内容)。对于有反应式UI经验的开发者来说，[Vue 3文档](https://v3.vuejs.org/) 本身最多需要半天时间从上到下阅读，它将帮助你了解如何使用和配置 Quasar 组件。
 
 ::: tip
-如果你是Vue和反应式UI库的完全初学者，想要一个好的教程，我们推荐你看一下[Vue和 Quasar 视频教程](/video-tutorials)。
+如果你是Vue和反应式UI库的完全初学者，想要一个好的教程，我们推荐你看一下[Vue和 Quasar 视频教程](/video-tutorials) 。
 :::
 
 在阅读完Vue文档后，让我们来理清一些最常见的问题，比如*"我如何使用 Quasar 组件、Vue属性、方法和事件 "*。
@@ -36,12 +36,12 @@ export default {
 ```
 
 ### CSS预处理程序
-对于`<style>`标签，你也可以使用任何你想要的CSS预处理器。[Sass/SCSS](https://sass-lang.com)(推荐)是开箱即用。
+对于`<style>`标签，你也可以使用任何你想要的CSS预处理器。[Sass/SCSS](https://sass-lang.com) (推荐)是开箱即用。
 
-你可以指定你希望你选择的预处理器来处理你所写的CSS代码。
+你可以指定你希望你选择的预处理器来处理你所写的CSS代码：
 
 ```html
-<!-- notice lang="sass" -->
+<!-- 注意 lang="sass" -->
 <style lang="sass">
 .some-div
   font-size: 15px
@@ -57,9 +57,9 @@ export default {
 
 ## 使用 Quasar 指令
 
- Quasar 带有一些自定义的[Vue Directives](https://v3.vuejs.org/guide/custom-directive.html)。这些指令几乎可以应用于任何DOM元素或组件。
+ Quasar 带有一些自定义的[Vue Directives](https://v3.vuejs.org/guide/custom-directive.html) 。这些指令几乎可以应用于任何DOM元素或组件。
 
- Quasar 指令的示例。
+Quasar 指令的示例。
 
 ```html
 <div v-ripple>Click Me</div>
@@ -74,7 +74,7 @@ export default {
 ```
 
 ## 使用 Quasar 组件
- Quasar 组件的名字以 "Q "开头，如 "QBtn "或 "QElementResizeObserver"。为了使用它们，你需要在`/quasar.conf.js`中添加一个对它们的引用。
+ Quasar 组件的名字以 "Q" 开头，如 "QBtn" 或 "QElementResizeObserver"。为了使用它们，你需要在`/quasar.conf.js`中添加一个对它们的引用。
 
 让我们以QBtn和QIcon为例，然后看看如何将这些组件嵌入我们的应用程序中。
 
@@ -193,21 +193,21 @@ Notify.create('My message')
 让我们用一个支持以下属性的假 Quasar 组件(我们称之为QBogus)来举一些示例。我们将在下面的章节中讨论Vue属性的每一种类型。
 
 | Vue属性|类型|描述|
+| --- | --- | --- |
 | `infinite` | Boolean | 无限滑动滚动 |
 | `size` | String | 加载条的厚度。|
-| `speed` | 数字 | 加载条的更新速度(以毫秒为单位)。|
-| `columns` | 对象 | 定义列的对象(见下面的 "列的定义")。|
-| `offset` | 数组 | 有两个数字的数组。水平和垂直方向上的偏移(单位：像素)。|
-### 布尔属性
+| `speed` | Number | 加载条的更新速度(以毫秒为单位)。|
+| `columns` | Object | 定义列的对象(见下面的 "列的定义")。|
+| `offset` | Array | 有两个数字的数组。水平和垂直方向上的偏移(单位：像素)。|
 
+### 布尔属性
 一个布尔属性意味着它只接受一个严格意义上的布尔值。这些值不会被转换为布尔值，所以你必须确保你使用的是一个真正的布尔值。
 
-
 ::: tip
-在 Quasar 中，所有布尔属性都有`false`作为默认值。因此，你不需要明确地给它们分配 "false "值。
+在 Quasar 中，所有布尔属性都有`false`作为默认值。因此，你不需要明确地给它们分配 `false `值。
 :::
 
-如果你想控制该属性并在运行时动态地改变它，那么就把它绑定到你的作用域中的一个变量。
+如果你想控制该属性并在运行时动态地改变它，那么就把它绑定到你的作用域中的一个变量：
 
 ```html
 <template>
@@ -228,15 +228,15 @@ export default {
 </script>
 ```
 
-另一方面，如果你知道这个布尔值不会改变，你可以像组件属性一样使用变量的速记版本，只需指定它。换句话说，如果你不把这个变量绑定到组件范围内的一个变量上，因为它将永远是`true'。
+另一方面，如果你知道这个布尔值不会改变，你可以像组件属性一样使用变量的速记版本，只需指定它。换句话说，如果你不把这个变量绑定到组件范围内的一个变量上，因为它将永远是`true`。
 
 ```html
 <template>
   <q-bogus infinite />
 
   <!--
-    the following is perfectly valid,
-    but it's a longer version
+    以下是完全有效的，
+    但这是一个更长的版本
   -->
   <q-bogus :infinite="true" />
 </template>
@@ -248,15 +248,15 @@ export default {
 ```html
 <template>
   <!--
-    direct assignment, no need for
-    a variable in our scope
+    直接分配，
+    无需我们作用域内的一个变量
   -->
   <q-bogus size="24px" />
 
   <!--
-    we can also bind it to a variable
-    in our scope so we can dynamically
-    change it
+    我们还可以将它绑定到一个变量
+    在我们的作用域内，我们可以动态地
+    改变它
   -->
   <q-bogus :size="mySize" />
 </template>
@@ -276,17 +276,17 @@ export default {
 </script>
 ```
 
-### 号码属性
+### 数字属性
 
 ```html
 <template>
   <!--
-    Case 1. Direct assignment.
-    Notice the colon (":") before property name.
+    案例1。直接赋值。
+    注意属性名称前的冒号（":"）。
   -->
   <q-bogus :speed="50" />
 
-  <!-- Case 2. Assignment through a scope variable -->
+  <!-- 案例2。通过作用域内的变量赋值 -->
   <q-bogus :speed="myNumber" />
 </template>
 
@@ -309,7 +309,7 @@ export default {
 
 ```html
 <template>
-  <!-- Case 1. Direct assignment. -->
+  <!-- 案例2。 直接赋值。 -->
   <q-bogus :columns="{key: 'value', anotherKey: 'another value'}" />
   <!-- or a more elegant way for Case 1: -->
   <q-bogus
@@ -319,7 +319,7 @@ export default {
     }"
   />
 
-  <!-- Case 2. Assignment through a scope variable -->
+  <!-- 案例2。通过作用域内的变量赋值x -->
   <q-bogus :columns="myColumns" />
 </template>
 
@@ -339,14 +339,14 @@ export default {
 </script>
 ```
 
-### 阵列属性
+### 数组属性
 
 ```html
 <template>
-  <!-- Case 1. Direct assignment. -->
+  <!-- 案例 1. 直接赋值 -->
   <q-bogus :offset="[10, 20]" />
 
-  <!-- Case 2. Assignment through a scope variable -->
+  <!-- 案例 2. 通过作用域内的变量来赋值 -->
   <q-bogus :offset="myOffset" />
 </template>
 
@@ -365,18 +365,18 @@ export default {
 你会注意到在整个文档中，一些 Quasar 组件有可以被调用的方法。例如：
 
 | Vue方法 | 描述 |
+| --- | --- |
 | `next()` | 转到下一张幻灯片。|
 | `previous(doneFn)` | 转到上一张幻灯片。|
 | `toggleFullscreen()` | 切换全屏模式。|
-为了让你访问这些方法，你需要先在组件上设置一个Vue引用。下面是一个使用Composition API的示例。
 
-
+为了让你访问这些方法，你需要先在组件上设置一个Vue引用。下面是一个使用Composition API的示例：
 
 ```html
 <template>
   <!--
-    Notice ref="myRef". We will use the name
-    assigned to "ref" in the script part below
+   注意 ref=“myRef”。我们将使用这个名字
+   分配给下面脚本部分中的“ref”
   -->
   <q-bogus ref="myRef" />
 </template>
@@ -409,8 +409,8 @@ export default {
 ```html
 <template>
   <!--
-    Notice ref="myRef". We will use the name
-    assigned to "ref" in the script part below
+    注意 ref=“myRef”。我们将使用这个名字
+    分配给下面脚本部分中的“ref”
   -->
   <q-bogus ref="myRef" />
 </template>
@@ -432,14 +432,14 @@ export default {
 ## 处理Vue事件
 你会注意到在整个文档中，一些 Quasar 组件有一个部分叫做 "Vue事件"。
 
-"Vue事件 "的示例。
+"Vue事件 "的示例：
 
 | 事件名称 | 描述 |
+| --- | --- |
 | `@show` | 模态显示后立即触发。|
 | `@hide` | 在隐藏模态后立即触发。|
+
 为了捕捉这些事件，当它们被触发时，你将需要在HTML模板中为组件本身添加监听器。下面是一个示例：
-
-
 
 ```html
 <template>

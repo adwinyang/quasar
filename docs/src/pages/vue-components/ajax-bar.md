@@ -1,6 +1,6 @@
 ---
-title: 阿贾克斯酒吧
-desc: QAjaxBar Vue组件在Ajax调用进行时显示一个加载条。
+title: Ajax 加载进度条
+desc: QAjaxBar Vue 组件在 Ajax 请求或调用时显示一个加载进度条。
 keys: QAjaxBar
 related:
   - /quasar-plugins/loading
@@ -8,24 +8,24 @@ related:
   - /quasar-cli/ajax-requests
 ---
 
-在大多数移动应用程序，甚至一些桌面应用程序中，你很可能会有一些API通过[Ajax调用](https://en.wikipedia.org/wiki/Ajax_(programming))与服务器通信。由于这些调用可能需要超过一两秒钟的时间，所以当这样的API调用正在进行时，为用户提供反馈是很好的用户体验。这就是QAjaxBar可以帮助你的地方。
+在大多数移动应用程序，甚至一些桌面应用程序中，你很可能会有一些API通过[Ajax调用](https://en.wikipedia.org/wiki/Ajax_(programming) )与服务器通信。由于这些调用可能需要超过一两秒钟的时间，所以当这样的API调用正在进行时，为用户提供反馈是很好的用户体验。这就是QAjaxBar可以帮助你的地方。
 
 QAjaxBar是一个组件，当一个Ajax调用(不管使用的是什么Ajax库)正在进行时，它会显示一个加载条(像Youtube)。它也可以被手动触发。
 
 ::: tip
-如果你想用**种更简单、更方便的方式**向你的用户提供Ajax Bar，请看一下[Loading Bar Plugin](/quasar-plugins/loading-bar)，这实际上是**种推荐的方式。
+如果你想用**种更简单、更方便的方式**向你的用户提供 Ajax 栏，请看一下[加载栏插件](/quasar-plugins/loading-bar)，这实际上是种**推荐的方式**。
 :::
 
 ## QAjaxBar API
 
-<doc-api file="QAjaxBar" />
+<doc-api file="QAjaxBar111" />
 
 ## 使用方法
 QAjaxBar组件会自动捕捉Ajax调用(除非被告知不要这样做)。
 
 下面的示例是手动触发事件，仅用于演示目的。这个被设置为出现在页面的底部(有多个位置可用！)，尺寸为10px(默认是不同的)，并使用自定义的颜色。
 
-<doc-example title="基本" file="QAjaxBar/Basic" />
+<doc-example title="基础" file="QAjaxBar/Basic" />
 
 请查看API部分，了解你可以使用的所有属性。
 

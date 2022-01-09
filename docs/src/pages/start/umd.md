@@ -51,7 +51,7 @@ Quasar = {
 }
 ```
 
-一些使用实例。
+一些使用实例：
 
 ```js
 Quasar.QBtn
@@ -70,9 +70,9 @@ app.use( Quasar , {
       primary: '#e46262',
       // ...或所有其他品牌的颜色
     },
-    notify: {...}, // default set of options for Notify Quasar plugin
-    loading: {...}, // default set of options for Loading Quasar plugin
-    loadingBar: { ... }, // settings for LoadingBar Quasar plugin
+    notify: {...}, // Notify Quasar 插件的默认选项集
+    loading: {...}, // Loading Quasar 插件的默认选项集
+    loadingBar: { ... }, // LoadingBar Quasar 插件的默认选项集
     // ...还有更多
   }
 })
@@ -91,11 +91,11 @@ app.use( Quasar , {
 你会注意到，你将不能使用任何组件的自我关闭标签形式。你必须关闭所有组件的标签。
 
 ```html
-<!-- Incorrect usage: In docs, but for Quasar CLI usage -->
+<!-- 不正确的用法：在文档中，但对于 Quasar CLI 用法 -->
 <q-btn label="My Button" />
-<!-- ^^^ can't use it like this on UMD -->
+<!-- ^^^ 不能在 UMD 上这样使用它 -->
 
-<!-- Correct usage: Instead, include a self-closing tag too: -->
+<!-- 正确用法：相反，也包括一个自闭合标签：-->
 <q-btn label="My Button"></q-btn>
 ```
 
@@ -134,7 +134,7 @@ Quasar.openURL('https://quasar.dev')
 Quasar.iconSet.set(Quasar.iconSet.fontawesomeV5)
 ```
 
-可用的[Quasar图标集](/options/quasar-icon-sets)列表可以在[GitHub](https://github.com/quasarframework/quasar/tree/dev/ui/icon-set)上找到。
+可用的[Quasar图标集](/options/quasar-icon-sets) 列表可以在[GitHub](https://github.com/quasarframework/quasar/tree/dev/ui/icon-set) 上找到。
 
 ### 改变 Quasar 语言包
 假设您已经包含了您想要的Quasar I18n语言的CDN链接(除非您想要默认使用的 "en-US "语言包)，您可以告诉 Quasar 使用它。
@@ -148,4 +148,4 @@ Quasar.lang.set(Quasar.lang.de)
 Quasar.lang.set(Quasar.lang.ptBR)
 ```
 
-可用的语言列表可以在[GitHub](https://github.com/quasarframework/quasar/tree/dev/ui/lang)上找到。**如果你想要的语言包还没有，你可以通过提供一个PR来帮助我们。**我们欢迎任何语言!
+可用的语言列表可以在[GitHub](https://github.com/quasarframework/quasar/tree/dev/ui/lang) 上找到。**如果你想要的语言包还没有，你可以通过提供一个PR来帮助我们**。我们欢迎任何语言!

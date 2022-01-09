@@ -30,7 +30,7 @@ keys: touch-repeat
 <doc-example title="应用于QBtn" file="TouchRepeat/Buttons" />
 
 ### 处理鼠标事件
-当你也想处理鼠标事件时，使用`mouse`修改器。
+当你也想处理鼠标事件时，使用`mouse`修饰符。
 
 ```html
 <div v-touch-repeat.mouse="myHandler">...</div>
@@ -43,26 +43,25 @@ keys: touch-repeat
 <div v-touch-repeat.65.70="myHandler">...</div>
 ```
 
-有一些特殊的修饰语，你不需要写出相应的键码。`空格`, `tab`, `enter`.
+有一些特殊的修饰语，你不需要写出相应的键码。`space`, `tab`, `enter`.
 
-### 抑制TouchRepeat
+### 抑制 TouchRepeat
 当你想抑制TouchRepeat时，你可以通过停止传播内部内容的`touchstart`/`mousedown`/`keydown`事件来实现。
 
 ```html
 <div v-touch-repeat.mouse.enter="userHasHold">
-  <!-- ...content -->
+  <!-- ...内容 -->
   <div @touchstart.stop @mousedown.stop @keydown.stop>
     <!--
-      TouchRepeat will not apply here because
-      we are calling stopPropagation() on touchstart,
-      mousedown and keydown events
-    -->
+      TouchRepeat 不适用于此处，因为
+      我们在 touchstart 上调用 stopPropagation()，
+      mousedown 和 keydown 事件    -->
   </div>
-  <!-- ...content -->
+  <!-- ...内容 -->
 </div>
 ```
 
-然而，如果你使用`capture`，`mouseCapture`或`keyCapture`修改器，那么事件将首先到达TouchRepeat指令，然后是内部内容，所以TouchRepeat仍然会被触发。
+然而，如果你使用`capture`，`mouseCapture`或`keyCapture`修饰符，那么事件将首先到达TouchRepeat 指令，然后是内部内容，所以 TouchRepeat 仍然会被触发。
 
 ## 关于HMR的说明
-由于性能原因，不是所有的修改器都是反应式的。有些需要窗口/页面/组件的刷新来获得更新。请查看API卡，看看那些没有被标记为反应式的修改器。
+由于性能原因，不是所有的修饰符都是反应式的。有些需要窗口/页面/组件的刷新来获得更新。请查看API卡，看看那些没有被标记为反应式的修饰符。

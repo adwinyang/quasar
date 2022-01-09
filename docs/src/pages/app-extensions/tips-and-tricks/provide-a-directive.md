@@ -6,11 +6,11 @@ desc: 关于如何向 Quasar应用扩展的主机应用提供 Vue 指令的技�
 本指南适用于您希望创建新指令并通过应用扩展提供指令的情况，应用扩展会将指令注入宿主应用程序中(托管应用程序中)。
 
 ::: tip
-要创建一个App Extension项目文件夹，请先阅读[开发指南>简介](/app-extensions/development-guide/introduction)。
+要创建一个App Extension项目文件夹，请先阅读[开发指南>简介](/app-extensions/development-guide/introduction) 。
 :::
 
 ::: tip Full Example
-要查看我们将构建的示例，请转到 [MyDirective 完整示例](https://github.com/quasarframework/app-extension-examples/tree/v2/my-directive)，这是一个 GitHub 存储库，含有这个应用扩展。
+要查看我们将构建的示例，请转到 [MyDirective 完整示例](https://github.com/quasarframework/app-extension-examples/tree/v2/my-directive) ，这是一个 GitHub 存储库，含有这个应用扩展。
 :::
 
 创建一个文件夹结构，以保持你的代码模块化和结构化。例如，对于一个指令，创建一个像这样的结构：
@@ -26,7 +26,7 @@ desc: 关于如何向 Quasar应用扩展的主机应用提供 Vue 指令的技�
     └── index.js # 在 Index API 中描述的内容
 ```
 
-现在，你需要处理注册你的Vue指令。你可以通过`/index.js`文件(在[Index API](/app-extensions/development-guide/index-api)中描述)来完成，这个文件是在你设置新 App Extension 时创建的。
+现在，你需要处理注册你的Vue指令。你可以通过`/index.js`文件(在[Index API](/app-extensions/development-guide/index-api) 中描述)来完成，这个文件是在你设置新 App Extension 时创建的。
 
 让我们分解一下：
 
@@ -50,7 +50,7 @@ module.exports = function (api) {
 第一组是做与 Quasar 的兼容性检查(可选，但推建)。如果你的组件使用的 Quasar 功能是在某个版本之后才有的，你可以确保安装的 Quasar 版本是正确的。
 
 ::: tip
-你不仅可以做`api.compatibleWith()`来检查 Quasar 软件包，还可以检查任何其他可用的软件包(你没有通过你的App Extension自己提供)。请阅读App Extension Development Guide > Introduction页面中的[Handling package-dependencies](/app-extensions/development-guide/introduction#handling-package-dependencies)部分以了解更多信息。
+你不仅可以做`api.compatibleWith()`来检查 Quasar 软件包，还可以检查任何其他可用的软件包(你没有通过你的App Extension自己提供)。请阅读App Extension Development Guide > Introduction页面中的[Handling package-dependencies](/app-extensions/development-guide/introduction#handling-package-dependencies) 部分以了解更多信息。
 :::
 
 第二组告诉 Quasar 在 `extendQuasarConf` CLI生命周期钩子被调用时调用我们的自定义函数。它看起来会像这样。
@@ -66,7 +66,7 @@ function extendConf (conf) {
 }
 ```
 
-最后，让我们看看启动文件会是什么样子。请确保你先阅读[Boot files](/quasar-cli/boot-files)文档，了解什么是Boot文件。
+最后，让我们看看启动文件会是什么样子。请确保你先阅读[Boot files](/quasar-cli/boot-files) 文档，了解什么是Boot文件。
 
 ```js
 // file: /src/boot/my-directive.js

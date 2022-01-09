@@ -6,11 +6,11 @@ desc: 关于如何向 Quasar 应用扩展的主机应用提供Vue组件的技巧
 本指南适用于您想要创建新的 UI 组件并通过 App Extension 提供它的情况，该 App Extension 会将其注入到宿主应用程序中(托管应用程序中)。
 
 ::: tip
-要创建一个App Extension项目文件夹，请先阅读[开发指南>简介](/app-extensions/development-guide/introduction)。
+要创建一个App Extension项目文件夹，请先阅读[开发指南>简介](/app-extensions/development-guide/introduction) 。
 :::
 
 ::: tip Full Example
-要查看我们将构建的示例，请转到 [MyComponent 完整示例](https://github.com/quasarframework/app-extension-examples/tree/v2/my-component)，这是一个 GitHub 存储库这个应用扩展。
+要查看我们将构建的示例，请转到 [MyComponent 完整示例](https://github.com/quasarframework/app-extension-examples/tree/v2/my-component) ，这是一个 GitHub 存储库这个应用扩展。
 :::
 
 创建一个文件夹结构，以保持你的代码模块化和结构化。例如，对于一个 UI 组件，创建一个看起来像这样的结构：
@@ -27,7 +27,7 @@ desc: 关于如何向 Quasar 应用扩展的主机应用提供Vue组件的技巧
     └── index.js # 索引API中描述的内容
 ```
 
-现在，你需要处理注册你的组件。你用 `/index.js` 文件(在[Index API](/app-extensions/development-guide/index-api)中描述)来做，这个文件是在你设置新的App Extension时创建的。
+现在，你需要处理注册你的组件。你用 `/index.js` 文件(在[Index API](/app-extensions/development-guide/index-api) 中描述)来做，这个文件是在你设置新的App Extension时创建的。
 
 让我们分解一下。
 
@@ -51,7 +51,7 @@ module.exports = function (api) {
 第一组做了与 Quasar 的兼容性检查(这是可选的，但建议使用)。如果你的组件使用的 Quasar 功能是在某个版本之后才有的，你可以确保安装的 Quasar 版本是正确的。
 
 :: tip
-你不仅可以做 `api.compatibleWith()` 来检查 Quasar 软件包，还可以检查任何其他可用的软件包(你没有通过你的App Extension自己提供)。请阅读App Extension Development Guide > Introduction页面中的[Handling package-dependencies](/app-extensions/development-guide/introduction#handling-package-dependencies)部分以了解更多信息。
+你不仅可以做 `api.compatibleWith()` 来检查 Quasar 软件包，还可以检查任何其他可用的软件包(你没有通过你的App Extension自己提供)。请阅读App Extension Development Guide > Introduction页面中的[Handling package-dependencies](/app-extensions/development-guide/introduction#handling-package-dependencies) 部分以了解更多信息。
 :::
 
 第二组告诉 Quasar 在 `extendQuasarConf` CLI 生命周期钩子被调用时调用我们的自定义函数。它看起来会像这样:
@@ -70,7 +70,7 @@ function extendConf (conf) {
 }
 ```
 
-最后，让我们看看启动文件会是什么样子。请确保你先阅读[Boot files](/quasar-cli/boot-files)文档，了解什么是 Boot 文件。
+最后，让我们看看启动文件会是什么样子。请确保你先阅读[Boot files](/quasar-cli/boot-files) 文档，了解什么是 Boot 文件。
 
 ```js
 // file: /src/boot/register-my-component.js

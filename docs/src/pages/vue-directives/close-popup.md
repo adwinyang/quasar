@@ -7,7 +7,7 @@ related:
   - /vue-components/menu
 ---
 
-当处理[QDialog](/vue-components/dialog)和[QMenu](/vue-components/menu)组件时，这个指令是一个帮助工具。当连接到一个DOM元素或组件时，当点击/点击时，该组件将关闭QDialog或QMenu(无论哪个是第一父级)。
+当处理[QDialog](/vue-components/dialog)和[QMenu](/vue-components/menu)组件时，这个指令是一个帮助工具。当连接到一个DOM元素或组件时，当单击/点击时，该组件将关闭QDialog 或 QMenu(无论哪个是第一父级)。
 
 ## ClosePopup API
 
@@ -15,11 +15,11 @@ related:
 
 ## 用法
 
-### 基本
+### 基础
 
 <doc-example title="使用QMenu" file="ClosePopup/Menu" />
 
-<doc-example title="使用QDialog" file="ClosePopup/Dialog" /> ##基本用法
+<doc-example title="使用QDialog" file="ClosePopup/Dialog" />
 
 ### 关闭多层次
 

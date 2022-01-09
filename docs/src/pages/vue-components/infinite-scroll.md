@@ -27,7 +27,7 @@ QInfiniteScroll组件允许你在用户滚动页面时加载新内容。
 
 滚动到底部可以看到QInfiniteScroll的操作。
 
-<doc-example title="基本" file="QInfiniteScroll/Basic" 可滚动 />
+<doc-example title="基础" file="QInfiniteScroll/Basic" 可滚动 />
 
 <doc-example title="自定义滚动目标容器" file="QInfiniteScroll/Container" />
 
@@ -36,7 +36,7 @@ QInfiniteScroll组件允许你在用户滚动页面时加载新内容。
 ### 提示
 
 ::: tip Scrolling container
-请阅读[这里](/vue-components/scroll-observer#determining-scrolling-container)关于 Quasar 如何确定将滚动事件附加到的容器。
+请阅读[这里](/vue-components/scroll-observer#determining-scrolling-container)关于Quasar如何确定将滚动事件附加到的容器。
 :::
 
 * 当作为渲染你的页面的Vue组件的直接子代时，效果最好。

@@ -15,4 +15,4 @@ desc: 如何在 Quasar 中使用Electron的类型脚本
 你可以通过在Electron模式下运行构建命令来强制安装选定的捆绑器(取决于你的`electron.bundler`选项)。`quasar build -m electron`。
 :::
 
-更多信息。[支持TS](/quasar-cli/supporting-ts)
+更多信息：[支持TS](/quasar-cli/supporting-ts)

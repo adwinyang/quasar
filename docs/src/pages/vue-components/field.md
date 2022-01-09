@@ -1,10 +1,10 @@
 ---
-title: 场地
-desc: QField Vue组件用于为表单组件提供通用功能和方面。
+title: 字段
+desc: QField Vue 组件用于提供通用功能和方面来形成组件。
 keys: QField
 ---
 
-QField组件被用来为表单组件提供通用的功能和方面。它使用`:model-value`(或者`v-model`，如果你想使用`clearable`属性)来了解里面的组件的模型。它支持标签、提示、错误、验证，并有多种风格和颜色。
+QField 组件被用来为表单组件提供通用的功能和方面。它使用`:model-value`(或者`v-model`，如果你想使用`clearable`属性)来了解里面的组件的模型。它支持标签、提示、错误、验证，并有多种风格和颜色。
 
 QField允许你在它里面显示任何表单控件(或者几乎任何东西)。只要把你想要的内容放在`control`槽内即可。
 
@@ -19,7 +19,7 @@ QField允许你在它里面显示任何表单控件(或者几乎任何东西)。
 ## 设计
 
 ::: tip
-下面的示例使用哑巴内容(文本)只是为了向你展示QField可以使用的设计。要查看包裹真实组件的示例，请看 "基本功能 "部分。
+下面的例子使用哑巴内容(文本)只是为了向你展示QField可以使用的设计。要查看包裹真实组件的例子，请看 "基本功能 "部分。
 :::
 
 ::: danger
@@ -34,19 +34,19 @@ QField不会(也不应该)管理你的`控制'槽，所以如果你使用`label'
 
 ### 着色
 
-<doc-example title="着色" file="QField/Coloring" /> ### 着色
+<doc-example title="着色" file="QField/Coloring" />
 
 ### 标准
-<doc-example title="标准" file="QField/DesignStandard" /> ### 标准
+<doc-example title="标准" file="QField/DesignStandard" />
 
 ### 填充型
-<doc-example title="填充 "file="QField/DesignFilled" /> ### 填充型
+<doc-example title="填充 "file="QField/DesignFilled" />
 
 ### 勾画
-<doc-example title="轮廓线 "file="QField/DesignOutlined" /> ###轮廓线。
+<doc-example title="轮廓线 "file="QField/DesignOutlined" />
 
 ### 突出显示
-<doc-example title="突出 "file="QField/DesignStandout" /> ###突出
+<doc-example title="突出 "file="QField/DesignStandout" />
 
 Standout设计最合适的使用情况之一是在QToolbar中。
 
@@ -59,13 +59,13 @@ Standout设计最合适的使用情况之一是在QToolbar中。
 
 ### 圆形设计
 
-Rounded "属性只与Filled、Outlined和Standout设计一起使用，正如下面的示例所展示的。
+Rounded "属性只与Filled、Outlined和Standout设计一起使用，正如下面的例子所展示的。
 
 <doc-example title="圆形" file="QField/Rounded" />
 
 ### 正方形边框
 
-方形 "属性只对填充式、轮廓式和突出式设计有意义，正如下面的示例所展示的那样。
+方形 "属性只对填充式、轮廓式和突出式设计有意义，正如下面的例子所展示的那样。
 
 <doc-example title="方形边框" file="QField/SquareBorders" />
 
@@ -73,7 +73,7 @@ Rounded "属性只与Filled、Outlined和Standout设计一起使用，正如下�
 
 <doc-example title="暗色" file="QField/Dark" dark />
 
-### 基本特征
+## 基本特征
 
 ### 可清除
 作为一个辅助工具，你可以使用`clearable`属性，这样用户就可以通过附加的图标将模型重置为`null'。
@@ -86,9 +86,9 @@ Rounded "属性只与Filled、Outlined和Standout设计一起使用，正如下�
 
 ### 控制类型
 
-你放在`控制'槽内的任何东西都将被用作字段的内容。我们在下面提供一些控件的示例。
+你放在`控制'槽内的任何东西都将被用作字段的内容。我们在下面提供一些控件的例子。
 
-<doc-example title="控制类型" file="QField/ControlTypes" /> ###控制类型
+<doc-example title="控制类型" file="QField/ControlTypes" />
 
 ::: tip
 大多数表单控件总是呈现一些可见的东西，所以你如果使用`label'，那么你可能想把它和`stack-label'一起设置，否则标签会与封闭的控件重叠。
@@ -135,14 +135,14 @@ Rounded "属性只与Filled、Outlined和Standout设计一起使用，正如下�
 ```js
 value => condition || errorMessage
  ```
-For example:
+示例：
  ```js
 value => value < 10 || 'Value should be lower'
 ```
 
 你可以通过调用QField上的`resetValidation()`方法来重置验证。
 
-<doc-example title="基本" file="QField/ValidationRequired" />
+<doc-example title="基础" file="QField/ValidationRequired" />
 
 <doc-example title="最大值" file="QField/ValidationMaxValue" />
 
@@ -164,7 +164,7 @@ value => value < 10 || 'Value should be lower'
 你也可以使用外部验证，只传递`error`和`error-message`(启用`bottom-slots`来显示这个错误信息)。
 
 ::: tip
-根据你的需要，你可以将[Vuelidate](https://vuelidate.netlify.com/)(我们推荐的方法)或其他一些验证库连接到QField。
+根据你的需要，你可以将[Vuelidate](https://vuelidate.netlify.com/) (我们推荐的方法)或其他一些验证库连接到QField。
 :::
 
 <doc-example title="外部" file="QField/ValidationExternal" />

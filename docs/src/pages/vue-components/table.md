@@ -1,5 +1,5 @@
 ---
-title: 表
+title: 表格
 desc: QTable Vue组件允许你以表格的方式来显示数据，它包含了很多相关的功能。它一般被称为数据表。
 keys: QTable,QTh,QTr,QTd
 related:
@@ -31,14 +31,14 @@ QTable是一个允许你以表格的方式显示数据的组件。它通常被�
 <doc-api file="QTh" />
 
 ## QTr API
-<doc-api file="QTr" /> ## QTd API
+<doc-api file="QTr" />
 
 ## QTd API
 <doc-api file="QTd" />
 
 ## 定义列
 
-让我们举一个配置 "columns "属性的示例。我们要告诉QTable，"row-key "是 "name"，它***必须是唯一的。如果这是从数据库中获取的数据，我们可能会使用行的**id**。
+让我们举一个配置 `columns` 属性的例子。我们要告诉QTable，`row-key` 是 `name`，它**必须**是唯一的。如果这是从数据库中获取的数据，我们可能会使用行的**id**。
 
 ```js
 columns: [ // array of Objects
@@ -79,7 +79,7 @@ columns: [ // array of Objects
 
     // (可选)，你可以用一个函数来格式化数据
     format: (val, row) => `${val}%`,
-    // 再举一个格式的示例。
+    // 再举一个格式的例子。
     // 格式: val => val
     //   ? /* 勾选Unicode复选标记 */ "\u2611"
     //   : /*Unicode复选标记未被选中 */ "\u2610",
@@ -104,16 +104,16 @@ columns: [ // array of Objects
 ]
 ```
 
-### 基本的用法
+## 基本的用法
 
-<doc-example title="基本" file="QTable/Basic" />
+<doc-example title="基础" file="QTable/Basic" />
 
 <doc-example title="黑暗" file="QTable/Dark" />
 
 <doc-example title="密集型" file="QTable/Dense" />
 
 ::: tip
-你可以使用`dense`属性和`$q.screen`来创建一个响应行为。例如：`:dense="$q.screen.lt.md"`。更多信息。[屏幕插件](/options/screen-plugin)。
+你可以使用`dense`属性和`$q.screen`来创建一个响应行为。例如：`:dense="$q.screen.lt.md"`。更多信息：[屏幕插件](/options/screen-plugin)。
 :::
 
 ## 省略列的定义
@@ -136,31 +136,31 @@ columns: [ // array of Objects
 
 ## 分隔符
 
-<doc-example title="分隔符" file="QTable/Separators" /> ##分隔符
+<doc-example title="分隔符" file="QTable/Separators" />
 
 ## 样式设计
 
-<doc-example title="自定义列" file="QTable/CustomColumn" /> ##样式设计
+<doc-example title="自定义列" file="QTable/CustomColumn" />
 
-<doc-example title="自定义着色" file="QTable/CustomColor" /> ## 自定义颜色
+<doc-example title="自定义着色" file="QTable/CustomColor" />
 
 <doc-example title="没有页眉/页脚" file="QTable/NoHeaderFooter" />
 
 ## 虚拟滚动
 
-注意，当启用虚拟滚动时，你需要指定`table-style`(有最大高度)属性。在下面的示例中，我们还强制QTable一次显示所有的行(注意使用`pagination`和`rows-per-page-options`属性)。
+注意，当启用虚拟滚动时，你需要指定`table-style`(有最大高度)属性。在下面的例子中，我们还强制QTable一次显示所有的行(注意使用`pagination`和`rows-per-page-options`属性)。
 
 <doc-example title="基本虚拟滚动" file="QTable/VirtscrollBasic" />
 
 你可以在滚动到达终点时动态地加载新行。
 
-<doc-example title="动态加载虚拟卷轴" file="QTable/VirtscrollDynamic" />
+<doc-example title="动态加载虚拟滚动" file="QTable/VirtscrollDynamic" />
 
 你可以同时拥有虚拟滚动和分页。
 
 <doc-example title="虚拟滚动和分页" file="QTable/VirtscrollPagination" />
 
-下面的示例显示了如何将虚拟滚动与粘性标题一起使用。注意`virtual-scroll-sticky-start`属性，它被设置为标题的高度。
+下面的例子显示了如何将虚拟滚动与粘性标题一起使用。注意`virtual-scroll-sticky-start`属性，它被设置为标题的高度。
 
 <doc-example title="虚拟滚动与粘性标题" file="QTable/VirtscrollSticky" />
 
@@ -174,7 +174,7 @@ columns: [ // array of Objects
 ## 选择
 
 ::: warning
-为了使选择正常工作，必须设置属性`行键'。
+为了使选择正常工作，必须设置属性`行键`。
 :::
 
 <doc-example title="单一选择" file="QTable/SingleSelection" />
@@ -196,7 +196,7 @@ columns: [ // array of Objects
 ## 弹出式编辑
 
 ::: tip
-下面是一个示例，用户可以在**QPopupEdit**组件的帮助下 "就地 "编辑。请注意，我们使用的是 "body "范围的槽。**QPopupEdit**不会在单元格范围内工作。
+下面是一个例子，用户可以在**QPopupEdit**组件的帮助下 "就地 "编辑。请注意，我们使用的是 "body "范围的槽。**QPopupEdit**不会在单元格范围内工作。
 :::
 
 <doc-example title="弹出式编辑" file="QTable/PopupEditing" />
@@ -204,10 +204,10 @@ columns: [ // array of Objects
 ## 网格风格
 
 ::: tip
-你可以使用`grid`属性和`$q.screen`来创建一个响应式的行为。例如：`:grid="$q.screen.lt.md"`。更多信息。[屏幕插件](/options/screen-plugin)。
+你可以使用`grid`属性和`$q.screen`来创建一个响应式的行为。例如：`:grid="$q.screen.lt.md"`。更多信息：[屏幕插件](/options/screen-plugin)。
 :::
 
-在下面的示例中，我们让QTable来处理显示网格模式(不使用具体的槽)。
+在下面的例子中，我们让QTable来处理显示网格模式(不使用具体的槽)。
 
 <doc-example title="网格风格" file="QTable/GridStyle" />
 
@@ -217,7 +217,7 @@ columns: [ // array of Objects
 
 <doc-example title="类似砖石的网格" file="QTable/GridMasonry" />
 
-然而，如果你想完全自定义内容，请查看下面的示例，其中。
+然而，如果你想完全自定义内容，请查看下面的例子，其中。
 
 * 我们使用Vue的一个叫`item`的范围槽来定义每条记录(相当于非网格模式下的一行)的外观。这允许你完全自由。
 * 我们正在使用多重选择。
@@ -237,14 +237,14 @@ columns: [ // array of Objects
 <doc-example title="外部扩展模型" file="QTable/ExpandedRowExternal" />
 
 如果你使用QTable的虚拟滚动，你应该知道有2个实用的CSS类来控制VirtualScroll的大小计算。
-* 在虚拟卷轴渲染的元素上使用`q-virtual-scroll--with-prev`类，表示该元素应与前一个元素分组(主要用例是由同一行数据生成的多个表格行)。
+* 在虚拟滚动渲染的元素上使用`q-virtual-scroll--with-prev`类，表示该元素应与前一个元素分组(主要用例是由同一行数据生成的多个表格行)。
 * 在VirtualScroll渲染的元素上使用`q-virtual-scroll--skip`类，表示在计算尺寸时应忽略该元素的尺寸。
 
-<doc-example title="具有扩展模型的虚拟卷轴" file="QTable/VirtscrollExpandedRow" />
+<doc-example title="具有扩展模型的虚拟滚动" file="QTable/VirtscrollExpandedRow" />
 
 ## 前/后槽
 
-<doc-example title="前/后槽(页眉/页脚)" file="QTable/BeforeAfterHeaderFooter" /> ## 分页方式
+<doc-example title="前/后槽(页眉/页脚)" file="QTable/BeforeAfterHeaderFooter" />
 
 ## 分页
 
@@ -252,13 +252,13 @@ columns: [ // array of Objects
 当 "分页 "有一个名为 "rowsNumber "的属性时，这意味着你将为**服务器**方的分页(以及排序和过滤)配置Table。参见*"服务器端分页、过滤和排序 "*部分。
 :::
 
-下面是两个处理分页的示例(以及每页的排序和行数)。
+下面是两个处理分页的例子(以及每页的排序和行数)。
 
-第一个示例强调了如何配置初始分页。
+第一个例子强调了如何配置初始分页。
 
 <doc-example title="初始分页" file="QTable/PaginationInitial" />
 
-第二个示例使用了 "v-model:pagination "指令，因为我们想在任何时候访问其当前值。下面这个技术的一个用例可以是在QTable之外控制分页。
+第二个例子使用了 "v-model:pagination "指令，因为我们想在任何时候访问其当前值。下面这个技术的一个用例可以是在QTable之外控制分页。
 
 <doc-example title="同步分页" file="QTable/PaginationSync" />
 
@@ -270,17 +270,17 @@ columns: [ // array of Objects
 
 ## 加载状态
 
-<doc-example title="默认加载" file="QTable/Loading" /> ##加载状态
+<doc-example title="默认加载" file="QTable/Loading" />
 
-<doc-example title="自定义加载状态" file="QTable/CustomLoading" /> ## 自定义顶部加载状态
+<doc-example title="自定义加载状态" file="QTable/CustomLoading" />
 
 ## 自定义顶部
 
-<doc-example title="自定义顶部与添加/删除行" file="QTable/CustomTop" /> ##自定义顶部
+<doc-example title="自定义顶部与添加/删除行" file="QTable/CustomTop" />
 
 ## 主体槽
 
-下面的示例显示了你如何使用槽来定制整个行。
+下面的例子显示了你如何使用槽来定制整个行。
 
 <doc-example title="主体槽" file="QTable/SlotBody" />
 
@@ -294,7 +294,7 @@ columns: [ // array of Objects
 
 ## 标题槽
 
-下面的示例显示了你如何使用槽来定制整个标题行。
+下面的例子显示了你如何使用槽来定制整个标题行。
 
 <doc-example title="页眉槽" file="QTable/SlotHeader" />
 
@@ -308,7 +308,7 @@ columns: [ // array of Objects
 
 ## 没有数据
 
-<doc-example title="无数据标签" file="QTable/NoData" /> ##无数据
+<doc-example title="无数据标签" file="QTable/NoData" />
 
 还有一个 "无数据 "的范围槽(见下文)，你也可以自定义过滤器没有返回任何结果或表没有数据可显示时的信息。也可以在 "搜索 "输入中键入一些内容。
 
@@ -322,13 +322,13 @@ columns: [ // array of Objects
 
 ## 自定义排序
 
-<doc-example title="自定义排序" file="QTable/CustomSorting" /> ##自定义排序
+<doc-example title="自定义排序" file="QTable/CustomSorting" />
 
 ## 响应式表格
 
-为了创建响应式表格，我们有两个工具可以使用。`密集'和`网格'属性。我们可以用`$q.screen`来连接这些。更多信息。[屏幕插件](/options/screen-plugin)。
+为了创建响应式表格，我们有两个工具可以使用。`密集`和`网格`属性。我们可以用`$q.screen`来连接这些。更多信息：[屏幕插件](/options/screen-plugin)。
 
-下面的第一个示例使用`$q.screen.lt.md`(用于启用密集模式)，第二个示例使用`$q.screen.xs`来启用网格模式，所以要玩玩浏览器的宽度来看看它们的作用。
+下面的第一个例子使用`$q.screen.lt.md`(用于启用密集模式)，第二个例子使用`$q.screen.xs`来启用网格模式，所以要玩玩浏览器的宽度来看看它们的作用。
 
 <doc-example title="使用密集属性" file="QTable/ResponsiveDense" />
 
@@ -342,17 +342,17 @@ columns: [ // array of Objects
 
 2. 第二步是监听QTable上的`@request`事件。当需要从**服务器上获取数据时，这个事件就会被触发，因为页码、排序或过滤发生了变化。
 
-3. 你最好同时指定`loading`属性，以便通知用户一个后台进程正在进行。
+3. 3.你最好同时指定`loading`属性，以便通知用户一个后台进程正在进行。
 
 ::: tip
-在下面的示例中，已经采取了一些步骤来模拟对服务器的ajax调用。虽然概念是相似的，但如果你使用这段代码，你将需要做适当的修改以连接到你自己的数据源。
+在下面的例子中，已经采取了一些步骤来模拟对服务器的ajax调用。虽然概念是相似的，但如果你使用这段代码，你将需要做适当的修改以连接到你自己的数据源。
 :::
 
 <doc-example title="与服务器同步" file="QTable/Synchronizing" />
 
 ## 导出数据
 
-下面是一个天真的csv编码的示例，然后通过使用[exportFile](/quasar-utils/other-utils#export-file) Quasar 工具导出表格数据。浏览器应该会触发一个文件下载。对于更专业的编码方法，我们确实推荐使用[csv-parse](https://csv.js.org/parse/)和[csv-stringify](https://csv.js.org/stringify/)软件包。
+下面是一个天真的csv编码的例子，然后通过使用[exportFile](/quasar-utils/other-utils#export-file)Quasar工具导出表格数据。浏览器应该会触发一个文件下载。对于更专业的编码方法，我们确实推荐使用[csv-parse](https://csv.js.org/parse/)和[csv-stringify](https://csv.js.org/stringify/)软件包。
 
 ::: tip
 如果你想导出用户过滤+排序的数据，你也可以利用QTable的`filteredSortedRows`内部计算属性。
@@ -362,6 +362,6 @@ columns: [ // array of Objects
 
 ## 键盘导航
 
-下面是一个使用选定行在表中进行键盘导航的示例。使用`ArrowUp`、`ArrowDown`、`PageUp`、`PageDown`、`Home`和`End`键来导航。
+下面是一个使用选定行在表中进行键盘导航的例子。使用`ArrowUp`、`ArrowDown`、`PageUp`、`PageDown`、`Home`和`End`键来导航。
 
 <doc-example title="键盘导航" file="QTable/KeyboardNavigation" />

@@ -31,7 +31,7 @@ if (api.ctx.dev ==true && api.ctx.mode =='electron') {
 该应用扩展中(App Extension)包含的`ext-id'(String)。
 
 ## api.prompts
-是一个对象，该对象具有安装此应用扩展时的提示答案。 有关提示的更多信息，请查看 [Prompts API](/app-extensions/development-guide/prompts-api)。
+是一个对象，该对象具有安装此应用扩展时的提示答案。 有关提示的更多信息，请查看 [Prompts API](/app-extensions/development-guide/prompts-api) 。
 
 ## api.resolve
 解析运行此应用扩展所在的应用程序中的路径。无需自行导入`path`和解析路径。

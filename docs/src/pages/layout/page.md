@@ -6,7 +6,7 @@ related:
   - /layout/layout
 ---
 
-我们将谈论在 QLayout 中的封装页面。 如果您还没有，请先阅读[QLayout](/loayout/layout)文档页面。
+我们将谈论在 QLayout 中的封装页面。 如果您还没有，请先阅读[QLayout](/loayout/layout) 文档页面。
 
 ## QPageContainer API
 <doc-api file=`QPageContainer`/>
@@ -35,7 +35,7 @@ QPage 必须由 QPageContainer 封装，而 QPageContainer 又必须是 QLayout 
 </q-layout>
 ```
 
-通常，QPageContainer 是布局模板的一部分(其中仅包含`<router view/>`子元素)，其内容放入`/src/pages` 下的单独 vue 文件中。如果还没有，请阅读[Routing with Layouts and Pages](/layout/routing-with-layouts-and-pages)。
+通常，QPageContainer 是布局模板的一部分(其中仅包含`<router view/>`子元素)，其内容放入`/src/pages` 下的单独 vue 文件中。如果还没有，请阅读[Routing with Layouts and Pages](/layout/routing-with-layouts-and-pages) 。
 
 ```html
 <!-- 用于布局的 vue 文件: -->

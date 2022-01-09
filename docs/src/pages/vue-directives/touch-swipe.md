@@ -1,6 +1,6 @@
 ---
-title: 触摸刷卡指令
-desc: Vue指令，当用户用手指或鼠标在一个组件或元素上滑动时，会触发一个事件。
+title: 触摸轻扫指令
+desc: Vue指令，当用户用手指或鼠标在一个组件或元素上轻扫时，会触发一个事件。
 keys: touch-swipe
 related:
   - /vue-directives/touch-pan
@@ -30,30 +30,30 @@ related:
 <doc-example title="多个方向" file="TouchSwipe/UpOrLeft" />
 
 ### 处理鼠标事件
-当你也想处理鼠标事件时，使用`mouse`修改器。
+当你也想处理鼠标事件时，使用`mouse`修饰符：
 
 ```html
 <div v-touch-swipe.mouse="userHasSwiped">...</div>
 ```
 
-### 抑制TouchSwipe
+### 抑制 TouchSwipe
 当你想抑制TouchSwipe时，你可以通过停止传播内部内容的`touchstart`/`mousedown`事件来实现。
 
 ```html
 <div v-touch-swipe.mouse="userSwiped">
-  <!-- ...content -->
+  <!-- ...内容 -->
   <div @touchstart.stop @mousedown.stop>
     <!--
-      TouchSwipe will not apply here because
-      we are calling stopPropagation() on touchstart
-      and mousedown events
+      TouchSwipe 不适用于此处，因为
+      我们在 touchstart 上调用 stopPropagation()
+      和 mousedown 事件
     -->
   </div>
   <!-- ...content -->
 </div>
 ```
 
-然而，如果你使用`capture`或`mouseCapture`修改器，那么事件将首先到达TouchHold指令，然后是内部内容，所以TouchSwipe仍然会触发。
+然而，如果你使用`capture`或`mouseCapture`修饰符，那么事件将首先到达TouchHold指令，然后是内部内容，所以TouchSwipe仍然会触发。
 
 ## 关于HMR的说明
-由于性能原因，不是所有的修改器都是反应式的。有些需要窗口/页面/组件的刷新来获得更新。请查看API卡，看看那些没有被标记为反应式的修改器。
+由于性能原因，不是所有的修饰符都是反应式的。有些需要窗口/页面/组件的刷新来获得更新。请查看API卡，看看那些没有被标记为反应式的修饰符。

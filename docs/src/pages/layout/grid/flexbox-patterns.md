@@ -9,7 +9,7 @@ related:
   - /layout/grid/flex-playground
 ---
 
-以下是使用[Flexbox](https://css-tricks.com/snippets/css/a-guide-to-flexbox/)的一些常见模式。 有些信息可以在[Tobias Ahlin 的博客](https://tobiasahlin.com/blog/)中找到。
+以下是使用[Flexbox](https://css-tricks.com/snippets/css/a-guide-to-flexbox/)的一些常见模式。 有些信息可以在[Tobias Ahlin 的博客](https://tobiasahlin.com/blog/) 中找到。
 
 ## Flex行/列中断
 您可以定义一个CSS类，该类将强制应用它的元素在 flex 布局中创建行/列分隔符

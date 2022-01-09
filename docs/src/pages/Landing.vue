@@ -8,8 +8,8 @@ q-page.landing
       .landing__hero-text.col-12.column.items-center
         //- .text-h4.landing__hero-text-main.text-bold.text-brand-primary.q-pb-xs QUASAR FRAMEWORK
         .q-pb-lg.text-grey-6.landing__hero-quote.text-center
-          | Effortlessly build high-performance & high-quality
-          | <span class="text-bold text-no-wrap">Vue.js 3</span> user interfaces in record time
+          | 轻松打造高性能、高质量的产品
+          | <span class="text-bold text-no-wrap">Vue.js 3</span> 在创纪录的时间内完成用户界面
         .landing__hero-row.q-gutter-sm.row.items-center
           q-btn(color="brand-primary" unelevated no-caps to="/introduction-to-quasar" label="Why Quasar?")
           q-btn(color="brand-primary" outline no-caps to="/start" label="Get Started")
@@ -22,13 +22,13 @@ q-page.landing
 
   section.bg-white.text-grey-10.text-center
     div
-      .text-h4.q-mb-xl Our Premium Sponsors
+      .text-h4.q-mb-xl 我们的优质赞助商
       sponsor-list
 
   section.bg-white.text-grey-10.text-center.row.justify-center
     .landing__features.row
       .col-12.text-center
-        h4 All Platforms in One Go
+        h4 所有平台一气呵成
       .col-12.text-center.q-my-xl
         .landing__features-icons.q-gutter-lg
           q-icon(:name="fabApple")
@@ -40,24 +40,24 @@ q-page.landing
           q-icon(:name="fabEdge")
           q-icon(:name="fabSafari")
       .col-12.text-center.q-my-xl
-        p Combine the power of Quasar UI with Quasar CLI. One source code for all platforms simultaneously with all the latest and greatest best practices out of the box. Focus only on your app's features and forget about the boilerplate around it.
+        p 将Quasar UI与Quasar CLI的功能结合起来。一个源代码同时适用于所有平台，并具有开箱即用的所有最新和最大的最佳实践。只专注于你的应用程序的功能，而忘记周围的繁文缛节。
       .col-12.row.justify-center
         .q-gutter-md
-          q-btn(color="red", no-caps, no-wrap, :icon-right="mdiLaunch", label="User Interface Components", to="/vue-components")
-          q-btn(color="primary", no-caps, no-wrap, :icon-right="mdiLaunch", label="SPA (Single Page App)", to="/quasar-cli/developing-spa/introduction")
-          q-btn(color="teal", no-caps, no-wrap, :icon-right="mdiLaunch", label="PWA (Progressive Web App)", to="/quasar-cli/developing-pwa/introduction")
-          q-btn(color="pink", no-caps, no-wrap, :icon-right="mdiLaunch", label="BEX (Browser Extension)", to="/quasar-cli/developing-browser-extensions/introduction")
-          q-btn(color="accent", no-caps, no-wrap, :icon-right="mdiLaunch", label="SSR (Server-side Rendered App)", to="/quasar-cli/developing-ssr/introduction")
-          q-btn(color="orange", no-caps, no-wrap, :icon-right="mdiLaunch", label="Hybrid Mobile App", to="/quasar-cli/developing-mobile-apps")
-          q-btn(color="indigo", no-caps, no-wrap, :icon-right="mdiLaunch", label="Multi-platform Desktop App", to="/quasar-cli/developing-electron-apps/introduction")
+          q-btn(color="red", no-caps, no-wrap, :icon-right="mdiLaunch", label="用户界面组件", to="/vue-components")
+          q-btn(color="primary", no-caps, no-wrap, :icon-right="mdiLaunch", label="SPA (单页应用)", to="/quasar-cli/developing-spa/introduction")
+          q-btn(color="teal", no-caps, no-wrap, :icon-right="mdiLaunch", label="PWA (渐进式Web应用程序)", to="/quasar-cli/developing-pwa/introduction")
+          q-btn(color="pink", no-caps, no-wrap, :icon-right="mdiLaunch", label="BEX (浏览器扩展)", to="/quasar-cli/developing-browser-extensions/introduction")
+          q-btn(color="accent", no-caps, no-wrap, :icon-right="mdiLaunch", label="SSR (服务端渲染应用)", to="/quasar-cli/developing-ssr/introduction")
+          q-btn(color="orange", no-caps, no-wrap, :icon-right="mdiLaunch", label="混合移动应用", to="/quasar-cli/developing-mobile-apps")
+          q-btn(color="indigo", no-caps, no-wrap, :icon-right="mdiLaunch", label="多平台桌面应用", to="/quasar-cli/developing-electron-apps/introduction")
 
   section.bg-white.text-grey-10.text-center
     .landing__features.row.items-start.q-col-gutter-lg
       .col-12.text-center
-        h4 Impressive User Interface Building Blocks
+        h4 令人印象深刻的用户界面构建块
       .col-12.row
         .col-12.col-md-8.landing__features-section.row.text-left
-          .col-12.text-left.text-subtitle1.text-bold.q-mt-lg.q-mb-md.q-mx-xs Components
+          .col-12.text-left.text-subtitle1.text-bold.q-mt-lg.q-mb-md.q-mx-xs 组件
           router-link.landing__features-link.col-6.col-sm-4(
             v-for="dir in features.comps"
             :key="dir.name"
@@ -65,7 +65,7 @@ q-page.landing
           ) {{ dir.name }}
 
         .col-6.col-sm-4.col-md-2.landing__features-section.column.text-left
-          .text-left.text-subtitle1.text-bold.q-mt-lg.q-mb-md.q-mx-xs Directives
+          .text-left.text-subtitle1.text-bold.q-mt-lg.q-mb-md.q-mx-xs 指令
           router-link.landing__features-link(
             v-for="dir in features.dirs"
             :key="dir.name"
@@ -73,7 +73,7 @@ q-page.landing
           ) {{ dir.name }}
 
         .col-6.col-sm-4.col-md-2.landing__features-section.column.text-left
-          .text-left.text-subtitle1.text-bold.q-mt-lg.q-mb-md.q-mx-xs Plugins
+          .text-left.text-subtitle1.text-bold.q-mt-lg.q-mb-md.q-mx-xs 插件
           router-link.landing__features-link(
             v-for="dir in features.plugins"
             :key="dir.name"
@@ -86,7 +86,7 @@ q-page.landing
         q-img.col-12.col-sm-4.landing__icongenie-logo(src="https://cdn.quasar.dev/img/iconfactory.png")
         .col-12.col-sm-8.column.items-center
           h4 Quasar Icon Genie
-          .q-mt-lg.q-mb-xl Consumes a source icon and automatically clones, scales, minifies and places the (needed) 100+ generated icons and splash screens in the appropriate directories for you.
+          .q-mt-lg.q-mb-xl 消耗一个源图标，并自动克隆、缩放、最小化，并为你把（需要的）100多个生成的图标和启动画面放在适当的目录里。
           q-btn(color="brand-primary", unelevated, no-caps, no-wrap, :icon-right="mdiLaunch", label="IconGenie", to="/icongenie/introduction")
 
   section.landing__footer.flex.flex-center
@@ -114,9 +114,9 @@ q-page.landing
           q-icon(:name="fasMedkit")
 
       div.q-mt-lg
-        | <doc-link to="https://github.com/quasarframework/quasar/blob/dev/LICENSE">MIT LICENSE</doc-link> | <doc-link to="https://www.iubenda.com/privacy-policy/40685560">Privacy Policy</doc-link> | <doc-link to="https://github.com/quasarframework/quasar-art">Quasar Artwork</doc-link>
+        | <doc-link to="https://github.com/quasarframework/quasar/blob/dev/LICENSE">MIT 许可</doc-link> | <doc-link to="https://www.iubenda.com/privacy-policy/40685560">隐私政策</doc-link> | <doc-link to="https://github.com/quasarframework/quasar-art">Quasar 艺术作品</doc-link>
 
-      div Copyright © 2015 - {{ year }} PULSARDEV SRL, Razvan Stoenescu
+      div 版权 © 2015 - {{ year }} PULSARDEV SRL, Razvan Stoenescu
 </template>
 
 <script>
@@ -153,7 +153,7 @@ export default {
 
   setup () {
     useMeta({
-      title: 'Quasar Framework',
+      title: 'Quasar 框架',
       titleTemplate: ''
     })
 

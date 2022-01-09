@@ -1,5 +1,5 @@
 ---
-title: 对话
+title: 对话框
 desc: QDialog组件为模版提供了一个用户界面，具有定位、造型、最大化等功能。
 keys: QDialog
 related:
@@ -31,16 +31,16 @@ QDialog组件是为用户提供选择特定行动或行动列表的能力的好�
 It's best that your QDialog main content is a QCard. However, if you are planning on using any other component (like QForm) or tag, make sure that the direct child of QDialog is rendered with a `<div>` tag (or wrap it with one yourself).
 :::
 
-### 基本
+### 基础
 
-<doc-example title="基本" file="QDialog/Basic" />
+<doc-example title="基础" file="QDialog/Basic" />
 
 ### 风格
 
-<doc-example title="样式" file="QDialog/Style" /> ###定位
+<doc-example title="样式" file="QDialog/Style" />
 
 ### 定位
-<doc-example title="位置" file="QDialog/Positioning" /> ###定位
+<doc-example title="位置" file="QDialog/Positioning" />
 
 ::: tip
 不要把 "位置 "属性和显示/隐藏动画搞错。如果你想要一个自定义的动画，你应该使用`transition-show`和`transition-hide`，无论 "位置 "或 "最大化 "都可以应用。
@@ -49,9 +49,9 @@ It's best that your QDialog main content is a QCard. However, if you are plannin
 <doc-example title="最大化" file="QDialog/Maximized" />
 
 ### 各种内容
-对话框可以包含任何内容。一些示例。
+对话框可以包含任何内容。一些例子。
 
-<doc-example title="各种内容" file="QDialog/VariousContent" /> ###各种内容对话框可以包含任何内容。
+<doc-example title="各种内容" file="QDialog/VariousContent" />
 
 <doc-example title="使用容器化的QLayout" file="QDialog/Layout" />
 
@@ -79,16 +79,16 @@ It's best that your QDialog main content is a QCard. However, if you are plannin
 ### 尺寸
 你可以自定义对话框的大小。注意，我们要么篡改内容的样式，要么使用`full-width`或`full-height`属性。
 
-<doc-example title="尺寸示例" file="QDialog/Sizing" />
+<doc-example title="尺寸例子" file="QDialog/Sizing" />
 
 ## Cordova/Capacitor的返回按钮
- Quasar 默认为你处理后退按钮，所以它可以隐藏任何打开的对话框，而不是默认行为，即返回到上一页(这不是一个好的用户体验)。
+Quasar默认为你处理后退按钮，所以它可以隐藏任何打开的对话框，而不是默认行为，即返回到上一页(这不是一个好的用户体验)。
 
 然而，如果你想禁用这一行为，请编辑你的/quasar.conf.js文件。
 
 ```js
 // quasar.conf.js;
-// 为 Cordova (只！)。
+// 仅适用于 Cordova。
 return {
   framework: {
     config: {
@@ -97,7 +97,7 @@ return {
         backButtonExit: true/false/'*'/['/login', '/home', '/my-page'],
 
         // 另一方面，以下是完全
-        // 禁用 Quasar 的返回按钮管理。
+        // 禁用Quasar的返回按钮管理。
         backButton: true/false
       }
     }
@@ -114,7 +114,7 @@ return {
         backButtonExit: true/false/'*'/['/login', '/home', '/my-page'],
 
         // 另一方面，以下是完全
-        // 禁用 Quasar 的返回按钮管理。
+        // 禁用Quasar的返回按钮管理。
         backButton: true/false
       }
     }

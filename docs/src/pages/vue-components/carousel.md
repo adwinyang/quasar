@@ -16,7 +16,7 @@ QCarousel组件允许你用更少的空间显示更多的信息，使用幻灯�
 
 ## QCarouselSlide API
 
-<doc-api file="QCarouselSlide" /> ## QCarouselSlide API
+<doc-api file="QCarouselSlide" />
 
 ## 使用方法
 
@@ -29,15 +29,15 @@ QCarousel组件允许你用更少的空间显示更多的信息，使用幻灯�
 * 如果你需要`keep-alive-include`或`keep-alive-exclude`属性，那么QCarouselSlide的`name`s必须是有效的Vue组件名称(不允许有空格，不要以数字开头等等)。
 :::
 
-###基本
+### 基础
 
 下面是一个几乎精简的基本旋转木马(它只是动画，只指定了自定义过渡)，没有嵌入导航。出于这个原因，我们通过模型来控制当前的滑动。
 
-<doc-example title="基本" file="QCarousel/Basic" />
+<doc-example title="基础" file="QCarousel/Basic" />
 
-### 转场
+### 过渡
 
-在下面的示例中。
+在下面的例子中：
 
 * 这里只是演示了几个过渡。对于完整的转换列表，请前往[Transitions](/options/transitions)页面。
 * 你也可以用手指轻扫(或用鼠标轻扫--点击并快速向左/右拖动，然后松开)。
@@ -46,7 +46,7 @@ QCarousel组件允许你用更少的空间显示更多的信息，使用幻灯�
 
 ### 垂直方向
 
-<doc-example title="垂直模式" file="QCarousel/Vertical" /> ### 垂直模式
+<doc-example title="垂直模式" file="QCarousel/Vertical" />
 
 ### 控制类型
 
@@ -56,7 +56,7 @@ QCarousel组件允许你用更少的空间显示更多的信息，使用幻灯�
 
 ### 导航位置
 
-<doc-example title="导航位置" file="QCarousel/NavigationPosition" /> ### 导航位置
+<doc-example title="导航位置" file="QCarousel/NavigationPosition" />
 
 ### 自定义导航
 
@@ -66,21 +66,21 @@ QCarousel组件允许你用更少的空间显示更多的信息，使用幻灯�
 
 ### 自动填充
 
-下面是一个示例，你可以用不同的QCarousel设置来玩，这样你就可以看到填充(或不填充)的作用。
+下面是一个例子，你可以用不同的QCarousel设置来玩，这样你就可以看到填充(或不填充)的作用。
 
 <doc-example title="填充" file="QCarousel/AutoPadding" />
 
 ### 媒体内容
 
-<doc-example title="图像幻灯片" file="QCarousel/ImageSlides" /> ###媒体内容。
+<doc-example title="图像幻灯片" file="QCarousel/ImageSlides" />
 
-<doc-example title="多图像幻灯片" file="QCarousel/MultiImageSlides" /> ###媒体内容
+<doc-example title="多图像幻灯片" file="QCarousel/MultiImageSlides" />
 
 <doc-example title="标题" file="QCarousel/Captions" />
 
 <doc-example title="视频幻灯片" file="QCarousel/VideoSlides" />
 
-在下面的示例中，有缩略图被自动生成。缩略图只适用于图像幻灯片。
+在下面的例子中，有缩略图被自动生成。缩略图只适用于图像幻灯片。
 
 <doc-example title="缩略图" file="QCarousel/Thumbnails" />
 
@@ -96,11 +96,11 @@ QCarousel组件允许你用更少的空间显示更多的信息，使用幻灯�
 
 ### 控制
 
-<doc-example title="控件" file="QCarousel/Controls" /> ###控件
+<doc-example title="控件" file="QCarousel/Controls" />
 
 ### 使用QScrollArea
 
-请注意[QScrollArea](/vue-components/scroll-area)是如何在下面的两个示例中使用。还请注意第二个示例中的`q-carousel--padding`CSS辅助类。
+请注意[QScrollArea](/vue-components/scroll-area)是如何在下面的两个例子中使用。还请注意第二个例子中的`q-carousel--padding`CSS辅助类。
 
 <doc-example title="使用QScrollArea和padding" file="QCarousel/WithScrollareaPadding" />
 
@@ -108,4 +108,4 @@ QCarousel组件允许你用更少的空间显示更多的信息，使用幻灯�
 
 ### 全屏
 
-<doc-example title="全屏" file="QCarousel/Fullscreen" /> ###全屏。
+<doc-example title="全屏" file="QCarousel/Fullscreen" />

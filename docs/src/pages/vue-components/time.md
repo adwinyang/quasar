@@ -1,5 +1,5 @@
 ---
-title: 计时
+title: 时间选择器
 desc: QTime组件提供了一个输入时间的方法。
 keys: QTime
 related:
@@ -22,19 +22,19 @@ QTime组件提供了一个输入时间的方法。
 
 注意，该模型只是一个字符串。
 
-### 基本
+### 基础
 
-<doc-example title="基本" file="QTime/Basic" 溢出 />
+<doc-example title="基础" file="QTime/Basic" overflow />
 
-<doc-example title="景观" file="QTime/Landscape" 溢出 />
+<doc-example title="景观" file="QTime/Landscape" overflow />
 
 ::: tip
-对于横向模式，你可以和`$q.screen`一起使用，使QTime具有响应性。例如：`:landscape="$q.screen.gt.xs"`。更多信息。[Quasar Screen Plugin](/options/screen-plugin)。
+对于横向模式，你可以和`$q.screen`一起使用，使QTime具有响应性。例如：`:landscape="$q.screen.gt.xs"`。更多信息：[Quasar Screen Plugin](/options/screen-plugin)。
 :::
 
 ### 功能
 
-24小时格式的应用取决于你所设置的[Quasar语言包](/options/quasar-language-packs)，但你也可以强制它，就像下面的示例。
+24小时格式的应用取决于你所设置的[Quasar语言包](/options/quasar-language-packs)，但你也可以强制它，就像下面的例子。
 
 <doc-example title="24h格式" file="QTime/Format24h" overflow />
 
@@ -51,7 +51,7 @@ QTime组件提供了一个输入时间的方法。
 `mask`属性标记可以在[Quasar Utils > Date utils](/quasar-utils/dateutils#format-for-display)找到。
 
 ::: warning Note on SSR
-在掩码中使用`x`或`X`(时间戳)可能会导致客户端的激活错误，因为模型字符串的解码必须用`new Date()`来完成，它需要考虑到当地的时区。因此，如果服务器与客户端处于不同的时区，那么服务器的渲染输出将与客户端的输出不同，所以水化将失败。
+在掩码中使用`x`或`X`(时间戳)可能会导致客户端的水合错误，因为模型字符串的解码必须用`new Date()`来完成，它需要考虑到当地的时区。因此，如果服务器与客户端处于不同的时区，那么服务器的渲染输出将与客户端的输出不同，所以水化将失败。
 :::
 
 ::: danger Note on persian calendar
@@ -70,26 +70,26 @@ QTime组件提供了一个输入时间的方法。
 
 ### 自定义特定的区域设置
 
-如果由于某种原因，你需要使用一个自定义的特定语言，而不是当前已经设置的 Quasar 语言包，你可以使用`locale`属性。
+如果由于某种原因，你需要使用一个自定义的特定语言，而不是当前已经设置的Quasar语言包，你可以使用`locale`属性。
 
 <doc-example title="自定义特定地区语言" file="QTime/CustomLocale" overflow />
 
 ### 着色
 
-<doc-example title="着色" file="QTime/Color" overflow /> ### 着色。
+<doc-example title="着色" file="QTime/Color" overflow />
 
 <doc-example title="黑暗" file="QTime/Dark" 溢出 dark />
 
 ### 限制性选项
 
 * 你可以使用`hour-options`、`minute-options`和`second-options`属性来限制用户选择某些时间。
-* 另外，为了更深入地限制选项，你也可以为`options-fn`属性提供一个函数(下面第二个示例)。
+* 另外，为了更深入地限制选项，你也可以为`options-fn`属性提供一个函数(下面第二个例子)。
 
 <doc-example title="选项" file="QTime/Options" overflow />
 
 ### 使用QInput
 
-<doc-example title="输入" file="QTime/Input" overflow /> ###使用QInput。
+<doc-example title="输入" file="QTime/Input" overflow />
 
 在一个QInput上用相同的模型连接一个QDate和QTime。
 
@@ -100,18 +100,18 @@ QTime组件提供了一个输入时间的方法。
 * 属性`mask`帮助器。[完整列表](https://github.com/quasarframework/quasar/blob/dev/ui/src/components/input/use-mask.js#L6)。
 * Property `rules` helpers: [完整列表](https://github.com/quasarframework/quasar/blob/dev/ui/src/utils/patterns.js)。
 
-示例。"date", "time", "fulltime".
+示例："date", "time", "fulltime".
 
-更多信息。[QInput](/vue-components/input)。
+更多信息：[QInput](/vue-components/input)。
 
 ### 带附加按钮
 
 你可以使用默认槽来添加按钮。
 
-<doc-example title="有额外的按钮" file="QTime/AdditionalButtons" overflow />
+<doc-example title="有附加按钮" file="QTime/AdditionalButtons" overflow />
 
 ### 本地表单提交
 
-当处理一个有`action`和`method`的本地表单时(例如在ASP.NET控制器中使用 Quasar )，你需要在QTime上指定`name`属性，否则formData将不包含它(如果它应该包含)。
+当处理一个有`action`和`method`的本地表单时(例如在ASP.NET控制器中使用Quasar)，你需要在QTime上指定`name`属性，否则formData将不包含它(如果它应该包含)。
 
 <doc-example title="本地表单" file="QTime/NativeForm" />

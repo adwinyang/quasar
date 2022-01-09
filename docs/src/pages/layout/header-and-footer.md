@@ -11,7 +11,7 @@ related:
   - /vue-components/bar
 ---
 
-QLayout允许你将你的视图配置为3x3矩阵，包含一个可选的Header和/或Footer(主要用于导航条，但也可以是任何内容)。如果你还没有，请先阅读[QLayout](/layout/layout)文档页。
+QLayout允许你将你的视图配置为3x3矩阵，包含一个可选的Header和/或Footer(主要用于导航条，但也可以是任何内容)。如果你还没有，请先阅读[QLayout](/layout/layout) 文档页。
 
 
 ## QHeader API.

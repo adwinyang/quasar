@@ -1,5 +1,5 @@
 ---
-title: QMenu
+title: 菜单
 desc: QMenu Vue组件是一种显示菜单的便捷方式。
 keys: QMenu
 related:
@@ -25,9 +25,9 @@ QMenu的想法是将它放在你的DOM元素/组件内，你希望它作为直�
 另外，你可以使用QMenu的属性`auto-close`或者通过它的v-model自己处理关闭菜单。
 :::
 
-### 基本
+### 基础
 
-<doc-example title="基本" file="QMenu/Basic" />
+<doc-example title="基础" file="QMenu/Basic" />
 
 <doc-example title="内容的想法" file="QMenu/VariousContent" />
 
@@ -35,11 +35,11 @@ QMenu的想法是将它放在你的DOM元素/组件内，你希望它作为直�
 
 ### 子菜单
 
-<doc-example title="菜单中的菜单" file="QMenu/MenuInMenu" /> ###子菜单
+<doc-example title="菜单中的菜单" file="QMenu/MenuInMenu" />
 
 ### 尺寸和样式
 
-<doc-example title="尺寸" file="QMenu/Sizing" /> ### 尺寸和样式
+<doc-example title="尺寸" file="QMenu/Sizing" />
 
 <doc-example title="风格" file="QMenu/Style" />
 
@@ -55,25 +55,25 @@ QMenu的想法是将它放在你的DOM元素/组件内，你希望它作为直�
 
 <doc-example title="持久性" file="QMenu/Persistent" />
 
-### 转场
+### 过渡
 
-在下面的示例中，我们展示了一些转场。关于可用的过渡的完整列表，请访问[过渡](/options/transitions)。
+在下面的例子中，我们展示了一些过渡。关于可用的过渡的完整列表，请访问[过渡](/options/transitions)。
 
 <doc-example title="转换实例" file="QMenu/Transitions" />
 
 ### 可重复使用
 
-下面的示例显示了如何创建一个可重复使用的菜单，可以与不同的目标共享。
+下面的例子显示了如何创建一个可重复使用的菜单，可以与不同的目标共享。
 
 <doc-example title="使用目标" file="QMenu/Target" />
 
 ### 定位
 
-<doc-example title="定位示例" file="QMenu/Positions" /> ###定位。
+<doc-example title="定位示例" file="QMenu/Positions" />
 
-QMenu的位置可以被定制。它考虑到了 "anchor "和 "self "这两个可选属性。
+QMenu的位置可以被定制。它考虑到了 "anchor" 和 "self"这两个可选属性。
 QMenu弹出窗口的最终位置会被计算出来，使其显示在可用的屏幕空间内，必要时切换到右侧和/或顶部。
 
-对于水平定位，你可以使用`start`和`end`，当你想自动考虑RTL或非RTL时。`start`和`end`意味着非RTL的 "左 "和RTL的 "右"。
+对于水平定位，你可以使用`start`和`end`，当你想自动考虑RTL或非RTL时。`start`和`end`意味着非RTL的 "左"和RTL的 "右"。
 
 <menu-positioning />

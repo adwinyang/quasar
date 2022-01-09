@@ -3,7 +3,7 @@ title: 如何开始一个新项目
 desc: 如何开始一个新的 Quasar 项目。
 ---
 
-您有一个很棒的新想法，符合[Quasar Vision](/introduction-to-quasar)标准。 太好了，本章节将介绍如何实现它！
+您有一个很棒的新想法，符合[Quasar Vision](/introduction-to-quasar) 标准。 太好了，本章节将介绍如何实现它！
 
 1. 发送 email 至 Razvan(`razvan.stoenescu [at] gmail [dot] com`), 内容如下：
 

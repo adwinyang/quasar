@@ -16,18 +16,18 @@ keys: material-ripple
 ## 使用方法
 
 ::: warning
-确保你的DOM元素或组件有CSS`position: relative`或Quasar CSS helper class`relative-position`连接。
+确保你的DOM元素或组件有CSS`position: relative`或Quasar CSS 辅助类 `relative-position`连接。
 :::
 
-### 基本
+### 基础
 
-<doc-example title="基本" file="Ripple/Basic" />
+<doc-example title="基础" file="Ripple/Basic" />
 
 ### 着色
 
 Material Ripple默认采用文本的CSS颜色，但你可以对其进行配置。
 
-<doc-example title="有颜色" file="Ripple/Colored" /> ###定位
+<doc-example title="有颜色" file="Ripple/Colored" />
 
 ### 定位
 

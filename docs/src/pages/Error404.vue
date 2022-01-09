@@ -5,7 +5,7 @@ q-page.err404.flex.flex-center.text-center
       div 4
       img(src="https://cdn.quasar.dev/logo-v2/svg/logo.svg")
       div 4
-    .err404__punch-line.text-grey-8 You're not intentionally heading for a black hole, are you?
+    .err404__punch-line.text-grey-8 你不是故意要去黑洞吧？
     q-btn.q-mt-md(no-caps color="white" text-color="brand-primary" to="/" label="Take me home" push)
 </template>
 

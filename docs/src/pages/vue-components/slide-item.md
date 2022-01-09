@@ -1,5 +1,5 @@
 ---
-title: 幻灯片项目
+title: 幻灯片项
 desc: QSlideItem Vue组件本质上是一个有两个额外槽(左边和右边)的QItem，它允许用户将其拖到其中一边，以便应用一个特定的动作。
 keys: QSlideItem
 related:
@@ -20,7 +20,7 @@ QSlideItem组件本质上是一个[QItem](/vue-components/list-and-list-items)�
 如果你的内容也有图片，你可能想给它们添加`draggable="false"`，否则本地浏览器的行为可能会产生负面的干扰。
 :::
 
-<doc-example title="基本" file="QSlideItem/Basic" />
+<doc-example title="基础" file="QSlideItem/Basic" />
 
 <doc-example title="垂直" file="QSlideItem/Vertical" />
 

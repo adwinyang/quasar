@@ -7,7 +7,7 @@ related:
   - /vue-components/list-and-list-items
 ---
 
-QLayout允许您将视图配置为3x3矩阵，包含可选的左侧和/或右侧抽屉。请先阅读[QLayout](/layout/layout)文档页面。
+QLayout允许您将视图配置为3x3矩阵，包含可选的左侧和/或右侧抽屉。请先阅读[QLayout](/layout/layout) 文档页面。
 
 QDrawer 是 QLayout 的侧边栏部分。
 

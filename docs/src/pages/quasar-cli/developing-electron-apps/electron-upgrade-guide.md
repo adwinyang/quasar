@@ -83,7 +83,7 @@ mainWindow = new BrowserWindow({
 ### electron-preload.js 文件
 如果你还没有这个文件，你将需要它。如果没有的话，请创建它。没有它，你将无法在你的渲染器线程中使用Node.js的力量。
 
-更多信息。[预加载脚本](/quasar-cli/developing-electron-apps/electron-preload-script)。
+更多信息：[预加载脚本](/quasar-cli/developing-electron-apps/electron-preload-script)。
 
 ::: danger
 你需要将所有Node.js的东西从你的渲染器线程(来自/src的UI代码)转移到预加载脚本。通过`contextBridge`提供同样的功能，如下图所示。

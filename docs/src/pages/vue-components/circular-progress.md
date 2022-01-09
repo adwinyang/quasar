@@ -1,5 +1,5 @@
 ---
-title: 循环进步
+title: 循环进度
 desc: QCircularProgress Vue组件显示一个彩色的圆形加载指标。该条可以有一个确定的进度，也可以有一个不确定的动画。
 keys: QCircularProgress
 related:
@@ -28,7 +28,7 @@ QCircularProgress组件显示一个彩色的圆形进度。该条可以有一个
 
 <doc-example title="自定义最小/最大(同一模型)" file="QCircularProgress/CustomMinMax" />
 
-在下面的示例中，`show-value`属性也启用了默认槽，所以你可以用自定义内容填充它，甚至像QAvatar或QTooltip。`字体大小`属性指的是内部标签的字体大小。
+在下面的例子中，`show-value`属性也启用了默认槽，所以你可以用自定义内容填充它，甚至像QAvatar或QTooltip。`字体大小`属性指的是内部标签的字体大小。
 
 <doc-example title="显示值" file="QCircularProgress/ShowValue" />
 

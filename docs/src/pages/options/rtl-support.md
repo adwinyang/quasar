@@ -42,12 +42,12 @@ module.exports = {
 ```
 
 ## 它是如何工作的
-RTL与[Quasar语言包](/options/quasar-language-packs)紧密相连。**当 Quasar 被设置为使用RTL语言**(语言包的 "rtl "属性设置为 "true")，并且**RTL支持被启用**(查看上面的 "启用RTL支持 "部分)，那么用户界面将动态地转换 Quasar 和你的网站/应用程序代码为RTL。
+RTL与[Quasar语言包](/options/quasar-language-packs) 紧密相连。**当 Quasar 被设置为使用RTL语言**(语言包的 "rtl "属性设置为 "true")，并且**RTL支持被启用**(查看上面的 "启用RTL支持 "部分)，那么用户界面将动态地转换 Quasar 和你的网站/应用程序代码为RTL。
 
 让我们来讨论一下这些要求中的每一项:
 
 1. *Quasar需要被设置为使用一种RTL语言*。
-请参阅[Quasar语言包](/options/quasar-language-packs)了解如何设置语言。你可以将语言设置为默认语言或动态设置。
+请参阅[Quasar语言包](/options/quasar-language-packs) 了解如何设置语言。你可以将语言设置为默认语言或动态设置。
 
 2.  *RTL支持需要被启用*。
 请仔细检查上面的 "启用RTL支持 "部分。它的作用是为您的网站/应用程序代码和 Quasar 组件编译CSS，并自动添加相应的RTL CSS规则。由于增加了这些CSS规则，你的CSS包的大小将略有增加。
@@ -59,12 +59,12 @@ RTL与[Quasar语言包](/options/quasar-language-packs)紧密相连。**当 Quas
 
 ## 配置
 
- Quasar CLI 使用了[postcss-rtlcss](https://github.com/elchininet/postcss-rtlcss)，所以如果你想通过quasar.conf.js > build > rtl来调整RTL设置，那么它必须符合[postcss-rtlcss options](https://github.com/elchininet/postcss-rtlcss#options)。
+ Quasar CLI 使用了[postcss-rtlcss](https://github.com/elchininet/postcss-rtlcss)，所以如果你想通过quasar.conf.js > build > rtl来调整RTL设置，那么它必须符合[postcss-rtlcss options](https://github.com/elchininet/postcss-rtlcss#options) 。
 
 ## 需要记住的事情
 
 * RTL和非RTL Quasar语言包将一起工作，并动态地切换到/从RTL。因此，只有选择一个RTL Quasar语言包才会为你触发RTL用户界面。你不需要单独构建你的应用程序(一个用于非RTL，一个用于仅有RTL)。RTL会自动为你动态地改变。
-* 你可以通过查看布尔值`$q.lang.rtl`来动态地检测你是否处于RTL模式。关于[$q对象](/options/the-q-object)的更多信息。
+* 你可以通过查看布尔值`$q.lang.rtl`来动态地检测你是否处于RTL模式。关于[$q对象](/options/the-q-object) 的更多信息。
 * 在编写你自己的CSS时，你需要小心。像上面提到的，如果启用了RTL支持，那么RTL(如果postcss-rtl配置的 "source "设置为 "ltr"，则为LTR)规则将根据你的CSS代码自动添加。所以写：
 
   ```css
@@ -159,7 +159,7 @@ RTL与[Quasar语言包](/options/quasar-language-packs)紧密相连。**当 Quas
 </html>
 ```
 
-通过使用我们的[UMD标签生成器](/start/umd)检查你需要在你的HTML文件中包含哪些标签，并确保你勾选 "支持RTL CSS "复选框。
+通过使用我们的[UMD标签生成器](/start/umd) 检查你需要在你的HTML文件中包含哪些标签，并确保你勾选 "支持RTL CSS "复选框。
 还要注意生成的HTML文件开头的`<html dir="rtl">`标签 -- 你也需要它。
 
 ::: warning CAVEAT
