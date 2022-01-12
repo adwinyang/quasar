@@ -14,7 +14,7 @@
 
     "separator": {
       "type": "Boolean",
-      "desc": "Applies a separator between contained items",
+      "desc": "在所包含的项目之间应用一个分隔符",
       "category": "content"
     },
 
@@ -24,14 +24,14 @@
 
     "padding": {
       "type": "Boolean",
-      "desc": "Applies a material design-like padding on top and bottom",
+      "desc": "在顶部和底部应用类似材料设计的填充物",
       "category": "content"
     }
   },
 
   "slots": {
     "default": {
-      "desc": "This is where the content goes; Suggestion: QItem, QExpansionItem, ..."
+      "desc": "这就是内容的去处；建议：QItem, QExpansionItem, ..."
     }
   }
 }

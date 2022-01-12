@@ -642,16 +642,17 @@ module.exports.generate = function () {
   return new Promise((resolve) => {
     const list = []
 
+    // 2022/01/11 去掉 .en.json 结尾的，这个是翻译前的“备份”
     const plugins = glob.sync(resolvePath('src/plugins/*.json'))
-      .filter(file => !path.basename(file).startsWith('__'))
+      .filter(file => !path.basename(file).startsWith('__') && !file.endsWith('.en.json'))
       .map(fillAPI('plugin', list))
 
     const directives = glob.sync(resolvePath('src/directives/*.json'))
-      .filter(file => !path.basename(file).startsWith('__'))
+      .filter(file => !path.basename(file).startsWith('__') && !file.endsWith('.en.json'))
       .map(fillAPI('directive', list))
 
     const components = glob.sync(resolvePath('src/components/**/Q*.json'))
-      .filter(file => !path.basename(file).startsWith('__'))
+      .filter(file => !path.basename(file).startsWith('__') && !file.endsWith('.en.json'))
       .map(fillAPI('component', list))
 
     writeTransformAssetUrls(components)

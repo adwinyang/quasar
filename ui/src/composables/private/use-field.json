@@ -4,47 +4,47 @@
   "props": {
     "label": {
       "type": "String",
-      "desc": "A text label that will “float” up above the input field, once the field gets focus",
+      "desc": "一个文本标签，一旦该字段获得焦点，它将 '漂浮' 在输入字段之上。",
       "examples": [ "Username" ],
       "category": "content"
     },
 
     "stack-label": {
       "type": "Boolean",
-      "desc": "Label will be always shown above the field regardless of field content (if any)",
+      "desc": "无论字段内容如何（如果有的话），标签将始终显示在字段上方。",
       "category": "content"
     },
 
     "hint": {
       "type": "String",
-      "desc": "Helper (hint) text which gets placed below your wrapped form component",
+      "desc": "帮助（提示）文本，放置在你包装好的表单组件下面。",
       "examples": [ "Fill in between 3 and 12 characters" ],
       "category": "content"
     },
 
     "hide-hint": {
       "type": "Boolean",
-      "desc": "Hide the helper (hint) text when field doesn't have focus",
+      "desc": "当字段没有焦点时，隐藏帮助（提示）文本",
       "category": "content"
     },
 
     "prefix": {
       "type": "String",
-      "desc": "Prefix",
+      "desc": "前缀",
       "examples": [ "$" ],
       "category": "content"
     },
 
     "suffix": {
       "type": "String",
-      "desc": "Suffix",
+      "desc": "后缀",
       "examples": [ "@gmail.com" ],
       "category": "content"
     },
 
     "label-color" : {
       "extends": "color",
-      "desc": "Color name for the label from the Quasar Color Palette; Overrides the 'color' prop; The difference from 'color' prop is that the label will always have this color, even when field is not focused"
+      "desc": "Quasar调色板中标签的颜色名称；覆盖'color'属性；与'color'属性的不同之处在于，标签将始终具有这种颜色，即使在字段未被关注时也是如此。"
     },
 
     "color": {
@@ -61,44 +61,44 @@
 
     "loading": {
       "type": "Boolean",
-      "desc": "Signals the user a process is in progress by displaying a spinner; Spinner can be customized by using the 'loading' slot.",
+      "desc": "通过显示一个旋转器向用户提示进程正在进行中；旋转器可以通过使用 'loading'(加载 ) 插槽来定制。",
       "category": "behavior|content"
     },
 
     "clearable": {
       "type": "Boolean",
-      "desc": "Appends clearable icon when a value (not undefined or null) is set; When clicked, model becomes null",
+      "desc": "当一个值（不是未定义的或空的）被设置时，附加可清除的图标；当被点击时，模型变成空的。",
       "category": "behavior|content"
     },
 
     "clear-icon": {
       "type": "String",
-      "desc": "Custom icon to use for the clear button when using along with 'clearable' prop",
+      "desc": "当与 'clearable' 属性一起使用时，为清除按钮使用的自定义图标。",
       "examples": [ "close" ],
       "category": "content"
     },
 
     "filled": {
       "type": "Boolean",
-      "desc": "Use 'filled' design for the field",
+      "desc": "使用 'filled'(充满的) 设计的字段",
       "category": "style"
     },
 
     "outlined": {
       "type": "Boolean",
-      "desc": "Use 'outlined' design for the field",
+      "desc": "使用 'outlined'(轮廓) 设计的字域",
       "category": "style"
     },
 
     "borderless": {
       "type": "Boolean",
-      "desc": "Use 'borderless' design for the field",
+      "desc": "使用 'borderless'(无边界) 设计的字段",
       "category": "style"
     },
 
     "standout": {
       "type": [ "Boolean", "String" ],
-      "desc": "Use 'standout' design for the field; Specifies classes to be applied when focused (overriding default ones)",
+      "desc": "对字段使用 'standout'(突出) 设计；指定聚焦时应用的类（覆盖默认类）。",
       "examples": [
         "standout",
         "standout=\"bg-primary text-white\""
@@ -108,25 +108,25 @@
 
     "label-slot": {
       "type": "Boolean",
-      "desc": "Enables label slot; You need to set it to force use of the 'label' slot if the 'label' prop is not set",
+      "desc": "启用标签插槽；如果没有设置 'label'(标签) 属性，你需要设置它来强制使用 'label'(标签) 插槽。",
       "category": "content"
     },
 
     "bottom-slots": {
       "type": "Boolean",
-      "desc": "Enables bottom slots ('error', 'hint', 'counter')",
+      "desc": "启用底部插槽（'error', 'hint', 'counter'）。",
       "category": "content"
     },
 
     "hide-bottom-space": {
       "type": "Boolean",
-      "desc": "Do not reserve space for hint/error/counter anymore when these are not used; As a result, it also disables the animation for those; It also allows the hint/error area to stretch vertically based on its content",
+      "desc": "当不使用提示/错误/计数器时(hint/error/counter)，不再为其保留空间；因此，它也禁用了这些动画；它还允许提示/错误区域根据其内容垂直拉伸。",
       "category": "style"
     },
 
     "counter": {
       "type": "Boolean",
-      "desc": "Show an automatic counter on bottom right",
+      "desc": "在右下方显示一个自动计数器",
       "category": "content"
     },
 
@@ -136,7 +136,7 @@
 
     "square": {
       "type": "Boolean",
-      "desc": "Remove border-radius so borders are squared; Overrides 'rounded' prop",
+      "desc": "移除边框半径，使边框成方形；覆盖 'rounded'(圆形) 属性",
       "category": "style"
     },
 
@@ -146,7 +146,7 @@
 
     "item-aligned": {
       "type": "Boolean",
-      "desc": "Match inner content alignment to that of QItem",
+      "desc": "与QItem的内部内容排列相匹配",
       "category": "style"
     },
 
@@ -160,20 +160,20 @@
 
     "autofocus": {
       "type": "Boolean",
-      "desc": "Focus field on initial component render",
+      "desc": "焦点字段在初始组件上的渲染",
       "category": "behavior"
     },
 
     "for": {
       "type": "String",
-      "desc": "Used to specify the 'id' of the control and also the 'for' attribute of the label that wraps it; If no 'name' prop is specified, then it is used for this attribute as well",
+      "desc": "用于指定控件的'id'，以及包裹它的标签的 'for' 属性；如果没有指定 'name' 属性，那么它也会用于这个属性。",
       "examples": [ "myFieldsId" ],
       "category": "behavior"
     },
 
     "name": {
       "type": "String",
-      "desc": "Used to specify the name of the control; Useful if dealing with forms; If not specified, it takes the value of 'for' prop, if it exists",
+      "desc": "用于指定控件的名称；在处理表单时很有用；如果没有指定，则采用 'for' 属性的值，如果它存在的话。",
       "examples": [ "car_id" ],
       "category": "behavior"
     }
@@ -181,53 +181,53 @@
 
   "slots": {
     "default": {
-      "desc": "Field main content"
+      "desc": "字段主要内容"
     },
 
     "prepend": {
-      "desc": "Prepend inner field; Suggestions: QIcon, QBtn"
+      "desc": "预留内部字段；建议：QIcon, QBtn"
     },
 
     "append": {
-      "desc": "Append to inner field; Suggestions: QIcon, QBtn"
+      "desc": "附加到内部字段；建议：QIcon, QBtn"
     },
 
     "before": {
-      "desc": "Prepend outer field; Suggestions: QIcon, QBtn"
+      "desc": "前置外部字段；建议：QIcon, QBtn"
     },
 
     "after": {
-      "desc": "Append outer field; Suggestions: QIcon, QBtn"
+      "desc": "附加外部字段；建议：QIcon, QBtn"
     },
 
     "label": {
-      "desc": "Slot for label; Used only if 'label-slot' prop is set or the 'label' prop is set; When it is used the text in the 'label' prop is ignored"
+      "desc": "标签插槽；只有在 'label-slot' 属性被设置或 'label' 属性被设置时使用；当它被使用时，'label' 属性中的文本被忽略。"
     },
 
     "error": {
-      "desc": "Slot for errors; Enabled only if 'bottom-slots' prop is used; Suggestion: <div>"
+      "desc": "错误插槽；仅在使用 'bottom-slots' 属性时启用；建议：<div>"
     },
 
     "hint": {
-      "desc": "Slot for hint text; Enabled only if 'bottom-slots' prop is used; Suggestion: <div>"
+      "desc": "提示文本的插槽；仅在使用 'bottom-slots' 道具时启用；建议：<div>"
     },
 
     "counter": {
-      "desc": "Slot for counter text; Enabled only if 'bottom-slots' prop is used; Suggestion: <div>"
+      "desc": "计时器文本插槽；仅在使用 'bottom-slots' 道具时启用；建议：<div>"
     },
 
     "loading": {
-      "desc": "Override default spinner when component is in loading mode; Use in conjunction with 'loading' prop"
+      "desc": "当组件处于加载模式时，覆盖默认的旋转器；与 'loading'(加载) 属性一起使用。"
     }
   },
 
   "events": {
     "clear": {
-      "desc": "When using the 'clearable' property, this event is emitted when the clear icon is clicked",
+      "desc": "当使用 'clearable' 属性时，当点击 clear 图标时，该事件被触发。",
       "params": {
         "value": {
           "type": [ "Any" ],
-          "desc": "The previous value before clearing it",
+          "desc": "清除之前的值",
           "__exemption": [ "examples" ]
         }
       }
@@ -236,11 +236,11 @@
 
   "methods": {
     "focus": {
-      "desc": "Focus component"
+      "desc": "聚焦组件"
     },
 
     "blur": {
-      "desc": "Blur component (lose focus)"
+      "desc": "离开组件（失去焦点）"
     }
   }
 }

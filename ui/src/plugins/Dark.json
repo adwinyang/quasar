@@ -8,13 +8,13 @@
   "props": {
     "isActive": {
       "type": "Boolean",
-      "desc": "Is Dark mode active?",
+      "desc": "黑暗模式是否激活？",
       "reactive": true
     },
 
     "mode": {
       "type": [ "Boolean", "String" ],
-      "desc": "Dark mode configuration (not status)",
+      "desc": "黑暗模式配置（不是状态）。",
       "values": [ "auto", "(Boolean) true", "(Boolean) false" ],
       "reactive": true
     }
@@ -22,11 +22,11 @@
 
   "methods": {
     "set": {
-      "desc": "Set dark mode status",
+      "desc": "设置黑暗模式状态",
       "params": {
         "status": {
           "type": [ "Boolean", "String" ],
-          "desc": "Dark mode status",
+          "desc": "黑暗模式状态",
           "values": [ "(Boolean) true", "(Boolean) false", "auto" ],
           "required": true
         }
@@ -34,7 +34,7 @@
     },
 
     "toggle": {
-      "desc": "Toggle dark mode status"
+      "desc": "切换黑暗模式状态"
     }
   }
 }

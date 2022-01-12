@@ -12,7 +12,7 @@
 
     "thickness": {
       "type": "Number",
-      "desc": "Override value to use for stroke-width",
+      "desc": "用于笔画宽度的重写值",
       "default": 5,
       "examples": [ "2", "5" ],
       "category": "style"

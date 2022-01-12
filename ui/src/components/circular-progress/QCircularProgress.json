@@ -9,7 +9,7 @@
     "value": {
       "type": "Number",
       "default": 0,
-      "desc": "Current progress (must be between min/max)",
+      "desc": "当前进度（必须在最小/最大之间）。",
       "examples": [ 0, 100, 52.32 ],
       "category": "model"
     },
@@ -17,7 +17,7 @@
     "min": {
       "type": "Number",
       "default": 0,
-      "desc": "Minimum value defining 'no progress' (must be lower than 'max')",
+      "desc": "定义 'no progress'(无进展) 时的最小值（必须小于 'max'）。",
       "examples": [ 0, 100, 52.32 ],
       "category": "model"
     },
@@ -25,29 +25,29 @@
     "max": {
       "type": "Number",
       "default": 100,
-      "desc": "Maximum value defining 100% progress made (must be higher than 'min')",
+      "desc": "定义100%进展的最大值（必须大于 'min'）。",
       "examples": [ 100, 52.32 ],
       "category": "model"
     },
 
     "color": {
       "extends": "color",
-      "desc": "Color name for the arc progress from the Quasar Color Palette"
+      "desc": "Quasar调色板中弧线进度的颜色名称"
     },
 
     "center-color": {
       "extends": "color",
-      "desc": "Color name for the center part of the component from the Quasar Color Palette"
+      "desc": "Quasar调色板上的组件中心部分的颜色名称。"
     },
 
     "track-color": {
       "extends": "color",
-      "desc": "Color name for the track of the component from the Quasar Color Palette"
+      "desc": "Quasar调色板上的组件轨道的颜色名称"
     },
 
     "font-size": {
       "type": "String",
-      "desc": "Size of text in CSS units, including unit name. Suggestion: use 'em' units to sync with component size",
+      "desc": "以CSS为单位的文本大小，包括单位名称。建议：使用'em'单位与组件尺寸同步。",
       "default": "0.25em",
       "examples": [ "1em", "16px", "2rem" ],
       "category": "style"
@@ -56,14 +56,14 @@
     "thickness": {
       "type": "Number",
       "default": 0.2,
-      "desc": "Thickness of progress arc as a ratio (0.0 < x < 1.0) of component size",
+      "desc": "进度弧的厚度与部件尺寸的比率（0.0 < x < 1.0）。",
       "examples": [ 1, 0.3 ],
       "category": "style"
     },
 
     "angle": {
       "type": "Number",
-      "desc": "Angle to rotate progress arc by",
+      "desc": "旋转进度弧的角度",
       "default": 0,
       "examples": [ 0, 40, 90 ],
       "category": "content"
@@ -71,25 +71,25 @@
 
     "indeterminate": {
       "type": "Boolean",
-      "desc": "Put component into 'indeterminate' state; Ignores 'value' prop",
+      "desc": "将组件设置为 'indeterminate'(不确定),状态；忽略 'value' 属性",
       "category": "behavior"
     },
 
     "show-value": {
       "type": "Boolean",
-      "desc": "Enables the default slot and uses it (if available), otherwise it displays the 'value' prop as text; Make sure the text has enough space to be displayed inside the component",
+      "desc": "启用默认插槽并使用它（如果可用的话），否则会将 'value' 属性显示为文本；确保文本有足够的空间显示在组件内。",
       "category": "content|behavior"
     },
 
     "reverse": {
       "type": "Boolean",
-      "desc": "Reverses the direction of progress; Only for determined state",
+      "desc": "扭转进步的方向；只适用于确定的状态",
       "category": "behavior"
     },
 
     "instant-feedback": {
       "type": "Boolean",
-      "desc": "No animation when model changes",
+      "desc": "模型变化时没有动画",
       "category": "behavior"
     },
 
@@ -102,11 +102,11 @@
 
   "slots": {
     "default": {
-      "desc": "Used for component content only if 'show-value' prop is set; Make sure the content has enough space to be displayed inside the component"
+      "desc": "只在设置了 'show-value' 属性的情况下用于组件内容；确保内容有足够的空间显示在组件内。"
     },
 
     "internal": {
-      "desc": "Used by QKnob internally",
+      "desc": "由QKnob内部使用",
       "internal": true
     }
   }

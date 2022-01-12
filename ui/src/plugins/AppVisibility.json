@@ -9,7 +9,7 @@
     "appVisible": {
       "tsInjectionPoint": true,
       "type": "Boolean",
-      "desc": "Does the app have user focus? Or the app runs in the background / another tab has the user's attention",
+      "desc": "该应用是否有用户关注？或者应用程序在后台运行/另一个标签拥有用户的注意力",
       "reactive": true
     }
   }

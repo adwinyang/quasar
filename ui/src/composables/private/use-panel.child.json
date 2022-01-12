@@ -2,7 +2,7 @@
   "props": {
     "name": {
       "type": "Any",
-      "desc": "Panel name",
+      "desc": "小组名称",
       "required": true,
       "examples": [
         "accounts", "firstPanel", ":name=\"1\""

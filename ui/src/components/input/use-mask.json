@@ -2,7 +2,7 @@
   "props": {
     "mask": {
       "type": "String",
-      "desc": "Custom mask or one of the predefined mask names",
+      "desc": "自定义掩码或预定义掩码名称之一",
       "examples": [
         "###-##", "date", "datetime", "time", "fulltime", "phone", "card"
       ],
@@ -11,20 +11,20 @@
 
     "fill-mask": {
       "type": [ "Boolean", "String" ],
-      "desc": "Fills string with specified characters (or underscore if value is not string) to fill mask's length",
+      "desc": "用指定的字符（如果值不是字符串，则用下划线）填充字符串，以填补掩码的长度。",
       "examples": [ "true", "'0'", "'_'" ],
       "category": "behavior"
     },
 
     "reverse-fill-mask": {
       "type": "Boolean",
-      "desc": "Fills string from the right side of the mask",
+      "desc": "从面具的右侧填充字符串",
       "category": "behavior"
     },
 
     "unmasked-value": {
       "type": "Boolean",
-      "desc": "Model will be unmasked (won't contain tokens/separation characters)",
+      "desc": "模型将被解密（不会包含令牌/分隔符）。",
       "category": "behavior"
     }
   }

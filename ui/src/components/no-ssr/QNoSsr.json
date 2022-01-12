@@ -12,7 +12,7 @@
 
     "placeholder": {
       "type": "String",
-      "desc": "Text to display on server-side render (unless using 'placeholder' slot)",
+      "desc": "在服务器端渲染时显示的文本（除非使用 placeholder(占位符) 插槽）。",
       "examples": [ "This is server-side only" ],
       "category": "content"
     }
@@ -20,11 +20,11 @@
 
   "slots": {
     "default": {
-      "desc": "Default slot is used to render content on client-side"
+      "desc": "默认插槽用于在客户端渲染内容"
     },
 
     "placeholder": {
-      "desc": "Slot used as placeholder on server-side render, which gets replaced by the default slot on client-side; overrides 'placeholder' prop"
+      "desc": "在服务器端渲染时用作占位符的插槽，在客户端被默认的插槽取代；覆盖 'placeholder'(占位符) 属性。"
     }
   }
 }

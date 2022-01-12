@@ -113,7 +113,7 @@ export default {
     })
 
     const slugifiedTitle = computed(() => {
-      return 'example--' + slugify(props.title)
+      return '示例 -- ' + slugify(props.title)
     })
 
     function parseTemplate (target, template) {

@@ -8,7 +8,7 @@
   "props": {
     "value": {
       "type": "Number",
-      "desc": "Progress value (0.0 < x < 1.0)",
+      "desc": "进度值（0.0 < x < 1.0）。",
       "default": 0,
       "examples": [ ":value=\"0.28\"" ],
       "category": "model"
@@ -16,7 +16,7 @@
 
     "buffer": {
       "type": "Number",
-      "desc": "Optional buffer value (0.0 < x < 1.0)",
+      "desc": "可选的缓冲值（0.0 < x < 1.0）。",
       "examples": [ ":buffer=\"0.78\"" ],
       "category": "behavior"
     },
@@ -27,7 +27,7 @@
 
     "track-color": {
       "extends": "color",
-      "desc": "Color name for component's track from the Quasar Color Palette"
+      "desc": "Quasar调色板上的组件轨道的颜色名称"
     },
 
     "dark": {
@@ -36,25 +36,25 @@
 
     "reverse":  {
       "type": "Boolean",
-      "desc": "Reverse direction of progress",
+      "desc": "反向推进的方向",
       "category": "behavior"
     },
 
     "stripe": {
       "type": "Boolean",
-      "desc":  "Draw stripes; For determinate state only (for performance reasons)",
+      "desc":  "绘制条纹；仅用于确定的状态（出于性能原因）",
       "category": "content"
     },
 
     "indeterminate": {
       "type": "Boolean",
-      "desc": "Put component into indeterminate mode",
+      "desc": "将组件放入不确定模式",
       "category": "behavior"
     },
 
     "query": {
       "type": "Boolean",
-      "desc": "Put component into query mode",
+      "desc": "将组件放入查询模式",
       "category": "behavior"
     },
 
@@ -64,7 +64,7 @@
 
     "instant-feedback": {
       "type": "Boolean",
-      "desc": "No transition when model changes",
+      "desc": "模式改变时没有过渡",
       "category": "behavior"
     },
 
@@ -77,7 +77,7 @@
 
   "slots": {
     "default": {
-      "desc": "Suggestion: QTooltip"
+      "desc": "建议：QTooltip"
     }
   }
 }

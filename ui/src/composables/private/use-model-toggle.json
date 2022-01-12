@@ -2,18 +2,18 @@
   "props": {
     "model-value": {
       "type": "Boolean",
-      "desc": "Model of the component defining shown/hidden state; Either use this property (along with a listener for 'update:model-value' event) OR use v-model directive",
+      "desc": "定义显示/隐藏状态的组件的模型；要么使用这个属性（连同'update:model-value'事件的监听器），要么使用v-model指令。",
       "category": "model"
     }
   },
 
   "events": {
     "update:model-value": {
-      "desc": "Emitted when showing/hidden state changes; Is also used by v-model",
+      "desc": "当显示/隐藏状态改变时触发；也被v-model使用。",
       "params": {
         "value": {
           "type": "Boolean",
-          "desc": "New state (showing/hidden)"
+          "desc": "新状态（显示/隐藏）"
         }
       }
     },

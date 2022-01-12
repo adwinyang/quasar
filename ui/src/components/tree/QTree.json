@@ -6,7 +6,7 @@
   "props": {
     "nodes": {
       "type": "Array",
-      "desc": "The array of nodes that designates the tree structure",
+      "desc": "指定树状结构的节点数组。",
       "required": true,
       "examples": [ "[ {...}, {...} ]" ],
       "category": "content"
@@ -14,7 +14,7 @@
 
     "node-key": {
       "type": "String",
-      "desc": "The property name of each node object that holds a unique node id",
+      "desc": "持有唯一节点ID的每个节点对象的属性名称",
       "required": true,
       "examples": [ "key", "id" ],
       "category": "content"
@@ -22,7 +22,7 @@
 
     "label-key": {
       "type": "String",
-      "desc": "The property name of each node object that holds the label of the node",
+      "desc": "每个节点对象的属性名称，持有节点的标签。",
       "default": "label",
       "examples": [ "name", "description" ],
       "category": "content"
@@ -30,7 +30,7 @@
 
     "children-key": {
       "type": "String",
-      "desc": "The property name of each node object that holds the list of children of the node",
+      "desc": "每个节点对象的属性名称，持有节点的子节点列表",
       "default": "children",
       "examples": [ "roles", "relatives" ],
       "category": "content"
@@ -38,7 +38,7 @@
 
     "no-connectors": {
       "type": "Boolean",
-      "desc": "Do not display the connector lines between nodes",
+      "desc": "不显示节点之间的连接线",
       "category": "style"
     },
 
@@ -48,7 +48,7 @@
 
     "control-color": {
       "extends": "color",
-      "desc": "Color name for controls (like checkboxes) from the Quasar Color Palette",
+      "desc": "Quasar调色板的控件（如复选框）的颜色名称",
       "category": "style"
     },
 
@@ -58,7 +58,7 @@
 
     "selected-color": {
       "extends": "color",
-      "desc": "Color name for selected nodes (from the Quasar Color Palette)"
+      "desc": "所选节点的颜色名称（来自Quasar调色板）。"
     },
 
     "dense": {
@@ -76,7 +76,7 @@
 
     "tick-strategy": {
       "type": "String",
-      "desc": "The type of strategy to use for the selection of the nodes",
+      "desc": "选择节点时使用的策略类型",
       "default": "none",
       "values": [ "none", "strict", "leaf", "leaf-filtered" ],
       "category": "behavior"
@@ -84,7 +84,7 @@
 
     "ticked": {
       "type": "Array",
-      "desc": "Keys of nodes that are ticked",
+      "desc": "被勾选的节点的键",
       "sync": true,
       "examples": [ "v-model:ticked=\"tickedKeys\"" ],
       "category": "state"
@@ -92,7 +92,7 @@
 
     "expanded": {
       "type": "Array",
-      "desc": "Keys of nodes that are expanded",
+      "desc": "被扩展的节点的键",
       "sync": true,
       "examples": [ "v-model:expanded=\"expandedKeys\"" ],
       "category": "state"
@@ -100,7 +100,7 @@
 
     "selected": {
       "type": "Any",
-      "desc": "Key of node currently selected",
+      "desc": "当前选择的节点的键",
       "sync": true,
       "examples": [ "v-model:selected=\"selectedKey\"" ],
       "category": "state"
@@ -108,49 +108,49 @@
 
     "default-expand-all": {
       "type": "Boolean",
-      "desc": "Allow the tree to have all its branches expanded, when first rendered",
+      "desc": "在第一次呈现时，允许树的所有分支都被展开",
       "category": "behavior"
     },
 
     "accordion": {
       "type": "Boolean",
-      "desc": "Allows the tree to be set in accordion mode",
+      "desc": "允许将树设置为手风琴模式",
       "category": "behavior"
     },
 
     "filter": {
       "type": "String",
-      "desc": "The text value to be used for filtering nodes",
+      "desc": "用于过滤节点的文本值",
       "examples": [ ":filter=\"searchText\"" ],
       "category": "filter"
     },
 
     "filter-method": {
       "type": "Function",
-      "desc": "The function to use to filter the tree nodes; For best performance, reference it from your scope and do not define it inline",
+      "desc": "用来过滤树节点的函数；为了获得最佳性能，请从你的作用域中引用它，不要内联定义。",
       "default": "(see source code)",
       "params": {
         "node": {
           "type": "Object",
-          "desc": "Node currently being filtered",
+          "desc": "目前正在过滤的节点",
           "__exemption": [ "examples" ]
         },
         "filter": {
           "type": "String",
-          "desc": "Filter text to match against",
+          "desc": "要匹配的过滤文本",
           "__exemption": [ "examples" ]
         }
       },
       "returns": {
         "type": "Boolean",
-        "desc": "Matches or not"
+        "desc": "匹配或不匹配"
       },
       "category": "filter"
     },
 
     "duration": {
       "type": "Number",
-      "desc": "Toggle animation duration (in milliseconds)",
+      "desc": "切换动画持续时间（以毫秒为单位）。",
       "default": 300,
       "examples": [ ":duration=\"500\"" ],
       "category": "style"
@@ -158,14 +158,14 @@
 
     "no-nodes-label": {
       "type": "String",
-      "desc": "Override default such label for when no nodes are available",
+      "desc": "覆盖默认的此类标签，以便在没有节点的情况下使用。",
       "examples": [ "No nodes to show!" ],
       "category": "content"
     },
 
     "no-results-label": {
       "type": "String",
-      "desc": "Override default such label for when no nodes are available due to filtering",
+      "desc": "覆盖默认的此类标签，以便在因过滤而没有节点时使用。",
       "examples": [ "No results" ],
       "category": "content"
     }
@@ -173,161 +173,161 @@
 
   "slots": {
     "default-header": {
-      "desc": "Slot to use for defining the header of a node",
+      "desc": "用来定义节点头的插槽位",
       "scope": {
         "expanded": {
           "type": "Boolean",
-          "desc": "Is node expanded? Can directly be assigned new Boolean value which changes expanded state",
+          "desc": "节点是否扩展？可以直接分配新的布尔值，改变扩展状态",
           "reactive": true
         },
         "ticked": {
           "type": "Boolean",
-          "desc": "Is node ticked? Can directly be assigned new Boolean value which changes ticked state",
+          "desc": "节点是否被勾选？可以直接分配新的布尔值，改变打勾的状态",
           "reactive": true
         },
         "tree": {
           "type": "Component",
           "tsType": "QTree",
-          "desc": "QTree instance"
+          "desc": "QTree实例"
         },
         "node": {
           "type": "Object",
-          "desc": "Node object",
+          "desc": "节点对象",
           "__exemption": [ "examples" ]
         },
         "key": {
           "type": "Any",
-          "desc": "Node's key",
+          "desc": "节点的 KEY",
           "__exemption": [ "examples" ]
         },
         "color": {
           "type": "String",
-          "desc": "QTree instance 'color' supplied prop value",
+          "desc": "QTree实例'color'提供的属性值",
           "examples": [ "primary" ]
         },
         "dark": {
           "type": "Boolean",
-          "desc": "QTree instance 'dark' supplied prop value"
+          "desc": "QTree实例'dark'提供的属性值"
         }
       }
     },
 
     "header-[name]": {
-      "desc": "Header template slot for describing node header; Used by nodes which have their 'header' prop set to '[name]', where '[name]' can be any string",
+      "desc": "用于描述节点头的模板插槽；由那些将 'header' 属性设置为 '[name]' 的节点使用，其中 '[name]' 可以是任何字符串。",
       "scope": {
         "expanded": {
           "type": "Boolean",
-          "desc": "Is node expanded? Can directly be assigned new Boolean value which changes expanded state",
+          "desc": "节点是否扩展？可以直接分配新的布尔值，改变扩展状态",
           "reactive": true
         },
         "ticked": {
           "type": "Boolean",
-          "desc": "Is node ticked? Can directly be assigned new Boolean value which changes ticked state",
+          "desc": "节点是否被勾选？可以直接分配新的布尔值，改变打勾的状态",
           "reactive": true
         },
         "tree": {
           "type": "Component",
           "tsType": "QTree",
-          "desc": "QTree instance"
+          "desc": "QTree实例"
         },
         "node": {
           "type": "Object",
-          "desc": "Node object",
+          "desc": "节点对象",
           "__exemption": [ "examples" ]
         },
         "key": {
           "type": "Any",
-          "desc": "Node's key",
+          "desc": "节点的 KEY",
           "__exemption": [ "examples" ]
         },
         "color": {
           "type": "String",
-          "desc": "QTree instance 'color' supplied prop value",
+          "desc": "QTree实例'color'提供的属性值",
           "examples": [ "primary" ]
         },
         "dark": {
           "type": "Boolean",
-          "desc": "QTree instance 'dark' supplied prop value"
+          "desc": "QTree实例'dark'提供的属性值"
         }
       }
     },
 
     "default-body": {
-      "desc": "Slot to use for defining the body of a node",
+      "desc": "用来定义节点主体的插槽位",
       "scope": {
         "expanded": {
           "type": "Boolean",
-          "desc": "Is node expanded? Can directly be assigned new Boolean value which changes expanded state",
+          "desc": "节点是否扩展？可以直接分配新的布尔值，改变扩展状态",
           "reactive": true
         },
         "ticked": {
           "type": "Boolean",
-          "desc": "Is node ticked? Can directly be assigned new Boolean value which changes ticked state",
+          "desc": "节点是否被勾选？可以直接分配新的布尔值，改变打勾的状态",
           "reactive": true
         },
         "tree": {
           "type": "Component",
           "tsType": "QTree",
-          "desc": "QTree instance"
+          "desc": "QTree实例"
         },
         "node": {
           "type": "Object",
-          "desc": "Node object",
+          "desc": "节点对象",
           "__exemption": [ "examples" ]
         },
         "key": {
           "type": "Any",
-          "desc": "Node's key",
+          "desc": "节点的 KEY",
           "__exemption": [ "examples" ]
         },
         "color": {
           "type": "String",
-          "desc": "QTree instance 'color' supplied prop value",
+          "desc": "QTree实例'color'提供的属性值",
           "examples": [ "primary" ]
         },
         "dark": {
           "type": "Boolean",
-          "desc": "QTree instance 'dark' supplied prop value"
+          "desc": "QTree实例'dark'提供的属性值"
         }
       }
     },
 
     "body-[name]": {
-      "desc": "Body template slot for describing node body; Used by nodes which have their 'body' prop set to '[name]', where '[name]' can be any string",
+      "desc": "用于描述节点主体的模板插槽；用于那些将 'body' 属性设置为 '[name]' 的节点，其中 '[name]' 可以是任何字符串。",
       "scope": {
         "expanded": {
           "type": "Boolean",
-          "desc": "Is node expanded? Can directly be assigned new Boolean value which changes expanded state",
+          "desc": "节点是否扩展？可以直接分配新的布尔值，改变扩展状态",
           "reactive": true
         },
         "ticked": {
           "type": "Boolean",
-          "desc": "Is node ticked? Can directly be assigned new Boolean value which changes ticked state",
+          "desc": "节点是否被勾选？可以直接分配新的布尔值，改变打勾的状态",
           "reactive": true
         },
         "tree": {
           "type": "Component",
           "tsType": "QTree",
-          "desc": "QTree instance"
+          "desc": "QTree实例"
         },
         "node": {
           "type": "Object",
-          "desc": "Node object",
+          "desc": "节点对象",
           "__exemption": [ "examples" ]
         },
         "key": {
           "type": "Any",
-          "desc": "Node's key",
+          "desc": "节点的 KEY",
           "__exemption": [ "examples" ]
         },
         "color": {
           "type": "String",
-          "desc": "QTree instance 'color' supplied prop value",
+          "desc": "QTree实例'color'提供的属性值",
           "examples": [ "primary" ]
         },
         "dark": {
           "type": "Boolean",
-          "desc": "QTree instance 'dark' supplied prop value"
+          "desc": "QTree实例'dark'提供的属性值"
         }
       }
     }
@@ -335,43 +335,43 @@
 
   "events": {
     "update:expanded": {
-      "desc": "Triggered when nodes are expanded or collapsed; Used by Vue on 'v-model:update' to update its value",
+      "desc": "当节点被展开或折叠时触发；Vue在 'v-model:update' 上使用，以更新其值。",
       "params": {
         "expanded": {
           "type": "Array",
-          "desc": "The expanded node keys",
+          "desc": "扩大的节点键",
           "examples": [ "[ 'Node 1', 'Node 2' ]" ]
         }
       }
     },
 
     "lazy-load": {
-      "desc": "Emitted when the lazy loading of nodes is finished",
+      "desc": "当节点的懒惰加载完成后触发。",
       "params": {
         "details": {
           "type": "Object",
-          "desc": "Lazy loading details",
+          "desc": "懒惰的加载细节",
           "definition": {
             "node": {
               "type": "Object",
               "required": true,
-              "desc": "The node to which the new nodes (the children) will be appended",
+              "desc": "新节点（子节点）将被附加到该节点上。",
               "__exemption": [ "examples" ]
             },
             "key": {
               "type": "String",
               "required": true,
-              "desc": "The key of the node getting the newly loaded child nodes",
+              "desc": "获得新加载的子节点的键。",
               "examples": [ "New Node" ]
             },
             "done": {
               "type": "Function",
               "required": true,
-              "desc": "The callback to be carried out when the loading is successful",
+              "desc": "当加载成功时，将执行的回调。",
               "params": {
                 "children": {
                   "type": "Array",
-                  "desc": "Array of nodes",
+                  "desc": "节点的数组",
                   "default": "[]",
                   "__exemption": [ "examples" ]
                 }
@@ -381,7 +381,7 @@
             "fail": {
               "type": "Function",
               "required": true,
-              "desc": "The callback to be carried out should the loading fails",
+              "desc": "如果加载失败，将执行的回调。",
               "params": null,
               "returns": null
             }
@@ -391,22 +391,22 @@
     },
 
     "update:ticked": {
-      "desc": "Emitted when nodes are ticked/unticked via the checkbox; Used by Vue on 'v-model:ticked' to update its value",
+      "desc": "当节点通过复选框被勾选/取消时触发；Vue在 'v-model:ticked' 上使用，以更新其值。",
       "params": {
         "target": {
           "type": "Array",
-          "desc": "The ticked node keys",
+          "desc": "打勾的节点键",
           "examples": [ "[ 'Node 1', 'Node 2' ]" ]
         }
       }
     },
 
     "update:selected": {
-      "desc": "Emitted when selected node changes; Used by Vue on 'v-model:selected' to update its value",
+      "desc": "当选定的节点发生变化时触发；Vue在 'v-model:selected' 上使用，以更新其值。",
       "params": {
         "target": {
           "type": "Any",
-          "desc": "The selected node key",
+          "desc": "选定的节点键",
           "examples": [ "Node 1" ]
         }
       }
@@ -423,110 +423,110 @@
 
   "methods": {
     "getNodeByKey": {
-      "desc": "Get the node with the given key",
+      "desc": "获取具有给定键的节点",
       "params": {
         "key": {
           "type": "Any",
           "required": true,
-          "desc": "The key of a node",
+          "desc": "一个节点 KEY",
           "examples": [ "Node 1" ]
         }
       },
       "returns": {
         "type": "Object",
-        "desc": "Requested node",
+        "desc": "要求的节点",
         "__exemption": [ "examples" ]
       }
     },
 
     "getTickedNodes": {
-      "desc": "Get array of nodes that are ticked",
+      "desc": "获取被勾选的节点数组",
       "returns": {
         "type": "Array",
-        "desc": "Ticked node objects",
+        "desc": "打勾的节点对象",
         "__exemption": [ "examples" ]
       }
     },
 
     "getExpandedNodes": {
-      "desc": "Get array of nodes that are expanded",
+      "desc": "获取被扩展的节点数组",
       "returns": {
         "type": "Array",
-        "desc": "Expanded node objects",
+        "desc": "扩展的节点对象",
         "__exemption": [ "examples" ]
       }
     },
 
     "isExpanded": {
-      "desc": "Determine if a node is expanded",
+      "desc": "确定一个节点是否被扩展",
       "params": {
         "key": {
           "type": "Any",
           "required": true,
-          "desc": "The key of a node",
+          "desc": "一个节点的 KEY",
           "examples": [ "Node 1" ]
         }
       },
       "returns": {
         "type": "Boolean",
-        "desc": "Is specified node expanded?"
+        "desc": "指定的节点是否已经展开？"
       }
     },
 
     "expandAll": {
-      "desc": "Use to expand all branches of the tree"
+      "desc": "用来扩展树的所有分支"
     },
 
     "collapseAll": {
-      "desc": "Use to collapse all branches of the tree"
+      "desc": "用来折叠树的所有分支"
     },
 
     "setExpanded": {
-      "desc": "Expands the tree at the point of the node with the key given",
+      "desc": "在具有给定键的节点处展开树。",
       "params": {
         "key": {
           "type": "Any",
           "required": true,
-          "desc": "The key of a node",
+          "desc": "一个节点的 KEY",
           "examples": [ "Node 1" ]
         },
         "state": {
           "type": "Boolean",
           "required": true,
-          "desc": "Set to 'true' to expand the branch of the tree, otherwise 'false' collapses it"
+          "desc": "设置为 'true' 可以扩展树的分支，否则 'false' 会使其崩溃"
         }
       }
     },
 
     "isTicked": {
-      "desc": "Method to check if a node's checkbox is selected or not",
+      "desc": "检查一个节点的复选框是否被选中的方法",
       "params": {
         "key": {
           "type": "Any",
           "required": true,
-          "desc": "The key of a node",
+          "desc": "一个节点的 KEY",
           "examples": [ "Node 1" ]
         }
       },
       "returns": {
         "type": "Boolean",
-        "desc": "Is specified node ticked?"
+        "desc": "指定节点是否打勾？"
       }
     },
 
     "setTicked": {
-      "desc": "Method to set a node's checkbox programmatically",
+      "desc": "以编程方式设置一个节点的复选框的方法",
       "params": {
         "keys": {
           "type": "Array",
           "required": true,
-          "desc": "The keys of nodes to tick/untick",
+          "desc": "勾选/不勾选的节点的键值",
           "examples": [ "[ 'Node 1', 'Node 2' ]" ]
         },
         "state": {
           "type": "Boolean",
           "required": true,
-          "desc": "Set to 'true' to tick the checkbox of nodes, otherwise 'false' unticks them"
+          "desc": "设置为 'true' 可以勾选节点的复选框，否则 'false' 就取消勾选。"
         }
       }
     }

@@ -8,7 +8,7 @@
   "props": {
     "src": {
       "type": "String",
-      "desc": "Path to image",
+      "desc": "图像的路径",
       "transformAssetUrls": true,
       "examples": [
         "(statics folder) src=\"statics/img/something.png\"",
@@ -21,7 +21,7 @@
 
     "srcset": {
       "type": "String",
-      "desc": "Same syntax as <img> srcset attribute",
+      "desc": "与<img> srcset属性的语法相同",
       "link": "https://developer.mozilla.org/en-US/docs/Learn/HTML/Multimedia_and_embedding/Responsive_images#Resolution_switching_Different_sizes",
       "examples": [
         "elva-fairy-320w.jpg 320w, elva-fairy-480w.jpg 480w"
@@ -31,7 +31,7 @@
 
     "sizes": {
       "type": "String",
-      "desc": "Same syntax as <img> sizes attribute",
+      "desc": "与<img>尺寸属性的语法相同",
       "link": "https://developer.mozilla.org/en-US/docs/Learn/HTML/Multimedia_and_embedding/Responsive_images#Resolution_switching_Different_sizes",
       "examples": [
         "(max-width: 320px) 280px, (max-width: 480px) 440px, 800px"
@@ -41,7 +41,7 @@
 
     "placeholder-src": {
       "type": "String",
-      "desc": "While waiting for your image to load, you can use a placeholder image",
+      "desc": "在等待你的图像加载时，你可以使用一个占位符图像",
       "transformAssetUrls": true,
       "examples": [
         "(statics folder) src=\"statics/img/some-placeholder.png\"",
@@ -54,7 +54,7 @@
 
     "ratio": {
       "type": [ "String", "Number" ],
-      "desc": "Force the component to maintain an aspect ratio",
+      "desc": "强制组件保持一个长宽比",
       "examples": [
         "(Number format) :ratio=\"16/9\"",
         "(String format) ratio=\"1\""
@@ -64,7 +64,7 @@
 
     "initial-ratio": {
       "type": [ "String", "Number" ],
-      "desc": "Use it when not specifying 'ratio' but still wanting an initial aspect ratio",
+      "desc": "当不指定 'ration'(比率) 但仍希望有一个初始长宽比时使用它。",
       "default": "16/9",
       "examples": [
         "(Number format) :initial-ratio=\"16/9\"",
@@ -75,7 +75,7 @@
 
     "width": {
       "type": "String",
-      "desc": "Forces image width; Must also include the unit (px or %)",
+      "desc": "强制要求图像宽度；必须同时包括单位（px或%）。",
       "examples": [
         "280px",
         "70%"
@@ -85,7 +85,7 @@
 
     "height": {
       "type": "String",
-      "desc": "Forces image height; Must also include the unit (px or %)",
+      "desc": "迫使图像高度；还必须包括单位（px或%）。",
       "examples": [
         "280px",
         "70%"
@@ -95,7 +95,7 @@
 
     "loading": {
       "type": "String",
-      "desc": "Lazy or immediate load; Same syntax as <img> loading attribute",
+      "desc": "懒惰或立即加载；与<img>加载属性的语法相同",
       "default": "lazy",
       "values": [ "lazy", "eager" ],
       "category": "behavior"
@@ -103,28 +103,28 @@
 
     "crossorigin": {
       "type": "String",
-      "desc": "Same syntax as <img> crossorigin attribute",
+      "desc": "与<img> crossorigin属性的语法相同",
       "values": [ "anonymous", "use-credentials" ],
       "category": "behavior"
     },
 
     "decoding": {
       "type": "String",
-      "desc": "Same syntax as <img> decoding attribute",
+      "desc": "与<img>解码属性的语法相同",
       "values": [ "sync", "async", "auto" ],
       "category": "behavior"
     },
 
     "referrerpolicy": {
       "type": "String",
-      "desc": "Same syntax as <img> referrerpolicy attribute",
+      "desc": "与<img> referrerpolicy属性的语法相同",
       "category": "behavior",
       "__exemption": [ "examples" ]
     },
 
     "fit": {
       "type": "String",
-      "desc": "How the image will fit into the container; Equivalent of the object-fit prop; Can be coordinated with 'position' prop",
+      "desc": "图像将如何适应容器；相当于对象适应属性；可与 'position'(位置) 属性协调。",
       "default": "cover",
       "values": [ "cover", "fill", "contain", "none", "scale-down" ],
       "category": "style"
@@ -132,7 +132,7 @@
 
     "position": {
       "type": "String",
-      "desc": "The alignment of the image into the container; Equivalent of the object-position CSS prop",
+      "desc": "图像在容器中的对齐方式；相当于object-position 的 CSS 属性。",
       "default": "50% 50%",
       "examples": [ "0 0", "20px 50px" ],
       "category": "style"
@@ -140,20 +140,20 @@
 
     "alt": {
       "type": "String",
-      "desc": "Specifies an alternate text for the image, if the image cannot be displayed",
+      "desc": "指定图像的替代文本，如果不能显示该图像的话。",
       "examples": [ "Two cats" ],
       "category": "content"
     },
 
     "draggable": {
       "type": "Boolean",
-      "desc": "Adds the native 'draggable' attribute",
+      "desc": "添加原生 '可拖动' 属性",
       "category": "behavior"
     },
 
     "img-class": {
       "type": "String",
-      "desc": "CSS classes to be attributed to the native img element",
+      "desc": "归属于本地img元素的CSS类。",
       "examples": [
         "my-special-class"
       ],
@@ -162,63 +162,63 @@
 
     "img-style": {
       "type": "Object",
-      "desc": "Apply CSS to the native img element",
+      "desc": "对本地img元素应用CSS",
       "examples": [ ":img-style=\"{ transform: 'rotate(45deg)' }\" "],
       "category": "style"
     },
 
     "spinner-color": {
       "extends": "color",
-      "desc": "Color name for default Spinner (unless using a 'loading' slot)",
+      "desc": "默认旋转器的颜色名称（除非使用 'loading'(加载 ) 插槽）。",
       "category": "style"
     },
 
     "spinner-size": {
       "extends": "size",
-      "desc": "Size in CSS units, including unit name, for default Spinner (unless using a 'loading' slot)",
+      "desc": "以CSS为单位的尺寸，包括单位名称，用于默认的Spinner（除非使用 'loading'(加载 ) 插槽）。",
       "category": "style"
     },
 
     "no-spinner": {
       "type": "Boolean",
-      "desc": "Do not display the default spinner while waiting for the image to be loaded; It is overriden by the 'loading' slot when one is present",
+      "desc": "在等待图像加载时，不显示默认的旋转器；如果有 'loading'(加载 ) 插槽，它将被覆盖。",
       "category": "behavior"
     },
 
     "no-native-menu": {
       "type": "Boolean",
-      "desc": "Disables the native context menu for the image",
+      "desc": "禁用图像的本地上下文菜单",
       "category": "behavior"
     },
 
     "no-transition": {
       "type": "Boolean",
-      "desc": "Disable default transition when switching between old and new image",
+      "desc": "在新旧图像之间切换时禁用默认过渡",
       "category": "behavior"
     }
   },
 
   "slots": {
     "default": {
-      "desc": "Default slot can be used for captions. See examples"
+      "desc": "默认插槽可用于字幕。见例子"
     },
 
     "loading": {
-      "desc": "While image is loading, this slot is being displayed on top of the component; Suggestions: a spinner or text"
+      "desc": "当图像正在加载时，这个插槽被显示在组件的顶部；建议：一个旋转器或文本"
     },
 
     "error": {
-      "desc": "Optional slot to be used when image could not be loaded; make sure you assign a min-height and min-width to the component through CSS"
+      "desc": "可选的插槽，当图像无法加载时使用；确保你通过CSS为组件指定一个最小高度和最小宽度。"
     }
   },
 
   "events": {
     "load": {
-      "desc": "Emitted when image has been loaded by the browser",
+      "desc": "浏览器加载图像时触发。",
       "params": {
         "src": {
           "type": "String",
-          "desc": "URL of image that has been loaded; useful when using 'srcset' and/or 'sizes'",
+          "desc": "已经加载的图像的URL；在使用'srcset'和/或'size'时很有用。",
           "examples": [
             "https://some-site.net/some-img.gif"
           ]
@@ -227,11 +227,11 @@
     },
 
     "error": {
-      "desc": "Emitted when browser could not load the image",
+      "desc": "浏览器无法加载图像时触发的。",
       "params": {
         "src": {
           "type": "Error",
-          "desc": "JS Error object"
+          "desc": "JS错误对象"
         }
       }
     }

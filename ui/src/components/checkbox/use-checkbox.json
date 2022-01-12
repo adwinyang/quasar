@@ -10,14 +10,14 @@
 
     "val": {
       "type": "Any",
-      "desc": "Works when model ('value') is Array. It tells the component which value should add/remove when ticked/unticked",
+      "desc": "当模型（'value'）为数组时，可以工作。它告诉组件在打勾/不打勾时应该增加/删除哪个值。",
       "examples": [ "car" ],
       "category": "model"
     },
 
     "true-value": {
       "type": "Any",
-      "desc": "What model value should be considered as checked/ticked/on?",
+      "desc": "什么样的模型值应该被认为是选中/选中/打开？",
       "default": true,
       "examples": [ "Agreed" ],
       "category": "model"
@@ -25,7 +25,7 @@
 
     "false-value": {
       "type": "Any",
-      "desc": "What model value should be considered as unchecked/unticked/off?",
+      "desc": "什么模型值应被视为未选中/未选中/关闭？",
       "default": false,
       "examples": [ "Disagree" ],
       "category": "model"
@@ -33,7 +33,7 @@
 
     "indeterminate-value": {
       "type": "Any",
-      "desc": "What model value should be considered as 'indeterminate'?",
+      "desc": "什么模型值应被视为 'indeterminate'(不确定)？",
       "default": null,
       "examples": [ 0, "not_answered" ],
       "category": "behavior"
@@ -41,7 +41,7 @@
 
     "toggle-order": {
       "type": "String",
-      "desc": "Determines toggle order of the two states ('t' stands for state of true, 'f' for state of false); If 'toggle-indeterminate' is true, then the order is: indet -> first state -> second state -> indet (and repeat), otherwise: indet -> first state -> second state -> first state -> second state -> ...",
+      "desc": "决定两个状态的切换顺序（'t'代表true状态，'f'代表false状态）；如果 'toggle-indetinate' 为真，则顺序为： 不定 -> 第一状态 -> 第二状态-> 不定 (并重复），否则：不定 -> 第一状态 -> 第二状态 -> 第一状态 -> 第二状态 -> ...",
       "default": "tf",
       "values": [ "tf", "ft" ],
       "category": "behavior"
@@ -49,20 +49,20 @@
 
     "toggle-indeterminate": {
       "type": "Boolean",
-      "desc": "When user clicks/taps on the component, should we toggle through the indeterminate state too?",
+      "desc": "当用户点击/敲击组件时，我们是否也应该切换到不确定的状态？",
       "category": "behavior"
     },
 
     "label": {
       "type": "String",
-      "desc": "Label to display along the component (or use the default slot instead of this prop)",
+      "desc": "沿着组件显示的标签（或者使用默认插槽代替这个属性）。",
       "examples": [ "I agree with the Terms and Conditions" ],
       "category": "label"
     },
 
     "left-label": {
       "type": "Boolean",
-      "desc": "Label (if any specified) should be displayed on the left side of the component",
+      "desc": "标签（如果有指定的话）应该显示在组件的左边。",
       "category": "label"
     },
 
@@ -72,7 +72,7 @@
 
     "keep-color": {
       "type": "Boolean",
-      "desc": "Should the color (if specified any) be kept when the component is unticked/ off?",
+      "desc": "当组件被取消/关闭时，颜色（如果指定了任何颜色）应该被保留吗？",
       "category": "behavior"
     },
 
@@ -95,17 +95,17 @@
 
   "events": {
     "update:model-value": {
-      "desc": "Emitted when the component needs to change the model; Is also used by v-model",
+      "desc": "当组件需要改变模型时触发；也被v-model使用。",
       "params": {
         "value": {
           "type": "Any",
-          "desc": "New model value",
+          "desc": "新模式价值",
           "required": true,
           "__exemption": [ "examples" ]
         },
         "evt": {
           "type": "Object",
-          "desc": "JS event object",
+          "desc": "JS事件对象",
           "required": true,
           "__exemption": [ "examples" ]
         }
@@ -115,13 +115,13 @@
 
   "methods": {
     "toggle": {
-      "desc": "Toggle the state (of the model)"
+      "desc": "切换状态(的模型)"
     }
   },
 
   "slots": {
     "default": {
-      "desc": "Default slot can be used as label, unless 'label' prop is specified; Suggestion: string"
+      "desc": "默认插槽可以作为标签，除非指定'标签'属性；建议：字符串"
     }
   }
 }

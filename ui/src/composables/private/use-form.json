@@ -2,7 +2,7 @@
   "props": {
     "name": {
       "type": "String",
-      "desc": "Used to specify the name of the control; Useful if dealing with forms submitted directly to a URL",
+      "desc": "用于指定控件的名称；在处理直接提交到URL的表单时很有用。",
       "examples": [ "car_id" ],
       "category": "behavior"
     }

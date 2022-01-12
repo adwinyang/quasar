@@ -6,7 +6,7 @@
   "props": {
     "position": {
       "type": "String",
-      "desc": "Position within window of where QAjaxBar should be displayed",
+      "desc": "QAjaxBar在窗口中应显示的位置",
       "default": "top",
       "values": [ "top", "right", "bottom", "left" ],
       "examples": [ "bottom" ],
@@ -24,53 +24,53 @@
 
     "skip-hijack": {
       "type": "Boolean",
-      "desc": "Skip Ajax hijacking (not a reactive prop)",
+      "desc": "跳过Ajax劫持（不是一个反应式的属性）",
       "category": "behavior"
     },
 
     "reverse": {
       "type": "Boolean",
-      "desc": "Reverse direction of progress",
+      "desc": "反向推进的方向",
       "category": "behavior"
     }
   },
 
   "events": {
     "start": {
-      "desc": "当Ajax条形栏触发显示时发出"
+      "desc": "当Ajax状态栏显示时触发"
     },
 
     "stop": {
-      "desc": "当Ajax条形栏完成其工作时发出"
+      "desc": "当Ajax状态栏关闭(已完成Ajaxy调用)时解发"
     }
   },
 
   "methods": {
     "start": {
-      "desc": "Notify bar you are waiting for a new process to finish",
+      "desc": "通知栏你正在等待一个新的进程完成",
       "params": {
         "speed": {
           "type": "Number",
           "default": 300,
-          "desc": "Delay (in milliseconds) between progress auto-increments; If delay is 0 then it disables auto-incrementing",
+          "desc": "进度自动递增之间的延迟（以毫秒为单位）；如果延迟为0，则禁用自动递增。",
           "examples": [ 400, 0 ]
         }
       }
     },
 
     "increment": {
-      "desc": "Manually trigger a bar progress increment",
+      "desc": "手动触发一个条形进度增量",
       "params": {
         "amount": {
           "type": "Number",
-          "desc": "Amount (0 < x <= 100) to increment with",
+          "desc": "递增的数量（0 < x <= 100）。",
           "examples": [ 1 ]
         }
       }
     },
 
     "stop": {
-      "desc": "Notify bar that one process you were waiting has finished"
+      "desc": "通知吧，你所等待的一个进程已经完成。"
     }
   }
 }

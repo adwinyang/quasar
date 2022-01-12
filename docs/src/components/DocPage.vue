@@ -28,7 +28,7 @@ q-page.doc-page
   slot
 
   .doc-page-nav.doc-page-nav__footer.text-brand-primary.q-pb-xl(v-if="nav !== void 0")
-    .text-h6.q-pb-md Ready for more?
+    .text-h6.q-pb-md 准备好了吗？
     .q-gutter-md.flex
       router-link.q-link.doc-page-related.doc-page-related-bordered.rounded-borders.q-pa-md.cursor-pointer.column.justify-center.bg-grey-1(
         v-for="link in nav"
@@ -76,9 +76,9 @@ q-page.doc-page
         q-icon(:name="mdiCharity")
 
     div.q-mt-md
-      | <doc-link to="https://github.com/quasarframework/quasar/blob/dev/LICENSE">MIT LICENSE</doc-link> | <doc-link to="https://www.iubenda.com/privacy-policy/40685560">Privacy Policy</doc-link> | <doc-link to="https://github.com/quasarframework/quasar-art">Quasar Artwork</doc-link>
+      | <doc-link to="https://github.com/quasarframework/quasar/blob/dev/LICENSE">MIT 许可</doc-link> | <doc-link to="https://www.iubenda.com/privacy-policy/40685560">隐私政策</doc-link> | <doc-link to="https://github.com/quasarframework/quasar-art">Quasar 艺术品</doc-link>
 
-    div Copyright © 2015 - {{ year }} PULSARDEV SRL, Razvan Stoenescu
+    div 版权 © 2015 - {{ year }} PULSARDEV SRL, Razvan Stoenescu
 </template>
 
 <script>

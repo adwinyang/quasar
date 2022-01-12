@@ -6,7 +6,7 @@
   "props": {
     "horizontal": {
       "type": "Boolean",
-      "desc": "Display a horizontal section (will have no padding and can contain other QCardSection)",
+      "desc": "显示一个水平部分（将没有填充，可以包含其他的QCardSection）。",
       "category": "content"
     },
 

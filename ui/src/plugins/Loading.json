@@ -10,48 +10,48 @@
     "definition": {
       "delay": {
         "type": "Number",
-        "desc": "Wait a number of millisecond before showing; Not worth showing for 100ms for example then hiding it, so wait until you're sure it's a process that will take some considerable amount of time",
+        "desc": "在显示前等待若干毫秒；不值得显示100毫秒，然后再隐藏它，所以要等到你确定这是一个需要相当长的时间的过程。",
         "examples": [ 400 ]
       },
       "message": {
         "type": "String",
-        "desc": "Message to display",
+        "desc": "要显示的信息",
         "examples": [ "Processing your request" ]
       },
       "html": {
         "extends": "html",
-        "desc": "Force render the message as HTML; This can lead to XSS attacks so make sure that you sanitize the content"
+        "desc": "强制将信息呈现为HTML；这可能导致XSS攻击，所以确保你对内容进行清理"
       },
       "boxClass": {
         "type": "String",
-        "desc": "Content wrapped element custom classes",
+        "desc": "内容包裹的元素自定义类",
         "examples": [ "bg-amber text-black", "q-pa-xl" ]
       },
       "spinnerSize": {
         "type": "Number",
-        "desc": "Spinner size (in pixels)",
+        "desc": "旋转器的大小（以像素为单位）",
         "examples": [ 60 ]
       },
       "spinnerColor": {
         "extends": "color",
-        "desc": "Color name for spinner from the Quasar Color Palette"
+        "desc": "Quasar调色板上的旋转器的颜色名称"
       },
       "messageColor": {
         "extends": "color",
-        "desc": "Color name for text from the Quasar Color Palette"
+        "desc": "Quasar调色板中文本的颜色名称"
       },
       "backgroundColor": {
         "extends": "color",
-        "desc": "Color name for background from the Quasar Color Palette"
+        "desc": "Quasar调色板上的背景颜色名称"
       },
       "spinner": {
         "type": "String",
-        "desc": "One of the QSpinners",
+        "desc": "QSpinners之一",
         "examples": [ "QSpinnerAudio" ]
       },
       "customClass": {
         "type": "String",
-        "desc": "Add a CSS class to the container element to easily customize the component",
+        "desc": "给容器元素添加一个CSS类，以方便定制组件",
         "examples": [ "my-class" ]
       }
     }
@@ -60,67 +60,67 @@
   "props": {
     "isActive": {
       "type": "Boolean",
-      "desc": "Is Loading active?",
+      "desc": "加载是否活跃？",
       "reactive": true
     }
   },
 
   "methods": {
     "show": {
-      "desc": "Activate and show",
+      "desc": "激活并显示",
       "params": {
         "opts": {
           "type": "Object",
-          "desc": "All props are optional",
+          "desc": "所有属性都是可选的",
           "definition": {
             "delay": {
               "type": "Number",
-              "desc": "Wait a number of millisecond before showing; Not worth showing for 100ms for example then hiding it, so wait until you're sure it's a process that will take some considerable amount of time",
+              "desc": "在显示前等待若干毫秒；不值得显示100毫秒，然后再隐藏它，所以要等到你确定这是一个需要相当长的时间的过程。",
               "examples": [ 400 ]
             },
             "message": {
               "type": "String",
-              "desc": "Message to display",
+              "desc": "要显示的信息",
               "examples": [ "Processing your request" ]
             },
             "html": {
               "extends": "html",
-              "desc": "Render the message as HTML; This can lead to XSS attacks so make sure that you sanitize the message first"
+              "desc": "将信息渲染成HTML；这可能导致XSS攻击，所以确保你首先对信息进行清理。"
             },
             "boxClass": {
               "type": "String",
-              "desc": "Content wrapped element custom classes",
+              "desc": "内容包裹的元素自定义类",
               "examples": [ "bg-amber text-black", "q-pa-xl" ]
             },
             "spinnerSize": {
               "type": "Number",
-              "desc": "Spinner size (in pixels)",
+              "desc": "旋转器的大小（以像素为单位）",
               "examples": [ 60 ]
             },
             "spinnerColor": {
               "extends": "color",
-              "desc": "Color name for spinner from the Quasar Color Palette"
+              "desc": "Quasar调色板上的旋转器的颜色名称"
             },
             "messageColor": {
               "extends": "color",
-              "desc": "Color name for text from the Quasar Color Palette"
+              "desc": "Quasar调色板中文本的颜色名称"
             },
             "backgroundColor": {
               "extends": "color",
-              "desc": "Color name for background from the Quasar Color Palette"
+              "desc": "Quasar调色板上的背景颜色名称"
             },
             "spinner": {
               "type": "Component",
-              "desc": "One of the QSpinners"
+              "desc": "QSpinners之一"
             },
             "customClass": {
               "type": "String",
-              "desc": "Add a CSS class to easily customize the component",
+              "desc": "添加一个CSS类，以方便定制组件",
               "examples": [ "my-class" ]
             },
             "ignoreDefaults": {
               "type": "Boolean",
-              "desc": "Ignore the default configuration (set by setDefaults()) for this instance only"
+              "desc": "忽略这个实例的默认配置（由setDefaults()设置）。"
             }
           }
         }
@@ -128,51 +128,51 @@
     },
 
     "hide": {
-      "desc": "Hide it"
+      "desc": "隐藏它"
     },
 
     "setDefaults": {
-      "desc": "Merge options into the default ones",
+      "desc": "将选项合并到默认的选项中",
       "params": {
         "opts": {
           "type": "Object",
-          "desc": "Pick the subprop you want to define",
+          "desc": "选择你要定义的子项目",
           "required": true,
           "definition": {
             "delay": {
               "type": "Number",
-              "desc": "Wait a number of millisecond before showing; Not worth showing for 100ms for example then hiding it, so wait until you're sure it's a process that will take some considerable amount of time",
+              "desc": "在显示前等待若干毫秒；不值得显示100毫秒，然后再隐藏它，所以要等到你确定这是一个需要相当长的时间的过程。",
               "examples": [ 400 ]
             },
             "message": {
               "type": "String",
-              "desc": "Message to display",
+              "desc": "要显示的信息",
               "examples": [ "Processing your request" ]
             },
             "spinnerSize": {
               "type": "Number",
-              "desc": "Spinner size (in pixels)",
+              "desc": "旋转器的大小（以像素为单位）",
               "examples": [ 60 ]
             },
             "spinnerColor": {
               "extends": "color",
-              "desc": "Color name for spinner from the Quasar Color Palette"
+              "desc": "Quasar调色板上的旋转器的颜色名称"
             },
             "messageColor": {
               "extends": "color",
-              "desc": "Color name for text from the Quasar Color Palette"
+              "desc": "Quasar调色板中文本的颜色名称"
             },
             "backgroundColor": {
               "extends": "color",
-              "desc": "Color name for background from the Quasar Color Palette"
+              "desc": "Quasar调色板上的背景颜色名称"
             },
             "spinner": {
               "type": "Component",
-              "desc": "One of the QSpinners"
+              "desc": "QSpinners之一"
             },
             "customClass": {
               "type": "String",
-              "desc": "Add a CSS class to easily customize the component",
+              "desc": "添加一个CSS类，以方便定制组件",
               "examples": [ "my-class" ]
             }
           }

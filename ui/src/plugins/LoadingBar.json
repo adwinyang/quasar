@@ -10,7 +10,7 @@
     "definition": {
       "...props": {
         "type": "Object",
-        "desc": "QAjaxBar component props",
+        "desc": "QAjaxBar组件属性",
         "__exemption": [ "examples" ]
       }
     }
@@ -18,11 +18,11 @@
 
   "methods": {
     "start": {
-      "desc": "Notify bar you've started a background activity",
+      "desc": "通知酒吧你已经开始了一个背景活动",
       "params": {
         "speed": {
           "type": "Number",
-          "desc": "Delay (in milliseconds) between bar progress increments",
+          "desc": "条形进度增量之间的延迟（以毫秒计）。",
           "default": 300,
           "examples": [ 150 ]
         }
@@ -30,27 +30,27 @@
     },
 
     "stop": {
-      "desc": "Notify bar one background activity has finalized"
+      "desc": "通知栏一个背景活动已经完成"
     },
 
     "increment": {
-      "desc": "Manually trigger a bar progress increment",
+      "desc": "手动触发一个条形进度增量",
       "params": {
         "amount": {
           "type": "Number",
-          "desc": "Amount (0.0 < x < 1.0) to increment with",
+          "desc": "数量(0.0 < x < 1.0)，以递增。",
           "examples": [ 0.22 ]
         }
       }
     },
 
     "setDefaults": {
-      "desc": "Set the inner QAjaxBar's props",
+      "desc": "设置内部QAjaxBar的属性",
       "params": {
         "props": {
           "type": "Object",
           "required": true,
-          "desc": "QAjaxBar component props",
+          "desc": "QAjaxBar组件属性",
           "examples": [ "{ position: 'bottom', reverse: true }" ]
         }
       }

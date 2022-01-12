@@ -7,7 +7,7 @@
 
   "props": {
     "name": {
-      "desc": "Slide name",
+      "desc": "幻灯片名称",
       "examples": [
         "accounts", "firstSlide", ":name=\"1\""
       ],
@@ -16,7 +16,7 @@
 
     "img-src": {
       "type": "String",
-      "desc": "URL pointing to a slide background image (use statics folder)",
+      "desc": "指向幻灯片背景图片的URL（使用statics文件夹）。",
       "transformAssetUrls": true,
       "examples": [
         "(statics folder) src=\"statics/img/my-bg.png\"",

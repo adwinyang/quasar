@@ -1,5 +1,5 @@
 ---
-title: 幻灯片过渡
+title: 滑动过渡
 desc: QSlideTransition Vue组件根据封装的元素的可见度，向上或向下滑动。与v-show和v-if一起工作。
 keys: QSlideTransition
 related:

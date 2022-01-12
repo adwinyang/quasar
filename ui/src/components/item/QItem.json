@@ -8,7 +8,7 @@
   "props": {
     "active": {
       "type": "Boolean",
-      "desc": "Put item into 'active' state",
+      "desc": "让项目进入 '活动' 状态",
       "category": "state"
     },
 
@@ -18,7 +18,7 @@
 
     "clickable": {
       "type": "Boolean",
-      "desc": "Is QItem clickable? If it's the case, then it will add hover effects and emit 'click' events",
+      "desc": "QItem是可点击的吗？如果是的话，那么它将添加悬停效果并触发 'click' 事件",
       "category": "state"
     },
 
@@ -28,7 +28,7 @@
 
     "inset-level": {
       "type": "Number",
-      "desc": "Apply an inset; Useful when avatar/left side is missing but you want to align content with other items that do have a left side, or when you're building a menu",
+      "desc": "应用插图；当头像/左侧缺失，但你想将内容与其他有左侧的项目对齐时，或者当你正在建立一个菜单时，很有用。",
       "examples": [ ":inset-level=\"1\"" ],
       "category": "content"
     },
@@ -39,27 +39,27 @@
 
     "tag": {
       "extends": "tag",
-      "desc": "HTML tag to render; Suggestion: use 'label' when encapsulating a QCheckbox/QRadio/QToggle so that when user clicks/taps on the whole item it will trigger a model change for the mentioned components",
+      "desc": "建议：在封装 QCheckbox/QRadio/QToggle 时使用 'label'(标签)，这样当用户点击整个项目时，将触发上述组件的模型更改。",
       "default": "div",
       "examples": [ "a", "label", "div" ]
     },
 
     "manual-focus": {
       "type": "Boolean",
-      "desc": "Put item into a manual focus state; Enables 'focused' prop which will determine if item is focused or not, rather than relying on native hover/focus states",
+      "desc": "将项目置于手动聚焦状态；启用 'focused'(聚焦) 属性，该属性将确定项目是否聚焦，而不是依赖原生悬停/聚焦状态。",
       "category": "state"
     },
 
     "focused": {
       "type": "Boolean",
-      "desc": "Determines focus state, ONLY if 'manual-focus' is enabled / set to true",
+      "desc": "确定聚焦状态，只有当 'manual-focus' 被启用/设置为 'true' 时才会起作用。",
       "category": "state"
     }
   },
 
   "slots": {
     "default": {
-      "desc": "This is where QItem's content goes"
+      "desc": "这就是QItem的内容所在"
     }
   }
 }

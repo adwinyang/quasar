@@ -2,20 +2,20 @@
   "props": {
     "hidden": {
       "type": "Boolean",
-      "desc": "Puts component into 'hidden' mode",
+      "desc": "将组件放入\"隐藏\"模式",
       "category": "state"
     },
 
     "width": {
       "type": [ "Number", "String" ],
-      "desc": "Component width (in pixels)",
+      "desc": "组件宽度（单位：像素）",
       "examples": [ ":width=\"300\"", "400" ],
       "category": "style"
     },
 
     "position": {
       "type": "String",
-      "desc": "Positions component at one of the edges of the screen",
+      "desc": "将组件置于屏幕的一个边缘位置",
       "examples": [ "bottom" ],
       "required": true,
       "default": "top",
@@ -25,7 +25,7 @@
 
     "font-size": {
       "type": "String",
-      "desc": "The size in CSS units, including unit name, of the content (icon, text)",
+      "desc": "内容（图标、文本）在CSS单位中的大小，包括单位名称。",
       "examples": [ "18px", "2rem" ],
       "category": "style"
     },
@@ -36,7 +36,7 @@
 
     "size": {
       "extends": "size",
-      "desc": "My better description"
+      "desc": "我更好的描述"
     }
   },
 
@@ -46,11 +46,11 @@
     },
 
     "icon": {
-      "desc": "Slot for replacing the default dropdown icon"
+      "desc": "替换默认下拉图标的插槽"
     },
 
     "item": {
-      "desc": "Scoped slot for displaying each uploaded file"
+      "desc": "显示每个上传文件的作用域插槽"
     }
   },
 
@@ -60,11 +60,11 @@
     },
 
     "click": {
-      "desc": "Emitted on QChip click if 'clickable' property is set",
+      "desc": "如果设置了'可点击'属性，在点击QChip时触发。",
       "params": {
         "evt": {
           "type": "Object",
-          "desc": "JS event object"
+          "desc": "JS事件对象"
         }
       }
     }
@@ -77,7 +77,7 @@
 
     "showNow": {
       "extends": "show",
-      "desc": "My better description"
+      "desc": "我更好的描述"
     },
 
     "hide": {
@@ -85,10 +85,10 @@
         "evt": {
           "type": "Object",
           "required": false,
-          "desc": "JS event object"
+          "desc": "JS事件对象"
         }
       },
-      "desc": "Triggers component to hide"
+      "desc": "触发组件隐藏"
     }
   }
 }

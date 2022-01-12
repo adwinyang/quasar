@@ -1,5 +1,5 @@
 ---
-title: 钮扣
+title: 按钮
 desc: QBtn Vue组件是一个具有塑形、加载状态、波纹等功能的按钮。
 keys: QBtn
 related:

@@ -9,7 +9,7 @@
     "model-value": {
       "extends": "model-value",
       "type": [ "String", "Array", "Object", "null", "undefined" ],
-      "desc": "Date(s) of the component; Must be Array if using 'multiple' prop; Either use this property (along with a listener for 'update:model-value' event) OR use v-model directive",
+      "desc": "组件的日期；如果使用 'multiple'(多选) 属性，必须是数组；要么使用此属性（与 'update:model-value' 事件的监听器一起），要么使用v-model指令。",
       "examples": [
         "v-model=\"myDate\"",
         "v-model=\"[myDate1, myDate2]\"",
@@ -20,21 +20,21 @@
 
     "title": {
       "type": "String",
-      "desc": "When specified, it overrides the default header title; Makes sense when not in 'minimal' mode",
+      "desc": "当指定时，它将覆盖默认的标题；当不在 'minimal' 模式下时有意义。",
       "examples": [ "Birthday" ],
       "category": "content"
     },
 
     "subtitle": {
       "type": "String",
-      "desc": "When specified, it overrides the default header subtitle; Makes sense when not in 'minimal' mode",
+      "desc": "当指定时，它覆盖了默认的标题字幕；当不在 'minimal' 模式下时有意义。",
       "examples": [ "John Doe" ],
       "category": "content"
     },
 
     "default-year-month": {
       "type": "String",
-      "desc": "The default year and month to display (in YYYY/MM format) when model is unfilled (undefined or null); Please ensure it is within the navigation min/max year-month (if using them)",
+      "desc": "当模型未填写（未定义或空）时，要显示的默认年份和月份（YYYY/MM格式）；请确保它在导航的最小/最大年月之内（如果使用它们）。",
       "examples": [ "1986/02" ],
       "category": "model"
     },
@@ -46,7 +46,7 @@
 
     "default-view": {
       "type": "String",
-      "desc": "The view which will be displayed by default",
+      "desc": "将默认显示的视图",
       "default": "Calendar",
       "values": [ "Calendar", "Months", "Years" ],
       "category": "model"
@@ -54,23 +54,23 @@
 
     "years-in-month-view": {
       "type": "Boolean",
-      "desc": "Show the years selector in months view",
+      "desc": "在月份视图中显示年份选择器",
       "category": "behavior"
     },
 
     "events": {
       "type": [ "Array", "Function" ],
-      "desc": "A list of events to highlight on the calendar; If using a function, it receives the date as a String and must return a Boolean (matches or not); If using a function then for best performance, reference it from your scope and do not define it inline",
+      "desc": "要在日历上突出显示的事件列表；如果使用一个函数，它接收作为字符串的日期，并且必须返回一个布尔值（匹配或不匹配）；如果使用一个函数，为了获得最佳性能，从你的范围中引用它，不要在内联中定义它。",
       "params": {
         "date": {
           "type": "String",
-          "desc": "The current date being processed.",
+          "desc": "正在处理的当前日期。",
           "examples": [ "2018/11/05", "2021/10/25" ]
         }
       },
       "returns": {
         "type": "Boolean",
-        "desc": "If true, the current date will be highlighted"
+        "desc": "如果为真，当前日期将被突出显示"
       },
       "examples": [
         ":events=\"['2018/11/05', '2018/11/06', '2018/11/09', '2018/11/23']\"",
@@ -81,17 +81,17 @@
 
     "event-color": {
       "type": [ "String", "Function" ],
-      "desc": "Color name (from the Quasar Color Palette); If using a function, it receives the date as a String and must return a String (color for the received date); If using a function then for best performance, reference it from your scope and do not define it inline",
+      "desc": "颜色名称（来自Quasar调色板）；如果使用一个函数，它接收日期为一个字符串，并且必须返回一个字符串（接收日期的颜色）；如果使用一个函数，为了获得最佳性能，从你的作用域中引用它，不要内联定义它。",
       "params": {
         "date": {
           "type": "String",
-          "desc": "The current date being processed.",
+          "desc": "正在处理的当前日期。",
           "examples": [ "2018/11/05", "2021/10/25" ]
         }
       },
       "returns": {
         "type": "String",
-        "desc": "Color for the current date.",
+        "desc": "当前日期的颜色。",
         "examples": [ "teal", "orange" ]
       },
       "examples": [
@@ -103,17 +103,17 @@
 
     "options": {
       "type": [ "Array", "Function" ],
-      "desc": "Optionally configure the days that are selectable; If using a function, it receives the date as a String and must return a Boolean (is date acceptable or not); If using a function then for best performance, reference it from your scope and do not define it inline; Incompatible with 'range' prop",
+      "desc": "可选择配置可选择的日期；如果使用一个函数，它接收作为字符串的日期，并且必须返回一个布尔值（日期是否可接受）；如果使用一个函数，为了获得最佳性能，从你的作用域中引用它，不要内联定义它；与 'range' 属性不兼容。",
       "params": {
         "date": {
           "type": "String",
-          "desc": "The current date being processed.",
+          "desc": "正在处理的当前日期。",
           "examples": [ "2018/11/05", "2021/10/25" ]
         }
       },
       "returns": {
         "type": "Boolean",
-        "desc": "If true, the current date will be made available for selection"
+        "desc": "如果是真的，当前的日期将被提供出来供人选择。"
       },
       "examples": [
         ":options=\"['2018/11/05', '2018/11/12', '2018/11/19', '2018/11/26' ]\"",
@@ -125,27 +125,27 @@
 
     "navigation-min-year-month": {
       "type": "String",
-      "desc": "Lock user from navigating below a specific year+month (in YYYY/MM format); This prop is not used to correct the model; You might want to also use 'default-year-month' prop",
+      "desc": "锁定用户在特定的年+月（YYY/MM格式）以下的导航；这个属性不用于纠正模型；你可能想同时使用 'default-year-month' 属性",
       "examples": [ "2020/07" ],
       "category": "selection"
     },
 
     "navigation-max-year-month": {
       "type": "String",
-      "desc": "Lock user from navigating above a specific year+month (in YYYY/MM format); This prop is not used to correct the model; You might want to also use 'default-year-month' prop",
+      "desc": "锁定用户在特定的年+月（YYY/MM格式）以上的导航；这个属性不用于纠正模型；你可能想同时使用 'default-year-month' 属性",
       "examples": [ "2020/10" ],
       "category": "selection"
     },
 
     "no-unset": {
       "type": "Boolean",
-      "desc": "Remove ability to unselect a date; It does not apply to selecting a range over already selected dates",
+      "desc": "移除取消选择日期的功能；这不适用于在已选择的日期上选择一个范围。",
       "category": "selection"
     },
 
     "first-day-of-week": {
       "type": [ "String", "Number" ],
-      "desc": "Sets the day of the week that is considered the first day (0 - Sunday, 1 - Monday, ...); This day will show in the left-most column of the calendar",
+      "desc": "设置一周中被认为是第一天的日子（0-周日，1-周一，......）；这一天将显示在日历的最左边一栏。",
       "default": "(based on configured Quasar lang language)",
       "examples": [
         "first-day-of-week=\"1\"",
@@ -156,38 +156,38 @@
 
     "today-btn": {
       "type": "Boolean",
-      "desc": "Display a button that selects the current day",
+      "desc": "显示一个选择当前日期的按钮",
       "category": "content"
     },
 
     "minimal": {
       "type": "Boolean",
-      "desc": "Don’t display the header",
+      "desc": "不显示页眉",
       "category": "content"
     },
 
     "multiple": {
       "type": "Boolean",
-      "desc": "Allow multiple selection; Model must be Array",
+      "desc": "允许多选；模型必须是数组",
       "category": "model|selection"
     },
 
     "range": {
       "type": "Boolean",
-      "desc": "Allow range selection; Partial compatibility with 'options' prop: selected ranges might also include 'unselectable' days",
+      "desc": "允许范围选择；与 'options' 属性部分兼容：选择的范围也可能包括 '不可选择的' 日期",
       "category": "model|selection"
     },
 
     "emit-immediately": {
       "type": "Boolean",
-      "desc": "Emit model when user browses month and year too; ONLY for single selection (non-multiple, non-range)",
+      "desc": "当用户浏览月份和年份时触发模型；只适用于单一选择（非多选(non-multiple)，非范围(non-range)）。",
       "category": "model"
     }
   },
 
   "slots": {
     "default": {
-      "desc": "This is where additional buttons can go"
+      "desc": "这是附加按钮可以使用的地方"
     }
   },
 
@@ -200,52 +200,52 @@
         },
         "reason": {
           "type": "String",
-          "desc": "Reason of the user interaction (what was picked)",
+          "desc": "用户交互的原因（被选中的内容）。",
           "values": [ "add-day", "remove-day", "add-range", "remove-range", "mask", "locale", "year", "month" ]
         },
         "details": {
           "type": "Object",
-          "desc": "Object of properties on the new model",
+          "desc": "新模型上的属性对象",
           "definition": {
             "year": {
               "type": "Number",
               "required": true,
-              "desc": "The year of the date that the user has clicked/tapped on",
+              "desc": "用户单击/点击的日期的年份",
               "__exemption": [ "examples" ]
             },
             "month": {
               "type": "Number",
               "required": true,
-              "desc": "The month of the date that the user has clicked/tapped on",
+              "desc": "用户所点击的日期的月份",
               "__exemption": [ "examples" ]
             },
             "day": {
               "type": "Number",
               "required": true,
-              "desc": "The day of the month that the user has clicked/tapped on",
+              "desc": "用户已经点击/敲击的月中的某日",
               "__exemption": [ "examples" ]
             },
             "from": {
               "type": "Object",
               "required": false,
-              "desc": "Object of properties of the range starting point (only if range)",
+              "desc": "范围起点的属性对象（只有在范围内）。",
               "definition": {
                 "year": {
                   "type": "Number",
                   "required": true,
-                  "desc": "The year",
+                  "desc": "年",
                   "__exemption": [ "examples" ]
                 },
                 "month": {
                   "type": "Number",
                   "required": true,
-                  "desc": "The month",
+                  "desc": "月",
                   "__exemption": [ "examples" ]
                 },
                 "day": {
                   "type": "Number",
                   "required": true,
-                  "desc": "The day of month",
+                  "desc": "日(1-31)",
                   "__exemption": [ "examples" ]
                 }
               }
@@ -253,24 +253,24 @@
             "to": {
               "type": "Object",
               "required": false,
-              "desc": "Object of properties of the range ending point (only if range)",
+              "desc": "范围结束点的属性对象（只有在范围内）。",
               "definition": {
                 "year": {
                   "type": "Number",
                   "required": true,
-                  "desc": "The year",
+                  "desc": "年",
                   "__exemption": [ "examples" ]
                 },
                 "month": {
                   "type": "Number",
                   "required": true,
-                  "desc": "The month",
+                  "desc": "月",
                   "__exemption": [ "examples" ]
                 },
                 "day": {
                   "type": "Number",
                   "required": true,
-                  "desc": "The day of month",
+                  "desc": "日(1-31)",
                   "__exemption": [ "examples" ]
                 }
               }
@@ -281,22 +281,22 @@
     },
 
     "navigation": {
-      "desc": "Emitted when user navigates to a different month or year (and even when the model changes from an outside source)",
+      "desc": "当用户浏览到不同的月份或年份时触发（甚至当 model 从外部来源改变时也会触发。）",
       "params": {
         "view": {
           "type": "Object",
-          "desc": "Definition of the current view (year, month)",
+          "desc": "当前视图的定义（年、月）。",
           "definition": {
             "year": {
               "type": "Number",
               "required": true,
-              "desc": "The year",
+              "desc": "年",
               "__exemption": [ "examples" ]
             },
             "month": {
               "type": "Number",
               "required": true,
-              "desc": "The month",
+              "desc": "月",
               "__exemption": [ "examples" ]
             }
           }
@@ -305,28 +305,28 @@
     },
 
     "range-start": {
-      "desc": "User has started a range selection",
+      "desc": "用户已开始选择范围",
       "params": {
         "from": {
           "type": "Object",
-          "desc": "Definition of date from where the range begins",
+          "desc": "定义范围开始的日期",
           "definition": {
             "year": {
               "type": "Number",
               "required": true,
-              "desc": "The year",
+              "desc": "年",
               "__exemption": [ "examples" ]
             },
             "month": {
               "type": "Number",
               "required": true,
-              "desc": "The month",
+              "desc": "月",
               "__exemption": [ "examples" ]
             },
             "day": {
               "type": "Number",
               "required": true,
-              "desc": "The day of month",
+              "desc": "日(1-31)",
               "__exemption": [ "examples" ]
             }
           }
@@ -335,33 +335,33 @@
     },
 
     "range-end": {
-      "desc": "User has ended a range selection",
+      "desc": "用户已经结束了一个范围的选择",
       "params": {
         "range": {
           "type": "Object",
-          "desc": "Definition of the range",
+          "desc": "范围的定义",
           "definition": {
             "from": {
               "type": "Object",
               "required": true,
-              "desc": "Definition of date from where the range begins",
+              "desc": "定义范围开始的日期",
               "definition": {
                 "year": {
                   "type": "Number",
                   "required": true,
-                  "desc": "The year",
+                  "desc": "年",
                   "__exemption": [ "examples" ]
                 },
                 "month": {
                   "type": "Number",
                   "required": true,
-                  "desc": "The month",
+                  "desc": "月",
                   "__exemption": [ "examples" ]
                 },
                 "day": {
                   "type": "Number",
                   "required": true,
-                  "desc": "The day of month",
+                  "desc": "日(1-31)",
                   "__exemption": [ "examples" ]
                 }
               }
@@ -369,24 +369,24 @@
             "to": {
               "type": "Object",
               "required": true,
-              "desc": "Definition of date to where the range ends",
+              "desc": "定义范围结束的日期",
               "definition": {
                 "year": {
                   "type": "Number",
                   "required": true,
-                  "desc": "The year",
+                  "desc": "年",
                   "__exemption": [ "examples" ]
                 },
                 "month": {
                   "type": "Number",
                   "required": true,
-                  "desc": "The month",
+                  "desc": "月",
                   "__exemption": [ "examples" ]
                 },
                 "day": {
                   "type": "Number",
                   "required": true,
-                  "desc": "The day of month",
+                  "desc": "日(1-31)",
                   "__exemption": [ "examples" ]
                 }
               }
@@ -399,94 +399,94 @@
 
   "methods": {
     "setToday": {
-      "desc": "Change model to today"
+      "desc": "将 model 更改为今天(当前日期)"
     },
 
     "setView": {
-      "desc": "Change current view",
+      "desc": "改变当前视图",
       "params": {
         "view": {
           "type": "String",
           "required": true,
-          "desc": "QDate view name",
+          "desc": "QDate 视图名称",
           "values": [ "Calendar", "Months", "Years" ]
         }
       }
     },
 
     "offsetCalendar": {
-      "desc": "Increment or decrement calendar view's month or year",
+      "desc": "递增或递减日历视图的月份或年份",
       "params": {
         "type": {
           "type": "String",
           "required": true,
-          "desc": "What to increment/decrement",
+          "desc": "递增或递减",
           "values": [ "month", "year" ]
         },
         "descending": {
           "type": "Boolean",
-          "desc": "Decrement?"
+          "desc": "递减？"
         }
       }
     },
 
     "setCalendarTo": {
-      "desc": "Change current year and month of the Calendar view; It gets corrected if using navigation-min/max-year-month and sets the current view to Calendar",
+      "desc": "改变日历视图的当前年份和月份；如果使用 navigation-min/max-year-month 并将当前视图设置为 Calendar，则会更正此错误。",
       "params": {
         "year": {
           "type": "Number",
-          "desc": "The year",
+          "desc": "年",
           "__exemption": [ "examples" ]
         },
         "month": {
           "type": "Number",
-          "desc": "The month",
+          "desc": "月",
           "__exemption": [ "examples" ]
         }
       }
     },
 
     "setEditingRange": {
-      "desc": "Configure the current editing range",
+      "desc": "配置当前的编辑范围",
       "params": {
         "from": {
           "type": "Object",
-          "desc": "Definition of date from where the range begins",
+          "desc": "定义范围开始的日期",
           "definition": {
             "year": {
               "type": "Number",
-              "desc": "The year",
+              "desc": "年",
               "__exemption": [ "examples" ]
             },
             "month": {
               "type": "Number",
-              "desc": "The month",
+              "desc": "月",
               "__exemption": [ "examples" ]
             },
             "day": {
               "type": "Number",
-              "desc": "The day of month",
+              "desc": "日(1-31)",
               "__exemption": [ "examples" ]
             }
           }
         },
         "to": {
           "type": "Object",
-          "desc": "Definition of date to where the range ends",
+          "desc": "定义范围结束的日期",
           "definition": {
             "year": {
               "type": "Number",
-              "desc": "The year",
+              "desc": "年",
               "__exemption": [ "examples" ]
             },
             "month": {
               "type": "Number",
-              "desc": "The month",
+              "desc": "月",
               "__exemption": [ "examples" ]
             },
             "day": {
               "type": "Number",
-              "desc": "The day of month",
+              "desc": "日(1-31)",
               "__exemption": [ "examples" ]
             }
           }

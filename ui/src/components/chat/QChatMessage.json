@@ -6,39 +6,39 @@
   "props": {
     "sent": {
       "type": "Boolean",
-      "desc": "Render as a sent message (so from current user)",
+      "desc": "渲染为发送的信息（所以来自当前用户）。",
       "category": "content"
     },
 
     "label": {
       "type": "String",
-      "desc": "Renders a label header/section only",
+      "desc": "只渲染一个标签头/部分",
       "examples": [ "Friday, 18th" ],
       "category": "content"
     },
 
     "bg-color": {
       "extends": "color",
-      "desc": "Color name (from the Quasar Color Palette) for chat bubble background",
+      "desc": "聊天气泡背景的颜色名称（来自Quasar调色板）。",
       "category": "style"
     },
 
     "text-color": {
       "extends": "text-color",
-      "desc": "Color name (from the Quasar Color Palette) for chat bubble text",
+      "desc": "聊天气泡文本的颜色名称（来自Quasar调色板）。",
       "category": "style"
     },
 
     "name": {
       "type": "String",
-      "desc": "Author's name",
+      "desc": "作者的名字",
       "examples": [ "John Doe" ],
       "category": "content"
     },
 
     "avatar": {
       "type": "String",
-      "desc": "URL to the avatar image of the author",
+      "desc": "作者头像图片的URL",
       "transformAssetUrls": true,
       "examples": [
         "(statics folder) src=\"statics/boy-avatar.png\"",
@@ -51,65 +51,65 @@
 
     "text": {
       "type": "Array",
-      "desc": "Array of strings that are the message body. Strings are not sanitized (see details in docs)",
+      "desc": "作为消息正文的字符串数组。字符串没有经过清理（详见文档）。",
       "examples": [ ":text=\"['How are you?']\"", ":text=\"['I\\'m good, thank you!', 'And you?']\"" ],
       "category": "content"
     },
 
     "stamp": {
       "type": "String",
-      "desc": "Creation timestamp",
+      "desc": "创建时间戳",
       "examples": [ "13:55", "Yesterday at 13:51" ],
       "category": "content"
     },
 
     "size": {
       "type": "String",
-      "desc": "1-12 out of 12 (same as col-*)",
+      "desc": "1-12，满分12分（与col-*相同）。",
       "examples": [ "4", "6", "12" ],
       "category": "style"
     },
 
     "label-html": {
       "extends": "html",
-      "desc": "Render the label as HTML; This can lead to XSS attacks so make sure that you sanitize the message first"
+      "desc": "将标签渲染成HTML；这可能导致XSS攻击，所以要确保你先对信息进行清理。"
     },
 
     "name-html": {
       "extends": "html",
-      "desc": "Render the name as HTML; This can lead to XSS attacks so make sure that you sanitize the message first"
+      "desc": "将名字渲染成HTML；这可能会导致XSS攻击，所以要确保你首先对信息进行清理。"
     },
 
     "text-html": {
       "extends": "html",
-      "desc": "Render the text as HTML; This can lead to XSS attacks so make sure that you sanitize the message first"
+      "desc": "将文本渲染成HTML；这可能会导致XSS攻击，所以要确保你首先对信息进行清理。"
     },
 
     "stamp-html": {
       "extends": "html",
-      "desc": "Render the stamp as HTML; This can lead to XSS attacks so make sure that you sanitize the message first"
+      "desc": "将邮票渲染成HTML；这可能会导致XSS攻击，所以要确保你首先对信息进行清理。"
     }
   },
 
   "slots": {
     "default": {
-      "desc": "You can use this slot to define a custom message (overrides props)"
+      "desc": "你可以使用这个插槽来定义一个自定义信息（覆盖属性）。"
     },
 
     "avatar": {
-      "desc": "Slot for avatar; Suggestion: QAvatar, img"
+      "desc": "头像的插槽; 建议：QAvatar, img"
     },
 
     "name": {
-      "desc": "Slot for name; Overrides the 'name' prop"
+      "desc": "名称的插槽；覆盖 'name'(名称) 属性。"
     },
 
     "stamp": {
-      "desc": "Slot for stamp; Overrides the 'stamp' prop"
+      "desc": "印章的插槽；覆盖 'stamp'(印章) 属性。"
     },
 
     "label": {
-      "desc": "Slot for label; Overrides the 'label' prop"
+      "desc": "标签的插槽；覆盖 'label'(标签) 属性。"
     }
   }
 }

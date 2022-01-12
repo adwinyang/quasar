@@ -6,20 +6,20 @@
   "props": {
     "heading": {
       "type": "Boolean",
-      "desc": "Defines a heading timeline item",
+      "desc": "定义了一个标题时间线项目",
       "category": "content"
     },
 
     "tag": {
       "extends": "tag",
-      "desc": "Tag to use, if of type 'heading' only",
+      "desc": "如果只是 'heading' 类型，则使用标签",
       "default": "h3",
       "examples": [ "h1" ]
     },
 
     "side": {
       "type": "String",
-      "desc": "Side to place the timeline entry; Works only if QTimeline layout is loose.",
+      "desc": "放置时间线条目的一侧；仅在 QTimeline 布局松散时起作用。",
       "default": "right",
       "values": [ "left", "right" ],
       "category": "behavior"
@@ -31,7 +31,7 @@
 
     "avatar": {
       "type": "String",
-      "desc": "URL to the avatar image; Icon takes precedence if used, so it replaces avatar",
+      "desc": "头像图片的URL；如果使用Icon，则Icon优先，所以它取代了avatar。",
       "transformAssetUrls": true,
       "examples": [
         "(statics folder) src=\"statics/img/my-bg.png\"",
@@ -48,21 +48,21 @@
 
     "title": {
       "type": "String",
-      "desc": "Title of timeline entry; Is overridden if using 'title' slot",
+      "desc": "时间线条目的标题；如果使用 'title' 插槽，则被覆盖。",
       "examples": [ "December party" ],
       "category": "content"
     },
 
     "subtitle": {
       "type": "String",
-      "desc": "Subtitle of timeline entry; Is overridden if using 'subtitle' slot",
+      "desc": "时间线条目的副标题；如果使用 'subtitle' 插槽，则被覆盖。",
       "examples": [ "All invited" ],
       "category": "content"
     },
 
     "body": {
       "type": "String",
-      "desc": "Body content of timeline entry; Use this prop or the default slot",
+      "desc": "时间线条目的主体内容；使用此属性或默认插槽",
       "examples": [ "Lorem ipsum dolor sit amet, consectetur adipisicing elit." ],
       "category": "content"
     }
@@ -70,15 +70,15 @@
 
   "slots": {
     "default": {
-      "desc": "Timeline entry content (body)"
+      "desc": "时间轴条目内容（正文）"
     },
 
     "title": {
-      "desc": "Optional slot for title; When used, it overrides 'title' prop"
+      "desc": "可选的标题插槽；当使用时，它取代了 'title' 属性。"
     },
 
     "subtitle": {
-      "desc": "Optional slot for subtitle; When used, it overrides 'subtitle' prop"
+      "desc": "可选的字幕插槽；当使用时，它将取代 'subtitle' 属性。"
     }
   }
 }

@@ -10,14 +10,14 @@
 
     "label": {
       "type": [ "Number", "String" ],
-      "desc": "A number or string to label the tab",
+      "desc": "一个数字或字符串来标记标签",
       "examples": [ "Home" ],
       "category": "content"
     },
 
     "alert": {
       "type": [ "Boolean", "String" ],
-      "desc": "Adds an alert symbol to the tab, notifying the user there are some updates; If its value is not a Boolean, then you can specify a color",
+      "desc": "在标签上添加一个警告符号，通知用户有一些更新；如果它的值不是布尔值，那么你可以指定一个颜色",
       "examples": [
         "alert",
         "alert=\"purple\""
@@ -27,7 +27,7 @@
 
     "alert-icon": {
       "type": "String",
-      "desc": "Adds a floating icon to the tab, notifying the user there are some updates; It's displayed only if 'alert' is set; Can use the color specified by 'alert' prop",
+      "desc": "在标签上添加一个浮动图标，通知用户有一些更新；只有在设置了'警报'的情况下才显示；可以使用'警报'属性指定的颜色。",
       "examples": [
         "alert-icon=\"alarm_on\""
       ],
@@ -36,7 +36,7 @@
 
     "name": {
       "type": [ "Number", "String" ],
-      "desc": "Panel name",
+      "desc": "小组名称",
       "default": "A random UID",
       "examples": [
         "home", ":name=\"1\""
@@ -46,13 +46,13 @@
 
     "no-caps": {
       "type": "Boolean",
-      "desc": "Turns off capitalizing all letters within the tab (which is the default)",
+      "desc": "关闭标签内所有字母的大写（这是默认的）。",
       "category": "content"
     },
 
     "content-class": {
       "type": "String",
-      "desc": "Class definitions to be attributed to the content wrapper",
+      "desc": "归属于内容包装器的类定义",
       "examples": [ "my-special-class" ],
       "category": "style"
     },
@@ -72,7 +72,7 @@
 
   "slots": {
     "default": {
-      "desc": "Suggestion: QMenu, QTooltip"
+      "desc": "建议：QMenu, QTooltip"
     }
   }
 }

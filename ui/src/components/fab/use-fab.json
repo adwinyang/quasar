@@ -6,7 +6,7 @@
   "props": {
     "type":{
       "type": "String",
-      "desc": "Define the button HTML DOM type",
+      "desc": "定义按钮的HTML DOM类型",
       "default": "a",
       "values": [
         "a", "submit", "button", "reset"
@@ -16,31 +16,31 @@
 
     "outline": {
       "type": "Boolean",
-      "desc": "Use 'outline' design for Fab button",
+      "desc": "使用 'outline'(大纲) 设计的Fab按钮",
       "category": "style"
     },
 
     "push": {
       "type": "Boolean",
-      "desc": "Use 'push' design for Fab button",
+      "desc": "使用 'push'(推送)设计的Fab按钮",
       "category": "style"
     },
 
     "flat": {
       "type": "Boolean",
-      "desc": "Use 'flat' design for Fab button",
+      "desc": "使用 'flat'(平面) 设计的Fab按钮",
       "category": "style"
     },
 
     "unelevated": {
       "type": "Boolean",
-      "desc": "Remove shadow",
+      "desc": "移除阴影",
       "category": "style"
     },
 
     "padding": {
       "type": "String",
-      "desc": "Apply custom padding (vertical [horizontal]); Size in CSS units, including unit name or standard size name (none|xs|sm|md|lg|xl); Also removes the min width and height when set",
+      "desc": "应用自定义的padding（垂直[水平]）；尺寸以CSS为单位，包括单位名称或标准尺寸名称（none|xs|sm|md|lg|xl）；同时在设置时删除最小宽度和高度",
       "examples": [ "16px", "10px 5px", "2rem", "xs", "md lg" ],
       "category": "style"
     },
@@ -55,19 +55,19 @@
 
     "glossy": {
       "type": "Boolean",
-      "desc": "Apply the glossy effect over the button",
+      "desc": "在按钮上应用光亮的效果",
       "category": "style"
     },
 
     "external-label": {
       "type": "Boolean",
-      "desc": "Display label besides the FABs, as external content",
+      "desc": "除了FABs之外，作为外部内容显示标签",
       "category": "style|content"
     },
 
     "label": {
       "type": [ "String", "Number" ],
-      "desc": "The label that will be shown when Fab is extended",
+      "desc": "当Fab被扩展时将显示的标签",
       "default": "",
       "examples": [ "Button Label" ],
       "category": "content"
@@ -75,20 +75,20 @@
 
     "label-position": {
       "type": "String",
-      "desc": "Position of the label around the icon",
+      "desc": "图标周围标签的位置",
       "values": [ "top", "right", "bottom", "left" ],
       "category": "style|content"
     },
 
     "hide-label": {
       "type": "Boolean",
-      "desc": "Hide the label; Useful for animation purposes where you toggle the visibility of the label",
+      "desc": "隐藏标签；在动画中切换标签的可见性时非常有用。",
       "category": "style|content"
     },
 
     "label-class": {
       "type": [ "Array", "String", "Object" ],
-      "desc": "Class definitions to be attributed to the label container",
+      "desc": "归属于标签容器的类别定义",
       "examples": [
         "my-special-class",
         ":input-class=\"{ 'my-special-class': <condition> }\""
@@ -98,7 +98,7 @@
 
     "label-style": {
       "type": [ "Array", "String", "Object" ],
-      "desc": "Style definitions to be attributed to the label container",
+      "desc": "归属于标签容器的样式定义",
       "examples": [
         "background-color: #ff0000",
         ":input-style=\"{ backgroundColor: '#ff0000' }\""
@@ -108,7 +108,7 @@
 
     "square": {
       "type": "Boolean",
-      "desc": "Apply a rectangle aspect to the FAB",
+      "desc": "在FAB上应用一个矩形的方面",
       "category": "style"
     },
 

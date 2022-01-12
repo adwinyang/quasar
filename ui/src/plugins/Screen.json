@@ -8,47 +8,47 @@
   "props": {
     "width": {
       "type": "Number",
-      "desc": "Screen width (in pixels)",
+      "desc": "屏幕宽度（以像素为单位）",
       "reactive": true,
       "examples": [ 452 ]
     },
 
     "height": {
       "type": "Number",
-      "desc": "Screen height (in pixels)",
+      "desc": "屏幕高度（像素）。",
       "reactive": true,
       "examples": [ 721 ]
     },
 
     "name": {
       "type": "String",
-      "desc": "Tells current window breakpoint",
+      "desc": "告知当前窗口的断点",
       "values": [ "xs", "sm", "md", "lg", "xl" ],
       "reactive": true
     },
 
     "sizes": {
       "type": "Object",
-      "desc": "Breakpoints (in pixels)",
+      "desc": "断点（以像素为单位）",
       "definition": {
         "sm": {
           "type": "Number",
-          "desc": "Breakpoint width size (minimum size)",
+          "desc": "断点宽度大小（最小尺寸）",
           "examples": [ 600 ]
         },
         "md": {
           "type": "Number",
-          "desc": "Breakpoint width size (minimum size)",
+          "desc": "断点宽度大小（最小尺寸）",
           "examples": [ 1024 ]
         },
         "lg": {
           "type": "Number",
-          "desc": "Breakpoint width size (minimum size)",
+          "desc": "断点宽度大小（最小尺寸）",
           "examples": [ 1440 ]
         },
         "xl": {
           "type": "Number",
-          "desc": "Breakpoint width size (minimum size)",
+          "desc": "断点宽度大小（最小尺寸）",
           "examples": [ 1920 ]
         }
       },
@@ -60,24 +60,24 @@
 
     "lt": {
       "type": "Object",
-      "desc": "Tells if current screen width is lower than breakpoint-name",
+      "desc": "指示当前屏幕宽度是否小于断点名称",
       "reactive": true,
       "definition": {
         "sm": {
           "type": "Boolean",
-          "desc": "Is current screen width lower than this breakpoint's lowest limit?"
+          "desc": "当前屏幕宽度是否小于该断点的最低限制？"
         },
         "md": {
           "type": "Boolean",
-          "desc": "Is current screen width lower than this breakpoint's lowest limit?"
+          "desc": "当前屏幕宽度是否小于该断点的最低限制？"
         },
         "lg": {
           "type": "Boolean",
-          "desc": "Is current screen width lower than this breakpoint's lowest limit?"
+          "desc": "当前屏幕宽度是否小于该断点的最低限制？"
         },
         "xl": {
           "type": "Boolean",
-          "desc": "Is current screen width lower than this breakpoint's lowest limit?"
+          "desc": "当前屏幕宽度是否小于该断点的最低限制？"
         }
       },
       "examples": [
@@ -87,24 +87,24 @@
 
     "gt": {
       "type": "Object",
-      "desc": "Tells if current screen width is greater than breakpoint-name",
+      "desc": "说明当前屏幕宽度是否大于断点名称",
       "reactive": true,
       "definition": {
         "xs": {
           "type": "Boolean",
-          "desc": "Is current screen width greater than this breakpoint's max limit?"
+          "desc": "当前屏幕宽度是否大于该断点的最大限制？"
         },
         "sm": {
           "type": "Boolean",
-          "desc": "Is current screen width greater than this breakpoint's max limit?"
+          "desc": "当前屏幕宽度是否大于该断点的最大限制？"
         },
         "md": {
           "type": "Boolean",
-          "desc": "Is current screen width greater than this breakpoint's max limit?"
+          "desc": "当前屏幕宽度是否大于该断点的最大限制？"
         },
         "lg": {
           "type": "Boolean",
-          "desc": "Is current screen width greater than this breakpoint's max limit?"
+          "desc": "当前屏幕宽度是否大于该断点的最大限制？"
         }
       },
       "examples": [
@@ -114,61 +114,61 @@
 
     "xs": {
       "type": "Boolean",
-      "desc": "Current screen width fits exactly 'xs' breakpoint",
+      "desc": "当前屏幕宽度正好适合'xs'断点",
       "reactive": true
     },
 
     "sm": {
       "type": "Boolean",
-      "desc": "Current screen width fits exactly 'sm' breakpoint",
+      "desc": "当前屏幕宽度正好适合'sm'断点",
       "reactive": true
     },
 
     "md": {
       "type": "Boolean",
-      "desc": "Current screen width fits exactly 'md' breakpoint",
+      "desc": "当前屏幕宽度正好适合'md'断点",
       "reactive": true
     },
 
     "lg": {
       "type": "Boolean",
-      "desc": "Current screen width fits exactly 'lg' breakpoint",
+      "desc": "当前屏幕宽度正好适合'lg'断点",
       "reactive": true
     },
 
     "xl": {
       "type": "Boolean",
-      "desc": "Current screen width fits exactly 'xl' breakpoint",
+      "desc": "当前屏幕宽度正好适合'xl'断点",
       "reactive": true
     }
   },
 
   "methods": {
     "setSizes": {
-      "desc": "Override default breakpoint sizes",
+      "desc": "覆盖默认断点尺寸",
       "params": {
         "breakpoints": {
           "type": "Object",
-          "desc": "Pick what you want to override",
+          "desc": "选择你想覆盖的内容",
           "definition": {
             "sm": {
               "type": "Number",
-              "desc": "Breakpoint width size (minimum size)",
+              "desc": "断点宽度大小（最小尺寸）",
               "examples": [ 600 ]
             },
             "md": {
               "type": "Number",
-              "desc": "Breakpoint width size (minimum size)",
+              "desc": "断点宽度大小（最小尺寸）",
               "examples": [ 1024 ]
             },
             "lg": {
               "type": "Number",
-              "desc": "Breakpoint width size (minimum size)",
+              "desc": "断点宽度大小（最小尺寸）",
               "examples": [ 1440 ]
             },
             "xl": {
               "type": "Number",
-              "desc": "Breakpoint width size (minimum size)",
+              "desc": "断点宽度大小（最小尺寸）",
               "examples": [ 1920 ]
             }
           },
@@ -178,11 +178,11 @@
     },
 
     "setDebounce": {
-      "desc": "Debounce update of all props when screen width/height changes",
+      "desc": "当屏幕宽度/高度发生变化时，所有属性的去抖动更新",
       "params": {
         "amount": {
           "type": "Number",
-          "desc": "Amount in milliseconds",
+          "desc": "以毫秒为单位的数量",
           "required": true,
           "examples": [ 300 ]
         }

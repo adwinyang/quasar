@@ -8,7 +8,7 @@
   "props": {
     "side": {
       "type": "String",
-      "desc": "Side to attach to",
+      "desc": "连接的侧面",
       "values": [ "left", "right" ],
       "default": "left",
       "examples": [ "right" ],
@@ -17,13 +17,13 @@
 
     "overlay": {
       "type": "Boolean",
-      "desc": "Puts drawer into overlay mode (does not occupy space on screen, narrowing the page)",
+      "desc": "将抽屉放入叠加模式（不占用屏幕空间，缩小页面）。",
       "category": "behavior"
     },
 
     "width": {
       "type": "Number",
-      "desc": "Width of drawer (in pixels)",
+      "desc": "抽屉的宽度（单位：像素）",
       "default": 300,
       "examples": [ ":width=\"350\"" ],
       "category": "style"
@@ -31,13 +31,13 @@
 
     "mini": {
       "type": "Boolean",
-      "desc": "Puts drawer into mini mode",
+      "desc": "将抽屉放入迷你模式",
       "category": "behavior"
     },
 
     "mini-width": {
       "type": "Number",
-      "desc": "Width of drawer (in pixels) when in mini mode",
+      "desc": "在迷你模式下，抽屉的宽度（单位：像素）。",
       "default": 60,
       "examples": [ ":mini-width=\"100\"" ],
       "category": "style"
@@ -49,13 +49,13 @@
 
     "mini-to-overlay": {
       "type": "Boolean",
-      "desc": "Mini mode will expand as an overlay",
+      "desc": "迷你模式将作为一个覆盖层展开",
       "category": "behavior"
     },
 
     "breakpoint": {
       "type": "Number",
-      "desc": "Breakpoint (in pixels) of layout width up to which mobile mode is used",
+      "desc": "使用移动模式的布局宽度的断点（像素）。",
       "default": 1023,
       "examples": [ 1200, ":breakpoint=\"1400\"" ],
       "category": "behavior"
@@ -63,7 +63,7 @@
 
     "behavior": {
       "type": "String",
-      "desc": "Overrides the default dynamic mode into which the drawer is put on",
+      "desc": "覆盖抽屉所处的默认动态模式。",
       "values": [
         "default", "desktop", "mobile"
       ],
@@ -80,83 +80,83 @@
 
     "elevated": {
       "type": "Boolean",
-      "desc": "Adds a default shadow to the header",
+      "desc": "为页眉添加一个默认的阴影",
       "category": "style"
     },
 
     "persistent": {
       "type": "Boolean",
-      "desc": "Prevents drawer from auto-closing when app's route changes",
+      "desc": "防止抽屉在应用程序的路线改变时自动关闭",
       "category": "behavior"
     },
 
     "show-if-above": {
       "type": "Boolean",
-      "desc": "Forces drawer to be shown on screen on initial render if the layout width is above breakpoint, regardless of v-model; This is the default behavior when SSR is taken over by client on initial render",
+      "desc": "如果布局宽度大于断点，则在初始渲染时强制将抽屉显示在屏幕上，与v-model无关；这是SSR在初始渲染时被客户端接管的默认行为。",
       "category": "behavior"
     },
 
     "no-swipe-open": {
       "type": "Boolean",
-      "desc": "Disables the default behavior where drawer can be swiped into view; Useful for iOS platforms where it might interfere with Safari's 'swipe to go to previous/next page' feature",
+      "desc": "禁用抽屉可以被滑入视图的默认行为；对iOS平台有用，因为它可能干扰Safari的 '上一页/下一页' 功能。",
       "category": "behavior"
     },
 
     "no-swipe-close": {
       "type": "Boolean",
-      "desc": "Disables the default behavior where drawer can be swiped out of view (applies to drawer content only); Useful for iOS platforms where it might interfere with Safari's 'swipe to go to previous/next page' feature",
+      "desc": "禁用抽屉可以被滑出视野的默认行为（仅适用于抽屉内容）；对iOS平台有用，因为它可能会干扰Safari的 '滑入上一页/下一页' 功能。",
       "category": "behavior"
     },
 
     "no-swipe-backdrop": {
       "type": "Boolean",
-      "desc": "Disables the default behavior where drawer backdrop can be swiped",
+      "desc": "禁用抽屉背景可以被滑动的默认行为。",
       "category": "behavior"
     }
   },
 
   "slots": {
     "default": {
-      "desc": "Default slot in the devland unslotted content of the component (overridden by 'mini' slot if used and drawer is in mini mode)"
+      "desc": "在组件的devland非插槽内容中的默认插槽（如果使用了'mini'插槽并且抽屉处于mini模式，则由'mini'插槽覆盖）。"
     },
 
     "mini": {
-      "desc": "Content to show when in mini mode (overrides 'default' slot)"
+      "desc": "在迷你模式下要显示的内容（覆盖 'default' 插槽）。"
     }
   },
 
   "events": {
     "on-layout": {
-      "desc": "Emitted when drawer toggles between occupying space on page or not",
+      "desc": "当抽屉在是否占用页面空间之间切换时触发。",
       "params": {
         "state": {
           "type": "Boolean",
-          "desc": "New state"
+          "desc": "新状态"
         }
       }
     },
 
     "click": {
       "extends": "click",
-      "desc": "Emitted when user clicks/taps on the component and drawer is NOT in mobile mode; Useful for when taking a decision to toggle mini mode"
+      "desc": "当用户单击/点击组件并且抽屉不在移动模式下时触发的；在决定切换迷你模式时很有用。"
     },
 
     "mouseover": {
       "extends": "click",
-      "desc": "Emitted when user moves mouse cursor over the component and drawer is NOT in mobile mode; Useful for when taking a decision to toggle mini mode"
+      "desc": "当用户将鼠标光标移到组件上并且抽屉不在移动模式下时触发；当决定切换迷你模式时很有用。"
     },
 
     "mouseout": {
       "extends": "click",
-      "desc": "Emitted when user moves mouse cursor out of the component and drawer is NOT in mobile mode; Useful for when taking a decision to toggle mini mode"
+      "desc": "当用户将鼠标光标移出组件且抽屉不在移动模式下时触发；在决定切换迷你模式时很有用。"
     },
 
     "mini-state": {
-      "desc": "Emitted when drawer changes the mini-mode state (sometimes it is forced to do so)",
+      "desc": "当抽屉改变迷你模式状态时触发（有时它是被迫这样做的）。",
       "params": {
         "state": {
           "type": "Boolean",
-          "desc": "New state"
+          "desc": "新状态"
         }
       }
     }

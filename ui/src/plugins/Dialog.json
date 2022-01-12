@@ -12,99 +12,99 @@
       "tsInjectionPoint": true,
       "params": {
         "opts": {
-          "desc": "Dialog options",
+          "desc": "对话框选项",
           "tsType": "QDialogOptions",
           "definition": {
             "title": {
               "type": "String",
-              "desc": "A text for the heading title of the dialog",
+              "desc": "对话框的标题文本",
               "examples": [ "Continue?" ]
             },
 
             "message": {
               "type": "String",
-              "desc": "A text with more information about what needs to be input, selected or confirmed.",
+              "desc": "含有更多关于需要输入、选择或确认的信息的文本。",
               "examples": [ "Are you certain you want to continue?" ]
             },
 
             "html": {
               "type": "Boolean",
-              "desc": "Render title and message as HTML; This can lead to XSS attacks, so make sure that you sanitize the message first"
+              "desc": "将标题和信息渲染成HTML；这可能导致XSS攻击，所以要确保你首先对信息进行清理。"
             },
 
             "position": {
               "type": "String",
-              "desc": "Position of the Dialog on screen. Standard is centered.",
+              "desc": "对话框在屏幕上的位置。标准是居中的。",
               "values": [ "top", "right", "bottom", "left", "standard" ],
               "default": "standard"
             },
 
             "prompt": {
               "type": "Object",
-              "desc": "An object definition of the input field for the prompting question.",
+              "desc": "提示性问题的输入字段的对象定义。",
               "examples": [ "prompt: { model: this.promptVal, type: 'number' }" ],
               "definition": {
                 "model": {
                   "type": "String",
                   "required": true,
-                  "desc": "The initial value of the input",
+                  "desc": "输入的初始值",
                   "__exemption": [ "examples" ]
                 },
 
                 "type": {
                   "type": "String",
-                  "desc": "Optional property to determine the input field type",
+                  "desc": "用于确定输入字段类型的可选属性",
                   "default": "text",
                   "examples": [ "text", "number", "textarea" ]
                 },
 
                 "isValid": {
                   "type": "Function",
-                  "desc": "Is typed content valid?",
+                  "desc": "输入的内容是否有效？",
                   "params": {
                     "val": {
                       "type": "String",
                       "required": true,
-                      "desc": "The value of the input",
+                      "desc": "输入的值",
                       "__exemption": [ "examples" ]
                     }
                   },
                   "returns": {
                     "type": "Boolean",
-                    "desc": "The text passed validation or not"
+                    "desc": "该文本是否通过验证"
                   }
                 },
 
                 "attrs": {
                   "type": "Object",
-                  "desc": "Attributes to pass to prompt control",
+                  "desc": "传递给提示控制的属性",
                   "examples": [ "{ autocomplete: 'off' }" ]
                 },
 
                 "label": {
                   "type": "String",
-                  "desc": "A text label that will “float” up above the input field, once the field gets focus",
+                  "desc": "一个文本标签，一旦该字段获得焦点，它将 '漂浮' 在输入字段之上。",
                   "examples": [ "Username" ]
                 },
 
                 "stackLabel": {
                   "type": "Boolean",
-                  "desc": "Label will be always shown above the field regardless of field content (if any)"
+                  "desc": "无论字段内容如何（如果有的话），标签将始终显示在字段上方。"
                 },
 
                 "filled": {
                   "type": "Boolean",
-                  "desc": "Use 'filled' design for the field"
+                  "desc": "使用 'filled' 设计的字段"
                 },
 
                 "outlined": {
                   "type": "Boolean",
-                  "desc": "Use 'outlined' design for the field"
+                  "desc": "使用 'outlined' 设计的字段"
                 },
 
                 "standout": {
                   "type": [ "Boolean", "String" ],
-                  "desc": "Use 'standout' design for the field; Specifies classes to be applied when focused (overriding default ones)",
+                  "desc": "对字段使用 'standout' 设计；指定聚焦时应用的类（覆盖默认类）。",
                   "examples": [
                     "standout",
                     "standout=\"bg-primary text-white\""
@@ -117,29 +117,29 @@
 
                 "square": {
                   "type": "Boolean",
-                  "desc": "Remove border-radius so borders are squared; Overrides 'rounded' prop"
+                  "desc": "移除边框半径，使边框成方形；覆盖 'rounded' 属性"
                 },
 
                 "counter": {
                   "type": "Boolean",
-                  "desc": "Show an automatic counter on bottom right"
+                  "desc": "在右下方显示一个自动计数器"
                 },
 
                 "maxlength": {
                   "type": [ "String", "Number" ],
-                  "desc": "Specify a max length of model",
+                  "desc": "指定一个模型的最大长度",
                   "examples": [ "12" ]
                 },
 
                 "prefix": {
                   "type": "String",
-                  "desc": "Prefix",
+                  "desc": "前缀",
                   "examples": [ "$" ]
                 },
 
                 "suffix": {
                   "type": "String",
-                  "desc": "Suffix",
+                  "desc": "后缀",
                   "examples": [ "@gmail.com" ]
                 }
               }
@@ -147,26 +147,26 @@
 
             "options": {
               "type": "Object",
-              "desc": "An object definition for creating the selection form content",
+              "desc": "一个用于创建选择表格内容的对象定义",
               "examples": [ "{ model: this.dialogSelection, type: 'radio', items: [...listOfItems] }" ],
               "definition": {
                 "model": {
                   "type": [ "String", "Array" ],
                   "required": true,
-                  "desc": "The value of the selection (String if it's of type radio or Array otherwise)",
+                  "desc": "选择的值（如果是单选类型则为字符串，否则为数组）。",
                   "examples": [ "[]" ]
                 },
 
                 "type": {
                   "type": "String",
-                  "desc": "The type of selection",
+                  "desc": "选择的类型",
                   "default": "radio",
                   "values": [ "radio", "checkbox", "toggle" ]
                 },
 
                 "items": {
                   "type": "Array",
-                  "desc": "The list of options to interact with; Equivalent to options prop of the QOptionsGroup component",
+                  "desc": "用于交互的选项列表；等同于QOptionsGroup组件的选项属性。",
                   "examples": [
                     "[ { label: 'Option 1', value: 'op1' }, { label: 'Option 2', value: 'op2' }, { label: 'Option 3', value: 'op3' } ]"
                   ]
@@ -174,12 +174,12 @@
 
                 "isValid": {
                   "type": "Function",
-                  "desc": "Is the model valid?",
+                  "desc": "该模型是否有效？",
                   "params": {
                     "model": {
                       "type": [ "String", "Array" ],
                       "required": true,
-                      "desc": "The current model (String if it's of type radio or Array otherwise)",
+                      "desc": "当前的模型（如果是无线电类型则为字符串，否则为数组）。",
                       "examples": [
                         "opt2",
                         "[ 'opt1' ]",
@@ -190,7 +190,7 @@
                   },
                   "returns": {
                     "type": "Boolean",
-                    "desc": "The selection passed validation or not"
+                    "desc": "该选择是否通过验证"
                   }
                 }
               }
@@ -198,11 +198,11 @@
 
             "progress": {
               "type": [ "Boolean", "Object" ],
-              "desc": "Display a Quasar spinner (if value is true, then the defaults are used); Useful for conveying the idea that something is happening behind the covers; Tip: use along with persistent, ok: false and update() method",
+              "desc": "显示一个Quasar旋转器（如果值为真，则使用默认值）；对于传达在封面后面正在发生的事情很有用；提示：与持久化、ok: false和update()方法一起使用。",
               "definition": {
                 "spinner": {
                   "type": "Component",
-                  "desc": "One of the QSpinners"
+                  "desc": "QSpinners之一"
                 },
                 "color": {
                   "extends": "color"
@@ -212,11 +212,11 @@
 
             "ok": {
               "type": [ "String", "Object", "Boolean" ],
-              "desc": "Props for an 'OK' button",
+              "desc": "'确定'按钮的属性",
               "definition": {
                 "...props": {
                   "type": "Any",
-                  "desc": "See QBtn for available props",
+                  "desc": "可用属性见 QBtn",
                   "__exemption": [ "examples" ]
                 }
               }
@@ -224,11 +224,11 @@
 
             "cancel": {
               "type": [ "String", "Object", "Boolean" ],
-              "desc": "Props for a 'CANCEL' button",
+              "desc": "'取消'按钮的属性",
               "definition": {
                 "...props": {
                   "type": "Any",
-                  "desc": "See QBtn for available props",
+                  "desc": "可用属性见QBtn",
                   "__exemption": [ "examples" ]
                 }
               }
@@ -236,14 +236,14 @@
 
             "focus": {
               "type": "String",
-              "desc": "What button to focus, unless you also have 'prompt' or 'options'",
+              "desc": "聚焦哪个按钮，除非你也有'prompt'或'options'。",
               "values": [ "ok", "cancel", "none" ],
               "default": "ok"
             },
 
             "stackButtons": {
               "type": "Boolean",
-              "desc": "Makes buttons be stacked instead of vertically aligned"
+              "desc": "使得按钮被堆叠而不是垂直排列"
             },
 
             "color": {
@@ -252,47 +252,47 @@
 
             "dark": {
               "extends": "dark",
-              "desc": "Apply dark mode"
+              "desc": "应用黑暗模式"
             },
 
             "persistent": {
               "type": "Boolean",
-              "desc": "User cannot dismiss Dialog if clicking outside of it or hitting ESC key; Also, an app route change won't dismiss it"
+              "desc": "如果点击对话框之外的地方或按下ESC键，用户就不能解除对话框；另外，应用程序路线的改变也不能解除对话框。"
             },
 
             "noEscDismiss": {
               "type": "Boolean",
-              "desc": "User cannot dismiss Dialog by hitting ESC key; No need to set it if 'persistent' prop is also set"
+              "desc": "用户不能通过点击ESC键来关闭对话框；如果设置了 'persistent' 属性, 则此属性不需再设置。"
             },
 
             "noBackdropDismiss": {
               "type": "Boolean",
-              "desc": "User cannot dismiss Dialog by clicking outside of it; No need to set it if 'persistent' prop is also set"
+              "desc": "用户不能通过点击对话框以外的地方来关闭对话框；如果设置了 'persistent' 属性, 则此属性不需再设置。"
             },
 
             "noRouteDismiss": {
               "type": "Boolean",
-              "desc": "Changing route app won't dismiss Dialog; No need to set it if 'persistent' prop is also set"
+              "desc": "改变路线的应用程序将不会关闭对话框；如果设置了 'persistent' 属性, 则此属性不需再设置。"
             },
 
             "seamless": {
               "type": "Boolean",
-              "desc": "Put Dialog into seamless mode; Does not use a backdrop so user is able to interact with the rest of the page too"
+              "desc": "将对话进入无缝模式；不使用背景，因此用户也能与页面的其他部分互动。"
             },
 
             "maximized": {
               "type": "Boolean",
-              "desc": "Put Dialog into maximized mode"
+              "desc": "将对话框放入最大化模式"
             },
 
             "fullWidth": {
               "type": "Boolean",
-              "desc": "Dialog will try to render with same width as the window"
+              "desc": "对话框将尝试以与窗口相同的宽度呈现。"
             },
 
             "fullHeight": {
               "type": "Boolean",
-              "desc": "Dialog will try to render with same height as the window"
+              "desc": "对话框将尝试以与窗口相同的高度呈现。"
             },
 
             "transitionShow": {
@@ -307,12 +307,12 @@
 
             "component": {
               "type": "Component",
-              "desc": "Use custom dialog component; use along with 'componentProps' prop where possible"
+              "desc": "使用自定义对话组件；尽可能与 'componentProps' 属性一起使用。"
             },
 
             "componentProps": {
               "type": "Object",
-              "desc": "User defined props which will be forwarded to underlying custom component if 'component' prop is used",
+              "desc": "用户定义的属性，如果使用 'component' 属性，将被转发到底层的自定义组件。",
               "__exemption": [ "examples" ]
             }
           }

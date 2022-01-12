@@ -9,20 +9,20 @@
     "model-value": {
       "extends": "model-value",
       "type": [ "String", "Number", "null", "undefined" ],
-      "desc": "Model of the component; Either use this property (along with a listener for 'update:modelValue' event) OR use v-model directive",
+      "desc": "组件的模型；要么使用这个属性（连同'update:modelValue'事件的监听器），要么使用v-model指令。",
       "examples": [ "v-model=\"myText\"" ]
     },
 
     "shadow-text": {
       "type": "String",
-      "desc": "Text to be displayed as shadow at the end of the text in the control; Does NOT applies to type=file",
+      "desc": "在控件中的文本末尾显示为阴影的文本；不适用于type=file",
       "examples": [ "rest of the fill value" ],
       "category": "content"
     },
 
     "type": {
       "type": "String",
-      "desc": "Input type",
+      "desc": "输入类型",
       "default": "text",
       "values": [
         "text", "password", "textarea", "email", "search",
@@ -34,27 +34,27 @@
 
     "debounce": {
       "type": [ "String", "Number" ],
-      "desc": "Debounce amount (in milliseconds) when updating model",
+      "desc": "更新模型时的防抖延迟时间（以毫秒为单位）。",
       "examples": [ "0", "530" ],
       "category": "model"
     },
 
     "maxlength": {
       "type": [ "String", "Number" ],
-      "desc": "Specify a max length of model",
+      "desc": "指定一个模型的最大长度",
       "examples": [ "12" ],
       "category": "model"
     },
 
     "autogrow": {
       "type": "Boolean",
-      "desc": "Make field autogrow along with its content (uses a textarea)",
+      "desc": "使字段随其内容一起自动增长（使用一个文本区域）。",
       "category": "content"
     },
 
     "input-class": {
       "type": [ "Array", "String", "Object" ],
-      "desc": "Class definitions to be attributed to the underlying input tag",
+      "desc": "归属于基础输入标签的类定义",
       "examples": [
         "my-special-class",
         ":input-class=\"{ 'my-special-class': <condition> }\""
@@ -64,7 +64,7 @@
 
     "input-style": {
       "type": [ "Array", "String", "Object" ],
-      "desc": "Style definitions to be attributed to the underlying input tag",
+      "desc": "归属于底层输入标签的样式定义",
       "examples": [
         "background-color: #ff0000",
         ":input-style=\"{ backgroundColor: '#ff0000' }\""
@@ -84,22 +84,22 @@
     },
 
     "focus": {
-      "desc": "Emitted when component gets focused",
+      "desc": "当组件被聚焦时触发。",
       "params": {
         "evt": {
           "type": "Object",
-          "desc": "JS event object",
+          "desc": "JS事件对象",
           "__exemption": [ "examples" ]
         }
       }
     },
 
     "blur": {
-      "desc": "Emitted when component loses focus",
+      "desc": "当组件失去焦点时触发。",
       "params": {
         "evt": {
           "type": "Object",
-          "desc": "JS event object",
+          "desc": "JS事件对象",
           "__exemption": [ "examples" ]
         }
       }
@@ -108,22 +108,22 @@
 
   "methods": {
     "focus": {
-      "desc": "Focus underlying input tag"
+      "desc": "关注底层输入标签"
     },
 
     "blur": {
-      "desc": "Lose focus on underlying input tag"
+      "desc": "失去了对底层输入标签的关注"
     },
 
     "select": {
-      "desc": "Select input text"
+      "desc": "选择输入文本"
     },
 
     "getNativeElement": {
-      "desc": "Get the native input/textarea DOM Element",
+      "desc": "获取本地输入/textarea DOM元素",
       "returns": {
         "type": "Object",
-        "desc": "The underlying native input/textarea DOM Element",
+        "desc": "底层的本地输入/textarea DOM元素",
         "__exemption": [ "examples" ]
       }
     }

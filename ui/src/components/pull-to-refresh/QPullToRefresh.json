@@ -5,23 +5,23 @@
 
   "props": {
     "color": {
-      "desc": "Color name for the icon from the Quasar Color Palette",
+      "desc": "Quasar调色板上的图标的颜色名称。",
       "extends": "color"
     },
 
     "bg-color": {
-      "desc": "Color name for background of the icon container from the Quasar Color Palette",
+      "desc": "Quasar调色板上的图标容器的背景颜色名称。",
       "extends": "color"
     },
 
     "icon": {
       "extends": "icon",
-      "desc": "Icon to display when refreshing the content"
+      "desc": "刷新内容时要显示的图标"
     },
 
     "no-mouse": {
       "type": "Boolean",
-      "desc": "Don't listen for mouse events",
+      "desc": "不要监听鼠标事件",
       "category": "behavior"
     },
 
@@ -36,17 +36,17 @@
 
   "slots": {
     "default": {
-      "desc": "Content (area controlled by the component) goes here"
+      "desc": "内容（由组件控制的区域）放在这里"
     }
   },
 
   "events": {
     "refresh": {
-      "desc": "Called whenever a refresh is triggered; at this time, your function should load more data",
+      "desc": "每当刷新被触发时就会被调用；此时，你的函数应该加载更多的数据",
       "params": {
         "done": {
           "type": "Function",
-          "desc": "Call the done() function when your data has been refreshed",
+          "desc": "当你的数据被刷新后，调用doed()函数",
           "params": null,
           "returns": null
         }
@@ -56,11 +56,11 @@
 
   "methods": {
     "trigger": {
-      "desc": "Triggers a refresh"
+      "desc": "触发了一次刷新"
     },
 
     "updateScrollTarget": {
-      "desc": "Updates the scroll target; Useful when the parent elements change so that the scrolling target also changes"
+      "desc": "更新滚动目标；当父元素发生变化时很有用，这样滚动目标也会发生变化"
     }
   }
 }

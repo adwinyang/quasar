@@ -8,34 +8,34 @@
   "props": {
     "isCapable": {
       "type": "Boolean",
-      "desc": "Does browser support it?"
+      "desc": "浏览器是否支持它？"
     },
 
     "isActive": {
       "type": "Boolean",
-      "desc": "Is Fullscreen active?"
+      "desc": "Fullscreen是否激活？"
     },
 
     "activeEl": {
       "type": [ "Element", "null" ],
-      "desc": "The DOM element used as root for fullscreen, otherwise 'null'",
+      "desc": "用于全屏的DOM元素，否则为 \"null\"。",
       "examples": [ "document.fullscreenElement", "null" ]
     }
   },
 
   "methods": {
     "request": {
-      "desc": "Request going into Fullscreen (with optional target)",
+      "desc": "要求进入全屏（可选目标）。",
       "params": {
         "target": {
           "type": "Element",
-          "desc": "Optional Element of target to request Fullscreen on",
+          "desc": "可选的目标元素，用于请求全屏显示",
           "examples": [ "document.getElementById('example')" ]
         }
       },
       "returns": {
         "type": "Promise<void>",
-        "desc": "A Promise which is resolved when transitioned to fullscreen mode. It gets rejected with 'Not capable' if the browser is not capable, and with an Error object if something else went wrong.",
+        "desc": "进入全屏模式时已处于 resolved(已定型) 状态的 Promise，如果浏览器不支持屏，它会以'Not capable(不支持)'方式表示失败；如果出现其他问题，也会失败，并出现一个 Error 对象。",
         "examples": [
           "request().then(response => { ... }).catch(err => { ... })"
         ]
@@ -43,10 +43,10 @@
     },
 
     "exit": {
-      "desc": "Request exiting out of Fullscreen mode",
+      "desc": "要求退出全屏模式",
       "returns": {
         "type": "Promise<void>",
-        "desc": "A Promise which is resolved when exited out of fullscreen mode. It gets rejected with 'Not capable' if the browser is not capable, and with an Error object if something else went wrong.",
+        "desc": "当退出全屏模式时已处于 resolved(已定型) 状态的 Promise。如果浏览器不支持全屏，它会以'Not capable(不支持)'方式表示失败；如果出现其他问题，也会失败，并出现一个 Error 对象。",
         "examples": [
           "exit().then(response => { ... }).catch(err => { ... })"
         ]
@@ -54,17 +54,17 @@
     },
 
     "toggle": {
-      "desc": "Request toggling Fullscreen mode (with optional target if requesting going into Fullscreen only)",
+      "desc": "请求切换全屏模式（如果仅请求进入全屏，则有可选目标）",
       "params": {
         "target": {
           "type": "Element",
-          "desc": "Optional Element of target to request Fullscreen on",
+          "desc": "可选的目标元素，用于请求全屏显示",
           "examples": [ "document.getElementById('example')" ]
         }
       },
       "returns": {
         "type": "Promise<void>",
-        "desc": "A Promise which is resolved when transitioned to / exited out of fullscreen mode. It gets rejected with 'Not capable' if the browser is not capable, and with an Error object if something else went wrong.",
+        "desc": "当切换到全屏模式/退出全屏模式时已处于 resolved(已定型) 状态的 Promise。如果浏览器不支持全屏，它会以'Not capable(不支持)'方式表示失败；如果出现其他问题，也会失败，并出现一个 Error 对象。",
         "examples": [
           "toggle().then(response => { ... }).catch(err => { ... })"
         ]

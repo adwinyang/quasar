@@ -5,44 +5,44 @@
 
   "value": {
     "type": "Function",
-    "desc": "Function to call after user has hold touch/click for the specified amount of time (use a non-function to disable)",
+    "desc": "在用户保持触摸/点击指定时间后调用的功能（使用非功能来禁用）。",
     "params": {
       "details": {
         "type": "Object",
-        "desc": "Event details",
+        "desc": "活动详情",
         "definition": {
           "evt": {
             "type": "Object",
-            "desc": "Original JS event Object",
+            "desc": "原始JS事件对象",
             "__exemption": [ "examples" ]
           },
           "touch": {
             "type": "Boolean",
-            "desc": "Triggered by a touch event"
+            "desc": "由一个触摸事件触发"
           },
           "mouse": {
             "type": "Boolean",
-            "desc": "Triggered by a mouse event"
+            "desc": "由鼠标事件触发"
           },
           "position": {
             "type": "Object",
-            "desc": "Event Position Object",
+            "desc": "事件位置对象",
             "definition": {
               "top": {
                 "type": "Number",
-                "desc": "Vertical offset from top of window",
+                "desc": "从窗口顶部的垂直偏移",
                 "examples": [ 235 ]
               },
               "left": {
                 "type": "Number",
-                "desc": "Horizontal offset from left of window",
+                "desc": "从窗口左侧的水平偏移",
                 "examples": [ 235 ]
               }
             }
           },
           "duration": {
             "type": "Number",
-            "desc": "How long it took to trigger the event (in milliseconds)",
+            "desc": "触发事件所需的时间（以毫秒计）。",
             "examples": [ 612 ]
           }
         }
@@ -54,7 +54,7 @@
 
   "arg": {
     "type": "String",
-    "desc": "x:y:z, where x is the amount of time to wait (in milliseconds), y is the touch event sensitivity (in pixels) and z is the mouse event sensitivity (in pixels)",
+    "desc": "x:y:z，其中x是等待的时间（以毫秒为单位），y是触摸事件灵敏度（以像素为单位），z是鼠标事件灵敏度（以像素为单位）。",
     "default": "600:5:7",
     "examples": [
       "v-touch-hold:400=\"fnToCall\"",
@@ -66,17 +66,17 @@
   "modifiers": {
     "capture": {
       "type": "Boolean",
-      "desc": "Use capture for touchstart event"
+      "desc": "对触摸启动事件使用捕获"
     },
 
     "mouse": {
       "type": "Boolean",
-      "desc": "Listen for mouse events too"
+      "desc": "也倾听鼠标事件"
     },
 
     "mouseCapture": {
       "type": "Boolean",
-      "desc": "Use capture for mousedown event"
+      "desc": "对mousedown事件使用捕获"
     }
   }
 }

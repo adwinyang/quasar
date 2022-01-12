@@ -9,13 +9,13 @@
     "model-value": {
       "extends": "model-value",
       "type": "Boolean",
-      "desc": "Defines the state of the component (shown/hidden); Either use this property (along with a listener for 'update:modelValue' event) OR use v-model directive",
+      "desc": "定义组件的状态（显示/隐藏）；要么使用这个属性（连同'update:modelValue'事件的监听器），要么使用v-model指令。",
       "required": false
     },
 
     "breakpoint": {
       "type": [ "Number", "String" ],
-      "desc": "Breakpoint (in pixels) of window width/height (whichever is smaller) from where a Menu will get to be used instead of a Dialog",
+      "desc": "窗口宽度/高度（以较小者为准）的断点（像素），在这个断点上将使用菜单而非对话框",
       "default": 450,
       "examples": [ 992, ":breakpoint=\"1024\"" ],
       "category": "behavior"

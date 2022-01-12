@@ -1,7 +1,7 @@
 {
   "methods": {
     "create": {
-      "desc": "Creates an ad-hoc Dialog; Same as calling $q.dialog(...)",
+      "desc": "创建一个临时的对话框；与调用$q.dialog(...)相同。",
       "params": {
         "opts": {
           "type": "Object",
@@ -9,13 +9,13 @@
           "definition": {
             "class": {
               "type": [ "String", "Array", "Object" ],
-              "desc": "CSS Class name to apply to the Dialog's QCard",
+              "desc": "应用于对话框Q卡的CSS类名称",
               "examples": [ "my-class" ]
             },
 
             "style": {
               "type": [ "String", "Array", "Object" ],
-              "desc": "CSS style to apply to the Dialog's QCard",
+              "desc": "应用于对话框QCard的CSS样式",
               "examples": [ "border: 2px solid black" ]
             }
           }
@@ -24,22 +24,22 @@
 
       "returns": {
         "type": "Object",
-        "desc": "Chainable Object",
+        "desc": "可连锁的对象",
         "tsType": "DialogChainObject",
         "definition": {
           "onOk": {
             "type": "Function",
             "required": true,
-            "desc": "Receives a Function param to tell what to do when OK is pressed / option is selected",
+            "desc": "接收一个Function参数，告诉当按下OK键/选择选项时要做什么。",
             "params": {
               "callbackFn": {
                 "type": "Function",
-                "desc": "Tell what to do",
+                "desc": "告诉你该怎么做",
                 "required": true,
                 "params": {
                   "payload": {
                     "type": "Any",
-                    "desc": "The payload if called onDialogOK with the parameter or emitted one with the 'ok' event",
+                    "desc": "如果用参数调用onDialogOK或用'ok'事件发射一个，则为有效载荷",
                     "required": false,
                     "examples": [ "'Quasar Framework'", "[ 1, 2, 6, 3 ]", "{ book: { id: 1, name: 'Lorem Ipsum' }, user: { name: 'Lorem J. Ipsum', role: 'admin' } }" ]
                   }
@@ -50,7 +50,7 @@
             },
             "returns": {
               "type": "Object",
-              "desc": "Chained Object",
+              "desc": "链式对象",
               "tsType": "DialogChainObject",
               "__exemption": [ "examples" ]
             }
@@ -59,11 +59,11 @@
           "onCancel": {
             "type": "Function",
             "required": true,
-            "desc": "Receives a Function as param to tell what to do when Cancel is pressed / dialog is dismissed",
+            "desc": "接收一个函数作为参数，以告诉当按下 \"取消\"键/对话框被取消时要做什么。",
             "params": {
               "callbackFn": {
                 "type": "Function",
-                "desc": "Tell what to do",
+                "desc": "告诉你该怎么做",
                 "required": true,
                 "params": null,
                 "returns": null
@@ -71,7 +71,7 @@
             },
             "returns": {
               "type": "Object",
-              "desc": "Chained Object",
+              "desc": "链式对象",
               "tsType": "DialogChainObject",
               "__exemption": [ "examples" ]
             }
@@ -80,11 +80,11 @@
           "onDismiss": {
             "type": "Function",
             "required": true,
-            "desc": "Receives a Function param to tell what to do when the dialog is closed",
+            "desc": "接收一个Function参数，以告诉当对话框被关闭时要做什么。",
             "params": {
               "callbackFn": {
                 "type": "Function",
-                "desc": "Tell what to do",
+                "desc": "告诉你该怎么做",
                 "required": true,
                 "params": null,
                 "returns": null
@@ -92,7 +92,7 @@
             },
             "returns": {
               "type": "Object",
-              "desc": "Chained Object",
+              "desc": "链式对象",
               "tsType": "DialogChainObject",
               "__exemption": [ "examples" ]
             }
@@ -101,11 +101,11 @@
           "hide": {
             "type": "Function",
             "required": true,
-            "desc": "Hides the dialog when called",
+            "desc": "在调用时隐藏对话框",
             "params": null,
             "returns": {
               "type": "Object",
-              "desc": "Chained Object",
+              "desc": "链式对象",
               "tsType": "DialogChainObject",
               "__exemption": [ "examples" ]
             }
@@ -114,18 +114,18 @@
           "update": {
             "type": "Function",
             "required": true,
-            "desc": "Updates the initial properties (given as create() param) except for 'component'",
+            "desc": "更新初始属性（作为create()参数给出），除了'component'。",
             "params": {
               "opts": {
                 "type": "Object",
                 "required": true,
-                "desc": "Props (except 'component') which will overwrite the initial create() params; If create() was invoked with a custom dialog component then this param should contain the new componentProps",
+                "desc": "Props（除了'component'），它将覆盖初始的create()参数；如果create()是用一个自定义的对话组件调用的，那么这个参数应该包含新的componentProps。",
                 "__exemption": [ "examples" ]
               }
             },
             "returns": {
               "type": "Object",
-              "desc": "Chained Object",
+              "desc": "链式对象",
               "tsType": "DialogChainObject",
               "__exemption": [ "examples" ]
             }

@@ -10,69 +10,69 @@
 
     "bar-style": {
       "type": [ "Array", "String", "Object"],
-      "desc": "Object with CSS properties and values for custom styling the scrollbars (both vertical and horizontal)",
+      "desc": "带有CSS属性和值的对象，用于自定义滚动条的样式（包括垂直和水平）。",
       "examples": [ ":bar-style=\"{ borderRadius: '5px', background: 'red', opacity: 1 }\"" ],
       "category": "style"
     },
 
     "vertical-bar-style": {
       "type": [ "Array", "String", "Object"],
-      "desc": "Object with CSS properties and values for custom styling the vertical scrollbar; Is applied on top of 'bar-style' prop",
+      "desc": "带有CSS属性和值的对象，用于定制垂直滚动条的样式；应用于'bar-style'属性之上。",
       "examples": [ ":bar-style=\"{ right: '4px', borderRadius: '5px', background: 'red', width: '10px', opacity: 1 }\"" ],
       "category": "style"
     },
 
     "horizontal-bar-style": {
       "type": [ "Array", "String", "Object"],
-      "desc": "Object with CSS properties and values for custom styling the horizontal scrollbar; Is applied on top of 'bar-style' prop",
+      "desc": "包含CSS属性和值的对象，用于自定义水平滚动条的样式；应用于'bar-style'属性之上。",
       "examples": [ ":bar-style=\"{ bottom: '4px', borderRadius: '5px', background: 'red', height: '10px', opacity: 1 }\"" ],
       "category": "style"
     },
 
     "thumb-style": {
       "type": "Object",
-      "desc": "Object with CSS properties and values for custom styling the thumb of scrollbars (both vertical and horizontal)",
+      "desc": "具有CSS属性和值的对象，用于自定义滚动条的拇指造型（包括垂直和水平）。",
       "examples": [ ":thumb-style=\"{ right: '4px', borderRadius: '5px', background: 'red', width: '10px', opacity: 1 }\"" ],
       "category": "style"
     },
 
     "vertical-thumb-style": {
       "type": "Object",
-      "desc": "Object with CSS properties and values for custom styling the thumb of the vertical scrollbar; Is applied on top of 'thumb-style' prop",
+      "desc": "包含CSS属性和值的对象，用于定制垂直滚动条的拇指样式；应用于'拇指样式'属性之上。",
       "examples": [ ":thumb-style=\"{ right: '4px', borderRadius: '5px', background: 'red', width: '10px', opacity: 1 }\"" ],
       "category": "style"
     },
 
     "horizontal-thumb-style": {
       "type": "Object",
-      "desc": "Object with CSS properties and values for custom styling the thumb of the horizontal scrollbar; Is applied on top of 'thumb-style' prop",
+      "desc": "包含CSS属性和值的对象，用于定制水平滚动条的拇指样式；应用于'拇指样式'属性之上。",
       "examples": [ ":thumb-style=\"{ bottom: '4px', borderRadius: '5px', background: 'red', height: '10px', opacity: 1 }\"" ],
       "category": "style"
     },
 
     "content-style": {
       "type": [ "Array", "String", "Object"],
-      "desc": "Object with CSS properties and values for styling the container of QScrollArea",
+      "desc": "包含CSS属性和值的对象，用于对QScrollArea的容器进行造型。",
       "examples": [ ":content-style=\"{ backgroundColor: '#C0C0C0' }\"" ],
       "category": "style"
     },
 
     "content-active-style": {
       "type": [ "Array", "String", "Object"],
-      "desc": "Object with CSS properties and values for styling the container of QScrollArea when scroll area becomes active (is mouse hovered)",
+      "desc": "包含CSS属性和值的对象，用于在滚动区域变得活跃时（被鼠标悬停）对QScrollArea的容器进行造型。",
       "examples": [ ":content-active-style=\"{ backgroundColor: 'white' }\"" ],
       "category": "style"
     },
 
     "visible": {
       "type": "Boolean",
-      "desc": "Manually control the visibility of the scrollbar; Overrides default mouse over/leave behavior",
+      "desc": "手动控制滚动条的可见性；覆盖默认的鼠标移动/离开行为",
       "category": "behavior"
     },
 
     "delay": {
       "type": [ "Number", "String" ],
-      "desc": "When content changes, the scrollbar appears; this delay defines the amount of time (in milliseconds) before scrollbars disappear again (if component is not hovered)",
+      "desc": "当内容改变时，滚动条出现；这个延迟定义了滚动条再次消失前的时间（以毫秒为单位）（如果组件没有被悬停）。",
       "default": 1000,
       "examples": [ 500, ":delay=\"550\"" ],
       "category": "behavior"
@@ -91,66 +91,66 @@
 
   "events": {
     "scroll": {
-      "desc": "Emitted when scroll information changes (and listener is configured)",
+      "desc": "当滚动信息发生变化时触发（并且监听器已被配置）。",
       "params": {
         "info": {
           "type": "Object",
-          "desc": "An object containing scroll information",
+          "desc": "一个包含滚动信息的对象",
           "definition": {
             "ref": {
               "type": "Component",
               "tsType": "QScrollArea",
               "required": true,
-              "desc": "Vue reference to the QScrollArea which triggered the event"
+              "desc": "Vue对触发事件的QScrollArea的引用。"
             },
 
             "verticalPosition": {
               "type": "Number",
               "required": true,
-              "desc": "Vertical scroll position (in px)",
+              "desc": "垂直滚动位置（单位：px）",
               "__exemption": [ "examples" ]
             },
             "verticalPercentage": {
               "type": "Number",
               "required": true,
-              "desc": "Vertical scroll percentage (0.0 <= x <= 1.0)",
+              "desc": "垂直滚动百分比（0.0 <= x <= 1.0）。",
               "__exemption": [ "examples" ]
             },
             "verticalSize": {
               "type": "Number",
               "required": true,
-              "desc": "Vertical scroll size (in px)",
+              "desc": "垂直滚动大小（单位：px）",
               "__exemption": [ "examples" ]
             },
             "verticalContainerSize": {
               "type": "Number",
               "required": true,
-              "desc": "Height of the container (in px)",
+              "desc": "容器的高度（单位：px）",
               "__exemption": [ "examples" ]
             },
 
             "horizontalPosition": {
               "type": "Number",
               "required": true,
-              "desc": "Horizontal scroll position (in px)",
+              "desc": "水平滚动位置（单位：px）",
               "__exemption": [ "examples" ]
             },
             "horizontalPercentage": {
               "type": "Number",
               "required": true,
-              "desc": "Horizontal scroll percentage (0.0 <= x <= 1.0)",
+              "desc": "水平滚动百分比（0.0 <= x <= 1.0）。",
               "__exemption": [ "examples" ]
             },
             "horizontalSize": {
               "type": "Number",
               "required": true,
-              "desc": "Horizontal scroll size (in px)",
+              "desc": "水平卷轴尺寸（单位：px）",
               "__exemption": [ "examples" ]
             },
             "horizontalContainerSize": {
               "type": "Number",
               "required": true,
-              "desc": "Width of the container (in px)",
+              "desc": "容器的宽度（单位：px）",
               "__exemption": [ "examples" ]
             }
           }
@@ -161,67 +161,67 @@
 
   "methods": {
     "getScrollTarget": {
-      "desc": "Get the scrolling DOM element target",
+      "desc": "获取滚动的DOM元素目标",
       "returns": {
         "type": "Element",
-        "desc": "DOM element upon which scrolling takes place"
+        "desc": "滚动所依据的DOM元素"
       }
     },
 
     "getScroll": {
-      "desc": "Get the current scroll information",
+      "desc": "获取当前的滚动信息",
       "returns": {
         "type": "Object",
-        "desc": "Scroll information",
+        "desc": "滚动信息",
         "__exemption": [ "examples" ],
         "definition": {
           "verticalPosition": {
             "type": "Number",
             "required": true,
-            "desc": "Vertical scroll position (in px)",
+            "desc": "垂直滚动位置（单位：px）",
             "__exemption": [ "examples" ]
           },
           "verticalPercentage": {
             "type": "Number",
             "required": true,
-            "desc": "Vertical scroll percentage (0.0 <= x <= 1.0)",
+            "desc": "垂直滚动百分比（0.0 <= x <= 1.0）。",
             "__exemption": [ "examples" ]
           },
           "verticalSize": {
             "type": "Number",
             "required": true,
-            "desc": "Vertical scroll size (in px)",
+            "desc": "垂直滚动大小（单位：px）",
             "__exemption": [ "examples" ]
           },
           "verticalContainerSize": {
             "type": "Number",
             "required": true,
-            "desc": "Height of the container (in px)",
+            "desc": "容器的高度（单位：px）",
             "__exemption": [ "examples" ]
           },
 
           "horizontalPosition": {
             "type": "Number",
             "required": true,
-            "desc": "Horizontal scroll position (in px)",
+            "desc": "水平滚动位置（单位：px）",
             "__exemption": [ "examples" ]
           },
           "horizontalPercentage": {
             "type": "Number",
             "required": true,
-            "desc": "Horizontal scroll percentage (0.0 <= x <= 1.0)",
+            "desc": "水平滚动百分比（0.0 <= x <= 1.0）。",
             "__exemption": [ "examples" ]
           },
           "horizontalSize": {
             "type": "Number",
             "required": true,
-            "desc": "Horizontal scroll size (in px)",
+            "desc": "水平卷轴尺寸（单位：px）",
             "__exemption": [ "examples" ]
           },
           "horizontalContainerSize": {
             "type": "Number",
             "required": true,
-            "desc": "Width of the container (in px)",
+            "desc": "容器的宽度（单位：px）",
             "__exemption": [ "examples" ]
           }
         }
@@ -229,21 +229,21 @@
     },
 
     "getScrollPosition": {
-      "desc": "Get current scroll position",
+      "desc": "获取当前的滚动位置",
       "returns": {
         "type": "Object",
-        "desc": "An object containing scroll position information",
+        "desc": "一个包含滚动位置信息的对象",
         "definition": {
           "top": {
             "type": "Number",
             "required": true,
-            "desc": "Scroll offset from top (vertical)",
+            "desc": "从顶部滚动偏移（垂直）。",
             "examples": [ 120 ]
           },
           "left": {
             "type": "Number",
             "required": true,
-            "desc": "Scroll offset from left (horizontal)",
+            "desc": "从左边开始的滚动偏移（水平）。",
             "examples": [ 10 ]
           }
         },
@@ -252,21 +252,21 @@
     },
 
     "getScrollPercentage": {
-      "desc": "Get current scroll position in percentage (0.0 <= x <= 1.0)",
+      "desc": "获取当前滚动位置的百分比（0.0 <= x <= 1.0）。",
       "returns": {
         "type": "Object",
-        "desc": "An object containing scroll position information in percentage",
+        "desc": "一个包含百分比的滚动位置信息的对象",
         "definition": {
           "top": {
             "type": "Number",
             "required": true,
-            "desc": "Scroll percentage (0.0 <= x <= 1.0) offset from top (vertical)",
+            "desc": "滚动百分比（0.0 <= x <= 1.0）从顶部（垂直）偏移",
             "examples": [ 0.12 ]
           },
           "left": {
             "type": "Number",
             "required": true,
-            "desc": "Scroll percentage (0.0 <= x <= 1.0) offset from left (horizontal)",
+            "desc": "滚动百分比(0.0 <= x <= 1.0)，从左边偏移(水平)",
             "examples": [ 0.92 ]
           }
         },
@@ -275,46 +275,46 @@
     },
 
     "setScrollPosition": {
-      "desc": "Set scroll position to an offset; If a duration (in milliseconds) is specified then the scroll is animated",
+      "desc": "将滚动位置设置为一个偏移量；如果指定了一个持续时间（以毫秒为单位），那么滚动就是动画的。",
       "params": {
         "axis": {
           "type": "String",
           "required": true,
-          "desc": "Scroll axis",
+          "desc": "滚动轴",
           "values": [ "vertical", "horizontal" ]
         },
         "offset": {
           "type": "Number",
           "required": true,
-          "desc": "Scroll position offset from top (in pixels)",
+          "desc": "从顶部开始的滚动位置偏移（单位：像素）",
           "examples": [ 220 ]
         },
         "duration": {
           "type": "Number",
-          "desc": "Duration (in milliseconds) enabling animated scroll",
+          "desc": "启用动画滚动的持续时间（以毫秒计）。",
           "examples": [ 300 ]
         }
       }
     },
 
     "setScrollPercentage": {
-      "desc": "Set scroll position to a percentage (0.0 <= x <= 1.0) of the total scrolling size; If a duration (in milliseconds) is specified then the scroll is animated",
+      "desc": "将滚动位置设置为总滚动大小的一个百分比（0.0 <= x <= 1.0）；如果指定了持续时间（以毫秒为单位），那么滚动就是动画的。",
       "params": {
         "axis": {
           "type": "String",
-          "desc": "Scroll axis",
+          "desc": "滚动轴",
           "values": [ "vertical", "horizontal" ],
           "required": true
         },
         "offset": {
           "type": "Number",
-          "desc": "Scroll percentage (0.0 <= x <= 1.0) of the total scrolling size",
+          "desc": "滚动百分比（0.0 <= x <= 1.0）占总滚动尺寸的百分比",
           "required": true,
           "examples": [ 220 ]
         },
         "duration": {
           "type": "Number",
-          "desc": "Duration (in milliseconds) enabling animated scroll",
+          "desc": "启用动画滚动的持续时间（以毫秒计）。",
           "examples": [ 300 ]
         }
       }

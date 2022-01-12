@@ -8,56 +8,56 @@
   "props": {
     "maxlength": {
       "type": [ "String", "Number" ],
-      "desc": "Specify a max length of model",
+      "desc": "指定一个模型的最大长度",
       "examples": [ "12" ],
       "category": "model"
     },
 
     "max-values": {
       "type": [ "Number", "String" ],
-      "desc": "Used internally by QSelect",
+      "desc": "由QSelect内部使用",
       "internal": true
     }
   },
 
   "slots": {
     "control": {
-      "desc": "Slot for controls; Suggestion QSlider, QRange, QKnob, ...",
+      "desc": "控件的插槽；建议 QSlider, QRange, QKnob, ...",
       "scope": {
         "id": {
           "type": "String",
-          "desc": "Element id used in the `for` attribute of the field label. Can be used to link the control to the label",
+          "desc": "在字段标签的`for`属性中使用的元素ID。可用于连接控件和标签",
           "examples": [ "qf_363270c0-7a83-62b1-8dcf-6dfd64ee38fa" ]
         },
         "field": {
           "type": "Element",
-          "desc": "DOM element of the field"
+          "desc": "该字段的DOM元素"
         },
         "editable": {
           "type": "Boolean",
-          "desc": "Field is editable"
+          "desc": "字段是可编辑的"
         },
         "focused": {
           "type": "Boolean",
-          "desc": "Field has focus"
+          "desc": "字段有焦点"
         },
         "floatingLabel": {
           "type": "Boolean",
-          "desc": "Field's label is floating"
+          "desc": "字段的标签是浮动的"
         },
         "modelValue": {
           "type": "Any",
-          "desc": "Field's value",
+          "desc": "字段的值",
           "examples": [ 0.241, "Text" ]
         },
         "emitValue": {
           "type": "Function",
-          "desc": "Function that emits an @input event in the context of the field",
+          "desc": "在字段的上下文中触发一个@输入事件的函数",
           "params": {
             "value": {
               "type": "Any",
               "required": true,
-              "desc": "Value to be emitted",
+              "desc": "将要排放的值",
               "examples": [ 0, "Changed text" ]
             }
           },
@@ -74,26 +74,26 @@
   "events": {
     "update:model-value": {
       "extends": "update:model-value",
-      "desc": "Emitted when the model changes, only when used with 'clearable' or the 'control' scoped slot."
+      "desc": "当模型改变时触发，仅当与'clearable'或'control'作用域内的插槽一起使用时。"
     },
 
     "focus": {
-      "desc": "Emitted when component gets focused",
+      "desc": "当组件被聚焦时触发。",
       "params": {
         "evt": {
           "type": "Object",
-          "desc": "JS event object",
+          "desc": "JS事件对象",
           "__exemption": [ "examples" ]
         }
       }
     },
 
     "blur": {
-      "desc": "Emitted when component loses focus",
+      "desc": "当组件失去焦点时触发。",
       "params": {
         "evt": {
           "type": "Object",
-          "desc": "JS event object",
+          "desc": "JS事件对象",
           "__exemption": [ "examples" ]
         }
       }
@@ -102,11 +102,11 @@
 
   "methods": {
     "focus": {
-      "desc": "Focus field"
+      "desc": "获取焦点"
     },
 
     "blur": {
-      "desc": "Blur field (lose focus)"
+      "desc": "将触发失去焦点"
     }
   }
 }

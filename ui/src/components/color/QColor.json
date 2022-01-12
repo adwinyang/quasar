@@ -14,14 +14,14 @@
 
     "default-value": {
       "type": "String",
-      "desc": "The default value to show when the model doesn't have one",
+      "desc": "当模型没有默认值时要显示的默认值",
       "examples": [ "default-value=\"#c0c0c0\"" ],
       "category": "model"
     },
 
     "default-view": {
       "type": "String",
-      "desc": "The default view of the picker",
+      "desc": "选取器的默认视图",
       "default": "spectrum",
       "values": [ "spectrum", "tune", "palette" ],
       "category": "behavior"
@@ -29,7 +29,7 @@
 
     "format-model": {
       "type": "String",
-      "desc": "Forces a certain model format upon the model",
+      "desc": "在模型上强制采用某种模型格式",
       "default": "auto",
       "values": [ "auto", "hex", "rgb", "hexa", "rgba" ],
       "examples": [ "hex" ],
@@ -38,7 +38,7 @@
 
     "palette": {
       "type": "Array",
-      "desc": "Use a custom palette of colors for the palette tab",
+      "desc": "为调色板标签使用一个自定义调色板的颜色",
       "default": "(hard-coded palette)",
       "examples": [
         ":palette=\"[ '#019A9D', '#D9B801', 'rgb(23,120,0)', '#B2028A' ]\""
@@ -60,20 +60,20 @@
 
     "no-header": {
       "type": "Boolean",
-      "desc": "Do not render header",
+      "desc": "不渲染标题",
       "category": "content"
     },
 
     "no-header-tabs": {
       "type": "Boolean",
-      "desc": "Do not render header tabs (only the input)",
+      "desc": "不呈现标题标签（只有输入）。",
       "category": "content",
       "addedIn": "v2.2"
     },
 
     "no-footer": {
       "type": "Boolean",
-      "desc": "Do not render footer; Useful when you want a specific view ('default-view' prop) and don't want the user to be able to switch it",
+      "desc": "不渲染页脚；当你想要一个特定的视图（'default-view'属性），并且不希望用户能够切换它时，这很有用。",
       "category": "content"
     },
 
@@ -102,7 +102,7 @@
 
     "change": {
       "extends": "update:model-value",
-      "desc": "Emitted on lazy model value change (after user finishes selecting a color)"
+      "desc": "在懒惰的模型值改变时触发（在用户完成选择颜色后）。"
     }
   }
 }

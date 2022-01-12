@@ -10,7 +10,7 @@
 
     "size": {
       "type": "String",
-      "desc": "QChip size name or a CSS unit including unit name",
+      "desc": "QChip尺寸名称或一个CSS单元，包括单元名称",
       "examples": [ "xs", "sm", "md", "lg", "xl", "25px", "2rem" ],
       "category": "style"
     },
@@ -37,7 +37,7 @@
 
     "label": {
       "type": [ "String", "Number" ],
-      "desc": "Chip's content as string; overrides default slot if specified",
+      "desc": "芯片的内容为字符串；如果指定的话，将覆盖默认的插槽。",
       "examples": [ "John Doe", "Book" ],
       "category": "content"
     },
@@ -53,7 +53,7 @@
     "model-value": {
       "extends": "model-value",
       "type": "Boolean",
-      "desc": "Model of the component determining if QChip should be rendered or not",
+      "desc": "决定QChip是否应该被呈现的组件的模型",
       "required": false,
       "default": true
     },
@@ -61,7 +61,7 @@
     "selected": {
       "type": "Boolean",
       "sync": true,
-      "desc": "Model for QChip if it's selected or not",
+      "desc": "QChip的模型，如果它被选中或不被选中",
       "examples": [
         "v-model:selected=\"myState\""
       ],
@@ -70,24 +70,24 @@
 
     "square": {
       "extends": "square",
-      "desc": "Sets a low value for border-radius instead of the default one, making it close to a square"
+      "desc": "为border-radius设置一个低值，而不是默认值，使其接近于一个正方形。"
     },
 
     "outline": {
       "type": "Boolean",
-      "desc": "Display using the 'outline' design",
+      "desc": "使用 'outline'(大纲) 设计进行展示",
       "category": "style"
     },
 
     "clickable": {
       "type": "Boolean",
-      "desc": "Is QChip clickable? If it's the case, then it will add hover effects and emit 'click' events",
+      "desc": "QChip是可点击的吗？如果是的话，那么它将添加悬停效果并触发'点击'事件",
       "category": "state"
     },
 
     "removable": {
       "type": "Boolean",
-      "desc": "If set, then it displays a 'remove' icon that when clicked the QChip emits 'remove' event",
+      "desc": "如果设置了，那么它将显示一个 'remove'(移除) 图标，当点击该图标时，QChip会触发 'remove'(移除) 事件。",
       "category": "state"
     },
 
@@ -106,38 +106,38 @@
 
   "slots": {
     "default": {
-      "desc": "This is where QChip content goes, if not using 'label' property"
+      "desc": "如果不使用 'label'(标签) 属性，这是QChip内容的位置。"
     }
   },
 
   "events": {
     "click": {
-      "desc": "Emitted on QChip click if 'clickable' property is set",
+      "desc": "如果设置了'可点击'属性，在点击QChip时触发。",
       "params": {
         "evt": {
           "type": "Object",
-          "desc": "JS event object",
+          "desc": "JS事件对象",
           "__exemption": [ "examples" ]
         }
       }
     },
 
     "update:selected": {
-      "desc": "Used by Vue on 'v-model:selected' for updating its value",
+      "desc": "Vue 在 'v-model:selected' 上使用，用于更新其值",
       "params": {
         "state": {
           "type": "Boolean",
-          "desc": "Selected state"
+          "desc": "选定的国家"
         }
       }
     },
 
     "remove": {
-      "desc": "Works along with 'value' and 'removable' prop. Emitted when toggling rendering state of the QChip",
+      "desc": "与'value'和'removable'属性一起工作。在切换QChip的渲染状态时触发。",
       "params": {
         "state": {
           "type": "Boolean",
-          "desc": "Render state (render or not)"
+          "desc": "渲染状态（渲染与否）。"
         }
       }
     }

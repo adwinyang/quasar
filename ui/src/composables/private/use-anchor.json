@@ -2,7 +2,7 @@
   "props": {
     "target": {
       "type": [ "Boolean", "String", "Element" ],
-      "desc": "Configure a target element to trigger component toggle; 'true' means it enables the parent DOM element, 'false' means it disables attaching events to any DOM elements; By using a String (CSS selector) or a DOM element it attaches the events to the specified DOM element (if it exists)",
+      "desc": "配置一个目标元素来触发组件切换；'true'意味着它启用父DOM元素，'false'意味着它禁止将事件附加到任何DOM元素；通过使用一个字符串（CSS选择器）或一个DOM元素，它将事件附加到指定的DOM元素（如果它存在）。",
       "default": true,
       "values": [ "(Boolean) true", "(Boolean) false", "(CSS selector)", "(DOM Element)" ],
       "examples": [
@@ -16,13 +16,13 @@
 
     "no-parent-event": {
       "type": "Boolean",
-      "desc": "Skips attaching events to the target DOM element (that trigger the element to get shown)",
+      "desc": "跳过对目标DOM元素的附加事件（触发该元素被显示）。",
       "category": "behavior"
     },
 
     "context-menu": {
       "type": "Boolean",
-      "desc": "Allows the component to behave like a context menu, which opens with a right mouse click (or long tap on mobile)",
+      "desc": "允许组件表现得像一个上下文菜单，通过鼠标右键（或在手机上长点）打开。",
       "category": "behavior"
     }
   }

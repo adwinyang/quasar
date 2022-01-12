@@ -783,7 +783,7 @@ const components = [
     path: 'chip'
   },
   {
-    name: '循环进度条',
+    name: '圆环进度条',
     path: 'circular-progress'
   },
   {
@@ -807,7 +807,7 @@ const components = [
     path: 'floating-action-button'
   },
   {
-    name: '表格组件',
+    name: '表单组件',
     opened: true,
     listPath: 'form-components',
     children: [
@@ -816,7 +816,7 @@ const components = [
         path: 'input'
       },
       {
-        name: '选择',
+        name: '选择框',
         path: 'select'
       },
       {
@@ -882,7 +882,7 @@ const components = [
     path: 'infinite-scroll'
   },
   {
-    name: '内部装载',
+    name: '内部加载',
     path: 'inner-loading'
   },
   {
@@ -940,7 +940,7 @@ const components = [
     path: 'popup-edit'
   },
   {
-    name: 'Popup Proxy',
+    name: '弹出代理',
     path: 'popup-proxy'
   },
   {
@@ -968,11 +968,11 @@ const components = [
     path: 'skeleton'
   },
   {
-    name: '幻灯片项',
+    name: '滑动项',
     path: 'slide-item'
   },
   {
-    name: '幻灯片过渡',
+    name: '滑动过渡',
     path: 'slide-transition'
   },
   {

@@ -6,7 +6,7 @@
   "props": {
     "inset": {
       "type": "Boolean",
-      "desc": "Apply an inset to content (useful for subsequent toolbars)",
+      "desc": "给内容应用一个嵌套（对后续的工具栏很有用）",
       "category": "content"
     }
   },

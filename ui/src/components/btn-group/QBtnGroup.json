@@ -6,56 +6,56 @@
   "props": {
     "spread": {
       "type": "Boolean",
-      "desc": "Spread horizontally to all available space",
+      "desc": "横向扩展到所有可用空间",
       "category": "content"
     },
 
     "outline": {
       "type": "Boolean",
-      "desc": "Use 'outline' design for buttons",
+      "desc": "使用 'outline'(大纲) 设计的按钮",
       "category": "style"
     },
 
     "flat": {
       "type": "Boolean",
-      "desc": "Use 'flat' design for buttons",
+      "desc": "使用 'flat(扁平) 设计的按钮",
       "category": "style"
     },
 
     "unelevated": {
       "type": "Boolean",
-      "desc": "Remove shadow on buttons",
+      "desc": "移除按钮上的阴影",
       "category": "style"
     },
 
     "rounded": {
       "type": "Boolean",
-      "desc": "Applies a more prominent border-radius for squared shape buttons",
+      "desc": "对正方形的按钮应用更突出的边界半径",
       "category": "style"
     },
 
     "push": {
       "type": "Boolean",
-      "desc": "Use 'push' design for buttons",
+      "desc": "使用 'push'(推送)设计的按钮",
       "category": "style"
     },
 
     "stretch": {
       "type": "Boolean",
-      "desc": "When used on flexbox parent, buttons will stretch to parent's height",
+      "desc": "当使用在flexbox父体上时，按钮将伸展到父体的高度。",
       "category": "content"
     },
 
     "glossy": {
       "type": "Boolean",
-      "desc": "Applies a glossy effect",
+      "desc": "应用光亮的效果",
       "category": "style"
     }
   },
 
   "slots": {
     "default": {
-      "desc": "Suggestion: QBtn"
+      "desc": "建议：QBtn"
     }
   }
 }

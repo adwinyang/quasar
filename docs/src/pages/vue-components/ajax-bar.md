@@ -1,5 +1,5 @@
 ---
-title: Ajax 加载进度条
+title: Ajax 状态栏
 desc: QAjaxBar Vue 组件在 Ajax 请求或调用时显示一个加载进度条。
 keys: QAjaxBar
 related:
@@ -18,7 +18,7 @@ QAjaxBar是一个组件，当一个Ajax调用(不管使用的是什么Ajax库)�
 
 ## QAjaxBar API
 
-<doc-api file="QAjaxBar111" />
+<doc-api file="QAjaxBar" />
 
 ## 使用方法
 QAjaxBar组件会自动捕捉Ajax调用(除非被告知不要这样做)。

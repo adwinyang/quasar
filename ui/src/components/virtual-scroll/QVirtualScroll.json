@@ -8,7 +8,7 @@
   "props": {
     "type": {
       "type": "String",
-      "desc": "The type of content: list (default) or table",
+      "desc": "内容的类型：列表（默认）或表格",
       "default": "list",
       "values": [ "list", "table" ],
       "category": "content"
@@ -16,7 +16,7 @@
 
     "items": {
       "type": "Array",
-      "desc": "Available list items that will be passed to the scoped slot; For best performance freeze the list of items; Required if 'itemsFn' is not supplied",
+      "desc": "将被传递给作用域插槽的可用列表项；为了获得最佳性能，冻结列表项；如果没有提供'itemsFn'，则需要提供。",
       "default": "[]",
       "examples": [
         ":items=\"[ 'BMW', 'Samsung Phone' ]\"",
@@ -27,7 +27,7 @@
 
     "items-size": {
       "type": "Number",
-      "desc": "Number of available items in the list; Required and used only if 'itemsFn' is provided",
+      "desc": "列表中可用项目的数量；需要，仅在提供'itemsFn'时使用",
       "default": "void 0",
       "examples": [
         ":items-size=\"100000\"",
@@ -38,22 +38,22 @@
 
     "items-fn": {
       "type": "Function",
-      "desc": "Function to return the scope for the items to be displayed; Should return an array for items starting from 'from' index for size length; For best performance, reference it from your scope and do not define it inline",
+      "desc": "返回要显示的项目的范围的函数；应该为项目返回一个数组，从'from'索引开始的大小长度；为了获得最佳性能，从你的范围中引用它，不要内联定义它。",
       "params": {
         "from": {
           "type": "Number",
-          "desc": "Index of the first item (0 based)",
+          "desc": "第一个项目的索引（基于0）。",
           "examples": [ 15 ]
         },
         "size": {
           "type": "Number",
-          "desc": "Number of items to return",
+          "desc": "退回物品的数量",
           "examples": [ 38 ]
         }
       },
       "returns": {
         "type": "Array",
-        "desc": "List of scope for items to be displayed",
+        "desc": "要显示的项目的范围列表",
         "__exemption": [ "examples" ]
       },
       "examples": [
@@ -74,7 +74,7 @@
           "definition": {
             "ref": {
               "tsType": "QVirtualScroll",
-              "desc": "Vue reference to the QVirtualScroll"
+              "desc": "对QVirtualScroll的Vue引用"
             }
           }
         }
@@ -84,24 +84,24 @@
 
   "slots" : {
     "before": {
-      "desc": "Template slot for the elements that should be rendered before the list; Suggestion: thead before a table"
+      "desc": "列表前应呈现的元素的模板插槽；建议：表格前的thead"
     },
 
     "after": {
-      "desc": "Template slot for the elements that should be rendered after the list; Suggestion: tfoot after a table"
+      "desc": "列表后应呈现的元素的模板插槽；建议：表格后的tfoot"
     },
 
     "default": {
-      "desc": "Template slot for defining the list item; Suggestion: QItem",
+      "desc": "用于定义列表项的模板插槽；建议：QItem",
       "scope": {
         "index": {
           "type": "Number",
-          "desc": "Item index in the options list",
+          "desc": "选项列表中的项目索引",
           "examples": [ 0 ]
         },
         "item": {
           "type": "Any",
-          "desc": "Item data -- its value is taken from 'options' prop",
+          "desc": "项目数据--其值取自'选项'属性",
           "__exemption": [ "examples" ]
         }
       }

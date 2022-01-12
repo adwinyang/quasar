@@ -6,7 +6,7 @@
   "props": {
     "inline-actions": {
       "type": "Boolean",
-      "desc": "Display actions on same row as content",
+      "desc": "在与内容相同的行上显示行动",
       "category": "content"
     },
 
@@ -25,15 +25,15 @@
 
   "slots": {
     "default": {
-      "desc": "This is where Banner content goes"
+      "desc": "这就是Banner内容的去处"
     },
 
     "avatar": {
-      "desc": "Slot for displaying an avatar (suggestions: QIcon, QAvatar)"
+      "desc": "用于显示头像的插槽（建议：QIcon, QAvatar）。"
     },
 
     "action": {
-      "desc": "Slot for Banner action (suggestions: QBtn)"
+      "desc": "旗帜行动的插槽（建议：QBtn）。"
     }
   }
 }

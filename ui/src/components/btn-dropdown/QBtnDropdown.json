@@ -9,14 +9,14 @@
     "model-value": {
       "extends": "model-value",
       "type": "Boolean",
-      "desc": "Controls Menu show/hidden state; Either use this property (along with a listener for 'update:modelValue' event) OR use v-model directive",
+      "desc": "控制菜单的显示/隐藏状态；要么使用此属性（连同'update:modelValue'事件的监听器），要么使用 v-model 指令。",
       "required": false,
       "examples": [ "v-model=\"menuState\"" ]
     },
 
     "split": {
       "type": "Boolean",
-      "desc": "Split dropdown icon into its own button",
+      "desc": "将下拉图标分割成自己的按钮",
       "category": "content|behavior"
     },
 
@@ -26,25 +26,25 @@
 
     "disable-main-btn": {
       "type": "Boolean",
-      "desc": "Disable main button (useful along with 'split' prop)",
+      "desc": "禁用主按钮（与 'split' (分割) 属性一起使用）。",
       "category": "behavior"
     },
 
     "disable-dropdown": {
       "type": "Boolean",
-      "desc": "Disables dropdown (dropdown button if using along 'split' prop)",
+      "desc": "禁用下拉菜单（如果使用 'split'(分割) 属性，则禁用下拉按钮）。",
       "category": "behavior"
     },
 
     "no-icon-animation": {
       "type": "Boolean",
-      "desc": "Disables the rotation of the dropdown icon when state is toggled",
+      "desc": "当状态被切换时，禁止下拉图标的旋转。",
       "category": "style"
     },
 
     "content-style": {
       "type": [ "Array", "String", "Object" ],
-      "desc": "Style definitions to be attributed to the menu",
+      "desc": "归属于菜单的样式定义",
       "examples": [
         "background-color: #ff0000",
         ":content-style=\"{ backgroundColor: '#ff0000' }\""
@@ -54,7 +54,7 @@
 
     "content-class": {
       "type": [ "Array", "String", "Object" ],
-      "desc": "Class definitions to be attributed to the menu",
+      "desc": "归入菜单的类定义",
       "examples": [
         "my-special-class",
         ":content-class=\"{ 'my-special-class': <condition> }\""
@@ -64,31 +64,31 @@
 
     "cover": {
       "type": "Boolean",
-      "desc": "Allows the menu to cover the button. When used, the 'menu-self' and 'menu-fit' props are no longer effective",
+      "desc": "允许菜单覆盖按钮。当使用时，'menu-self'和'menu-fit'属性就不再有效了",
       "category": "position"
     },
 
     "persistent": {
       "type": "Boolean",
-      "desc": "Allows the menu to not be dismissed by a click/tap outside of the menu or by hitting the ESC key",
+      "desc": "允许菜单不被菜单外的点击/敲击或按下ESC键而被取消。",
       "category": "behavior"
     },
 
     "no-route-dismiss": {
       "type": "Boolean",
-      "desc": "Changing route app won't dismiss the popup; No need to set it if 'persistent' prop is also set",
+      "desc": "改变路线的应用程序将不会取消弹出窗口；如果'持久性'属性也被设置了，则不需要设置它",
       "category": "behavior"
     },
 
     "auto-close": {
       "type": "Boolean",
-      "desc": "Allows any click/tap in the menu to close it; Useful instead of attaching events to each menu item that should close the menu on click/tap",
+      "desc": "允许在菜单中的任何点击/轻拍来关闭它；这比在每个菜单项上附加事件要有用，这些事件应该在点击/轻拍时关闭菜单。",
       "category": "behavior"
     },
 
     "menu-anchor": {
       "type": "String",
-      "desc": "Two values setting the starting position or anchor point of the menu relative to its target",
+      "desc": "设置菜单相对于其目标的起始位置或锚点的两个值",
       "values": [
         "top left", "top middle", "top right", "top start", "top end",
         "center left", "center middle", "center right", "center start", "center end",
@@ -101,7 +101,7 @@
 
     "menu-self": {
       "type": "String",
-      "desc": "Two values setting the menu's own position relative to its target",
+      "desc": "设置菜单自身相对于其目标的位置的两个值",
       "values": [
         "top left", "top middle", "top right", "top start", "top end",
         "center left", "center middle", "center right", "center start", "center end",
@@ -114,7 +114,7 @@
 
     "menu-offset": {
       "type": "Array",
-      "desc": "An array of two numbers to offset the menu horizontally and vertically in pixels",
+      "desc": "一个由两个数字组成的数组，用于在水平和垂直方向上偏移菜单，单位是像素。",
       "examples": [ "[8, 8]", "[5, 10]" ],
       "category": "position"
     }
@@ -126,14 +126,14 @@
     },
 
     "label": {
-      "desc": "Customize main button's content through this slot, unless you're using the 'icon' and 'label' props"
+      "desc": "通过这个插槽定制主按钮的内容，除非你使用 'icon'(图标) 和 'label'(标签)属性。"
     }
   },
 
   "events": {
     "click": {
       "extends": "click",
-      "desc": "Emitted when user clicks/taps on the main button (not the icon one, if using 'split')"
+      "desc": "当用户单击/点击主按钮时触发（如果使用 'split'(分割)，则不是图标按钮）。"
     }
   }
 }

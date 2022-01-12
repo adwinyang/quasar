@@ -4,39 +4,39 @@
   "props": {
     "landscape": {
       "type": "Boolean",
-      "desc": "Display the component in landscape mode",
+      "desc": "以横向模式显示组件",
       "category": "behavior"
     },
 
     "mask": {
       "type": "String",
-      "desc": "Mask (formatting string) used for parsing and formatting value",
+      "desc": "用于解析和格式化值的掩码（格式化字符串）。",
       "category": "model"
     },
 
     "locale": {
       "type": "Object",
-      "desc": "Locale formatting options",
+      "desc": "地域格式化选项",
       "examples": [ ":locale=\"{ monthsShort: ['Ian', 'Feb', 'Mar', '...'] }\"" ],
       "definition": {
         "days": {
           "type": "Array",
-          "desc": "List of full day names (DDDD), starting with Sunday",
+          "desc": "全日名称列表(DDDD)，从周日开始",
           "examples": [ "['Duminica', 'Luni', 'Marti', '...']" ]
         },
         "daysShort": {
           "type": "Array",
-          "desc": "List of short day names (DDD), starting with Sunday",
+          "desc": "短暂的日名（DDD）列表，以星期日开始",
           "examples": [ "['Dum', 'Lun', 'Mar', '...']" ]
         },
         "months": {
           "type": "Array",
-          "desc": "List of full month names (MMMM), starting with January",
+          "desc": "完整的月份名称列表（MMMM），从一月开始",
           "examples": [ "['Ianuarie', 'Februarie', 'Martie', '...']" ]
         },
         "monthsShort": {
           "type": "Array",
-          "desc": "List of short month names (MMM), starting with January",
+          "desc": "短暂的月份名称列表（MMM），从一月开始",
           "examples": [ "['Ian', 'Feb', 'Mar', '...']" ]
         }
       },
@@ -45,7 +45,7 @@
 
     "calendar": {
       "type": "String",
-      "desc": "Specify calendar type",
+      "desc": "指定日历类型",
       "default": "gregorian",
       "values": [ "gregorian", "persian" ],
       "category": "model"

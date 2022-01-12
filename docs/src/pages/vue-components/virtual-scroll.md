@@ -9,11 +9,11 @@ related:
 
 QVirtualScroll 组件允许你只显示一长串项目的一部分，并在用户在容器中滚动时更新可见项目。这有几个好处：只有可见的项目被渲染，所以在任何给定的时间点，DOM树中的节点数量最少，内存消耗也保持在最低水平。
 
-目前有两种类型的QVirtualScroll 。"list(列表)"(使用QItems)和 "table(表格)"(使用表格风格来显示数据行)。
+目前有两种类型的 QVirtualScroll 。"list(列表)"(使用QItems)和 "table(表格)"(使用表格风格来显示数据行)。
 
 ## QVirtualScroll  API
 
-<doc-api file="QVirtualScroll " />
+<doc-api file="QVirtualScroll" />
 
 ## 使用方法
 

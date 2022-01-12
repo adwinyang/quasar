@@ -2,34 +2,34 @@
   "props": {
     "model-value": {
       "type": "Any",
-      "desc": "Model of the component; Either use this property (along with a listener for 'update:model-value' event) OR use v-model directive",
+      "desc": "组件的模型；要么使用这个属性（连同 'update:model-value' 事件的监听器），要么使用v-model指令。",
       "__exemption": [ "examples" ],
       "category": "model"
     },
 
     "error": {
       "type": "Boolean",
-      "desc": "Does field have validation errors?",
+      "desc": "字段是否有验证错误？",
       "category": "behavior"
     },
 
     "error-message": {
       "type": "String",
-      "desc": "Validation error message (gets displayed only if 'error' is set to 'true')",
+      "desc": "验证错误信息（只有在'error'设置为 'true' 时才会显示）。",
       "examples": [ "Username must have at least 5 characters" ],
       "category": "content"
     },
 
     "no-error-icon": {
       "type": "Boolean",
-      "desc": "Hide error icon when there is an error",
+      "desc": "有错误时隐藏错误图标",
       "category": "content"
     },
 
     "rules": {
       "type": "Array",
       "tsType": "ValidationRule",
-      "desc": "Array of Functions/Strings; If String, then it must be a name of one of the embedded validation rules",
+      "desc": "函数/字符串数组；如果是字符串，那么它必须是一个嵌入式验证规则的名称。",
       "examples": [
         ":rules=\"[ val => val.length <= 3 || 'Please use maximum 3 characters' ]\"",
         ":rules=\"[ 'fulltime' ]\""
@@ -39,13 +39,13 @@
 
     "reactive-rules": {
       "type": "Boolean",
-      "desc": "By default a change in the rules does not trigger a new validation until the model changes; If set to true then a change in the rules will trigger a validation; Has a performance penalty, so use it only when you really need it",
+      "desc": "默认情况下，规则的变化不会触发新的验证，直到模型发生变化；如果设置为 'true'，那么规则的变化将触发验证；有一个性能惩罚，所以只在你真正需要的时候使用它。",
       "category": "behavior"
     },
 
     "lazy-rules": {
       "type": [ "Boolean", "String" ],
-      "desc": "If set to boolean true then it checks validation status against the 'rules' only after field loses focus for first time; If set to 'ondemand' then it will trigger only when component's validate() method is manually called or when the wrapper QForm submits itself",
+      "desc": "如果设置为布尔值 'true'，那么只有在字段第一次失去焦点后才会根据 'rules'(规则) 检查验证状态；如果设置为 'ondemand'(按需)，那么只有当组件的 validate() 方法被手动调用或当包装的 QForm 自己提交时才会触发。",
       "values": [ "(Boolean) true", "(Boolean) false", "ondemand" ],
       "category": "behavior"
     }
@@ -53,21 +53,21 @@
 
   "methods": {
     "resetValidation": {
-      "desc": "Reset validation status"
+      "desc": "重置验证状态"
     },
 
     "validate": {
-      "desc": "Trigger a validation",
+      "desc": "触发一个验证",
       "params": {
         "value": {
           "type": "Any",
-          "desc": "Optional value to validate against",
+          "desc": "用于验证的可选值",
           "__exemption": [ "examples" ]
         }
       },
       "returns": {
         "type": [ "Boolean", "Promise<boolean>" ],
-        "desc": "True/false if no async rules, otherwise a Promise with the outcome (true -> validation was a success, false -> invalid models detected)",
+        "desc": "如果没有异步规则，则为真/假，否则为带有结果 的Promise（真->验证成功，假->检测到无效模型）。",
         "examples": [
           "true",
           "validate().then(outcome => { ... })"

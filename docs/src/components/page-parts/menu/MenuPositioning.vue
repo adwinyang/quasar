@@ -11,14 +11,14 @@ q-card(flat, bordered)
       )
         q-list(style="min-width: 100px")
           q-item(clickable)
-            q-item-section New tab
+            q-item-section 新标签页
           q-item(clickable)
-            q-item-section New incognito tab
+            q-item-section 新的隐身标签
           q-separator
           q-item(clickable)
-            q-item-section Recent tabs
+            q-item-section 最近的标签
           q-item(clickable)
-            q-item-section History
+            q-item-section 历史
 
   q-separator
 
@@ -29,15 +29,15 @@ q-card(flat, bordered)
 
   q-card-section.row(:class="cover ? 'justify-center' : ''")
     .column.items-center.col-6
-      .text-weight-bold Anchor Origin
+      .text-weight-bold 锚点起源
       .flex.q-gutter-sm
         .column.q-gutter-y-xs
-          .text-center Vertical
+          .text-center 垂直的
           q-radio(dense, v-model="anchorOrigin.vertical", val="top", label="Top")
           q-radio(dense, v-model="anchorOrigin.vertical", val="center", label="Center")
           q-radio(dense, v-model="anchorOrigin.vertical", val="bottom", label="Bottom")
         .column.q-gutter-y-xs
-          .text-center Horizontal
+          .text-center 水平的
           q-radio(dense, v-model="anchorOrigin.horizontal", val="left", label="Left")
           q-radio(dense, v-model="anchorOrigin.horizontal", val="middle", label="Middle")
           q-radio(dense, v-model="anchorOrigin.horizontal", val="right", label="Right")
@@ -45,15 +45,15 @@ q-card(flat, bordered)
           q-radio(dense, v-model="anchorOrigin.horizontal", val="end", label="End")
 
     .column.items-center.col-6(v-if="!cover")
-      .text-weight-bold Self Origin
+      .text-weight-bold 自身起源
       .flex.q-gutter-sm
         .column.q-gutter-y-xs
-          .text-center Vertical
+          .text-center 垂直的
           q-radio(dense, v-model="selfOrigin.vertical", val="top", label="Top")
           q-radio(dense, v-model="selfOrigin.vertical", val="center", label="Center")
           q-radio(dense, v-model="selfOrigin.vertical", val="bottom", label="Bottom")
         .column.q-gutter-y-xs
-          .text-center Horizontal
+          .text-center 水平的
           q-radio(dense, v-model="selfOrigin.horizontal", val="left", label="Left")
           q-radio(dense, v-model="selfOrigin.horizontal", val="middle", label="Middle")
           q-radio(dense, v-model="selfOrigin.horizontal", val="right", label="Right")

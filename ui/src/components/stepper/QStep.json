@@ -17,7 +17,7 @@
 
     "title": {
       "type": "String",
-      "desc": "Step title",
+      "desc": "步骤标题",
       "required": true,
       "examples": [
         "Ad Groups", "Payment"
@@ -27,7 +27,7 @@
 
     "caption": {
       "type": "String",
-      "desc": "Step’s additional information that appears beneath the title",
+      "desc": "步骤的附加信息出现在标题下面",
       "examples": [
         "Create an account", "Payment details"
       ],
@@ -36,7 +36,7 @@
 
     "prefix": {
       "type": [ "String", "Number" ],
-      "desc": "Step's prefix (max 2 characters) which replaces the icon if step does not has error, is being edited or is marked as done",
+      "desc": "步骤的前缀（最多2个字符），如果步骤没有错误、正在编辑或被标记为已完成，它将取代图标。",
       "examples": [
         "1", "2", "A", "B"
       ],
@@ -76,26 +76,26 @@
     "header-nav": {
       "type": "Boolean",
       "default": true,
-      "desc": "Allow navigation through the header",
+      "desc": "允许通过页眉进行导航",
       "category": "behavior"
     },
 
     "done": {
       "type": "Boolean",
-      "desc": "Mark the step as 'done'",
+      "desc": "将该步骤标记为 '完成'。",
       "category": "state"
     },
 
     "error": {
       "type": "Boolean",
-      "desc": "Mark the step as having an error",
+      "desc": "将该步骤标记为有错误",
       "category": "state"
     }
   },
 
   "slots": {
     "default": {
-      "desc": "The content of the step; Can also contain a QStepperNavigation if you want to handle step navigation and don't have a global navigation in place"
+      "desc": "步骤的内容；如果你想处理步骤导航而没有全局导航，也可以包含一个QStepperNavigation。"
     }
   }
 }

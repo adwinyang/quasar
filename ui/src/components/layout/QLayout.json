@@ -6,7 +6,7 @@
   "props": {
     "view": {
       "type": "String",
-      "desc": "Defines how your layout components (header/footer/drawer) should be placed on screen; See docs examples",
+      "desc": "定义你的布局组件（页眉/页脚/抽屉）应该如何放置在屏幕上；见文档中的例子",
       "default": "hhh lpr fff",
       "examples": [
         "hHh lpR fFf"
@@ -16,35 +16,35 @@
 
     "container": {
       "type": "Boolean",
-      "desc": "Containerize the layout which means it changes the default behavior of expanding to the whole window; Useful (but not limited to) for when using on a QDialog",
+      "desc": "容器化布局，这意味着它改变了扩展到整个窗口的默认行为；在QDialog上使用时很有用（但不限于此）。",
       "category": "content"
     }
   },
 
   "slots": {
     "default": {
-      "desc": "Suggestion: QHeader, QFooter, QDrawer, QPageContainer"
+      "desc": "建议：QHeader, QFooter, QDrawer, QPageContainer"
     }
   },
 
   "events": {
     "resize": {
-      "desc": "Emitted when layout size (height, width) changes",
+      "desc": "当布局尺寸（高度、宽度）改变时触发。",
       "params": {
         "size": {
           "type": "Object",
-          "desc": "New size",
+          "desc": "新尺寸",
           "definition": {
             "height": {
               "type": "Number",
               "required": true,
-              "desc": "Layout height",
+              "desc": "布局高度",
               "examples": [ 575 ]
             },
             "width": {
               "type": "Number",
               "required": true,
-              "desc": "Layout height",
+              "desc": "布局高度",
               "examples": [ 575 ]
             }
           }
@@ -53,41 +53,41 @@
     },
 
     "scroll": {
-      "desc": "Emitted when user scrolls within layout",
+      "desc": "当用户在布局内滚动时触发的",
       "params": {
         "details": {
           "type": "Object",
-          "desc": "Scroll details",
+          "desc": "滚动的细节",
           "definition": {
             "position": {
               "type": "Number",
               "required": true,
-              "desc": "Scroll offset from top (vertical)",
+              "desc": "从顶部滚动偏移（垂直）。",
               "examples": [ 120 ]
             },
 
             "direction": {
               "type": "String",
               "required": true,
-              "desc": "Direction of scroll",
+              "desc": "滚动的方向",
               "values": [ "up", "down" ]
             },
             "directionChanged": {
               "type": "Boolean",
               "required": true,
-              "desc": "Has scroll direction changed since event was last emitted?"
+              "desc": "自事件上次触发后，滚动方向是否发生了变化？"
             },
             "delta": {
               "type": "Number",
               "required": true,
-              "desc": "Vertical delta distance since event was last emitted",
+              "desc": "自事件最后一次发射以来的垂直三角距离",
               "examples": [ 120 ]
             },
 
             "inflectionPoint": {
               "type": "Number",
               "required": true,
-              "desc": "Scroll offset from top (vertical)",
+              "desc": "从顶部滚动偏移（垂直）。",
               "examples": [ 120 ]
             }
           }
@@ -96,11 +96,11 @@
     },
 
     "scroll-height": {
-      "desc": "Emitted when the scroll size of layout changes",
+      "desc": "当布局的滚动尺寸发生变化时触发。",
       "params": {
         "height": {
           "type": "Number",
-          "desc": "New scroll height of layout",
+          "desc": "布局的新滚动高度",
           "examples": [ 1442 ]
         }
       }

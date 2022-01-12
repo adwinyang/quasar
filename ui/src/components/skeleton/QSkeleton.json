@@ -10,7 +10,7 @@
 
     "type": {
       "type": "String",
-      "desc": "Type of skeleton placeholder",
+      "desc": "骨架占位符的类型",
       "values": [
         "text", "rect", "circle",
         "QBtn", "QBadge", "QChip", "QToolbar",
@@ -24,7 +24,7 @@
 
     "animation": {
       "type": "String",
-      "desc": "The animation effect of the skeleton placeholder",
+      "desc": "骨架占位符的动画效果",
       "values": [
         "wave", "pulse", "pulse-x", "pulse-y", "fade", "blink", "none"
       ],
@@ -48,21 +48,21 @@
 
     "size": {
       "type": "String",
-      "desc": "Size in CSS units, including unit name; Overrides 'height' and 'width' props and applies the value to both height and width",
+      "desc": "以CSS为单位的尺寸，包括单位名称；覆盖'高度'和'宽度'属性，并将其值应用于高度和宽度。",
       "examples": [ "16px", "2rem" ],
       "category": "style"
     },
 
     "width": {
       "type": "String",
-      "desc": "Width in CSS units, including unit name; Apply custom width; Use this prop or through CSS; Overridden by 'size' prop if used",
+      "desc": "以CSS为单位的宽度，包括单位名称；应用自定义宽度；使用此属性或通过CSS；如果使用'size'属性，则由'size'属性覆盖。",
       "examples": [ "16px", "2rem" ],
       "category": "style"
     },
 
     "height": {
       "type": "String",
-      "desc": "Height in CSS units, including unit name; Apply custom height; Use this prop or through CSS; Overridden by 'size' prop if used",
+      "desc": "以CSS为单位的高度，包括单位名称；应用自定义高度；使用此属性或通过CSS；如果使用'size'属性，则由'size'属性覆盖。",
       "examples": [ "16px", "2rem" ],
       "category": "style"
     },

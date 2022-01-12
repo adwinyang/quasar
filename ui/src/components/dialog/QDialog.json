@@ -8,61 +8,61 @@
   "props": {
     "persistent": {
       "type": "Boolean",
-      "desc": "User cannot dismiss Dialog if clicking outside of it or hitting ESC key; Also, an app route change won't dismiss it",
+      "desc": "如果点击对话框之外的地方或按下 ESC 键，用户就不能关闭对话框；另外，应用程序路线的改变也不能关闭对话框。",
       "category": "behavior"
     },
 
     "no-esc-dismiss": {
       "type": "Boolean",
-      "desc": "User cannot dismiss Dialog by hitting ESC key; No need to set it if 'persistent' prop is also set",
+      "desc": "用户不能通过点击 ESC 键来解散对话框；如果 'persistent'(持久) 属性也被设置了，就不需要再设置此属性。",
       "category": "behavior"
     },
 
     "no-backdrop-dismiss": {
       "type": "Boolean",
-      "desc": "User cannot dismiss Dialog by clicking outside of it; No need to set it if 'persistent' prop is also set",
+      "desc": "用户不能通过点击对话框以外的地方来解散对话框；如果 'persistent'(持久) 属性也被设置了，就不需要再设置此属性。",
       "category": "behavior"
     },
 
     "no-route-dismiss": {
       "type": "Boolean",
-      "desc": "Changing route app won't dismiss Dialog; No need to set it if 'persistent' prop is also set",
+      "desc": "改变路线的应用程序将不会解散对话框；如果 'persistent'(持久) 属性也被设置了，就不需要再设置此属性。",
       "category": "behavior"
     },
 
     "auto-close": {
       "type": "Boolean",
-      "desc": "Any click/tap inside of the dialog will close it",
+      "desc": "对话框内的任何单击/轻击都将关闭它。",
       "category": "behavior"
     },
 
     "seamless": {
       "type": "Boolean",
-      "desc": "Put Dialog into seamless mode; Does not use a backdrop so user is able to interact with the rest of the page too",
+      "desc": "将对话进入无缝模式；不使用背景，因此用户也能与页面的其他部分交户。",
       "category": "content"
     },
 
     "maximized": {
       "type": "Boolean",
-      "desc": "Put Dialog into maximized mode",
+      "desc": "将对话框放入最大化模式",
       "category": "content"
     },
 
     "full-width": {
       "type": "Boolean",
-      "desc": "Dialog will try to render with same width as the window",
+      "desc": "对话框将尝试以与窗口相同的宽度呈现。",
       "category": "content"
     },
 
     "full-height": {
       "type": "Boolean",
-      "desc": "Dialog will try to render with same height as the window",
+      "desc": "对话框将尝试以与窗口相同的高度呈现。",
       "category": "content"
     },
 
     "position": {
       "type": "String",
-      "desc": "Stick dialog to one of the sides (top, right, bottom or left)",
+      "desc": "将对话框贴在其中一个侧面（上、右、下或左）。",
       "default": "standard",
       "values": [ "standard", "top", "right", "bottom", "left" ],
       "examples": [ "top", "right" ],
@@ -71,25 +71,25 @@
 
     "square": {
       "type": "Boolean",
-      "desc": "Forces content to have squared borders",
+      "desc": "强制内容有方形的边界",
       "category": "style"
     },
 
     "no-refocus": {
       "type": "Boolean",
-      "desc": "(Accessibility) When Dialog gets hidden, do not refocus on the DOM element that previously had focus",
+      "desc": "(可访问性）当对话框被隐藏时，不要重新聚焦于先前拥有焦点的DOM元素。",
       "category": "behavior"
     },
 
     "no-focus": {
       "type": "Boolean",
-      "desc": "(Accessibility) When Dialog gets shown, do not switch focus on it",
+      "desc": "(可访问性）当对话框被显示时，不要将焦点切换到它上面",
       "category": "behavior"
     },
 
     "no-shake": {
       "type": "Boolean",
-      "desc": "Do not shake up the Dialog to catch user's attention",
+      "desc": "不要为了吸引用户的注意力而晃动对话框。",
       "category": "behavior",
       "addedIn": "v2.1.1"
     }
@@ -97,21 +97,21 @@
 
   "events": {
     "shake": {
-      "desc": "Emitted when the Dialog shakes in order to catch user's attention, unless the 'no-shake' property is set"
+      "desc": "当对话框抖动以吸引用户的注意力时触发，除非设置了'no-shake'属性。"
     },
 
     "escape-key": {
-      "desc": "Emitted when ESC key is pressed; Does not get emitted if Dialog is 'persistent' or it has 'no-esc-key' set"
+      "desc": "当 ESC 键被按下时触发；如果对话框是 'persistent'(持久) 或者它设置了 'no-esc-key' 属性，则不会触发。"
     }
   },
 
   "methods": {
     "focus": {
-      "desc": "Focus dialog; if you have content with autofocus attribute, it will directly focus it"
+      "desc": "对话框焦点；如果你有带自动聚焦属性的内容，它将直接获得焦点。"
     },
 
     "shake": {
-      "desc": "Shakes dialog"
+      "desc": "摇晃的对话框"
     }
   },
 

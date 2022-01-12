@@ -10,7 +10,7 @@
 
     "spaced": {
       "type": [ "Boolean", "String" ],
-      "desc": "If set to true, the corresponding direction margins will be set to 8px; It can also be set to a size in CSS units, including unit name, or one of the xs|sm|md|lg|xl predefined sizes",
+      "desc": "如果设置为 'true'，相应的方向边距将被设置为8px；它也可以设置为以CSS为单位的尺寸，包括单位名称，或者xs|sm|md|lg|xl预定义的尺寸之一",
       "default": "md",
       "examples": [
         "12px", "sm", "md"
@@ -20,14 +20,14 @@
 
     "inset": {
       "type": [ "Boolean", "String" ],
-      "desc": "If set to Boolean true, the left and right margins will be set to 16px. If set to 'item' then it will match a QItem's design. If set to 'item-thumbnail' then it will match the design of a QItem with a thumbnail on the left side",
+      "desc": "如果设置为布尔值 'true'，左右边距将被设置为16px。如果设置为 'item'，那么它将匹配一个 QItem 的设计。如果设置为 'item-thumbnail'，那么它将与一个 QItem 的设计相匹配，在左边有一个缩略图",
       "examples": [ "item", "item-thumbnail" ],
       "category": "content"
     },
 
     "vertical": {
       "type": "Boolean",
-      "desc": "If set to true, the separator will be vertical.",
+      "desc": "如果设置为 'true'，分隔符将是垂直的。",
       "category": "content"
     },
 

@@ -5,103 +5,103 @@
 
   "value": {
     "type": "Function",
-    "desc": "Handler for panning (use a non-function to disable)",
+    "desc": "平移的处理程序（使用一个非函数来禁用）。",
     "params": {
       "details": {
         "type": "Object",
-        "desc": "Event details",
+        "desc": "活动详情",
         "definition": {
           "evt": {
             "type": "Object",
-            "desc": "Original JS event Object",
+            "desc": "原始JS事件对象",
             "__exemption": [ "examples" ]
           },
           "touch": {
             "type": "Boolean",
-            "desc": "Triggered by a touch event"
+            "desc": "由一个触摸事件触发"
           },
           "mouse": {
             "type": "Boolean",
-            "desc": "Triggered by a mouse event"
+            "desc": "由鼠标事件触发"
           },
           "position": {
             "type": "Object",
-            "desc": "Event Position Object",
+            "desc": "事件位置对象",
             "definition": {
               "top": {
                 "type": "Number",
-                "desc": "Vertical offset from top of window",
+                "desc": "从窗口顶部的垂直偏移",
                 "examples": [ 235 ]
               },
               "left": {
                 "type": "Number",
-                "desc": "Horizontal offset from left of window",
+                "desc": "从窗口左侧的水平偏移",
                 "examples": [ 235 ]
               }
             }
           },
           "direction": {
             "type": "String",
-            "desc": "Direction of movement",
+            "desc": "运动的方向",
             "values": [ "up", "right", "down", "left" ]
           },
           "isFirst": {
             "type": "Boolean",
-            "desc": "Is first time the handler is called since movement started"
+            "desc": "是运动开始后第一次调用处理程序"
           },
           "isFinal": {
             "type": "Boolean",
-            "desc": "Is last time the handler is called since movement ended"
+            "desc": "是运动结束后最后一次调用处理程序。"
           },
           "duration": {
             "type": "Number",
-            "desc": "How long it took to trigger the event (in milliseconds)",
+            "desc": "触发事件所需的时间（以毫秒计）。",
             "examples": [ 612 ]
           },
           "distance": {
             "type": "Object",
-            "desc": "Absolute distance (in pixels) since movement started from initial point",
+            "desc": "从初始点开始运动的绝对距离（像素）。",
             "definition": {
               "x": {
                 "type": "Number",
-                "desc": "Absolute distance horizontally",
+                "desc": "水平方向的绝对距离",
                 "examples": [ 231 ]
               },
               "y": {
                 "type": "Number",
-                "desc": "Absolute distance vertically",
+                "desc": "垂直方向的绝对距离",
                 "examples": [ 231 ]
               }
             }
           },
           "offset": {
             "type": "Object",
-            "desc": "Distance (in pixels) since movement started from initial point",
+            "desc": "从初始点开始运动的距离（像素）。",
             "definition": {
               "x": {
                 "type": "Number",
-                "desc": "Distance horizontally",
+                "desc": "水平方向的距离",
                 "examples": [ -231, 110 ]
               },
               "y": {
                 "type": "Number",
-                "desc": "Distance vertically",
+                "desc": "垂直方向的距离",
                 "examples": [ -231, 110 ]
               }
             }
           },
           "delta": {
             "type": "Object",
-            "desc": "Delta of distance (in pixels) since handler was called last time",
+            "desc": "自上次调用处理程序以来的距离三角洲（像素）。",
             "definition": {
               "x": {
                 "type": "Number",
-                "desc": "Distance horizontally",
+                "desc": "水平方向的距离",
                 "examples": [ 2 ]
               },
               "y": {
                 "type": "Number",
-                "desc": "Distance vertically",
+                "desc": "垂直方向的距离",
                 "examples": [ 1 ]
               }
             }
@@ -116,72 +116,72 @@
   "modifiers": {
     "stop": {
       "type": "Boolean",
-      "desc": "Stop event propagation for touch events"
+      "desc": "停止触摸事件的事件传播"
     },
 
     "prevent": {
       "type": "Boolean",
-      "desc": "Calls event.preventDefault() for touch events"
+      "desc": "对触摸事件调用event.preventDefault()。"
     },
 
     "mightPrevent": {
       "type": "Boolean",
-      "desc": "Required when you might call event.preventDefault() in your handler for touch events"
+      "desc": "当你可能在你的触摸事件处理程序中调用event.preventDefault()时需要。"
     },
 
     "capture": {
       "type": "Boolean",
-      "desc": "Use capture for touchstart event"
+      "desc": "对触摸启动事件使用捕获"
     },
 
     "mouse": {
       "type": "Boolean",
-      "desc": "Listen for mouse events too"
+      "desc": "也倾听鼠标事件"
     },
 
     "mouseCapture": {
       "type": "Boolean",
-      "desc": "Use capture for mousedown event"
+      "desc": "对mousedown事件使用捕获"
     },
 
     "mouseAllDir": {
       "type": "Boolean",
-      "desc": "Ignore initial mouse move direction (do not abort if the first mouse move is in an unaccepted direction)"
+      "desc": "忽略鼠标的初始移动方向（如果鼠标的第一次移动是在一个不被接受的方向，则不中止。）"
     },
 
     "preserveCursor": {
       "type": "Boolean",
-      "desc": "Prevent the mouse cursor from automatically displaying as grabbing when panning"
+      "desc": "防止鼠标指针在平移时自动显示为抓取状态"
     },
 
     "horizontal": {
       "type": "Boolean",
-      "desc": "Catch horizontal (left/right) movement"
+      "desc": "抓住水平（左/右）运动"
     },
 
     "vertical": {
       "type": "Boolean",
-      "desc": "Catch vertical (up/down) movement"
+      "desc": "捕捉垂直（向上/向下）运动"
     },
 
     "up": {
       "type": "Boolean",
-      "desc": "Catch panning to up"
+      "desc": "捕获平移到向上"
     },
 
     "right": {
       "type": "Boolean",
-      "desc": "Catch panning to right"
+      "desc": "抓紧时间向右平移"
     },
 
     "down": {
       "type": "Boolean",
-      "desc": "Catch panning to down"
+      "desc": "捕捉平移到向下"
     },
 
     "left": {
       "type": "Boolean",
-      "desc": "Catch panning to left"
+      "desc": "接住向左平移"
     }
   }
 }

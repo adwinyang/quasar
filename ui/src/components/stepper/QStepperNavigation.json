@@ -5,7 +5,7 @@
 
   "slots": {
     "default": {
-      "desc": "The content of the custom navigation, child of a QStep or of a QStepper (globally, through 'navigation' slot)"
+      "desc": "自定义导航的内容，QStep或QStepper的孩子（全局的，通过 'navigation' 插槽）。"
     }
   }
 }

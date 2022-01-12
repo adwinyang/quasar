@@ -8,13 +8,13 @@
   "props": {
     "max-height": {
       "extends": "size",
-      "desc": "The maximum height of the Tooltip; Size in CSS units, including unit name",
+      "desc": "工具提示的最大高度；尺寸以CSS为单位，包括单位名称",
       "category": "content"
     },
 
     "max-width": {
       "extends": "size",
-      "desc": "The maximum width of the Tooltip; Size in CSS units, including unit name",
+      "desc": "工具提示的最大宽度；尺寸以CSS为单位，包括单位名称",
       "category": "content"
     },
 
@@ -28,7 +28,7 @@
 
     "anchor": {
       "type": "String",
-      "desc": "Two values setting the starting position or anchor point of the Tooltip relative to its target",
+      "desc": "两个设置工具提示相对于其目标的起始位置或锚点的值",
       "values": [
         "top left", "top middle", "top right", "top start", "top end",
         "center left", "center middle", "center right", "center start", "center end",
@@ -41,7 +41,7 @@
 
     "self": {
       "type": "String",
-      "desc": "Two values setting the Tooltip's own position relative to its target",
+      "desc": "设置工具提示自身相对于其目标的位置的两个值",
       "values": [
         "top left", "top middle", "top right", "top start", "top end",
         "center left", "center middle", "center right", "center start", "center end",
@@ -54,7 +54,7 @@
 
     "offset": {
       "type": "Array",
-      "desc": "An array of two numbers to offset the Tooltip horizontally and vertically in pixels",
+      "desc": "一个由两个数字组成的数组，用于在水平和垂直方向上偏移工具提示，单位是像素。",
       "default": "[14, 14]",
       "examples": [ "[8, 8]", "[5, 10]" ],
       "category": "position"
@@ -66,7 +66,7 @@
 
     "target": {
       "type": [ "Boolean", "String" ],
-      "desc": "Configure a target element to trigger Tooltip toggle; 'true' means it enables the parent DOM element, 'false' means it disables attaching events to any DOM elements; By using a String (CSS selector) it attaches the events to the specified DOM element (if it exists)",
+      "desc": "配置一个目标元素来触发Tooltip切换；'true'意味着它启用父DOM元素，'false'意味着它禁止将事件附加到任何DOM元素；通过使用一个字符串（CSS选择器），它将事件附加到指定的DOM元素（如果它存在）。",
       "default": true,
       "values": [ "(Boolean) true", "(Boolean) false", "(CSS selector)" ],
       "examples": [
@@ -78,13 +78,13 @@
 
     "no-parent-event": {
       "type": "Boolean",
-      "desc": "Skips attaching events to the target DOM element (that trigger the element to get shown)",
+      "desc": "跳过对目标DOM元素的附加事件（触发该元素被显示）。",
       "category": "behavior"
     },
 
     "delay": {
       "type": "Number",
-      "desc": "Configure Tooltip to appear with delay",
+      "desc": "配置工具提示，使其延迟出现",
       "default": 0,
       "examples": [ ":delay=\"550\"" ],
       "category": "behavior"
@@ -92,7 +92,7 @@
 
     "hide-delay": {
       "type": "Number",
-      "desc": "Configure Tooltip to disappear with delay",
+      "desc": "配置工具提示，使其延迟消失",
       "default": 0,
       "examples": [ ":hide-delay=\"650\"" ],
       "category": "behavior"
@@ -107,7 +107,7 @@
 
   "methods": {
     "updatePosition": {
-      "desc": "There are some custom scenarios for which Quasar cannot automatically reposition the tooltip without significant performance drawbacks so the optimal solution is for you to call this method when you need it"
+      "desc": "在一些自定义场景中，Quasar无法在不影响性能的情况下自动调整工具提示的位置，因此最佳的解决方案是在需要时调用这个方法。"
     }
   }
 }

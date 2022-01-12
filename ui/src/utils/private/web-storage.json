@@ -5,89 +5,89 @@
 
   "methods": {
     "has": {
-      "desc": "Check if storage item exists",
+      "desc": "检查存储项目是否存在",
       "params": {
         "key": {
           "type": "String",
-          "desc": "Entry key",
+          "desc": "入口 KEY",
           "required": true,
           "examples": [ "userId" ]
         }
       },
       "returns": {
         "type": "Boolean",
-        "desc": "Does the item exists or not?"
+        "desc": "该项目是否存在？"
       }
     },
 
     "getLength": {
-      "desc": "Get storage number of entries",
+      "desc": "获取存储的条目数",
       "returns": {
         "type": "Number",
-        "desc": "Number of entries",
+        "desc": "条目数",
         "examples": [ 21 ]
       }
     },
 
     "getItem": {
       "tsType": "WebStorageGetItemMethodType",
-      "desc": "Get a storage item value",
+      "desc": "获取一个存储项目的值",
       "params": {
         "key": {
           "type": "String",
-          "desc": "Entry key",
+          "desc": "入口 KEY",
           "required": true,
           "examples": [ "userId" ]
         }
       },
       "returns": {
         "type": [ "Date", "RegExp", "Number", "Boolean", "Function", "Object", "Array", "String", "null" ],
-        "desc": "Storage item value",
+        "desc": "存储项目价值",
         "examples": [ "john12", 702 ]
       }
     },
 
     "getIndex": {
       "tsType": "WebStorageGetIndexMethodType",
-      "desc": "Get the storage item value at specific index",
+      "desc": "获取特定索引的存储项目的值",
       "params": {
         "index": {
           "type": "Number",
-          "desc": "Entry index",
+          "desc": "入口索引",
           "required": true,
           "examples": [ 5 ]
         }
       },
       "returns": {
         "type": [ "Number", "null" ],
-        "desc": "Storage item index",
+        "desc": "存储项目索引",
         "examples": [ 7 ]
       }
     },
 
     "getKey": {
       "tsType": "WebStorageGetKeyMethodType",
-      "desc": "Get the storage key at specific index",
+      "desc": "获取特定索引的存储密钥",
       "params": {
         "index": {
           "type": "Number",
-          "desc": "Entry index",
+          "desc": "入口索引",
           "required": true,
           "examples": [ 5 ]
         }
       },
       "returns": {
         "type": [ "String", "null" ],
-        "desc": "Storage key",
+        "desc": "储存 KEY",
         "examples": [ "userId" ]
       }
     },
 
     "getAll": {
-      "desc": "Retrieve all items in storage",
+      "desc": "检索所有入库物品",
       "returns": {
         "type": "Object",
-        "desc": "Object syntax: item name as Object key and its value",
+        "desc": "对象的语法：项目名称作为对象的键和它的值",
         "examples": [
           "{ userId: 'jon12', timesLoggedIn: 14 }"
         ]
@@ -96,27 +96,27 @@
 
     "getAllKeys": {
       "tsType": "WebStorageGetAllKeysMethodType",
-      "desc": "Retrieve all keys in storage",
+      "desc": "检索存储的所有 KEY",
       "returns": {
         "type": "Array",
-        "desc": "Storage keys (Array of Strings)",
+        "desc": "存储键（字符串阵列）。",
         "examples": [ "['userId', 'password']" ]
       }
     },
 
     "set": {
-      "desc": "Set item in storage",
+      "desc": "将物品放入仓库",
       "params": {
         "key": {
           "type": "String",
-          "desc": "Entry key",
+          "desc": "入门 KEY",
           "required": true,
           "examples": [ "userId" ]
         },
 
         "value": {
           "type": [ "Date", "RegExp", "Number", "Boolean", "Function", "Object", "Array", "String", "null" ],
-          "desc": "Entry value",
+          "desc": "输入值",
           "required": true,
           "params": {
             "...params": {
@@ -134,11 +134,11 @@
     },
 
     "remove": {
-      "desc": "Remove a storage item",
+      "desc": "删除一个存储项目",
       "params": {
         "key": {
           "type": "String",
-          "desc": "Storage key",
+          "desc": "储存 KEY",
           "required": true,
           "examples": [ "userId" ]
         }
@@ -146,14 +146,14 @@
     },
 
     "clear": {
-      "desc": "Remove everything from the storage"
+      "desc": "从仓库中取出所有东西"
     },
 
     "isEmpty": {
-      "desc": "Determine if storage has any items",
+      "desc": "确定仓库是否有任何物品",
       "returns": {
         "type": "Boolean",
-        "desc": "Tells if storage is empty or not"
+        "desc": "显示存储是否为空"
       }
     }
   }

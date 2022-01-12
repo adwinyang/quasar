@@ -5,7 +5,7 @@
 
   "value": {
     "type": [ "Boolean", "Number", "String" ],
-    "desc": "If value is 0 or 'false' then directive is disabled; if value is < 0 then it closes all popups in the chain; if value is 1 or 'true' or undefined then it closes only the parent popup; if value is > 1 it closes the specified number of parent popups in the chain (note that chained QMenus are considered 1 popup only & QPopupProxy separates chained menus)",
+    "desc": "如果值为0或'false'，则指令被禁用；如果值<0，则关闭链中的所有弹出窗口；如果值为1或 'true' 或未定义，则只关闭父弹出窗口；如果值>1，则关闭链中指定数量的父弹出窗口（注意，链式QMenus只被视为一个弹出窗口，QPopupProxy将链式菜单分开）。",
     "examples": [
       "v-close-popup",
       "v-close-popup=\"booleanState\"",

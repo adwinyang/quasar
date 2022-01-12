@@ -8,28 +8,28 @@
     "definition": {
       "early": {
         "type": "Boolean",
-        "desc": "Trigger early/immediately on user interaction"
+        "desc": "在用户互动时及早/立即触发"
       },
 
       "stop": {
         "type": "Boolean",
-        "desc": "Stop click/touch event propagation"
+        "desc": "停止点击/触摸事件的传播"
       },
 
       "center": {
         "type": "Boolean",
-        "desc": "Ripple starts from the absolute center"
+        "desc": "涟漪从绝对中心开始"
       },
 
       "color": {
         "type": "String",
-        "desc": "Color name from Quasar Color Palette; Overrides default dynamic color",
+        "desc": "Quasar调色板的颜色名称；覆盖默认的动态颜色",
         "examples": [ "orange-5" ]
       },
 
       "keyCodes": {
         "type": [ "Array", "Number" ],
-        "desc": "List of keyCode that should trigger the ripple",
+        "desc": "应该触发波纹的keyCode的列表",
         "examples": [ "[]", "[13, 32]" ]
       }
     }
@@ -37,32 +37,32 @@
 
   "value": {
     "type": [ "Boolean", "Object" ],
-    "desc": "Boolean (if just wanting to enable/disable) or Object for configuring more options",
+    "desc": "布尔型（如果只是想启用/禁用）或对象型以配置更多的选项",
     "definition": {
       "early": {
         "type": "Boolean",
-        "desc": "Trigger early/immediately on user interaction"
+        "desc": "在用户互动时及早/立即触发"
       },
 
       "stop": {
         "type": "Boolean",
-        "desc": "Stop click/touch event propagation"
+        "desc": "停止点击/触摸事件的传播"
       },
 
       "center": {
         "type": "Boolean",
-        "desc": "Ripple starts from the absolute center"
+        "desc": "涟漪从绝对中心开始"
       },
 
       "color": {
         "type": "String",
-        "desc": "Color name from Quasar Color Palette; Overrides default dynamic color",
+        "desc": "Quasar调色板的颜色名称；覆盖默认的动态颜色",
         "examples": [ "orange-5" ]
       },
 
       "keyCodes": {
         "type": [ "Array", "Number" ],
-        "desc": "List of keyCode that should trigger the ripple",
+        "desc": "应该触发波纹的keyCode的列表",
         "examples": [ "[]", "[13, 32]" ]
       }
     },
@@ -74,7 +74,7 @@
 
   "arg": {
     "type": "String",
-    "desc": "Color name from Quasar Color Palette; Overrides default dynamic color",
+    "desc": "Quasar调色板的颜色名称；覆盖默认的动态颜色",
     "examples": [
       "v-ripple:orange-5"
     ]
@@ -83,12 +83,12 @@
   "modifiers": {
     "early": {
       "type": "Boolean",
-      "desc": "Trigger early/immediately on user interaction"
+      "desc": "在用户互动时及早/立即触发"
     },
 
     "stop": {
       "type": "Boolean",
-      "desc": "Stop click/touch event propagation",
+      "desc": "停止点击/触摸事件的传播",
       "examples": [
         "v-ripple.stop"
       ]
@@ -96,7 +96,7 @@
 
     "center": {
       "type": "Boolean",
-      "desc": "Ripple starts from the absolute center",
+      "desc": "涟漪从绝对中心开始",
       "examples": [
         "v-ripple.center"
       ]

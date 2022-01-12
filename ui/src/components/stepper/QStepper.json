@@ -20,25 +20,25 @@
 
     "vertical": {
       "type": "Boolean",
-      "desc": "Put Stepper in vertical mode (instead of horizontal by default)",
+      "desc": "将步进器置于垂直模式（而不是默认的水平模式）。",
       "category": "behavior"
     },
 
     "alternative-labels": {
       "type": "Boolean",
-      "desc": "Use alternative labels - stacks the icon on top of the label (applies only to horizontal stepper)",
+      "desc": "使用替代标签 - 将图标堆叠在标签之上（仅适用于水平步进器）。",
       "category": "header"
     },
 
     "header-nav": {
       "type": "Boolean",
-      "desc": "Allow navigation through the header",
+      "desc": "允许通过页眉进行导航",
       "category": "behavior"
     },
 
     "contracted": {
       "type": "Boolean",
-      "desc": "Hide header labels on narrow windows",
+      "desc": "在狭窄的窗口上隐藏页眉标签",
       "category": "header|behavior"
     },
 
@@ -84,7 +84,7 @@
 
     "header-class": {
       "type": "String",
-      "desc": "Class definitions to be attributed to the header",
+      "desc": "归属到页眉的类定义",
       "examples": [
         "my-special-class"
       ],
@@ -94,15 +94,15 @@
 
   "slots": {
     "default": {
-      "desc": "Suggestion: QStep"
+      "desc": "建议：QStep"
     },
 
     "navigation": {
-      "desc": "Slot specific for the global navigation; Suggestion: QStepperNavigation"
+      "desc": "全局导航的具体插槽位；建议：QStepperNavigation"
     },
 
     "message": {
-      "desc": "Slot specific for putting a message on top of each step (if horizontal stepper) or above steps (if vertical); Suggestion: QBanner, div.q-pa-lg"
+      "desc": "专门用于在每个步骤（如果是水平步进）或步骤（如果是垂直步进）上方放置信息的插槽；建议：QBanner, div.q-pa-lg"
     }
   }
 }

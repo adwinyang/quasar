@@ -8,7 +8,7 @@
 
     "anchor": {
       "type": "String",
-      "desc": "How to align the Fab Action relative to Fab expand side; By default it uses the align specified in QFab",
+      "desc": "如何将Fab动作相对于Fab展开的一侧对齐；默认情况下，它使用QFab中指定的对齐方式。",
       "values": [
         "start", "center", "end"
       ],
@@ -17,7 +17,7 @@
 
     "to": {
       "type": [ "String", "Object" ],
-      "desc": "Equivalent to Vue Router <router-link> 'to' property",
+      "desc": "相当于Vue Router <router-link> 'to' 属性",
       "examples": [
         "/home/dashboard",
         ":to=\"{ name: 'my-route-name' }\""
@@ -27,23 +27,23 @@
 
     "replace": {
       "type": "Boolean",
-      "desc": "Equivalent to Vue Router <router-link> 'replace' property",
+      "desc": "相当于Vue Router <router-link> 'replace' 属性",
       "category": "router"
     }
   },
 
   "slots": {
     "default": {
-      "desc": "Suggestion for this slot: QTooltip"
+      "desc": "对这个插槽的建议：QTooltip"
     },
 
     "icon": {
-      "desc": "Slot for icon; Suggestion: QIcon",
+      "desc": "图标的插槽；建议：QIcon",
       "addedIn": "v2.4"
     },
 
     "label": {
-      "desc": "Slot for label",
+      "desc": "用于标签的插槽",
       "addedIn": "v2.4"
     }
   },
@@ -56,11 +56,11 @@
 
   "methods": {
     "click": {
-      "desc": "Emulate click on QFabAction",
+      "desc": "模仿点击QFabAction",
       "params": {
         "evt": {
           "type": "Object",
-          "desc": "JS event object",
+          "desc": "JS事件对象",
           "__exemption": [ "examples" ]
         }
       }

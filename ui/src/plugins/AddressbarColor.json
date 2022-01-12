@@ -7,11 +7,11 @@
 
   "methods": {
     "set": {
-      "desc": "Sets addressbar color (for browsers that support it)",
+      "desc": "设置地址栏的颜色（对于支持它的浏览器）。",
       "params": {
         "hexColor": {
           "type": "String",
-          "desc": "Color in hex format",
+          "desc": "颜色的十六进制格式",
           "required": true,
           "examples": [ "#ff0000" ]
         }

@@ -10,7 +10,7 @@
 
     "side": {
       "type": "String",
-      "desc": "Side to place the timeline entries in dense and comfortable layout; For loose layout it gets overridden by QTimelineEntry side prop",
+      "desc": "在密集和舒适的布局中放置时间线条目；对于松散的布局，它被QTimelineEntry边上的属性所覆盖。",
       "default": "right",
       "values": [ "left", "right" ],
       "category": "behavior"
@@ -18,7 +18,7 @@
 
     "layout": {
       "type": "String",
-      "desc": "Layout of the timeline. Dense keeps content and labels on one side. Comfortable keeps content on one side and labels on the opposite side. Loose puts content on both sides.",
+      "desc": "时间线的布局。密集型将内容和标签放在一边。舒适的将内容放在一侧，标签放在另一侧。松散的把内容放在两边。",
       "default": "dense",
       "values": [ "dense", "comfortable", "loose" ],
       "category": "behavior"
@@ -31,7 +31,7 @@
 
   "slots": {
     "default": {
-      "desc": "Used for content of component"
+      "desc": "用于组件的内容"
     }
   }
 }

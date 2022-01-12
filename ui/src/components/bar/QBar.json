@@ -10,7 +10,7 @@
 
     "dark": {
       "extends": "dark",
-      "desc": "The component background color lights up the parent's background (as opposed to default behavior which is to darken it); Works unless you specify a CSS background color for it"
+      "desc": "组件的背景颜色会照亮父体的背景（与默认行为相反，默认行为是使其变暗）；除非你为其指定一个CSS背景颜色，否则会发挥作用。"
     }
   },
 

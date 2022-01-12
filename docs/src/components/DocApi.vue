@@ -25,7 +25,7 @@ q-card.doc-api.q-my-lg(flat bordered)
           :name="tab"
         )
           .row.no-wrap.items-center
-            span.q-mr-xs.text-capitalize.text-weight-medium {{ tab }}
+            span.q-mr-xs.text-capitalize.text-weight-medium {{ translateChinese(tab) }}
             q-badge(v-if="filteredApiCount[tab].overall" :label="filteredApiCount[tab].overall")
 
       q-input.q-mx-sm.col(
@@ -35,7 +35,7 @@ q-card.doc-api.q-my-lg(flat bordered)
         dense,
         input-class="text-right",
         borderless,
-        placeholder="Filter..."
+        placeholder="筛选..."
         style="min-width: 6em"
       )
         template(v-slot:append)
@@ -66,7 +66,7 @@ q-card.doc-api.q-my-lg(flat bordered)
                 :name="innerTab"
               )
                 .row.no-wrap.items-center.self-stretch
-                  span.q-mr-xs.text-capitalize.text-weight-medium {{ innerTab }}
+                  span.q-mr-xs.text-capitalize.text-weight-medium {{ translateChinese(innerTab) }}
                   .col
                   q-badge(v-if="filteredApiCount[tab].category[innerTab]" :label="filteredApiCount[tab].category[innerTab]")
 
@@ -91,6 +91,8 @@ import { mdiClose, mdiMagnify } from '@quasar/extras/mdi-v6'
 
 import CardTitle from './CardTitle.vue'
 import DocApiEntry from './DocApiEntry.js'
+
+import translateChinese from '../assets/trans-chinese'
 
 const defaultInnerTabName = '__default'
 
@@ -255,8 +257,8 @@ export default {
     const inputRef = ref(null)
 
     const loading = ref(true)
-    const nameBanner = ref('Loading API...')
-    const typeBanner = ref('Please wait...')
+    const nameBanner = ref('加载 API...')
+    const typeBanner = ref('请稍候...')
     const nothingToShow = ref(false)
 
     const docPath = ref('')
@@ -278,7 +280,17 @@ export default {
     const filteredApi = computed(() => getFilteredApi(apiDef.value, filter.value.toLowerCase(), tabsList.value, innerTabsList.value))
     const filteredApiCount = computed(() => getApiCount(filteredApi.value, tabsList.value, innerTabsList.value))
 
+    /**
+     * 解析一个 JSON 文件，表示 api 的说明说明
+     * @param name JSON 文件名, 不含路径
+     * @param type
+     * @param behavior
+     * @param meta
+     * @param addedIn
+     * @param api
+     */
     function parseApiFile (name, { type, behavior, meta, addedIn, ...api }) {
+      // console.log('api', JSON.stringify(api))
       nameBanner.value = name
       typeBanner.value = `${type === 'plugin' ? 'Quasar' : 'Vue'} ${type.charAt(0).toUpperCase()}${type.substring(1)}`
       docPath.value = meta.docsUrl.replace(/^https:\/\/v[\d]+\.quasar\.dev/, '')
@@ -312,6 +324,8 @@ export default {
         /* webpackMode: "lazy-once" */
         'quasar/dist/api/' + props.file + '.json'
       ).then(json => {
+        // console.log('JSON文件：', props.file,
+        //   '\nJSON内容：', JSON.stringify(json))
         parseApiFile(props.file, json.default)
         loading.value = false
       })
@@ -337,7 +351,9 @@ export default {
       inputRef,
       filter,
       inputIcon,
-      onFilterClick
+      onFilterClick,
+
+      translateChinese
     }
   }
 }

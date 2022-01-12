@@ -155,7 +155,7 @@ setup () {
         open: drawerIsOpen.value // So it knows to make it bigger / smaller
       })
       .then(r => {
-        // 只有在承诺解决后才设置这个，这样我们才能看到整个幻灯片动画。
+        // 只有在承诺解决后才设置这个，这样我们才能看到整个滑动动画。
         drawerIsOpen.value = !drawerIsOpen.value
       })
   }

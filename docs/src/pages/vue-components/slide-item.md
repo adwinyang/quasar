@@ -1,5 +1,5 @@
 ---
-title: 幻灯片项
+title: 滑动项
 desc: QSlideItem Vue组件本质上是一个有两个额外槽(左边和右边)的QItem，它允许用户将其拖到其中一边，以便应用一个特定的动作。
 keys: QSlideItem
 related:

@@ -6,14 +6,14 @@
   "props": {
     "props": {
       "type": "Object",
-      "desc": "QTable's header column scoped slot property",
+      "desc": "QTable的标题栏作用域内的插槽属性",
       "examples": [ ":props=\"props\"" ],
       "category": "general"
     },
 
     "auto-width": {
       "type": "Boolean",
-      "desc": "Tries to shrink header column width size; Useful for columns with a checkbox/radio/toggle",
+      "desc": "试图缩小标题栏的宽度大小；对带有复选框/收音机/切换的栏目很有用。",
       "category": "content"
     }
   },

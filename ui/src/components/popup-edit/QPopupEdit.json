@@ -12,34 +12,34 @@
 
     "title": {
       "type": "String",
-      "desc": "Optional title (unless 'title' slot is used)",
+      "desc": "可选的标题（除非使用 'title' 插槽）。",
       "examples": [ "Calories" ],
       "category": "content"
     },
 
     "buttons": {
       "type": "Boolean",
-      "desc": "Show Set and Cancel buttons",
+      "desc": "显示设置和取消按钮",
       "category": "content"
     },
 
     "label-set": {
       "type": "String",
-      "desc": "Override Set button label",
+      "desc": "覆盖 Set(设置) 按钮标签",
       "examples": [ "OK" ],
       "category": "content"
     },
 
     "label-cancel": {
       "type": "String",
-      "desc": "Override Cancel button label",
+      "desc": "覆盖 Cancel(取消) 按钮的标签",
       "examples": [ "Cancel" ],
       "category": "content"
     },
 
     "auto-save": {
       "type": "Boolean",
-      "desc": "Automatically save the model (if changed) when user clicks/taps outside of the popup; It does not apply to ESC key",
+      "desc": "当用户在弹出窗口以外的地方单击/点击时，自动保存模型（如果改变了）；它不适用于ESC键",
       "category": "behavior"
     },
 
@@ -50,17 +50,17 @@
 
     "validate": {
       "type": "Function",
-      "desc": "Validates model then triggers 'save' and closes Popup; Returns a Boolean ('true' means valid, 'false' means abort); Syntax: validate(value); For best performance, reference it from your scope and do not define it inline",
+      "desc": "验证模型，然后触发'保存'并关闭弹出窗口；返回一个布尔值（'真'表示有效，'假'表示终止）；语法：validate(value)；为了获得最佳性能，请从你的范围中引用它，不要在内联中定义它。",
       "params": {
         "value": {
           "type": "Any",
-          "desc": "Model to validate",
+          "desc": "要验证的模型",
           "examples": [ "My car" ]
         }
       },
       "returns": {
         "type": "Boolean",
-        "desc": "Is the model valid or not?"
+        "desc": "该模型是否有效？"
       },
       "examples": [
         ":validate=\"myValidation\""
@@ -74,20 +74,20 @@
 
     "fit": {
       "type": "Boolean",
-      "desc": "Allows the menu to match at least the full width of its target",
+      "desc": "允许菜单至少匹配其目标的全部宽度",
       "category": "position"
     },
 
     "cover": {
       "type": "Boolean",
       "default": true,
-      "desc": "Allows the menu to cover its target. When used, the 'self' and 'fit' props are no longer effective",
+      "desc": "允许菜单覆盖其目标。当使用时，'self' 和 'tip' 属性不再有效。",
       "category": "position"
     },
 
     "anchor": {
       "type": "String",
-      "desc": "Two values setting the starting position or anchor point of the menu relative to its target",
+      "desc": "设置菜单相对于其目标的起始位置或锚点的两个值",
       "values": [
         "top left", "top middle", "top right", "top start", "top end",
         "center left", "center middle", "center right", "center start", "center end",
@@ -99,7 +99,7 @@
 
     "self": {
       "type": "String",
-      "desc": "Two values setting the menu's own position relative to its target",
+      "desc": "设置菜单自身相对于其目标的位置的两个值",
       "values": [
         "top left", "top middle", "top right", "top start", "top end",
         "center left", "center middle", "center right", "center start", "center end",
@@ -111,93 +111,93 @@
 
     "offset": {
       "type": "Array",
-      "desc": "An array of two numbers to offset the menu horizontally and vertically in pixels",
+      "desc": "一个由两个数字组成的数组，用于在水平和垂直方向上偏移菜单，单位是像素。",
       "examples": [ "[8, 8]", "[5, 10]" ],
       "category": "style"
     },
 
     "touch-position": {
       "type": "Boolean",
-      "desc": "Allows for the target position to be set by the mouse position, when the target of the menu is either clicked or touched",
+      "desc": "允许通过鼠标的位置来设置目标位置，当菜单的目标被点击或触摸时。",
       "category": "behavior"
     },
 
     "persistent": {
       "type": "Boolean",
-      "desc": "Avoid menu closing by hitting ESC key or by clicking/tapping outside of the Popup",
+      "desc": "通过点击ESC键或在弹出窗口外点击/敲击来避免菜单关闭。",
       "category": "behavior"
     },
 
     "separate-close-popup": {
       "type": "Boolean",
-      "desc": "Separate from parent menu, marking it as a separate closing point for v-close-popup (without this, chained menus close all together)",
+      "desc": "从父菜单中分离出来，将其作为v-close-popup的一个单独的关闭点（没有这个，链式菜单就会全部关闭）。",
       "category": "behavior"
     },
 
     "square": {
       "type": "Boolean",
-      "desc": "Forces menu to have squared borders",
+      "desc": "迫使菜单有方形的边界",
       "category": "style"
     },
 
     "max-height": {
       "extends": "size",
-      "desc": "The maximum height of the menu; Size in CSS units, including unit name",
+      "desc": "菜单的最大高度；尺寸以CSS为单位，包括单位名称",
       "category": "style"
     },
 
     "max-width": {
       "extends": "size",
-      "desc": "The maximum width of the menu; Size in CSS units, including unit name",
+      "desc": "菜单的最大宽度；尺寸以CSS为单位，包括单位名称",
       "category": "style"
     }
   },
 
   "slots": {
     "default": {
-      "desc": "Used for injecting the form component; Do NOT destructure it",
+      "desc": "用来注入表单组件；不要破坏它的结构。",
       "scope": {
         "initialValue": {
           "type": "Any",
-          "desc": "Initial value",
+          "desc": "初始值",
           "examples": [ 0.241, "Text" ]
         },
         "value": {
           "type": "Any",
-          "desc": "Current value",
+          "desc": "当前价值",
           "examples": [ 0.241, "Text" ]
         },
         "validate": {
           "type": "Function",
-          "desc": "Function that checks if the value is valid",
+          "desc": "检查值是否有效的函数",
           "params": {
             "value": {
               "type": "Any",
               "required": true,
-              "desc": "Value to be checked",
+              "desc": "要检查的值",
               "examples": [ 0, "Changed text" ]
             }
           },
           "returns": {
             "type": "Boolean",
-            "desc": "Checked value is valid or not"
+            "desc": "检查的值是否有效"
           }
         },
         "set": {
           "type": "Function",
-          "desc": "Function that sets the value and closes the popup",
+          "desc": "设置数值并关闭弹出窗口的函数",
           "params": null,
           "returns": null
         },
         "cancel": {
           "type": "Function",
-          "desc": "Function that cancels the editing and reverts the value to the initialValue",
+          "desc": "取消编辑并将值恢复到初始值的函数",
           "params": null,
           "returns": null
         },
         "updatePosition": {
           "type": "Function",
-          "desc": "There are some custom scenarios for which Quasar cannot automatically reposition the component without significant performance drawbacks so the optimal solution is for you to call this method when you need it",
+          "desc": "在一些自定义的场景中，Quasar无法在不影响性能的情况下自动重新定位组件，因此最佳的解决方案是在需要时调用这个方法。",
           "params": null,
           "returns": null
         }
@@ -208,52 +208,52 @@
   "events": {
     "update:model-value": {
       "extends": "update:model-value",
-      "desc": "Emitted when Popup gets cancelled in order to reset model to its initial value; Is also used by v-model"
+      "desc": "当Popup被取消时触发，以便将模型重置为其初始值；也被v-model使用。"
     },
 
     "before-show": {
-      "desc": "Emitted right before Popup gets shown"
+      "desc": "在弹出窗口显示之前触发"
     },
 
     "show": {
-      "desc": "Emitted right after Popup gets shown"
+      "desc": "在弹出窗口显示后立即触发"
     },
 
     "before-hide": {
-      "desc": "Emitted right before Popup gets dismissed"
+      "desc": "在弹出式窗口被驳回之前触发。"
     },
 
     "hide": {
-      "desc": "Emitted right after Popup gets dismissed"
+      "desc": "在弹出式窗口被驳回后立即触发"
     },
 
     "save": {
-      "desc": "Emitted when value has been successfully validated and it should be saved",
+      "desc": "当值被成功验证并应被保存时触发。",
       "params": {
         "value": {
           "type": "Any",
-          "desc": "Validated value to be saved",
+          "desc": "要保存的验证值",
           "__exemption": [ "examples" ]
         },
         "initialValue": {
           "type": "Any",
-          "desc": "Initial value, before changes",
+          "desc": "初始值，变化前",
           "__exemption": [ "examples" ]
         }
       }
     },
 
     "cancel": {
-      "desc": "Emitted when user cancelled the change (hit ESC key or clicking outside of Popup or hit 'Cancel' button)",
+      "desc": "当用户取消更改时（按ESC键或点击弹出窗口外或按'取消'按钮）触发的。",
       "params": {
         "value": {
           "type": "Any",
-          "desc": "Edited value",
+          "desc": "编辑的价值",
           "__exemption": [ "examples" ]
         },
         "initialValue": {
           "type": "Any",
-          "desc": "Initial value, before changes",
+          "desc": "初始值，变化前",
           "__exemption": [ "examples" ]
         }
       }
@@ -262,11 +262,11 @@
 
   "methods": {
     "set": {
-      "desc": "Trigger a model update; Validates model (and emits 'save' event if it's the case) then closes Popup"
+      "desc": "触发模型更新；验证模型（如果是的话，触发'保存'事件）然后关闭弹出窗口"
     },
 
     "cancel": {
-      "desc": "Triggers a model reset to its initial value ('cancel' event is emitted) then closes Popup"
+      "desc": "触发模型重置为初始值（触发'取消'事件），然后关闭Popup"
     },
 
     "show": {
@@ -278,7 +278,7 @@
     },
 
     "updatePosition": {
-      "desc": "There are some custom scenarios for which Quasar cannot automatically reposition the component without significant performance drawbacks so the optimal solution is for you to call this method when you need it"
+      "desc": "在一些自定义的场景中，Quasar无法在不影响性能的情况下自动重新定位组件，因此最佳的解决方案是在需要时调用这个方法。"
     }
   }
 }

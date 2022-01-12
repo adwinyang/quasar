@@ -6,8 +6,8 @@ const transformAssetUrls = require('quasar/dist/transforms/loader-asset-urls.jso
 
 module.exports = function (ctx) {
   return {
-    // app boot file (/src/boot)
-    // --> boot files are part of "main.js"
+    // 应用程序启动文件（/src/boot）
+    // -->启动文件是“main.js”的一部分
     boot: [
       { path: 'gdpr', server: false },
       'components'

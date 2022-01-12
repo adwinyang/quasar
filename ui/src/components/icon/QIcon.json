@@ -8,14 +8,14 @@
   "props": {
     "tag": {
       "extends": "tag",
-      "desc": "HTML tag to render, unless no icon is supplied or it's an svg icon",
+      "desc": "要渲染的HTML标签，除非没有提供图标或它是一个svg图标。",
       "default": "i",
       "examples": [ "div", "i" ]
     },
 
     "name": {
       "type": "String",
-      "desc": "Name of the icon, following Quasar convention",
+      "desc": "图标的名称，遵循Quasar惯例",
       "examples": [ "map", "ion-add" ],
       "category": "model"
     },
@@ -26,20 +26,20 @@
 
     "left": {
       "type": "Boolean",
-      "desc": "Useful if icon is on the left side of something: applies a standard margin on the right side of Icon",
+      "desc": "如果图标在某物的左侧，则很有用：在图标的右侧应用一个标准的边距。",
       "category": "content"
     },
 
     "right": {
       "type": "Boolean",
-      "desc": "Useful if icon is on the right side of something: applies a standard margin on the left side of Icon",
+      "desc": "如果图标在某些东西的右边，则很有用：在图标的左边应用一个标准的边距。",
       "category": "content"
     }
   },
 
   "slots": {
     "default": {
-      "desc": "Suggestions: QTooltip or QMenu"
+      "desc": "建议：QTooltip 或 QMenu"
     }
   }
 }

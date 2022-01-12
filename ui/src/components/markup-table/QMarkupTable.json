@@ -26,7 +26,7 @@
 
     "separator": {
       "type": "String",
-      "desc": "Use a separator/border between rows, columns or all cells",
+      "desc": "在行、列或所有单元格之间使用分隔符/边框",
       "default": "horizontal",
       "values": [ "horizontal", "vertical", "cell", "none" ],
       "examples": [ "cell" ],
@@ -35,7 +35,7 @@
 
     "wrap-cells": {
       "type": "Boolean",
-      "desc": "Wrap text within table cells",
+      "desc": "在表格单元格内包裹文本",
       "category": "content"
     }
   },

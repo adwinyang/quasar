@@ -4,7 +4,7 @@
   "props": {
     "min": {
       "type": "Number",
-      "desc": "Minimum value of the model; Set track's minimum value",
+      "desc": "模型的最小值；设置轨道的最小值",
       "default": 0,
       "examples": [ ":min=\"0\"" ],
       "category": "model"
@@ -12,7 +12,7 @@
 
     "max": {
       "type": "Number",
-      "desc": "Maximum value of the model; Set track's maximum value",
+      "desc": "模型的最大值；设置轨道的最大值",
       "default": 100,
       "examples": [ ":max=\"100\"" ],
       "category": "model"
@@ -20,7 +20,7 @@
 
     "inner-min": {
       "type": "Number",
-      "desc": "Inner minimum value of the model; Use in case you need the model value to be inside of the track's min-max values; Needs to be higher or equal to 'min' prop; Defaults to 'min' prop",
+      "desc": "模型的内部最小值；当你需要模型值在轨道的最小-最大值之内时使用；需要大于或等于'min'属性；默认为'min'属性。",
       "examples": [ ":inner-min=\"0\"" ],
       "category": "model",
       "addedIn": "v2.4"
@@ -28,7 +28,7 @@
 
     "inner-max": {
       "type": "Number",
-      "desc": "Inner maximum value of the model; Use in case you need the model value to be inside of the track's min-max values; Needs to be lower or equal to 'max' prop; Defaults to 'max' prop",
+      "desc": "模型的内部最大值；用于需要模型值在轨道的最小-最大值之内的情况；需要小于或等于 'max' 属性；默认为 'max' 属性。",
       "examples": [ ":max-value=\"100\"" ],
       "category": "model",
       "addedIn": "v2.4"
@@ -36,7 +36,7 @@
 
     "step": {
       "type": "Number",
-      "desc": "Specify step amount between valid values (> 0.0); When step equals to 0 it defines infinite granularity",
+      "desc": "指定有效值之间的步长（>0.0）；当步长等于0时，它定义了无限的颗粒度",
       "default": 1,
       "examples": [ ":step=\"1\"" ],
       "category": "model"
@@ -44,19 +44,19 @@
 
     "snap": {
       "type": "Boolean",
-      "desc": "Snap on valid values, rather than sliding freely; Suggestion: use with 'step' prop",
+      "desc": "卡住有效值，而不是自由滑动；建议：与 'step'(步骤) 属性一起使用",
       "category": "behavior"
     },
 
     "reverse": {
       "type": "Boolean",
-      "desc": "Work in reverse (changes direction)",
+      "desc": "反向工作（改变方向）。",
       "category": "behavior"
     },
 
     "vertical": {
       "type": "Boolean",
-      "desc": "Display in vertical direction",
+      "desc": "在垂直方向上显示",
       "category": "behavior"
     },
 
@@ -66,13 +66,13 @@
 
     "track-color": {
       "extends": "color",
-      "desc": "Color name for the track (can be 'transparent' too) from the Quasar Color Palette",
+      "desc": "Quasar调色板上的轨道颜色名称（也可以是 '透明' 的）。",
       "addedIn": "v2.4"
     },
 
     "track-img": {
       "type": "String",
-      "desc": "Apply a pattern image on the track",
+      "desc": "在轨道上应用一个图案图像",
       "transformAssetUrls": true,
       "examples": [ "~assets/my-pattern.png" ],
       "category": "style",
@@ -81,13 +81,13 @@
 
     "inner-track-color": {
       "extends": "color",
-      "desc": "Color name for the inner track (can be 'transparent' too) from the Quasar Color Palette",
+      "desc": "Quasar调色板中的内部轨道的颜色名称（也可以是 '透明' 的）。",
       "addedIn": "v2.4"
     },
 
     "inner-track-img": {
       "type": "String",
-      "desc": "Apply a pattern image on the inner track",
+      "desc": "在内部轨道上应用一个图案图像",
       "transformAssetUrls": true,
       "examples": [ "~assets/my-pattern.png" ],
       "category": "style",
@@ -96,13 +96,13 @@
 
     "selection-color": {
       "extends": "color",
-      "desc": "Color name for the selection bar (can be 'transparent' too) from the Quasar Color Palette",
+      "desc": "选择栏的颜色名称（也可以是 '透明' 的），来自Quasar调色板。",
       "addedIn": "v2.4"
     },
 
     "selection-img": {
       "type": "String",
-      "desc": "Apply a pattern image on the selection bar",
+      "desc": "在选择栏上应用一个图案图像",
       "transformAssetUrls": true,
       "examples": [ "~assets/my-pattern.png" ],
       "category": "style",
@@ -111,7 +111,7 @@
 
     "label": {
       "type": "Boolean",
-      "desc": "Popup a label when user clicks/taps on the slider thumb and moves it",
+      "desc": "当用户单击/点击滑块的拇指并移动它时，弹出一个标签。",
       "category": "content"
     },
 
@@ -125,20 +125,20 @@
 
     "switch-label-side": {
       "type": "Boolean",
-      "desc": "Switch the position of the label (top <-> bottom or left <-> right)",
+      "desc": "切换标签的位置（上<->下或左<->右）。",
       "category": "style",
       "addedIn": "v2.4"
     },
 
     "label-always": {
       "type": "Boolean",
-      "desc": "Always display the label",
+      "desc": "始终显示标签",
       "category": "behavior|content"
     },
 
     "markers": {
       "type": [ "Boolean", "Number" ],
-      "desc": "Display markers on the track, one for each possible value for the model or using a custom step (when specifying a Number)",
+      "desc": "在轨道上显示标记，模型的每个可能值都有一个标记，或者使用自定义步骤（当指定一个数字时）。",
       "category": "content",
       "examples": [
         "markers",
@@ -149,60 +149,60 @@
     "marker-labels": {
       "type": [ "Boolean", "Array", "Object", "Function" ],
       "tsType": "SliderMarkerLabels",
-      "desc": "Configure the marker labels (or show the default ones if 'true'); Array of definition Objects or Object with key-value where key is the model and the value is the marker label definition",
+      "desc": "配置标记标签（如果是 'true'，则显示默认标签）；定义对象的数组或带有键值的对象，其中键是模型，值是标记标签定义。",
       "definition": {
         "value": {
           "type": "Number",
           "required": true,
-          "desc": "Value of equivalent model where to position the marker",
+          "desc": "等效模型的价值，在哪里定位标记？",
           "__exemption": [ "examples" ]
         },
         "label": {
           "type": [ "Number", "String" ],
-          "desc": "Label to use",
+          "desc": "使用的标签",
           "__exemption": [ "examples" ]
         },
         "classes": {
           "type": [ "String", "Array", "Object" ],
-          "desc": "CSS classes to be attributed to the marker label",
+          "desc": "归属给标记标签的CSS类",
           "examples": [ "my-class-name" ]
         },
         "style": {
           "type": "Object",
-          "desc": "Style definitions to be attributed to the marker label",
+          "desc": "归属于标记标签的样式定义",
           "examples": [ "{ height: '24px' }" ]
         }
       },
       "params": {
         "value": {
           "type": "Number",
-          "desc": "The marker value to transform",
+          "desc": "要转换的标记值",
           "required": true,
           "examples": [ "5" ]
         }
       },
       "returns": {
         "type": [ "String", "Object" ],
-        "desc": "Marker definition Object or directly a String for the label of the marker",
+        "desc": "标记的定义对象，或者直接用一个字符串作为标记的标签",
         "definition": {
           "value": {
             "type": "Number",
-            "desc": "Value of equivalent model where to position the marker",
+            "desc": "等效模型的价值，在哪里定位标记？",
             "__exemption": [ "examples" ]
           },
           "label": {
             "type": [ "Number", "String" ],
-            "desc": "Label to use",
+            "desc": "使用的标签",
             "__exemption": [ "examples" ]
           },
           "classes": {
             "type": [ "String", "Array", "Object" ],
-            "desc": "CSS classes to be attributed to the marker label",
+            "desc": "归属给标记标签的CSS类",
             "examples": [ "my-class-name" ]
           },
           "style": {
             "type": "Object",
-            "desc": "Style definitions to be attributed to the marker label",
+            "desc": "归属于标记标签的样式定义",
             "examples": [ "{ height: '24px' }" ]
           }
         }
@@ -220,7 +220,7 @@
 
     "marker-labels-class": {
       "type": "String",
-      "desc": "CSS class(es) to apply to the marker labels container",
+      "desc": "要应用于标记标签容器的CSS类。",
       "examples": [ "text-orange" ],
       "category": "style",
       "addedIn": "v2.4"
@@ -228,14 +228,14 @@
 
     "switch-marker-labels-side": {
       "type": "Boolean",
-      "desc": "Switch the position of the marker labels (top <-> bottom or left <-> right)",
+      "desc": "切换标记标签的位置（上<->下或左<->右）。",
       "category": "style",
       "addedIn": "v2.4"
     },
 
     "track-size": {
       "type": "String",
-      "desc": "Track size (including CSS unit)",
+      "desc": "轨道尺寸（包括CSS单元）",
       "default": "4px",
       "examples": [ "35px" ],
       "category": "style",
@@ -244,7 +244,7 @@
 
     "thumb-size": {
       "type": "String",
-      "desc": "Thumb size (including CSS unit)",
+      "desc": "拇指大小（包括CSS单元）",
       "default": "20px",
       "examples": [ "20px" ],
       "category": "style",
@@ -258,7 +258,7 @@
 
     "thumb-path": {
       "type": "String",
-      "desc": "Set custom thumb svg path",
+      "desc": "设置自定义的拇指Svg路径",
       "default": "M 4, 10 a 6,6 0 1,0 12,0 a 6,6 0 1,0 -12,0",
       "examples": [ "M5 5 h10 v10 h-10 v-10" ],
       "category": "style"
@@ -293,31 +293,31 @@
         "marker": {
           "type": "Object",
           "tsType": "SliderMarkerLabelConfig",
-          "desc": "Config for current marker label",
+          "desc": "当前标记标签的配置",
           "definition": {
             "index": {
               "type": "Number",
-              "desc": "Index of the marker label (0-based)",
+              "desc": "标记标签的索引（基于0）。",
               "__exemption": [ "examples" ]
             },
             "value": {
               "type": "Number",
-              "desc": "Equivalent model value for the marker label",
+              "desc": "标记标签的等效模型值",
               "__exemption": [ "examples" ]
             },
             "label": {
               "type": [ "Number", "String" ],
-              "desc": "Configured label for the marker",
+              "desc": "配置标记的标签",
               "__exemption": [ "examples" ]
             },
             "classes": {
               "type": "String",
-              "desc": "Required CSS classes to be applied to the marker element",
+              "desc": "应用于标记元素的必要的CSS类别",
               "__exemption": [ "examples" ]
             },
             "style": {
               "type": "Object",
-              "desc": "Style definitions to be attributed to the marker label",
+              "desc": "归属于标记标签的样式定义",
               "examples": [ "{ height: '24px' }" ]
             }
           }
@@ -326,31 +326,31 @@
         "markerList": {
           "type": "Array",
           "tsType": "SliderMarkerLabelArrayConfig",
-          "desc": "Array of marker label configs",
+          "desc": "标记标签配置的数组",
           "definition": {
             "index": {
               "type": "Number",
-              "desc": "Index of the marker label (0-based)",
+              "desc": "标记标签的索引（基于0）。",
               "__exemption": [ "examples" ]
             },
             "value": {
               "type": "Number",
-              "desc": "Equivalent model value for the marker label",
+              "desc": "标记标签的等效模型值",
               "__exemption": [ "examples" ]
             },
             "label": {
               "type": [ "Number", "String" ],
-              "desc": "Configured label for the marker",
+              "desc": "配置标记的标签",
               "__exemption": [ "examples" ]
             },
             "classes": {
               "type": "String",
-              "desc": "Required CSS classes to be applied to the marker element",
+              "desc": "应用于标记元素的必要的CSS类别",
               "__exemption": [ "examples" ]
             },
             "style": {
               "type": "Object",
-              "desc": "Style definitions to be attributed to the marker label",
+              "desc": "归属于标记标签的样式定义",
               "examples": [ "{ height: '24px' }" ]
             }
           }
@@ -359,35 +359,35 @@
         "markerMap": {
           "type": "Object",
           "tsType": "SliderMarkerLabelObjectConfig",
-          "desc": "Object with key-value where key is the model and the value is the marker label config",
+          "desc": "具有键-值的对象，其中键是模型，值是标记标签配置",
           "definition": {
             "...key": {
               "type": "Object",
-              "desc": "Marker label config",
+              "desc": "标记标签配置",
               "definition": {
                 "index": {
                   "type": "Number",
-                  "desc": "Index of the marker label (0-based)",
+                  "desc": "标记标签的索引（基于0）。",
                   "__exemption": [ "examples" ]
                 },
                 "value": {
                   "type": "Number",
-                  "desc": "Equivalent model value for the marker label",
+                  "desc": "标记标签的等效模型值",
                   "__exemption": [ "examples" ]
                 },
                 "label": {
                   "type": [ "Number", "String" ],
-                  "desc": "Configured label for the marker",
+                  "desc": "配置标记的标签",
                   "__exemption": [ "examples" ]
                 },
                 "classes": {
                   "type": "String",
-                  "desc": "Required CSS classes to be applied to the marker element",
+                  "desc": "应用于标记元素的必要的CSS类别",
                   "__exemption": [ "examples" ]
                 },
                 "style": {
                   "type": "Object",
-                  "desc": "Style definitions to be attributed to the marker label",
+                  "desc": "归属于标记标签的样式定义",
                   "examples": [ "{ height: '24px' }" ]
                 }
               }
@@ -397,24 +397,24 @@
 
         "classes": {
           "type": "String",
-          "desc": "Required CSS classes to be applied to the marker element",
+          "desc": "应用于标记元素的必要的CSS类别",
           "__exemption": [ "examples" ]
         },
 
         "getStyle": {
           "type": "Function",
-          "desc": "Get CSS style Object to apply to a marker element at respective model value; For perf reasons, use only if requested model value is not already part of markerMap",
+          "desc": "获取CSS样式对象，以应用于各自的模型值的标记元素；出于完善的原因，只在要求的模型值尚未成为markerMap的一部分时使用。",
           "params": {
             "value": {
               "type": "Number",
-              "desc": "The marker label equivalent model value",
+              "desc": "标记标签的等效模型值",
               "required": true,
               "examples": [ "5" ]
             }
           },
           "returns": {
             "type": "Object",
-            "desc": "CSS style Object to apply to a marker element at respective model value",
+            "desc": "在各自的模型值中应用于标记元素的CSS样式对象",
             "__exemption": [ "examples" ]
           },
           "__exemption": [ "examples" ]
@@ -429,31 +429,31 @@
         "markerList": {
           "type": "Array",
           "tsType": "SliderMarkerLabelArrayConfig",
-          "desc": "Array of marker label configs",
+          "desc": "标记标签配置的数组",
           "definition": {
             "index": {
               "type": "Number",
-              "desc": "Index of the marker label (0-based)",
+              "desc": "标记标签的索引（基于0）。",
               "__exemption": [ "examples" ]
             },
             "value": {
               "type": "Number",
-              "desc": "Equivalent model value for the marker label",
+              "desc": "标记标签的等效模型值",
               "__exemption": [ "examples" ]
             },
             "label": {
               "type": [ "Number", "String" ],
-              "desc": "Configured label for the marker",
+              "desc": "配置标记的标签",
               "__exemption": [ "examples" ]
             },
             "classes": {
               "type": "String",
-              "desc": "Required CSS classes to be applied to the marker element",
+              "desc": "应用于标记元素的必要的CSS类别",
               "__exemption": [ "examples" ]
             },
             "style": {
               "type": "Object",
-              "desc": "Style definitions to be attributed to the marker label",
+              "desc": "归属于标记标签的样式定义",
               "examples": [ "{ height: '24px' }" ]
             }
           }
@@ -462,35 +462,35 @@
         "markerMap": {
           "type": "Object",
           "tsType": "SliderMarkerLabelObjectConfig",
-          "desc": "Object with key-value where key is the model and the value is the marker label config",
+          "desc": "具有键-值的对象，其中键是模型，值是标记标签配置",
           "definition": {
             "...key": {
               "type": "Object",
-              "desc": "Marker label config",
+              "desc": "标记标签配置",
               "definition": {
                 "index": {
                   "type": "Number",
-                  "desc": "Index of the marker label (0-based)",
+                  "desc": "标记标签的索引（基于0）。",
                   "__exemption": [ "examples" ]
                 },
                 "value": {
                   "type": "Number",
-                  "desc": "Equivalent model value for the marker label",
+                  "desc": "标记标签的等效模型值",
                   "__exemption": [ "examples" ]
                 },
                 "label": {
                   "type": [ "Number", "String" ],
-                  "desc": "Configured label for the marker",
+                  "desc": "配置标记的标签",
                   "__exemption": [ "examples" ]
                 },
                 "classes": {
                   "type": "String",
-                  "desc": "Required CSS classes to be applied to the marker element",
+                  "desc": "应用于标记元素的必要的CSS类别",
                   "__exemption": [ "examples" ]
                 },
                 "style": {
                   "type": "Object",
-                  "desc": "Style definitions to be attributed to the marker label",
+                  "desc": "归属于标记标签的样式定义",
                   "examples": [ "{ height: '24px' }" ]
                 }
               }
@@ -500,24 +500,24 @@
 
         "classes": {
           "type": "String",
-          "desc": "Required CSS classes to be applied to the marker element",
+          "desc": "应用于标记元素的必要的CSS类别",
           "__exemption": [ "examples" ]
         },
 
         "getStyle": {
           "type": "Function",
-          "desc": "Get CSS style Object to apply to a marker element at respective model value; For perf reasons, use only if requested model value is not already part of markerMap",
+          "desc": "获取CSS样式对象，以应用于各自的模型值的标记元素；出于完善的原因，只在要求的模型值尚未成为markerMap的一部分时使用。",
           "params": {
             "value": {
               "type": "Number",
-              "desc": "The marker label equivalent model value",
+              "desc": "标记标签的等效模型值",
               "required": true,
               "examples": [ "5" ]
             }
           },
           "returns": {
             "type": "Object",
-            "desc": "CSS style Object to apply to a marker element at respective model value",
+            "desc": "在各自的模型值中应用于标记元素的CSS样式对象",
             "__exemption": [ "examples" ]
           },
           "__exemption": [ "examples" ]
@@ -529,15 +529,15 @@
   "events": {
     "change": {
       "extends": "update:model-value",
-      "desc": "Emitted on lazy model value change (after user slides then releases the thumb)"
+      "desc": "在懒惰的模型值变化时触发（在用户滑动然后释放拇指后）。"
     },
 
     "pan": {
-      "desc": "Triggered when user starts panning on the component",
+      "desc": "当用户开始在组件上平移时被触发",
       "params": {
         "phase": {
           "type": "String",
-          "desc": "Phase of panning",
+          "desc": "平移的阶段",
           "values": [ "start", "end" ]
         }
       }

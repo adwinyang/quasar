@@ -4,7 +4,7 @@
   "props": {
     "model-value": {
       "extends": "model-value",
-      "desc": "Controls state of fab actions (showing/hidden); Works best with v-model directive, otherwise use along listening to 'update:modelValue' event",
+      "desc": "控制制造行动的状态（显示/隐藏）；最好与v-model指令一起使用，否则就与监听'update:modelValue'事件一起使用。",
       "category": "model",
       "required": false
     },
@@ -19,13 +19,13 @@
 
     "hide-icon": {
       "type": "Boolean",
-      "desc": "Hide the icon (don't use any)",
+      "desc": "隐藏图标（不要使用任何）。",
       "category": "style|content"
     },
 
     "direction": {
       "type": "String",
-      "desc": "Direction to expand Fab Actions to",
+      "desc": "指示扩大Fab行动，以",
       "default": "right",
       "values": [ "up", "right", "down", "left" ],
       "examples": [ "down" ],
@@ -34,7 +34,7 @@
 
     "vertical-actions-align": {
       "type": "String",
-      "desc": "The side of the Fab where Fab Actions will expand (only when direction is 'up' or 'down')",
+      "desc": "Fab Actions将扩展的一侧（只有当方向是'向上'或'向下'时）。",
       "default": "center",
       "values": [ "left", "center", "right" ],
       "category": "style|content"
@@ -42,48 +42,48 @@
 
     "persistent": {
       "type": "Boolean",
-      "desc": "By default, Fab Actions are hidden when user navigates to another route and this prop disables this behavior",
+      "desc": "默认情况下，当用户导航到另一条路线时，Fab Actions会被隐藏，这个属性可以禁止这种行为。",
       "category": "behavior"
     }
   },
 
   "slots": {
     "default": {
-      "desc": "This is where QFabActions may go into"
+      "desc": "这就是QFabActions可能进入的地方"
     },
 
     "tooltip": {
-      "desc": "Slot specifically designed for a QTooltip"
+      "desc": "专门为QTooltip设计的插槽"
     },
 
     "icon": {
-      "desc": "Slot for icon shown when FAB is closed; Suggestion: QIcon",
+      "desc": "FAB关闭时显示的图标的插槽；建议：QIcon",
       "scope": {
         "opened": {
           "type": "Boolean",
-          "desc": "FAB is opened"
+          "desc": "FAB已经开幕"
         }
       },
       "addedIn": "v2.4"
     },
 
     "active-icon": {
-      "desc": "Slot for icon shown when FAB is opened; Suggestion: QIcon",
+      "desc": "打开FAB时显示的图标的插槽；建议：QIcon",
       "scope": {
         "opened": {
           "type": "Boolean",
-          "desc": "FAB is opened"
+          "desc": "FAB已经开幕"
         }
       },
       "addedIn": "v2.4"
     },
 
     "label": {
-      "desc": "Slot for label",
+      "desc": "用于标签的插槽",
       "scope": {
         "opened": {
           "type": "Boolean",
-          "desc": "FAB is opened"
+          "desc": "FAB已经开幕"
         }
       },
       "addedIn": "v2.4"
@@ -92,17 +92,17 @@
 
   "events": {
     "update:model-value": {
-      "desc": "Emitted when fab actions are shown/hidden; Captured by v-model directive"
+      "desc": "当fab动作被显示/隐藏时触发；被v-model指令捕获"
     }
   },
 
   "methods": {
     "show": {
-      "desc": "Expands fab actions list"
+      "desc": "展开晶圆厂的行动列表"
     },
 
     "hide": {
-      "desc": "Collapses fab actions list"
+      "desc": "崩溃的晶圆厂行动列表"
     }
   }
 }

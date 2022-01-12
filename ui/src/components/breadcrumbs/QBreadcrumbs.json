@@ -6,7 +6,7 @@
   "props": {
     "separator": {
       "type": "String",
-      "desc": "The string used to separate the breadcrumbs",
+      "desc": "用来分隔面包屑的字符串",
       "default": "/",
       "examples": [ "-", "|", ">" ],
       "category": "content"
@@ -14,14 +14,14 @@
 
     "active-color": {
       "extends": "color",
-      "desc": "The color of the active breadcrumb, which can be any color from the Quasar Color Palette",
+      "desc": "活动面包屑的颜色，可以是Quasar调色板中的任何颜色。",
       "default": "primary",
       "category": "style"
     },
 
     "gutter": {
       "type": "String",
-      "desc": "The gutter value allows you control over the space between the breadcrumb elements.",
+      "desc": "沟插槽值允许你控制面包屑元素之间的空间。",
       "default": "sm",
       "values": [ "none", "xs", "sm", "md", "lg", "xl" ],
       "examples": [ "md", "lg" ],
@@ -30,14 +30,14 @@
 
     "separator-color": {
       "extends": "color",
-      "desc": "The color used to color the separator, which can be any color from the Quasar Color Palette",
+      "desc": "用于给分离器着色的颜色，可以是Quasar调色板中的任何颜色。",
       "category": "style"
     },
 
     "align": {
       "type": "String",
       "default": "left",
-      "desc": "Specify how to align the breadcrumbs horizontally",
+      "desc": "指定如何水平对齐面包屑",
       "values": [ "left", "center", "right", "between", "around", "evenly" ],
       "examples": [ "left", "center" ],
       "category": "content"
@@ -50,7 +50,7 @@
     },
 
     "separator": {
-      "desc": "HTML or component you can slot in to separate the breadcrumbs"
+      "desc": "你可以插入HTML或组件来分离面包屑"
     }
   }
 }

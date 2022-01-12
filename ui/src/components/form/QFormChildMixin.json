@@ -5,10 +5,10 @@
 
   "methods": {
     "validate": {
-      "desc": "Needs to be overwritten when getting extended/mixed in",
+      "desc": "在得到扩展/混合时需要被覆盖",
       "returns": {
         "type": [ "Boolean", "Promise<boolean>" ],
-        "desc": "Promise is always fulfilled and receives the outcome (true -> validation was a success, false -> invalid models detected)",
+        "desc": "承诺总是被履行，并收到结果（真->验证成功，假->检测到无效模型）。",
         "examples": [
           "validate().then(outcome => { ... })"
         ]
@@ -16,7 +16,7 @@
     },
 
     "resetValidation": {
-      "desc": "Needs to be overwritten when getting extended/mixed in"
+      "desc": "在得到扩展/混合时需要被覆盖"
     }
   }
 }

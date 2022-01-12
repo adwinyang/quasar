@@ -10,7 +10,7 @@
     "definition": {
       "type": {
         "type": "String",
-        "desc": "Optional type (that has been previously registered) or one of the out of the box ones ('positive', 'negative', 'warning', 'info', 'ongoing')",
+        "desc": "可选的类型（之前已经注册过的）或开箱即用的类型之一（'positive'(正面)、'negative'(负面)、'warning'(警告)、'info'(信息)、'ongoing'(持续)）。",
         "examples": [ "negative", "custom-type" ]
       },
 
@@ -24,19 +24,19 @@
 
       "message": {
         "type": "String",
-        "desc": "The content of your message",
+        "desc": "你的信息的内容",
         "examples": [ "John Doe pinged you" ]
       },
 
       "caption": {
         "type": "String",
-        "desc": "The content of your optional caption",
+        "desc": "你的可选标题的内容",
         "examples": [ "5 minutes ago" ]
       },
 
       "html": {
         "type": "Boolean",
-        "desc": "Render the message as HTML; This can lead to XSS attacks so make sure that you sanitize the message first"
+        "desc": "将信息渲染成HTML；这可能导致XSS攻击，所以确保你首先对信息进行清理。"
       },
 
       "icon": {
@@ -45,7 +45,7 @@
 
       "avatar": {
         "type": "String",
-        "desc": "URL to an avatar/image; Suggestion: use statics folder",
+        "desc": "头像/图像的URL；建议：使用statics文件夹",
         "examples": [
           "(statics folder) statics/img/something.png",
           "(relative path format) require('./my_img.jpg')",
@@ -55,12 +55,12 @@
 
       "spinner": {
         "type": "Boolean",
-        "desc": "Useful for notifications that are updated; Displays the default Quasar spinner instead of an avatar or icon"
+        "desc": "对更新的通知有用；显示默认的Quasar旋转器而不是头像或图标。"
       },
 
       "position": {
         "type": "String",
-        "desc": "Window side/corner to stick to",
+        "desc": "窗户侧面/角落要贴上",
         "default": "bottom",
         "values": [
           "top-left", "top-right",
@@ -72,22 +72,22 @@
 
       "group": {
         "type": [ "Boolean", "String", "Number" ],
-        "desc": "Override the auto generated group with custom one; Grouped notifications cannot be updated; String or number value inform this is part of a specific group, regardless of its options; When a new notification is triggered with same group name, it replaces the old one and shows a badge with how many times the notification was triggered",
+        "desc": "用自定义组覆盖自动生成的组；分组通知不能被更新；字符串或数字值通知这是特定组的一部分，不管它的选项是什么；当一个新的通知以相同的组名被触发时，它将取代旧的通知，并显示一个徽章，上面有该通知被触发的次数。",
         "default": "(message + caption + multiline + actions labels + position)",
         "examples": [ "my-group" ]
       },
 
       "badgeColor": {
         "extends": "color",
-        "desc": "Color name for the badge from the Quasar Color Palette"
+        "desc": "Quasar调色板中徽章的颜色名称"
       },
       "badgeTextColor": {
         "extends": "color",
-        "desc": "Color name for the badge text from the Quasar Color Palette"
+        "desc": "Quasar调色板中徽章文本的颜色名称"
       },
       "badgePosition": {
         "type": "String",
-        "desc": "Notification corner to stick badge to; If notification is on the left side then default is top-right otherwise it is top-left",
+        "desc": "通知角，用于粘贴徽章；如果通知在左侧，则默认为右上角，否则为左上角。",
         "default": "(top-left/top-right)",
         "values": [
           "top-left", "top-right",
@@ -97,14 +97,14 @@
       },
       "badgeStyle": {
         "type": "String",
-        "desc": "Style definitions to be attributed to the badge",
+        "desc": "归属于徽章的风格定义",
         "examples": [
           "background-color: #ff0000"
         ]
       },
       "badgeClass": {
         "type": "String",
-        "desc": "Class definitions to be attributed to the badge",
+        "desc": "归入徽章的类别定义",
         "examples": [
           "my-special-class"
         ]
@@ -112,11 +112,11 @@
 
       "progress": {
         "type": "Boolean",
-        "desc": "Show progress bar to detail when notification will disappear automatically (unless timeout is 0)"
+        "desc": "显示进度条，详细说明通知何时会自动消失（除非超时为0）。"
       },
       "progressClass": {
         "type": "String",
-        "desc": "Class definitions to be attributed to the progress bar",
+        "desc": "归入进度条的类定义",
         "examples": [
           "my-special-class"
         ]
@@ -124,7 +124,7 @@
 
       "classes": {
         "type": "String",
-        "desc": "Add CSS class(es) to the notification for easier customization",
+        "desc": "在通知中添加CSS类，以便更容易地进行定制",
         "examples": [
           "my-notif-class"
         ]
@@ -132,27 +132,27 @@
 
       "attrs": {
         "type": "Object",
-        "desc": "Key-value for attributes to be set on the notification",
+        "desc": "通知上要设置的属性的键值",
         "examples": [ "{ role: 'alertdialog' }" ],
         "__exemption": [ "definition" ]
       },
 
       "timeout": {
         "type": "Number",
-        "desc": "Amount of time to display (in milliseconds)",
+        "desc": "显示的时间量（以毫秒计）。",
         "default": 5000,
         "examples": [ 2500 ]
       },
 
       "closeBtn": {
         "type": [ "Boolean", "String" ],
-        "desc": "Convenient way to add a dismiss button with a specific label, without using the 'actions' convoluted prop",
+        "desc": "方便地添加具有特定标签的关闭按钮，而无需使用 'action' 这一复杂的属性。",
         "examples": [ "Close me" ]
       },
 
       "multiLine": {
         "type": "Boolean",
-        "desc": "Put notification into multi-line mode; If this prop isn't used and more than one 'action' is specified then notification goes into multi-line mode by default"
+        "desc": "将通知放入多行模式；如果没有使用这个属性，并且指定了一个以上的 'action'，那么通知就会默认进入多行模式。"
       }
     }
   },
@@ -160,16 +160,16 @@
   "methods": {
     "create": {
       "tsInjectionPoint": true,
-      "desc": "Creates a notification; Same as calling $q.notify(...)",
+      "desc": "创建一个通知；与调用$q.notify(...)相同。",
       "params": {
         "opts": {
           "type": [ "Object", "String" ],
           "required": true,
-          "desc": "Notification options",
+          "desc": "通知选项",
           "definition": {
             "type": {
               "type": "String",
-              "desc": "Optional type (that has been previously registered) or one of the out of the box ones ('positive', 'negative', 'warning', 'info', 'ongoing')",
+              "desc": "可选的类型（之前已经注册过的）或开箱即用的类型之一（'positive'(正面)、'negative'(负面)、'warning'(警告)、'info'(信息)、'ongoing'(持续)）。",
               "examples": [ "negative", "custom-type" ]
             },
 
@@ -183,19 +183,19 @@
 
             "message": {
               "type": "String",
-              "desc": "The content of your message",
+              "desc": "你的信息的内容",
               "examples": [ "John Doe pinged you" ]
             },
 
             "caption": {
               "type": "String",
-              "desc": "The content of your optional caption",
+              "desc": "你的可选标题的内容",
               "examples": [ "5 minutes ago" ]
             },
 
             "html": {
               "type": "Boolean",
-              "desc": "Render message as HTML; This can lead to XSS attacks, so make sure that you sanitize the message first"
+              "desc": "将信息渲染成HTML；这可能导致XSS攻击，所以要确保你首先对信息进行清理。"
             },
 
             "icon": {
@@ -204,7 +204,7 @@
 
             "avatar": {
               "type": "String",
-              "desc": "URL to an avatar/image; Suggestion: use statics folder",
+              "desc": "头像/图像的URL；建议：使用statics文件夹",
               "examples": [
                 "(statics folder) statics/img/something.png",
                 "(relative path format) require('./my_img.jpg')",
@@ -214,13 +214,13 @@
 
             "spinner": {
               "type": [ "Boolean", "Component" ],
-              "desc": "Useful for notifications that are updated; Displays a Quasar spinner instead of an avatar or icon; If value is Boolean 'true' then the default QSpinner is shown",
+              "desc": "对更新的通知有用；显示一个Quasar旋转器，而不是头像或图标；如果值是布尔值'true'，则显示默认的QSpinner。",
               "examples": [ true, "QSpinnerBars" ]
             },
 
             "position": {
               "type": "String",
-              "desc": "Window side/corner to stick to",
+              "desc": "窗户侧面/角落要贴上",
               "default": "bottom",
               "values": [
                 "top-left", "top-right",
@@ -231,22 +231,22 @@
 
             "group": {
               "type": [ "Boolean", "String", "Number" ],
-              "desc": "Override the auto generated group with custom one; Grouped notifications cannot be updated; String or number value inform this is part of a specific group, regardless of its options; When a new notification is triggered with same group name, it replaces the old one and shows a badge with how many times the notification was triggered",
+              "desc": "用自定义组覆盖自动生成的组；分组通知不能被更新；字符串或数字值通知这是特定组的一部分，不管它的选项是什么；当一个新的通知以相同的组名被触发时，它将取代旧的通知，并显示一个徽章，上面有该通知被触发的次数。",
               "default": "(message + caption + multiline + actions labels + position)",
               "examples": [ "my-group" ]
             },
 
             "badgeColor": {
               "extends": "color",
-              "desc": "Color name for the badge from the Quasar Color Palette"
+              "desc": "Quasar调色板中徽章的颜色名称"
             },
             "badgeTextColor": {
               "extends": "color",
-              "desc": "Color name for the badge text from the Quasar Color Palette"
+              "desc": "Quasar调色板中徽章文本的颜色名称"
             },
             "badgePosition": {
               "type": "String",
-              "desc": "Notification corner to stick badge to; If notification is on the left side then default is top-right otherwise it is top-left",
+              "desc": "通知角，用于粘贴徽章；如果通知在左侧，则默认为右上角，否则为左上角。",
               "default": "(top-left/top-right)",
               "values": [
                 "top-left", "top-right",
@@ -255,7 +255,7 @@
             },
             "badgeStyle": {
               "type": [ "Array", "String", "Object" ],
-              "desc": "Style definitions to be attributed to the badge",
+              "desc": "归属于徽章的风格定义",
               "examples": [
                 "background-color: #ff0000",
                 ":content-style=\"{ backgroundColor: '#ff0000' }\""
@@ -263,7 +263,7 @@
             },
             "badgeClass": {
               "type": [ "Array", "String", "Object" ],
-              "desc": "Class definitions to be attributed to the badge",
+              "desc": "归入徽章的类别定义",
               "examples": [
                 "my-special-class",
                 ":content-class=\"{ 'my-special-class': <condition> }\""
@@ -272,11 +272,11 @@
 
             "progress": {
               "type": "Boolean",
-              "desc": "Show progress bar to detail when notification will disappear automatically (unless timeout is 0)"
+              "desc": "显示进度条，详细说明通知何时会自动消失（除非超时为0）。"
             },
             "progressClass": {
               "type": [ "Array", "String", "Object" ],
-              "desc": "Class definitions to be attributed to the progress bar",
+              "desc": "归入进度条的类定义",
               "examples": [
                 "my-special-class",
                 ":content-class=\"{ 'my-special-class': <condition> }\""
@@ -285,7 +285,7 @@
 
             "classes": {
               "type": "String",
-              "desc": "Add CSS class(es) to the notification for easier customization",
+              "desc": "在通知中添加CSS类，以便更容易地进行定制",
               "examples": [
                 "my-notif-class"
               ]
@@ -293,21 +293,21 @@
 
             "attrs": {
               "type": "Object",
-              "desc": "Key-value for attributes to be set on the notification",
+              "desc": "通知上要设置的属性的键值",
               "examples": [ "{ role: 'alertdialog' }" ],
               "__exemption": [ "definition" ]
             },
 
             "timeout": {
               "type": "Number",
-              "desc": "Amount of time to display (in milliseconds)",
+              "desc": "显示的时间量（以毫秒计）。",
               "default": 5000,
               "examples": [ 2500 ]
             },
 
             "actions": {
               "type": "Array",
-              "desc": "Notification actions (buttons); If a 'handler' is specified or not, clicking/tapping on the button will also close the notification; Also check 'closeBtn' convenience prop",
+              "desc": "通知动作（按钮）；如果没有指定'处理程序'，点击/敲击按钮也会关闭通知；同时检查'closeBtn'方便性属性",
               "examples": [
                 "[ { label: 'Show', handler: (Function), attrs: { 'aria-label': 'Button label' } }, { icon: 'map', handler: (Function), color: 'yellow' }, { label: 'Learn more', noDismiss: true, handler: (Function) } ]"
               ]
@@ -315,7 +315,7 @@
 
             "onDismiss": {
               "type": "Function",
-              "desc": "Function to call when notification gets dismissed",
+              "desc": "当通知被驳回时调用的函数",
               "params": null,
               "returns": null,
               "examples": [
@@ -325,34 +325,34 @@
 
             "closeBtn": {
               "type": [ "Boolean", "String" ],
-              "desc": "Convenience way to add a dismiss button with a specific label, without using the 'actions' prop; If set to true, it uses a label accordding to the current Quasar language",
+              "desc": "方便地添加一个具有特定标签的关闭按钮，而不使用 'action' 属性；如果设置为 'true'，它将使用与当前Quasar语言相一致的标签。",
               "examples": [ "Close me" ]
             },
 
             "multiLine": {
               "type": "Boolean",
-              "desc": "Put notification into multi-line mode; If this prop isn't used and more than one 'action' is specified then notification goes into multi-line mode by default"
+              "desc": "将通知放入多行模式；如果没有使用这个属性，并且指定了一个以上的 'action'，那么通知就会默认进入多行模式。"
             },
 
             "ignoreDefaults": {
               "type": "Boolean",
-              "desc": "Ignore the default configuration (set by setDefaults()) for this instance only"
+              "desc": "忽略这个实例的默认配置（由setDefaults()设置）。"
             }
           }
         }
       },
       "returns": {
         "type": "Function",
-        "desc": "Calling this function with no parameters hides the notification; When called with one Object parameter (the original notification must NOT be grouped), it updates the notification (specified properties are shallow merged with previous ones; note that group and position cannot be changed while updating and so they are ignored)",
+        "desc": "在没有参数的情况下调用这个函数会隐藏通知；当调用一个对象参数时（原始通知必须不是分组的），它会更新通知（指定的属性将与之前的属性合并；注意，在更新时不能改变分组和位置，所以它们会被忽略。）",
         "params": {
           "props": {
             "type": "Object",
             "required": false,
-            "desc": "Notification properties that will be shallow merged to previous ones in order to update the non-grouped notification",
+            "desc": "为了更新不分组的通知，将浅层的通知属性合并到以前的通知中去",
             "definition": {
               "type": {
                 "type": "String",
-                "desc": "Optional type (that has been previously registered) or one of the out of the box ones ('positive', 'negative', 'warning', 'info', 'ongoing')",
+                "desc": "可选的类型（之前已经注册过的）或开箱即用的类型之一（（'positive'(正面)、'negative'(负面)、'warning'(警告)、'info'(信息)、'ongoing'(持续)）。",
                 "examples": [ "negative", "custom-type" ]
               },
 
@@ -366,19 +366,19 @@
 
               "message": {
                 "type": "String",
-                "desc": "The content of your message",
+                "desc": "你的信息的内容",
                 "examples": [ "John Doe pinged you" ]
               },
 
               "caption": {
                 "type": "String",
-                "desc": "The content of your optional caption",
+                "desc": "你的可选标题的内容",
                 "examples": [ "5 minutes ago" ]
               },
 
               "html": {
                 "type": "Boolean",
-                "desc": "Render message as HTML; This can lead to XSS attacks, so make sure that you sanitize the message first"
+                "desc": "将信息渲染成HTML；这可能导致XSS攻击，所以要确保你首先对信息进行清理。"
               },
 
               "icon": {
@@ -387,7 +387,7 @@
 
               "avatar": {
                 "type": "String",
-                "desc": "URL to an avatar/image; Suggestion: use statics folder",
+                "desc": "头像/图像的URL；建议：使用statics文件夹",
                 "examples": [
                   "(statics folder) statics/img/something.png",
                   "(relative path format) require('./my_img.jpg')",
@@ -397,17 +397,17 @@
 
               "spinner": {
                 "type": [ "Boolean", "Component" ],
-                "desc": "Useful for notifications that are updated; Displays a Quasar spinner instead of an avatar or icon; If value is Boolean 'true' then the default QSpinner is shown",
+                "desc": "对更新的通知有用；显示一个Quasar旋转器，而不是头像或图标；如果值是布尔值'true'，则显示默认的QSpinner。",
                 "__exemption": [ "examples" ]
               },
 
               "progress": {
                 "type": "Boolean",
-                "desc": "Show progress bar to detail when notification will disappear automatically (unless timeout is 0)"
+                "desc": "显示进度条，详细说明通知何时会自动消失（除非超时为0）。"
               },
               "progressClass": {
                 "type": [ "Array", "String", "Object" ],
-                "desc": "Class definitions to be attributed to the progress bar",
+                "desc": "归入进度条的类定义",
                 "examples": [
                   "my-special-class",
                   ":content-class=\"{ 'my-special-class': <condition> }\""
@@ -416,7 +416,7 @@
 
               "classes": {
                 "type": "String",
-                "desc": "Add CSS class(es) to the notification for easier customization",
+                "desc": "在通知中添加CSS类，以便更容易地进行定制",
                 "examples": [
                   "my-notif-class"
                 ]
@@ -424,21 +424,21 @@
 
               "attrs": {
                 "type": "Object",
-                "desc": "Key-value for attributes to be set on the notification",
+                "desc": "通知上要设置的属性的键值",
                 "examples": [ "{ role: 'alertdialog' }" ],
                 "__exemption": [ "definition" ]
               },
 
               "timeout": {
                 "type": "Number",
-                "desc": "Amount of time to display (in milliseconds)",
+                "desc": "显示的时间量（以毫秒计）。",
                 "default": 5000,
                 "examples": [ 2500 ]
               },
 
               "actions": {
                 "type": "Array",
-                "desc": "Notification actions (buttons); If a 'handler' is specified or not, clicking/tapping on the button will also close the notification; Also check 'closeBtn' convenience prop",
+                "desc": "通知动作（按钮）；如果没有指定 'handler'，点击/敲击按钮也会关闭通知；同时检查 'closeBtn' 方便性属性",
                 "examples": [
                   "[ { label: 'Show', handler: (Function), attrs: { 'aria-label': 'Button label' } }, { icon: 'map', handler: (Function), color: 'yellow' }, { label: 'Learn more', noDismiss: true, handler: (Function) } ]"
                 ]
@@ -446,7 +446,7 @@
 
               "onDismiss": {
                 "type": "Function",
-                "desc": "Function to call when notification gets dismissed",
+                "desc": "当通知被驳回时调用的函数",
                 "params": null,
                 "returns": null,
                 "examples": [
@@ -456,18 +456,18 @@
 
               "closeBtn": {
                 "type": [ "Boolean", "String" ],
-                "desc": "Convenience way to add a dismiss button with a specific label, without using the 'actions' prop; If set to true, it uses a label accordding to the current Quasar language",
+                "desc": "方便地添加一个具有特定标签的关闭按钮，而不使用 'action' 属性；如果设置为 'true'，它将使用与当前Quasar语言相一致的标签。",
                 "examples": [ "Close me" ]
               },
 
               "multiLine": {
                 "type": "Boolean",
-                "desc": "Put notification into multi-line mode; If this prop isn't used and more than one 'action' is specified then notification goes into multi-line mode by default"
+                "desc": "将通知放入多行模式；如果没有使用这个属性，并且指定了一个以上的 'action'，那么通知就会默认进入多行模式。"
               },
 
               "ignoreDefaults": {
                 "type": "Boolean",
-                "desc": "Ignore the default configuration (set by setDefaults()) for this instance only"
+                "desc": "忽略这个实例的默认配置（由setDefaults()设置）。"
               }
             }
           }
@@ -477,16 +477,16 @@
     },
 
     "setDefaults": {
-      "desc": "Merge options into the default ones",
+      "desc": "将选项合并到默认的选项中",
       "params": {
         "opts": {
           "type": "Object",
           "required": true,
-          "desc": "Notification options",
+          "desc": "通知选项",
           "definition": {
             "type": {
               "type": "String",
-              "desc": "Optional type (that has been previously registered) or one of the out of the box ones ('positive', 'negative', 'warning', 'info', 'ongoing')",
+              "desc": "可选的类型（之前已经注册过的）或开箱即用的类型之一（'positive'(正面)、'negative'(负面)、'warning'(警告)、'info'(信息)、'ongoing'(持续)）。",
               "examples": [ "negative", "custom-type" ]
             },
 
@@ -500,19 +500,19 @@
 
             "message": {
               "type": "String",
-              "desc": "The content of your message",
+              "desc": "你的信息的内容",
               "examples": [ "John Doe pinged you" ]
             },
 
             "caption": {
               "type": "String",
-              "desc": "The content of your optional caption",
+              "desc": "你的可选标题的内容",
               "examples": [ "5 minutes ago" ]
             },
 
             "html": {
               "type": "Boolean",
-              "desc": "Render message as HTML; This can lead to XSS attacks, so make sure that you sanitize the message first"
+              "desc": "将信息渲染成HTML；这可能导致XSS攻击，所以要确保你首先对信息进行清理。"
             },
 
             "icon": {
@@ -521,7 +521,7 @@
 
             "avatar": {
               "type": "String",
-              "desc": "URL to an avatar/image; Suggestion: use statics folder",
+              "desc": "头像/图像的URL；建议：使用statics文件夹",
               "examples": [
                 "(statics folder) statics/img/something.png",
                 "(relative path format) require('./my_img.jpg')",
@@ -531,13 +531,13 @@
 
             "spinner": {
               "type": [ "Boolean", "Component" ],
-              "desc": "Useful for notifications that are updated; Displays a Quasar spinner instead of an avatar or icon; If value is Boolean 'true' then the default QSpinner is shown",
+              "desc": "对更新的通知有用；显示一个Quasar旋转器，而不是头像或图标；如果值是布尔值'true'，则显示默认的QSpinner。",
               "__exemption": [ "examples" ]
             },
 
             "position": {
               "type": "String",
-              "desc": "Window side/corner to stick to",
+              "desc": "窗户侧面/角落要贴上",
               "default": "bottom",
               "values": [
                 "top-left", "top-right",
@@ -549,15 +549,15 @@
 
             "badgeColor": {
               "extends": "color",
-              "desc": "Color name for the badge from the Quasar Color Palette"
+              "desc": "Quasar调色板中徽章的颜色名称"
             },
             "badgeTextColor": {
               "extends": "color",
-              "desc": "Color name for the badge text from the Quasar Color Palette"
+              "desc": "Quasar调色板中徽章文本的颜色名称"
             },
             "badgePosition": {
               "type": "String",
-              "desc": "Notification corner to stick badge to; If notification is on the left side then default is top-right otherwise it is top-left",
+              "desc": "通知角，用于粘贴徽章；如果通知在左侧，则默认为右上角，否则为左上角。",
               "default": "(top-left/top-right)",
               "values": [
                 "top-left", "top-right",
@@ -567,7 +567,7 @@
             },
             "badgeStyle": {
               "type": [ "Array", "String", "Object" ],
-              "desc": "Style definitions to be attributed to the badge",
+              "desc": "归属于徽章的风格定义",
               "examples": [
                 "background-color: #ff0000",
                 ":content-style=\"{ backgroundColor: '#ff0000' }\""
@@ -575,7 +575,7 @@
             },
             "badgeClass": {
               "type": [ "Array", "String", "Object" ],
-              "desc": "Class definitions to be attributed to the badge",
+              "desc": "归入徽章的类别定义",
               "examples": [
                 "my-special-class",
                 ":content-class=\"{ 'my-special-class': <condition> }\""
@@ -584,11 +584,11 @@
 
             "progress": {
               "type": "Boolean",
-              "desc": "Show progress bar to detail when notification will disappear automatically (unless timeout is 0)"
+              "desc": "显示进度条，详细说明通知何时会自动消失（除非超时为0）。"
             },
             "progressClass": {
               "type": [ "Array", "String", "Object" ],
-              "desc": "Class definitions to be attributed to the progress bar",
+              "desc": "归入进度条的类定义",
               "examples": [
                 "my-special-class",
                 ":content-class=\"{ 'my-special-class': <condition> }\""
@@ -597,7 +597,7 @@
 
             "classes": {
               "type": "String",
-              "desc": "Add CSS class(es) to the notification for easier customization",
+              "desc": "在通知中添加CSS类，以便更容易地进行定制",
               "examples": [
                 "my-notif-class"
               ]
@@ -605,20 +605,20 @@
 
             "attrs": {
               "type": "Object",
-              "desc": "Key-value for attributes to be set on the notification",
+              "desc": "通知上要设置的属性的键值",
               "examples": [ "{ role: 'alertdialog' }" ]
             },
 
             "timeout": {
               "type": "Number",
-              "desc": "Amount of time to display (in milliseconds)",
+              "desc": "显示的时间量（以毫秒计）。",
               "default": 5000,
               "examples": [ 2500 ]
             },
 
             "actions": {
               "type": "Array",
-              "desc": "Notification actions (buttons); If a 'handler' is specified or not, clicking/tapping on the button will also close the notification; Also check 'closeBtn' convenience prop",
+              "desc": "通知动作（按钮）；如果没有指定'处理程序'，点击/敲击按钮也会关闭通知；同时检查'closeBtn'方便性属性",
               "examples": [
                 "[ { label: 'Show', handler: (Function), attrs: { 'aria-label': 'Button label' } }, { icon: 'map', handler: (Function), color: 'yellow' } ]"
               ]
@@ -626,7 +626,7 @@
 
             "onDismiss": {
               "type": "Function",
-              "desc": "Function to call when notification gets dismissed",
+              "desc": "当通知被驳回时调用的函数",
               "params": null,
               "returns": null,
               "examples": [
@@ -636,13 +636,13 @@
 
             "closeBtn": {
               "type": [ "Boolean", "String" ],
-              "desc": "Convenience way to add a dismiss button with a specific label, without using the 'actions' prop; If set to true, it uses a label accordding to the current Quasar language",
+              "desc": "方便地添加一个具有特定标签的关闭按钮，而不使用 'active' 属性；如果设置为 'true'，它将使用与当前Quasar语言相一致的标签。",
               "examples": [ "Close me" ]
             },
 
             "multiLine": {
               "type": "Boolean",
-              "desc": "Put notification into multi-line mode; If this prop isn't used and more than one 'action' is specified then notification goes into multi-line mode by default"
+              "desc": "将通知放入多行模式；如果没有使用这个属性，并且指定了一个以上的 'active' ，那么通知就会默认进入多行模式。"
             }
           }
         }
@@ -650,23 +650,23 @@
     },
 
     "registerType": {
-      "desc": "Register a new type of notification (or override an existing one)",
+      "desc": "注册一个新的通知类型（或覆盖一个现有的通知）。",
       "params": {
         "typeName": {
           "type": "String",
           "required": true,
-          "desc": "Name of the type (to be used as 'type' prop later on)",
+          "desc": "类型的名称（以后将作为'类型'属性使用）。",
           "examples": [ "my-type" ]
         },
 
         "typeOpts": {
           "type": "Object",
           "required": true,
-          "desc": "Notification options",
+          "desc": "通知选项",
           "definition": {
             "type": {
               "type": "String",
-              "desc": "Optional type (that has been previously registered) or one of the out of the box ones ('positive', 'negative', 'warning', 'info', 'ongoing')",
+              "desc": "可选的类型（之前已经注册过的）或开箱即用的类型之一（'positive'(正面)、'negative'(负面)、'warning'(警告)、'info'(信息)、'ongoing'(持续)）。",
               "examples": [ "negative", "custom-type" ]
             },
 
@@ -680,19 +680,19 @@
 
             "message": {
               "type": "String",
-              "desc": "The content of your message",
+              "desc": "你的信息的内容",
               "examples": [ "John Doe pinged you" ]
             },
 
             "caption": {
               "type": "String",
-              "desc": "The content of your optional caption",
+              "desc": "你的可选标题的内容",
               "examples": [ "5 minutes ago" ]
             },
 
             "html": {
               "type": "Boolean",
-              "desc": "Render message as HTML; This can lead to XSS attacks, so make sure that you sanitize the message first"
+              "desc": "将信息渲染成HTML；这可能导致XSS攻击，所以要确保你首先对信息进行清理。"
             },
 
             "icon": {
@@ -701,7 +701,7 @@
 
             "avatar": {
               "type": "String",
-              "desc": "URL to an avatar/image; Suggestion: use statics folder",
+              "desc": "头像/图像的URL；建议：使用statics文件夹",
               "examples": [
                 "(statics folder) statics/img/something.png",
                 "(relative path format) require('./my_img.jpg')",
@@ -711,13 +711,13 @@
 
             "spinner": {
               "type": [ "Boolean", "Component" ],
-              "desc": "Useful for notifications that are updated; Displays a Quasar spinner instead of an avatar or icon; If value is Boolean 'true' then the default QSpinner is shown",
+              "desc": "对更新的通知有用；显示一个Quasar旋转器，而不是头像或图标；如果值是布尔值'true'，则显示默认的QSpinner。",
               "__exemption": [ "examples" ]
             },
 
             "position": {
               "type": "String",
-              "desc": "Window side/corner to stick to",
+              "desc": "窗户侧面/角落要贴上",
               "default": "bottom",
               "values": [
                 "top-left", "top-right",
@@ -729,15 +729,15 @@
 
             "badgeColor": {
               "extends": "color",
-              "desc": "Color name for the badge from the Quasar Color Palette"
+              "desc": "Quasar调色板中徽章的颜色名称"
             },
             "badgeTextColor": {
               "extends": "color",
-              "desc": "Color name for the badge text from the Quasar Color Palette"
+              "desc": "Quasar调色板中徽章文本的颜色名称"
             },
             "badgePosition": {
               "type": "String",
-              "desc": "Notification corner to stick badge to; If notification is on the left side then default is top-right otherwise it is top-left",
+              "desc": "通知角，用于粘贴徽章；如果通知在左侧，则默认为右上角，否则为左上角。",
               "default": "(top-left/top-right)",
               "values": [
                 "top-left", "top-right",
@@ -747,7 +747,7 @@
             },
             "badgeStyle": {
               "type": [ "Array", "String", "Object" ],
-              "desc": "Style definitions to be attributed to the badge",
+              "desc": "归属于徽章的风格定义",
               "examples": [
                 "background-color: #ff0000",
                 ":content-style=\"{ backgroundColor: '#ff0000' }\""
@@ -755,7 +755,7 @@
             },
             "badgeClass": {
               "type": [ "Array", "String", "Object" ],
-              "desc": "Class definitions to be attributed to the badge",
+              "desc": "归入徽章的类别定义",
               "examples": [
                 "my-special-class",
                 ":content-class=\"{ 'my-special-class': <condition> }\""
@@ -764,11 +764,11 @@
 
             "progress": {
               "type": "Boolean",
-              "desc": "Show progress bar to detail when notification will disappear automatically (unless timeout is 0)"
+              "desc": "显示进度条，详细说明通知何时会自动消失（除非超时为0）。"
             },
             "progressClass": {
               "type": [ "Array", "String", "Object" ],
-              "desc": "Class definitions to be attributed to the progress bar",
+              "desc": "归入进度条的类定义",
               "examples": [
                 "my-special-class",
                 ":content-class=\"{ 'my-special-class': <condition> }\""
@@ -777,7 +777,7 @@
 
             "classes": {
               "type": "String",
-              "desc": "Add CSS class(es) to the notification for easier customization",
+              "desc": "在通知中添加CSS类，以便更容易地进行定制",
               "examples": [
                 "my-notif-class"
               ]
@@ -785,20 +785,20 @@
 
             "attrs": {
               "type": "Object",
-              "desc": "Key-value for attributes to be set on the notification",
+              "desc": "通知上要设置的属性的键值",
               "examples": [ "{ role: 'alertdialog' }" ]
             },
 
             "timeout": {
               "type": "Number",
-              "desc": "Amount of time to display (in milliseconds)",
+              "desc": "显示的时间量（以毫秒计）。",
               "default": 5000,
               "examples": [ 2500 ]
             },
 
             "actions": {
               "type": "Array",
-              "desc": "Notification actions (buttons); If a 'handler' is specified or not, clicking/tapping on the button will also close the notification; Also check 'closeBtn' convenience prop",
+              "desc": "通知动作（按钮）；如果没有指定'handler'，点击/敲击按钮也会关闭通知；同时检查'closeBtn'方便性属性",
               "examples": [
                 "[ { label: 'Show', handler: (Function), attrs: { 'aria-label': 'Button label' } }, { icon: 'map', handler: (Function), color: 'yellow' } ]"
               ]
@@ -806,7 +806,7 @@
 
             "onDismiss": {
               "type": "Function",
-              "desc": "Function to call when notification gets dismissed",
+              "desc": "当通知被驳回时调用的函数",
               "params": null,
               "returns": null,
               "examples": [
@@ -816,13 +816,13 @@
 
             "closeBtn": {
               "type": [ "Boolean", "String" ],
-              "desc": "Convenience way to add a dismiss button with a specific label, without using the 'actions' prop; If set to true, it uses a label accordding to the current Quasar language",
+              "desc": "方便地添加一个具有特定标签的关闭按钮，而不使用 'action' 属性；如果设置为 'true'，它将使用与当前Quasar语言相一致的标签。",
               "examples": [ "Close me" ]
             },
 
             "multiLine": {
               "type": "Boolean",
-              "desc": "Put notification into multi-line mode; If this prop isn't used and more than one 'action' is specified then notification goes into multi-line mode by default"
+              "desc": "将通知放入多行模式；如果没有使用这个属性，并且指定了一个以上的 'action'，那么通知就会默认进入多行模式。"
             }
           }
         }

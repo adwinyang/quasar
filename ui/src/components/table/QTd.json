@@ -6,20 +6,20 @@
   "props": {
     "props": {
       "type": "Object",
-      "desc": "QTable's column scoped slot property",
+      "desc": "QTable的列范围的插槽属性",
       "examples": [ ":props=\"props\"" ],
       "category": "general"
     },
 
     "auto-width": {
       "type": "Boolean",
-      "desc": "Tries to shrink column width size; Useful for columns with a checkbox/radio/toggle",
+      "desc": "试图缩小列的宽度大小；对带有复选框/收音机/切换的列很有用。",
       "category": "content"
     },
 
     "no-hover": {
       "type": "Boolean",
-      "desc": "Disable hover effect",
+      "desc": "禁用悬停效果",
       "category": "style"
     }
   },

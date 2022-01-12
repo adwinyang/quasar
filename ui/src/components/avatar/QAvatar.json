@@ -8,7 +8,7 @@
   "props": {
     "font-size": {
       "type": "String",
-      "desc": "The size in CSS units, including unit name, of the content (icon, text)",
+      "desc": "内容（图标、文本）在CSS单位中的大小，包括单位名称。",
       "examples": [ "18px", "2rem" ],
       "category": "style"
     },
@@ -36,7 +36,7 @@
 
   "slots": {
     "default": {
-      "desc": "Optional; Suggestions: one character string, <img> tag"
+      "desc": "可选的；建议：一个字符的字符串，<img>标签"
     }
   }
 }

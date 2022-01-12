@@ -2,7 +2,7 @@
   "props": {
     "ratio": {
       "type": [ "String", "Number" ],
-      "desc": "Aspect ratio for the content; If value is a String, then avoid using a computational statement (like '16/9') and instead specify the String value of the result directly (eg. '1.7777')",
+      "desc": "内容的长宽比；如果值是一个字符串，那么避免使用计算语句（如'16/9'），而是直接指定结果的字符串值（如'1.7777'）。",
       "examples": [
         ":ratio=\"4/3\"",
         ":ratio=\"16/9\"",

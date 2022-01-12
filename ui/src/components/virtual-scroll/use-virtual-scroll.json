@@ -2,13 +2,13 @@
   "props": {
     "virtual-scroll-horizontal": {
       "type": "Boolean",
-      "desc": "Make virtual list work in horizontal mode",
+      "desc": "使虚拟列表在水平模式下工作",
       "category": "behavior"
     },
 
     "virtual-scroll-slice-size": {
       "type": [ "Number", "String" ],
-      "desc": "Minimum number of items to render in the virtual list",
+      "desc": "在虚拟列表中呈现的最小项目数",
       "default": "30",
       "examples": [ "virtual-scroll-slice-size=\"60\"" ],
       "category": "virtual-scroll"
@@ -16,7 +16,7 @@
 
     "virtual-scroll-slice-ratio-before": {
       "type": [ "Number", "String" ],
-      "desc": "Ratio of number of items in visible zone to render before it",
+      "desc": "可见区域内的项目数量与之前渲染的比例",
       "default": "1",
       "examples": [ "virtual-scroll-slice-ratio-before=\"0.3\"" ],
       "category": "virtual-scroll"
@@ -24,7 +24,7 @@
 
     "virtual-scroll-slice-ratio-after": {
       "type": [ "Number", "String" ],
-      "desc": "Ratio of number of items in visible zone to render after it",
+      "desc": "可见区的项目数量与之后渲染的比例",
       "default": "1",
       "examples": [ "virtual-scroll-slice-ratio-after=\"2\"" ],
       "category": "virtual-scroll"
@@ -32,7 +32,7 @@
 
     "virtual-scroll-item-size": {
       "type": [ "Number", "String" ],
-      "desc": "Default size in pixels (height if vertical, width if horizontal) of an item; This value is used for rendering the initial list; Try to use a value close to the minimum size of an item",
+      "desc": "项目的默认尺寸，单位是像素（如果是垂直高度，如果是水平宽度）；这个值用于渲染初始列表；尽量使用接近项目最小尺寸的值",
       "default": "24",
       "examples": [ "virtual-scroll-item-size=\"48\"" ],
       "category": "virtual-scroll"
@@ -40,7 +40,7 @@
 
     "virtual-scroll-sticky-size-start": {
       "type": [ "Number", "String" ],
-      "desc": "Size in pixels (height if vertical, width if horizontal) of the sticky part (if using one) at the start of the list; A correct value will improve scroll precision",
+      "desc": "列表开始处的粘性部分（如果使用粘性部分）的尺寸，单位是像素（如果是垂直高度，如果是水平宽度）；一个正确的值会提高滚动精度",
       "default": "0",
       "examples": [ "virtual-scroll-sticky-size-start=\"48\"" ],
       "category": "virtual-scroll"
@@ -48,7 +48,7 @@
 
     "virtual-scroll-sticky-size-end": {
       "type": [ "Number", "String" ],
-      "desc": "Size in pixels (height if vertical, width if horizontal) of the sticky part (if using one) at the end of the list; A correct value will improve scroll precision",
+      "desc": "列表末尾的粘性部分（如果使用粘性部分）的尺寸，单位是像素（如果是垂直高度，如果是水平宽度）；一个正确的值会提高滚动精度",
       "default": "0",
       "examples": [ "virtual-scroll-sticky-size-end=\"48\"" ],
       "category": "virtual-scroll"
@@ -56,7 +56,7 @@
 
     "table-colspan": {
       "type": [ "Number", "String" ],
-      "desc": "The number of columns in the table (you need this if you use table-layout: fixed)",
+      "desc": "表格中的列数（如果你使用table-layout: fixed，你需要这个）。",
       "examples": [ "table-colspan=\"12\"" ],
       "category": "virtual-scroll|content"
     }
@@ -64,40 +64,40 @@
 
   "events": {
     "virtual-scroll": {
-      "desc": "Emitted when the virtual scroll occurs",
+      "desc": "当虚拟滚动发生时触发的",
       "params": {
         "details": {
           "type": "Object",
-          "desc": "Object of properties on the new scroll position",
+          "desc": "新滚动位置上的属性对象",
           "definition": {
             "index": {
               "type": "Number",
               "required": true,
-              "desc": "Index of the list item that was scrolled into view (0 based)",
+              "desc": "被滚动到的列表项的索引（基于0）。",
               "examples": [ 30 ]
             },
             "from": {
               "type": "Number",
               "required": true,
-              "desc": "The index of the first list item that is rendered (0 based)",
+              "desc": "呈现的第一个列表项的索引（以0为基准）。",
               "examples": [ 10 ]
             },
             "to": {
               "type": "Number",
               "required": true,
-              "desc": "The index of the last list item that is rendered (0 based)",
+              "desc": "呈现的最后一个列表项的索引（以0为基准）。",
               "examples": [ 50 ]
             },
             "direction": {
               "type": "String",
               "required": true,
-              "desc": "Direction of change",
+              "desc": "变化的方向",
               "values": [ "increase", "decrease" ]
             },
             "ref": {
               "type": "Component",
               "required": true,
-              "desc": "Vue reference to the component which triggered the event"
+              "desc": "触发事件的组件的Vue引用"
             }
           }
         }
@@ -107,32 +107,32 @@
 
   "methods": {
     "scrollTo": {
-      "desc": "Scroll the virtual scroll list to the item with the specified index (0 based)",
+      "desc": "将虚拟滚动列表滚动到具有指定索引的项目（基于0）。",
       "params": {
         "index": {
           "type": [ "String", "Number" ],
-          "desc": "The index of the list item (0 based)",
+          "desc": "列表项的索引（以0为基准）。",
           "required": true,
           "examples": [ "1", 23 ]
         },
         "edge": {
           "type": "String",
-          "desc": "The edge to align to if the item is not visible already (by default it aligns to end if scrolling towards the end and to start otherwise); If the '-force' version is used then it always aligns",
+          "desc": "如果项目还不可见，要对齐的边缘（默认情况下，如果向末端滚动，它会对齐到末端，否则会对齐到起点）；如果使用'-force'版本，那么它总是对齐的",
           "values": [ "start", "center", "end", "start-force", "center-force", "end-force" ]
         }
       }
     },
 
     "reset": {
-      "desc": "Resets the virtual scroll computations; Needed for custom edge-cases"
+      "desc": "重置虚拟卷轴的计算；需要用于自定义边缘案例"
     },
 
     "refresh": {
-      "desc": "Refreshes the virtual scroll list; Use it after appending items",
+      "desc": "刷新虚拟卷轴列表；在添加项目后使用它",
       "params": {
         "index": {
           "type": [ "String", "Number" ],
-          "desc": "The index of the list item to scroll to after refresh (0 based); If it's not specified the scroll position is not changed; Use a negative value to keep scroll position",
+          "desc": "刷新后要滚动到的列表项的索引（基于0）；如果没有指定，滚动位置不会改变；使用负值来保持滚动位置。",
           "examples": [ "1", 23, -1 ]
         }
       }

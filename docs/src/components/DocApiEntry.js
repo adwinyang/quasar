@@ -100,30 +100,34 @@ function getProp (prop, propName, level, onlyChildren) {
 
     if (prop.reactive === true) {
       child.push(
-        getDiv(3, 'Reactive', 'yes')
+        getDiv(3, /* 'Reactive' */ '反应式', 'yes')
       )
     }
   }
 
   if (prop.addedIn !== void 0) {
     child.push(
-      getDiv(12, 'Added in', prop.addedIn)
+      // getDiv(12, 'Added in', prop.addedIn)
+      getDiv(12, '加入', prop.addedIn)
     )
   }
 
   child.push(
-    getDiv(12, 'Description', prop.desc)
+    // getDiv(12, 'Description', prop.desc)
+    getDiv(12, '描述', prop.desc)
   )
 
   if (type === 'Function') {
     child.push(
-      getDiv(12, 'Function form', getMethodParams(prop, true) + getMethodReturnValue(prop))
+      // getDiv(12, 'Function form', getMethodParams(prop, true) + getMethodReturnValue(prop))
+      getDiv(12, '函数形式', getMethodParams(prop, true) + getMethodReturnValue(prop))
     )
   }
 
   if (prop.sync === true) {
     child.push(
-      getDiv(3, 'Note', 'Required to be used with v-model!')
+      // getDiv(3, 'Note', 'Required to be used with v-model!')
+      getDiv(3, '注意', '必须与 v-model 一起使用！')
     )
   }
 
@@ -131,7 +135,8 @@ function getProp (prop, propName, level, onlyChildren) {
     child.push(
       getDiv(
         3,
-        'Default value',
+        // 'Default value',
+        '默认值',
         void 0,
         h(
           'div',
@@ -144,7 +149,8 @@ function getProp (prop, propName, level, onlyChildren) {
 
   if (prop.link === true) {
     child.push(
-      getDiv(6, 'External link', prop.link)
+      // getDiv(6, 'External link', prop.link)
+      getDiv(6, '外部链接', prop.link)
     )
   }
 
@@ -152,7 +158,8 @@ function getProp (prop, propName, level, onlyChildren) {
     child.push(
       getDiv(
         12,
-        'Accepted values',
+        // 'Accepted values',
+        '接收值',
         void 0,
         h(
           'div',
@@ -174,7 +181,7 @@ function getProp (prop, propName, level, onlyChildren) {
     child.push(
       getDiv(
         12,
-        'Props',
+        '属性',
         void 0,
         h('div', { class: 'api-row__subitem' }, nodes)
       )
@@ -195,7 +202,8 @@ function getProp (prop, propName, level, onlyChildren) {
     child.push(
       getDiv(
         12,
-        'Params',
+        // 'Params',
+        '参数',
         void 0,
         h('div', { class: 'api-row__subitem' }, nodes)
       )
@@ -228,7 +236,8 @@ function getProp (prop, propName, level, onlyChildren) {
     child.push(
       getDiv(
         12,
-        'Scope',
+        // 'Scope',
+        '作用域',
         void 0,
         h('div', { class: 'api-row__subitem' }, nodes)
       )
@@ -239,7 +248,8 @@ function getProp (prop, propName, level, onlyChildren) {
     child.push(
       getDiv(
         12,
-        `Example${prop.examples.length > 1 ? 's' : ''}`,
+        // `Example${prop.examples.length > 1 ? 's' : ''}`,
+        `示例 ${prop.examples.length > 1 ? '(多个)' : ''}`,
         void 0,
         h(
           'div',
@@ -301,7 +311,8 @@ describe.events = events => {
     }
     else {
       params.push(
-        h('div', { class: 'text-italic q-py-xs q-px-md' }, '*None*')
+        // h('div', { class: 'text-italic q-py-xs q-px-md' }, '*None*')
+        h('div', { class: 'text-italic q-py-xs q-px-md' }, '*无*')
       )
     }
 
@@ -309,11 +320,14 @@ describe.events = events => {
       h('div', { class: 'api-row row' }, [
         getNameDiv(`@${eventName}${getEventParams(event)}`, 0),
         event.addedIn !== void 0
-          ? getDiv(12, 'Added in', event.addedIn)
+          // ? getDiv(12, 'Added in', event.addedIn)
+          ? getDiv(12, '加入', event.addedIn)
           : null,
-        getDiv(12, 'Description', event.desc),
+        // getDiv(12, 'Description', event.desc),
+        getDiv(12, '描述', event.desc),
         getDiv(12,
-          'Parameters',
+          // 'Parameters',
+          '参数',
           void 0,
           h('div', { class: 'api-row__subitem' }, params)
         )
@@ -333,9 +347,11 @@ describe.methods = methods => {
     const nodes = [
       getNameDiv(`${methodName}${getMethodParams(method)}${getMethodReturnValue(method)}`, 0),
       method.addedIn !== void 0
-        ? getDiv(12, 'Added in', method.addedIn)
+        // ? getDiv(12, 'Added in', method.addedIn)
+        ? getDiv(12, '加入', method.addedIn)
         : null,
-      getDiv(12, 'Description', method.desc)
+      // getDiv(12, 'Description', method.desc)
+      getDiv(12, '描述', method.desc)
     ]
 
     if (method.params !== void 0) {
@@ -348,7 +364,8 @@ describe.methods = methods => {
       nodes.push(
         getDiv(
           12,
-          'Parameters',
+          // 'Parameters',
+          '参数',
           void 0,
           h('div', { class: 'api-row__subitem' }, props)
         )
@@ -358,7 +375,8 @@ describe.methods = methods => {
       nodes.push(
         getDiv(
           12,
-          `Returns <${getStringType(method.returns.type)}>`,
+          // `Returns <${getStringType(method.returns.type)}>`,
+          `返回 <${getStringType(method.returns.type)}>`,
           void 0,
           h(
             'div',
@@ -380,7 +398,8 @@ describe.methods = methods => {
 describe.value = value => {
   return [
     h('div', { class: 'api-row row' }, [
-      getDiv(12, 'Type', getStringType(value.type))
+      // getDiv(12, 'Type', getStringType(value.type))
+      getDiv(12, '类型', getStringType(value.type))
     ].concat(getProp(value, void 0, 0, true)))
   ]
 }
@@ -388,7 +407,8 @@ describe.value = value => {
 describe.arg = arg => {
   return [
     h('div', { class: 'api-row row' }, [
-      getDiv(12, 'Type', getStringType(arg.type))
+      // getDiv(12, 'Type', getStringType(arg.type))
+      getDiv(12, '类型', getStringType(arg.type))
     ].concat(getProp(arg, void 0, 0, true)))
   ]
 }
@@ -441,13 +461,15 @@ describe.quasarConfOptions = conf => {
   }
 
   conf.addedIn !== void 0 && entry.push(
-    getDiv(12, 'Added in', conf.addedIn)
+    // getDiv(12, 'Added in', conf.addedIn)
+    getDiv(12, '加入', conf.addedIn)
   )
 
   entry.push(
     getDiv(
       12,
-      'Definition',
+      // 'Definition',
+      '定义',
       void 0,
       h('div', { class: 'api-row__subitem' }, child)
     )

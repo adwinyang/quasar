@@ -12,19 +12,19 @@
 
     "fit": {
       "type": "Boolean",
-      "desc": "Allows the menu to match at least the full width of its target",
+      "desc": "允许菜单至少匹配其目标的全部宽度",
       "category": "position"
     },
 
     "cover": {
       "type": "Boolean",
-      "desc": "Allows the menu to cover its target. When used, the 'self' and 'fit' props are no longer effective",
+      "desc": "允许菜单覆盖其目标。当使用时，'self' 各 'fit' 属性不再有效。",
       "category": "position"
     },
 
     "anchor": {
       "type": "String",
-      "desc": "Two values setting the starting position or anchor point of the menu relative to its target",
+      "desc": "设置菜单相对于其目标的起始位置或锚点的两个值",
       "values": [
         "top left", "top middle", "top right", "top start", "top end",
         "center left", "center middle", "center right", "center start", "center end",
@@ -36,7 +36,7 @@
 
     "self": {
       "type": "String",
-      "desc": "Two values setting the menu's own position relative to its target",
+      "desc": "设置菜单自身相对于其目标的位置的两个值",
       "values": [
         "top left", "top middle", "top right", "top start", "top end",
         "center left", "center middle", "center right", "center start", "center end",
@@ -48,7 +48,7 @@
 
     "offset": {
       "type": "Array",
-      "desc": "An array of two numbers to offset the menu horizontally and vertically in pixels",
+      "desc": "一个由两个数字组成的数组，用于在水平和垂直方向上偏移菜单，单位是像素。",
       "examples": [ "[8, 8]", "[5, 10]" ],
       "category": "position"
     },
@@ -59,61 +59,61 @@
 
     "touch-position": {
       "type": "Boolean",
-      "desc": "Allows for the target position to be set by the mouse position, when the target of the menu is either clicked or touched",
+      "desc": "允许通过鼠标的位置来设置目标位置，当菜单的目标被点击或触摸时。",
       "category": "behavior"
     },
 
     "persistent": {
       "type": "Boolean",
-      "desc": "Allows the menu to not be dismissed by a click/tap outside of the menu or by hitting the ESC key",
+      "desc": "允许菜单不被菜单外的点击/敲击或按下ESC键而被取消。",
       "category": "behavior"
     },
 
     "no-route-dismiss": {
       "type": "Boolean",
-      "desc": "Changing route app won't dismiss the popup; No need to set it if 'persistent' prop is also set",
+      "desc": "改变路线的应用程序将不会取消弹出窗口；如果'持久性'属性也被设置了，则不需要设置它",
       "category": "behavior"
     },
 
     "auto-close": {
       "type": "Boolean",
-      "desc": "Allows any click/tap in the menu to close it; Useful instead of attaching events to each menu item that should close the menu on click/tap",
+      "desc": "允许在菜单中的任何点击/轻拍来关闭它；这比在每个菜单项上附加事件要有用，这些事件应该在点击/轻拍时关闭菜单。",
       "category": "behavior"
     },
 
     "separate-close-popup": {
       "type": "Boolean",
-      "desc": "Separate from parent menu, marking it as a separate closing point for v-close-popup (without this, chained menus close all together)",
+      "desc": "从父菜单中分离出来，将其作为v-close-popup的一个单独的关闭点（没有这个，链式菜单就会全部关闭）。",
       "category": "behavior"
     },
 
     "square": {
       "type": "Boolean",
-      "desc": "Forces content to have squared borders",
+      "desc": "强制内容有方形的边界",
       "category": "style"
     },
 
     "no-refocus": {
       "type": "Boolean",
-      "desc": "(Accessibility) When Menu gets hidden, do not refocus on the DOM element that previously had focus",
+      "desc": "(可访问性）当菜单被隐藏时，不要重新聚焦于先前拥有焦点的DOM元素。",
       "category": "behavior"
     },
 
     "no-focus": {
       "type": "Boolean",
-      "desc": "(Accessibility) When Menu gets shown, do not switch focus on it",
+      "desc": "(可访问性）当菜单显示时，不要将焦点切换到它上面。",
       "category": "behavior"
     },
 
     "max-height": {
       "extends": "size",
-      "desc": "The maximum height of the menu; Size in CSS units, including unit name",
+      "desc": "菜单的最大高度；尺寸以CSS为单位，包括单位名称",
       "category": "style"
     },
 
     "max-width": {
       "extends": "size",
-      "desc": "The maximum width of the menu; Size in CSS units, including unit name",
+      "desc": "菜单的最大宽度；尺寸以CSS为单位，包括单位名称",
       "category": "style"
     }
   },
@@ -126,17 +126,17 @@
 
   "events": {
     "escape-key": {
-      "desc": "Emitted when ESC key is pressed; Does not get emitted if Menu is 'persistent'"
+      "desc": "当按下ESC键时触发；如果菜单是 'persistent'(持久的)，则不会触发。"
     }
   },
 
   "methods": {
     "updatePosition": {
-      "desc": "There are some custom scenarios for which Quasar cannot automatically reposition the menu without significant performance drawbacks so the optimal solution is for you to call this method when you need it"
+      "desc": "有一些自定义场景，Quasar不能在不影响性能的情况下自动重新定位菜单，因此最佳的解决方案是在需要时调用这个方法。"
     },
 
     "focus": {
-      "desc": "Focus menu; if you have content with autofocus attribute, it will directly focus it"
+      "desc": "焦点菜单；如果你有带自动聚焦属性的内容，它将直接聚焦。"
     }
   }
 }

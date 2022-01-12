@@ -8,27 +8,27 @@
   "methods": {
     "get": {
       "tsType": "CookiesGetMethodType",
-      "desc": "Get cookie",
+      "desc": "获取饼干",
       "params": {
         "name": {
           "type": "String",
-          "desc": "Cookie name",
+          "desc": "饼干名称",
           "required": true,
           "examples": [ "userId" ]
         }
       },
       "returns": {
         "type": [ "String", "null" ],
-        "desc": "Cookie value; Returns null if cookie not found",
+        "desc": "Cookie值；如果没有找到cookie，则返回null",
         "examples": [ "john12" ]
       }
     },
 
     "getAll": {
-      "desc": "Get all cookies",
+      "desc": "获取所有饼干",
       "returns": {
         "type": "Object",
-        "desc": "Object with cookie names (as keys) and their values",
+        "desc": "具有cookie名称（作为键）和其值的对象",
         "examples": [
           "{ userId: 'john12', XFrame: 'x534' }"
         ]
@@ -36,57 +36,57 @@
     },
 
     "set": {
-      "desc": "Set cookie",
+      "desc": "设置cookie",
       "params": {
         "name": {
           "type": "String",
-          "desc": "Cookie name",
+          "desc": "饼干名称",
           "required": true,
           "examples": [ "userId" ]
         },
 
         "value": {
           "type": "String",
-          "desc": "Cookie value",
+          "desc": "饼干值",
           "required": true,
           "examples": [ "john12" ]
         },
 
         "options": {
           "type": "Object",
-          "desc": "Cookie options",
+          "desc": "饼干选项",
           "definition": {
             "expires": {
               "type": [ "Number", "String", "Date" ],
-              "desc": "Cookie expires detail; If specified as Number, then the unit is days; If specified as String, it can either be raw stringified date or in Xd Xh Xm Xs format (see examples)",
+              "desc": "Cookie的过期细节；如果指定为Number，则单位为天；如果指定为String，则可以是原始字符串化的日期或Xd Xh Xm Xs格式（见示例）。",
               "examples": [ 30, "Wed, 13 Jan 2021 22:23:01 GMT", "1d", "15m", "13d", "1d 15m", "1d 3h 5m 3s" ]
             },
             "path": {
               "type": "String",
-              "desc": "Cookie path",
+              "desc": "饼干路径",
               "examples": [ "/accounts" ]
             },
             "domain": {
               "type": "String",
-              "desc": "Cookie domain",
+              "desc": "饼干域",
               "examples": [ ".foo.com" ]
             },
             "sameSite": {
               "type": "String",
-              "desc": "SameSite cookie option",
+              "desc": "SameSite cookie选项",
               "values": [ "Lax", "Strict", "None" ]
             },
             "httpOnly": {
               "type": "Boolean",
-              "desc": "Is cookie Http Only?"
+              "desc": "饼干是否只有Http？"
             },
             "secure": {
               "type": "Boolean",
-              "desc": "Is cookie secure? (https only)"
+              "desc": "Cookie是否安全？(仅限https)"
             },
             "other": {
               "type": "String",
-              "desc": "Raw string for other cookie options; To be used as a last resort for possible newer props that are currently not yet implemented in Quasar",
+              "desc": "其他cookie选项的原始字符串；作为最后的手段，用于目前Quasar尚未实现的可能的较新属性",
               "examples": [ "SomeNewCookieProp" ]
             }
           }
@@ -95,43 +95,43 @@
     },
 
     "has": {
-      "desc": "Check if cookie exists",
+      "desc": "检查cookie是否存在",
       "params": {
         "name": {
           "type": "String",
-          "desc": "Cookie name",
+          "desc": "饼干名称",
           "required": true,
           "examples": [ "userId" ]
         }
       },
       "returns": {
         "type": "Boolean",
-        "desc": "Does cookie exists or not?"
+        "desc": "饼干是否存在？"
       }
     },
 
     "remove": {
-      "desc": "Remove a cookie",
+      "desc": "移除一个cookie",
       "params": {
         "name": {
           "type": "String",
-          "desc": "Cookie name",
+          "desc": "饼干名称",
           "required": true,
           "examples": [ "userId" ]
         },
 
         "options": {
           "type": "Object",
-          "desc": "Cookie options",
+          "desc": "饼干选项",
           "definition": {
             "path": {
               "type": "String",
-              "desc": "Cookie path",
+              "desc": "饼干路径",
               "examples": [ "/accounts" ]
             },
             "domain": {
               "type": "String",
-              "desc": "Cookie domain",
+              "desc": "饼干域",
               "examples": [ ".foo.com" ]
             }
           }
@@ -140,11 +140,11 @@
     },
 
     "parseSSR": {
-      "desc": "For SSR usage only, and only on the global import (not on $q.cookies)",
+      "desc": "仅供SSR使用，并且仅在全局导入时使用（不在$q.cookies上）。",
       "params": {
         "ssrContext": {
           "type": "Object",
-          "desc": "SSR Context Object",
+          "desc": "SSR上下文对象",
           "required": true,
           "__exemption": [ "examples" ]
         }
@@ -152,7 +152,7 @@
       "returns": {
         "type": "Object",
         "tsType": "Cookies",
-        "desc": "Cookie object (like $q.cookies) for SSR usage purposes",
+        "desc": "用于SSR使用的Cookie对象（如$q.cookies）。",
         "__exemption": [ "examples" ]
       }
     }

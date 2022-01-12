@@ -6,7 +6,7 @@
   "props": {
     "position": {
       "type": "String",
-      "desc": "Page side/corner to stick to",
+      "desc": "坚持的页边/角",
       "default": "bottom-right",
       "values": [
         "top-right", "top-left",
@@ -19,14 +19,14 @@
 
     "offset": {
       "type": "Array",
-      "desc": "An array of two numbers to offset the component horizontally and vertically in pixels",
+      "desc": "一个由两个数字组成的数组，用于在水平和垂直方向上偏移组件，单位是像素。",
       "examples": [ "[8, 8]", "[5, 10]" ],
       "category": "position"
     },
 
     "expand": {
       "type": "Boolean",
-      "desc": "By default the component shrinks to content's size; By using this prop you make the component fully expand horizontally or vertically, based on 'position' prop",
+      "desc": "默认情况下，组件会缩小到内容的大小；通过使用这个属性，你可以根据'位置'属性使组件在水平或垂直方向上完全展开。",
       "category": "content"
     }
   },

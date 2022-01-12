@@ -4,7 +4,7 @@
   "props": {
     "type":{
       "type": "String",
-      "desc": "1) Define the button native type attribute (submit, reset, button) or 2) render component with <a> tag so you can access events even if disable or 3) Use 'href' prop and specify 'type' as a media tag",
+      "desc": "1) 定义按钮原生类型属性（submit、reset、button）或2) 用<a>标签渲染组件，这样即使禁用也可以访问事件 或3) 使用'href'属性并指定'type'作为媒体标签。",
       "default": "button",
       "examples": [
         "a", "submit", "button", "reset",
@@ -16,7 +16,7 @@
 
     "to": {
       "type": [ "String", "Object" ],
-      "desc": "Equivalent to Vue Router <router-link> 'to' property; Superseeded by 'href' prop if used",
+      "desc": "相当于Vue Router <router-link>的'to'属性；如果使用，则由'href'属性取代。",
       "examples": [
         "/home/dashboard",
         ":to=\"{ name: 'my-route-name' }\""
@@ -26,13 +26,13 @@
 
     "replace": {
       "type": "Boolean",
-      "desc": "Equivalent to Vue Router <router-link> 'replace' property; Superseeded by 'href' prop if used",
+      "desc": "相当于Vue Router <router-link>的'replace'属性；如果使用，则由'href'属性取代。",
       "category": "navigation"
     },
 
     "href": {
       "type": "String",
-      "desc": "Native <a> link href attribute; Has priority over the 'to' and 'replace' props",
+      "desc": "原生的<a>链接href属性；优先于'to'和'replace'属性。",
       "examples": [ "http://quasar.dev", "href=\"https://quasar.dev\" target=\"_blank\"" ],
       "category": "navigation",
       "addedIn": "v2.4"
@@ -40,7 +40,7 @@
 
     "target": {
       "type": "String",
-      "desc": "Native <a> link target attribute; Use it only with 'to' or 'href' props",
+      "desc": "原生的<a>链接目标属性；仅与'to'或'href'属性一起使用。",
       "examples": [ "_blank", "_self", "_parent", "_top" ],
       "category": "navigation",
       "addedIn": "v2.4"
@@ -48,7 +48,7 @@
 
     "label":{
       "type": [ "String", "Number" ],
-      "desc": "The text that will be shown on the button",
+      "desc": "将显示在按钮上的文本",
       "examples": [ "Button Label" ],
       "category": "content"
     },
@@ -63,55 +63,55 @@
 
     "outline": {
       "type": "Boolean",
-      "desc": "Use 'outline' design",
+      "desc": "使用 'outline'(大纲) 设计",
       "category": "style"
     },
 
     "flat": {
       "type": "Boolean",
-      "desc": "Use 'flat' design",
+      "desc": "使用 'flat'(扁平) 设计",
       "category": "style"
     },
 
     "unelevated": {
       "type": "Boolean",
-      "desc": "Remove shadow",
+      "desc": "移除阴影",
       "category": "style"
     },
 
     "rounded": {
       "type": "Boolean",
-      "desc": "Applies a more prominent border-radius for a squared shape button",
+      "desc": "为一个正方形形状的按钮应用一个更突出的边界半径",
       "category": "style"
     },
 
     "push": {
       "type": "Boolean",
-      "desc": "Use 'push' design",
+      "desc": "使用 'push'(推送) 设计",
       "category": "style"
     },
 
     "glossy": {
       "type": "Boolean",
-      "desc": "Applies a glossy effect",
+      "desc": "应用光亮的效果",
       "category": "style"
     },
 
     "fab": {
       "type": "Boolean",
-      "desc": "Makes button size and shape to fit a Floating Action Button",
+      "desc": "使按钮的大小和形状适合于浮动的动作按钮",
       "category": "style"
     },
 
     "fab-mini": {
       "type": "Boolean",
-      "desc": "Makes button size and shape to fit a small Floating Action Button",
+      "desc": "使得按钮的大小和形状适合小型的浮动动作按钮",
       "category": "style"
     },
 
     "padding": {
       "type": "String",
-      "desc": "Apply custom padding (vertical [horizontal]); Size in CSS units, including unit name or standard size name (none|xs|sm|md|lg|xl); Also removes the min width and height when set",
+      "desc": "应用自定义的padding（垂直[水平]）；尺寸以CSS为单位，包括单位名称或标准尺寸名称（none|xs|sm|md|lg|xl）；同时在设置时删除最小宽度和高度",
       "examples": [ "16px", "10px 5px", "2rem", "xs", "md lg", "2px 2px 5px 7px" ],
       "category": "style"
     },
@@ -126,13 +126,13 @@
 
     "no-caps": {
       "type": "Boolean",
-      "desc": "Avoid turning label text into caps (which happens by default)",
+      "desc": "避免将标签文本变成大写字母（这在默认情况下发生）。",
       "category": "content"
     },
 
     "no-wrap": {
       "type": "Boolean",
-      "desc": "Avoid label text wrapping",
+      "desc": "避免标签文字被包裹",
       "category": "content"
     },
 
@@ -150,7 +150,7 @@
 
     "align": {
       "type": "String",
-      "desc": "Label or content alignment",
+      "desc": "标签或内容对齐",
       "default": "center",
       "values": [ "left", "right", "center", "around", "between", "evenly" ],
       "category": "content"
@@ -158,19 +158,19 @@
 
     "stack": {
       "type": "Boolean",
-      "desc": "Stack icon and label vertically instead of on same line (like it is by default)",
+      "desc": "垂直堆叠图标和标签，而不是在同一行（就像默认情况下那样）。",
       "category": "content"
     },
 
     "stretch": {
       "type": "Boolean",
-      "desc": "When used on flexbox parent, button will stretch to parent's height",
+      "desc": "当使用在flexbox父体上时，按钮将伸展到父体的高度。",
       "category": "content"
     },
 
     "loading": {
       "type": "Boolean",
-      "desc": "Put button into loading state (displays a QSpinner -- can be overridden by using a 'loading' slot)",
+      "desc": "让按钮进入加载状态（显示一个QSpinner--可以通过使用 'loading'(加载)插槽来重写）。",
       "category": "behavior|state"
     },
 

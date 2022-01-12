@@ -5,7 +5,7 @@
 
   "value": {
     "type": [ "Object", "Function" ],
-    "desc": "Function to call when scrolling occurs (identical to description of 'handler' prop of the Object form); If using the Object form, it is HIGHLY recommended to reference it from your vue component scope, otherwise the directive update cycle will continuously recreate the observer which hits performance hard",
+    "desc": "当滚动发生时调用的函数（与Object form的'handler'属性描述相同）；如果使用Object form，强烈建议从你的vue组件范围中引用它，否则指令更新周期将不断重新创建观察者，这对性能影响很大。",
     "examples": [
       "v-intersection=\"myFunction\"",
       "v-intersection=\"{ handler: myFunction, cfg: { root: myScrollingParentEl, rootMargin: '10px 20px 30px 40px', threshold: [0, 0.25, 0.5, 0.75, 1] } }\""
@@ -14,59 +14,59 @@
     "definition": {
       "handler": {
         "type": "Function",
-        "desc": "The handler function to be called",
+        "desc": "要调用的处理函数",
         "returns": {
           "type": "Boolean",
-          "desc": "If you return Boolean false from the handler, the observer stops"
+          "desc": "如果你从处理程序中返回布尔值false，观察者就会停止"
         },
         "params": {
           "entry": {
             "type": "Object",
-            "desc": "The IntersectionObserverEntry object",
+            "desc": "IntersectionObserverEntry对象",
             "definition": {
               "boundingClientRect": {
                 "type": "Object",
-                "desc": "Object containing the client rect information",
+                "desc": "包含客户整流器信息的对象",
                 "__exemption": [ "examples" ],
                 "definition": {
                   "bottom": {
                     "type": "Number",
-                    "desc": "The bottom of the client rect",
+                    "desc": "客户端整流罩的底部",
                     "examples": [ "1770" ]
                   },
                   "height": {
                     "type": "Number",
-                    "desc": "The height of the client rect",
+                    "desc": "客户端矩形的高度",
                     "examples": [ "50" ]
                   },
                   "left": {
                     "type": "Number",
-                    "desc": "The left of the client rect",
+                    "desc": "客户端左侧的矩形",
                     "examples": [ "49" ]
                   },
                   "right": {
                     "type": "Number",
-                    "desc": "The right of the client rect",
+                    "desc": "客户整改的权利",
                     "examples": [ "384" ]
                   },
                   "top": {
                     "type": "Number",
-                    "desc": "The top of the client rect",
+                    "desc": "客户端顶部的矩形",
                     "examples": [ "1720" ]
                   },
                   "width": {
                     "type": "Number",
-                    "desc": "The width of the client rect",
+                    "desc": "客户端矩形的宽度",
                     "examples": [ "335" ]
                   },
                   "x": {
                     "type": "Number",
-                    "desc": "The x position of the client rect",
+                    "desc": "客户端矩形的X位置",
                     "examples": [ "49" ]
                   },
                   "y": {
                     "type": "Number",
-                    "desc": "The y position of the client rect",
+                    "desc": "客户端矩形的y位置",
                     "examples": [ "1720" ]
                   }
                 }
@@ -74,52 +74,52 @@
 
               "intersectionRatio": {
                 "type": "Number",
-                "desc": "The ratio of the observed objects visibility",
+                "desc": "被观测物体能见度的比率",
                 "examples": [ "0.5" ]
               },
 
               "intersectionRect": {
                 "type": "Object",
-                "desc": "Object containing the client rect information",
+                "desc": "包含客户整流器信息的对象",
                 "definition": {
                   "bottom": {
                     "type": "Number",
-                    "desc": "The bottom of the client rect",
+                    "desc": "客户端整流罩的底部",
                     "examples": [ "0" ]
                   },
                   "height": {
                     "type": "Number",
-                    "desc": "The height of the client rect",
+                    "desc": "客户端矩形的高度",
                     "examples": [ "0" ]
                   },
                   "left": {
                     "type": "Number",
-                    "desc": "The left of the client rect",
+                    "desc": "客户端左侧的矩形",
                     "examples": [ "0" ]
                   },
                   "right": {
                     "type": "Number",
-                    "desc": "The right of the client rect",
+                    "desc": "客户整改的权利",
                     "examples": [ "0" ]
                   },
                   "top": {
                     "type": "Number",
-                    "desc": "The top of the client rect",
+                    "desc": "客户端顶部的矩形",
                     "examples": [ "0" ]
                   },
                   "width": {
                     "type": "Number",
-                    "desc": "The width of the client rect",
+                    "desc": "客户端矩形的宽度",
                     "examples": [ "0" ]
                   },
                   "x": {
                     "type": "Number",
-                    "desc": "The x position of the client rect",
+                    "desc": "客户端矩形的X位置",
                     "examples": [ "0" ]
                   },
                   "y": {
                     "type": "Number",
-                    "desc": "The y position of the client rect",
+                    "desc": "客户端矩形的y位置",
                     "examples": [ "0" ]
                   }
                 }
@@ -127,51 +127,51 @@
 
               "isIntersecting": {
                 "type": "Boolean",
-                "desc": "It is Boolean true if intersecting the scrollable area"
+                "desc": "如果与可滚动区域相交，它是布尔型的真。"
               },
 
               "rootBounds": {
                 "type": "Object",
-                "desc": "Object containing the client rect information",
+                "desc": "包含客户整流器信息的对象",
                 "definition": {
                   "bottom": {
                     "type": "Number",
-                    "desc": "The bottom of the client rect",
+                    "desc": "客户端整流罩的底部",
                     "examples": [ "0" ]
                   },
                   "height": {
                     "type": "Number",
-                    "desc": "The height of the client rect",
+                    "desc": "客户端矩形的高度",
                     "examples": [ "0" ]
                   },
                   "left": {
                     "type": "Number",
-                    "desc": "The left of the client rect",
+                    "desc": "客户端左侧的矩形",
                     "examples": [ "0" ]
                   },
                   "right": {
                     "type": "Number",
-                    "desc": "The right of the client rect",
+                    "desc": "客户整改的权利",
                     "examples": [ "0" ]
                   },
                   "top": {
                     "type": "Number",
-                    "desc": "The top of the client rect",
+                    "desc": "客户端顶部的矩形",
                     "examples": [ "0" ]
                   },
                   "width": {
                     "type": "Number",
-                    "desc": "The width of the client rect",
+                    "desc": "客户端矩形的宽度",
                     "examples": [ "0" ]
                   },
                   "x": {
                     "type": "Number",
-                    "desc": "The x position of the client rect",
+                    "desc": "客户端矩形的X位置",
                     "examples": [ "0" ]
                   },
                   "y": {
                     "type": "Number",
-                    "desc": "The y position of the client rect",
+                    "desc": "客户端矩形的y位置",
                     "examples": [ "0" ]
                   }
                 }
@@ -179,13 +179,13 @@
 
               "target": {
                 "type": "Element",
-                "desc": "The target element",
+                "desc": "目标元素",
                 "__exemption": [ "examples" ]
               },
 
               "time": {
                 "type": "Number",
-                "desc": "The timestamp of the event",
+                "desc": "事件的时间戳",
                 "examples": [ "6316.879999998491" ]
               }
             }
@@ -195,23 +195,23 @@
 
       "cfg": {
         "type": "Object",
-        "desc": "Intersection observer options (can be omitted and all its props are optional)",
+        "desc": "交叉观察者选项（可以省略，其所有的属性都是可选的）。",
         "definition": {
           "root": {
             "type": "Element",
-            "desc": "Lets you define an alternative to the viewport as your root (through its DOM element); It is important to keep in mind that root needs to be an ancestor of the observed element",
+            "desc": "让你定义一个视口的替代品作为你的根（通过其DOM元素）；重要的是要记住，根需要是被观察元素的祖先。",
             "examples": [ "myScrollingParentEl" ]
           },
 
           "rootMargin": {
             "type": "String",
-            "desc": "Allows you to specify the margins for the root, effectively allowing you to either grow or shrink the area used for intersections",
+            "desc": "允许你指定根的边距，有效地允许你增加或缩小用于交叉点的区域。",
             "examples": [ "10px 20px 30px 40px" ]
           },
 
           "threshold": {
             "type": "Array",
-            "desc": "Threshold(s) at which to trigger callback, specified as a ratio, or list of ratios, of (visible area / total area) of the observed element",
+            "desc": "触发回调的阈值，指定为观察到的元素的（可见面积/总面积）的比率或比率列表。",
             "examples": [ "[ 0, 0.25, 0.5, 0.75, 1 ]" ]
           }
         }
@@ -222,7 +222,7 @@
   "modifiers": {
     "once": {
       "type": "Boolean",
-      "desc": "Call handler only once, when the conditions are first met",
+      "desc": "在第一次满足条件时，只调用处理程序一次",
       "examples": [
         "v-intersection.once"
       ]

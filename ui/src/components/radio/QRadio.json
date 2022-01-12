@@ -15,21 +15,21 @@
     "val": {
       "type": [ "Number", "String" ],
       "required": true,
-      "desc": "The actual value of the option with which model value is changed",
+      "desc": "与模型价值改变的期权的实际价值",
       "examples": [ "opt1", 50 ],
       "category": "model"
     },
 
     "label": {
       "type": "String",
-      "desc": "Label to display along the radio control (or use the default slot instead of this prop)",
+      "desc": "沿着无线电控制显示的标签（或使用默认插槽代替这个属性）。",
       "examples": [ "label=\"Option 1\"" ],
       "category": "label"
     },
 
     "left-label": {
       "type": "Boolean",
-      "desc": "Label (if any specified) should be displayed on the left side of the checkbox",
+      "desc": "标签（如果有指定的话）应该显示在复选框的左边。",
       "category": "label"
     },
 
@@ -39,7 +39,7 @@
 
     "keep-color": {
       "type": "Boolean",
-      "desc": "Should the color (if specified any) be kept when checkbox is unticked?",
+      "desc": "当复选框未被选中时，颜色（如果指定了任何颜色）应该被保留吗？",
       "category": "behavior"
     },
 
@@ -62,23 +62,23 @@
 
   "slots": {
     "default": {
-      "desc": "Default slot can be used as label, unless 'label' prop is specified; Suggestion: string"
+      "desc": "默认插槽可以作为标签，除非指定'标签'属性；建议：字符串"
     }
   },
 
   "events": {
     "update:model-value": {
-      "desc": "Emitted when the component needs to change the model; Is also used by v-model",
+      "desc": "当组件需要改变模型时触发；也被v-model使用。",
       "params": {
         "value": {
           "type": "Any",
-          "desc": "New model value",
+          "desc": "新模式价值",
           "required": true,
           "__exemption": [ "examples" ]
         },
         "evt": {
           "type": "Object",
-          "desc": "JS event object",
+          "desc": "JS事件对象",
           "required": true,
           "__exemption": [ "examples" ]
         }
@@ -88,7 +88,7 @@
 
   "methods": {
     "set": {
-      "desc": "Sets the Radio's v-model to equal the val"
+      "desc": "设置无线电的V型模型，使其等于Val"
     }
   }
 }

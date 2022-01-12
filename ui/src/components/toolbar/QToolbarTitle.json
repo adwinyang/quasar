@@ -6,7 +6,7 @@
   "props": {
     "shrink": {
       "type": "Boolean",
-      "desc": "By default, QToolbarTitle is set to grow to the available space. However, you can reverse that with this prop",
+      "desc": "默认情况下，QToolbarTitle被设置为增长到可用空间。然而，你可以用这个属性来扭转这种情况",
       "category": "behavior"
     }
   },

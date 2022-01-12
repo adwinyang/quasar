@@ -2,13 +2,13 @@
   "props": {
     "multiple": {
       "type": "Boolean",
-      "desc": "Allow multiple file uploads",
+      "desc": "允许多个文件上传",
       "category": "behavior"
     },
 
     "accept": {
       "type": "String",
-      "desc": "Comma separated list of unique file type specifiers. Maps to 'accept' attribute of native input type=file element",
+      "desc": "逗号分隔的唯一文件类型指定器的列表。映射到本地输入type=file元素的'accept'属性。",
       "examples": [
         ".jpg, .pdf, image/*", "image/jpeg, .pdf"
       ],
@@ -17,28 +17,28 @@
 
     "capture": {
       "type": "String",
-      "desc": "Optionally, specify that a new file should be captured, and which device should be used to capture that new media of a type defined by the 'accept' prop. Maps to 'capture' attribute of native input type=file element",
+      "desc": "可以选择，指定一个新的文件应该被捕获，以及哪个设备应该被用来捕获由'accept'属性定义的类型的新媒体。映射到本地输入type=file元素的'capture'属性。",
       "values": [ "user", "environment" ],
       "category": "behavior"
     },
 
     "max-file-size": {
       "type": [ "Number", "String" ],
-      "desc": "Maximum size of individual file in bytes",
+      "desc": "单个文件的最大尺寸（字节）。",
       "examples": [ 1024, 1048576 ],
       "category": "behavior"
     },
 
     "max-total-size": {
       "type": [ "Number", "String" ],
-      "desc": "Maximum size of all files combined in bytes",
+      "desc": "所有文件加起来的最大尺寸，以字节为单位",
       "examples": [ 1024, 1048576 ],
       "category": "behavior"
     },
 
     "max-files": {
       "type": [ "Number", "String" ],
-      "desc": "Maximum number of files to contain",
+      "desc": "包含的最大文件数",
       "examples": [
         ":max-files=\"5\"",
         "10"
@@ -48,17 +48,17 @@
 
     "filter": {
       "type": "Function",
-      "desc": "Custom filter for added files; Only files that pass this filter will be added to the queue and uploaded; For best performance, reference it from your scope and do not define it inline",
+      "desc": "添加文件的自定义过滤器；只有通过该过滤器的文件才会被添加到队列中并被上传；为了获得最佳性能，请从你的范围中引用它，不要在线定义它。",
       "params": {
         "files": {
           "type": [ "FileList", "Array" ],
-          "desc": "Candidate files to be added to queue",
+          "desc": "要添加到队列中的候选文件",
           "__exemption": [ "examples" ]
         }
       },
       "returns": {
         "type": "Array",
-        "desc": "Filtered files to be added to queue",
+        "desc": "筛选后的文件将被添加到队列中",
         "__exemption": [ "examples" ]
       },
       "examples": [ ":filter=\"files => files.filter(file => file.size === 1024)\"" ],
@@ -68,11 +68,11 @@
 
   "events": {
     "rejected": {
-      "desc": "Emitted after files are picked and some do not pass the validation props (accept, max-file-size, max-total-size, filter, etc)",
+      "desc": "在文件被挑选出来后触发，有些文件没有通过验证属性（接受、最大文件尺寸、最大总尺寸、过滤器等）。",
       "params": {
         "rejectedEntries": {
           "type": "Array",
-          "desc": "Array of { failedPropValidation: string, file: File } Objects for files that do not pass the validation",
+          "desc": "数组 { failedPropValidation: string, file: 文件 } 未通过验证的文件的对象",
           "__exemption": ["examples"]
         }
       }
@@ -81,22 +81,22 @@
 
   "methods": {
     "pickFiles": {
-      "desc": "Trigger file pick; Must be called as a direct consequence of user interaction (eg. in a click handler), due to browsers security policy",
+      "desc": "触发文件提取；由于浏览器的安全策略，必须作为用户互动的直接结果来调用（例如在点击处理程序中）。",
       "params": {
         "evt": {
           "type": "Object",
-          "desc": "JS event object",
+          "desc": "JS事件对象",
           "__exemption": [ "examples" ]
         }
       }
     },
 
     "addFiles": {
-      "desc": "Add files programmatically",
+      "desc": "以编程方式添加文件",
       "params": {
         "files": {
           "type": [ "FileList", "Array" ],
-          "desc": "Array of files (instances of File)",
+          "desc": "文件的数组（文件的实例）",
           "required": true,
           "__exemption": [ "examples" ]
         }

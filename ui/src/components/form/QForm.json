@@ -6,25 +6,25 @@
   "props": {
     "autofocus": {
       "type": "Boolean",
-      "desc": "Focus first focusable element on initial component render",
+      "desc": "在最初的组件渲染中关注第一个可关注的元素",
       "category": "behavior"
     },
 
     "no-error-focus": {
       "type": "Boolean",
-      "desc": "Do not try to focus on first component that has a validation error when submitting form",
+      "desc": "在提交表格时，不要试图关注有验证错误的第一个组件",
       "category": "behavior"
     },
 
     "no-reset-focus": {
       "type": "Boolean",
-      "desc": "Do not try to focus on first component when resetting form",
+      "desc": "重置表格时不要试图将注意力集中在第一个组件上",
       "category": "behavior"
     },
 
     "greedy": {
       "type": "Boolean",
-      "desc": "Validate all fields in form (by default it stops after finding the first invalid field with synchronous validation)",
+      "desc": "验证表单中的所有字段（默认情况下，它在发现第一个无效字段后停止同步验证）。",
       "category": "behavior"
     }
   },
@@ -37,23 +37,23 @@
 
   "events": {
     "submit": {
-      "desc": "Emitted when all validations have passed when tethered to a submit button"
+      "desc": "当所有的验证都通过时，在与提交按钮相连的情况下触发。"
     },
 
     "reset": {
-      "desc": "Emitted when all validations have been reset when tethered to a reset button; It is recommended to manually reset the wrapped components models in this handler"
+      "desc": "当所有的验证都被重置时，当与重置按钮相连时触发；建议在这个处理程序中手动重置被包装的组件模型。"
     },
 
     "validation-success": {
-      "desc": "Emitted after a validation was triggered and all inner Quasar components models are valid"
+      "desc": "在验证被触发并且所有内部Quasar组件模型都有效后触发。"
     },
 
     "validation-error": {
-      "desc": "Emitted after a validation was triggered and at least one of the inner Quasar components models are NOT valid",
+      "desc": "在验证被触发并且至少有一个内部Quasar组件模型是无效的情况下触发的。",
       "params": {
         "ref": {
           "type": "Component",
-          "desc": "Vue reference to the first component that triggered the validation error"
+          "desc": "触发验证错误的第一个组件的Vue引用"
         }
       }
     }
@@ -61,20 +61,20 @@
 
   "methods": {
     "focus": {
-      "desc": "Focus on first focusable element/component in the form"
+      "desc": "关注表格中第一个可关注的元素/组件"
     },
 
     "validate": {
-      "desc": "Triggers a validation on all applicable inner Quasar components",
+      "desc": "触发对所有适用的内部Quasar组件进行验证",
       "params": {
         "shouldFocus": {
           "type": "Boolean",
-          "desc": "Tell if it should focus or not on component with error on submitting form; Overrides 'no-focus-error' prop if specified"
+          "desc": "在提交表单时，告诉它是否应该关注有错误的组件；如果指定了'no-focus-error'，则覆盖'no-focus-error'属性。"
         }
       },
       "returns": {
         "type": "Promise<boolean>",
-        "desc": "Promise is always fulfilled and receives the outcome (true -> validation was a success, false -> invalid models detected)",
+        "desc": "承诺总是被履行，并收到结果（真->验证成功，假->检测到无效模型）。",
         "examples": [
           "validate().then(outcome => { ... })"
         ]
@@ -82,36 +82,36 @@
     },
 
     "resetValidation": {
-      "desc": "Resets the validation on all applicable inner Quasar components"
+      "desc": "重置所有适用的内部Quasar组件的验证。"
     },
 
     "submit": {
-      "desc": "Manually trigger form validation and submit",
+      "desc": "手动触发表单验证和提交",
       "params": {
         "evt": {
           "type": "Object",
-          "desc": "JS event object",
+          "desc": "JS事件对象",
           "__exemption": [ "examples" ]
         }
       }
     },
 
     "reset": {
-      "desc": "Manually trigger form reset",
+      "desc": "手动触发表格重置",
       "params": {
         "evt": {
           "type": "Object",
-          "desc": "JS event object",
+          "desc": "JS事件对象",
           "__exemption": [ "examples" ]
         }
       }
     },
 
     "getValidationComponents": {
-      "desc": "Get array of children vue components that support validation",
+      "desc": "获取支持验证的儿童vue组件数组",
       "returns": {
         "type": "Array",
-        "desc": "Vue components that support Quasar validation API",
+        "desc": "支持Quasar验证API的Vue组件",
         "__exemption": [ "examples" ]
       }
     }

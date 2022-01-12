@@ -1,5 +1,5 @@
 ---
-title: 内部装载
+title: 内部加载
 desc: QInnerLoading Vue组件允许你在一个组件内以局部覆盖的形式添加一个加载指标。
 keys: QInnerLoading
 related:

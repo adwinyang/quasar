@@ -2,52 +2,52 @@
   "props": {
     "readonly": {
       "type": "Boolean",
-      "desc": "Put component in readonly mode",
+      "desc": "将组件置于只读模式",
       "category": "state"
     },
 
     "disable": {
       "type": "Boolean",
-      "desc": "Put component in disabled mode",
+      "desc": "将组件置于禁用模式",
       "category": "state"
     },
 
     "color": {
       "type": "String",
-      "desc": "Color name for component from the Quasar Color Palette",
+      "desc": "Quasar调色板中组件的颜色名称",
       "examples": [ "primary", "teal-10" ],
       "category": "style"
     },
 
     "text-color": {
       "type": "String",
-      "desc": "Overrides text color (if needed); Color name from the Quasar Color Palette",
+      "desc": "覆盖文本颜色（如果需要）；Quasar调色板的颜色名称",
       "examples": [ "primary", "teal-10" ],
       "category": "style"
     },
 
     "dense": {
       "type": "Boolean",
-      "desc": "Dense mode; occupies less space",
+      "desc": "密集模式；占用的空间较小",
       "category": "style"
     },
 
     "size": {
       "type": "String",
-      "desc": "Size in CSS units, including unit name",
+      "desc": "以CSS为单位的尺寸，包括单位名称",
       "examples": [ "16px", "2rem" ],
       "category": "style"
     },
 
     "dark": {
       "type": "Boolean",
-      "desc": "Notify the component that the background is a dark color",
+      "desc": "通知组件，背景是深色的",
       "category": "style"
     },
 
     "icon": {
       "type": "String",
-      "desc": "Icon name following Quasar convention; Make sure you have the icon library installed unless you are using 'img:' prefix",
+      "desc": "图标名称遵循Quasar惯例；确保你已经安装了图标库，除非你使用'img:'前缀。",
       "examples": [
         "map",
         "ion-add",
@@ -59,71 +59,71 @@
 
     "flat": {
       "type": "Boolean",
-      "desc": "Applies a 'flat' design (no default shadow)",
+      "desc": "应用\"平面\"设计（无默认阴影）。",
       "category": "style"
     },
 
     "bordered": {
       "type": "Boolean",
-      "desc": "Applies a default border to the component",
+      "desc": "给组件添加一个默认的边框",
       "category": "style"
     },
 
     "square": {
       "type": "Boolean",
-      "desc": "Removes border-radius so borders are squared",
+      "desc": "移除边框半径，使边框成正方形",
       "category": "style"
     },
 
     "rounded": {
       "type": "Boolean",
-      "desc": "Applies a small standard border-radius for a squared shape of the component",
+      "desc": "为组件的方形形状应用一个小的标准边界半径。",
       "category": "style"
     },
 
     "tabindex": {
       "type": [ "Number", "String" ],
-      "desc": "Tabindex HTML attribute value",
+      "desc": "Tabindex HTML属性值",
       "examples": [ "0", "100" ],
       "category": "general"
     },
 
     "transition": {
       "type": "String",
-      "desc": "One of Quasar's embedded transitions",
+      "desc": "Quasar的一个嵌入式过渡装置",
       "examples": [ "fade", "slide-down" ],
       "category": "transition"
     },
 
     "animation-speed": {
       "type": [ "String", "Number" ],
-      "desc": "Animation speed (in milliseconds, without unit)",
+      "desc": "动画速度（以毫秒为单位，无单位）。",
       "examples": [ 500, "1200" ],
       "category": "style"
     },
 
     "model-value": {
-      "desc": "Model of the component; Either use this property (along with a listener for 'update:model-value' event) OR use v-model directive",
+      "desc": "组件的模型；要么使用这个属性（连同'update:model-value'事件的监听器），要么使用v-model指令。",
       "required": true,
       "category": "model"
     },
 
     "html": {
       "type": "Boolean",
-      "desc": "Force use of textContent instead of innerHTML to render text; Use it when the text might be unsafe (from user input)",
+      "desc": "强制使用textContent而不是innerHTML来渲染文本；当文本可能不安全时（来自用户输入）使用它。",
       "category": "behavior"
     },
 
     "tag": {
       "type": "String",
-      "desc": "HTML tag to use",
+      "desc": "要使用的HTML标签",
       "examples": [ "div", "span" ],
       "category": "content"
     },
 
     "scroll-target": {
       "type": [ "Element", "String" ],
-      "desc": "CSS selector or DOM element to be used as a custom scroll container instead of the auto detected one",
+      "desc": "CSS选择器或DOM元素被用作自定义滚动容器，而不是自动检测的容器。",
       "examples": [
         ":scroll-target=\"$refs.scrollTarget\"",
         "scroll-target=\".scroll-target-class\"",
@@ -135,7 +135,7 @@
 
     "ripple": {
       "type": [ "Boolean", "Object" ],
-      "desc": "Configure material ripple (disable it by setting it to 'false' or supply a config object)",
+      "desc": "配置材料波纹（通过将其设置为 \"false\" 或提供一个配置对象来禁用它）。",
       "default": true,
       "examples": [ false, "{ early: true, center: true, color: 'teal', keyCodes: [] }" ],
       "category": "style"
@@ -144,17 +144,17 @@
 
   "slots": {
     "default": {
-      "desc": "Default slot in the devland unslotted content of the component"
+      "desc": "在devland中的默认插槽位，组件的非插槽位内容"
     }
   },
 
   "events": {
     "update:model-value": {
-      "desc": "Emitted when the component needs to change the model; Is also used by v-model",
+      "desc": "当组件需要改变模型时触发；也被v-model使用。",
       "params": {
         "value": {
           "type": "Any",
-          "desc": "New model value",
+          "desc": "新模式价值",
           "required": true,
           "__exemption": [ "examples" ]
         }
@@ -162,11 +162,11 @@
     },
 
     "show": {
-      "desc": "Emitted after component has triggered show()",
+      "desc": "在组件触发show()后触发。",
       "params": {
         "evt": {
           "type": "Object",
-          "desc": "JS event object",
+          "desc": "JS事件对象",
           "required": true,
           "__exemption": [ "examples" ]
         }
@@ -174,11 +174,11 @@
     },
 
     "before-show": {
-      "desc": "Emitted when component triggers show() but before it finishes doing it",
+      "desc": "当组件触发show()，但在其完成之前触发。",
       "params": {
         "evt": {
           "type": "Object",
-          "desc": "JS event object",
+          "desc": "JS事件对象",
           "required": true,
           "__exemption": [ "examples" ]
         }
@@ -186,15 +186,15 @@
     },
 
     "after-show": {
-      "desc": "Emitted when component show animation is finished"
+      "desc": "当组件显示动画结束时触发。"
     },
 
     "hide": {
-      "desc": "Emitted after component has triggered hide()",
+      "desc": "在组件触发hide()后触发。",
       "params": {
         "evt": {
           "type": "Object",
-          "desc": "JS event object",
+          "desc": "JS事件对象",
           "required": true,
           "__exemption": [ "examples" ]
         }
@@ -202,11 +202,11 @@
     },
 
     "before-hide": {
-      "desc": "Emitted when component triggers hide() but before it finishes doing it",
+      "desc": "当组件触发hide()，但在其完成之前触发。",
       "params": {
         "evt": {
           "type": "Object",
-          "desc": "JS event object",
+          "desc": "JS事件对象",
           "required": true,
           "__exemption": [ "examples" ]
         }
@@ -214,15 +214,15 @@
     },
 
     "after-hide": {
-      "desc": "Emitted when component hide animation is finished"
+      "desc": "当组件的隐藏动画完成时触发的"
     },
 
     "click": {
-      "desc": "Emitted when user clicks/taps on the component",
+      "desc": "当用户在组件上点击/敲击时触发的。",
       "params": {
         "evt": {
           "type": "Object",
-          "desc": "JS event object",
+          "desc": "JS事件对象",
           "required": true,
           "__exemption": [ "examples" ]
         }
@@ -232,24 +232,24 @@
 
   "methods": {
     "show": {
-      "desc": "Triggers component to show",
+      "desc": "触发组件显示",
       "params": {
         "evt": {
           "type": "Object",
           "required": false,
-          "desc": "JS event object",
+          "desc": "JS事件对象",
           "__exemption": [ "examples" ]
         }
       }
     },
 
     "hide": {
-      "desc": "Triggers component to hide",
+      "desc": "触发组件隐藏",
       "params": {
         "evt": {
           "type": "Object",
           "required": false,
-          "desc": "JS event object",
+          "desc": "JS事件对象",
           "__exemption": [ "examples" ]
         }
       }
@@ -260,11 +260,11 @@
         "evt": {
           "type": "Object",
           "required": false,
-          "desc": "JS event object",
+          "desc": "JS事件对象",
           "__exemption": [ "examples" ]
         }
       },
-      "desc": "Triggers component to toggle between show/hide"
+      "desc": "触发组件在显示/隐藏之间切换"
     }
   }
 }

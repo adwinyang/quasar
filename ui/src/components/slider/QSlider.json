@@ -9,13 +9,13 @@
     "model-value": {
       "extends": "model-value",
       "type": [ "Number", "null", "undefined" ],
-      "desc": "Model of the component (must be between min/max); Either use this property (along with a listener for 'update:modelValue' event) OR use v-model directive",
+      "desc": "组件的模型（必须在最小/最大之间）；要么使用这个属性（连同'update:modelValue'事件的监听器），要么使用v-model指令。",
       "examples": [ "v-model=\"positionModel\"" ]
     },
 
     "label-value": {
       "type": [ "String", "Number" ],
-      "desc": "Override default label value",
+      "desc": "覆盖默认标签值",
       "examples": [
         ":label-value=\"model + 'px'\""
       ],

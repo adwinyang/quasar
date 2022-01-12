@@ -6,13 +6,13 @@
   "props": {
     "appear": {
       "type": "Boolean",
-      "desc": "If set to true, the transition will be applied on the initial render.",
+      "desc": "如果设置为 'true'，过渡将在初始渲染时应用。",
       "category": "behavior"
     },
 
     "duration": {
       "type": "Number",
-      "desc": "Duration (in milliseconds) enabling animated scroll.",
+      "desc": "启用动画滚动的持续时间（以毫秒计）。",
       "default": 300,
       "examples": [ 500, ":duration=\"500\"" ],
       "category": "behavior"
@@ -21,7 +21,7 @@
 
   "slots": {
     "default": {
-      "desc": "This is where content goes"
+      "desc": "这就是内容的去处"
     }
   },
 

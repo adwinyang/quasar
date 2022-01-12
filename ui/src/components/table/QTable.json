@@ -8,25 +8,25 @@
   "props": {
     "rows": {
       "type": "Array",
-      "desc": "Rows of data to display",
+      "desc": "要显示的数据行数",
       "examples": [ ":rows=\"myData\"" ],
       "category": "general"
     },
 
     "row-key": {
       "type": [ "String", "Function" ],
-      "desc": "Property of each row that defines the unique key of each row (the result must be a primitive, not Object, Array, etc); The value of property must be string or a function taking a row and returning the desired (nested) key in the row; If supplying a function then for best performance, reference it from your scope and do not define it inline",
+      "desc": "每一行的属性，定义每一行的唯一键（结果必须是一个基元，而不是对象、数组等）；属性的值必须是字符串或一个函数，取一行并返回该行中所需要的（嵌套的）键；如果提供一个函数，那么为了获得最佳性能，从你的范围中引用它，不要内联定义它。",
       "default": "id",
       "params": {
         "row": {
           "type": "Object",
-          "desc": "The current row being processed",
+          "desc": "正在处理的当前行",
           "examples": [ "{ name: 'Lorem Ipsum', price: 19 }" ]
         }
       },
       "returns": {
         "type": "Any",
-        "desc": "Current row's key",
+        "desc": "当前行的键",
         "examples": [ "'34f39dda-6206-4071-a9df-4393aabe49ac'", "34" ]
       },
       "examples": [ "row-key=\"name\"", ":row-key=\"row => row.name\"" ],
@@ -35,13 +35,13 @@
 
     "virtual-scroll": {
       "type": "Boolean",
-      "desc": "Display data using QVirtualScroll (for non-grid mode only)",
+      "desc": "使用QVirtualScroll显示数据（仅适用于非网格模式）。",
       "category": "virtual-scroll"
     },
 
     "virtual-scroll-slice-size": {
       "type": [ "Number", "String" ],
-      "desc": "Minimum number of rows to render in the virtual list",
+      "desc": "在虚拟列表中呈现的最小行数",
       "default": "30",
       "examples": [ "virtual-scroll-slice-size=\"60\"" ],
       "category": "virtual-scroll"
@@ -49,7 +49,7 @@
 
     "virtual-scroll-slice-ratio-before": {
       "type": [ "Number", "String" ],
-      "desc": "Ratio of number of rows in visible zone to render before it",
+      "desc": "可见区的行数与之前渲染的行数之比",
       "default": "1",
       "examples": [ "virtual-scroll-slice-ratio-before=\"0.3\"" ],
       "category": "virtual-scroll"
@@ -57,7 +57,7 @@
 
     "virtual-scroll-slice-ratio-after": {
       "type": [ "Number", "String" ],
-      "desc": "Ratio of number of rows in visible zone to render after it",
+      "desc": "可见区的行数与之后渲染的行数之比",
       "default": "1",
       "examples": [ "virtual-scroll-slice-ratio-after=\"2\"" ],
       "category": "virtual-scroll"
@@ -65,7 +65,7 @@
 
     "virtual-scroll-item-size": {
       "type": [ "Number", "String" ],
-      "desc": "Default size in pixels of a row; This value is used for rendering the initial table; Try to use a value close to the minimum size of a row",
+      "desc": "一行的默认尺寸，以像素为单位；该值用于渲染初始表格；尽量使用接近一行最小尺寸的值。",
       "default": "48 (24 if dense)",
       "examples": [ "virtual-scroll-item-size=\"48\"" ],
       "category": "virtual-scroll"
@@ -73,7 +73,7 @@
 
     "virtual-scroll-sticky-size-start": {
       "type": [ "Number", "String" ],
-      "desc": "Size in pixels of the sticky header (if using one); A correct value will improve scroll precision",
+      "desc": "以像素为单位的粘性标题的大小（如果使用的话）；一个正确的值将提高滚动精度",
       "default": "0",
       "examples": [ "virtual-scroll-sticky-size-start=\"48\"" ],
       "category": "virtual-scroll"
@@ -81,7 +81,7 @@
 
     "virtual-scroll-sticky-size-end": {
       "type": [ "Number", "String" ],
-      "desc": "Size in pixels of the sticky footer part (if using one); A correct value will improve scroll precision",
+      "desc": "粘性页脚部分的尺寸，以像素为单位（如果使用的话）；一个正确的值将提高滚动精度",
       "default": "0",
       "examples": [ "virtual-scroll-sticky-size-end=\"48\"" ],
       "category": "virtual-scroll"
@@ -89,7 +89,7 @@
 
     "table-colspan": {
       "type": [ "Number", "String" ],
-      "desc": "The number of columns in the table (you need this if you use table-layout: fixed)",
+      "desc": "表格中的列数（如果你使用table-layout: fixed，你需要这个）。",
       "examples": [ "table-colspan=\"12\"" ],
       "category": "virtual-scroll|content"
     },
@@ -101,167 +101,167 @@
 
     "icon-first-page": {
       "extends": "icon",
-      "desc": "Icon name following Quasar convention for stepping to first page; Make sure you have the icon library installed unless you are using 'img:' prefix"
+      "desc": "图标名称遵循Quasar惯例，用于跳转到第一页；确保你已经安装了图标库，除非你使用'img:'前缀。"
     },
 
     "icon-prev-page": {
       "extends": "icon",
-      "desc": "Icon name following Quasar convention for stepping to previous page; Make sure you have the icon library installed unless you are using 'img:' prefix"
+      "desc": "图标名称遵循Quasar惯例，用于跳转到上一页；确保你已经安装了图标库，除非你使用'img:'前缀。"
     },
 
     "icon-next-page": {
       "extends": "icon",
-      "desc": "Icon name following Quasar convention for stepping to next page; Make sure you have the icon library installed unless you are using 'img:' prefix"
+      "desc": "图标名称遵循Quasar惯例，用于跳转到下一页；确保你已经安装了图标库，除非你使用'img:'前缀。"
     },
 
     "icon-last-page": {
       "extends": "icon",
-      "desc": "Icon name following Quasar convention for stepping to last page; Make sure you have the icon library installed unless you are using 'img:' prefix"
+      "desc": "图标名称遵循Quasar惯例，用于步入最后一页；确保你已经安装了图标库，除非你使用'img:'前缀。"
     },
 
     "grid": {
       "type": "Boolean",
-      "desc": "Display data as a grid instead of the default table",
+      "desc": "以网格的形式显示数据，而不是默认的表格",
       "category": "behavior"
     },
 
     "grid-header": {
       "type": "Boolean",
-      "desc": "Display header for grid-mode also",
+      "desc": "同时显示网格模式的标题",
       "category": "behavior|content"
     },
 
     "dense": {
       "extends": "dense",
-      "desc": "Dense mode; Connect with $q.screen for responsive behavior"
+      "desc": "密集模式；与$q.screen连接以获得响应行为"
     },
 
     "columns": {
       "type": "Array",
-      "desc": "The column definitions (Array of Objects)",
+      "desc": "列的定义（对象阵列）。",
       "examples": [ ":columns=\"tableColumns\"" ],
       "category": "column",
       "definition": {
         "name": {
           "type": "String",
           "required": true,
-          "desc": "Unique id, identifies column, (used by pagination.sortBy, 'body-cell-[name]' slot, ...)",
+          "desc": "唯一的ID，识别列，（用于pagination.sortBy，'body-cell-[name]'插槽，...）。",
           "examples": [ "desc" ]
         },
         "label": {
           "type": "String",
           "required": true,
-          "desc": "Label for header",
+          "desc": "标题的标签",
           "examples": [ "Dessert (100g serving)" ]
         },
         "field": {
           "type": [ "String", "Function" ],
           "required": true,
-          "desc": "Row Object property to determine value for this column or function which maps to the required property",
+          "desc": "行对象属性，以确定此列的值或映射到所需属性的函数。",
           "params": {
             "row": {
               "type": "Object",
               "required": true,
-              "desc": "The current row being processed",
+              "desc": "正在处理的当前行",
               "examples": [ "{ name: 'Lorem Ipsum', prices: { active: 19, old: 25, list: 29 } }" ]
             }
           },
           "returns": {
             "type": "Any",
-            "desc": "Value for this column",
+            "desc": "本栏的值",
             "examples": [ "19" ]
           },
           "examples": [ "name", "row => row.prices.active" ]
         },
         "required": {
           "type": "Boolean",
-          "desc": "If we use visible-columns, this col will always be visible"
+          "desc": "如果我们使用visible-columns，这个col将永远是可见的"
         },
         "align": {
           "type": "String",
-          "desc": "Horizontal alignment of cells in this column",
+          "desc": "这一列中的单元格的水平排列",
           "values": [ "left", "right", "center" ],
           "default": "right"
         },
         "sortable": {
           "type": "Boolean",
-          "desc": "Tell QTable you want this column sortable",
+          "desc": "告诉QTable你希望这一列是可排序的",
           "default": false
         },
         "sort": {
           "type": "Function",
-          "desc": "Compare function if you have some custom data or want a specific way to compare two rows",
+          "desc": "如果你有一些自定义的数据，或者想用一种特定的方式来比较两行，可以使用比较函数",
           "examples": ["(a, b, rowA, rowB) => parseInt(a, 10) - parseInt(b, 10)"],
           "params": {
             "a": {
               "type": "Any",
               "required": true,
-              "desc": "Value of the first comparison term",
+              "desc": "第一个比较项的值",
               "examples": [ 123, "abc" ]
             },
             "b": {
               "type": "Any",
               "required": true,
-              "desc": "Value of the second comparison term",
+              "desc": "第二个比较项的值",
               "examples": [ 123, "abc" ]
             },
             "rowA": {
               "type": "Object",
               "required": true,
-              "desc": "Full Row object in which is contained the first term",
+              "desc": "完整的行对象，其中包含第一个术语",
               "examples": [ "{ name: 'Potassium', value: 'K' }" ]
             },
             "rowB": {
               "type": "Object",
               "required": true,
-              "desc": "Full Row object in which is contained the second term",
+              "desc": "完整的行对象，其中包含第二项",
               "examples": [ "{ name: 'Fluorine', value: 'F' }" ]
             }
           },
           "returns": {
             "type": "Number",
-            "desc": "Comparison result of term 'a' with term 'b'. Less than 0 when 'a' should come first; greater than 0 if 'b' should come first; equal to 0 if their position must not be changed with respect to each other",
+            "desc": "术语'a'与术语'b'的比较结果。小于0时，'a'应排在前面；大于0时，'b'应排在前面；等于0时，它们的位置不能相互改变。",
             "examples": [ "-1", "0", "1" ]
           }
         },
         "sortOrder": {
           "type": "String",
-          "desc": "Set column sort order: 'ad' (ascending-descending) or 'da' (descending-ascending); Overrides the 'column-sort-order' prop",
+          "desc": "设置列的排序顺序。'ad'（升序-降序）或'da'（降序-升序）；覆盖'column-sort-order'属性",
           "values": [ "ad", "da" ],
           "default": "ad"
         },
         "format": {
           "type": "Function",
-          "desc": "Function you can apply to format your data",
+          "desc": "你可以应用的功能来格式化你的数据",
           "examples": [ "(val, row) => `${val}%`", "val => val ? /* Unicode checkmark checked */ '\u2611' : /* Unicode checkmark unchecked */ '\u2610'" ],
           "params": {
             "val": {
               "type": "Any",
               "required": true,
-              "desc": "Value of the cell",
+              "desc": "单元格的价值",
               "examples": [ 123, "abc" ]
             },
             "row": {
               "type": "Object",
               "required": true,
-              "desc": "Full Row object in which the cell is contained",
+              "desc": "包含该单元格的完整行对象",
               "examples": [ "{ name: 'Potassium', value: 'K' }" ]
             }
           },
           "returns": {
             "type": "Any",
-            "desc": "The resulting formatted value",
+            "desc": "产生的格式化值",
             "examples": [ "20%" ]
           }
         },
         "style": {
           "type": [ "String", "Function" ],
-          "desc": "Style to apply on normal cells of the column",
+          "desc": "应用于列的正常单元格的样式",
           "params": {
             "row": {
               "type": "Object",
               "required": true,
-              "desc": "The current row being processed",
+              "desc": "正在处理的当前行",
               "examples": [ "{ name: 'Frozen Yogurt', calories: 159 }" ]
             }
           },
@@ -276,12 +276,12 @@
         },
         "classes": {
           "type": [ "String", "Function" ],
-          "desc": "Classes to add on normal cells of the column",
+          "desc": "在列的正常单元格上添加类别",
           "params": {
             "row": {
               "type": "Object",
               "required": true,
-              "desc": "The current row being processed",
+              "desc": "正在处理的当前行",
               "examples": [ "{ name: 'Frozen Yogurt', calories: 159 }" ]
             }
           },
@@ -296,12 +296,12 @@
         },
         "headerStyle": {
           "type": "String",
-          "desc": "Style to apply on header cells of the column",
+          "desc": "应用于列的标题单元格的样式",
           "examples": [ "width: 500px" ]
         },
         "headerClasses": {
           "type": "String",
-          "desc": "Classes to add on header cells of the column",
+          "desc": "添加在列的标题单元格上的类",
           "examples": [ "my-special-class" ]
         }
       }
@@ -309,7 +309,7 @@
 
     "visible-columns": {
       "type": "Array",
-      "desc": "Array of Strings defining column names ('name' property of each column from 'columns' prop definitions); Columns marked as 'required' are not affected by this property",
+      "desc": "定义列名的字符串数组（'columns'属性定义中每一列的'name'属性）；标记为'required'的列不受此属性影响",
       "examples": [
         ":visible-columns=\"myCols\"",
         "[ 'desc', 'carbs', 'protein' ]"
@@ -319,44 +319,44 @@
 
     "loading": {
       "type": "Boolean",
-      "desc": "Put Table into 'loading' state; Notify the user something is happening behind the scenes",
+      "desc": "将表放入 'loading'(加载 ) 状态；通知用户幕后正在发生的事情。",
       "category": "behavior|content"
     },
 
     "title": {
       "type": "String",
-      "desc": "Table title",
+      "desc": "表标题",
       "examples": [ "Device list" ],
       "category": "content"
     },
 
     "hide-header": {
       "type": "Boolean",
-      "desc": "Hide table header layer",
+      "desc": "隐藏表头层",
       "category": "content"
     },
 
     "hide-bottom": {
       "type": "Boolean",
-      "desc": "Hide table bottom layer regardless of what it has to display",
+      "desc": "隐藏表底层，不管它要显示什么",
       "category": "content"
     },
 
     "hide-selected-banner": {
       "type": "Boolean",
-      "desc": "Hide the selected rows banner (if any)",
+      "desc": "隐藏所选行的横幅（如果有的话）。",
       "category": "content"
     },
 
     "hide-no-data": {
       "type": "Boolean",
-      "desc": "Hide the default no data bottom layer",
+      "desc": "隐藏默认的无数据底层",
       "category": "content"
     },
 
     "hide-pagination": {
       "type": "Boolean",
-      "desc": "Hide the pagination controls at the bottom",
+      "desc": "隐藏底部的分页控件",
       "category": "content"
     },
 
@@ -378,7 +378,7 @@
 
     "separator": {
       "type": "String",
-      "desc": "Use a separator/border between rows, columns or all cells",
+      "desc": "在行、列或所有单元格之间使用分隔符/边框",
       "default": "horizontal",
       "values": [ "horizontal", "vertical", "cell", "none" ],
       "category": "content"
@@ -386,19 +386,19 @@
 
     "wrap-cells": {
       "type": "Boolean",
-      "desc": "Wrap text within table cells",
+      "desc": "在表格单元格内包裹文本",
       "category": "content"
     },
 
     "binary-state-sort": {
       "type": "Boolean",
-      "desc": "Skip the third state (unsorted) when user toggles column sort direction",
+      "desc": "当用户切换列排序方向时，跳过第三个状态（未排序）。",
       "category": "sorting"
     },
 
     "column-sort-order": {
       "type": "String",
-      "desc": "Set column sort order: 'ad' (ascending-descending) or 'da' (descending-ascending); It gets applied to all columns unless a column has its own sortOrder specified in the 'columns' definition prop",
+      "desc": "设置列的排序顺序。'ad'（升序-降序）或'da'（降序-升序）；它被应用于所有列，除非某列在'列'定义属性中指定了自己的sortOrder。",
       "values": [ "ad", "da" ],
       "default": "ad",
       "category": "sorting"
@@ -406,38 +406,38 @@
 
     "no-data-label": {
       "type": "String",
-      "desc": "Override default text to display when no data is available",
+      "desc": "覆盖没有数据时显示的默认文本",
       "examples": [ "No devices available" ],
       "category": "content"
     },
 
     "no-results-label": {
       "type": "String",
-      "desc": "Override default text to display when user filters the table and no matched results are found",
+      "desc": "当用户过滤表格而没有找到匹配的结果时，覆盖显示的默认文本。",
       "examples": [ "No matched records" ],
       "category": "content"
     },
 
     "loading-label": {
       "type": "String",
-      "desc": "Override default text to display when table is in loading state (see 'loading' prop)",
+      "desc": "覆盖表处于加载状态时显示的默认文本（见'loading'(加载)属性）。",
       "examples": [ "Loading devices..." ],
       "category": "content"
     },
 
     "selected-rows-label": {
       "type": "Function",
-      "desc": "Text to display when user selected at least one row; For best performance, reference it from your scope and do not define it inline",
+      "desc": "当用户选择了至少一行时显示的文本；为了获得最佳性能，请从你的范围中引用它，不要在线定义它。",
       "params": {
         "numberOfRows": {
           "type": "Number",
-          "desc": "Number of rows available",
+          "desc": "可用的行数",
           "examples": [ 12 ]
         }
       },
       "returns": {
         "type": "String",
-        "desc": "Label to display",
+        "desc": "要显示的标签",
         "examples": [ "5 rows are selected" ]
       },
       "examples": [ ":selected-rows-label=\"getSelectedString\"" ],
@@ -446,34 +446,34 @@
 
     "rows-per-page-label": {
       "type": "String",
-      "desc": "Text to override default rows per page label at bottom of table",
+      "desc": "覆盖表格底部默认每页行数标签的文本",
       "examples": [ "Records per page:" ],
       "category": "pagination"
     },
 
     "pagination-label": {
       "type": "Function",
-      "desc": "Text to override default pagination label at bottom of table (unless 'pagination' scoped slot is used); For best performance, reference it from your scope and do not define it inline",
+      "desc": "覆盖表格底部默认分页标签的文本（除非使用'分页'作用域内的插槽）；为了获得最佳性能，请从你的作用域中引用它，不要在线定义它。",
       "params": {
         "firstRowIndex": {
           "type": "Number",
-          "desc": "Index of first displayed row",
+          "desc": "第一个显示的行的索引",
           "examples": [ 1 ]
         },
         "endRowIndex": {
           "type": "Number",
-          "desc": "Index of last displayed row",
+          "desc": "最后显示的行的索引",
           "examples": [ 10 ]
         },
         "totalRowsNumber": {
           "type": "Number",
-          "desc": "Number of total rows available in data",
+          "desc": "数据中可用的总行数",
           "examples": [ 132 ]
         }
       },
       "returns": {
         "type": "String",
-        "desc": "Label to display",
+        "desc": "要显示的标签",
         "examples": [ "1-10 of 132" ]
       },
       "examples": [ ":pagination-label=\"getPaginationLabel\"" ],
@@ -482,7 +482,7 @@
 
     "table-style": {
       "type": [ "String", "Array", "Object" ],
-      "desc": "CSS style to apply to native HTML <table> element's wrapper (which is a DIV)",
+      "desc": "应用于本地HTML <table>元素包装的CSS样式（这是一个DIV）。",
       "examples": [
         "background-color: #ff0000",
         ":table-style=\"{ backgroundColor: '#ff0000' }\""
@@ -492,7 +492,7 @@
 
     "table-class": {
       "type": [ "String", "Array", "Object" ],
-      "desc": "CSS classes to apply to native HTML <table> element's wrapper (which is a DIV)",
+      "desc": "应用于本地HTML <table> 元素包装器（即DIV）的CSS类。",
       "examples": [
         "my-special-class",
         ":table-class=\"{ 'my-special-class': [Boolean condition] }\""
@@ -502,7 +502,7 @@
 
     "table-header-style": {
       "type": [ "String", "Array", "Object" ],
-      "desc": "CSS style to apply to header of native HTML <table> (which is a TR)",
+      "desc": "将CSS样式应用于本地HTML <table>的标题（这是一个TR）。",
       "examples": [
         "background-color: #ff0000",
         ":table-header-style=\"{ backgroundColor: '#ff0000' }\""
@@ -512,7 +512,7 @@
 
     "table-header-class": {
       "type": [ "String", "Array", "Object" ],
-      "desc": "CSS classes to apply to header of native HTML <table> (which is a TR)",
+      "desc": "将CSS类应用于本地HTML <table>的标题（这是一个TR）。",
       "examples": [
         "my-special-class",
         ":table-header-class=\"{ 'my-special-class': [Boolean condition] }\""
@@ -522,7 +522,7 @@
 
     "card-container-style": {
       "type": [ "String", "Array", "Object" ],
-      "desc": "CSS style to apply to the cards container (when in grid mode)",
+      "desc": "应用于卡片容器的CSS样式（当在网格模式下）。",
       "examples": [
         "background-color: #ff0000",
         ":card-container-style=\"{ backgroundColor: '#ff0000' }\""
@@ -532,7 +532,7 @@
 
     "card-container-class": {
       "type": [ "String", "Array", "Object" ],
-      "desc": "CSS classes to apply to the cards container (when in grid mode)",
+      "desc": "应用于卡片容器的CSS类（在网格模式下）。",
       "examples": [
         "my-special-class",
         "justify-center",
@@ -543,7 +543,7 @@
 
     "card-style": {
       "type": [ "String", "Array", "Object" ],
-      "desc": "CSS style to apply to the card (when in grid mode) or container card (when not in grid mode)",
+      "desc": "应用于卡片（在网格模式下）或容器卡片（在非网格模式下）的CSS样式",
       "examples": [
         "background-color: #ff0000",
         ":card-style=\"{ backgroundColor: '#ff0000' }\""
@@ -553,7 +553,7 @@
 
     "card-class": {
       "type": [ "String", "Array", "Object" ],
-      "desc": "CSS classes to apply to the card (when in grid mode) or container card (when not in grid mode)",
+      "desc": "应用于卡片（在网格模式下）或容器卡片（在非网格模式下）的CSS类。",
       "examples": [
         "my-special-class",
         ":card-class=\"{ 'my-special-class': [Boolean condition] }\""
@@ -563,7 +563,7 @@
 
     "title-class": {
       "type": [ "String", "Array", "Object" ],
-      "desc": "CSS classes to apply to the title (if using 'title' prop)",
+      "desc": "应用于标题的CSS类（如果使用'标题'属性）。",
       "examples": [
         "my-special-class",
         "text-h1",
@@ -574,57 +574,57 @@
 
     "filter": {
       "type": [ "String", "Object" ],
-      "desc": "String/Object to filter table with; When using an Object it requires 'filter-method' to also be specified since it will be a custom filtering",
+      "desc": "用来过滤表格的字符串/对象；当使用对象时，需要同时指定'过滤方法'，因为它将是一个自定义的过滤。",
       "examples": [ ":filter=\"myFilterInput\"" ],
       "category": "filter"
     },
 
     "filter-method": {
       "type": "Function",
-      "desc": "The actual filtering mechanism; For best performance, reference it from your scope and do not define it inline",
+      "desc": "实际的过滤机制；为了获得最佳性能，请从你的范围中引用它，不要在内联中定义它。",
       "params": {
         "rows": {
           "type": "Array",
-          "desc": "Array of rows",
+          "desc": "行的数组",
           "__exemption": [ "examples" ]
         },
         "terms": {
           "type": [ "String", "Object" ],
-          "desc": "Terms to filter with (is essentially the 'filter' prop value)",
+          "desc": "用来过滤的术语（基本上是 'filter' 属性值）。",
           "__exemption": [ "examples" ]
         },
         "cols": {
           "type": "Array",
-          "desc": "Column definitions",
+          "desc": "专栏定义",
           "__exemption": [ "examples" ]
         },
         "getCellValue": {
           "type": "Function",
-          "desc": "Optional function to get a cell value",
+          "desc": "获取单元格值的可选函数",
           "params": {
             "col": {
               "type": "Object",
               "required": true,
-              "desc": "Column name from column definitions",
+              "desc": "来自列定义的列名",
               "__exemption": [ "examples" ]
             },
             "row": {
               "type": "Object",
               "required": true,
-              "desc": "The row object",
+              "desc": "该行对象",
               "__exemption": [ "examples" ]
             }
           },
           "returns": {
             "type": "Any",
-            "desc": "Parsed/Processed cell value",
+            "desc": "解析/处理过的单元格值",
             "examples": [ "Ice Cream Sandwich" ]
           }
         }
       },
       "returns": {
         "type": "Array",
-        "desc": "Filtered rows",
+        "desc": "筛选的行",
         "__exemption": [ "examples" ]
       },
       "default": "(see source code)",
@@ -636,30 +636,30 @@
 
     "pagination": {
       "type": "Object",
-      "desc": "Pagination object; You can also use the 'v-model:pagination' for synching; When not synching it simply initializes the pagination on first render",
+      "desc": "分页对象；你也可以使用'v-model:pagination'来进行同步；当不同步时，它只是在第一次渲染时初始化分页。",
       "definition": {
         "sortBy": {
           "type": "String",
-          "desc": "Column name (from column definition)",
+          "desc": "列名（来自列定义）",
           "examples": [ "calories" ]
         },
         "descending": {
           "type": "Boolean",
-          "desc": "Is sorting in descending order?"
+          "desc": "排序是按降序排列吗？"
         },
         "page": {
           "type": "Number",
-          "desc": "Page number (1-based)",
+          "desc": "页码（以1为单位）",
           "examples": [ 3 ]
         },
         "rowsPerPage": {
           "type": "Number",
-          "desc": "How many rows per page? 0 means Infinite",
+          "desc": "每页有多少行？0表示无限大",
           "examples": [ 10 ]
         },
         "rowsNumber": {
           "type": "Number",
-          "desc": "For server-side fetching only. How many total database rows are there to be added to the table. If set, causes the QTable to emit @request when data is required.",
+          "desc": "仅用于服务器端获取。总共有多少数据库行要被添加到表中。如果设置，会使QTable在需要数据时触发@request。",
           "examples": [ 100, 200 ]
         }
       },
@@ -672,7 +672,7 @@
 
     "rows-per-page-options": {
       "type": "Array",
-      "desc": "Options for user to pick (Numbers); Number 0 means 'Show all rows in one page'",
+      "desc": "供用户选择的选项（数字）；数字0表示 '在一个页面中显示所有行'。",
       "default": "[ 3, 5, 7, 10, 15, 20, 25, 50, 0 ]",
       "examples": [
         ":rows-per-page-options=\"[10, 20]\""
@@ -682,7 +682,7 @@
 
     "selection": {
       "type": "String",
-      "desc": "Selection type",
+      "desc": "选择类型",
       "default": "none",
       "values": [ "single", "multiple", "none" ],
       "examples": [ "multiple" ],
@@ -691,7 +691,7 @@
 
     "selected": {
       "type": "Array",
-      "desc": "Keeps the user selection array",
+      "desc": "保持用户选择阵列",
       "default": "[]",
       "examples": [
         "v-model:selected=\"selection\""
@@ -701,7 +701,7 @@
 
     "expanded": {
       "type": "Array",
-      "desc": "Keeps the array with expanded rows keys",
+      "desc": "保持有扩展行键的数组",
       "default": "[]",
       "examples": [
         "v-model:expanded=\"expanded\""
@@ -711,26 +711,26 @@
 
     "sort-method": {
       "type": "Function",
-      "desc": "The actual sort mechanism. Function (rows, sortBy, descending) => sorted rows; For best performance, reference it from your scope and do not define it inline",
+      "desc": "实际的排序机制。Function (rows, sortBy, descending) => sorted rows; 为了获得最佳性能，请从你的范围中引用它，不要在内联中定义它。",
       "params": {
         "rows": {
           "type": "Array",
-          "desc": "Array with rows",
+          "desc": "有行的数组",
           "__exemption": [ "examples" ]
         },
         "sortBy": {
           "type": "String",
-          "desc": "Column name (from column definition)",
+          "desc": "列名（来自列定义）",
           "examples": [ "calories" ]
         },
         "descending": {
           "type": "Boolean",
-          "desc": "Is sorting in descending order?"
+          "desc": "排序是按降序排列吗？"
         }
       },
       "returns": {
         "type": "Array",
-        "desc": "Sorted rows",
+        "desc": "分类的行",
         "__exemption": [ "examples" ]
       },
       "default": "(see source code)",
@@ -743,50 +743,50 @@
 
   "slots": {
     "loading": {
-      "desc": "Override default effect when table is in loading state; Suggestion: QInnerLoading"
+      "desc": "覆盖表处于加载状态时的默认效果；建议：QInnerLoading"
     },
 
     "item": {
-      "desc": "Slot to use for defining an item when in 'grid' mode; Suggestion: QCard",
+      "desc": "在 '网格'(grid) 模式下，用于定义项目的插槽；建议：QCard",
       "scope": {
         "key": {
           "type": "Any",
-          "desc": "Row/Item's key",
+          "desc": "行/项目的关键",
           "__exemption": [ "examples" ]
         },
         "row": {
           "type": "Object",
-          "desc": "Row/Item object",
+          "desc": "行/项目对象",
           "__exemption": [ "examples" ]
         },
         "rowIndex": {
           "type": "Number",
-          "desc": "Row/Item's index (0 based) in the filtered and sorted table",
+          "desc": "行/项在过滤和排序表中的索引（基于0）。",
           "__exemption": [ "examples" ]
         },
         "pageIndex": {
           "type": "Number",
-          "desc": "Row/Item's index (0 based) in the current page of the filtered and sorted table",
+          "desc": "行/项在过滤和排序的表的当前页中的索引（基于0）。",
           "__exemption": [ "examples" ]
         },
         "cols": {
           "type": "Object",
-          "desc": "Column definitions",
+          "desc": "专栏定义",
           "__exemption": [ "examples" ]
         },
         "colsMap": {
           "type": "Object",
-          "desc": "Column mapping (key is column name, value is column object)",
+          "desc": "列的映射（键为列名，值为列对象）",
           "__exemption": [ "examples" ]
         },
         "sort": {
           "type": "Function",
-          "desc": "Trigger a table sort",
+          "desc": "触发一个表的排序",
           "params": {
             "col": {
               "type": [ "String", "Object" ],
               "required": true,
-              "desc": "Column name or column definition object",
+              "desc": "列名或列定义对象",
               "examples": [ "calories" ]
             }
           },
@@ -794,12 +794,12 @@
         },
         "selected": {
           "type": "Boolean",
-          "desc": "(Only if using selection) Is row/item selected? Can directly be assigned new Boolean value which changes selection state",
+          "desc": "(只有在使用选择时)行/项是否被选择？可以直接分配新的布尔值，改变选择状态",
           "reactive": true
         },
         "expand": {
           "type": "Boolean",
-          "desc": "Is row/item expanded? Can directly be assigned new Boolean value which changes expanded state",
+          "desc": "行/项是否已展开？可以直接分配新的布尔值来改变扩展状态",
           "reactive": true
         },
         "color": {
@@ -815,46 +815,46 @@
     },
 
     "body": {
-      "desc": "Slot to define how a body row looks like; Suggestion: QTr + Td",
+      "desc": "插槽，以定义主体行的样子；建议：QTr + Td",
       "scope": {
         "key": {
           "type": "Any",
-          "desc": "Row's key",
+          "desc": "行的关键",
           "__exemption": [ "examples" ]
         },
         "row": {
           "type": "Object",
-          "desc": "Row object",
+          "desc": "行对象",
           "__exemption": [ "examples" ]
         },
         "rowIndex": {
           "type": "Number",
-          "desc": "Row's index (0 based) in the filtered and sorted table",
+          "desc": "行在过滤和排序表中的索引（基于0）。",
           "__exemption": [ "examples" ]
         },
         "pageIndex": {
           "type": "Number",
-          "desc": "Row's index (0 based) in the current page of the filtered and sorted table",
+          "desc": "行的索引（以0为基准），在过滤和排序的表的当前页中的索引",
           "__exemption": [ "examples" ]
         },
         "cols": {
           "type": "Object",
-          "desc": "Column definitions",
+          "desc": "专栏定义",
           "__exemption": [ "examples" ]
         },
         "colsMap": {
           "type": "Object",
-          "desc": "Column mapping (key is column name, value is column object)",
+          "desc": "列的映射（键为列名，值为列对象）",
           "__exemption": [ "examples" ]
         },
         "sort": {
           "type": "Function",
-          "desc": "Trigger a table sort",
+          "desc": "触发一个表的排序",
           "params": {
             "col": {
               "type": [ "String", "Object" ],
               "required": true,
-              "desc": "Column name or column definition object",
+              "desc": "列名或列定义对象",
               "examples": [ "calories" ]
             }
           },
@@ -862,12 +862,12 @@
         },
         "selected": {
           "type": "Boolean",
-          "desc": "(Only if using selection) Is row selected? Can directly be assigned new Boolean value which changes selection state",
+          "desc": "(仅当使用选择时)行是否被选择？可以直接分配新的布尔值，改变选择状态",
           "reactive": true
         },
         "expand": {
           "type": "Boolean",
-          "desc": "Is row expanded? Can directly be assigned new Boolean value which changes expanded state",
+          "desc": "行是否扩展？可以直接分配新的布尔值来改变扩展状态",
           "reactive": true
         },
         "color": {
@@ -881,63 +881,63 @@
         },
         "__trClass": {
           "type": "String",
-          "desc": "Internal prop passed down to QTr (if used)",
+          "desc": "内部属性传递给QTr（如果使用）。",
           "__exemption": [ "examples" ]
         }
       }
     },
 
     "body-cell": {
-      "desc": "Slot to define how all body cells look like; Suggestion: QTd",
+      "desc": "定义所有身体细胞的模样的插槽；建议：QTd",
       "scope": {
         "col": {
           "type": "Object",
-          "desc": "Column definition for column associated with table cell",
+          "desc": "与表格单元格相关的列的定义",
           "__exemption": [ "examples" ]
         },
         "value": {
           "type": "Any",
-          "desc": "Parsed/Formatted value of table cell",
+          "desc": "表格单元格的解析/格式化值",
           "__exemption": [ "examples" ]
         },
         "key": {
           "type": "Any",
-          "desc": "Row's key",
+          "desc": "行的关键",
           "__exemption": [ "examples" ]
         },
         "row": {
           "type": "Object",
-          "desc": "Row object",
+          "desc": "行对象",
           "__exemption": [ "examples" ]
         },
         "rowIndex": {
           "type": "Number",
-          "desc": "Row's index (0 based) in the filtered and sorted table",
+          "desc": "行在过滤和排序表中的索引（基于0）。",
           "__exemption": [ "examples" ]
         },
         "pageIndex": {
           "type": "Number",
-          "desc": "Row's index (0 based) in the current page of the filtered and sorted table",
+          "desc": "行的索引（以0为基准），在过滤和排序的表的当前页中的索引",
           "__exemption": [ "examples" ]
         },
         "cols": {
           "type": "Object",
-          "desc": "Column definitions",
+          "desc": "专栏定义",
           "__exemption": [ "examples" ]
         },
         "colsMap": {
           "type": "Object",
-          "desc": "Column mapping (key is column name, value is column object)",
+          "desc": "列的映射（键为列名，值为列对象）",
           "__exemption": [ "examples" ]
         },
         "sort": {
           "type": "Function",
-          "desc": "Trigger a table sort",
+          "desc": "触发一个表的排序",
           "params": {
             "col": {
               "type": [ "String", "Object" ],
               "required": true,
-              "desc": "Column name or column definition object",
+              "desc": "列名或列定义对象",
               "examples": [ "calories" ]
             }
           },
@@ -945,12 +945,12 @@
         },
         "selected": {
           "type": "Boolean",
-          "desc": "(Only if using selection) Is row selected? Can directly be assigned new Boolean value which changes selection state",
+          "desc": "(仅当使用选择时)行是否被选择？可以直接分配新的布尔值，改变选择状态",
           "reactive": true
         },
         "expand": {
           "type": "Boolean",
-          "desc": "Is row expanded? Can directly be assigned new Boolean value which changes expanded state",
+          "desc": "行是否扩展？可以直接分配新的布尔值来改变扩展状态",
           "reactive": true
         },
         "color": {
@@ -966,56 +966,56 @@
     },
 
     "body-cell-[name]": {
-      "desc": "Slot to define how a specific column cell looks like; replace '[name]' with column name (from columns definition object)",
+      "desc": "用于定义特定列单元格的外观；用列名替换'[name]'（来自列定义对象）。",
       "scope": {
         "col": {
           "type": "Object",
-          "desc": "Column definition for column associated with table cell",
+          "desc": "与表格单元格相关的列的定义",
           "__exemption": [ "examples" ]
         },
         "value": {
           "type": "Any",
-          "desc": "Parsed/Formatted value of table cell",
+          "desc": "表格单元格的解析/格式化值",
           "__exemption": [ "examples" ]
         },
         "key": {
           "type": "Any",
-          "desc": "Row's key",
+          "desc": "行的关键",
           "__exemption": [ "examples" ]
         },
         "row": {
           "type": "Object",
-          "desc": "Row object",
+          "desc": "行对象",
           "__exemption": [ "examples" ]
         },
         "rowIndex": {
           "type": "Number",
-          "desc": "Row's index (0 based) in the filtered and sorted table",
+          "desc": "行在过滤和排序表中的索引（基于0）。",
           "__exemption": [ "examples" ]
         },
         "pageIndex": {
           "type": "Number",
-          "desc": "Row's index (0 based) in the current page of the filtered and sorted table",
+          "desc": "行的索引（以0为基准），在过滤和排序的表的当前页中的索引",
           "__exemption": [ "examples" ]
         },
         "cols": {
           "type": "Object",
-          "desc": "Column definitions",
+          "desc": "专栏定义",
           "__exemption": [ "examples" ]
         },
         "colsMap": {
           "type": "Object",
-          "desc": "Column mapping (key is column name, value is column object)",
+          "desc": "列的映射（键为列名，值为列对象）",
           "__exemption": [ "examples" ]
         },
         "sort": {
           "type": "Function",
-          "desc": "Trigger a table sort",
+          "desc": "触发一个表的排序",
           "params": {
             "col": {
               "type": [ "String", "Object" ],
               "required": true,
-              "desc": "Column name or column definition object",
+              "desc": "列名或列定义对象",
               "examples": [ "calories" ]
             }
           },
@@ -1023,12 +1023,12 @@
         },
         "selected": {
           "type": "Boolean",
-          "desc": "(Only if using selection) Is row selected? Can directly be assigned new Boolean value which changes selection state",
+          "desc": "(仅当使用选择时)行是否被选择？可以直接分配新的布尔值，改变选择状态",
           "reactive": true
         },
         "expand": {
           "type": "Boolean",
-          "desc": "Is row expanded? Can directly be assigned new Boolean value which changes expanded state",
+          "desc": "行是否扩展？可以直接分配新的布尔值来改变扩展状态",
           "reactive": true
         },
         "color": {
@@ -1044,26 +1044,26 @@
     },
 
     "header": {
-      "desc": "Slot to define how header looks like; Suggestion: QTr + QTh",
+      "desc": "定义页眉外观的插槽；建议：QTr + QTh",
       "scope": {
         "cols": {
           "type": "Object",
-          "desc": "Column definitions",
+          "desc": "专栏定义",
           "__exemption": [ "examples" ]
         },
         "colsMap": {
           "type": "Object",
-          "desc": "Column mapping (key is column name, value is column object)",
+          "desc": "列的映射（键为列名，值为列对象）",
           "__exemption": [ "examples" ]
         },
         "sort": {
           "type": "Function",
-          "desc": "Trigger a table sort",
+          "desc": "触发一个表的排序",
           "params": {
             "col": {
               "type": [ "String", "Object" ],
               "required": true,
-              "desc": "Column name or column definition object",
+              "desc": "列名或列定义对象",
               "examples": [ "calories" ]
             }
           },
@@ -1071,12 +1071,12 @@
         },
         "selected": {
           "type": "Boolean",
-          "desc": "(Only if using selection) Is row selected? Can directly be assigned new Boolean value which changes selection state",
+          "desc": "(仅当使用选择时)行是否被选择？可以直接分配新的布尔值，改变选择状态",
           "reactive": true
         },
         "expand": {
           "type": "Boolean",
-          "desc": "Is row expanded? Can directly be assigned new Boolean value which changes expanded state",
+          "desc": "行是否扩展？可以直接分配新的布尔值来改变扩展状态",
           "reactive": true
         },
         "color": {
@@ -1090,42 +1090,42 @@
         },
         "__trClass": {
           "type": "String",
-          "desc": "Internal prop passed down to QTr (if used)",
+          "desc": "内部属性传递给QTr（如果使用）。",
           "__exemption": [ "examples" ]
         },
         "header": {
           "type": "Boolean",
-          "desc": "Internal prop passed down to QTh (if used); Always 'true'"
+          "desc": "传递给QTh的内部属性（如果使用的话）；总是 'true'"
         }
       }
     },
 
     "header-cell": {
-      "desc": "Slot to define how each header cell looks like; Suggestion: QTh",
+      "desc": "定义每个标题单元格的样子的插槽；建议：QTh",
       "scope": {
         "col": {
           "type": "Object",
-          "desc": "Column definition associated to header cell",
+          "desc": "与标题单元格相关的列定义",
           "__exemption": [ "examples" ]
         },
         "cols": {
           "type": "Object",
-          "desc": "Column definitions",
+          "desc": "专栏定义",
           "__exemption": [ "examples" ]
         },
         "colsMap": {
           "type": "Object",
-          "desc": "Column mapping (key is column name, value is column object)",
+          "desc": "列的映射（键为列名，值为列对象）",
           "__exemption": [ "examples" ]
         },
         "sort": {
           "type": "Function",
-          "desc": "Trigger a table sort",
+          "desc": "触发一个表的排序",
           "params": {
             "col": {
               "type": [ "String", "Object" ],
               "required": true,
-              "desc": "Column name or column definition object",
+              "desc": "列名或列定义对象",
               "examples": [ "calories" ]
             }
           },
@@ -1133,12 +1133,12 @@
         },
         "selected": {
           "type": "Boolean",
-          "desc": "(Only if using selection) Is row selected? Can directly be assigned new Boolean value which changes selection state",
+          "desc": "(仅当使用选择时)行是否被选择？可以直接分配新的布尔值，改变选择状态",
           "reactive": true
         },
         "expand": {
           "type": "Boolean",
-          "desc": "Is row expanded? Can directly be assigned new Boolean value which changes expanded state",
+          "desc": "行是否扩展？可以直接分配新的布尔值来改变扩展状态",
           "reactive": true
         },
         "color": {
@@ -1154,31 +1154,31 @@
     },
 
     "header-cell-[name]": {
-      "desc": "Slot to define how a specific header cell looks like; replace '[name]' with column name (from columns definition object)",
+      "desc": "定义特定标题单元格外观的插槽点；用列名替换'[name]'（来自列定义对象）。",
       "scope": {
         "col": {
           "type": "Object",
-          "desc": "Column definition associated to header cell",
+          "desc": "与标题单元格相关的列定义",
           "__exemption": [ "examples" ]
         },
         "cols": {
           "type": "Object",
-          "desc": "Column definitions",
+          "desc": "专栏定义",
           "__exemption": [ "examples" ]
         },
         "colsMap": {
           "type": "Object",
-          "desc": "Column mapping (key is column name, value is column object)",
+          "desc": "列的映射（键为列名，值为列对象）",
           "__exemption": [ "examples" ]
         },
         "sort": {
           "type": "Function",
-          "desc": "Trigger a table sort",
+          "desc": "触发一个表的排序",
           "params": {
             "col": {
               "type": [ "String", "Object" ],
               "required": true,
-              "desc": "Column name or column definition object",
+              "desc": "列名或列定义对象",
               "examples": [ "calories" ]
             }
           },
@@ -1186,12 +1186,12 @@
         },
         "selected": {
           "type": "Boolean",
-          "desc": "(Only if using selection) Is row selected? Can directly be assigned new Boolean value which changes selection state",
+          "desc": "(仅当使用选择时)行是否被选择？可以直接分配新的布尔值，改变选择状态",
           "reactive": true
         },
         "expand": {
           "type": "Boolean",
-          "desc": "Is row expanded? Can directly be assigned new Boolean value which changes expanded state",
+          "desc": "行是否扩展？可以直接分配新的布尔值来改变扩展状态",
           "reactive": true
         },
         "color": {
@@ -1207,46 +1207,46 @@
     },
 
     "body-selection": {
-      "desc": "Slot to define how body selection column looks like; Suggestion: QCheckbox",
+      "desc": "定义身体选择栏的样子的插槽；建议：QCheckbox",
       "scope": {
         "key": {
           "type": "Any",
-          "desc": "Row's key",
+          "desc": "行的关键",
           "__exemption": [ "examples" ]
         },
         "row": {
           "type": "Object",
-          "desc": "Row object",
+          "desc": "行对象",
           "__exemption": [ "examples" ]
         },
         "rowIndex": {
           "type": "Number",
-          "desc": "Row's index (0 based) in the filtered and sorted table",
+          "desc": "行在过滤和排序表中的索引（基于0）。",
           "__exemption": [ "examples" ]
         },
         "pageIndex": {
           "type": "Number",
-          "desc": "Row's index (0 based) in the current page of the filtered and sorted table",
+          "desc": "行的索引（以0为基准），在过滤和排序的表的当前页中的索引",
           "__exemption": [ "examples" ]
         },
         "cols": {
           "type": "Object",
-          "desc": "Column definitions",
+          "desc": "专栏定义",
           "__exemption": [ "examples" ]
         },
         "colsMap": {
           "type": "Object",
-          "desc": "Column mapping (key is column name, value is column object)",
+          "desc": "列的映射（键为列名，值为列对象）",
           "__exemption": [ "examples" ]
         },
         "sort": {
           "type": "Function",
-          "desc": "Trigger a table sort",
+          "desc": "触发一个表的排序",
           "params": {
             "col": {
               "type": [ "String", "Object" ],
               "required": true,
-              "desc": "Column name or column definition object",
+              "desc": "列名或列定义对象",
               "examples": [ "calories" ]
             }
           },
@@ -1254,12 +1254,12 @@
         },
         "selected": {
           "type": "Boolean",
-          "desc": "(Only if using selection) Is row selected? Can directly be assigned new Boolean value which changes selection state",
+          "desc": "(仅当使用选择时)行是否被选择？可以直接分配新的布尔值，改变选择状态",
           "reactive": true
         },
         "expand": {
           "type": "Boolean",
-          "desc": "Is row expanded? Can directly be assigned new Boolean value which changes expanded state",
+          "desc": "行是否扩展？可以直接分配新的布尔值来改变扩展状态",
           "reactive": true
         },
         "color": {
@@ -1275,26 +1275,26 @@
     },
 
     "header-selection": {
-      "desc": "Slot to define how header selection column looks like (available only for multiple selection mode); Suggestion: QCheckbox",
+      "desc": "定义标题选择栏的样子的插槽（仅适用于多选模式）；建议：QCheckbox",
       "scope": {
         "cols": {
           "type": "Object",
-          "desc": "Column definitions",
+          "desc": "专栏定义",
           "__exemption": [ "examples" ]
         },
         "colsMap": {
           "type": "Object",
-          "desc": "Column mapping (key is column name, value is column object)",
+          "desc": "列的映射（键为列名，值为列对象）",
           "__exemption": [ "examples" ]
         },
         "sort": {
           "type": "Function",
-          "desc": "Trigger a table sort",
+          "desc": "触发一个表的排序",
           "params": {
             "col": {
               "type": [ "String", "Object" ],
               "required": true,
-              "desc": "Column name or column definition object",
+              "desc": "列名或列定义对象",
               "examples": [ "calories" ]
             }
           },
@@ -1302,12 +1302,12 @@
         },
         "selected": {
           "type": "Boolean",
-          "desc": "(Only if using selection) Is row selected? Can directly be assigned new Boolean value which changes selection state",
+          "desc": "(仅当使用选择时)行是否被选择？可以直接分配新的布尔值，改变选择状态",
           "reactive": true
         },
         "expand": {
           "type": "Boolean",
-          "desc": "Is row expanded? Can directly be assigned new Boolean value which changes expanded state",
+          "desc": "行是否扩展？可以直接分配新的布尔值来改变扩展状态",
           "reactive": true
         },
         "color": {
@@ -1323,103 +1323,103 @@
     },
 
     "top-row": {
-      "desc": "Slot to define how top extra row looks like",
+      "desc": "定义顶部额外行的模样的插槽",
       "scope": {
         "cols": {
           "type": "Object",
-          "desc": "Column definitions",
+          "desc": "专栏定义",
           "__exemption": [ "examples" ]
         }
       }
     },
 
     "bottom-row": {
-      "desc": "Slot to define how bottom extra row looks like",
+      "desc": "定义底部额外行的模样的插槽位",
       "scope": {
         "cols": {
           "type": "Object",
-          "desc": "Column definitions",
+          "desc": "专栏定义",
           "__exemption": [ "examples" ]
         }
       }
     },
 
     "top": {
-      "desc": "Slot to define how table top looks like",
+      "desc": "定义桌面外观的插槽位",
       "scope": {
         "pagination": {
           "type": "Object",
-          "desc": "Pagination object",
+          "desc": "分页对象",
           "definition": {
             "sortBy": {
               "type": "String",
               "required": true,
-              "desc": "Column name (from column definition)",
+              "desc": "列名（来自列定义）",
               "examples": [ "calories" ]
             },
             "descending": {
               "type": "Boolean",
               "required": true,
-              "desc": "Is sorting in descending order?"
+              "desc": "排序是按降序排列吗？"
             },
             "page": {
               "type": "Number",
               "required": true,
-              "desc": "Page number (1-based)",
+              "desc": "页码（以1为单位）",
               "examples": [ 3 ]
             },
             "rowsPerPage": {
               "type": "Number",
               "required": true,
-              "desc": "How many rows per page? 0 means Infinite",
+              "desc": "每页有多少行？0表示无限大",
               "examples": [ 10 ]
             }
           }
         },
         "pagesNumber": {
           "type": "Number",
-          "desc": "Number of pages available",
+          "desc": "可用的页数",
           "examples": [ 5 ]
         },
         "isFirstPage": {
           "type": "Boolean",
-          "desc": "Are we on first page?"
+          "desc": "我们在第一页吗？"
         },
         "isLastPage": {
           "type": "Boolean",
-          "desc": "Are we on last page?"
+          "desc": "我们在最后一页了吗？"
         },
         "firstPage": {
           "type": "Function",
-          "desc": "Navigates to first page",
+          "desc": "导航至第一页",
           "params": null,
           "returns": null
         },
         "prevPage": {
           "type": "Function",
-          "desc": "Navigates to previous page, if available",
+          "desc": "如果有的话，导航到前一页",
           "params": null,
           "returns": null
         },
         "nextPage": {
           "type": "Function",
-          "desc": "Navigates to next page, if available",
+          "desc": "如果有的话，将导航到下一页",
           "params": null,
           "returns": null
         },
         "lastPage": {
           "type": "Function",
-          "desc": "Navigates to last page",
+          "desc": "导航到最后一页",
           "params": null,
           "returns": null
         },
         "inFullscreen": {
           "type": "Boolean",
-          "desc": "Is table in fullscreen mode?"
+          "desc": "表格是在全屏模式下吗？"
         },
         "toggleFullscreen": {
           "type": "Function",
-          "desc": "Toggles fullscreen mode",
+          "desc": "切换全屏模式",
           "params": null,
           "returns": null
         }
@@ -1427,81 +1427,81 @@
     },
 
     "bottom": {
-      "desc": "Slot to define how table bottom looks like",
+      "desc": "定义表底的方式的插槽点",
       "scope": {
         "pagination": {
           "type": "Object",
-          "desc": "Pagination object",
+          "desc": "分页对象",
           "definition": {
             "sortBy": {
               "type": "String",
               "required": true,
-              "desc": "Column name (from column definition)",
+              "desc": "列名（来自列定义）",
               "examples": [ "calories" ]
             },
             "descending": {
               "type": "Boolean",
               "required": true,
-              "desc": "Is sorting in descending order?"
+              "desc": "排序是按降序排列吗？"
             },
             "page": {
               "type": "Number",
               "required": true,
-              "desc": "Page number (1-based)",
+              "desc": "页码（以1为单位）",
               "examples": [ 3 ]
             },
             "rowsPerPage": {
               "type": "Number",
               "required": true,
-              "desc": "How many rows per page? 0 means Infinite",
+              "desc": "每页有多少行？0表示无限大",
               "examples": [ 10 ]
             }
           }
         },
         "pagesNumber": {
           "type": "Number",
-          "desc": "Number of pages available",
+          "desc": "可用的页数",
           "examples": [ 5 ]
         },
         "isFirstPage": {
           "type": "Boolean",
-          "desc": "Are we on first page?"
+          "desc": "我们在第一页吗？"
         },
         "isLastPage": {
           "type": "Boolean",
-          "desc": "Are we on last page?"
+          "desc": "我们在最后一页了吗？"
         },
         "firstPage": {
           "type": "Function",
-          "desc": "Navigates to first page",
+          "desc": "导航至第一页",
           "params": null,
           "returns": null
         },
         "prevPage": {
           "type": "Function",
-          "desc": "Navigates to previous page, if available",
+          "desc": "如果有的话，导航到前一页",
           "params": null,
           "returns": null
         },
         "nextPage": {
           "type": "Function",
-          "desc": "Navigates to next page, if available",
+          "desc": "如果有的话，将导航到下一页",
           "params": null,
           "returns": null
         },
         "lastPage": {
           "type": "Function",
-          "desc": "Navigates to last page",
+          "desc": "导航到最后一页",
           "params": null,
           "returns": null
         },
         "inFullscreen": {
           "type": "Boolean",
-          "desc": "Is table in fullscreen mode?"
+          "desc": "表格是在全屏模式下吗？"
         },
         "toggleFullscreen": {
           "type": "Function",
-          "desc": "Toggles fullscreen mode",
+          "desc": "切换全屏模式",
           "params": null,
           "returns": null
         }
@@ -1509,81 +1509,81 @@
     },
 
     "pagination": {
-      "desc": "Slot to override default pagination label and buttons",
+      "desc": "覆盖默认分页标签和按钮的插槽",
       "scope": {
         "pagination": {
           "type": "Object",
-          "desc": "Pagination object",
+          "desc": "分页对象",
           "definition": {
             "sortBy": {
               "type": "String",
               "required": true,
-              "desc": "Column name (from column definition)",
+              "desc": "列名（来自列定义）",
               "examples": [ "calories" ]
             },
             "descending": {
               "type": "Boolean",
               "required": true,
-              "desc": "Is sorting in descending order?"
+              "desc": "排序是按降序排列吗？"
             },
             "page": {
               "type": "Number",
               "required": true,
-              "desc": "Page number (1-based)",
+              "desc": "页码（以1为单位）",
               "examples": [ 3 ]
             },
             "rowsPerPage": {
               "type": "Number",
               "required": true,
-              "desc": "How many rows per page? 0 means Infinite",
+              "desc": "每页有多少行？0表示无限大",
               "examples": [ 10 ]
             }
           }
         },
         "pagesNumber": {
           "type": "Number",
-          "desc": "Number of pages available",
+          "desc": "可用的页数",
           "examples": [ 5 ]
         },
         "isFirstPage": {
           "type": "Boolean",
-          "desc": "Are we on first page?"
+          "desc": "我们在第一页吗？"
         },
         "isLastPage": {
           "type": "Boolean",
-          "desc": "Are we on last page?"
+          "desc": "我们在最后一页了吗？"
         },
         "firstPage": {
           "type": "Function",
-          "desc": "Navigates to first page",
+          "desc": "导航至第一页",
           "params": null,
           "returns": null
         },
         "prevPage": {
           "type": "Function",
-          "desc": "Navigates to previous page, if available",
+          "desc": "如果有的话，导航到前一页",
           "params": null,
           "returns": null
         },
         "nextPage": {
           "type": "Function",
-          "desc": "Navigates to next page, if available",
+          "desc": "如果有的话，将导航到下一页",
           "params": null,
           "returns": null
         },
         "lastPage": {
           "type": "Function",
-          "desc": "Navigates to last page",
+          "desc": "导航到最后一页",
           "params": null,
           "returns": null
         },
         "inFullscreen": {
           "type": "Boolean",
-          "desc": "Is table in fullscreen mode?"
+          "desc": "表格是在全屏模式下吗？"
         },
         "toggleFullscreen": {
           "type": "Function",
-          "desc": "Toggles fullscreen mode",
+          "desc": "切换全屏模式",
           "params": null,
           "returns": null
         }
@@ -1591,81 +1591,81 @@
     },
 
     "top-left": {
-      "desc": "Slot to define how left part of the table top looks like",
+      "desc": "定义桌面的左边部分是什么样子的插槽",
       "scope": {
         "pagination": {
           "type": "Object",
-          "desc": "Pagination object",
+          "desc": "分页对象",
           "definition": {
             "sortBy": {
               "type": "String",
               "required": true,
-              "desc": "Column name (from column definition)",
+              "desc": "列名（来自列定义）",
               "examples": [ "calories" ]
             },
             "descending": {
               "type": "Boolean",
               "required": true,
-              "desc": "Is sorting in descending order?"
+              "desc": "排序是按降序排列吗？"
             },
             "page": {
               "type": "Number",
               "required": true,
-              "desc": "Page number (1-based)",
+              "desc": "页码（以1为单位）",
               "examples": [ 3 ]
             },
             "rowsPerPage": {
               "type": "Number",
               "required": true,
-              "desc": "How many rows per page? 0 means Infinite",
+              "desc": "每页有多少行？0表示无限大",
               "examples": [ 10 ]
             }
           }
         },
         "pagesNumber": {
           "type": "Number",
-          "desc": "Number of pages available",
+          "desc": "可用的页数",
           "examples": [ 5 ]
         },
         "isFirstPage": {
           "type": "Boolean",
-          "desc": "Are we on first page?"
+          "desc": "我们在第一页吗？"
         },
         "isLastPage": {
           "type": "Boolean",
-          "desc": "Are we on last page?"
+          "desc": "我们在最后一页了吗？"
         },
         "firstPage": {
           "type": "Function",
-          "desc": "Navigates to first page",
+          "desc": "导航至第一页",
           "params": null,
           "returns": null
         },
         "prevPage": {
           "type": "Function",
-          "desc": "Navigates to previous page, if available",
+          "desc": "如果有的话，导航到前一页",
           "params": null,
           "returns": null
         },
         "nextPage": {
           "type": "Function",
-          "desc": "Navigates to next page, if available",
+          "desc": "如果有的话，将导航到下一页",
           "params": null,
           "returns": null
         },
         "lastPage": {
           "type": "Function",
-          "desc": "Navigates to last page",
+          "desc": "导航到最后一页",
           "params": null,
           "returns": null
         },
         "inFullscreen": {
           "type": "Boolean",
-          "desc": "Is table in fullscreen mode?"
+          "desc": "表格是在全屏模式下吗？"
         },
         "toggleFullscreen": {
           "type": "Function",
-          "desc": "Toggles fullscreen mode",
+          "desc": "切换全屏模式",
           "params": null,
           "returns": null
         }
@@ -1673,81 +1673,81 @@
     },
 
     "top-right": {
-      "desc": "Slot to define how right part of the table top looks like",
+      "desc": "定义桌面右侧部分的样子的插槽口",
       "scope": {
         "pagination": {
           "type": "Object",
-          "desc": "Pagination object",
+          "desc": "分页对象",
           "definition": {
             "sortBy": {
               "type": "String",
               "required": true,
-              "desc": "Column name (from column definition)",
+              "desc": "列名（来自列定义）",
               "examples": [ "calories" ]
             },
             "descending": {
               "type": "Boolean",
               "required": true,
-              "desc": "Is sorting in descending order?"
+              "desc": "排序是按降序排列吗？"
             },
             "page": {
               "type": "Number",
               "required": true,
-              "desc": "Page number (1-based)",
+              "desc": "页码（以1为单位）",
               "examples": [ 3 ]
             },
             "rowsPerPage": {
               "type": "Number",
               "required": true,
-              "desc": "How many rows per page? 0 means Infinite",
+              "desc": "每页有多少行？0表示无限大",
               "examples": [ 10 ]
             }
           }
         },
         "pagesNumber": {
           "type": "Number",
-          "desc": "Number of pages available",
+          "desc": "可用的页数",
           "examples": [ 5 ]
         },
         "isFirstPage": {
           "type": "Boolean",
-          "desc": "Are we on first page?"
+          "desc": "我们在第一页吗？"
         },
         "isLastPage": {
           "type": "Boolean",
-          "desc": "Are we on last page?"
+          "desc": "我们在最后一页了吗？"
         },
         "firstPage": {
           "type": "Function",
-          "desc": "Navigates to first page",
+          "desc": "导航至第一页",
           "params": null,
           "returns": null
         },
         "prevPage": {
           "type": "Function",
-          "desc": "Navigates to previous page, if available",
+          "desc": "如果有的话，导航到前一页",
           "params": null,
           "returns": null
         },
         "nextPage": {
           "type": "Function",
-          "desc": "Navigates to next page, if available",
+          "desc": "如果有的话，将导航到下一页",
           "params": null,
           "returns": null
         },
         "lastPage": {
           "type": "Function",
-          "desc": "Navigates to last page",
+          "desc": "导航到最后一页",
           "params": null,
           "returns": null
         },
         "inFullscreen": {
           "type": "Boolean",
-          "desc": "Is table in fullscreen mode?"
+          "desc": "表格是在全屏模式下吗？"
         },
         "toggleFullscreen": {
           "type": "Function",
-          "desc": "Toggles fullscreen mode",
+          "desc": "切换全屏模式",
           "params": null,
           "returns": null
         }
@@ -1755,81 +1755,81 @@
     },
 
     "top-selection": {
-      "desc": "Slot to define how top table section looks like when user has selected at least one row",
+      "desc": "当用户选择了至少一行时，定义顶部表格部分的外观。",
       "scope": {
         "pagination": {
           "type": "Object",
-          "desc": "Pagination object",
+          "desc": "分页对象",
           "definition": {
             "sortBy": {
               "type": "String",
               "required": true,
-              "desc": "Column name (from column definition)",
+              "desc": "列名（来自列定义）",
               "examples": [ "calories" ]
             },
             "descending": {
               "type": "Boolean",
               "required": true,
-              "desc": "Is sorting in descending order?"
+              "desc": "排序是按降序排列吗？"
             },
             "page": {
               "type": "Number",
               "required": true,
-              "desc": "Page number (1-based)",
+              "desc": "页码（以1为单位）",
               "examples": [ 3 ]
             },
             "rowsPerPage": {
               "type": "Number",
               "required": true,
-              "desc": "How many rows per page? 0 means Infinite",
+              "desc": "每页有多少行？0表示无限大",
               "examples": [ 10 ]
             }
           }
         },
         "pagesNumber": {
           "type": "Number",
-          "desc": "Number of pages available",
+          "desc": "可用的页数",
           "examples": [ 5 ]
         },
         "isFirstPage": {
           "type": "Boolean",
-          "desc": "Are we on first page?"
+          "desc": "我们在第一页吗？"
         },
         "isLastPage": {
           "type": "Boolean",
-          "desc": "Are we on last page?"
+          "desc": "我们在最后一页了吗？"
         },
         "firstPage": {
           "type": "Function",
-          "desc": "Navigates to first page",
+          "desc": "导航至第一页",
           "params": null,
           "returns": null
         },
         "prevPage": {
           "type": "Function",
-          "desc": "Navigates to previous page, if available",
+          "desc": "如果有的话，导航到前一页",
           "params": null,
           "returns": null
         },
         "nextPage": {
           "type": "Function",
-          "desc": "Navigates to next page, if available",
+          "desc": "如果有的话，将导航到下一页",
           "params": null,
           "returns": null
         },
         "lastPage": {
           "type": "Function",
-          "desc": "Navigates to last page",
+          "desc": "导航到最后一页",
           "params": null,
           "returns": null
         },
         "inFullscreen": {
           "type": "Boolean",
-          "desc": "Is table in fullscreen mode?"
+          "desc": "表格是在全屏模式下吗？"
         },
         "toggleFullscreen": {
           "type": "Function",
-          "desc": "Toggles fullscreen mode",
+          "desc": "切换全屏模式",
           "params": null,
           "returns": null
         }
@@ -1837,16 +1837,16 @@
     },
 
     "no-data": {
-      "desc": "Slot to define how the bottom will look like when is nothing to display",
+      "desc": "定义底部在没有东西显示时的样子的插槽点",
       "scope": {
         "message": {
           "type": "String",
-          "desc": "The suggested message",
+          "desc": "建议的信息",
           "examples": [ "No data available" ]
         },
         "icon": {
           "type": "String",
-          "desc": "The suggested icon name (following Quasar convention)",
+          "desc": "建议的图标名称（按照Quasar惯例）。",
           "examples": [ "warning" ]
         }
       }
@@ -1855,107 +1855,107 @@
 
   "events": {
     "row-click": {
-      "desc": "Emitted when user clicks/taps on a row; Is not emitted when using body/row/item scoped slots",
+      "desc": "当用户在行上点击/敲击时触发；当使用body/row/item作用域内的插槽时不触发。",
       "params": {
         "evt": {
           "type": "Object",
-          "desc": "JS event object",
+          "desc": "JS事件对象",
           "__exemption": [ "examples" ]
         },
 
         "row": {
           "type": "Object",
-          "desc": "The row upon which user has clicked/tapped",
+          "desc": "用户点击/敲击的那一行",
           "__exemption": [ "examples" ]
         },
 
         "index": {
           "type": "Number",
-          "desc": "Index of the row in the current page",
+          "desc": "当前页面中该行的索引",
           "__exemption": [ "examples" ]
         }
       }
     },
 
     "row-dblclick": {
-      "desc": "Emitted when user quickly double clicks/taps on a row; Is not emitted when using body/row/item scoped slots; Please check JS dblclick event support before using",
+      "desc": "当用户快速双击/点击某一行时触发；当使用body/row/item作用域内的插槽时不触发；在使用前请检查JS dblclick事件的支持。",
       "params": {
         "evt": {
           "type": "Object",
-          "desc": "JS event object",
+          "desc": "JS事件对象",
           "__exemption": [ "examples" ]
         },
 
         "row": {
           "type": "Object",
-          "desc": "The row upon which user has double clicked/tapped",
+          "desc": "用户双击/点击的那一行",
           "__exemption": [ "examples" ]
         },
 
         "index": {
           "type": "Number",
-          "desc": "Index of the row in the current page",
+          "desc": "当前页面中该行的索引",
           "__exemption": [ "examples" ]
         }
       }
     },
 
     "row-contextmenu": {
-      "desc": "Emitted when user right clicks/long taps on a row; Is not emitted when using body/row/item scoped slots",
+      "desc": "当用户在某一行上点击右键/长点时触发；当使用body/row/item作用域内的插槽时不触发。",
       "params": {
         "evt": {
           "type": "Object",
-          "desc": "JS event object",
+          "desc": "JS事件对象",
           "__exemption": [ "examples" ]
         },
 
         "row": {
           "type": "Object",
-          "desc": "The row upon which user has right clicked/long tapped",
+          "desc": "用户右击/长击的那一行",
           "__exemption": [ "examples" ]
         },
 
         "index": {
           "type": "Number",
-          "desc": "Index of the row in the current page",
+          "desc": "当前页面中该行的索引",
           "__exemption": [ "examples" ]
         }
       }
     },
 
     "request": {
-      "desc": "Emitted when a server request is triggered",
+      "desc": "当一个服务器请求被触发时触发的。",
       "params": {
         "requestProp": {
           "type": "Object",
-          "desc": "Props of the request",
+          "desc": "请求的属性",
           "definition": {
             "pagination": {
               "type": "Object",
               "required": true,
-              "desc": "Pagination object",
+              "desc": "分页对象",
               "definition": {
                 "sortBy": {
                   "type": "String",
                   "required": true,
-                  "desc": "Column name (from column definition)",
+                  "desc": "列名（来自列定义）",
                   "examples": [ "calories" ]
                 },
                 "descending": {
                   "type": "Boolean",
                   "required": true,
-                  "desc": "Is sorting in descending order?"
+                  "desc": "排序是按降序排列吗？"
                 },
                 "page": {
                   "type": "Number",
                   "required": true,
-                  "desc": "Page number (1-based)",
+                  "desc": "页码（以1为单位）",
                   "examples": [ 3 ]
                 },
                 "rowsPerPage": {
                   "type": "Number",
                   "required": true,
-                  "desc": "How many rows per page? 0 means Infinite",
+                  "desc": "每页有多少行？0表示无限大",
                   "examples": [ 10 ]
                 }
               }
@@ -1963,76 +1963,76 @@
             "filter": {
               "type": "Function",
               "required": true,
-              "desc": "Filter method (the 'filter-method' prop)",
+              "desc": "过滤方法（'filter-method' 属性）。",
               "params": {
                 "rows": {
                   "type": "Array",
                   "required": true,
-                  "desc": "Array of rows",
+                  "desc": "行的数组",
                   "__exemption": [ "examples" ]
                 },
                 "terms": {
                   "type": [ "String", "Object" ],
                   "required": true,
-                  "desc": "Terms to filter with (is essentially the 'filter' prop value)",
+                  "desc": "用来过滤的术语（基本上是 'filter' 属性值）。",
                   "__exemption": [ "examples" ]
                 },
                 "cols": {
                   "type": "Array",
-                  "desc": "Optional column definitions",
+                  "desc": "可选的列定义",
                   "__exemption": [ "examples" ]
                 },
                 "getCellValue": {
                   "type": "Function",
-                  "desc": "Optional function to get a cell value",
+                  "desc": "获取单元格值的可选函数",
                   "params": {
                     "col": {
                       "type": "Object",
                       "required": true,
-                      "desc": "Column name from column definitions",
+                      "desc": "来自列定义的列名",
                       "__exemption": [ "examples" ]
                     },
                     "row": {
                       "type": "Object",
                       "required": true,
-                      "desc": "The row object",
+                      "desc": "该行对象",
                       "__exemption": [ "examples" ]
                     }
                   },
                   "returns": {
                     "type": "Any",
-                    "desc": "Parsed/Processed cell value",
+                    "desc": "解析/处理过的单元格值",
                     "examples": [ "Ice Cream Sandwich" ]
                   }
                 }
               },
               "returns": {
                 "type": "Array",
-                "desc": "Filtered rows",
+                "desc": "筛选的行",
                 "__exemption": [ "examples" ]
               }
             },
             "getCellValue": {
               "type": "Function",
               "required": true,
-              "desc": "Function to get a cell value",
+              "desc": "获取单元格值的函数",
               "params": {
                 "col": {
                   "type": "Object",
                   "required": true,
-                  "desc": "Column name from column definitions",
+                  "desc": "来自列定义的列名",
                   "__exemption": [ "examples" ]
                 },
                 "row": {
                   "type": "Object",
                   "required": true,
-                  "desc": "The row object",
+                  "desc": "该行对象",
                   "__exemption": [ "examples" ]
                 }
               },
               "returns": {
                 "type": "Any",
-                "desc": "Parsed/Processed cell value",
+                "desc": "解析/处理过的单元格值",
                 "examples": [ "Ice Cream Sandwich" ]
               }
             }
@@ -2042,33 +2042,33 @@
     },
 
     "selection": {
-      "desc": "Emitted when user selects/unselects row(s)",
+      "desc": "当用户选择/取消选择行时触发。",
       "params": {
         "details": {
           "type": "Object",
-          "desc": "Selection details",
+          "desc": "选择细节",
           "definition": {
             "rows": {
               "type": "Array",
               "required": true,
-              "desc": "Array of row objects that were selected/unselected",
+              "desc": "被选中/未被选中的行对象的数组",
               "__exemption": [ "examples" ]
             },
             "keys": {
               "type": "Array",
               "required": true,
-              "desc": "Array of the keys of rows that were selected/unselected",
+              "desc": "被选中/未被选中的行的键的数组",
               "__exemption": [ "examples" ]
             },
             "added": {
               "type": "Boolean",
               "required": true,
-              "desc": "Were the rows added to selection (true) or removed from selection (false)"
+              "desc": "该行是否被添加到选择中（真）或从选择中删除（假）。"
             },
             "evt": {
               "type": "Object",
               "required": true,
-              "desc": "JS event object",
+              "desc": "JS事件对象",
               "__exemption": [ "examples" ]
             }
           }
@@ -2077,39 +2077,39 @@
     },
 
     "update:pagination": {
-      "desc": "Used by Vue on 'v-model:pagination' for updating its value",
+      "desc": "Vue在'v-model:pagination'上使用，用于更新其值",
       "params": {
         "newPagination": {
           "type": "Object",
-          "desc": "The updated pagination object",
+          "desc": "更新后的分页对象",
           "definition": {
             "sortBy": {
               "type": "String",
               "required": true,
-              "desc": "Column name (from column definition)",
+              "desc": "列名（来自列定义）",
               "examples": [ "calories" ]
             },
             "descending": {
               "type": "Boolean",
               "required": true,
-              "desc": "Is sorting in descending order?"
+              "desc": "排序是按降序排列吗？"
             },
             "page": {
               "type": "Number",
               "required": true,
-              "desc": "Page number (1-based)",
+              "desc": "页码（以1为单位）",
               "examples": [ 3 ]
             },
             "rowsPerPage": {
               "type": "Number",
               "required": true,
-              "desc": "How many rows per page? 0 means Infinite",
+              "desc": "每页有多少行？0表示无限大",
               "examples": [ 10 ]
             },
             "rowsNumber": {
               "type": "Number",
               "required": false,
-              "desc": "For server-side fetching only. How many total database rows are there to be added to the table.",
+              "desc": "仅用于服务器端获取。总共有多少个数据库行要添加到表中。",
               "examples": [ 100, 200 ]
             }
           }
@@ -2118,11 +2118,11 @@
     },
 
     "update:selected": {
-      "desc": "Used by Vue on 'v-model:selected' prop for updating its value",
+      "desc": "Vue在'v-model:selected'属性上使用，用于更新其值",
       "params": {
         "newSelected": {
           "type": "Array",
-          "desc": "The updated selected array",
+          "desc": "更新的选定阵列",
           "examples": [
             "[ { name: 'Frozen Yogurt', calories: 159, fat: 6 } ]"
           ]
@@ -2131,11 +2131,11 @@
     },
 
     "update:expanded": {
-      "desc": "Used by Vue on 'v-model:expanded' prop for updating its value",
+      "desc": "Vue在'v-model:expanded'属性上使用，用于更新其值",
       "params": {
         "newExpanded": {
           "type": "Array",
-          "desc": "The updated expanded array",
+          "desc": "更新后的扩展阵列",
           "examples": [
             "[ 'row-a', 'row-b' ]"
           ]
@@ -2144,34 +2144,34 @@
     },
 
     "virtual-scroll": {
-      "desc": "Emitted when the virtual scroll occurs, if using virtual scroll",
+      "desc": "如果使用虚拟卷轴，在虚拟卷轴发生时触发。",
       "params": {
         "details": {
           "type": "Object",
-          "desc": "Object of properties on the new scroll position",
+          "desc": "新滚动位置上的属性对象",
           "definition": {
             "index": {
               "type": "Number",
               "required": true,
-              "desc": "Index of the list item that was scrolled into view (0 based)",
+              "desc": "被滚动到的列表项的索引（基于0）。",
               "examples": [ 30 ]
             },
             "from": {
               "type": "Number",
               "required": true,
-              "desc": "The index of the first list item that is rendered (0 based)",
+              "desc": "呈现的第一个列表项的索引（以0为基准）。",
               "examples": [ 10 ]
             },
             "to": {
               "type": "Number",
               "required": true,
-              "desc": "The index of the last list item that is rendered (0 based)",
+              "desc": "呈现的最后一个列表项的索引（以0为基准）。",
               "examples": [ 50 ]
             },
             "direction": {
               "type": "String",
               "required": true,
-              "desc": "Direction of change",
+              "desc": "变化的方向",
               "values": [ "increase", "decrease" ]
             }
           }
@@ -2182,85 +2182,85 @@
 
   "methods": {
     "requestServerInteraction": {
-      "desc": "Trigger a server request (emits 'request' event)",
+      "desc": "触发一个服务器请求（触发'请求'事件）",
       "params": {
         "props": {
           "type": "Object",
           "required": false,
-          "desc": "Request details",
+          "desc": "要求详细信息",
           "definition": {
             "pagination": {
               "type": "Object",
               "required": false,
-              "desc": "Optional pagination object",
+              "desc": "可选的分页对象",
               "definition": {
                 "sortBy": {
                   "type": "String",
-                  "desc": "Column name (from column definition)",
+                  "desc": "列名（来自列定义）",
                   "examples": [ "calories" ]
                 },
                 "descending": {
                   "type": "Boolean",
-                  "desc": "Is sorting in descending order?"
+                  "desc": "排序是按降序排列吗？"
                 },
                 "page": {
                   "type": "Number",
-                  "desc": "Page number (1-based)",
+                  "desc": "页码（以1为单位）",
                   "examples": [ 3 ]
                 },
                 "rowsPerPage": {
                   "type": "Number",
-                  "desc": "How many rows per page? 0 means Infinite",
+                  "desc": "每页有多少行？0表示无限大",
                   "examples": [ 10 ]
                 }
               }
             },
             "filter": {
               "type": "Function",
-              "desc": "Filtering method (the 'filter-method' prop)",
+              "desc": "过滤方法（'filter-method' 属性）。",
               "params": {
                 "rows": {
                   "type": "Array",
                   "required": true,
-                  "desc": "Array of rows",
+                  "desc": "行的数组",
                   "__exemption": [ "examples" ]
                 },
                 "terms": {
                   "type": [ "String", "Object" ],
                   "required": true,
-                  "desc": "Terms to filter with (is essentially the 'filter' prop value)",
+                  "desc": "用来过滤的术语（基本上是 'filter' 属性值）。",
                   "__exemption": [ "examples" ]
                 },
                 "cols": {
                   "type": "Array",
-                  "desc": "Optional column definitions",
+                  "desc": "可选的列定义",
                   "__exemption": [ "examples" ]
                 },
                 "getCellValue": {
                   "type": "Function",
-                  "desc": "Optional function to get a cell value",
+                  "desc": "获取单元格值的可选函数",
                   "params": {
                     "col": {
                       "type": "Object",
-                      "desc": "Column name from column definitions",
+                      "desc": "来自列定义的列名",
                       "__exemption": [ "examples" ]
                     },
                     "row": {
                       "type": "Object",
-                      "desc": "The row object",
+                      "desc": "该行对象",
                       "__exemption": [ "examples" ]
                     }
                   },
                   "returns": {
                     "type": "Any",
-                    "desc": "Parsed/Processed cell value",
+                    "desc": "解析/处理过的单元格值",
                     "examples": [ "Ice Cream Sandwich" ]
                   }
                 }
               },
               "returns": {
                 "type": "Array",
-                "desc": "Filtered rows",
+                "desc": "筛选的行",
                 "__exemption": [ "examples" ]
               }
             }
@@ -2270,137 +2270,137 @@
     },
 
     "setPagination": {
-      "desc": "Unless using an external pagination Object (through 'v-model:pagination' prop), you can use this method and force the internal pagination to change",
+      "desc": "除非使用外部分页对象（通过 'v-model:pagination' 属性），否则你可以使用这个方法并强制内部分页改变",
       "params": {
         "pagination": {
           "type": "Object",
           "required": true,
-          "desc": "Pagination object",
+          "desc": "分页对象",
           "definition": {
             "sortBy": {
               "type": "String",
-              "desc": "Column name (from column definition)",
+              "desc": "列名（来自列定义）",
               "examples": [ "calories" ]
             },
             "descending": {
               "type": "Boolean",
-              "desc": "Is sorting in descending order?"
+              "desc": "排序是按降序排列吗？"
             },
             "page": {
               "type": "Number",
-              "desc": "Page number (1-based)",
+              "desc": "页码（以1为单位）",
               "examples": [ 3 ]
             },
             "rowsPerPage": {
               "type": "Number",
-              "desc": "How many rows per page? 0 means Infinite",
+              "desc": "每页有多少行？0表示无限大",
               "examples": [ 10 ]
             }
           }
         },
         "forceServerRequest": {
           "type": "Boolean",
-          "desc": "Also force a server request"
+          "desc": "同时强制请求服务器"
         }
       }
     },
 
     "firstPage": {
-      "desc": "Navigates to first page"
+      "desc": "导航至第一页"
     },
 
     "prevPage": {
-      "desc": "Navigates to previous page, if available"
+      "desc": "如果有的话，导航到前一页"
     },
 
     "nextPage": {
-      "desc": "Navigates to next page, if available"
+      "desc": "如果有的话，将导航到下一页"
     },
 
     "lastPage": {
-      "desc": "Navigates to last page"
+      "desc": "导航到最后一页"
     },
 
     "isRowSelected": {
-      "desc": "Determine if a row has been selected by user",
+      "desc": "确定某行是否已被用户选中",
       "params": {
         "key": {
           "type": "Any",
           "required": true,
-          "desc": "Row key value",
+          "desc": "行键值",
           "examples": [ "calories" ]
         }
       },
       "returns": {
         "type": "Boolean",
-        "desc": "Is row selected or not?"
+        "desc": "行是否被选中？"
       }
     },
 
     "clearSelection": {
-      "desc": "Clears user selection (emits 'update:selected' with empty array)"
+      "desc": "清除用户的选择（触发'update:selected'与空数组）。"
     },
 
     "isRowExpanded": {
-      "desc": "Determine if a row is expanded or not",
+      "desc": "判断某行是否被扩展",
       "params": {
         "key": {
           "type": "Any",
           "required": true,
-          "desc": "Row key value",
+          "desc": "行键值",
           "examples": [ "calories" ]
         }
       },
       "returns": {
         "type": "Boolean",
-        "desc": "Is row expanded or not?"
+        "desc": "行是否扩大？"
       }
     },
 
     "setExpanded": {
-      "desc": "Sets the expanded rows keys array; Especially useful if not using an external 'expanded' state otherwise just emits 'update:expanded' with the value",
+      "desc": "设置扩展的行键数组；如果不使用外部的'expanded'状态，特别有用，否则只是触发'update:expanded'的值。",
       "params": {
         "expanded": {
           "type": "Array",
           "required": true,
-          "desc": "Array containing keys of the expanded rows",
+          "desc": "包含扩展行的键的数组",
           "examples": [ "[ 'row-a', 'row-b' ]" ]
         }
       }
     },
 
     "sort": {
-      "desc": "Trigger a table sort",
+      "desc": "触发一个表的排序",
       "params": {
         "col": {
           "type": [ "String", "Object" ],
           "required": true,
-          "desc": "Column name or column definition object",
+          "desc": "列名或列定义对象",
           "examples": [ "calories" ]
         }
       }
     },
 
     "toggleFullscreen": {
-      "desc": "Toggles fullscreen mode"
+      "desc": "切换全屏模式"
     },
 
     "resetVirtualScroll": {
-      "desc": "Resets the virtual scroll (if using it) computations; Needed for custom edge-cases"
+      "desc": "重置虚拟卷轴（如果使用的话）的计算；需要用于自定义边缘案例"
     },
 
     "scrollTo": {
-      "desc": "Scroll the table to the row with the specified index in page (0 based)",
+      "desc": "将表格滚动到在页面中具有指定索引的行（基于0）。",
       "params": {
         "index": {
           "type": [ "String", "Number" ],
           "required": true,
-          "desc": "The index of the row in page (0 based)",
+          "desc": "该行在页面中的索引（基于0）。",
           "examples": [ "1", 23 ]
         },
         "edge": {
           "type": "String",
-          "desc": "Only for virtual scroll - the edge to align to if the row is not visible already; If the '-force' version is used then it always aligns",
+          "desc": "仅适用于虚拟卷轴--如果该行还不可见，则对准的边缘；如果使用'-force'版本，则总是对准的。",
           "values": [ "start", "center", "end", "start-force", "center-force", "end-force" ],
           "default": "end (if scrolling towards the end) / start (if scrolling towards the start)"
         }

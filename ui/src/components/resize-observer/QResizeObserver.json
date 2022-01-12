@@ -6,7 +6,7 @@
   "props": {
     "debounce": {
       "type": [ "String", "Number" ],
-      "desc": "Debounce amount (in milliseconds)",
+      "desc": "防抖延迟时间（以毫秒为单位）。",
       "default": 100,
       "examples": [ "0", "530" ],
       "category": "behavior"
@@ -15,22 +15,22 @@
 
   "events": {
     "resize": {
-      "desc": "Parent element has resized (width or height changed)",
+      "desc": "父元素已经调整大小（宽度或高度改变）。",
       "params": {
         "size": {
           "type": "Object",
-          "desc": "New size",
+          "desc": "新尺寸",
           "definition": {
             "height": {
               "type": "Number",
               "required": true,
-              "desc": "Layout height",
+              "desc": "布局高度",
               "examples": [ 822 ]
             },
             "width": {
               "type": "Number",
               "required": true,
-              "desc": "Layout width",
+              "desc": "布局宽度",
               "examples": [ 822 ]
             }
           }
@@ -41,11 +41,11 @@
 
   "methods": {
     "trigger": {
-      "desc": "Emit a 'resize' event",
+      "desc": "触发一个 'resize' 事件",
       "params": {
         "immediately": {
           "type": "Boolean",
-          "desc": "Skip over the debounce amount"
+          "desc": "是否跳过防抖延迟时间，即：是否立即触发"
         }
       }
     }

@@ -8,7 +8,7 @@
   "props": {
     "label": {
       "type": "String",
-      "desc": "The label text for the breadcrumb",
+      "desc": "面包屑的标签文本",
       "examples": [ "Home", "Index" ],
       "category": "content"
     },
@@ -30,7 +30,7 @@
 
   "slots": {
     "default": {
-      "desc": "This is where custom content goes, unless 'icon' and 'label' props are not enough"
+      "desc": "这是自定义内容的地方，除非 'icon'(图标) 和 'label'(标签) 属性不够用。"
     }
   }
 }

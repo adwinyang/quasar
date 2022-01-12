@@ -6,14 +6,14 @@
   "props": {
     "debounce": {
       "type": [ "String", "Number" ],
-      "desc": "Debounce amount (in milliseconds)",
+      "desc": "防抖延迟时间（以毫秒为单位）。",
       "examples": [ "0", "530" ],
       "category": "behavior"
     },
 
     "axis": {
       "type": "String",
-      "desc": "Axis on which to detect changes",
+      "desc": "检测变化的轴线",
       "values": [ "both", "vertical", "horizontal" ],
       "default": "vertical",
       "category": "behavior"
@@ -26,27 +26,27 @@
 
   "events": {
     "scroll": {
-      "desc": "Emitted when scroll position changes",
+      "desc": "当滚动位置改变时触发的",
       "params": {
         "details": {
           "type": "Object",
-          "desc": "Scroll details",
+          "desc": "滚动的细节",
           "definition": {
             "position": {
               "type": "Object",
               "required": true,
-              "desc": "Scroll offset (from top and left)",
+              "desc": "滚动偏移（从顶部和左侧）",
               "definition": {
                 "top": {
                   "type": "Number",
                   "required": true,
-                  "desc": "Scroll offset from top (vertical)",
+                  "desc": "从顶部滚动偏移（垂直）。",
                   "examples": [ 120 ]
                 },
                 "left": {
                   "type": "Number",
                   "required": true,
-                  "desc": "Scroll offset from left (horizontal)",
+                  "desc": "从左边开始的滚动偏移（水平）。",
                   "examples": [ 10 ]
                 }
               }
@@ -55,29 +55,29 @@
             "direction": {
               "type": "String",
               "required": true,
-              "desc": "Direction of scroll",
+              "desc": "滚动的方向",
               "values": [ "up", "down", "left", "right" ]
             },
             "directionChanged": {
               "type": "Boolean",
               "required": true,
-              "desc": "Has scroll direction changed since event was last emitted?"
+              "desc": "自事件上次触发后，滚动方向是否发生了变化？"
             },
             "delta": {
               "type": "Object",
               "required": true,
-              "desc": "Delta of distance (in pixels) since event was last emitted",
+              "desc": "自事件最后一次发射以来的距离三角洲（以像素为单位）。",
               "definition": {
                 "top": {
                   "type": "Number",
                   "required": true,
-                  "desc": "Vertical delta distance since event was last emitted",
+                  "desc": "自事件最后一次发射以来的垂直三角距离",
                   "examples": [ 120 ]
                 },
                 "left": {
                   "type": "Number",
                   "required": true,
-                  "desc": "Horizontal delta distance since event was last emitted",
+                  "desc": "自事件最后一次发射以来的水平三角距离",
                   "examples": [ 10 ]
                 }
               }
@@ -86,18 +86,18 @@
             "inflectionPoint": {
               "type": "Object",
               "required": true,
-              "desc": "Last scroll offset where scroll direction has changed",
+              "desc": "最后的滚动偏移量，其中滚动方向已经改变",
               "definition": {
                 "top": {
                   "type": "Number",
                   "required": true,
-                  "desc": "Scroll offset from top (vertical)",
+                  "desc": "从顶部滚动偏移（垂直）。",
                   "examples": [ 120 ]
                 },
                 "left": {
                   "type": "Number",
                   "required": true,
-                  "desc": "Scroll offset from left (horizontal)",
+                  "desc": "从左边开始的滚动偏移（水平）。",
                   "examples": [ 10 ]
                 }
               }
@@ -110,17 +110,17 @@
 
   "methods": {
     "trigger": {
-      "desc": "Emit a 'scroll' event",
+      "desc": "触发一个 'scroll' 事件",
       "params": {
         "immediately": {
           "type": "Boolean",
-          "desc": "Skip over the debounce amount"
+          "desc": "跳过回弹量"
         }
       }
     },
 
     "getPosition": {
-      "desc": "Get current scroll details under the form of an Object: { position, direction, directionChanged, inflectionPoint }"
+      "desc": "以一个对象的形式获取当前的滚动细节。{ 位置, 方向, 方向改变, 拐点 }"
     }
   }
 }

@@ -6,7 +6,7 @@
   "props": {
     "src": {
       "type": "String",
-      "desc": "Path to image (unless a 'media' slot is used)",
+      "desc": "图像的路径（除非使用 'media' 插槽）。",
       "transformAssetUrls": true,
       "examples": [
         "(statics folder) src=\"statics/img/something.png\"",
@@ -19,7 +19,7 @@
 
     "height": {
       "type": "Number",
-      "desc": "Height of component (in pixels)",
+      "desc": "组件的高度（单位：像素）",
       "default": 500,
       "examples": [ ":height=\"1000\"" ],
       "category": "style"
@@ -27,7 +27,7 @@
 
     "speed": {
       "type": "Number",
-      "desc": "Speed of parallax effect (0.0 < x < 1.0)",
+      "desc": "视差效应的速度（0.0 < x < 1.0）。",
       "examples": [ ":speed=\"0.24\"" ],
       "category": "behavior"
     },
@@ -39,19 +39,19 @@
 
   "slots": {
     "default": {
-      "desc": "Default slot can be used for content that gets displayed on top of the component"
+      "desc": "默认插槽可用于显示在组件顶部的内容。"
     },
 
     "media": {
-      "desc": "Slot for describing <img> or <video> tags"
+      "desc": "用于描述<img>或<video>标签的插槽"
     },
 
     "content": {
-      "desc": "Scoped slot for describing content that gets displayed on top of the component; If specified, it overrides the default slot",
+      "desc": "用于描述显示在组件顶部的内容的范围插槽；如果指定，它将覆盖默认插槽。",
       "scope": {
         "percentScrolled": {
           "type": "Number",
-          "desc": "Percentage (0.0 < x < 1.0) of scroll in regards to QParallax",
+          "desc": "在QParallax方面，滚动的百分比（0.0 < x < 1.0）。",
           "examples": [ 0.241 ]
         }
       }
@@ -60,11 +60,11 @@
 
   "events": {
     "scroll": {
-      "desc": "Emitted when scrolling occurs",
+      "desc": "发生滚动时触发的",
       "params": {
         "percentage": {
           "type": "Number",
-          "desc": "Number between 0.0 and 1.0 defining the scrolled percentage of the component",
+          "desc": "介于0.0和1.0之间的数字，定义组件的滚动百分比。",
           "examples": [ 0.234 ]
         }
       }

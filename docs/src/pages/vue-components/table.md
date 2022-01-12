@@ -174,7 +174,7 @@ columns: [ // array of Objects
 ## 选择
 
 ::: warning
-为了使选择正常工作，必须设置属性`行键`。
+为了使选择正常工作，必须设置属性`row-key`。
 :::
 
 <doc-example title="单一选择" file="QTable/SingleSelection" />

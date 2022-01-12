@@ -3,7 +3,7 @@
     "docsUrl": "https://v2.quasar.dev/vue-components/ajax-bar"
   },
 
-  "属性": {
+  "props": {
     "position": {
       "type": "String",
       "desc": "Position within window of where QAjaxBar should be displayed",
@@ -37,11 +37,11 @@
 
   "events": {
     "start": {
-      "desc": "当触发显示条时发出"
+      "desc": "当Ajax状态栏显示时触发"
     },
 
     "stop": {
-      "desc": "Emitted when bar has finished its job"
+      "desc": "当Ajax状态栏关闭(已完成Ajaxy调用)时解发"
     }
   },
 

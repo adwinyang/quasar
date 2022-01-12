@@ -14,7 +14,7 @@
 
     "max": {
       "type": [ "Number", "String" ],
-      "desc": "Number of icons to display",
+      "desc": "要显示的图标数量",
       "default": 5,
       "examples": [ "3", ":max=\"5\"" ],
       "category": "general"
@@ -22,7 +22,7 @@
 
     "icon": {
       "type": [ "String", "Array" ],
-      "desc": "Icon name following Quasar convention; make sure you have the icon library installed unless you are using 'img:' prefix; If an array is provided each rating value will use the corresponding icon in the array (0 based)",
+      "desc": "图标名称遵循Quasar惯例；确保你已经安装了图标库，除非你使用'img:'前缀；如果提供了一个数组，每个评级值将使用数组中相应的图标（基于0）。",
       "examples": [
         "map",
         "ion-add",
@@ -34,7 +34,7 @@
 
     "icon-selected": {
       "type": [ "String", "Array" ],
-      "desc": "Icon name following Quasar convention to be used when selected (optional); make sure you have the icon library installed unless you are using 'img:' prefix; If an array is provided each rating value will use the corresponding icon in the array (0 based)",
+      "desc": "选择时使用的符合Quasar惯例的图标名称（可选）；确保你已经安装了图标库，除非你使用'img:'前缀；如果提供了一个数组，每个评级值将使用数组中的相应图标（基于0）。",
       "examples": [
         "map",
         "ion-add",
@@ -46,7 +46,7 @@
 
     "icon-half": {
       "type": [ "String", "Array" ],
-      "desc": "Icon name following Quasar convention to be used when selected (optional); make sure you have the icon library installed unless you are using 'img:' prefix; If an array is provided each rating value will use the corresponding icon in the array (0 based)",
+      "desc": "选择时使用的符合Quasar惯例的图标名称（可选）；确保你已经安装了图标库，除非你使用'img:'前缀；如果提供了一个数组，每个评级值将使用数组中的相应图标（基于0）。",
       "examples": [
         "map",
         "ion-add",
@@ -59,31 +59,31 @@
     "color": {
       "extends": "color",
       "type": [ "String", "Array" ],
-      "desc": "Color name for component from the Quasar Color Palette; v1.5.0+: If an array is provided each rating value will use the corresponding color in the array (0 based)",
+      "desc": "Quasar调色板中组件的颜色名称；v1.5.0+：如果提供了一个数组，每个评级值将使用数组中的相应颜色（基于0）。",
       "examples": [ "primary", "teal-10", "[\"accent\", \"grey-7\"] "]
     },
 
     "color-selected": {
       "extends": "color",
       "type": [ "String", "Array" ],
-      "desc": "Color name from the Quasar Palette for selected icons"
+      "desc": "所选图标的Quasar调色板的颜色名称"
     },
 
     "color-half": {
       "extends": "color",
       "type": [ "String", "Array" ],
-      "desc": "Color name from the Quasar Palette for half selected icons"
+      "desc": "半数选定图标的Quasar调色板的颜色名称"
     },
 
     "no-dimming": {
       "type": "Boolean",
-      "desc": "Does not lower opacity for unselected icons",
+      "desc": "不降低未选择的图标的不透明度",
       "category": "style"
     },
 
     "no-reset": {
       "type": "Boolean",
-      "desc": "When used, disables default behavior of clicking/tapping on icon which represents current model value to reset model to 0",
+      "desc": "当使用时，禁用默认行为，即点击/敲击代表当前模型值的图标，将模型重置为0。",
       "category": "model"
     },
 
@@ -104,7 +104,7 @@
 
   "slots": {
     "tip-[name]": {
-      "desc": "Slot to define the tooltip of icon at '[name]' where name is a 1-based index; Suggestion: QTooltip"
+      "desc": "在'[name]'处定义图标的tooltip，name是一个基于1的索引；建议：QTooltip"
     }
   }
 }

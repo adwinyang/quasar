@@ -8,23 +8,23 @@
   "props": {
     "showing": {
       "type": "Boolean",
-      "desc": "State - loading or not",
+      "desc": "状态--是否加载",
       "category": "state"
     },
 
     "color": {
       "extends": "color",
-      "desc": "Color name for component from the Quasar Color Palette for the inner Spinner (unless using the default slot)"
+      "desc": "Quasar调色板中用于内部旋转器的组件的颜色名称（除非使用默认插槽）。"
     },
 
     "size": {
-      "desc": "Size in CSS units, including unit name, or standard size name (xs|sm|md|lg|xl), for the inner Spinner (unless using the default slot)",
+      "desc": "以CSS为单位的尺寸，包括单位名称，或标准尺寸名称（xs|sm|md|lg|xl），用于内部旋转器（除非使用默认插槽）。",
       "default": "42px"
     },
 
     "label": {
       "type": "String",
-      "desc": "Add a label; Gets overriden when using the default slot",
+      "desc": "添加一个标签；当使用默认插槽时，会被覆盖。",
       "examples": [ "Please wait..." ],
       "category": "label",
       "addedIn": "v2.2"
@@ -32,7 +32,7 @@
 
     "label-class": {
       "type": "String",
-      "desc": "Add CSS class(es) to the label; Works along the 'label' prop only",
+      "desc": "为标签添加CSS类；只沿 'label'(标签) 属性工作。",
       "examples": [
         "text-red q-mt-xl"
       ],
@@ -42,7 +42,7 @@
 
     "label-style": {
       "type": [ "Array", "String", "Object" ],
-      "desc": "Apply custom style to the label; Works along the 'label' prop only",
+      "desc": "对标签应用自定义样式；只沿 'label'(标签) 属性工作。",
       "examples": [
         "font-size: 28px",
         ":label-style=\"{ color: '#ff0000' }\""
@@ -58,7 +58,7 @@
 
   "slots": {
     "default": {
-      "desc": "Default slot is used for replacing default Spinner; Suggestions: a spinner or text"
+      "desc": "默认插槽用于替换默认的Spinner；建议：一个Spinner或文本"
     }
   }
 }

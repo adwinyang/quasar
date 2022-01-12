@@ -10,30 +10,30 @@
   "methods": {
     "create": {
       "tsInjectionPoint": true,
-      "desc": "Creates an ad-hoc Bottom Sheet; Same as calling $q.bottomSheet(...)",
+      "desc": "创建一个临时的底层表单；与调用$q.bottomSheet(...)相同。",
       "params": {
         "opts": {
-          "desc": "Bottom Sheet options",
+          "desc": "底片选项",
           "definition": {
             "title": {
               "type": "String",
-              "desc": "Title",
+              "desc": "标题",
               "examples": [ "Share" ]
             },
 
             "message": {
               "type": "String",
-              "desc": "Message",
+              "desc": "留言",
               "examples": [ "Please select how to share" ]
             },
 
             "actions": {
               "type": "Array",
-              "desc": "Array of Objects, each Object defining an action",
+              "desc": "对象的数组，每个对象定义一个动作",
               "definition": {
                 "classes": {
                   "type": [ "String", "Array", "Object" ],
-                  "desc": "CSS classes for this action",
+                  "desc": "这个动作的CSS类",
                   "examples": [ "my-class" ]
                 },
 
@@ -43,7 +43,7 @@
 
                 "img": {
                   "type": "String",
-                  "desc": "Path to an image for this action",
+                  "desc": "这个动作的图像的路径",
                   "examples": [
                     "(statics folder) statics/img/something.png",
                     "(relative path format) :src=\"require('./my_img.jpg')\"",
@@ -53,12 +53,12 @@
 
                 "avatar": {
                   "type": "Boolean",
-                  "desc": "Display img as avatar (round borders)"
+                  "desc": "将图片显示为头像（圆形边框）。"
                 },
 
                 "label": {
                   "type": [ "String", "Number" ],
-                  "desc": "Action label",
+                  "desc": "行动标签",
                   "examples": [ "Facebook" ]
                 }
               }
@@ -66,22 +66,22 @@
 
             "grid": {
               "type": "Boolean",
-              "desc": "Display actions as a grid instead of as a list"
+              "desc": "以网格形式而非列表形式显示行动"
             },
 
             "dark": {
               "extends": "dark",
-              "desc": "Apply dark mode"
+              "desc": "应用黑暗模式"
             },
 
             "seamless": {
               "type": "Boolean",
-              "desc": "Put Bottom Sheet into seamless mode; Does not use a backdrop so user is able to interact with the rest of the page too"
+              "desc": "将底层页面放入无缝模式；不使用背景，因此用户也能与页面的其他部分互动。"
             },
 
             "persistent": {
               "type": "Boolean",
-              "desc": "User cannot dismiss Bottom Sheet if clicking outside of it or hitting ESC key"
+              "desc": "如果点击底层工作表以外的地方或按下ESC键，用户不能解散底层工作表"
             }
           }
         }

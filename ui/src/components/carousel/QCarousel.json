@@ -12,35 +12,35 @@
 
     "height": {
       "extends": "size",
-      "desc": "Height of Carousel in CSS units, including unit name"
+      "desc": "旋转木马的高度，以CSS为单位，包括单位名称"
     },
 
     "padding": {
       "type": "Boolean",
-      "desc": "Applies a default padding to each slide, according to the usage of 'arrows' and 'navigation' props",
+      "desc": "根据 'arrows'(箭头) 和 'navigation'(导航) 属性的使用情况，为每张幻灯片应用一个默认的填充。",
       "category": "content"
     },
 
     "control-color": {
       "extends": "color",
-      "desc": "Color name for QCarousel button controls (arrows, navigation) from the Quasar Color Palette"
+      "desc": "Quasar调色板上的QCarousel按钮控件（箭头、导航）的颜色名称。"
     },
 
     "control-text-color": {
       "extends": "color",
-      "desc": "Color name for text color of QCarousel button controls (arrows, navigation) from the Quasar Color Palette"
+      "desc": "来自Quasar调色板的QCarousel按钮控件（箭头、导航）的文本颜色名称。"
     },
 
     "control-type": {
       "type": "String",
-      "desc": "Type of button to use for controls (arrows, navigation)",
+      "desc": "用于控制的按钮类型（箭头、导航）。",
       "values": [ "regular", "flat", "outline", "push", "unelevated" ],
       "category": "style"
     },
 
     "autoplay": {
       "type": [ "Number", "Boolean" ],
-      "desc": "Jump to next slide (if 'true' or val > 0) or previous slide (if val < 0) at fixed time intervals (in milliseconds); 'false' disables autoplay, 'true' enables it for 5000ms intervals",
+      "desc": "以固定的时间间隔（以毫秒为单位）跳到下一张幻灯片（如果 'true' 或val>0）或上一张幻灯片（如果val<0）；'false' 禁用自动播放，'true' 启用它，间隔时间为5000ms",
       "default": false,
       "examples": [
         ":autoplay=\"2500\"",
@@ -52,7 +52,7 @@
 
     "arrows": {
       "type": "Boolean",
-      "desc": "Show navigation arrow buttons",
+      "desc": "显示导航箭头按钮",
       "category": "content"
     },
 
@@ -66,13 +66,13 @@
 
     "navigation": {
       "type": "Boolean",
-      "desc": "Show navigation dots",
+      "desc": "显示导航圆点",
       "category": "content"
     },
 
     "navigation-position": {
       "type": "String",
-      "desc": "Side to stick navigation to",
+      "desc": "侧面坚持导航到",
       "default": "bottom/right",
       "values": [ "top", "right", "bottom", "left" ],
       "examples": [ "left" ],
@@ -85,12 +85,12 @@
 
     "navigation-active-icon": {
       "extends": "icon",
-      "desc": "Icon name following Quasar convention for the active (current slide) navigation icon; Make sure you have the icon library installed unless you are using 'img:' prefix"
+      "desc": "按照Quasar惯例为活动（当前幻灯片）导航图标命名；确保你已经安装了图标库，除非你使用 'img:' 前缀。"
     },
 
     "thumbnails": {
       "type": "Boolean",
-      "desc": "Show thumbnails",
+      "desc": "显示缩略图",
       "category": "content"
     },
 
@@ -105,47 +105,47 @@
 
   "slots": {
     "default": {
-      "desc": "Suggestion: QCarouselSlide"
+      "desc": "建议：QCarouselSlide"
     },
 
     "control": {
-      "desc": "Slot specific for QCarouselControl"
+      "desc": "专为QCarouselControl设计的插槽位"
     },
 
     "navigation-icon": {
-      "desc": "Slot for navigation icon/btn; Suggestion: QBtn",
+      "desc": "用于导航图标/按钮的插槽；建议：QBtn",
       "scope": {
         "index": {
           "type": "Number",
-          "desc": "The 0-based index of corresponding slide",
+          "desc": "对应幻灯片的0基索引",
           "__exemption": [ "examples" ]
         },
         "maxIndex": {
           "type": "Number",
-          "desc": "The available number of slides",
+          "desc": "幻灯片的可用数量",
           "__exemption": [ "examples" ]
         },
         "name": {
           "type": "Any",
-          "desc": "The name of the corresponding slide",
+          "desc": "相应幻灯片的名称",
           "__exemption": [ "examples" ]
         },
         "active": {
           "type": "Boolean",
-          "desc": "Is this the current slide?"
+          "desc": "这是目前的幻灯片吗？"
         },
         "btnProps": {
           "type": "Object",
-          "desc": "Default QBtn props that can be binded to your own QBtn",
+          "desc": "默认的QBtn属性，可以与你自己的QBtn绑定。",
           "__exemption": [ "examples" ]
         },
         "onClick": {
           "type": "Function",
-          "desc": "Default trigger when clicked/tapped on",
+          "desc": "点击/敲击时的默认触发",
           "params": {
             "evt": {
               "type": "Object",
-              "desc": "JS event object",
+              "desc": "JS事件对象",
               "required": true,
               "__exemption": [ "examples" ]
             }

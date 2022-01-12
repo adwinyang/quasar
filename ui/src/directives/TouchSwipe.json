@@ -5,47 +5,47 @@
 
   "value": {
     "type": "Function",
-    "desc": "Handler for swipe (use a non-function to disable)",
+    "desc": "刷卡的处理程序（使用一个非函数来禁用）。",
     "params": {
       "details": {
         "type": "Object",
-        "desc": "Event details",
+        "desc": "活动详情",
         "definition": {
           "evt": {
             "type": "Object",
-            "desc": "Original JS event Object",
+            "desc": "原始JS事件对象",
             "__exemption": [ "examples" ]
           },
           "touch": {
             "type": "Boolean",
-            "desc": "Triggered by a touch event"
+            "desc": "由一个触摸事件触发"
           },
           "mouse": {
             "type": "Boolean",
-            "desc": "Triggered by a mouse event"
+            "desc": "由鼠标事件触发"
           },
           "direction": {
             "type": "String",
-            "desc": "Direction of movement",
+            "desc": "运动的方向",
             "values": [ "up", "right", "down", "left" ]
           },
           "duration": {
             "type": "Number",
-            "desc": "How long it took to trigger the event (in milliseconds)",
+            "desc": "触发事件所需的时间（以毫秒计）。",
             "examples": [ 612 ]
           },
           "distance": {
             "type": "Object",
-            "desc": "Absolute distance (in pixels) since movement started from initial point",
+            "desc": "从初始点开始运动的绝对距离（像素）。",
             "definition": {
               "x": {
                 "type": "Number",
-                "desc": "Absolute distance horizontally",
+                "desc": "水平方向的绝对距离",
                 "examples": [ 231 ]
               },
               "y": {
                 "type": "Number",
-                "desc": "Absolute distance vertically",
+                "desc": "垂直方向的绝对距离",
                 "examples": [ 231 ]
               }
             }
@@ -59,7 +59,7 @@
 
   "arg": {
     "type": "String",
-    "desc": "x:y:z, where x is minimum velocity (dist/time; please use float without a dot, example: 6e-2 which is equivalent to 6 * 10^-2 = 0.06), y is minimum distance on first move on mobile, z is minimum distance on desktop until deciding if it's a swipe indeed",
+    "desc": "x:y:z，其中x是最小速度（距离/时间；请使用不带点的浮点数，例如：6e-2，相当于6 * 10^-2 = 0.06），y是在移动设备上第一次移动时的最小距离，z是在桌面上的最小距离，直到决定是否真的是刷卡。",
     "default": "6e-2:6:50",
     "examples": [ "v-touch-swipe:7e-2:10:100=\"fnToCall\"" ]
   },
@@ -67,47 +67,47 @@
   "modifiers": {
     "capture": {
       "type": "Boolean",
-      "desc": "Use capture for touchstart event"
+      "desc": "对触摸启动事件使用捕获"
     },
 
     "mouse": {
       "type": "Boolean",
-      "desc": "Listen for mouse events too"
+      "desc": "也倾听鼠标事件"
     },
 
     "mouseCapture": {
       "type": "Boolean",
-      "desc": "Use capture for mousedown event"
+      "desc": "对mousedown事件使用捕获"
     },
 
     "horizontal": {
       "type": "Boolean",
-      "desc": "Catch horizontal (left/right) movement"
+      "desc": "抓住水平（左/右）运动"
     },
 
     "vertical": {
       "type": "Boolean",
-      "desc": "Catch vertical (up/down) movement"
+      "desc": "捕捉垂直（向上/向下）运动"
     },
 
     "up": {
       "type": "Boolean",
-      "desc": "Catch swipe to up"
+      "desc": "抓紧时间刷卡，向上爬"
     },
 
     "right": {
       "type": "Boolean",
-      "desc": "Catch swipe to right"
+      "desc": "抓紧向右划动"
     },
 
     "down": {
       "type": "Boolean",
-      "desc": "Catch swipe to down"
+      "desc": "抓紧时间刷卡下线"
     },
 
     "left": {
       "type": "Boolean",
-      "desc": "Catch swipe to left"
+      "desc": "抓紧向左划动"
     }
   }
 }

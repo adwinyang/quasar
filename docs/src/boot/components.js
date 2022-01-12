@@ -7,7 +7,7 @@ import DocInstallation from 'components/DocInstallation.vue'
 import DocLink from 'components/DocLink.vue'
 import DocPage from 'components/DocPage.vue'
 
-// leave the export, even if you don't use it
+// 保留导出，即使您不使用它
 export default async ({ app }) => {
   app.component('DocExample', DocExample)
   app.component('DocCode', DocCode)

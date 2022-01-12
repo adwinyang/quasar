@@ -1,5 +1,5 @@
 ---
-title: 循环进度
+title: 圆环进度条
 desc: QCircularProgress Vue组件显示一个彩色的圆形加载指标。该条可以有一个确定的进度，也可以有一个不确定的动画。
 keys: QCircularProgress
 related:

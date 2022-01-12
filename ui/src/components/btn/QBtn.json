@@ -8,41 +8,41 @@
   "props": {
     "round": {
       "type": "Boolean",
-      "desc": "Makes a circle shaped button",
+      "desc": "做出一个圆形的按钮",
       "category": "style"
     },
 
     "percentage": {
       "type": "Number",
-      "desc": "Percentage (0.0 < x < 100.0); To be used along 'loading' prop; Display a progress bar on the background",
+      "desc": "百分比（0.0 < x < 100.0）；与 'loading'(加载) 属性一起使用；在背景上显示一个进度条。",
       "examples": [ 23 ],
       "category": "behavior"
     },
 
     "dark-percentage": {
       "type": "Boolean",
-      "desc": "Progress bar on the background should have dark color; To be used along with 'percentage' and 'loading' props",
+      "desc": "背景上的进度条应该是深色的；要与 'percentage'(百分比) 和 'loading'(加载) 属性一起使用。",
       "category": "behavior"
     }
   },
 
   "slots": {
     "default": {
-      "desc": "Use for custom content, instead of relying on 'icon' and 'label' props"
+      "desc": "用于自定义内容，而不是依赖 'icon'(图标) 和 'label'(标签) 属性"
     },
 
     "loading": {
-      "desc": "Override the default QSpinner when in 'loading' state"
+      "desc": "在 'loading'(加载 ) 状态下，覆盖默认的 QSpinner。"
     }
   },
 
   "methods": {
     "click": {
-      "desc": "Emulate click on QBtn",
+      "desc": "模仿点击QBtn",
       "params": {
         "evt": {
           "type": "Object",
-          "desc": "JS event object",
+          "desc": "JS事件对象",
           "__exemption": [ "examples" ]
         }
       }
@@ -51,16 +51,16 @@
 
   "events": {
     "click": {
-      "desc": "Emitted when component is clicked (activated)",
+      "desc": "当组件被点击（激活）时触发的。",
       "params": {
         "evt": {
           "type": "Object",
-          "desc": "JS event object; If you want to cancel navigation set synchronously 'evt.navigate' to false",
+          "desc": "JS事件对象；如果你想取消导航，请同步设置 'evt.navigate' 为false",
           "__exemption": [ "examples" ]
         },
         "navigateFn": {
           "type": "Function",
-          "desc": "When you need to control the time at which the button should trigger the route navigation then set 'evt.navigate' to false and call this function; Useful if you have async work to be done before the actual route navigation",
+          "desc": "当你需要控制按钮触发路径导航的时间时，将 'evt.navigate' 设置为false，然后调用这个函数；如果你在实际的路径导航之前有异步工作要做，就很有用。",
           "params": null,
           "returns": null
         }

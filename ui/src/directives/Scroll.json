@@ -5,16 +5,16 @@
 
   "value": {
     "type": "Function",
-    "desc": "Function to call when scrolling occurs (use a non-function to disable)",
+    "desc": "发生滚动时调用的函数（使用非函数来禁用）。",
     "params": {
       "verticalScrollPosition": {
         "type": "Number",
-        "desc": "Scroll offset from top",
+        "desc": "从顶部滚动偏移",
         "examples": [ 350 ]
       },
       "horizontalScrollPosition": {
         "type": "Number",
-        "desc": "Scroll offset from left",
+        "desc": "从左边开始滚动偏移",
         "examples": [ 350 ]
       }
     },

@@ -6,38 +6,38 @@
   "props": {
     "avatar": {
       "type": "Boolean",
-      "desc": "Render an avatar item side (does not needs 'side' prop to be set)",
+      "desc": "渲染一个头像项目的侧面（不需要设置 'side' 属性）。",
       "category": "content"
     },
 
     "thumbnail": {
       "type": "Boolean",
-      "desc": "Render a thumbnail item side (does not needs 'side' prop to be set)",
+      "desc": "渲染一个缩略图项目的侧面（不需要设置 'side' 属性）。",
       "category": "content"
     },
 
     "side": {
       "type": "Boolean",
-      "desc": "Renders as a side of the item",
+      "desc": "渲染为项目的一个侧面",
       "category": "content"
     },
 
     "top": {
       "type": "Boolean",
-      "desc": "Align content to top (useful for multi-line items)",
+      "desc": "将内容置于顶部（对多行项目有用）。",
       "category": "content"
     },
 
     "no-wrap": {
       "type": "Boolean",
-      "desc": "Do not wrap text (useful for item's main content)",
+      "desc": "不要包住文本（对项目的主要内容很有用）",
       "category": "content"
     }
   },
 
   "slots": {
     "default": {
-      "desc": "Section's actual content"
+      "desc": "本节的实际内容"
     }
   }
 }

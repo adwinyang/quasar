@@ -7,32 +7,32 @@
     "model-value":{
       "extends": "model-value",
       "type": [ "Number", "String", "null", "undefined" ],
-      "desc": "Model of the component defining current panel name; Either use this property (along with a listener for 'update:modelValue' event) OR use v-model directive",
+      "desc": "定义当前面板名称的组件的模型；要么使用这个属性（连同'update:modelValue'事件的监听器），要么使用v-model指令。",
       "required": false,
       "examples": [ "v-model=\"selectedTab\"" ]
     },
 
     "vertical": {
       "type": "Boolean",
-      "desc": "Use vertical design (tabs one on top of each other rather than one next to the other horizontally)",
+      "desc": "使用垂直设计（标签一个在另一个上面，而不是水平地挨着一个）。",
       "category": "content"
     },
 
     "outside-arrows": {
       "type": "Boolean",
-      "desc": "Reserve space for arrows to place them on each side of the tabs (the arrows fade when inactive)",
+      "desc": "为箭头预留空间，将其放置在标签的每一侧（箭头在不活动时淡化）。",
       "category": "content"
     },
 
     "mobile-arrows": {
       "type": "Boolean",
-      "desc": "Force display of arrows (if needed) on mobile",
+      "desc": "在移动端强制显示箭头（如果需要）。",
       "category": "content"
     },
 
     "align": {
       "type": "String",
-      "desc": "Horizontal alignment the tabs within the tabs container",
+      "desc": "选项卡在选项卡容器中的水平排列",
       "default": "center",
       "values": [ "left", "center", "right", "justify" ],
       "examples": [ "right" ],
@@ -41,7 +41,7 @@
 
     "breakpoint": {
       "type": [ "Number", "String" ],
-      "desc": "Breakpoint (in pixels) of tabs container width at which the tabs automatically turn to a justify alignment",
+      "desc": "选项卡容器宽度的断点（像素），在这个断点上，选项卡自动转为对齐方式。",
       "default": 600,
       "examples": [ ":breakpoint=\"500\"" ],
       "category": "content|behavior"
@@ -49,32 +49,32 @@
 
     "active-color": {
       "extends": "color",
-      "desc": "The color to be attributed to the text of the active tab",
+      "desc": "赋予活动标签的文本的颜色",
       "category": "style"
     },
 
     "active-bg-color": {
       "extends": "color",
-      "desc": "The color to be attributed to the background of the active tab",
+      "desc": "赋予活动标签背景的颜色。",
       "category": "style"
     },
 
     "indicator-color": {
       "extends": "color",
-      "desc": "The color to be attributed to the indicator (the underline) of the active tab",
+      "desc": "赋予活动标签的指示器（下划线）的颜色。",
       "category": "style"
     },
 
     "content-class": {
       "type": "String",
-      "desc": "Class definitions to be attributed to the content wrapper",
+      "desc": "归属于内容包装器的类定义",
       "examples": [ "my-special-class" ],
       "category": "style"
     },
 
     "active-class": {
       "type": "String",
-      "desc": "The class to be set on the active tab",
+      "desc": "要在活动标签上设置的类别",
       "examples": [ "my-active-class" ],
       "category": "style",
       "addedIn": "2.1.4"
@@ -82,51 +82,51 @@
 
     "left-icon": {
       "type": "String",
-      "desc": "The name of an icon to replace the default arrow used to scroll through the tabs to the left, when the tabs extend past the width of the tabs container",
+      "desc": "当标签扩展到超过标签容器的宽度时，用来替代默认的箭头的图标名称，用于向左滚动标签。",
       "examples": [ "arrow_left" ],
       "category": "content"
     },
 
     "right-icon": {
       "type": "String",
-      "desc": "The name of an icon to replace the default arrow used to scroll through the tabs to the right, when the tabs extend past the width of the tabs container",
+      "desc": "当标签扩展到超过标签容器的宽度时，用来替代默认的箭头的图标名称，用于向右滚动标签。",
       "examples": [ "arrow_right" ],
       "category": "content"
     },
 
     "stretch": {
       "type": "Boolean",
-      "desc": "When used on flexbox parent, tabs will stretch to parent's height",
+      "desc": "当用于flexbox父级时，标签将被拉伸到父级的高度。",
       "category": "content"
     },
 
     "shrink": {
       "type": "Boolean",
-      "desc": "By default, QTabs is set to grow to the available space; However, you can reverse that with this prop; Useful (and required) when placing the component in a QToolbar",
+      "desc": "默认情况下，QTabs被设置为按可用空间增长；然而，你可以用这个属性将其颠倒过来；当把该组件放在QToolbar中时，是很有用的（也是必须的）。",
       "category": "content"
     },
 
     "switch-indicator": {
       "type": "Boolean",
-      "desc": "Switches the indicator position (on left of tab for vertical mode or above the tab for default horizontal mode)",
+      "desc": "切换指示器的位置（垂直模式在标签左侧，默认水平模式在标签上方）。",
       "category": "content"
     },
 
     "narrow-indicator": {
       "type": "Boolean",
-      "desc": "Allows the indicator to be the same width as the tab's content (text or icon), instead of the whole width of the tab",
+      "desc": "允许指示器的宽度与标签的内容（文本或图标）相同，而不是标签的整个宽度。",
       "category": "content"
     },
 
     "inline-label": {
       "type": "Boolean",
-      "desc": "Allows the text to be inline with the icon, should one be used",
+      "desc": "如果使用图标，允许文本与图标并列。",
       "category": "content"
     },
 
     "no-caps": {
       "type": "Boolean",
-      "desc": "Turns off capitalizing all letters within the tab (which is the default)",
+      "desc": "关闭标签内所有字母的大写（这是默认的）。",
       "category": "content"
     },
 

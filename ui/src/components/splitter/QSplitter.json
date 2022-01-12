@@ -7,19 +7,19 @@
     "model-value": {
       "extends": "model-value",
       "type": "Number",
-      "desc": "Model of the component defining the size of first panel (or second if using reverse) in the unit specified (for '%' it's the split ratio percent - 0.0 < x < 100.0; for 'px' it's the size in px); Either use this property (along with a listener for 'update:modelValue' event) OR use v-model directive",
+      "desc": "组件的模型，定义第一个面板（或第二个面板，如果使用反向）在指定单位的大小（对于'%'，它是分割率的百分比 - 0.0 < x < 100.0；对于'px'，它是以px为单位的大小）；要么使用这个属性（连同 'update:modelValue' 事件的监听器）或使用v-model指令。",
       "examples": [ "v-model=\"ratio\"" ]
     },
 
     "reverse": {
       "type": "Boolean",
-      "desc": "Apply the model size to the second panel (by default it applies to the first)",
+      "desc": "将模型尺寸应用于第二个面板（默认情况下，它应用于第一个面板）。",
       "category": "model"
     },
 
     "unit": {
       "type": "String",
-      "desc": "CSS unit for the model",
+      "desc": "该模型的CSS单元",
       "default": "%",
       "values": [ "%", "px" ],
       "category": "model"
@@ -27,19 +27,19 @@
 
     "emit-immediately": {
       "type": "Boolean",
-      "desc": "Emit model while user is panning on the separator",
+      "desc": "当用户在分离器上平移时发射模型",
       "category": "model"
     },
 
     "horizontal": {
       "type": "Boolean",
-      "desc": "Allows the splitter to split its two panels horizontally, instead of vertically",
+      "desc": "允许分割器水平分割其两个面板，而不是垂直分割。",
       "category": "content"
     },
 
     "limits": {
       "type": "Array",
-      "desc": "An array of two values representing the minimum and maximum split size of the two panels; When 'px' unit is set then you can use Infinity as the second value to make it unbound on the other side",
+      "desc": "由两个值组成的数组，代表两个面板的最小和最大分割尺寸；当'px'单位被设置时，那么你可以使用Infinity作为第二个值，使其在另一侧不受约束。",
       "default": "For '%' unit: [10, 90]; For 'px' unit: [50, Infinity]",
       "examples": [ ":limits=\"[30, 70]\"", ":limits=\"[0, Infinity]\"" ],
       "category": "content|model"
@@ -51,7 +51,7 @@
 
     "before-class": {
       "type": [ "Array", "String", "Object" ],
-      "desc": "Class definitions to be attributed to the 'before' panel",
+      "desc": "归属于 'before'(之前) 面板的类别定义",
       "examples": [
         "bg-deep-orange",
         ":before-class=\"{ 'my-special-class': <condition> }\""
@@ -61,7 +61,7 @@
 
     "after-class": {
       "type": [ "Array", "String", "Object" ],
-      "desc": "Class definitions to be attributed to the 'after' panel",
+      "desc": "归属于 'after'(之后) 面板的类别定义",
       "examples": [
         "bg-deep-orange",
         ":after-class=\"{ 'my-special-class': <condition> }\""
@@ -71,7 +71,7 @@
 
     "separator-class": {
       "type": [ "Array", "String", "Object" ],
-      "desc": "Class definitions to be attributed to the splitter separator",
+      "desc": "将归属于分割器分离器的类定义",
       "examples": [
         "bg-deep-orange",
         ":separator-class=\"{ 'my-special-class': <condition> }\""
@@ -81,7 +81,7 @@
 
     "separator-style": {
       "type": [ "Array", "String", "Object" ],
-      "desc": "Style definitions to be attributed to the splitter separator",
+      "desc": "归属于分割器分离器的样式定义",
       "examples": [
         "background-color: #ff0000",
         ":separator-style=\"{ backgroundColor: '#ff0000' }\""
@@ -91,36 +91,36 @@
 
     "dark": {
       "type": "Boolean",
-      "desc": "Applies a default lighter color on the separator; To be used when background is darker; Avoid using when you are overriding through separator-class or separator-style props",
+      "desc": "在分隔符上应用一个默认的浅色；当背景为深色时使用；当你通过分隔符类或分隔符样式属性进行覆盖时避免使用。",
       "category": "style"
     }
   },
 
   "slots": {
     "default": {
-      "desc": "Default slot in the devland unslotted content of the component; Suggestion: QTooltip, QMenu"
+      "desc": "默认插槽在devland的非插槽内容的组件; 建议：QTooltip, QMenu"
     },
 
     "before": {
-      "desc": "Content of the panel on left/top"
+      "desc": "左侧/顶部的面板内容"
     },
 
     "after": {
-      "desc": "Content of the panel on right/bottom"
+      "desc": "右侧/底部的面板内容"
     },
 
     "separator": {
-      "desc": "Content to be placed inside the separator; By default it is centered"
+      "desc": "要放在分隔符内的内容；默认情况下，它是居中的。"
     }
   },
 
   "events": {
     "update:model-value": {
-      "desc": "Emitted when component's model value changes; Is also used by v-model",
+      "desc": "当组件的模型值改变时触发；也被v-model使用。",
       "params": {
         "value": {
           "type": "Number",
-          "desc": "New model value (0.0 < x < 100.0) defining the ratio between panels",
+          "desc": "新的模型值（0.0 < x < 100.0），定义了面板之间的比率",
           "examples": [ 0.22 ]
         }
       }

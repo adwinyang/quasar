@@ -14,52 +14,52 @@
 
     "floating": {
       "type": "Boolean",
-      "desc": "Tell QBadge if it should float to the top right side of the relative positioned parent element or not",
+      "desc": "告诉QBadge是否应该浮动到相对位置的父元素的右上方。",
       "category": "content"
     },
 
     "transparent": {
       "type": "Boolean",
-      "desc": "Applies a 0.8 opacity; Useful especially for floating QBadge",
+      "desc": "应用0.8的不透明度；特别是对浮动的QBadge有用。",
       "category": "style"
     },
 
     "multi-line": {
       "type": "Boolean",
-      "desc": "Content can wrap to multiple lines",
+      "desc": "内容可以包裹到多行",
       "category": "content"
     },
 
     "label": {
       "type": [ "String", "Number" ],
-      "desc": "Badge's content as string; overrides default slot if specified",
+      "desc": "徽章的内容为字符串；如果指定的话，将覆盖默认插槽。",
       "examples": [ "John Doe", 22 ],
       "category": "content"
     },
 
     "align": {
       "type": "String",
-      "desc": "Sets vertical-align CSS prop",
+      "desc": "设置垂直对齐的CSS属性",
       "values": [ "top", "middle", "bottom" ],
       "category": "content"
     },
 
     "outline": {
       "type": "Boolean",
-      "desc": "Use 'outline' design (colored text and borders only)",
+      "desc": "使用 'outline'(大纲)设计（仅有彩色文本和边框）。",
       "category": "style"
     },
 
     "rounded": {
       "type": "Boolean",
-      "desc": "Makes a rounded shaped badge",
+      "desc": "做出一个圆形的徽章",
       "category": "style"
     }
   },
 
   "slots": {
     "default": {
-      "desc": "This is where QBadge content goes, if not using 'label' property"
+      "desc": "如果不使用 'label'(属性)，这是QBadge内容的位置。"
     }
   }
 }
